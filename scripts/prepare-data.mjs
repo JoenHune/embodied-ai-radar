@@ -27,7 +27,7 @@ const normalizeStatus = (value) => {
 const normalizeInstitutions = (institutions = []) =>
   [...new Set(institutions.map((item) => typeof item === 'string' ? item : item?.name).filter(Boolean))]
 
-const curatedRecord = (record) => {
+const curatedRecord = (record, existing = {}) => {
   const signals = record.signals ?? {}
   const openAssets = signals.open_assets ?? signals.open_code_data_model ?? {}
   const openStatus = normalizeStatus(openAssets)
@@ -37,13 +37,13 @@ const curatedRecord = (record) => {
   const confidenceValue = Number(record.classification_confidence ?? 0.9)
   return {
     id: record.arxiv_id,
-    title: record.title,
-    authors: record.authors ?? [],
-    institutions: normalizeInstitutions(record.institutions),
-    first_submitted: record.v1_date,
+    title: record.title ?? existing.title,
+    authors: record.authors ?? existing.authors ?? [],
+    institutions: normalizeInstitutions(record.institutions ?? existing.institutions),
+    first_submitted: record.v1_date ?? existing.first_submitted,
     updated: (record.updated_date ?? record.updated_at ?? record.v1_date)?.slice(0, 10),
-    abstract: record.abstract ?? '',
-    categories: record.categories ?? [],
+    abstract: record.abstract ?? existing.abstract ?? '',
+    categories: record.categories ?? existing.categories ?? [],
     primary_topic: primaryTopic,
     topics: [primaryTopic],
     tags: record.horizontal_tags ?? record.cross_tags ?? [],
@@ -89,11 +89,15 @@ const papers = new Map(
   ]),
 )
 
-for (const file of ['data/curated-2025h2.json', 'data/curated-2026h1.json']) {
+for (const file of [
+  'data/curated-2025h2.json',
+  'data/curated-2026h1.json',
+  'data/curated-2026-07-extra.json',
+]) {
   const dataset = read(file, { records: [] })
   for (const record of dataset.records ?? []) {
-    const normalized = curatedRecord(record)
-    const existing = papers.get(normalized.id) ?? {}
+    const existing = papers.get(record.arxiv_id) ?? {}
+    const normalized = curatedRecord(record, existing)
     papers.set(normalized.id, {
       ...existing,
       ...normalized,
@@ -138,7 +142,7 @@ const output = [...papers.values()]
       : v1Month >= '2025-07' && v1Month <= '2026-06'
         ? 'analysis'
         : v1Month === '2026-07'
-          ? 'snapshot'
+          ? 'provisional'
           : 'outside'
     return { ...paper, v1_month: v1Month, period }
   })

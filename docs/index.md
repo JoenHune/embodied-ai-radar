@@ -6,7 +6,7 @@ titleTemplate: 过去 12 个月研究趋势分析
 hero:
   name: 具身智能研究雷达
   text: 从论文热度到技术兑现
-  tagline: 2025.07–2026.06 主分析 · 2026.07 前瞻 · 全球统一口径
+  tagline: 2025.07–2026.06 主分析 · 2026.07 临时完整版（截至 29 日）· 全球统一口径
   actions:
     - theme: brand
       text: 阅读执行摘要 →
@@ -52,7 +52,7 @@ features:
 ---
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>12 + 1</strong><span>完整月份 + 前瞻快照</span></div>
+  <div class="radar-kpi"><strong>12 + 1</strong><span>完整月份 + 7 月临时完整版</span></div>
   <div class="radar-kpi"><strong>5</strong><span>固定主方向</span></div>
   <div class="radar-kpi"><strong>A–D</strong><span>趋势证据等级</span></div>
   <div class="radar-kpi"><strong>v1</strong><span>按首次提交月归档</span></div>

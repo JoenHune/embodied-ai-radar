@@ -16,6 +16,39 @@ const warnings = []
 const assert = (condition, message) => { if (!condition) errors.push(message) }
 const warn = (condition, message) => { if (!condition) warnings.push(message) }
 const byId = new Map()
+const topicLabels = {
+  foundation: '具身基础模型',
+  dual_system: '大小脑与双系统',
+  dexterous: '灵巧操作',
+  world_model: '世界模型',
+  general_learning: '通用机器人学习',
+}
+const topicSlugs = {
+  foundation: 'foundation-models',
+  dual_system: 'dual-system',
+  dexterous: 'dexterous-manipulation',
+  world_model: 'world-models',
+  general_learning: 'general-robot-learning',
+}
+const signed = (value) => value > 0 ? `+${value}` : String(value)
+const percent = (numerator, denominator) => denominator ? `${(numerator / denominator * 100).toFixed(1)}%` : '—'
+const changeRate = (current, previous) => {
+  if (previous === 0) return current === 0 ? '—' : '新增'
+  const value = (current - previous) / previous * 100
+  return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`
+}
+const previousYearMonth = (month) => `${Number(month.slice(0, 4)) - 1}-${month.slice(5)}`
+const previousMonth = (month) => {
+  const year = Number(month.slice(0, 4))
+  const monthNumber = Number(month.slice(5))
+  return monthNumber === 1
+    ? `${year - 1}-12`
+    : `${year}-${String(monthNumber - 1).padStart(2, '0')}`
+}
+const topicCounts = (list) => Object.fromEntries([...validTopics].map((topic) => [
+  topic,
+  list.filter((paper) => paper.primary_topic === topic).length,
+]))
 
 assert(Array.isArray(papers), 'data/papers.json must be an array')
 for (const paper of papers) {
@@ -40,9 +73,9 @@ for (const paper of papers) {
 const included = papers.filter((paper) => paper.included)
 const curated = papers.filter((paper) => paper.curated)
 assert(included.length >= 2000, `included corpus unexpectedly small: ${included.length}`)
-assert(curated.length === 90, `expected 90 curated papers, got ${curated.length}`)
+assert(curated.length === 94, `expected 94 curated papers, got ${curated.length}`)
 assert(curated.filter((paper) => paper.period === 'analysis').length === 84, 'expected 84 main-period curated papers')
-assert(curated.filter((paper) => paper.period === 'snapshot').length === 6, 'expected 6 snapshot curated papers')
+assert(curated.filter((paper) => paper.period === 'provisional').length === 10, 'expected 10 provisional-July curated papers')
 
 const normalizedTitles = new Map()
 for (const paper of included) {
@@ -100,8 +133,25 @@ for (const [month, items] of Object.entries(trends.months)) {
   assert(fs.existsSync(page), `${month}: generated page missing`)
   if (fs.existsSync(page)) {
     const text = fs.readFileSync(page, 'utf8')
-    const count = included.filter((paper) => paper.v1_month === month).length
-    assert(text.includes(`<strong>${count}</strong><span>纳入统计候选</span>`), `${month}: generated count mismatch`)
+    const current = included.filter((paper) => paper.v1_month === month)
+    const previous = included.filter((paper) => paper.v1_month === previousMonth(month))
+    const baseline = included.filter((paper) => paper.v1_month === previousYearMonth(month))
+    const currentCounts = topicCounts(current)
+    const previousCounts = topicCounts(previous)
+    const baselineCounts = topicCounts(baseline)
+    assert(text.includes(`<strong>${current.length}</strong><span>纳入统计候选</span>`), `${month}: generated count mismatch`)
+    assert(text.includes('| 环比增量 | 环比 |'), `${month}: month-over-month topic columns missing`)
+    for (const topic of validTopics) {
+      const expectedRow = `| [${topicLabels[topic]}](/directions/${topicSlugs[topic]}) | ${currentCounts[topic]} | ${percent(currentCounts[topic], current.length)} | ${previousCounts[topic]} | ${signed(currentCounts[topic] - previousCounts[topic])} | ${changeRate(currentCounts[topic], previousCounts[topic])} | ${baselineCounts[topic]} | ${signed(currentCounts[topic] - baselineCounts[topic])} | ${changeRate(currentCounts[topic], baselineCounts[topic])} |`
+      assert(text.includes(expectedRow), `${month}/${topic}: MoM/YoY topic row mismatch`)
+    }
+    const expectedTotal = `| **总计** | **${current.length}** | **100.0%** | **${previous.length}** | **${signed(current.length - previous.length)}** | **${changeRate(current.length, previous.length)}** | **${baseline.length}** | **${signed(current.length - baseline.length)}** | **${changeRate(current.length, baseline.length)}** |`
+    assert(text.includes(expectedTotal), `${month}: MoM/YoY total row mismatch`)
+    if (month === '2026-07') {
+      assert(text.includes('临时完整版（截至 7 月 29 日）'), 'July provisional coverage note missing')
+      assert(text.includes('## 7 月完整研判（截至 29 日）'), 'July deep-dive section missing')
+      assert(items.length === 5, 'July must contain 5 full trend cards')
+    }
   }
 }
 

@@ -197696,7 +197696,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -197778,7 +197778,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -197844,7 +197844,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -197909,7 +197909,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -197990,7 +197990,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198049,7 +198049,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198116,7 +198116,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -198185,7 +198185,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198248,7 +198248,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -198262,14 +198262,21 @@
       "Radu Corcodel",
       "Siddarth Jain",
       "Andrew Wu",
-      "C. Hori",
-      "D. Romeres"
+      "Chiori Hori",
+      "Diego Romeres"
     ],
-    "institutions": [],
+    "institutions": [
+      "Mitsubishi Electric Research Laboratories",
+      "University of Oxford",
+      "University of North Carolina at Chapel Hill"
+    ],
     "first_submitted": "2026-07-01",
     "updated": "2026-07-01",
     "abstract": "Current work on robot furniture assembly mostly focuses on toy-scale settings or single-arm manipulation. We introduce FurnitureVLA, the first systematic study of real-scale bimanual furniture assembly using Vision-Language-Action models (VLAs). We formalize the task, develop a scalable simulation pipeline for expert data generation and evaluation, and build a VR teleoperation system for single-operator bimanual control to collect high-quality real-world demonstrations. To address extreme long-horizon assembly with up to 7 subtasks and 1550 control steps, we propose a progress-enhanced VLA, finetuned on semantically grounded subtasks, that jointly predicts actions and a continuous progress signal, enabling automatic subtask transitions and reducing compounding errors during inference. We further study perception and control design factors that critically affect precision in real-scale assembly. FurnitureVLA improves average simulation success from 48% to 80% compared to baselines across three furniture types, with an additional 21% gain from our design factor study. We validate on a real Kinova Gen3 platform with only 16% drop on the hardest task.",
-    "categories": [],
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
     "comment": "",
     "journal_ref": "",
     "doi": null,
@@ -198290,7 +198297,13 @@
       "data_engine",
       "synthetic_data",
       "multimodal",
-      "real_robot"
+      "real_robot",
+      "双臂",
+      "长时序",
+      "真实机器人验证",
+      "仿真数据",
+      "VR 遥操作",
+      "进度预测"
     ],
     "confidence": "high",
     "topic_scores": {
@@ -198302,7 +198315,7 @@
     },
     "evidence": {
       "real_robot": true,
-      "multi_task": false,
+      "multi_task": true,
       "cross_embodiment": false,
       "long_horizon": true,
       "open_code": false,
@@ -198311,16 +198324,21 @@
     },
     "official_url": null,
     "code_url": null,
-    "project_url": null,
+    "project_url": "https://dannymcy.github.io/furniturevla/",
     "peer_review": null,
-    "contribution_zh": "",
-    "limitation_zh": "",
-    "selection_reason_zh": "",
-    "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
-    "curated": false,
+    "contribution_zh": "把 VLA 推进到全尺寸双臂家具装配，以连续进度预测衔接最多 7 个子任务和 1,550 个控制步，并在真实 Kinova Gen3 上验证。",
+    "limitation_zh": "真实实验仍集中于单一双臂平台和三类家具，跨硬件迁移、错误恢复与长期重复部署尚无独立验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "source": "curated + arXiv API verified",
+    "period": "provisional",
+    "curated": true,
     "included": true,
-    "confidence_score": 0.82
+    "confidence_score": 0.9,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-07-29"
+    }
   },
   {
     "id": "2607.01225",
@@ -198382,7 +198400,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198448,7 +198466,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198517,7 +198535,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198526,9 +198544,9 @@
     "id": "2607.01804",
     "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
     "authors": [
-      "Yingying Pan",
+      "Yi Pan",
       "Miao Pan",
-      "Qianyu Lu",
+      "Qi Lu",
       "Jiaming Huang",
       "Man Zhang",
       "Siteng Huang",
@@ -198538,11 +198556,16 @@
       "Xuhong Zhang",
       "Wenqi Zhang"
     ],
-    "institutions": [],
+    "institutions": [
+      "Zhejiang University",
+      "Alibaba DAMO Academy"
+    ],
     "first_submitted": "2026-07-02",
     "updated": "2026-07-02",
     "abstract": "Vision-Language-Action (VLA) foundation models have recently achieved strong progress in embodied intelligence. To reduce policy-call frequency while preserving temporal coherence, most generative policies adopt an action chunk mechanism, executing multiple future actions in an open-loop manner under a fixed action horizon. However, this\"predict-then-blindly-execute\"paradigm sacrifices closed-loop reactivity: in contact-rich physical interactions, even small local perturbations can rapidly amplify within the open-loop blind spot, leading to compounding errors and ultimately task failure. To address this limitation, we propose VLA-Corrector, a lightweight corrective inference framework for action-chunked VLA policies. Without modifying the backbone policy weights, VLA-Corrector introduces a lightweight Latent-space Vision Monitor (LVM) that continuously compares predicted and actual visual feature evolution, enabling online detection of visual dynamics deviations. Once persistent deviation is detected, the system triggers a truncation event, discards the remaining stale actions, and invokes corrective replanning via Online Gradient Guidance (OGG). The detect-and-correct mechanism of VLA-Corrector naturally induces an event-triggered adaptive action horizon: it preserves long-horizon execution when the current chunk remains reliable, and invokes short-horizon corrective replanning when execution begins to drift. In doing so, VLA-Corrector mitigates the trade-off imposed by static horizons between execution robustness and policy-call frequency. It can be integrated into different VLA models without further retraining the VLA backbone, interrupting compounding errors while preserving much of the efficiency benefit of action chunking and substantially improving robustness in long-horizon, contact-rich robotic manipulation tasks.",
-    "categories": [],
+    "categories": [
+      "cs.RO"
+    ],
     "comment": "",
     "journal_ref": "",
     "doi": null,
@@ -198554,15 +198577,22 @@
     "query_topics": [
       "foundation"
     ],
-    "primary_topic": "foundation",
+    "primary_topic": "dual_system",
     "topics": [
       "foundation",
       "dexterous",
-      "general_learning"
+      "general_learning",
+      "dual_system"
     ],
     "tags": [
       "multimodal",
-      "safety"
+      "safety",
+      "闭环纠错",
+      "自适应 action horizon",
+      "测试时推理",
+      "真实机器人验证",
+      "长时序",
+      "开放代码"
     ],
     "confidence": "high",
     "topic_scores": {
@@ -198573,26 +198603,31 @@
       "general_learning": 1
     },
     "evidence": {
-      "real_robot": false,
-      "multi_task": false,
+      "real_robot": true,
+      "multi_task": true,
       "cross_embodiment": false,
       "long_horizon": true,
-      "open_code": false,
-      "open_data": false,
-      "open_model": false
+      "open_code": true,
+      "open_data": true,
+      "open_model": true
     },
     "official_url": null,
-    "code_url": null,
+    "code_url": "https://github.com/ZJU-OmniAI/vla-corrector",
     "project_url": null,
     "peer_review": null,
-    "contribution_zh": "",
-    "limitation_zh": "",
-    "selection_reason_zh": "",
-    "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
-    "curated": false,
+    "contribution_zh": "在冻结 VLA 之外加入 latent dynamics 监视、事件触发截断与梯度引导重规划，让固定 action chunk 变成按执行偏差自适应的闭环控制。",
+    "limitation_zh": "40M 纠错器仍需按 benchmark 示范训练；视觉 latent 偏差并不等于接触或语义失败，跨环境误报率和部署成本仍待验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "source": "curated + arXiv API verified",
+    "period": "provisional",
+    "curated": true,
     "included": true,
-    "confidence_score": 0.82
+    "confidence_score": 0.9,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-07-29"
+    }
   },
   {
     "id": "2607.01938",
@@ -198655,7 +198690,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198718,7 +198753,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198785,7 +198820,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198850,7 +198885,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198918,7 +198953,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -198991,7 +199026,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -199059,7 +199094,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199127,7 +199162,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -199201,7 +199236,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -199213,11 +199248,16 @@
       "Chongkei Chang",
       "Zhidong Deng"
     ],
-    "institutions": [],
+    "institutions": [
+      "Tsinghua University"
+    ],
     "first_submitted": "2026-07-01",
     "updated": "2026-07-01",
     "abstract": "Although vision-language-action (VLA) models have received widespread attention, many challenges remain in manipulating dynamic moving objects. In most existing approaches, end-to-end forward or inverse dynamics models, i.e., world models, are incorporated into high-performance base VLA architectures, which may degrade the performance of well-pretrained base VLA models due to inappropriate fine-tuning. In this paper, we propose DynaWM, a base-VLA-guided world foundation model that adapts to a wide variety of fine-tuned and coarse-tuned base-VLA checkpoints for moving-object manipulation. DynaWM uses a Mamba-3-based action encoder to encode the base action chunk produced by the base VLA into an action-conditioning representation, a V-JEPA 2.1 vision encoder to extract features from multi-view observation history, and a proprioceptive state encoder to encode robotic-arm proprioceptive states. These feature representations jointly condition a flow-matching DiT to regenerate motion-aware action trajectories for moving-object manipulation. For systematic evaluation, we construct the DynaGrasp-32 benchmark, covering six categories of moving-object manipulation tasks, including velocity variation, trajectory variation, and multi-object manipulation, as well as the DynaGrasp-1600 dataset, which consists of 32 scenarios, 1,600 demonstration trajectories, and approximately 1.53M images. For fine-tuned base-VLA checkpoints, DynaWM achieves percentage improvements of 7.19, 45.31, 1.88, and 10.94 over SmolVLA, X-VLA, {\\pi}0, and {\\pi}0.5, respectively. For coarse-tuned base-VLA checkpoints, performance increases by 35.13, 44.06, 35.69, and 26.13 percentage, respectively. Ablation experiments show that visual encoding enhances success by 27.50%, while reducing success by 45.44% if action conditioning is removed.",
-    "categories": [],
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
     "comment": "",
     "journal_ref": "",
     "doi": null,
@@ -199230,7 +199270,7 @@
       "foundation",
       "world_model"
     ],
-    "primary_topic": "foundation",
+    "primary_topic": "world_model",
     "topics": [
       "foundation",
       "world_model"
@@ -199238,7 +199278,12 @@
     "tags": [
       "data_engine",
       "multimodal",
-      "benchmark"
+      "benchmark",
+      "动态物体操作",
+      "动作条件预测",
+      "flow matching",
+      "多视角",
+      "多 VLA 适配"
     ],
     "confidence": "high",
     "topic_scores": {
@@ -199250,7 +199295,7 @@
     },
     "evidence": {
       "real_robot": false,
-      "multi_task": false,
+      "multi_task": true,
       "cross_embodiment": false,
       "long_horizon": false,
       "open_code": false,
@@ -199261,14 +199306,19 @@
     "code_url": null,
     "project_url": null,
     "peer_review": null,
-    "contribution_zh": "",
-    "limitation_zh": "",
-    "selection_reason_zh": "",
-    "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
-    "curated": false,
+    "contribution_zh": "用动作条件、多视角动态表征和 flow-matching DiT 重生成移动物体操作轨迹，并在四类基础 VLA 上测试可插拔增益。",
+    "limitation_zh": "当前证据来自自建仿真 benchmark，尚未证明动态预测在真实机器人、遮挡和时延条件下仍能稳定改善闭环成功率。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "source": "curated + arXiv API verified",
+    "period": "provisional",
+    "curated": true,
     "included": true,
-    "confidence_score": 0.82
+    "confidence_score": 0.9,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-07-29"
+    }
   },
   {
     "id": "2607.02642",
@@ -199353,7 +199403,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -199426,7 +199476,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199490,7 +199540,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199567,7 +199617,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -199585,11 +199635,18 @@
       "Jingjing Gong",
       "Xipeng Qiu"
     ],
-    "institutions": [],
+    "institutions": [
+      "Fudan University",
+      "Shanghai Innovation Institute",
+      "East China Normal University"
+    ],
     "first_submitted": "2026-07-03",
     "updated": "2026-07-03",
     "abstract": "Current Vision-Language-Action (VLA) models excel at robotic manipulation but often struggle with non-Markovian tasks requiring long-term memory and reasoning due to their reliance on immediate observations. Existing solutions face a''frequency-competence paradox,''where stronger reasoning models are too slow for real-time control, while faster models lack sufficient reasoning capabilities. To resolve this architectural misalignment, we propose HiMe, a Hierarchical Embodied Memory framework that decouples embodied intelligence into a high-frequency Executor for execution, a Sentry for working memory, and a Planner for long-term strategy. We also introduce a dynamic knowledge system based on cross-modal semantic schemas and active management mechanisms, allowing robots to maintain memory plasticity through''Add, Update, and Delete''operations. This hierarchical design effectively balances the conflict between real-time execution and slow thinking planning, significantly improving success rates in long-horizon tasks. Experiments demonstrate that this approach not only outperforms flat memory baselines but also exhibits the novel ability to self-correct its internal knowledge based on human preferences.",
-    "categories": [],
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
     "comment": "",
     "journal_ref": "",
     "doi": null,
@@ -199601,13 +199658,20 @@
     "query_topics": [
       "foundation"
     ],
-    "primary_topic": "foundation",
+    "primary_topic": "dual_system",
     "topics": [
       "foundation",
-      "general_learning"
+      "general_learning",
+      "dual_system"
     ],
     "tags": [
-      "multimodal"
+      "multimodal",
+      "分层记忆",
+      "fast-slow",
+      "长时序",
+      "真实机器人验证",
+      "开放代码",
+      "自纠错"
     ],
     "confidence": "high",
     "topic_scores": {
@@ -199618,26 +199682,31 @@
       "general_learning": 1
     },
     "evidence": {
-      "real_robot": false,
-      "multi_task": false,
+      "real_robot": true,
+      "multi_task": true,
       "cross_embodiment": false,
       "long_horizon": true,
-      "open_code": false,
-      "open_data": false,
-      "open_model": false
+      "open_code": true,
+      "open_data": true,
+      "open_model": true
     },
     "official_url": null,
-    "code_url": null,
+    "code_url": "https://github.com/HappyWaterXP/HiMe",
     "project_url": null,
     "peer_review": null,
-    "contribution_zh": "",
-    "limitation_zh": "",
-    "selection_reason_zh": "",
-    "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
-    "curated": false,
+    "contribution_zh": "将长时 VLA 拆成高频 Executor、工作记忆 Sentry 和慢速 Planner，并用可增删改的跨模态记忆在真实机器人上处理非马尔可夫任务。",
+    "limitation_zh": "任务主要由简单 pick-and-place 原语构成，Planner 仍依赖强 VLM；论文也承认缺少匹配的标准仿真 benchmark 和更长时间部署验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "source": "curated + arXiv API verified",
+    "period": "provisional",
+    "curated": true,
     "included": true,
-    "confidence_score": 0.82
+    "confidence_score": 0.9,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-07-29"
+    }
   },
   {
     "id": "2607.03461",
@@ -199703,7 +199772,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199767,7 +199836,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199834,7 +199903,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199904,7 +199973,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199975,7 +200044,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200042,7 +200111,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200116,7 +200185,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200191,7 +200260,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200260,7 +200329,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200326,7 +200395,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200428,7 +200497,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200492,7 +200561,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200560,7 +200629,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200624,7 +200693,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200687,7 +200756,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200754,7 +200823,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200820,7 +200889,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200888,7 +200957,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200956,7 +201025,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -201031,7 +201100,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201121,7 +201190,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201195,7 +201264,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201273,7 +201342,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201340,7 +201409,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201407,7 +201476,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201475,7 +201544,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201545,7 +201614,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201613,7 +201682,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201685,7 +201754,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201771,7 +201840,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201837,7 +201906,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -201909,7 +201978,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201977,7 +202046,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202049,7 +202118,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -202117,7 +202186,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202184,7 +202253,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202249,7 +202318,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202312,7 +202381,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202387,7 +202456,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202453,7 +202522,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -202520,7 +202589,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202594,7 +202663,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -202675,7 +202744,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202747,7 +202816,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202807,7 +202876,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202871,7 +202940,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202941,7 +203010,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203009,7 +203078,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203071,7 +203140,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203132,7 +203201,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203198,7 +203267,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203264,7 +203333,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -203323,7 +203392,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203390,7 +203459,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203468,7 +203537,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203536,7 +203605,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203604,7 +203673,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203675,7 +203744,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203740,7 +203809,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203811,7 +203880,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203879,7 +203948,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203943,7 +204012,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204022,7 +204091,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -204090,7 +204159,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204153,7 +204222,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204215,7 +204284,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204287,7 +204356,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204353,7 +204422,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204440,7 +204509,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204513,7 +204582,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204582,7 +204651,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204650,7 +204719,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204718,7 +204787,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204781,7 +204850,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -204853,7 +204922,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204926,7 +204995,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -205002,7 +205071,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205086,7 +205155,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205150,7 +205219,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205218,7 +205287,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205284,7 +205353,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -205354,7 +205423,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205423,7 +205492,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205491,7 +205560,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205560,7 +205629,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -205629,7 +205698,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205692,7 +205761,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205758,7 +205827,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205831,7 +205900,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205897,7 +205966,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205969,7 +206038,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206034,7 +206103,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -206100,7 +206169,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206169,7 +206238,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206235,7 +206304,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206321,7 +206390,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206396,7 +206465,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206487,7 +206556,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206575,7 +206644,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -206646,7 +206715,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206710,7 +206779,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206773,7 +206842,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206841,7 +206910,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206907,7 +206976,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206969,7 +207038,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207032,7 +207101,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207103,7 +207172,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207169,7 +207238,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207240,7 +207309,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -207311,7 +207380,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207375,7 +207444,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207447,7 +207516,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207518,7 +207587,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -207623,7 +207692,7 @@
     "limitation_zh": "代码与 checkpoint 截至摘要仍是“将发布”，100K 小时数据的去重、质量和可外部审计性尚未说明。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
@@ -207694,7 +207763,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -207763,7 +207832,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207836,7 +207905,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207898,7 +207967,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207966,7 +208035,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208047,7 +208116,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208117,7 +208186,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208185,7 +208254,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -208246,7 +208315,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -208310,7 +208379,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208393,7 +208462,7 @@
     "limitation_zh": "系统级编排把能力依赖分散到多模型和运行时组件，端到端可比性、故障归因与开放复现仍不清楚。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
@@ -208464,7 +208533,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208526,7 +208595,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208597,7 +208666,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -208687,7 +208756,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -208754,7 +208823,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208825,7 +208894,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208891,7 +208960,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -208958,7 +209027,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209027,7 +209096,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209103,7 +209172,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209186,7 +209255,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209256,7 +209325,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209319,7 +209388,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209383,7 +209452,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -209448,7 +209517,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209511,7 +209580,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209573,7 +209642,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -209644,7 +209713,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209708,7 +209777,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209772,7 +209841,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209837,7 +209906,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209913,7 +209982,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209976,7 +210045,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -210040,7 +210109,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210107,7 +210176,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210169,7 +210238,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210246,7 +210315,7 @@
     "limitation_zh": "截至快照日摘要仅称结果提升，未披露真实硬件范围、绝对成功率和开放资产状态。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
@@ -210315,7 +210384,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210381,7 +210450,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210452,7 +210521,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210513,7 +210582,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -210579,7 +210648,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210640,7 +210709,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210707,7 +210776,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210774,7 +210843,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210836,7 +210905,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210898,7 +210967,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -210969,7 +211038,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211035,7 +211104,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -211100,7 +211169,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211169,7 +211238,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211232,7 +211301,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211298,7 +211367,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211376,7 +211445,7 @@
     "limitation_zh": "截至快照日仅覆盖 TacAura 四类任务，摘要没有跨触觉传感器或更大规模真实机器人结果。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
@@ -211483,7 +211552,7 @@
     "limitation_zh": "这是分析框架而非新模型或实体实验，不能单独作为某条技术路线成熟度上升的证据。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
@@ -211561,7 +211630,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -211630,7 +211699,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211693,7 +211762,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211771,7 +211840,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -211845,7 +211914,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211912,7 +211981,7 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "snapshot"
+    "period": "provisional"
   },
   {
     "id": "2607.26047",
@@ -211971,7 +212040,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "snapshot",
+    "period": "provisional",
     "curated": false,
     "included": true,
     "confidence_score": 0.82

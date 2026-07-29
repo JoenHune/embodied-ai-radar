@@ -31,8 +31,17 @@ for (const directory of ['monthly', 'quarterly', 'directions', 'analysis', 'data
 const write = (name, content) => fs.writeFileSync(path.join(docs, name), `${content.trim()}\n`)
 const frontmatter = `---\noutline: deep\n---`
 const clean = (value = '') => String(value).replaceAll('|', '\\|').replace(/\s+/g, ' ').trim()
+const trimSentence = (value = '') => clean(value).replace(/[。.!！?？]+$/u, '')
 const percent = (numerator, denominator) => denominator ? `${(numerator / denominator * 100).toFixed(1)}%` : '—'
 const signed = (value) => value > 0 ? `+${value}` : String(value)
+const deltaPhrase = (current, previous) => current >= previous
+  ? `增加 ${current - previous} 条`
+  : `减少 ${previous - current} 条`
+const changeRate = (current, previous) => {
+  if (previous === 0) return current === 0 ? '—' : '新增'
+  const value = (current - previous) / previous * 100
+  return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`
+}
 const monthLabel = (month) => `${month.slice(0, 4)} 年 ${Number(month.slice(5))} 月`
 const periodPapers = (period) => included.filter((paper) => paper.period === period)
 const monthPapers = (month) => included.filter((paper) => paper.v1_month === month)
@@ -53,6 +62,14 @@ const peerTopic = (label) => Object.entries(topics).find(([, value]) => value.la
 
 function previousYearMonth(month) {
   return `${Number(month.slice(0, 4)) - 1}-${month.slice(5)}`
+}
+
+function previousMonth(month) {
+  const year = Number(month.slice(0, 4))
+  const monthNumber = Number(month.slice(5))
+  return monthNumber === 1
+    ? `${year - 1}-12`
+    : `${year}-${String(monthNumber - 1).padStart(2, '0')}`
 }
 
 function curatedTop(month) {
@@ -83,19 +100,75 @@ function trendCard(trend) {
 
 **证据。** ${evidence}
 
-**成熟度与瓶颈。** ${trend.maturity} 主要瓶颈是${trend.bottleneck}。
+**成熟度与瓶颈。** ${trimSentence(trend.maturity)}。主要瓶颈是${trimSentence(trend.bottleneck)}。
 
 **战略含义。** ${trend.implication}
 
 </div>`
 }
 
+function julyDeepDive(current, previous, baseline, counts, previousCounts, baselineCounts) {
+  const links = (ids) => ids.map((id) => byId.get(id)).filter(Boolean).map(titleLink).join('；')
+  const foundationShare = percent(counts.foundation, current.length)
+  const foundationPreviousShare = percent(previousCounts.foundation, previous.length)
+  return `
+## 7 月完整研判（截至 29 日）
+
+### 数量层：环比回落，但还不能写成技术降温
+
+**事实。** 本库截至 7 月 29 日纳入 ${current.length} 条候选，较 6 月完整月的 ${previous.length} 条${deltaPhrase(current.length, previous.length)}（${changeRate(current.length, previous.length)}）；相对 2025 年 7 月的 ${baseline.length} 条则${deltaPhrase(current.length, baseline.length)}（${changeRate(current.length, baseline.length)}）。具身基础模型仍占 ${foundationShare}，而 6 月为 ${foundationPreviousShare}。
+
+**解释。** 这组环比把 29 天的不完整窗口与 30 天完整月直接比较，还叠加了 arXiv/Semantic Scholar 的索引滞后和 6 月月末集中提交。因此它适合描述“截至截点已观察到多少”，不适合单凭负增长判定方向降温。真正值得看的，是总量回落时哪些小方向仍出现跨团队、真机或新评价指标。
+
+### 共识主线：规模化 VLA 仍最热，但信息增量正在下降
+
+[Xiaomi-Robotics-1](https://arxiv.org/abs/2607.15330) 把论文自报训练规模推到 100K 小时级，[Data Pyramid](https://arxiv.org/abs/2607.24744) 则试图解释不同数据层级的作用。它们共同说明“更大、更杂的数据”仍是最强共识，但目前独立可核验的有效多样性、失败覆盖和每小时边际收益不足。对基金研判而言，单纯拥有大数字已不能构成充分差异；更重要的是数据能否缩短新任务上线时间，并在真实机器人上持续回收失败。
+
+### 非共识线索：多个不同名字指向同一组瓶颈迁移
+
+| 早期命题 | 7 月蛛丝马迹 | 为什么可能领先于共识 | 当前反证 |
+|---|---|---|---|
+| VLA 从“生成动作”转向“评价并纠正动作” | ${links(['2607.01804', '2607.02840', '2607.03751'])} | monitor、触觉纠错和价值评估采用不同命名，却都把能力增量放在冻结/保留主策略之外的测试时侧车 | 缺少统一的恢复率、误报率、额外时延和安全 benchmark |
+| 长时任务从语言分解转向物理进度与持久状态 | ${links(['2607.01212', '2607.03449', '2607.16636'])} | progress、working/episodic memory、session verifier 都在表示“任务现在究竟做到哪一步” | 任务和硬件仍窄，模块越多越难归因失败 |
+| 触觉从输入模态转向 world model / post-training 信号 | ${links(['2607.22530', '2607.24485', '2607.02840', '2607.25918'])} | 多团队开始用触觉预测未来、生成纠正片段和评估策略，而非只做一次性融合 | 传感器异构、数据少，跨硬件迁移尚未兑现 |
+| 动态操作需要独立于基础 VLA 的短时动力学层 | ${links(['2607.02604'])} | DynaWM 不重训主 VLA，而用多视角历史和动作条件重新生成移动目标轨迹 | 目前主要是自建仿真，单项工作不足以升级为趋势 |
+
+### 证据成熟度：为什么这些信号仍不是 A 级
+
+| 命题 | 当前等级 | 已有证据 | 升级到 A 级需要什么 |
+|---|---|---|---|
+| 在线评价与纠错侧车 | B | 3 个独立作者团队；跨 backbone、真实机器人和测试时 scaling 均已出现 | 至少两项正式同行评审；第三方复现能同时提高恢复率并控制时延 |
+| 进度—记忆—运行时状态 | B | 全尺寸双臂装配、真实长时记忆任务、19+ 本体系统验证等互补证据 | 开放接口被独立团队采用；跨机器人统一记录 completion、replan 和 failure provenance |
+| 视触觉 world model | B | 6–7 月连续出现多个独立团队，且已连接数据生成、评估和纠错 | 跨传感器 benchmark；在同等真实数据量下稳定改善闭环恢复 |
+| Embodied Agent OS | C | 单项目提出 session、verification、memory 和 safety 服务 | 至少两个外部模型/机器人团队采用同一运行时，不依赖原项目自定义 benchmark |
+
+### 对未来 6–12 个月的判断
+
+1. **高置信：verifier/corrector 会成为 VLA 的标准侧车。** 主模型继续负责 proposal，轻量 dynamics/value/safety 模块负责打断、排序和恢复。最先兑现的指标会是 success-per-call、contact failure recovery 和低时延异常检测，而不是再提高一轮平均 benchmark。
+2. **中高置信：大小脑会演化成 Executor–Monitor/Sentry–Planner 的三层系统。** “第三层”未必是更大的模型，更可能是持续维护任务进度、记忆和完成条件的状态层。
+3. **中高置信：触觉 world model 会先在失败恢复和后训练兑现。** 它短期不会成为所有 VLA 的必选输入，但在插入、装配、滑移和材料交互中会成为高价值监督源。
+4. **中等置信：数据竞争将从总小时迁移到有效多样性和失败覆盖。** 能公开数据组成、去重、纠正效率与下游边际收益的团队，会比只披露总小时的团队更快建立可信度。
+5. **中低置信：Embodied Agent OS 可能形成独立平台层。** 只有当第三方模型和不同硬件愿意复用其 session、verification 和 safety 接口时，才会从论文系统升级为生态。
+
+### 研究与团队跟踪清单
+
+- 对 VLA 团队，新增追问：发生偏差后何时检测、何时打断、恢复成功率是多少、每次恢复增加多少时延。
+- 对数据团队，新增追问：总小时中独立场景/技能/失败的有效覆盖，以及新增 1,000 小时带来的真实任务边际提升。
+- 对 world model 团队，坚持同算力、同真实数据量下比较控制收益；只有视频更清晰不算升级。
+- 对双系统/Agent OS 团队，要求记录模块级 failure provenance，并验证 planner、memory、verifier 可独立替换。
+- 8 月更新时优先检查三类路标：第三方复现、跨触觉硬件结果、统一恢复 benchmark；若没有出现，B 级信号不继续上调。
+`
+}
+
 function monthlyPage(month) {
   const current = monthPapers(month)
+  const previousMonthValue = previousMonth(month)
+  const previous = monthPapers(previousMonthValue)
   const baselineMonth = previousYearMonth(month)
-  const baseline = month === '2026-07' ? [] : monthPapers(baselineMonth)
+  const baseline = monthPapers(baselineMonth)
   const curated = curatedTop(month)
   const counts = topicCounts(current)
+  const previousCounts = topicCounts(previous)
   const baselineCounts = topicCounts(baseline)
   const realCount = curated.filter((paper) => evidenceValue(paper, 'real_robot')).length
   const openCount = curated.filter((paper) =>
@@ -103,16 +176,21 @@ function monthlyPage(month) {
   const monthReviews = peerRecords.filter((review) =>
     review.safe_month_anchor?.eligible && review.safe_month_anchor.month === month)
   const monthTrends = trends.months[month] ?? []
-  const conclusion = monthTrends.length
+  const conclusion = month === '2026-07'
+    ? `截至 7 月 29 日，候选数量较 6 月完整月回落但同比仍明显增长；数量共识仍是基础模型，更领先的信号集中在侧车式纠错、进度/记忆状态与视触觉 world model。`
+    : monthTrends.length
     ? `${monthTrends[0].title}；与此同时，${monthTrends.at(-1).title}。`
     : '样本不足，暂不形成趋势判断。'
-  const snapshotNote = month === '2026-07'
-    ? '> **前瞻快照。** 本页只覆盖 2026 年 7 月 1–29 日，不计算环比、同比或与完整月份的热度排名。\n'
-    : `> **统计口径。** 自动宽召回候选用于数量结构；${curated.length} 篇精读样本用于实验与开放性指标。同比月为 ${baselineMonth}。\n`
+  const coverageNote = month === '2026-07'
+    ? `> **临时完整版（截至 7 月 29 日）。** 本页按接近完整月的深度撰写，并展示相对 6 月和 2025 年 7 月的观测环比/同比。由于仍缺 7 月 30–31 日、月末提交及索引回填，所有 7 月数量均为暂定值，负环比不直接判定为降温。\n`
+    : `> **统计口径。** 自动宽召回候选用于数量结构；${curated.length} 篇精读样本用于实验与开放性指标。上月为 ${previousMonthValue}，同比月为 ${baselineMonth}。\n`
   const topicRows = topicOrder.map((key) => {
-    const delta = month === '2026-07' ? '—' : signed(counts[key] - baselineCounts[key])
-    return `| [${topics[key].label}](/directions/${topics[key].slug}) | ${counts[key]} | ${percent(counts[key], current.length)} | ${month === '2026-07' ? '—' : baselineCounts[key]} | ${delta} |`
-  }).join('\n')
+    const monthDelta = counts[key] - previousCounts[key]
+    const yearDelta = counts[key] - baselineCounts[key]
+    return `| [${topics[key].label}](/directions/${topics[key].slug}) | ${counts[key]} | ${percent(counts[key], current.length)} | ${previousCounts[key]} | ${signed(monthDelta)} | ${changeRate(counts[key], previousCounts[key])} | ${baselineCounts[key]} | ${signed(yearDelta)} | ${changeRate(counts[key], baselineCounts[key])} |`
+  }).concat(
+    `| **总计** | **${current.length}** | **100.0%** | **${previous.length}** | **${signed(current.length - previous.length)}** | **${changeRate(current.length, previous.length)}** | **${baseline.length}** | **${signed(current.length - baseline.length)}** | **${changeRate(current.length, baseline.length)}** |`,
+  ).join('\n')
   const topRows = curated.map((paper) =>
     `| ${titleLink(paper)} | ${paper.first_submitted} | ${topics[paper.primary_topic]?.label ?? paper.primary_topic} | ${clean(paper.contribution_zh)} | ${evidenceBadges(paper)} |`
   ).join('\n')
@@ -130,14 +208,14 @@ function monthlyPage(month) {
 
   return `${frontmatter}
 
-# ${monthLabel(month)}研究雷达${month === '2026-07' ? '（前瞻）' : ''}
+# ${monthLabel(month)}研究雷达${month === '2026-07' ? '（临时完整版）' : ''}
 
-${snapshotNote}
+${coverageNote}
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${current.length}</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>${curated.length}</strong><span>逐条核验精读</span></div>
-  <div class="radar-kpi"><strong>${realCount}/${curated.length}</strong><span>摘要确认真机</span></div>
+  <div class="radar-kpi"><strong>${realCount}/${curated.length}</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>${monthReviews.length}</strong><span>官方评审锚点</span></div>
 </div>
 
@@ -147,11 +225,13 @@ ${conclusion}
 
 ## 主题结构
 
-| 主方向 | 本月候选 | 占比 | 同比候选 | 同比增量 |
-|---|---:|---:|---:|---:|
+| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
 ${topicRows}
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
+
+${month === '2026-07' ? julyDeepDive(current, previous, baseline, counts, previousCounts, baselineCounts) : ''}
 
 ## 趋势证据卡
 
@@ -192,26 +272,28 @@ ${peerRows}
 function monthlyIndex() {
   const rows = allMonths.map((month) => {
     const current = monthPapers(month)
-    const baseline = month === '2026-07' ? [] : monthPapers(previousYearMonth(month))
+    const previous = monthPapers(previousMonth(month))
+    const baseline = monthPapers(previousYearMonth(month))
     const counts = topicCounts(current)
     const dominant = topicOrder.toSorted((a, b) => counts[b] - counts[a])[0]
     const curated = curatedTop(month)
     const real = curated.filter((paper) => evidenceValue(paper, 'real_robot')).length
-    return `| [${monthLabel(month)}](/monthly/${month}) | ${current.length} | ${month === '2026-07' ? '快照' : signed(current.length - baseline.length)} | ${topics[dominant].label}（${counts[dominant]}） | ${curated.length} | ${real}/${curated.length} |`
+    const label = month === '2026-07' ? `${monthLabel(month)}（截至 29 日）` : monthLabel(month)
+    return `| [${label}](/monthly/${month}) | ${current.length} | ${signed(current.length - previous.length)} | ${changeRate(current.length, previous.length)} | ${signed(current.length - baseline.length)} | ${changeRate(current.length, baseline.length)} | ${topics[dominant].label}（${counts[dominant]}） | ${curated.length} | ${real}/${curated.length} |`
   }).join('\n')
   return `${frontmatter}
 
 # 月度研究雷达
 
-> 主分析期按 arXiv v1 月份归档；2026 年 7 月只覆盖 1–29 日。候选数量衡量统一查询下的研究密度，精读样本用于技术判断。
+> 主分析期按 arXiv v1 月份归档；2026 年 7 月为截至 29 日的临时完整版。候选数量衡量统一查询下的研究密度，精读样本用于技术判断；7 月环比/同比是暂定观测值。
 
-| 月份 | 候选数 | 同比增量 | 数量主导方向 | 精读 | 真机确认 |
-|---|---:|---:|---|---:|---:|
+| 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
+|---|---:|---:|---:|---:|---:|---|---:|---:|
 ${rows}
 
 ## 怎么读月度页
 
-1. 先看绝对数量和同比，判断是否只是小样本百分比。
+1. 先看绝对数量、环比和同比，判断变化是短期波动还是跨年结构增长。
 2. 再看精读论文的真机、跨任务/本体、长时序和开放资产。
 3. 用官方同行评审锚点区分“arXiv 密集”与“已有独立评审路线”。
 4. 最后看弱信号与反证；前者寻找未来，后者防止把命名潮误判为能力跃迁。
@@ -522,9 +604,9 @@ ${keyTrends.map((trend) => `- **${trend.title}（${trend.grade}）**：${trend.c
 
 ${sections}
 
-## 2026 年 7 月前瞻
+## 2026 年 7 月临时完整版
 
-100K 小时级轨迹、视触觉 world-action model 与 Embodied Agent OS 是三个早期信号；由于只覆盖 1–29 日，全部保持 C 级。
+截至 29 日，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在在线评价/纠错、进度—记忆—运行时状态和视触觉 world model。Agent OS 保持 C 级，需等待第三方采用。
 
 <!-- 更新标记：季度演进 最后更新 2026.07 -->`
 }

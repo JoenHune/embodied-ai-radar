@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "dataset_name": "具身智能研究雷达：2026 年 7 月临时完整版增补精读",
+  "as_of": "2026-07-29",
+  "records": [
+    {
+      "arxiv_id": "2607.01212",
+      "v1_date": "2026-07-01",
+      "updated_date": "2026-07-01",
+      "analysis_window": "临时完整版",
+      "title": "FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model",
+      "authors": [
+        "Chenyang Ma",
+        "Yue Yang",
+        "Radu Corcodel",
+        "Siddarth Jain",
+        "Andrew Wu",
+        "Chiori Hori",
+        "Diego Romeres"
+      ],
+      "institutions": [
+        "Mitsubishi Electric Research Laboratories",
+        "University of Oxford",
+        "University of North Carolina at Chapel Hill"
+      ],
+      "primary_direction": "具身基础模型",
+      "horizontal_tags": [
+        "双臂",
+        "长时序",
+        "真实机器人验证",
+        "仿真数据",
+        "VR 遥操作",
+        "进度预测"
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "signals": {
+        "real_robot": {
+          "status": "yes",
+          "evidence": "论文在真实 Kinova Gen3 平台验证全尺寸双臂家具装配。"
+        },
+        "multi_task": {
+          "status": "yes",
+          "evidence": "实验覆盖三类家具、最多七个语义子任务。"
+        },
+        "cross_embodiment": {
+          "status": "unclear",
+          "evidence": null
+        },
+        "long_horizon": {
+          "status": "yes",
+          "evidence": "最长任务包含七个子任务和 1,550 个控制步。"
+        },
+        "open_code_data_model": {
+          "status": "unclear",
+          "evidence": null
+        }
+      },
+      "project_or_code_urls": [
+        "https://dannymcy.github.io/furniturevla/"
+      ],
+      "one_sentence_contribution_zh": "把 VLA 推进到全尺寸双臂家具装配，以连续进度预测衔接最多 7 个子任务和 1,550 个控制步，并在真实 Kinova Gen3 上验证。",
+      "one_sentence_limitation_zh": "真实实验仍集中于单一双臂平台和三类家具，跨硬件迁移、错误恢复与长期重复部署尚无独立验证。",
+      "arxiv_url": "https://arxiv.org/abs/2607.01212",
+      "verification": {
+        "id_title_match": true,
+        "v1_date_source": "arXiv abstract and submission history",
+        "checked_at": "2026-07-29"
+      }
+    },
+    {
+      "arxiv_id": "2607.01804",
+      "v1_date": "2026-07-02",
+      "updated_date": "2026-07-02",
+      "analysis_window": "临时完整版",
+      "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+      "authors": [
+        "Yi Pan",
+        "Miao Pan",
+        "Qi Lu",
+        "Jiaming Huang",
+        "Man Zhang",
+        "Siteng Huang",
+        "Xin Li",
+        "Jie Zhang",
+        "Yongliang Shen",
+        "Xuhong Zhang",
+        "Wenqi Zhang"
+      ],
+      "institutions": [
+        "Zhejiang University",
+        "Alibaba DAMO Academy"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "horizontal_tags": [
+        "闭环纠错",
+        "自适应 action horizon",
+        "测试时推理",
+        "真实机器人验证",
+        "长时序",
+        "开放代码"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "signals": {
+        "real_robot": {
+          "status": "yes",
+          "evidence": "论文在 AgileX PiPER 物理机器人上报告真实任务结果。"
+        },
+        "multi_task": {
+          "status": "yes",
+          "evidence": "评估覆盖 MetaWorld、LIBERO 和多项真实机器人任务。"
+        },
+        "cross_embodiment": {
+          "status": "unclear",
+          "evidence": null
+        },
+        "long_horizon": {
+          "status": "yes",
+          "evidence": "方法针对长 action chunk 的误差累积，并在 LIBERO Long 等长时任务评估。"
+        },
+        "open_code_data_model": {
+          "status": "yes",
+          "evidence": "论文正文给出公开代码仓库。"
+        }
+      },
+      "project_or_code_urls": [
+        "https://github.com/ZJU-OmniAI/vla-corrector"
+      ],
+      "one_sentence_contribution_zh": "在冻结 VLA 之外加入 latent dynamics 监视、事件触发截断与梯度引导重规划，让固定 action chunk 变成按执行偏差自适应的闭环控制。",
+      "one_sentence_limitation_zh": "40M 纠错器仍需按 benchmark 示范训练；视觉 latent 偏差并不等于接触或语义失败，跨环境误报率和部署成本仍待验证。",
+      "arxiv_url": "https://arxiv.org/abs/2607.01804",
+      "verification": {
+        "id_title_match": true,
+        "v1_date_source": "arXiv abstract and submission history",
+        "checked_at": "2026-07-29"
+      }
+    },
+    {
+      "arxiv_id": "2607.02604",
+      "v1_date": "2026-07-01",
+      "updated_date": "2026-07-01",
+      "analysis_window": "临时完整版",
+      "title": "DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation",
+      "authors": [
+        "Chongkei Chang",
+        "Zhidong Deng"
+      ],
+      "institutions": [
+        "Tsinghua University"
+      ],
+      "primary_direction": "世界模型",
+      "horizontal_tags": [
+        "动态物体操作",
+        "动作条件预测",
+        "flow matching",
+        "多视角",
+        "benchmark",
+        "多 VLA 适配"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "signals": {
+        "real_robot": {
+          "status": "unclear",
+          "evidence": null
+        },
+        "multi_task": {
+          "status": "yes",
+          "evidence": "DynaGrasp-32 覆盖六类动态操作和 32 个场景。"
+        },
+        "cross_embodiment": {
+          "status": "unclear",
+          "evidence": null
+        },
+        "long_horizon": {
+          "status": "unclear",
+          "evidence": null
+        },
+        "open_code_data_model": {
+          "status": "unclear",
+          "evidence": null
+        }
+      },
+      "project_or_code_urls": [],
+      "one_sentence_contribution_zh": "用动作条件、多视角动态表征和 flow-matching DiT 重生成移动物体操作轨迹，并在四类基础 VLA 上测试可插拔增益。",
+      "one_sentence_limitation_zh": "当前证据来自自建仿真 benchmark，尚未证明动态预测在真实机器人、遮挡和时延条件下仍能稳定改善闭环成功率。",
+      "arxiv_url": "https://arxiv.org/abs/2607.02604",
+      "verification": {
+        "id_title_match": true,
+        "v1_date_source": "arXiv abstract and submission history",
+        "checked_at": "2026-07-29"
+      }
+    },
+    {
+      "arxiv_id": "2607.03449",
+      "v1_date": "2026-07-03",
+      "updated_date": "2026-07-03",
+      "analysis_window": "临时完整版",
+      "title": "HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control",
+      "authors": [
+        "Li Ji",
+        "Siyin Wang",
+        "Pengfang Qian",
+        "Xiaopeng Yu",
+        "Yihai Tian",
+        "Zhaoye Fei",
+        "Jingjing Gong",
+        "Xipeng Qiu"
+      ],
+      "institutions": [
+        "Fudan University",
+        "Shanghai Innovation Institute",
+        "East China Normal University"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "horizontal_tags": [
+        "分层记忆",
+        "fast-slow",
+        "长时序",
+        "真实机器人验证",
+        "开放代码",
+        "自纠错"
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "signals": {
+        "real_robot": {
+          "status": "yes",
+          "evidence": "主要实验在 WidowX-250 真实机器人上完成。"
+        },
+        "multi_task": {
+          "status": "yes",
+          "evidence": "真实机器人评估覆盖 Object Search、Counting 和 Rearrangement 三类任务。"
+        },
+        "cross_embodiment": {
+          "status": "unclear",
+          "evidence": null
+        },
+        "long_horizon": {
+          "status": "yes",
+          "evidence": "任务要求跨多步保持、更新和调用长期记忆。"
+        },
+        "open_code_data_model": {
+          "status": "yes",
+          "evidence": "arXiv HTML 论文页给出公开代码仓库。"
+        }
+      },
+      "project_or_code_urls": [
+        "https://github.com/HappyWaterXP/HiMe"
+      ],
+      "one_sentence_contribution_zh": "将长时 VLA 拆成高频 Executor、工作记忆 Sentry 和慢速 Planner，并用可增删改的跨模态记忆在真实机器人上处理非马尔可夫任务。",
+      "one_sentence_limitation_zh": "任务主要由简单 pick-and-place 原语构成，Planner 仍依赖强 VLM；论文也承认缺少匹配的标准仿真 benchmark 和更长时间部署验证。",
+      "arxiv_url": "https://arxiv.org/abs/2607.03449",
+      "verification": {
+        "id_title_match": true,
+        "v1_date_source": "arXiv abstract and submission history",
+        "checked_at": "2026-07-29"
+      }
+    }
+  ]
+}

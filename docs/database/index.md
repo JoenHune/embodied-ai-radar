@@ -104,6 +104,10 @@ JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避�
 | 2606.31909 | [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909) | 2026-06 | 灵巧操作 | high | 精读 | — |
 | 2606.32009 | [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009) | 2026-06 | 通用机器人学习 | high | 精读 | — |
 | 2606.32028 | [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028) | 2026-06 | 世界模型 | high | 精读 | — |
+| 2607.01212 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) | 2026-07 | 具身基础模型 | high | 精读 | — |
+| 2607.01804 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) | 2026-07 | 大小脑与双系统 | high | 精读 | — |
+| 2607.02604 | [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.03449 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) | 2026-07 | 大小脑与双系统 | high | 精读 | — |
 | 2607.15330 | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | 2026-07 | 具身基础模型 | high | 精读 | — |
 | 2607.16636 | [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | 2026-07 | 大小脑与双系统 | high | 精读 | — |
 | 2607.22530 | [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530) | 2026-07 | 世界模型 | high | 精读 | — |

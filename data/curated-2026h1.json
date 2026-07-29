@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "dataset_name": "具身智能研究雷达：2026 H1 + 7 月前瞻 arXiv 高相关论文",
+  "dataset_name": "具身智能研究雷达：2026 H1 + 7 月临时完整版 arXiv 高相关论文",
   "generated_at": "2026-07-29",
   "time_scope": {
     "main_analysis": "2026-01-01/2026-06-30",
@@ -3527,7 +3527,7 @@
       "v1_date": "2026-07-16",
       "updated_date": "2026-07-22",
       "month": "2026-07",
-      "analysis_window": "前瞻快照",
+      "analysis_window": "临时完整版",
       "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
       "authors": [
         "Xiaomi Robotics Team",
@@ -3628,7 +3628,7 @@
       "v1_date": "2026-07-18",
       "updated_date": "2026-07-18",
       "month": "2026-07",
-      "analysis_window": "前瞻快照",
+      "analysis_window": "临时完整版",
       "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
       "authors": [
         "Yang Liu",
@@ -3702,7 +3702,7 @@
       "v1_date": "2026-07-24",
       "updated_date": "2026-07-24",
       "month": "2026-07",
-      "analysis_window": "前瞻快照",
+      "analysis_window": "临时完整版",
       "title": "ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation",
       "authors": [
         "Yunao Huang",
@@ -3775,7 +3775,7 @@
       "v1_date": "2026-07-27",
       "updated_date": "2026-07-27",
       "month": "2026-07",
-      "analysis_window": "前瞻快照",
+      "analysis_window": "临时完整版",
       "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
       "authors": [
         "Ning Cheng",
@@ -3846,7 +3846,7 @@
       "v1_date": "2026-07-27",
       "updated_date": "2026-07-27",
       "month": "2026-07",
-      "analysis_window": "前瞻快照",
+      "analysis_window": "临时完整版",
       "title": "Data Pyramid for Embodied Manipulation",
       "authors": [
         "Yifan Ye",
@@ -3941,7 +3941,7 @@
       "v1_date": "2026-07-28",
       "updated_date": "2026-07-28",
       "month": "2026-07",
-      "analysis_window": "前瞻快照",
+      "analysis_window": "临时完整版",
       "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
       "authors": [
         "Haoyuan Ji",
