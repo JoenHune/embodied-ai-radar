@@ -7,7 +7,7 @@
   "scripts": {
     "collect": "python3 scripts/collect_semantic_scholar.py",
     "collect:arxiv": "python3 scripts/collect_arxiv.py",
-    "prepare": "node scripts/prepare-data.mjs",
+    "prepare:data": "node scripts/prepare-data.mjs",
     "generate": "node scripts/generate-site.mjs",
     "audit": "node scripts/audit-data.mjs",
     "merge": "bash scripts/merge.sh",
