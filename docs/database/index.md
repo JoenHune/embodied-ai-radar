@@ -6,7 +6,7 @@ outline: deep
 
 > 本表由 `data/papers.json` 自动生成。候选层用于趋势数量；“精读”表示 ID、标题、v1 日期和摘要已逐条复核，并补充贡献、局限和实验信号。
 
-[下载 JSON](/papers.json) · [下载 CSV](/papers.csv) · [下载完整 Markdown 报告](https://JoenHune.github.io/embodied-ai-radar/embodied-ai-radar-report.md)
+[下载 JSON](https://raw.githubusercontent.com/JoenHune/embodied-ai-radar/main/data/papers.json) · [下载 CSV](https://raw.githubusercontent.com/JoenHune/embodied-ai-radar/main/data/papers.csv) · [下载完整 Markdown 报告](https://raw.githubusercontent.com/JoenHune/embodied-ai-radar/main/embodied-ai-radar-report.md)
 
 ## 全量候选分表
 

@@ -2,7 +2,7 @@
 
 > 面向基金战略研判的 12 个月具身智能研究趋势、同行评审锚点与结构化证据库。
 
-在线阅读：<https://JoenHune.github.io/embodied-ai-radar/>
+在线阅读：<https://joen.site/embodied-ai-radar/>
 
 ## 覆盖范围
 

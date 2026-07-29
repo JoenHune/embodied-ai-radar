@@ -16,7 +16,7 @@ hero:
       link: /monthly/
     - theme: alt
       text: 下载完整报告
-      link: https://JoenHune.github.io/embodied-ai-radar/embodied-ai-radar-report.md
+      link: https://raw.githubusercontent.com/JoenHune/embodied-ai-radar/main/embodied-ai-radar-report.md
 
 features:
   - icon: 🧠
