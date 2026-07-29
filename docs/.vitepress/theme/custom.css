@@ -1,0 +1,116 @@
+:root {
+  --vp-c-brand-1: #4f46e5;
+  --vp-c-brand-2: #6366f1;
+  --vp-c-brand-3: #3730a3;
+  --radar-cyan: #06b6d4;
+  --radar-violet: #8b5cf6;
+  --radar-rose: #ec4899;
+}
+
+.dark {
+  --vp-c-brand-1: #818cf8;
+  --vp-c-brand-2: #a5b4fc;
+  --vp-c-brand-3: #6366f1;
+}
+
+.VPHomeHero .name {
+  background: linear-gradient(110deg, #4338ca, #7c3aed 54%, #0891b2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPHomeHero .image-bg {
+  background: radial-gradient(circle, rgba(99, 102, 241, .34), rgba(6, 182, 212, .12) 45%, transparent 70%);
+  filter: blur(34px);
+}
+
+.vp-doc table {
+  display: block;
+  overflow-x: auto;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+}
+
+.vp-doc tbody tr:hover {
+  background: color-mix(in srgb, var(--vp-c-brand-1) 7%, transparent);
+}
+
+.vp-doc a[href*='arxiv.org'],
+.vp-doc a[href*='github.com'],
+.vp-doc a[href*='openreview.net'] {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--vp-c-brand-1);
+}
+
+.sort-indicator {
+  color: var(--vp-c-brand-1);
+  font-size: .8em;
+}
+
+.signal {
+  display: inline-flex;
+  align-items: center;
+  gap: .32rem;
+  padding: .18rem .56rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.signal-a { color: #166534; background: #dcfce7; }
+.signal-b { color: #1d4ed8; background: #dbeafe; }
+.signal-c { color: #92400e; background: #fef3c7; }
+.signal-d { color: #991b1b; background: #fee2e2; }
+
+.dark .signal-a { color: #bbf7d0; background: #14532d; }
+.dark .signal-b { color: #bfdbfe; background: #1e3a8a; }
+.dark .signal-c { color: #fde68a; background: #78350f; }
+.dark .signal-d { color: #fecaca; background: #7f1d1d; }
+
+.radar-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 1.25rem 0 2rem;
+}
+
+.radar-kpi {
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--vp-c-bg-soft), var(--vp-c-bg));
+}
+
+.radar-kpi strong {
+  display: block;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: var(--vp-c-brand-1);
+}
+
+.radar-kpi span {
+  font-size: .78rem;
+  color: var(--vp-c-text-2);
+}
+
+.trend-card {
+  margin: 1rem 0;
+  padding: 18px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background: var(--vp-c-bg-soft);
+}
+
+.mermaid .nodeLabel { line-height: 1.6; padding: 2px 0 4px; }
+.mermaid .node foreignObject { overflow: visible !important; }
+
+@media (max-width: 720px) {
+  .radar-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .VPHomeHero .text { font-size: 34px; }
+}

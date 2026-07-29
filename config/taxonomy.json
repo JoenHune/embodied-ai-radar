@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "updated": "2026-07-29",
+  "analysis_period": ["2025-07-01", "2026-06-30"],
+  "baseline_period": ["2024-07-01", "2025-06-30"],
+  "snapshot_period": ["2026-07-01", "2026-07-29"],
+  "peer_review_period": ["2024-07-01", "2026-07-29"],
+  "categories": {
+    "foundation": {
+      "label": "具身基础模型",
+      "include": [
+        "vision-language-action", "vision language action", "vla", "generalist robot",
+        "generalist policy", "robot foundation model", "robotic foundation model",
+        "language-conditioned policy", "language conditioned policy",
+        "multitask robot", "multi-task robot", "robot pretraining", "robot pre-training"
+      ]
+    },
+    "dual_system": {
+      "label": "大小脑与双系统",
+      "include": [
+        "system 1", "system 2", "system-1", "system-2", "fast-slow", "fast slow",
+        "planner-policy", "planner policy", "hierarchical reasoning", "hierarchical policy",
+        "high-level planner", "low-level policy", "vlm planner", "reasoning and acting",
+        "deliberative", "task planner", "long-horizon planning"
+      ]
+    },
+    "dexterous": {
+      "label": "灵巧操作",
+      "include": [
+        "dexterous", "in-hand", "in hand manipulation", "bimanual", "dual-arm",
+        "dual arm", "tactile", "contact-rich", "contact rich", "hand-arm",
+        "hand arm", "multifinger", "multi-finger", "robotic hand", "whole-body manipulation"
+      ]
+    },
+    "world_model": {
+      "label": "世界模型",
+      "include": [
+        "world model", "action-conditioned video", "action conditioned video",
+        "robot video prediction", "latent action", "predictive dynamics",
+        "dynamics model", "model-based planning", "generative simulation",
+        "video prediction for robot", "future prediction"
+      ],
+      "required_context": [
+        "robot", "manipulation", "action", "control", "policy", "planning",
+        "interaction", "embodied", "dynamics"
+      ]
+    },
+    "general_learning": {
+      "label": "通用机器人学习",
+      "include": [
+        "robot learning", "imitation learning", "reinforcement learning",
+        "diffusion policy", "flow policy", "flow matching", "human video",
+        "cross-embodiment", "cross embodiment", "cross-robot", "sim-to-real",
+        "sim2real", "domain adaptation", "offline reinforcement", "behavior cloning",
+        "data scaling", "robot dataset", "robotic manipulation"
+      ]
+    }
+  },
+  "horizontal_tags": {
+    "data_engine": ["data engine", "data scaling", "large-scale dataset", "robot dataset", "demonstration"],
+    "synthetic_data": ["synthetic data", "simulation data", "generated data", "data generation"],
+    "multimodal": ["multimodal", "vision-language", "audio", "tactile", "force"],
+    "3d_4d": ["3d", "4d", "point cloud", "gaussian splatting", "voxel"],
+    "real_robot": ["real robot", "real-world", "real world", "physical robot", "hardware experiment"],
+    "sim_to_real": ["sim-to-real", "sim2real", "simulation-to-reality"],
+    "benchmark": ["benchmark", "evaluation suite", "challenge"],
+    "safety": ["safety", "safe policy", "robustness", "failure detection", "uncertainty"],
+    "open_code": ["github.com", "code is available", "open-source", "open source"],
+    "open_data": ["dataset is available", "data is available", "release the dataset", "open dataset"]
+  },
+  "boundary_terms": [
+    "robot", "robotic", "manipulation", "embodied", "locomotion", "grasp",
+    "policy", "control", "navigation", "humanoid", "mobile manipulator", "hand"
+  ],
+  "exclude_unless_action_context": [
+    "autonomous driving", "self-driving", "slam", "visual odometry",
+    "video generation", "text-to-video", "image generation"
+  ],
+  "hard_exclude_context": [
+    "molecular simulation", "molecular dynamics", "zebrafish", "animal hunting",
+    "autonomous driving", "self-driving vehicle", "gui agent", "web agent"
+  ],
+  "venues": [
+    "ICRA", "RSS", "CoRL", "IROS", "RA-L", "T-RO", "IJRR", "Science Robotics",
+    "ICLR", "ICML", "NeurIPS", "CVPR", "ICCV", "ECCV", "Nature Machine Intelligence"
+  ]
+}

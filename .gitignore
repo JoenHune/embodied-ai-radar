@@ -1,0 +1,12 @@
+node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+.DS_Store
+*.local
+__pycache__/
+.research/
+data/raw/
+data/processed/
+docs/public/papers.json
+docs/public/papers.csv
+docs/public/embodied-ai-radar-report.md

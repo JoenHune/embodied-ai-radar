@@ -1,0 +1,26 @@
+{
+  "name": "embodied-ai-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "具身智能研究雷达：2025.07–2026.06 月度趋势与证据库",
+  "scripts": {
+    "collect": "python3 scripts/collect_semantic_scholar.py",
+    "collect:arxiv": "python3 scripts/collect_arxiv.py",
+    "prepare": "node scripts/prepare-data.mjs",
+    "generate": "node scripts/generate-site.mjs",
+    "audit": "node scripts/audit-data.mjs",
+    "merge": "bash scripts/merge.sh",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "npm run generate && npm run merge && vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "test": "npm run generate && npm run audit && npm run docs:build"
+  },
+  "devDependencies": {
+    "debug": "^4.4.1",
+    "markdown-it-mathjax3": "^4.3.2",
+    "mermaid": "11.16.0",
+    "vitepress": "1.6.4",
+    "vitepress-plugin-mermaid": "2.0.17"
+  }
+}

@@ -1,0 +1,3162 @@
+{
+  "schema_version": "1.0",
+  "dataset_name": "具身智能研究雷达 — 2025 H2 arXiv 高相关代表样本",
+  "generated_at": "2026-07-29T00:00:00+08:00",
+  "scope": {
+    "date_start": "2025-07-01",
+    "date_end": "2025-12-31",
+    "month_basis": "arXiv v1 <published> date",
+    "primary_categories": [
+      "cs.RO"
+    ],
+    "supplementary_categories": [
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "directions": [
+      "具身基础模型",
+      "大小脑与双系统",
+      "灵巧操作",
+      "世界模型",
+      "通用机器人学习"
+    ]
+  },
+  "methodology": {
+    "wide_recall_records": 5421,
+    "selected_records": 42,
+    "selection": "cs.RO monthly broad recall (September and October capped at the first 1000 API results, then supplemented by thematic queries) plus keyword supplements in cs.AI/cs.CV/cs.LG; semantic inclusion/exclusion review; balanced seven records per month",
+    "verification": "Each selected record was retained only when a distinct arXiv API Atom <entry> returned the same ID and title. The API <published> field is used as v1 date.",
+    "caveat": "This is a high-signal representative set, not a census. Signals are abstract-level unless an evidence URL is given."
+  },
+  "records": [
+    {
+      "arxiv_id": "2507.00416",
+      "v1_date": "2025-07-01",
+      "title": "Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding",
+      "authors": [
+        "Tao Lin",
+        "Gen Li",
+        "Yilei Zhong",
+        "Yanwen Zou",
+        "Yuxin Du",
+        "Jiting Liu",
+        "Encheng Gu",
+        "Bo Zhao"
+      ],
+      "institutions": [
+        {
+          "name": "Shanghai Jiao Tong University",
+          "evidence": "arXiv experimental HTML author block",
+          "url": "https://arxiv.org/html/2507.00416"
+        },
+        {
+          "name": "EvoMind Tech",
+          "evidence": "arXiv experimental HTML author block",
+          "url": "https://arxiv.org/html/2507.00416"
+        },
+        {
+          "name": "IAAR-Shanghai",
+          "evidence": "arXiv experimental HTML author block",
+          "url": "https://arxiv.org/html/2507.00416"
+        },
+        {
+          "name": "University of Cambridge",
+          "evidence": "arXiv experimental HTML author block",
+          "url": "https://arxiv.org/html/2507.00416"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a promising framework for enabling generalist robots capable of perceiving, reasoning, and acting in the real world. These models usually build upon pretrained Vision-Language Models (VLMs), which excel at semantic understanding due to large-scale image and text pretraining. However, existing VLMs typically lack precise spatial understanding capabilities, as they are primarily tuned on 2D image-text pairs without 3D supervision. To address this limitation, recent approaches have incorporated explicit 3D inputs such as point clouds or depth maps, but this necessitates additional depth sensors or pre-trained depth estimation models, which may yield defective results. In contrast, our work introduces a plug-and-play module that implicitly incorporates 3D geometry features into VLA models by leveraging an off-the-shelf visual geometry foundation model. This integration provides the model with depth-aware visual representations, improving its ability to understand the geometric structure of the scene and the spatial relationships among objects from RGB images alone. We evaluate our method on a set of spatially challenging tasks in both simulation and the real world. Extensive evaluations show that our method significantly improves the performance of state-of-the-art VLA models across diverse scenarios.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_direction": "具身基础模型",
+      "cross_tags": [
+        "3D/4D 表征",
+        "真实机器人验证",
+        "多模态感知"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We evaluate our method on a set of spatially challenging tasks in both simulation and the real world."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "把现成视觉几何基础模型的深度感知特征以即插即用方式注入 VLA，在无需额外深度传感器的前提下提升仿真与真实场景的空间操作。",
+      "limitation_zh": "依赖外部几何基础模型，摘要未显示跨本体或长时序验证；增益是否来自真正 3D 因果理解仍需独立复现。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.00416",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-11-24T11:10:14Z"
+    },
+    {
+      "arxiv_id": "2507.01424",
+      "v1_date": "2025-07-02",
+      "title": "TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control",
+      "authors": [
+        "Zhenyang Liu",
+        "Yongchong Gu",
+        "Sixiao Zheng",
+        "Yanwei Fu",
+        "Xiangyang Xue",
+        "Yu-Gang Jiang"
+      ],
+      "institutions": [
+        {
+          "name": "Fudan University",
+          "evidence": "official project page author block",
+          "url": "https://zhenyangliu.github.io/TriVLA/"
+        },
+        {
+          "name": "Shanghai Innovation Institute",
+          "evidence": "official project page author block",
+          "url": "https://zhenyangliu.github.io/TriVLA/"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "Recent advances in vision-language models (VLMs) have enabled robots to follow open-ended instructions and demonstrate impressive commonsense reasoning. However, current vision-language-action (VLA) frameworks primarily rely on static representations and limited temporal context, restricting agents to short-horizon, reactive behaviors and hindering robust generalization in dynamic embodied environments. Inspired by cognitive neuroscience theories of episodic memory, we propose, to our knowledge, one of the first formalized episodic world models in VLA, enabling embodied robots to accumulate, recall, and predict sequential experiences. As an instantiation of this concept, our unified TriVLA realizes the episodic world model through a triple-system architecture: integrating multimodal grounding from a pretrained VLM (System 2) and temporally rich dynamics perception from a video diffusion model (System 3). This enables the agent to accumulate and recall sequential experiences, interpret current contexts, and predict future environmental evolution. Guided by episodic representations that span both the past and anticipated future, the downstream policy (System 1) generates coherent, context-aware action sequences through flow-matching and cross-modal attention mechanisms. Experimental results show that TriVLA operates efficiently at approximately 36 Hz and consistently outperforms baseline models on standard benchmarks and challenging real-world manipulation tasks. It demonstrates strong long-horizon planning and open-ended intent understanding, showcasing the advantages of episodic world model-inspired reasoning for robust, generalizable robot intelligence. Project Page: https://zhenyangliu.github.io/TriVLA/.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "长时序",
+        "真实机器人验证",
+        "分层推理与执行",
+        "视频生成"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Experimental results show that TriVLA operates efficiently at approximately 36 Hz and consistently outperforms baseline models on standard benchmarks and challenging real-world manipulation tasks."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "It demonstrates strong long-horizon planning and open-ended intent understanding, showcasing the advantages of episodic world model-inspired reasoning for robust, generalizable robot intelligence."
+        },
+        "open_assets": {
+          "code": true,
+          "data": true,
+          "model": null,
+          "status": "project_page_links_seen_2026-07-29",
+          "project_page": "https://zhenyangliu.github.io/TriVLA/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "用 VLM、视频扩散式情景世界模型和 flow-matching 低层策略组成三系统，在约 36 Hz 下兼顾记忆、未来预测与真实机器人长时序控制。",
+      "limitation_zh": "三系统带来训练与部署复杂度，当前证据主要来自作者自建统一系统；世界模型误差如何累积尚缺充分消融。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.01424",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-10-13T04:12:02Z"
+    },
+    {
+      "arxiv_id": "2507.05198",
+      "v1_date": "2025-07-07",
+      "title": "EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling",
+      "authors": [
+        "Boyuan Wang",
+        "Xinpan Meng",
+        "Xiaofeng Wang",
+        "Zheng Zhu",
+        "Angen Ye",
+        "Yang Wang",
+        "Zhiqin Yang",
+        "Chaojun Ni",
+        "Guan Huang",
+        "Xingang Wang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "The rapid advancement of Embodied AI has led to an increasing demand for large-scale, high-quality real-world data. However, collecting such embodied data remains costly and inefficient. As a result, simulation environments have become a crucial surrogate for training robot policies. Yet, the significant Real2Sim2Real gap remains a critical bottleneck, particularly in terms of physical dynamics and visual appearance. To address this challenge, we propose EmbodieDreamer, a novel framework that reduces the Real2Sim2Real gap from both the physics and appearance perspectives. Specifically, we propose PhysAligner, a differentiable physics module designed to reduce the Real2Sim physical gap. It jointly optimizes robot-specific parameters such as control gains and friction coefficients to better align simulated dynamics with real-world observations. In addition, we introduce VisAligner, which incorporates a conditional video diffusion model to bridge the Sim2Real appearance gap by translating low-fidelity simulated renderings into photorealistic videos conditioned on simulation states, enabling high-fidelity visual transfer. Extensive experiments validate the effectiveness of EmbodieDreamer. The proposed PhysAligner reduces physical parameter estimation error by 3.74% compared to simulated annealing methods while improving optimization speed by 89.91\\%. Moreover, training robot policies in the generated photorealistic environment leads to a 29.17% improvement in the average task success rate across real-world tasks after reinforcement learning. Code, model and data will be publicly available.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "sim-to-real",
+        "生成式仿真",
+        "真实机器人验证",
+        "合成数据"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Moreover, training robot policies in the generated photorealistic environment leads to a 29.17% improvement in the average task success rate across real-world tasks after reinforcement learning."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": true,
+          "data": true,
+          "model": true,
+          "status": "announced_in_abstract; availability_not_rechecked",
+          "project_page": "https://embodiedreamer.github.io/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "联合可微物理参数对齐与条件视频扩散外观对齐，缩小 Real2Sim2Real 差距，并报告真实任务平均成功率提升 29.17%。",
+      "limitation_zh": "物理参数与视频外观对齐都依赖可观测配对数据，面向新机器人/新接触动力学的泛化未被证明；开放资产当时仅为预告。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.05198",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Project Page: https://embodiedreamer.github.io/",
+      "updated_at": "2025-07-07T16:58:17Z"
+    },
+    {
+      "arxiv_id": "2507.06224",
+      "v1_date": "2025-07-08",
+      "title": "EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow",
+      "authors": [
+        "Yixiang Chen",
+        "Peiyan Li",
+        "Yan Huang",
+        "Jiabing Yang",
+        "Kehan Chen",
+        "Liang Wang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Current language-guided robotic manipulation systems often require low-level action-labeled datasets for imitation learning. While object-centric flow prediction methods mitigate this issue, they remain limited to scenarios involving rigid objects with clear displacement and minimal occlusion. In this work, we present Embodiment-Centric Flow (EC-Flow), a framework that directly learns manipulation from action-unlabeled videos by predicting embodiment-centric flow. Our key insight is that incorporating the embodiment's inherent kinematics significantly enhances generalization to versatile manipulation scenarios, including deformable object handling, occlusions, and non-object-displacement tasks. To connect the EC-Flow with language instructions and object interactions, we further introduce a goal-alignment module by jointly optimizing movement consistency and goal-image prediction. Moreover, translating EC-Flow to executable robot actions only requires a standard robot URDF (Unified Robot Description Format) file to specify kinematic constraints across joints, which makes it easy to use in practice. We validate EC-Flow on both simulation (Meta-World) and real-world tasks, demonstrating its state-of-the-art performance in occluded object handling (62% improvement), deformable object manipulation (45% improvement), and non-object-displacement tasks (80% improvement) than prior state-of-the-art object-centric flow methods. For more information, see our project website at https://ec-flow1.github.io .",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "人类视频学习",
+        "真实机器人验证",
+        "多任务"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We validate EC-Flow on both simulation (Meta-World) and real-world tasks, demonstrating its state-of-the-art performance in occluded object handling (62% improvement), deformable object manipulation (45% improvement), and non-object-displacement tasks (80% improvement) than prior state-of-the-art object-centric flow methods."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://ec-flow1.github.io",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "从无动作标签视频预测 embodiment-centric flow，再借 URDF 约束转成可执行动作，覆盖遮挡、柔性物体及非位移操作。",
+      "limitation_zh": "仍需准确 URDF 和动作转换，视频流对力、接触状态及严重遮挡的表达有限；跨本体规模未达基础模型量级。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.06224",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Accepted at ICCV 2025",
+      "updated_at": "2025-07-08T17:57:03Z"
+    },
+    {
+      "arxiv_id": "2507.09117",
+      "v1_date": "2025-07-12",
+      "title": "Towards Human-level Dexterity via Robot Learning",
+      "authors": [
+        "Gagan Khandate"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Dexterous intelligence -- the ability to perform complex interactions with multi-fingered hands -- is a pinnacle of human physical intelligence and emergent higher-order cognitive skills. However, contrary to Moravec's paradox, dexterous intelligence in humans appears simple only superficially. Many million years were spent co-evolving the human brain and hands including rich tactile sensing. Achieving human-level dexterity with robotic hands has long been a fundamental goal in robotics and represents a critical milestone toward general embodied intelligence. In this pursuit, computational sensorimotor learning has made significant progress, enabling feats such as arbitrary in-hand object reorientation. However, we observe that achieving higher levels of dexterity requires overcoming very fundamental limitations of computational sensorimotor learning. I develop robot learning methods for highly dexterous multi-fingered manipulation by directly addressing these limitations at their root cause. Chiefly, through key studies, this disseration progressively builds an effective framework for reinforcement learning of dexterous multi-fingered manipulation skills. These methods adopt structured exploration, effectively overcoming the limitations of random exploration in reinforcement learning. The insights gained culminate in a highly effective reinforcement learning that incorporates sampling-based planning for direct exploration. Additionally, this thesis explores a new paradigm of using visuo-tactile human demonstrations for dexterity, introducing corresponding imitation learning techniques.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "触觉",
+        "强化学习",
+        "模仿学习",
+        "灵巧手"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "以结构化探索、采样式规划和视触觉人类示范为主线，总结可扩展多指灵巧操作强化学习的一套方法体系。",
+      "limitation_zh": "这是博士论文式工作汇总而非单一可复算 benchmark，硬件、任务和训练配方差异使横向量化比较有限。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.09117",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "PhD thesis",
+      "updated_at": "2025-07-12T02:22:55Z"
+    },
+    {
+      "arxiv_id": "2507.15493",
+      "v1_date": "2025-07-21",
+      "title": "GR-3 Technical Report",
+      "authors": [
+        "Chilam Cheang",
+        "Sijin Chen",
+        "Zhongren Cui",
+        "Yingdong Hu",
+        "Liqun Huang",
+        "Tao Kong",
+        "Hang Li",
+        "Yifeng Li",
+        "Yuxiao Liu",
+        "Xiao Ma",
+        "Hao Niu",
+        "Wenxuan Ou",
+        "Wanli Peng",
+        "Zeyu Ren",
+        "Haixin Shi",
+        "Jiawen Tian",
+        "Hongtao Wu",
+        "Xin Xiao",
+        "Yuyang Xiao",
+        "Jiafeng Xu",
+        "Yichu Yang"
+      ],
+      "institutions": [
+        {
+          "name": "ByteDance Seed",
+          "evidence": "official project page linked in arXiv comment",
+          "url": "https://seed.bytedance.com/GR3/"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "We report our recent progress towards building generalist robot policies, the development of GR-3. GR-3 is a large-scale vision-language-action (VLA) model. It showcases exceptional capabilities in generalizing to novel objects, environments, and instructions involving abstract concepts. Furthermore, it can be efficiently fine-tuned with minimal human trajectory data, enabling rapid and cost-effective adaptation to new settings. GR-3 also excels in handling long-horizon and dexterous tasks, including those requiring bi-manual manipulation and mobile movement, showcasing robust and reliable performance. These capabilities are achieved through a multi-faceted training recipe that includes co-training with web-scale vision-language data, efficient fine-tuning from human trajectory data collected via VR devices, and effective imitation learning with robot trajectory data. In addition, we introduce ByteMini, a versatile bi-manual mobile robot designed with exceptional flexibility and reliability, capable of accomplishing a wide range of tasks when integrated with GR-3. Through extensive real-world experiments, we show GR-3 surpasses the state-of-the-art baseline method, $π_0$, on a wide variety of challenging tasks. We hope GR-3 can serve as a step towards building generalist robots capable of assisting humans in daily life.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_direction": "具身基础模型",
+      "cross_tags": [
+        "多任务",
+        "双臂",
+        "移动操作",
+        "长时序",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Through extensive real-world experiments, we show GR-3 surpasses the state-of-the-art baseline method, $π_0$, on a wide variety of challenging tasks."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "In addition, we introduce ByteMini, a versatile bi-manual mobile robot designed with exceptional flexibility and reliability, capable of accomplishing a wide range of tasks when integrated with GR-3."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "GR-3 also excels in handling long-horizon and dexterous tasks, including those requiring bi-manual manipulation and mobile movement, showcasing robust and reliable performance."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://seed.bytedance.com/GR3/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "GR-3 以网络视觉语言数据、VR 人类轨迹和机器人轨迹协同训练，展示新物体/环境/抽象指令、双臂移动与长时序真实任务泛化。",
+      "limitation_zh": "技术报告由模型开发方自评，核心数据、权重与训练代码未承诺开放，真实任务的独立复现和安全边界未知。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.15493",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Tech report. Authors are listed in alphabetical order. Project page: https://seed.bytedance.com/GR3/",
+      "updated_at": "2025-07-22T15:04:37Z"
+    },
+    {
+      "arxiv_id": "2507.23523",
+      "v1_date": "2025-07-31",
+      "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+      "authors": [
+        "Hongzhe Bi",
+        "Lingxuan Wu",
+        "Tianwei Lin",
+        "Hengkai Tan",
+        "Zhizhong Su",
+        "Hang Su",
+        "Jun Zhu"
+      ],
+      "institutions": [
+        {
+          "name": "Tsinghua University",
+          "evidence": "AAAI-26 official proceedings PDF author affiliation",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/download/38875/42837"
+        },
+        {
+          "name": "Horizon Robotics",
+          "evidence": "AAAI-26 official proceedings PDF author affiliation",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/download/38875/42837"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "Imitation learning for robotic manipulation faces a fundamental challenge: the scarcity of large-scale, high-quality robot demonstration data. Recent robotic foundation models often pre-train on cross-embodiment robot datasets to increase data scale, while they face significant limitations as the diverse morphologies and action spaces across different robot embodiments make unified training challenging. In this paper, we present H-RDT (Human to Robotics Diffusion Transformer), a novel approach that leverages human manipulation data to enhance robot manipulation capabilities. Our key insight is that large-scale egocentric human manipulation videos with paired 3D hand pose annotations provide rich behavioral priors that capture natural manipulation strategies and can benefit robotic policy learning. We introduce a two-stage training paradigm: (1) pre-training on large-scale egocentric human manipulation data, and (2) cross-embodiment fine-tuning on robot-specific data with modular action encoders and decoders. Built on a diffusion transformer architecture with 2B parameters, H-RDT uses flow matching to model complex action distributions. Extensive evaluations encompassing both simulation and real-world experiments, single-task and multitask scenarios, as well as few-shot learning and robustness assessments, demonstrate that H-RDT outperforms training from scratch and existing state-of-the-art methods, including Pi0 and RDT, achieving significant improvements of 13.9% and 40.5% over training from scratch in simulation and real-world experiments, respectively. The results validate our core hypothesis that human manipulation data can serve as a powerful foundation for learning bimanual robotic manipulation policies.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "人类视频学习",
+        "双臂",
+        "跨本体迁移",
+        "多任务",
+        "真实机器人验证",
+        "flow policy"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Extensive evaluations encompassing both simulation and real-world experiments, single-task and multitask scenarios, as well as few-shot learning and robustness assessments, demonstrate that H-RDT outperforms training from scratch and existing state-of-the-art methods, including Pi0 and RDT, achieving significant improvements of 13.9% and 40.5% over training from scratch in simulation and real-world experiments, respe"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Recent robotic foundation models often pre-train on cross-embodiment robot datasets to increase data scale, while they face significant limitations as the diverse morphologies and action spaces across different robot embodiments make unified training challenging."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "以 2B diffusion transformer 先学大规模第一视角人类手部先验，再用模块化动作编解码器适配不同机器人，显著提升双臂真实操作。",
+      "limitation_zh": "预训练依赖 3D 手姿态标注，迁移仍需机器人专用微调；摘要未给出代码/权重开放信号。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2507.23523",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-08-01T06:30:43Z"
+    },
+    {
+      "arxiv_id": "2508.00795",
+      "v1_date": "2025-08-01",
+      "title": "Video Generators are Robot Policies",
+      "authors": [
+        "Junbang Liang",
+        "Pavel Tokmakov",
+        "Ruoshi Liu",
+        "Sruthi Sudhakar",
+        "Paarth Shah",
+        "Rares Ambrus",
+        "Carl Vondrick"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Despite tremendous progress in dexterous manipulation, current visuomotor policies remain fundamentally limited by two challenges: they struggle to generalize under perceptual or behavioral distribution shifts, and their performance is constrained by the size of human demonstration data. In this paper, we use video generation as a proxy for robot policy learning to address both limitations simultaneously. We propose Video Policy, a modular framework that combines video and action generation that can be trained end-to-end. Our results demonstrate that learning to generate videos of robot behavior allows for the extraction of policies with minimal demonstration data, significantly improving robustness and sample efficiency. Our method shows strong generalization to unseen objects, backgrounds, and tasks, both in simulation and the real world. We further highlight that task success is closely tied to the generated video, with action-free video data providing critical benefits for generalizing to novel tasks. By leveraging large-scale video generative models, we achieve superior performance compared to traditional behavior cloning, paving the way for more scalable and data-efficient robot policy learning.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "机器人视频生成",
+        "真实机器人验证",
+        "数据规模化",
+        "模仿学习"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Our method shows strong generalization to unseen objects, backgrounds, and tasks, both in simulation and the real world."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "把机器人视频生成与动作生成端到端联合，显示无动作视频可在少量机器人示范下提升新物体、背景和任务的真实泛化。",
+      "limitation_zh": "策略质量受视频生成真实性和动作提取误差共同制约，实时计算成本、闭环失败恢复和开放资产均未说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.00795",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-08-01T17:23:49Z"
+    },
+    {
+      "arxiv_id": "2508.02062",
+      "v1_date": "2025-08-04",
+      "title": "RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models",
+      "authors": [
+        "Kaustubh Sridhar",
+        "Souradeep Dutta",
+        "Dinesh Jayaraman",
+        "Insup Lee"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Multi-task ``vision-language-action'' (VLA) models have recently demonstrated increasing promise as generalist foundation models for robotics, achieving non-trivial performance out of the box on new tasks in new environments. However, for such models to be truly useful, an end user must have easy means to teach them to improve. For language and vision models, the emergent ability to perform in-context learning (ICL) has proven to be a versatile and highly useful interface to easily teach new tasks with no parameter finetuning. Unfortunately, VLAs pre-trained with imitation learning objectives do not naturally acquire ICL abilities. In this paper, we demonstrate that, with the right finetuning recipe and a small robot demonstration dataset, it is possible to inject in-context adaptability post hoc into such a VLA. After retraining for in-context learning (RICL), our system permits an end user to provide a small number (10-20) of demonstrations for a new task. RICL then fetches the most relevant portions of those demonstrations into the VLA context to exploit ICL, performing the new task and boosting task performance. We apply RICL to inject ICL into the $π_{0}$-FAST VLA, and show that it permits large in-context improvements for a variety of new manipulation tasks with only 20 demonstrations per task, without any parameter updates. When parameter updates on the target task demonstrations is possible, RICL finetuning further boosts performance. We release code and model weights for RICL-$π_{0}$-FAST alongside the paper to enable, for the first time, a simple in-context learning interface for new manipulation tasks. Website: https://ricl-vla.github.io.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_direction": "具身基础模型",
+      "cross_tags": [
+        "in-context learning",
+        "多任务",
+        "开源代码",
+        "开源模型"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "Multi-task ``vision-language-action'' (VLA) models have recently demonstrated increasing promise as generalist foundation models for robotics, achieving non-trivial performance out of the box on new tasks in new environments."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": true,
+          "data": null,
+          "model": true,
+          "status": "release_claim_in_abstract",
+          "project_page": "https://ricl-vla.github.io",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "通过检索 10–20 条新任务示范，把 in-context adaptation 后置注入预训练 π0-FAST，无需参数更新即可快速教新任务。",
+      "limitation_zh": "仍要求 10–20 条目标任务示范且依赖检索命中，证据集中于 π0-FAST；对跨本体及长时序技能的稳定性待验证。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.02062",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Conference on Robot Learning 2025 (CoRL 2025), 17 pages",
+      "updated_at": "2025-08-04T05:01:11Z"
+    },
+    {
+      "arxiv_id": "2508.03645",
+      "v1_date": "2025-08-05",
+      "title": "DiWA: Diffusion Policy Adaptation with World Models",
+      "authors": [
+        "Akshay L Chandra",
+        "Iman Nematollahi",
+        "Chenguang Huang",
+        "Tim Welschehold",
+        "Wolfram Burgard",
+        "Abhinav Valada"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Fine-tuning diffusion policies with reinforcement learning (RL) presents significant challenges. The long denoising sequence for each action prediction impedes effective reward propagation. Moreover, standard RL methods require millions of real-world interactions, posing a major bottleneck for practical fine-tuning. Although prior work frames the denoising process in diffusion policies as a Markov Decision Process to enable RL-based updates, its strong dependence on environment interaction remains highly inefficient. To bridge this gap, we introduce DiWA, a novel framework that leverages a world model for fine-tuning diffusion-based robotic skills entirely offline with reinforcement learning. Unlike model-free approaches that require millions of environment interactions to fine-tune a repertoire of robot skills, DiWA achieves effective adaptation using a world model trained once on a few hundred thousand offline play interactions. This results in dramatically improved sample efficiency, making the approach significantly more practical and safer for real-world robot learning. On the challenging CALVIN benchmark, DiWA improves performance across eight tasks using only offline adaptation, while requiring orders of magnitude fewer physical interactions than model-free baselines. To our knowledge, this is the first demonstration of fine-tuning diffusion policies for real-world robotic skills using an offline world model. We make the code publicly available at https://diwa.cs.uni-freiburg.de.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "世界模型",
+        "离线强化学习",
+        "diffusion policy",
+        "真实机器人验证",
+        "开源代码"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "To our knowledge, this is the first demonstration of fine-tuning diffusion policies for real-world robotic skills using an offline world model."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "On the challenging CALVIN benchmark, DiWA improves performance across eight tasks using only offline adaptation, while requiring orders of magnitude fewer physical interactions than model-free baselines."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": true,
+          "data": null,
+          "model": null,
+          "status": "public_code_claim_in_abstract",
+          "project_page": "https://diwa.cs.uni-freiburg.de",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "用一次训练的离线世界模型承载 diffusion policy 的强化学习适配，避开数百万次真实交互，并在 CALVIN 与真实技能上验证。",
+      "limitation_zh": "离线强化学习会继承世界模型偏差与数据覆盖盲区，摘要中的任务范围有限，难以证明对开放世界分布漂移安全。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.03645",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Accepted at the 2025 Conference on Robot Learning (CoRL)",
+      "updated_at": "2025-08-05T16:55:50Z"
+    },
+    {
+      "arxiv_id": "2508.08706",
+      "v1_date": "2025-08-12",
+      "title": "OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing",
+      "authors": [
+        "Zhengxue Cheng",
+        "Yiqian Zhang",
+        "Anni Tang",
+        "Keyu Wang",
+        "Wenkang Zhang",
+        "Haoyu Li",
+        "Hengdi Zhang",
+        "Li Song"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Recent vision-language-action (VLA) models build upon vision-language foundations, and have achieved promising results and exhibit the possibility of task generalization in robot manipulation. However, due to the heterogeneity of tactile sensors and the difficulty of acquiring tactile data, current VLA models significantly overlook the importance of tactile perception and fail in contact-rich tasks. To address this issue, this paper proposes OmniVTLA, a novel architecture involving tactile sensing. Specifically, our contributions are threefold. First, our OmniVTLA features a dual-path tactile encoder framework. This framework enhances tactile perception across diverse vision-based and force-based tactile sensors by using a pretrained vision transformer (ViT) and a semantically-aligned tactile ViT (SA-ViT). Second, we introduce ObjTac, a comprehensive force-based tactile dataset capturing textual, visual, and tactile information for 56 objects across 10 categories. With 135K tri-modal samples, ObjTac supplements existing visuo-tactile datasets. Third, leveraging this dataset, we train a semantically-aligned tactile encoder to learn a unified tactile representation, serving as a better initialization for OmniVTLA. Real-world experiments demonstrate substantial improvements over state-of-the-art VLA baselines, achieving 96.9% success rates with grippers, (21.9% higher over baseline) and 100% success rates with dexterous hands (6.2% higher over baseline) in pick-and-place tasks. Besides, OmniVTLA significantly reduces task completion time and generates smoother trajectories through tactile sensing compared to existing VLA. Our ObjTac dataset can be found at https://readerek.github.io/Objtac.github.io",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "触觉",
+        "多模态感知",
+        "真实机器人验证",
+        "开放数据"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Real-world experiments demonstrate substantial improvements over state-of-the-art VLA baselines, achieving 96.9% success rates with grippers, (21.9% higher over baseline) and 100% success rates with dexterous hands (6.2% higher over baseline) in pick-and-place tasks."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": true,
+          "model": null,
+          "status": "dataset_link_in_arxiv_comment",
+          "project_page": "https://readerek.github.io/Objtac.github.io",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "以双路触觉编码器和 135K 样本 ObjTac 对齐视觉、语言与多类触觉传感器，在夹爪和灵巧手真实任务上显著增益。",
+      "limitation_zh": "ObjTac 仅覆盖 56 物体/10 类，跨传感器对齐仍可能受硬件标定和接触分布影响；独立团队复现尚早。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.08706",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Accepted by IEEE Robotics and Automation Letters (RA-L). ObjTac dataset: https://readerek.github.io/Objtac.github.io",
+      "updated_at": "2026-06-15T06:01:10Z"
+    },
+    {
+      "arxiv_id": "2508.09976",
+      "v1_date": "2025-08-13",
+      "title": "Masquerade: Learning from In-the-wild Human Videos using Data-Editing",
+      "authors": [
+        "Marion Lepert",
+        "Jiaying Fang",
+        "Jeannette Bohg"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Robot manipulation research still suffers from significant data scarcity: even the largest robot datasets are orders of magnitude smaller and less diverse than those that fueled recent breakthroughs in language and vision. We introduce Masquerade, a method that edits in-the-wild egocentric human videos to bridge the visual embodiment gap between humans and robots and then learns a robot policy with these edited videos. Our pipeline turns each human video into robotized demonstrations by (i) estimating 3-D hand poses, (ii) inpainting the human arms, and (iii) overlaying a rendered bimanual robot that tracks the recovered end-effector trajectories. Pre-training a visual encoder to predict future 2-D robot keypoints on 675K frames of these edited clips, and continuing that auxiliary loss while fine-tuning a diffusion policy head on only 50 robot demonstrations per task, yields policies that generalize significantly better than prior work. On three long-horizon, bimanual kitchen tasks evaluated in three unseen scenes each, Masquerade outperforms baselines by 5-6x. Ablations show that both the robot overlay and co-training are indispensable, and performance scales logarithmically with the amount of edited human video. These results demonstrate that explicitly closing the visual embodiment gap unlocks a vast, readily available source of data from human videos that can be used to improve robot policies.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "人类视频学习",
+        "合成数据",
+        "双臂",
+        "长时序",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "On three long-horizon, bimanual kitchen tasks evaluated in three unseen scenes each, Masquerade outperforms baselines by 5-6x."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://masquerade-robot.github.io/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "把野外第一视角人类视频经 3D 手姿态、去人体和机器人叠加编辑为机器人化示范，675K 帧预训练后仅需每任务 50 条机器人示范。",
+      "limitation_zh": "复杂视频编辑与手姿态恢复会引入系统误差，实验集中在三个双臂厨房长任务，跨机器人形态的可迁移性未展示。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.09976",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Project website at https://masquerade-robot.github.io/",
+      "updated_at": "2025-08-13T17:43:34Z"
+    },
+    {
+      "arxiv_id": "2508.17600",
+      "v1_date": "2025-08-25",
+      "title": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
+      "authors": [
+        "Guanxing Lu",
+        "Baoxiong Jia",
+        "Puhao Li",
+        "Yixin Chen",
+        "Ziwei Wang",
+        "Yansong Tang",
+        "Siyuan Huang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Training robot policies within a learned world model is trending due to the inefficiency of real-world interactions. The established image-based world models and policies have shown prior success, but lack robust geometric information that requires consistent spatial and physical understanding of the three-dimensional world, even pre-trained on internet-scale video sources. To this end, we propose a novel branch of world model named Gaussian World Model (GWM) for robotic manipulation, which reconstructs the future state by inferring the propagation of Gaussian primitives under the effect of robot actions. At its core is a latent Diffusion Transformer (DiT) combined with a 3D variational autoencoder, enabling fine-grained scene-level future state reconstruction with Gaussian Splatting. GWM can not only enhance the visual representation for imitation learning agent by self-supervised future prediction training, but can serve as a neural simulator that supports model-based reinforcement learning. Both simulated and real-world experiments depict that GWM can precisely predict future scenes conditioned on diverse robot actions, and can be further utilized to train policies that outperform the state-of-the-art by impressive margins, showcasing the initial data scaling potential of 3D world model.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "3D/4D 表征",
+        "Gaussian Splatting",
+        "模型式强化学习",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Both simulated and real-world experiments depict that GWM can precisely predict future scenes conditioned on diverse robot actions, and can be further utilized to train policies that outperform the state-of-the-art by impressive margins, showcasing the initial data scaling potential of 3D world model."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://gaussian-world-model.github.io/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "以 3D VAE、latent DiT 与 Gaussian Splatting 预测动作后的三维高斯场，既作表征预训练也作模型式 RL 的神经模拟器。",
+      "limitation_zh": "Gaussian 场对透明、反光、柔性和高速接触的建模假设较强；“可规模化”主要是初步证据，跨本体/长时序范围有限。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.17600",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Published at ICCV 2025. Project page: https://gaussian-world-model.github.io/",
+      "updated_at": "2025-09-17T02:27:49Z"
+    },
+    {
+      "arxiv_id": "2508.21112",
+      "v1_date": "2025-08-28",
+      "title": "EO-1: An Open Unified Embodied Foundation Model for General Robot Control",
+      "authors": [
+        "Delin Qu",
+        "Haoming Song",
+        "Qizhi Chen",
+        "Zhaoqing Chen",
+        "Xianqiang Gao",
+        "Dong Wang",
+        "Xinyi Ye",
+        "Qi Lv",
+        "Modi Shi",
+        "Guanghui Ren",
+        "Cheng Ruan",
+        "Maoqing Yao",
+        "Haoran Yang",
+        "Jiacheng Bao",
+        "Bin Zhao",
+        "Xuelong Li"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "The human ability to seamlessly perform multimodal reasoning and physical interaction in the open world is a core goal for general purpose embodied intelligent systems. Recent vision-language-action (VLA) models, which are co-trained on large-scale robot and visual-text data, have demonstrated notable progress in general robot control. However, they still fail to achieve human-level flexibility in interleaved reasoning and interaction. In this work, we introduce EO-Robotics, consists of EO-1 model and EO-Data1.5M dataset. EO-1 is a unified embodied foundation model that achieves superior performance in multimodal embodied reasoning and robot control through interleaved vision-text-action pre-training. The development of EO-1 is based on two key pillars: (i) a unified architecture that processes multimodal inputs indiscriminately (image, text, video, and action), and (ii) a massive, high-quality multimodal embodied reasoning dataset, EO-Data1.5M, which contains over 1.5 million samples with emphasis on interleaved vision-text-action comprehension. EO-1 is trained through synergies between auto-regressive decoding and flow matching denoising on EO-Data1.5M, enabling seamless robot action generation and multimodal embodied reasoning. Extensive experiments demonstrate the effectiveness of interleaved vision-text-action learning for open-world understanding and generalization, validated through a variety of long-horizon, dexterous manipulation tasks across multiple embodiments. This paper details the architecture of EO-1, the data construction strategy of EO-Data1.5M, and the training methodology, offering valuable insights for developing advanced embodied foundation models. Project Page: https://eo-robotics.ai/eo-1.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_direction": "具身基础模型",
+      "cross_tags": [
+        "多模态推理",
+        "多本体",
+        "长时序",
+        "灵巧操作",
+        "开放模型与数据"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "官方项目页展示 EO-1 在真实环境完成视觉重排、井字棋等需要推理与双臂控制的任务。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Extensive experiments demonstrate the effectiveness of interleaved vision-text-action learning for open-world understanding and generalization, validated through a variety of long-horizon, dexterous manipulation tasks across multiple embodiments."
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "Extensive experiments demonstrate the effectiveness of interleaved vision-text-action learning for open-world understanding and generalization, validated through a variety of long-horizon, dexterous manipulation tasks across multiple embodiments."
+        },
+        "open_assets": {
+          "code": true,
+          "data": true,
+          "model": true,
+          "status": "official_project_page_links_seen_2026-07-29",
+          "project_page": "https://eo-robotics.ai/eo-1",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "EO-1 在统一 decoder 中结合自回归与 flow matching，以 EO-Data1.5M 做交错 vision-text-action 预训练，覆盖多本体长时序灵巧控制。",
+      "limitation_zh": "数据与模型均由同一团队构建和评测，1.5M 样本的质量、污染和复现成本需要外部审计；开放并不等于独立验证。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2508.21112",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2026-02-25T03:30:53Z"
+    },
+    {
+      "arxiv_id": "2509.01819",
+      "v1_date": "2025-09-01",
+      "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+      "authors": [
+        "Ge Yan",
+        "Jiyue Zhu",
+        "Yuquan Deng",
+        "Shiqi Yang",
+        "Ri-Zhao Qiu",
+        "Xuxin Cheng",
+        "Marius Memmel",
+        "Ranjay Krishna",
+        "Ankit Goyal",
+        "Xiaolong Wang",
+        "Dieter Fox"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "This paper introduces ManiFlow, a visuomotor imitation learning policy for general robot manipulation that generates precise, high-dimensional actions conditioned on diverse visual, language and proprioceptive inputs. We leverage flow matching with consistency training to enable high-quality dexterous action generation in just 1-2 inference steps. To handle diverse input modalities efficiently, we propose DiT-X, a diffusion transformer architecture with adaptive cross-attention and AdaLN-Zero conditioning that enables fine-grained feature interactions between action tokens and multi-modal observations. ManiFlow demonstrates consistent improvements across diverse simulation benchmarks and nearly doubles success rates on real-world tasks across single-arm, bimanual, and humanoid robot setups with increasing dexterity. The extensive evaluation further demonstrates the strong robustness and generalizability of ManiFlow to novel objects and background changes, and highlights its strong scaling capability with larger-scale datasets. Our website: maniflow-policy.github.io.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "flow policy",
+        "高效推理",
+        "多本体",
+        "真实机器人验证",
+        "多任务"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "ManiFlow demonstrates consistent improvements across diverse simulation benchmarks and nearly doubles success rates on real-world tasks across single-arm, bimanual, and humanoid robot setups with increasing dexterity."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "ManiFlow demonstrates consistent improvements across diverse simulation benchmarks and nearly doubles success rates on real-world tasks across single-arm, bimanual, and humanoid robot setups with increasing dexterity."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "ManiFlow 用 consistency flow 将高维动作生成压到 1–2 步，并在单臂、双臂与人形真实平台上验证多模态通用操作。",
+      "limitation_zh": "虽然平台覆盖较广，摘要未证明复杂长时序、接触安全或分布外故障恢复；一致性蒸馏可能牺牲多峰动作覆盖。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.01819",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-09-01T22:50:55Z"
+    },
+    {
+      "arxiv_id": "2509.05513",
+      "v1_date": "2025-09-05",
+      "title": "OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation",
+      "authors": [
+        "Ahad Jawaid",
+        "Yu Xiang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Egocentric human videos provide scalable demonstrations for imitation learning, but existing corpora often lack either fine-grained, temporally localized action descriptions or dexterous hand annotations. We introduce OpenEgo, a multimodal egocentric manipulation dataset with standardized hand-pose annotations and intention-aligned action primitives. OpenEgo totals 1107 hours across six public datasets, covering 290 manipulation tasks in 600+ environments. We unify hand-pose layouts and provide descriptive, timestamped action primitives. To validate its utility, we train language-conditioned imitation-learning policies to predict dexterous hand trajectories. OpenEgo is designed to lower the barrier to learning dexterous manipulation from egocentric video and to support reproducible research in vision-language-action learning. All resources and instructions will be released at www.openegocentric.com.",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "数据引擎",
+        "人类视频学习",
+        "开放数据",
+        "灵巧手",
+        "语言条件策略"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": true,
+          "model": null,
+          "status": "announced_in_abstract; availability_not_rechecked",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "OpenEgo 统一六个公开视频集为 1107 小时、290 任务、600+ 环境的手姿态与时间定位动作原语数据，服务灵巧 VLA 预训练。",
+      "limitation_zh": "手姿态与动作原语来自自动标准化，跨数据集误差和人-机动作鸿沟仍在；当时资源为“将发布”而非已核验下载。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.05513",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "4 pages, 1 figure",
+      "updated_at": "2025-09-05T21:47:55Z"
+    },
+    {
+      "arxiv_id": "2509.07445",
+      "v1_date": "2025-09-09",
+      "title": "Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions",
+      "authors": [
+        "Harrison Field",
+        "Max Yang",
+        "Yijiong Lin",
+        "Efi Psomopoulou",
+        "David Barton",
+        "Nathan F. Lepora"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Large language models (LLMs) are beginning to automate reward design for dexterous manipulation. However, no prior work has considered tactile sensing, which is known to be critical for human-like dexterity. We present Text2Touch, bringing LLM-crafted rewards to the challenging task of multi-axis in-hand object rotation with real-world vision based tactile sensing in palm-up and palm-down configurations. Our prompt engineering strategy scales to over 70 environment variables, and sim-to-real distillation enables successful policy transfer to a tactile-enabled fully actuated four-fingered dexterous robot hand. Text2Touch significantly outperforms a carefully tuned human-engineered baseline, demonstrating superior rotation speed and stability while relying on reward functions that are an order of magnitude shorter and simpler. These results illustrate how LLM-designed rewards can significantly reduce the time from concept to deployable dexterous tactile skills, supporting more rapid and scalable multimodal robot learning. Project website: https://hpfield.github.io/text2touch-website",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "触觉",
+        "灵巧手",
+        "LLM 奖励设计",
+        "sim-to-real",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We present Text2Touch, bringing LLM-crafted rewards to the challenging task of multi-axis in-hand object rotation with real-world vision based tactile sensing in palm-up and palm-down configurations."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://hpfield.github.io/text2touch-website",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "Text2Touch 让 LLM 为 70+ 环境变量设计短奖励，经 sim-to-real 蒸馏在四指触觉手上完成多轴 in-hand rotation。",
+      "limitation_zh": "验证聚焦单类多轴 in-hand rotation，LLM 奖励对提示、变量命名和硬件触觉域偏移的敏感性尚不清楚。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.07445",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Accepted at CoRL 2025",
+      "updated_at": "2025-09-09T07:10:39Z"
+    },
+    {
+      "arxiv_id": "2509.18428",
+      "v1_date": "2025-09-22",
+      "title": "Latent Action Pretraining Through World Modeling",
+      "authors": [
+        "Bahey Tharwat",
+        "Yara Nasser",
+        "Ali Abouzeid",
+        "Ian Reid"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Vision-Language-Action (VLA) models have gained popularity for learning robotic manipulation tasks that follow language instructions. State-of-the-art VLAs, such as OpenVLA and $π_{0}$, were trained on large-scale, manually labeled action datasets collected through teleoperation. More recent approaches, including LAPA and villa-X, introduce latent action representations that enable unsupervised pretraining on unlabeled datasets by modeling abstract visual changes between frames. Although these methods have shown strong results, their large model sizes make deployment in real-world settings challenging. In this work, we propose LAWM, a model-agnostic framework to pretrain imitation learning models in a self-supervised way, by learning latent action representations from unlabeled video data through world modeling. These videos can be sourced from robot recordings or videos of humans performing actions with everyday objects. Our framework is able to transfer learned knowledge across tasks, environments, and embodiments. It outperforms models pretrained with ground-truth robot actions and other similar pretraining methods on the LIBERO benchmark and real-world setup, while being efficient and practical for real-world settings.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "latent action",
+        "自监督预训练",
+        "人类视频学习",
+        "跨本体迁移",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "It outperforms models pretrained with ground-truth robot actions and other similar pretraining methods on the LIBERO benchmark and real-world setup, while being efficient and practical for real-world settings."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "LAWM 通过世界建模从无标签人/机器人视频学习 latent action，使较小模仿学习模型跨任务、环境与本体迁移。",
+      "limitation_zh": "latent action 是否对应可控物理因果仍依赖世界模型质量；真实验证和跨本体规模有限，缺少开放资产信号。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.18428",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2026-06-13T22:51:04Z"
+    },
+    {
+      "arxiv_id": "2509.20286",
+      "v1_date": "2025-09-24",
+      "title": "Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video",
+      "authors": [
+        "Georgios Tziafas",
+        "Jiayun Zhang",
+        "Hamidreza Kasaei"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Learning visuomotor policies from expert demonstrations is an important frontier in modern robotics research, however, most popular methods require copious efforts for collecting teleoperation data and struggle to generalize out-ofdistribution. Scaling data collection has been explored through leveraging human videos, as well as demonstration augmentation techniques. The latter approach typically requires expensive simulation rollouts and trains policies with synthetic image data, therefore introducing a sim-to-real gap. In parallel, alternative state representations such as keypoints have shown great promise for category-level generalization. In this work, we bring these avenues together in a unified framework: PAD (Parse-AugmentDistill), for learning generalizable bimanual policies from a single human video. Our method relies on three steps: (a) parsing a human video demo into a robot-executable keypoint-action trajectory, (b) employing bimanual task-and-motion-planning to augment the demonstration at scale without simulators, and (c) distilling the augmented trajectories into a keypoint-conditioned policy. Empirically, we showcase that PAD outperforms state-ofthe-art bimanual demonstration augmentation works relying on image policies with simulation rollouts, both in terms of success rate and sample/cost efficiency. We deploy our framework in six diverse real-world bimanual tasks such as pouring drinks, cleaning trash and opening containers, producing one-shot policies that generalize in unseen spatial arrangements, object instances and background distractors. Supplementary material can be found in the project webpage https://gtziafas.github.io/PAD_project/.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "人类视频学习",
+        "双臂",
+        "数据增强",
+        "任务与运动规划",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We deploy our framework in six diverse real-world bimanual tasks such as pouring drinks, cleaning trash and opening containers, producing one-shot policies that generalize in unseen spatial arrangements, object instances and background distractors."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "We deploy our framework in six diverse real-world bimanual tasks such as pouring drinks, cleaning trash and opening containers, producing one-shot policies that generalize in unseen spatial arrangements, object instances and background distractors."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://gtziafas.github.io/PAD_project/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "PAD 将单条人类视频解析成机器人关键点动作，用双臂任务与运动规划无仿真扩增，再蒸馏成可泛化视觉运动策略。",
+      "limitation_zh": "关键点与任务运动规划假设限制对柔性体、复杂接触和未知障碍的适用性；单示范结论需更多独立任务复现。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.20286",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-09-24T16:19:18Z"
+    },
+    {
+      "arxiv_id": "2509.22643",
+      "v1_date": "2025-09-26",
+      "title": "VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search",
+      "authors": [
+        "Wenkai Guo",
+        "Guanxing Lu",
+        "Haoyuan Deng",
+        "Zhenyu Wu",
+        "Yansong Tang",
+        "Ziwei Wang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Vision-Language-Action models (VLAs) achieve strong performance in general robotic manipulation tasks by scaling imitation learning. However, existing VLAs are limited to predicting short-sighted next-action, which struggle with long-horizon trajectory tasks due to incremental deviations. To address this problem, we propose a plug-in framework named \\method that effectively empowers off-the-shelf VLAs with the capability of foreseeing future states via test-time scaling. Specifically, \\method samples and rolls out possible action trajectories where involved actions are rationales to generate future states via a world model, which enables \\method to foresee and reason potential outcomes and search for the optimal actions. We further leverage Monte Carlo Tree Search (MCTS) to improve search efficiency in large action spaces, where step-wise VLA predictions seed the root. Meanwhile, we introduce a confidence sampling mechanism based on Kernel Density Estimation (KDE), to enable efficient exploration in MCTS without redundant VLA queries. We evaluate intermediate states in MCTS via an offline value estimation strategy, to score predicted futures and correct deviations with long-term feedback. We conducted extensive experiments in both simulators and the real world, demonstrating that our proposed VLA-Reasoner achieves significant improvements over the state-of-the-art VLAs. Our method highlights a potential pathway toward scalable test-time computation of robotic manipulation. The project website is available at: https://vla-reasoner.github.io/.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "test-time scaling",
+        "MCTS",
+        "世界模型",
+        "真实机器人验证",
+        "长时序"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We conducted extensive experiments in both simulators and the real world, demonstrating that our proposed VLA-Reasoner achieves significant improvements over the state-of-the-art VLAs."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "However, existing VLAs are limited to predicting short-sighted next-action, which struggle with long-horizon trajectory tasks due to incremental deviations."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://vla-reasoner.github.io/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "VLA-Reasoner 以世界模型 rollout、KDE 置信采样和 MCTS 为现成 VLA 增加测试时前瞻，在真实长时序任务上纠偏。",
+      "limitation_zh": "在线世界模型 rollout 与 MCTS 增加推理开销，并可能放大模型幻觉；实验尚不足以证明开放世界可靠性。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.22643",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "8 pages, 6 figures, Accepted by ICRA 2026",
+      "updated_at": "2026-03-01T14:39:26Z"
+    },
+    {
+      "arxiv_id": "2509.24661",
+      "v1_date": "2025-09-29",
+      "title": "CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations",
+      "authors": [
+        "Zhiyuan Wu",
+        "Rolandos Alexandros Potamias",
+        "Xuyang Zhang",
+        "Zhongqun Zhang",
+        "Jiankang Deng",
+        "Shan Luo"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Cross-embodiment dexterous grasp synthesis refers to adaptively generating and optimizing grasps for various robotic hands with different morphologies. This capability is crucial for achieving versatile robotic manipulation in diverse environments and requires substantial amounts of reliable and diverse grasp data for effective model training and robust generalization. However, existing approaches either rely on physics-based optimization that lacks human-like kinematic understanding or require extensive manual data collection processes that are limited to anthropomorphic structures. In this paper, we propose CEDex, a novel cross-embodiment dexterous grasp synthesis method at scale that bridges human grasping kinematics and robot kinematics by aligning robot kinematic models with generated human-like contact representations. Given an object's point cloud and an arbitrary robotic hand model, CEDex first generates human-like contact representations using a Conditional Variational Auto-encoder pretrained on human contact data. It then performs kinematic human contact alignment through topological merging to consolidate multiple human hand parts into unified robot components, followed by a signed distance field-based grasp optimization with physics-aware constraints. Using CEDex, we construct the largest cross-embodiment grasp dataset to date, comprising 500K objects across four gripper types with 20M total grasps. Extensive experiments show that CEDex outperforms state-of-the-art approaches and our dataset benefits cross-embodiment grasp learning with high-quality diverse grasps.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "跨本体迁移",
+        "灵巧手",
+        "接触表征",
+        "合成数据"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Cross-embodiment dexterous grasp synthesis refers to adaptively generating and optimizing grasps for various robotic hands with different morphologies."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "CEDex 用人类式接触表征、拓扑合并与 SDF 物理约束，把同一抓取先验扩展到任意形态的灵巧手并规模化生成数据。",
+      "limitation_zh": "工作解决的是静态抓取生成而非完整闭环操作，依赖物体点云、手部运动学与接触模型准确性，真实长时序技能未覆盖。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2509.24661",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-09-29T12:08:04Z"
+    },
+    {
+      "arxiv_id": "2510.00406",
+      "v1_date": "2025-10-01",
+      "title": "VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators",
+      "authors": [
+        "Hengtao Li",
+        "Pengxiang Ding",
+        "Runze Suo",
+        "Yihao Wang",
+        "Zirui Ge",
+        "Dongyuan Zang",
+        "Kexian Yu",
+        "Mingyang Sun",
+        "Hongyin Zhang",
+        "Donglin Wang",
+        "Weihua Su"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Vision-Language-Action (VLA) models enable embodied decision-making but rely heavily on imitation learning, leading to compounding errors and poor robustness under distribution shift. Reinforcement learning (RL) can mitigate these issues yet typically demands costly real-world interactions or suffers from sim-to-real gaps. We introduce VLA-RFT, a reinforcement fine-tuning framework that leverages a data-driven world model as a controllable simulator. Trained from real interaction data, the simulator predicts future visual observations conditioned on actions, allowing policy rollouts with dense, trajectory-level rewards derived from goal-achieving references. This design delivers an efficient and action-aligned learning signal, drastically lowering sample requirements. With fewer than 400 fine-tuning steps, VLA-RFT surpasses strong supervised baselines and achieves greater efficiency than simulator-based RL. Moreover, it exhibits strong robustness under perturbed conditions, sustaining stable task execution. Our results establish world-model-based RFT as a practical post-training paradigm to enhance the generalization and robustness of VLA models. For more details, please refer to https://vla-rft.github.io/.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "世界模型",
+        "强化学习后训练",
+        "合成 rollout",
+        "可靠性"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://vla-rft.github.io/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "VLA-RFT 把真实交互训练的动作条件世界模型当可控模拟器，以可验证轨迹奖励在少于 400 步内完成 VLA 强化微调。",
+      "limitation_zh": "可验证奖励仍来自目标参考，世界模拟器的系统偏差可能被策略利用；摘要未明确大规模真实机器人复核。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.00406",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-10-01T01:33:10Z"
+    },
+    {
+      "arxiv_id": "2510.01623",
+      "v1_date": "2025-10-02",
+      "title": "VLA-R1: Enhancing Reasoning in Vision-Language-Action Models",
+      "authors": [
+        "Angen Ye",
+        "Zeyu Zhang",
+        "Boyuan Wang",
+        "Xiaofeng Wang",
+        "Dapeng Zhang",
+        "Zheng Zhu"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Vision-Language-Action (VLA) models aim to unify perception, language understanding, and action generation, offering strong cross-task and cross-scene generalization with broad impact on embodied AI. However, current VLA models often lack explicit step-by-step reasoning, instead emitting final actions without considering affordance constraints or geometric relations. Their post-training pipelines also rarely reinforce reasoning quality, relying primarily on supervised fine-tuning with weak reward design. To address these challenges, we present VLA-R1, a reasoning-enhanced VLA that integrates Reinforcement Learning from Verifiable Rewards (RLVR) with Group Relative Policy Optimization (GRPO) to systematically optimize both reasoning and execution. Specifically, we design an RLVR-based post-training strategy with verifiable rewards for region alignment, trajectory consistency, and output formatting, thereby strengthening reasoning robustness and execution accuracy. Moreover, we develop VLA-CoT-13K, a high-quality dataset that provides chain-of-thought supervision explicitly aligned with affordance and trajectory annotations. Furthermore, extensive evaluations on in-domain, out-of-domain, simulation, and real-robot platforms demonstrate that VLA-R1 achieves superior generalization and real-world performance compared to prior VLA methods. We plan to release the model, code, and dataset following the publication of this work. Code: https://github.com/GigaAI-research/VLA-R1. Website: https://gigaai-research.github.io/VLA-R1.",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "强化学习后训练",
+        "chain-of-thought",
+        "真实机器人验证",
+        "benchmark"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Furthermore, extensive evaluations on in-domain, out-of-domain, simulation, and real-robot platforms demonstrate that VLA-R1 achieves superior generalization and real-world performance compared to prior VLA methods."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://github.com/GigaAI-research/VLA-R1",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "VLA-R1 用 RLVR/GRPO 与 13K 条 affordance-trajectory CoT 数据共同强化空间推理和动作执行，并覆盖仿真与真实机器人。",
+      "limitation_zh": "显式 CoT 与奖励对齐不必然等于真实因果推理，13K 数据和奖励设计可能形成 benchmark 特化；独立复现待观察。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.01623",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-10-02T02:54:03Z"
+    },
+    {
+      "arxiv_id": "2510.08475",
+      "v1_date": "2025-10-09",
+      "title": "DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos",
+      "authors": [
+        "Jhen Hsieh",
+        "Kuan-Hsun Tu",
+        "Kuo-Han Hung",
+        "Tsung-Wei Ke"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "We present DexMan, an automated framework that converts human visual demonstrations into bimanual dexterous manipulation skills for humanoid robots in simulation. Operating directly on third-person videos of humans manipulating rigid objects, DexMan eliminates the need for camera calibration, depth sensors, scanned 3D object assets, or ground-truth hand and object motion annotations. Unlike prior approaches that consider only simplified floating hands, it directly controls a humanoid robot and leverages novel contact-based rewards to improve policy learning from noisy hand-object poses estimated from in-the-wild videos. DexMan achieves state-of-the-art performance in object pose estimation on the TACO benchmark, with absolute gains of 0.08 and 0.12 in ADD-S and VSD. Meanwhile, its reinforcement learning policy surpasses previous methods by 19% in success rate on OakInk-v2. Furthermore, DexMan can generate skills from both real and synthetic videos, without the need for manual data collection and costly motion capture, and enabling the creation of large-scale, diverse datasets for training generalist dexterous manipulation.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "双臂",
+        "人类视频学习",
+        "合成数据",
+        "humanoid",
+        "强化学习"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://embodiedai-ntu.github.io/dexman/index.html",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "DexMan 从无标定第三视角人类或生成视频估计手物运动，以接触奖励在仿真人形机器人上学习双臂灵巧技能。",
+      "limitation_zh": "实验限定在仿真人形与刚体，未给出真实机器人或触觉闭环证据；第三视角姿态估计误差可能限制复杂接触。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.08475",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Video results are available at: https://embodiedai-ntu.github.io/dexman/index.html",
+      "updated_at": "2025-10-09T17:17:05Z"
+    },
+    {
+      "arxiv_id": "2510.10125",
+      "v1_date": "2025-10-11",
+      "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+      "authors": [
+        "Yanjiang Guo",
+        "Lucy Xiaoyang Shi",
+        "Jianyu Chen",
+        "Chelsea Finn"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Generalist robot policies can now perform a wide range of manipulation skills, but evaluating and improving their ability with unfamiliar objects and instructions remains a significant challenge. Rigorous evaluation requires a large number of real-world rollouts, while systematic improvement demands additional corrective data with expert labels. Both of these processes are slow, costly, and difficult to scale. World models offer a promising, scalable alternative by enabling policies to rollout within imagination space. However, a key challenge is building a controllable world model that can handle multi-step interactions with generalist robot policies. This requires a world model compatible with modern generalist policies by supporting multi-view prediction, fine-grained action control, and consistent long-horizon interactions, which is not achieved by previous works. In this paper, we make a step forward by introducing a controllable multi-view world model that can be used to evaluate and improve the instruction-following ability of generalist robot policies. Our model maintains long-horizon consistency with a pose-conditioned memory retrieval mechanism and achieves precise action control through frame-level action conditioning. Trained on the DROID dataset (95k trajectories, 564 scenes), our model generates spatially and temporally consistent trajectories under novel scenarios and new camera placements for over 20 seconds. We show that our method can accurately rank policy performance without real-world robot rollouts. Moreover, by synthesizing successful trajectories in imagination and using them for supervised fine-tuning, our approach can improve policy success by 44.7\\%.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "多视角视频预测",
+        "数据引擎",
+        "长时序",
+        "策略评估"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "This requires a world model compatible with modern generalist policies by supporting multi-view prediction, fine-grained action control, and consistent long-horizon interactions, which is not achieved by previous works."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "Ctrl-World 以多视角预测、逐帧动作条件和姿态记忆支持通用策略的长时序 imagination rollout，用于低成本评估和改进。",
+      "limitation_zh": "世界 rollout 与真实策略排名的相关性、长时序误差累积和接触真实性仍是核心风险；摘要未说明真实部署闭环。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.10125",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "17 pages",
+      "updated_at": "2026-03-01T08:24:10Z"
+    },
+    {
+      "arxiv_id": "2510.10274",
+      "v1_date": "2025-10-11",
+      "title": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+      "authors": [
+        "Jinliang Zheng",
+        "Jianxiong Li",
+        "Zhihao Wang",
+        "Dongxiu Liu",
+        "Xirui Kang",
+        "Yuchun Feng",
+        "Yinan Zheng",
+        "Jiayin Zou",
+        "Yilun Chen",
+        "Jia Zeng",
+        "Ya-Qin Zhang",
+        "Jiangmiao Pang",
+        "Jingjing Liu",
+        "Tai Wang",
+        "Xianyuan Zhan"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Successful generalist Vision-Language-Action (VLA) models rely on effective training across diverse robotic platforms with large-scale, cross-embodiment, heterogeneous datasets. To facilitate and leverage the heterogeneity in rich, diverse robotic data sources, we propose a novel Soft Prompt approach with minimally added parameters, by infusing prompt learning concepts into cross-embodiment robot learning and introducing separate sets of learnable embeddings for each distinct data source. These embeddings serve as embodiment-specific prompts, which in unity empower VLA models with effective exploitation of varying cross-embodiment features. Our new X-VLA, a neat flow-matching-based VLA architecture, relies exclusively on soft-prompted standard Transformer encoders, enjoying both scalability and simplicity. Evaluated across 6 simulations as well as 3 real-world robots, our 0.9B instantiation-X-VLA-0.9B simultaneously achieves SOTA performance over a sweep of benchmarks, demonstrating superior results on a wide axes of capabilities, from flexible dexterity to quick adaptation across embodiments, environments, and tasks. Website: https://thu-air-dream.github.io/X-VLA/",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_direction": "具身基础模型",
+      "cross_tags": [
+        "跨本体迁移",
+        "flow policy",
+        "多任务",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Evaluated across 6 simulations as well as 3 real-world robots, our 0.9B instantiation-X-VLA-0.9B simultaneously achieves SOTA performance over a sweep of benchmarks, demonstrating superior results on a wide axes of capabilities, from flexible dexterity to quick adaptation across embodiments, environments, and tasks."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Successful generalist Vision-Language-Action (VLA) models rely on effective training across diverse robotic platforms with large-scale, cross-embodiment, heterogeneous datasets."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://thu-air-dream.github.io/X-VLA/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "X-VLA 用每个数据源的软提示吸收跨本体异构数据，在 6 个仿真与 3 台真实机器人上兼顾灵巧性、适配速度和规模化。",
+      "limitation_zh": "每个数据源仍需本体特定 soft prompt，异构数据质量与规模扩大后的干扰未完全消除；开放代码/模型未说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.10274",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "preprint, technical report, 33 pages",
+      "updated_at": "2025-10-11T16:20:17Z"
+    },
+    {
+      "arxiv_id": "2510.18337",
+      "v1_date": "2025-10-21",
+      "title": "MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning",
+      "authors": [
+        "Wenhui Huang",
+        "Changhe Chen",
+        "Han Qi",
+        "Chen Lv",
+        "Yilun Du",
+        "Heng Yang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Integrating visual-language instructions into visuomotor policies is gaining momentum in robot learning for enhancing open-world generalization. Despite promising advances, existing approaches face two challenges: limited language steerability when no generated reasoning is used as a condition, or significant inference latency when reasoning is incorporated. In this work, we introduce MoTVLA, a mixture-of-transformers (MoT)-based vision-language-action (VLA) model that integrates fast-slow unified reasoning with behavior policy learning. MoTVLA preserves the general intelligence of pre-trained VLMs (serving as the generalist) for tasks such as perception, scene understanding, and semantic planning, while incorporating a domain expert, a second transformer that shares knowledge with the pretrained VLM, to generate domain-specific fast reasoning (e.g., robot motion decomposition), thereby improving policy execution efficiency. By conditioning the action expert on decomposed motion instructions, MoTVLA can learn diverse behaviors and substantially improve language steerability. Extensive evaluations across natural language processing benchmarks, robotic simulation environments, and real-world experiments confirm the superiority of MoTVLA in both fast-slow reasoning and manipulation task performance.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "fast-slow",
+        "分层推理与执行",
+        "真实机器人验证",
+        "语言可控性"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Extensive evaluations across natural language processing benchmarks, robotic simulation environments, and real-world experiments confirm the superiority of MoTVLA in both fast-slow reasoning and manipulation task performance."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "MoTVLA 让预训练 VLM 承担慢速语义规划、专用 transformer 生成快速运动分解，再驱动 action expert 实时执行。",
+      "limitation_zh": "双 transformer 与 action expert 增加系统复杂度，慢系统过期特征和推理错误的容错机制未充分说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.18337",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-10-23T05:11:13Z"
+    },
+    {
+      "arxiv_id": "2510.21571",
+      "v1_date": "2025-10-24",
+      "title": "Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos",
+      "authors": [
+        "Qixiu Li",
+        "Yu Deng",
+        "Yaobo Liang",
+        "Lin Luo",
+        "Lei Zhou",
+        "Chengtang Yao",
+        "Lingqi Zeng",
+        "Zhiyuan Feng",
+        "Huizhi Liang",
+        "Sicheng Xu",
+        "Yizhong Zhang",
+        "Xi Chen",
+        "Hao Chen",
+        "Lily Sun",
+        "Dong Chen",
+        "Jiaolong Yang",
+        "Baining Guo"
+      ],
+      "institutions": [
+        {
+          "name": "Microsoft Research",
+          "evidence": "official Microsoft project page linked in arXiv comment",
+          "url": "https://microsoft.github.io/VITRA/"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "This paper presents a novel approach for pretraining robotic manipulation Vision-Language-Action (VLA) models using a large corpus of unscripted real-life video recordings of human hand activities. Treating human hand as dexterous robot end-effector, we show that \"in-the-wild\" egocentric human videos without any annotations can be transformed into data formats fully aligned with existing robotic V-L-A training data in terms of task granularity and labels. This is achieved by the development of a fully-automated holistic human activity analysis approach for arbitrary human hand videos. This approach can generate atomic-level hand activity segments and their language descriptions, each accompanied with framewise 3D hand motion and camera motion. We process a large volume of egocentric videos and create a hand-VLA training dataset containing 1M episodes and 26M frames. This training data covers a wide range of objects and concepts, dexterous manipulation tasks, and environment variations in real life, vastly exceeding the coverage of existing robot data. We design a dexterous hand VLA model architecture and pretrain the model on this dataset. The model exhibits strong zero-shot capabilities on completely unseen real-world observations. Additionally, fine-tuning it on a small amount of real robot action data significantly improves task success rates and generalization to novel objects in real robotic experiments. We also demonstrate the appealing scaling behavior of the model's task performance with respect to pretraining data scale. We believe this work lays a solid foundation for scalable VLA pretraining, advancing robots toward truly generalizable embodied intelligence.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "人类视频学习",
+        "数据规模化",
+        "语言标注",
+        "灵巧手",
+        "真实机器人信号"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Additionally, fine-tuning it on a small amount of real robot action data significantly improves task success rates and generalization to novel objects in real robotic experiments."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "This training data covers a wide range of objects and concepts, dexterous manipulation tasks, and environment variations in real life, vastly exceeding the coverage of existing robot data."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://microsoft.github.io/VITRA/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "将无脚本真实人类手部视频自动切分、描述并恢复 3D 动作，构成 100 万 episode/2600 万帧的 hand-VLA 预训练语料。",
+      "limitation_zh": "自动分段、语言描述和 3D 手运动都可能含伪标签误差，主要面向手部末端；对双臂移动及接触力控制的覆盖不清楚。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2510.21571",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Project page: https://microsoft.github.io/VITRA/",
+      "updated_at": "2025-10-24T15:39:31Z"
+    },
+    {
+      "arxiv_id": "2511.01177",
+      "v1_date": "2025-11-03",
+      "title": "Scaling Cross-Embodiment World Models for Dexterous Manipulation",
+      "authors": [
+        "Zihao He",
+        "Bo Ai",
+        "Tongzhou Mu",
+        "Yulin Liu",
+        "Weikang Wan",
+        "Jiawei Fu",
+        "Yilun Du",
+        "Henrik I. Christensen",
+        "Hao Su"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Cross-embodiment learning seeks to build generalist robots that learn from and operate across diverse morphologies, but differences in kinematics and action spaces hinder data sharing and control transfer. We ask: What structure can be shared across embodiments despite these differences? We argue that the physical interactions they induce can be modeled in a shared geometric space, allowing world models to provide a common interface for learning and control. To realize this idea, we represent human and robot hands as sets of 3D particles and define actions as end-effector particle displacement fields. This representation abstracts away embodiment-specific joint spaces while preserving the geometry and motion relevant to physical interaction. We train a graph-based world model on random interaction data from diverse simulated robot hands and real human hands, and integrate it with model-predictive control for deployment on new hardware. Experiments on rigid and deformable manipulation reveal three findings: increasing the diversity of training embodiments improves generalization to unseen hands; appropriately combining simulated and real-world data outperforms either source alone; and the same learned model enables effective control on robotic hands with distinct kinematics and degrees of freedom. These results position particle-based world models as a shared interface for learning from and for heterogeneous embodiments.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "跨本体迁移",
+        "3D 表征",
+        "MPC",
+        "灵巧手",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "摘要明确说明世界模型与 MPC 被部署到新的机器人手硬件。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Cross-embodiment learning seeks to build generalist robots that learn from and operate across diverse morphologies, but differences in kinematics and action spaces hinder data sharing and control transfer."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://alan-heoooh.github.io/dexwm.html",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "把不同人手/机器人手统一为 3D 粒子与末端位移场，以跨本体世界模型和 MPC 在新硬件上迁移刚体及柔性操作。",
+      "limitation_zh": "共享粒子空间仍依赖准确几何与接触观测，任务与硬件数量有限；对高速、长时序和强触觉依赖技能尚未证明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.01177",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Accepted to IROS 2026, Project Page: https://alan-heoooh.github.io/dexwm.html",
+      "updated_at": "2026-07-21T02:42:52Z"
+    },
+    {
+      "arxiv_id": "2511.02504",
+      "v1_date": "2025-11-04",
+      "title": "Dexterous Robotic Piano Playing at Scale",
+      "authors": [
+        "Le Chen",
+        "Yi Zhao",
+        "Jan Schneider",
+        "Quankai Gao",
+        "Simon Guist",
+        "Cheng Qian",
+        "Juho Kannala",
+        "Bernhard Schölkopf",
+        "Joni Pajarinen",
+        "Dieter Büchler"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Endowing robot hands with human-level dexterity has been a long-standing goal in robotics. Bimanual robotic piano playing represents a particularly challenging task: it is high-dimensional, contact-rich, and requires fast, precise control. We present OmniPianist, the first agent capable of performing nearly one thousand music pieces via scalable, human-demonstration-free learning. Our approach is built on three core components. First, we introduce an automatic fingering strategy based on Optimal Transport (OT), allowing the agent to autonomously discover efficient piano-playing strategies from scratch without demonstrations. Second, we conduct large-scale Reinforcement Learning (RL) by training more than 2,000 agents, each specialized in distinct music pieces, and aggregate their experience into a dataset named RP1M++, consisting of over one million trajectories for robotic piano playing. Finally, we employ a Flow Matching Transformer to leverage RP1M++ through large-scale imitation learning, resulting in the OmniPianist agent capable of performing a wide range of musical pieces. Extensive experiments and ablation studies highlight the effectiveness and scalability of our approach, advancing dexterous robotic piano playing at scale.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "灵巧手",
+        "双手协同",
+        "强化学习",
+        "flow policy",
+        "数据规模化"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "We present OmniPianist, the first agent capable of performing nearly one thousand music pieces via scalable, human-demonstration-free learning."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "OmniPianist 训练 2000+ 专项 RL 智能体并汇成百万轨迹 RP1M++，再以 flow transformer 蒸馏出覆盖近千曲目的双手策略。",
+      "limitation_zh": "能力高度特化于钢琴，主要规模来自仿真 RL 与蒸馏，不能直接代表开放世界多物体灵巧操作。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.02504",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-11-04T11:46:02Z"
+    },
+    {
+      "arxiv_id": "2511.03077",
+      "v1_date": "2025-11-04",
+      "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
+      "authors": [
+        "R. Khorrambakht",
+        "Joaquim Ortiz-Haro",
+        "Joseph Amigo",
+        "Omar Mostafa",
+        "Daniel Dugas",
+        "Franziska Meier",
+        "Ludovic Righetti"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Robots must understand their environment from raw sensory inputs and reason about the consequences of their actions in it to solve complex tasks. Behavior Cloning (BC) leverages task-specific human demonstrations to learn this knowledge as end-to-end policies. However, these policies are difficult to transfer to new tasks, and generating training data is challenging because it requires careful demonstrations and frequent environment resets. In contrast to such policy-based view, in this paper we take a model-based approach where we collect a few hours of unstructured easy-to-collect play data to learn an action-conditioned visual world model, a diffusion-based action sampler, and optionally a reward model. The world model -- in combination with the action sampler and a reward model -- is then used to optimize long sequences of actions with a Monte Carlo Tree Search (MCTS) planner. The resulting plans are executed on the robot via a zeroth-order Model Predictive Controller (MPC). We show that the action sampler mitigates hallucinations of the world model during planning and validate our approach on 3 real-world robotic tasks with varying levels of planning and modeling complexity. Our experiments support the hypothesis that planning leads to a significant improvement over BC baselines on a standard manipulation test environment.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "动作条件视频预测",
+        "MCTS",
+        "MPC",
+        "真实机器人验证",
+        "长时序"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We show that the action sampler mitigates hallucinations of the world model during planning and validate our approach on 3 real-world robotic tasks with varying levels of planning and modeling complexity."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "The world model -- in combination with the action sampler and a reward model -- is then used to optimize long sequences of actions with a Monte Carlo Tree Search (MCTS) planner."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "WorldPlanner 用数小时无结构 play data 学动作条件视频世界模型、动作采样器和可选奖励，再以 MCTS+MPC 在真实机器人上规划。",
+      "limitation_zh": "仅三个真实任务，MCTS+MPC 计算重且世界模型幻觉仍可能误导规划；开放场景的安全恢复证据不足。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.03077",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-11-04T23:52:07Z"
+    },
+    {
+      "arxiv_id": "2511.04671",
+      "v1_date": "2025-11-06",
+      "title": "X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations",
+      "authors": [
+        "Maximus A. Pace",
+        "Prithwish Dan",
+        "Chuanruo Ning",
+        "Atiksh Bhardwaj",
+        "Audrey Du",
+        "Edward W. Duan",
+        "Wei-Chiu Ma",
+        "Kushal Kedia"
+      ],
+      "institutions": [
+        {
+          "name": "Cornell University",
+          "evidence": "official project page on Cornell domain linked in abstract",
+          "url": "https://portal-cornell.github.io/X-Diffusion/"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "Human videos are a scalable source of training data for robot learning. However, humans and robots significantly differ in embodiment, making many human actions infeasible for direct execution on a robot. Still, these demonstrations convey rich object-interaction cues and task intent. Our goal is to learn from this coarse guidance without transferring embodiment-specific, infeasible execution strategies. Recent advances in generative modeling tackle a related problem of learning from low-quality data. In particular, Ambient Diffusion is a recent method for diffusion modeling that incorporates low-quality data only at high-noise timesteps of the forward diffusion process. Our key insight is to view human actions as noisy counterparts of robot actions. As noise increases along the forward diffusion process, embodiment-specific differences fade away while task-relevant guidance is preserved. Based on these observations, we present X-Diffusion, a cross-embodiment learning framework based on Ambient Diffusion that selectively trains diffusion policies on noised human actions. This enables effective use of easy-to-collect human videos without sacrificing robot feasibility. Across five real-world manipulation tasks, we show that X-Diffusion improves average success rates by 16% over naive co-training and manual data filtering. The project website is available at https://portal-cornell.github.io/X-Diffusion/.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "diffusion policy",
+        "人类视频学习",
+        "跨本体迁移",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Across five real-world manipulation tasks, we show that X-Diffusion improves average success rates by 16% over naive co-training and manual data filtering."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Based on these observations, we present X-Diffusion, a cross-embodiment learning framework based on Ambient Diffusion that selectively trains diffusion policies on noised human actions."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://portal-cornell.github.io/X-Diffusion/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "X-Diffusion 将人类动作视为机器人动作的噪声对应物，只在高噪声层引入跨本体人类示范，五个真实任务平均提升 16%。",
+      "limitation_zh": "五个任务样本仍小，把人类动作当高噪声机器人动作的假设可能丢失关键接触/动力学差异。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.04671",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "ICRA 2026",
+      "updated_at": "2026-04-15T03:42:52Z"
+    },
+    {
+      "arxiv_id": "2511.14759",
+      "v1_date": "2025-11-18",
+      "title": "$π^{*}_{0.6}$: a VLA That Learns From Experience",
+      "authors": [
+        "Physical Intelligence",
+        "Ali Amin",
+        "Raichelle Aniceto",
+        "Ashwin Balakrishna",
+        "Kevin Black",
+        "Ken Conley",
+        "Grace Connors",
+        "James Darpinian",
+        "Karan Dhabalia",
+        "Jared DiCarlo",
+        "Danny Driess",
+        "Michael Equi",
+        "Adnan Esmail",
+        "Yunhao Fang",
+        "Chelsea Finn",
+        "Catherine Glossop",
+        "Thomas Godden",
+        "Ivan Goryachev",
+        "Lachy Groom",
+        "Hunter Hancock",
+        "Karol Hausman",
+        "Gashon Hussein",
+        "Brian Ichter",
+        "Szymon Jakubczak",
+        "Rowan Jen",
+        "Tim Jones",
+        "Ben Katz",
+        "Liyiming Ke",
+        "Chandra Kuchi",
+        "Marinda Lamb",
+        "Devin LeBlanc",
+        "Sergey Levine",
+        "Adrian Li-Bell",
+        "Yao Lu",
+        "Vishnu Mano",
+        "Mohith Mothukuri",
+        "Suraj Nair",
+        "Karl Pertsch",
+        "Allen Z. Ren",
+        "Charvi Sharma",
+        "Lucy Xiaoyang Shi",
+        "Laura Smith",
+        "Jost Tobias Springenberg",
+        "Kyle Stachowicz",
+        "Will Stoeckle",
+        "Alex Swerdlow",
+        "James Tanner",
+        "Marcel Torne",
+        "Quan Vuong",
+        "Anna Walling",
+        "Haohuan Wang",
+        "Blake Williams",
+        "Sukwon Yoo",
+        "Lili Yu",
+        "Ury Zhilinsky",
+        "Zhiyuan Zhou"
+      ],
+      "institutions": [
+        {
+          "name": "Physical Intelligence",
+          "evidence": "collective author listed in arXiv metadata",
+          "url": "https://arxiv.org/abs/2511.14759"
+        }
+      ],
+      "institution_status": "verified_from_author/project/official_proceedings",
+      "abstract": "We study how vision-language-action (VLA) models can improve through real-world deployments via reinforcement learning (RL). We present a general-purpose method, RL with Experience and Corrections via Advantage-conditioned Policies (RECAP), that provides for RL training of VLAs via advantage conditioning. Our method incorporates heterogeneous data into the self-improvement process, including demonstrations, data from on-policy collection, and expert teleoperated interventions provided during autonomous execution. RECAP starts by pre-training a generalist VLA with offline RL, which we call $π^{*}_{0.6}$, that can then be specialized to attain high performance on downstream tasks through on-robot data collection. We show that the $π^{*}_{0.6}$ model trained with the full RECAP method can fold laundry in real homes, reliably assemble boxes, and make espresso drinks using a professional espresso machine. On some of the hardest tasks, RECAP more than doubles task throughput and roughly halves the task failure rate.",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "primary_direction": "具身基础模型",
+      "cross_tags": [
+        "在线强化学习",
+        "真实机器人部署",
+        "human-in-the-loop",
+        "长时序",
+        "多任务"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "We show that the $π^{*}_{0.6}$ model trained with the full RECAP method can fold laundry in real homes, reliably assemble boxes, and make espresso drinks using a professional espresso machine."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "RECAP 把示范、在线 rollout 与专家纠正统一为 advantage-conditioned VLA 强化学习，使 π*0.6 在家庭与商业设备任务中持续改进。",
+      "limitation_zh": "训练与部署数据、模型权重和完整配方未开放，结果来自单一开发团队；专家介入成本及长期安全治理未量化。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.14759",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-11-19T04:34:49Z"
+    },
+    {
+      "arxiv_id": "2511.16651",
+      "v1_date": "2025-11-20",
+      "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+      "authors": [
+        "Yang Tian",
+        "Yuyin Yang",
+        "Yiman Xie",
+        "Zetao Cai",
+        "Xu Shi",
+        "Ning Gao",
+        "Hangxu Liu",
+        "Xuekun Jiang",
+        "Zherui Qiu",
+        "Feng Yuan",
+        "Yaping Li",
+        "Ping Wang",
+        "Junhao Cai",
+        "Jia Zeng",
+        "Hao Dong",
+        "Jiangmiao Pang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Recent works explore how real and synthetic data contribute to Vision-Language-Action (VLA) models' generalization. While current VLA models have shown the strong effectiveness of large-scale real-robot pre-training, synthetic data has not previously demonstrated comparable capability at scale. This paper provides the first evidence that synthetic data alone can match the performance of the strongest $π$-dataset in pre-training a VLA model, revealing the substantial value of large-scale simulation. The resulting model also exhibits surprisingly zero-shot sim-to-real transfer on several challenging tasks. Our synthetic dataset, InternData-A1, contains over 630k trajectories and 7,433 hours across 4 embodiments, 18 skills, 70 tasks, and 227 scenes, covering rigid, articulated, deformable, and fluid-object manipulation. It is generated through a highly autonomous, fully decoupled, and compositional simulation pipeline that enables long-horizon skill composition, flexible task assembly, and heterogeneous embodiments with minimal manual tuning. Using the same architecture as $π_0$, we pre-train a model entirely on InternData-A1 and find that it matches the official $π_0$ across 49 simulation tasks, 5 real-world tasks, and 4 long-horizon dexterous tasks. We release the dataset and will open-source the generation pipeline to broaden access to large-scale robotic data and to lower the barrier to scalable data creation for embodied AI research.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "合成数据",
+        "多本体",
+        "sim-to-real",
+        "长时序",
+        "开放数据"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Using the same architecture as $π_0$, we pre-train a model entirely on InternData-A1 and find that it matches the official $π_0$ across 49 simulation tasks, 5 real-world tasks, and 4 long-horizon dexterous tasks."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "Our synthetic dataset, InternData-A1, contains over 630k trajectories and 7,433 hours across 4 embodiments, 18 skills, 70 tasks, and 227 scenes, covering rigid, articulated, deformable, and fluid-object manipulation."
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Our synthetic dataset, InternData-A1, contains over 630k trajectories and 7,433 hours across 4 embodiments, 18 skills, 70 tasks, and 227 scenes, covering rigid, articulated, deformable, and fluid-object manipulation."
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "It is generated through a highly autonomous, fully decoupled, and compositional simulation pipeline that enables long-horizon skill composition, flexible task assembly, and heterogeneous embodiments with minimal manual tuning."
+        },
+        "open_assets": {
+          "code": null,
+          "data": true,
+          "model": null,
+          "status": "dataset_release_claim; pipeline_announced_for_future_open_source",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "InternData-A1 以自动仿真流水线生成 63 万轨迹/7433 小时、4 本体/70 任务数据，报告纯合成预训练可匹配 π0 并零样本 sim-to-real。",
+      "limitation_zh": "纯合成数据与 π0 的对比由同一团队完成，真实任务仅少量；生成流水线当时为未来开源承诺，sim-to-real 外推需谨慎。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.16651",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-11-20T18:55:05Z"
+    },
+    {
+      "arxiv_id": "2511.22134",
+      "v1_date": "2025-11-27",
+      "title": "DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action",
+      "authors": [
+        "Zhen Fang",
+        "Zhuoyang Liu",
+        "Jiaming Liu",
+        "Hao Chen",
+        "Yu Zeng",
+        "Shiting Huang",
+        "Zehui Chen",
+        "Lin Chen",
+        "Shanghang Zhang",
+        "Feng Zhao"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "To build a generalizable Vision-Language-Action (VLA) model with strong reasoning ability, a common strategy is to first train a specialist VLA on robot demonstrations to acquire reliable manipulation skills, and then incorporate mixed annotated robot data together with multimodal data to restore broader reasoning capabilities. However, we observe that the resulting reasoning VLA often suffers from degraded action performance compared to the specialist model before fine-tuning, a phenomenon we refer to as action degeneration. To address this issue, we propose DualVLA, which enhances action performance through carefully designed post-training while still preserving reasoning capability. We first introduce a dual-layer data pruning method that removes redundant embodied reasoning, preventing it from adversely influencing action learning. To further strengthen action generation, we design a dual-teacher adaptive distillation strategy that assigns different supervision signals to different data domains while maintaining reasoning ability. To fill the evaluation gap for generalist VLAs, we also propose VLA Score, which decouples VLA capability into reasoning, intention, action, and alignment dimensions for a more fine-grained assessment. Experiments show that DualVLA achieves an average success rate of 61.0 in SimplerEnv and an average score of 65.4 across eight competitive multimodal benchmarks, demonstrating a stronger balance between precise action execution and multimodal understanding. Project Website: https://costaliya.github.io/DualVLA/.",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "推理-行动解耦",
+        "知识蒸馏",
+        "benchmark",
+        "多模态推理"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://costaliya.github.io/DualVLA/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "DualVLA 通过双层数据裁剪与双教师蒸馏缓解推理微调导致的动作退化，并提出按 reasoning/intention/action/alignment 分解的 VLA Score。",
+      "limitation_zh": "主要数字来自 SimplerEnv 和多模态 benchmark，摘要没有真实机器人证据；双教师与剪枝质量依赖专有标注。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2511.22134",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-11-27T06:03:53Z"
+    },
+    {
+      "arxiv_id": "2512.02729",
+      "v1_date": "2025-12-02",
+      "title": "RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning",
+      "authors": [
+        "Yuhong Zhang",
+        "Zihan Gao",
+        "Shengpeng Li",
+        "Ling-Hao Chen",
+        "Kaisheng Liu",
+        "Runqing Cheng",
+        "Xiao Lin",
+        "Junjia Liu",
+        "Zhuoheng Li",
+        "Jingyi Feng",
+        "Ziyan He",
+        "Jintian Lin",
+        "Zheyan Huang",
+        "Zhifang Liu",
+        "Haoqian Wang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "We introduce Robowheel, a data engine that converts human hand object interaction (HOI) videos into training-ready supervision for cross morphology robotic learning. From monocular RGB or RGB-D inputs, we perform high precision HOI reconstruction and enforce physical plausibility via a reinforcement learning (RL) optimizer that refines hand object relative poses under contact and penetration constraints. The reconstructed, contact rich trajectories are then retargeted to cross-embodiments, robot arms with simple end effectors, dexterous hands, and humanoids, yielding executable actions and rollouts. To scale coverage, we build a simulation-augmented framework on Isaac Sim with diverse domain randomization (embodiments, trajectories, object retrieval, background textures, hand motion mirroring), which enriches the distributions of trajectories and observations while preserving spatial relationships and physical plausibility. The entire data pipeline forms an end to end pipeline from video,reconstruction,retargeting,augmentation data acquisition. We validate the data on mainstream vision language action (VLA) and imitation learning architectures, demonstrating that trajectories produced by our pipeline are as stable as those from teleoperation and yield comparable continual performance gains. To our knowledge, this provides the first quantitative evidence that HOI modalities can serve as effective supervision for robotic learning. Compared with teleoperation, Robowheel is lightweight, a single monocular RGB(D) camera is sufficient to extract a universal, embodiment agnostic motion representation that could be flexibly retargeted across embodiments. We further assemble a large scale multimodal dataset combining multi-camera captures, monocular videos, and public HOI corpora for training and evaluating embodied models.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "通用机器人学习",
+      "cross_tags": [
+        "数据引擎",
+        "人类视频学习",
+        "跨本体迁移",
+        "接触表征",
+        "合成数据"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "The reconstructed, contact rich trajectories are then retargeted to cross-embodiments, robot arms with simple end effectors, dexterous hands, and humanoids, yielding executable actions and rollouts."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "RoboWheel 将单目/RGB-D 人类手物视频重建为物理可行接触轨迹，再重定向到夹爪、灵巧手和人形本体并做仿真扩增。",
+      "limitation_zh": "单目手物重建和 RL 物理修正都可能产生隐性偏差，摘要未明确多平台真实闭环成功率和数据开放状态。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.02729",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "27 Pages, 21 figures",
+      "updated_at": "2025-12-02T13:10:16Z"
+    },
+    {
+      "arxiv_id": "2512.03044",
+      "v1_date": "2025-12-02",
+      "title": "Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling",
+      "authors": [
+        "Yueru Jia",
+        "Jiaming Liu",
+        "Shengbang Liu",
+        "Rui Zhou",
+        "Wanhe Yu",
+        "Yuyang Yan",
+        "Xiaowei Chi",
+        "Yandong Guo",
+        "Boxin Shi",
+        "Shanghang Zhang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Robust perception and dynamics modeling are fundamental to real-world robotic policy learning. Recent methods employ video diffusion models (VDMs) to enhance robotic policies, improving their understanding and modeling of the physical world. However, existing approaches overlook the coherent and physically consistent motion representations inherently encoded across frames in VDMs. To this end, we propose Video2Act, a framework that efficiently guides robotic action learning by explicitly integrating spatial and motion-aware representations. Building on the inherent representations of VDMs, we extract foreground boundaries and inter-frame motion variations while filtering out background noise and task-irrelevant biases. These refined representations are then used as additional conditioning inputs to a diffusion transformer (DiT) action head, enabling it to reason about what to manipulate and how to move. To mitigate inference inefficiency, we propose an asynchronous dual-system design, where the VDM functions as the slow System 2 and the DiT head as the fast System 1, working collaboratively to generate adaptive actions. By providing motion-aware conditions to System 1, Video2Act maintains stable manipulation even with low-frequency updates from the VDM. For evaluation, Video2Act surpasses previous state-of-the-art VLA methods by 7.7% in simulation and 21.7% in real-world tasks in terms of average success rate, further exhibiting strong generalization capabilities.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "fast-slow",
+        "视频生成",
+        "diffusion policy",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "For evaluation, Video2Act surpasses previous state-of-the-art VLA methods by 7.7% in simulation and 21.7% in real-world tasks in terms of average success rate, further exhibiting strong generalization capabilities."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "Video2Act 以视频扩散模型作低频慢系统、DiT 动作头作快速系统，通过空间边界与跨帧运动条件提升真实任务成功率。",
+      "limitation_zh": "依赖预训练视频扩散表征且慢系统低频更新，场景突变时可能使用陈旧条件；验证任务数量和开放资产未说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.03044",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2026-03-24T02:24:32Z"
+    },
+    {
+      "arxiv_id": "2512.08186",
+      "v1_date": "2025-12-09",
+      "title": "Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation",
+      "authors": [
+        "Meng Wei",
+        "Chenyang Wan",
+        "Jiaqi Peng",
+        "Xiqian Yu",
+        "Yuqiang Yang",
+        "Delin Feng",
+        "Wenzhe Cai",
+        "Chenming Zhu",
+        "Tai Wang",
+        "Jiangmiao Pang",
+        "Xihui Liu"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "While recent large vision-language models (VLMs) have improved generalization in vision-language navigation (VLN), existing methods typically rely on end-to-end pipelines that map vision-language inputs directly to short-horizon discrete actions. Such designs often produce fragmented motions, incur high latency, and struggle with real-world challenges like dynamic obstacle avoidance. We propose DualVLN, the first dual-system VLN foundation model that synergistically integrates high-level reasoning with low-level action execution. System 2, a VLM-based global planner, \"grounds slowly\" by predicting mid-term waypoint goals via image-grounded reasoning. System 1, a lightweight, multi-modal conditioning Diffusion Transformer policy, \"moves fast\" by leveraging both explicit pixel goals and latent features from System 2 to generate smooth and accurate trajectories. The dual-system design enables robust real-time control and adaptive local decision-making in complex, dynamic environments. By decoupling training, the VLM retains its generalization, while System 1 achieves interpretable and effective local navigation. DualVLN outperforms prior methods across all VLN benchmarks and real-world experiments demonstrate robust long-horizon planning and real-time adaptability in dynamic environments.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "大小脑与双系统",
+      "cross_tags": [
+        "fast-slow",
+        "导航",
+        "长时序",
+        "真实机器人验证",
+        "分层推理与执行"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "DualVLN outperforms prior methods across all VLN benchmarks and real-world experiments demonstrate robust long-horizon planning and real-time adaptability in dynamic environments."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "DualVLN outperforms prior methods across all VLN benchmarks and real-world experiments demonstrate robust long-horizon planning and real-time adaptability in dynamic environments."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "DualVLN 让 VLM 全局规划器慢速生成中程像素目标，轻量 diffusion transformer 快速输出连续轨迹，在真实动态环境实现长时序导航。",
+      "limitation_zh": "证据集中在导航而非操作，系统 2 waypoint 错误会向下传播；动态安全与跨机器人泛化仍缺独立验证。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.08186",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-12-09T02:29:36Z"
+    },
+    {
+      "arxiv_id": "2512.09297",
+      "v1_date": "2025-12-10",
+      "title": "One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation",
+      "authors": [
+        "Huayi Zhou",
+        "Kui Jia"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "Learning dexterous bimanual manipulation policies critically depends on large-scale, high-quality demonstrations, yet current paradigms face inherent trade-offs: teleoperation provides physically grounded data but is prohibitively labor-intensive, while simulation-based synthesis scales efficiently but suffers from sim-to-real gaps. We present BiDemoSyn, a framework that synthesizes contact-rich, physically feasible bimanual demonstrations from a single real-world example. The key idea is to decompose tasks into invariant coordination blocks and variable, object-dependent adjustments, then adapt them through vision-guided alignment and lightweight trajectory optimization. This enables the generation of thousands of diverse and feasible demonstrations within several hours, without repeated teleoperation or reliance on imperfect simulation. Across six dual-arm tasks, we show that policies trained on BiDemoSyn data generalize robustly to novel object poses and shapes, significantly outperforming recent strong baselines. Beyond the one-shot setting, BiDemoSyn naturally extends to few-shot-based synthesis, improving object-level diversity and out-of-distribution generalization while maintaining strong data efficiency. Moreover, policies trained on BiDemoSyn data exhibit zero-shot cross-embodiment transfer to new robotic platforms, enabled by object-centric observations and a simplified 6-DoF end-effector action representation that decouples policies from embodiment-specific dynamics. By bridging the gap between efficiency and real-world fidelity, BiDemoSyn provides a scalable path toward practical imitation learning for complex bimanual manipulation without compromising physical grounding.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_direction": "灵巧操作",
+      "cross_tags": [
+        "双臂",
+        "接触密集操作",
+        "数据合成",
+        "跨本体迁移",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "摘要以单条真实示范生成双臂数据，并报告策略向新机器人平台零样本迁移。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": true,
+          "evidence": "Moreover, policies trained on BiDemoSyn data exhibit zero-shot cross-embodiment transfer to new robotic platforms, enabled by object-centric observations and a simplified 6-DoF end-effector action representation that decouples policies from embodiment-specific dynamics."
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": "https://hnuzhy.github.io/projects/BiDemoSyn/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "BiDemoSyn 从一条真实示范分解协调不变量与对象相关调整，数小时合成数千条双臂接触轨迹，并展示新平台零样本迁移。",
+      "limitation_zh": "实验为六个双臂任务，简化 6-DoF 末端动作可能忽略力/顺应性与灵巧手细节；RSS 标签需以官方程序页再核。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.09297",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "accepted by RSS 2026. The project link is https://hnuzhy.github.io/projects/BiDemoSyn/",
+      "updated_at": "2026-04-27T10:36:53Z"
+    },
+    {
+      "arxiv_id": "2512.13030",
+      "v1_date": "2025-12-15",
+      "title": "Motus: A Unified Latent Action World Model",
+      "authors": [
+        "Hongzhe Bi",
+        "Hengkai Tan",
+        "Shenghao Xie",
+        "Zeyuan Wang",
+        "Shuhe Huang",
+        "Haitian Liu",
+        "Ruowen Zhao",
+        "Yao Feng",
+        "Chendong Xiang",
+        "Yinze Rong",
+        "Hongyan Zhao",
+        "Hanyu Liu",
+        "Zhizhong Su",
+        "Lei Ma",
+        "Hang Su",
+        "Jun Zhu"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "While a general embodied agent must function as a unified system, current methods are built on isolated models for understanding, world modeling, and control. This fragmentation prevents unifying multimodal generative capabilities and hinders learning from large-scale, heterogeneous data. In this paper, we propose Motus, a unified latent action world model that leverages existing general pretrained models and rich, sharable motion information. Motus introduces a Mixture-of-Transformer (MoT) architecture to integrate three experts (i.e., understanding, video generation, and action) and adopts a UniDiffuser-style scheduler to enable flexible switching between different modeling modes (i.e., world models, vision-language-action models, inverse dynamics models, video generation models, and video-action joint prediction models). Motus further leverages the optical flow to learn latent actions and adopts a recipe with three-phase training pipeline and six-layer data pyramid, thereby extracting pixel-level \"delta action\" and enabling large-scale action pretraining. Experiments show that Motus achieves superior performance against state-of-the-art methods in both simulation (a +15% improvement over X-VLA and a +45% improvement over Pi0.5) and real-world scenarios(improved by +11~48%), demonstrating unified modeling of all functionalities and priors significantly benefits downstream robotic tasks.",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "latent action",
+        "统一多模态建模",
+        "视频生成",
+        "真实机器人验证"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Experiments show that Motus achieves superior performance against state-of-the-art methods in both simulation (a +15% improvement over X-VLA and a +45% improvement over Pi0.5) and real-world scenarios(improved by +11~48%), demonstrating unified modeling of all functionalities and priors significantly benefits downstream robotic tasks."
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "Motus 用 MoT 统一理解、视频生成和动作专家，并以 optical-flow latent action 支持世界模型、VLA、逆动力学等多种模式。",
+      "limitation_zh": "MoT、六层数据金字塔与多模式调度复现复杂，摘要未给开放权重/数据；统一模型是否胜过同算力专用模型仍需外部检验。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.13030",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": null,
+      "updated_at": "2025-12-25T08:16:05Z"
+    },
+    {
+      "arxiv_id": "2512.15840",
+      "v1_date": "2025-12-17",
+      "title": "Large Video Planner Enables Generalizable Robot Control",
+      "authors": [
+        "Boyuan Chen",
+        "Tianyuan Zhang",
+        "Haoran Geng",
+        "Caiyi Zhang",
+        "Peihao Li",
+        "Kiwhan Song",
+        "William T. Freeman",
+        "Jitendra Malik",
+        "Pieter Abbeel",
+        "Russ Tedrake",
+        "Vincent Sitzmann",
+        "Yilun Du"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "General-purpose robots require decision-making models that generalize across diverse tasks and environments. Recent works build robot foundation models by extending multimodal large language models (MLLMs) with action outputs, creating vision-language-action (VLA) systems. These efforts are motivated by the intuition that MLLMs' large-scale language and image pretraining can be effectively transferred to the action output modality. In this work, we explore an alternative paradigm of using large-scale video pretraining as a primary modality for building robot foundation models. Unlike static images and language, videos capture spatio-temporal sequences of states and actions in the physical world that are naturally aligned with robotic behavior. We curate an internet-scale video dataset of human activities and task demonstrations, and train, for the first time at a foundation-model scale, an open video model for generative robotics planning. The model produces zero-shot video plans for novel scenes and tasks, which we post-process to extract executable robot actions. We evaluate task-level generalization through third-party selected tasks in the wild and real-robot experiments, demonstrating successful physical execution. Together, these results show robust instruction following, strong generalization, and real-world feasibility. We release both the model and dataset to support open, reproducible video-based robot learning. Our website is available at https://www.boyuan.space/large-video-planner/.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "互联网视频",
+        "生成式规划",
+        "真实机器人验证",
+        "开放模型与数据"
+      ],
+      "classification_confidence": 0.88,
+      "signals": {
+        "real_robot": {
+          "value": true,
+          "evidence": "Together, these results show robust instruction following, strong generalization, and real-world feasibility."
+        },
+        "multi_task": {
+          "value": true,
+          "evidence": "General-purpose robots require decision-making models that generalize across diverse tasks and environments."
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "open_assets": {
+          "code": null,
+          "data": true,
+          "model": true,
+          "status": "release_claim_in_abstract",
+          "project_page": "https://www.boyuan.space/large-video-planner/",
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "以互联网规模人类活动视频预训练开放视频规划器，零样本生成新场景任务的视频计划并后处理为可执行真实机器人动作。",
+      "limitation_zh": "视频计划需后处理才能变成动作，动力学不可执行与闭环漂移仍可能出现；“第三方选题”不等同大规模独立复现。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.15840",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "29 pages, 16 figures",
+      "updated_at": "2026-05-08T06:37:02Z"
+    },
+    {
+      "arxiv_id": "2512.18477",
+      "v1_date": "2025-12-20",
+      "title": "STORM: Search-Guided Generative World Models for Robotic Manipulation",
+      "authors": [
+        "Wenjun Lin",
+        "Jensen Zhang",
+        "Kaitong Cai",
+        "Keze Wang"
+      ],
+      "institutions": [],
+      "institution_status": "not_available_in_arxiv_api_and_not_independently_verified",
+      "abstract": "We present STORM (Search-Guided Generative World Models), a novel framework for spatio-temporal reasoning in robotic manipulation that unifies diffusion-based action generation, conditional video prediction, and search-based planning. Unlike prior Vision-Language-Action (VLA) models that rely on abstract latent dynamics or delegate reasoning to language components, STORM grounds planning in explicit visual rollouts, enabling interpretable and foresight-driven decision-making. A diffusion-based VLA policy proposes diverse candidate actions, a generative video world model simulates their visual and reward outcomes, and Monte Carlo Tree Search (MCTS) selectively refines plans through lookahead evaluation. Experiments on the SimplerEnv manipulation benchmark demonstrate that STORM achieves a new state-of-the-art average success rate of 51.0 percent, outperforming strong baselines such as CogACT. Reward-augmented video prediction substantially improves spatio-temporal fidelity and task relevance, reducing Frechet Video Distance by over 75 percent. Moreover, STORM exhibits robust re-planning and failure recovery behavior, highlighting the advantages of search-guided generative world models for long-horizon robotic manipulation.",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_direction": "世界模型",
+      "cross_tags": [
+        "动作条件视频预测",
+        "MCTS",
+        "长时序",
+        "benchmark",
+        "失败恢复"
+      ],
+      "classification_confidence": 0.95,
+      "signals": {
+        "real_robot": {
+          "value": null,
+          "evidence": "摘要未明确给出真实机器人执行结果，或仅提及真实数据/昂贵真实 rollout；不将其视为真实机器人验证。"
+        },
+        "multi_task": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "cross_embodiment": {
+          "value": null,
+          "evidence": "摘要未明确陈述；不将缺失信息记为否。"
+        },
+        "long_horizon": {
+          "value": true,
+          "evidence": "Moreover, STORM exhibits robust re-planning and failure recovery behavior, highlighting the advantages of search-guided generative world models for long-horizon robotic manipulation."
+        },
+        "open_assets": {
+          "code": null,
+          "data": null,
+          "model": null,
+          "status": "not_stated_in_arxiv_abstract_or_comment",
+          "project_page": null,
+          "evidence": "开放字段只记录摘要/评论或已打开项目页中的明确发布信号；true 不代表本地下载复验。"
+        }
+      },
+      "contribution_zh": "STORM 让 diffusion VLA 提议动作、视频世界模型预测结果、MCTS 搜索与重规划，在 SimplerEnv 达到 51.0% 平均成功率。",
+      "limitation_zh": "仅 SimplerEnv 仿真，无真实机器人证据；视频世界模型误差与 MCTS 计算成本可能随长时序迅速放大。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "arxiv_url": "https://arxiv.org/abs/2512.18477",
+      "verification": {
+        "status": "verified",
+        "source": "arXiv API Atom entry from category/date wide recall",
+        "checked_on": "2026-07-29",
+        "title_and_id_match": true,
+        "v1_date_field": "Atom <published>",
+        "note": "该条 ID、标题、作者、摘要和 published 字段来自同一个 arXiv API <entry>；未以修订日期替代 v1 日期。"
+      },
+      "arxiv_comment": "Under submission",
+      "updated_at": "2025-12-20T19:40:25Z"
+    }
+  ]
+}

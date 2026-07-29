@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI Radar Paper",
+  "type": "object",
+  "required": [
+    "id", "title", "authors", "first_submitted", "updated", "abstract",
+    "primary_topic", "topics", "confidence", "arxiv_url"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[0-9]{4}\\.[0-9]{4,5}$"},
+    "title": {"type": "string"},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "institutions": {"type": "array", "items": {"type": "string"}},
+    "first_submitted": {"type": "string", "format": "date"},
+    "updated": {"type": "string", "format": "date"},
+    "abstract": {"type": "string"},
+    "categories": {"type": "array", "items": {"type": "string"}},
+    "primary_topic": {
+      "enum": ["foundation", "dual_system", "dexterous", "world_model", "general_learning"]
+    },
+    "topics": {"type": "array", "items": {"type": "string"}},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "arxiv_url": {"type": "string", "format": "uri"},
+    "doi": {"type": ["string", "null"]},
+    "official_url": {"type": ["string", "null"]},
+    "code_url": {"type": ["string", "null"]},
+    "project_url": {"type": ["string", "null"]},
+    "peer_review": {
+      "type": ["object", "null"],
+      "properties": {
+        "venue": {"type": "string"},
+        "year": {"type": "integer"},
+        "status": {"type": "string"},
+        "official_url": {"type": "string"},
+        "evidence": {"type": "string"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "real_robot": {"type": "boolean"},
+        "multi_task": {"type": "boolean"},
+        "cross_embodiment": {"type": "boolean"},
+        "long_horizon": {"type": "boolean"},
+        "open_code": {"type": "boolean"},
+        "open_data": {"type": "boolean"},
+        "open_model": {"type": "boolean"}
+      }
+    },
+    "contribution_zh": {"type": "string"},
+    "limitation_zh": {"type": "string"},
+    "selection_reason_zh": {"type": "string"}
+  }
+}

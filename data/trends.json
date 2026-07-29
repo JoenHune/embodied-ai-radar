@@ -1,0 +1,460 @@
+{
+  "method_note": "趋势卡由结构化论文 ID 支撑；A/B/C/D 是趋势证据强度，不是论文质量评分。",
+  "months": {
+    "2025-07": [
+      {
+        "title": "人类视频开始被拆成可迁移的动作先验",
+        "grade": "B",
+        "kind": "weak",
+        "change": "EC-Flow、H-RDT 与 GR-3 分别从无动作标签视频、双臂人类操作和通用数据配方切入，信号尚未形成单一范式，但都在绕开机器人示教瓶颈。",
+        "comparison": "同比基线中此类工作多停留在表征对齐；本月开始把人类数据直接接入动作生成或双臂策略。",
+        "evidence_ids": ["2507.06224", "2507.23523", "2507.15493"],
+        "maturity": "多为预训练或受控任务验证，跨本体稳定性仍弱。",
+        "bottleneck": "人—机动作空间对齐，以及视频中不可观测的力与接触。",
+        "implication": "优先跟踪能同时拥有数据转换器、机器人数据闭环和跨本体评测的团队。"
+      },
+      {
+        "title": "“大脑—小脑”正在从二层变成三系统",
+        "grade": "C",
+        "kind": "weak",
+        "change": "TriVLA 把高层语义、低层动作与 episodic world model 明确拆分；EmbodieDreamer 则让世界模型承担 real-to-sim-to-real 中介。",
+        "comparison": "早期 planner–policy 通常只有两层；本月出现把记忆/预测独立成第三模块的尝试。",
+        "evidence_ids": ["2507.01424", "2507.05198"],
+        "maturity": "概念结构清晰，但独立团队和长时序真机证据不足。",
+        "bottleneck": "模块间误差传递与实时调度。",
+        "implication": "将“第三系统”作为观察项，不把新架构命名直接当作能力跃迁。"
+      },
+      {
+        "title": "空间增强很热，但尚未等于通用性",
+        "grade": "D",
+        "kind": "cooling",
+        "change": "Evo-0 用外部视觉几何模型补足 VLA 的 3D 表征，真实机器人结果积极；但没有同时证明跨本体、长时序和独立复现。",
+        "comparison": "数量增量主要来自为 VLA 加适配器，而不是统一训练目标。",
+        "evidence_ids": ["2507.00416"],
+        "maturity": "单点能力改善。",
+        "bottleneck": "空间 benchmark 增益能否转化为开放环境成功率。",
+        "implication": "投资研判应区分“VLA 组件供应商”与真正拥有数据和部署闭环的平台。"
+      }
+    ],
+    "2025-08": [
+      {
+        "title": "视频生成器开始越过“数据增强”，直接扮演策略",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Video Generators are Robot Policies、Masquerade 与 DiWA 分别尝试直接控制、视频编辑迁移和用世界模型适配 diffusion policy。",
+        "comparison": "相较 7 月主要把视频当作数据，本月首次集中出现“生成—预测—控制”连续化。",
+        "evidence_ids": ["2508.00795", "2508.09976", "2508.03645"],
+        "maturity": "仿真与受控任务为主。",
+        "bottleneck": "视频像素质量与可执行动作之间仍存在逆动力学鸿沟。",
+        "implication": "关注能用执行成功而非视频指标训练生成模型的团队。"
+      },
+      {
+        "title": "触觉开始进入 VLA 统一语义空间",
+        "grade": "C",
+        "kind": "weak",
+        "change": "OmniVTLA 不再把触觉仅作为低层状态，而是与视觉、语言和动作对齐。",
+        "comparison": "同比基线更多是触觉专用策略；本月出现 foundation-model 接口层的整合。",
+        "evidence_ids": ["2508.08706"],
+        "maturity": "单团队早期信号。",
+        "bottleneck": "传感器异构、跨硬件标定和公开数据规模。",
+        "implication": "触觉价值可能先体现在接触失败恢复，而非通用语义理解。"
+      },
+      {
+        "title": "世界模型仍更像适配器，而非可靠规划器",
+        "grade": "D",
+        "kind": "cooling",
+        "change": "DiWA 与 GWM 展示适配和场景预测价值，但闭环规划收益、长时序误差和跨任务复现仍不充分。",
+        "comparison": "论文数量上升快于控制证据升级。",
+        "evidence_ids": ["2508.03645", "2508.17600"],
+        "maturity": "PoC 到早期验证。",
+        "bottleneck": "预测误差在闭环中的累积。",
+        "implication": "把是否改善规划成功率设为世界模型的硬门槛。"
+      }
+    ],
+    "2025-09": [
+      {
+        "title": "flow matching 正在成为通用策略的新执行底座",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "ManiFlow、EC-Flow 与 FLOWER 在通用操控、无标签视频和轻量 generalist policy 三条线上同时采用 flow。",
+        "comparison": "相比同比基线的 diffusion policy 主导，flow 的速度与连续控制优势开始跨团队扩散。",
+        "evidence_ids": ["2509.01819", "2507.06224", "2509.04996"],
+        "maturity": "多团队、跨月，但统一真机 benchmark 尚未形成。",
+        "bottleneck": "训练稳定性和闭环重规划。",
+        "implication": "基础设施层应支持 diffusion 与 flow 共存，而不是押注单一采样器。"
+      },
+      {
+        "title": "灵巧操作的数据表示从关节轨迹转向接触与第一视角",
+        "grade": "B",
+        "kind": "weak",
+        "change": "OpenEgo、Text2Touch 与 CEDex 分别用 egocentric 数据、语言设计奖励和接触表示扩大灵巧操作监督。",
+        "comparison": "本月信号不在更复杂的手，而在更可迁移的数据坐标系。",
+        "evidence_ids": ["2509.05513", "2509.07445", "2509.24661"],
+        "maturity": "数据与表示创新先于通用真机策略。",
+        "bottleneck": "接触标注成本与不同手型的对应关系。",
+        "implication": "长期价值更可能沉淀在接触数据协议与手型无关表示。"
+      },
+      {
+        "title": "在线搜索被塞进 VLA 推理环",
+        "grade": "C",
+        "kind": "weak",
+        "change": "VLA-Reasoner 用 online MCTS 把推理从一次性 chain-of-thought 变成动作候选搜索。",
+        "comparison": "此前 reasoning 多是离线语义提示；这是面向执行验证的早期转向。",
+        "evidence_ids": ["2509.22643"],
+        "maturity": "单项高新颖度工作。",
+        "bottleneck": "搜索延迟、奖励可信度与真实机器人安全探索。",
+        "implication": "观察后续是否出现轻量 verifier 或搜索蒸馏路线。"
+      }
+    ],
+    "2025-10": [
+      {
+        "title": "fast–slow 从隐式分工变成显式训练目标",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "VLA-R1、MoTVLA 与上月 VLA-Reasoner 分别用推理增强、统一快慢推理和在线搜索建立高层思考—低层动作分工。",
+        "comparison": "相较 7 月的架构试验，已有三个独立作者团队连续出现。",
+        "evidence_ids": ["2510.01623", "2510.18337", "2509.22643"],
+        "maturity": "新兴架构簇，真实机器人延迟与失败恢复仍待验证。",
+        "bottleneck": "推理 token 与控制频率的冲突。",
+        "implication": "大小脑的竞争焦点将从模型大小转向调度、验证与恢复。"
+      },
+      {
+        "title": "世界模型开始进入 VLA 后训练",
+        "grade": "B",
+        "kind": "weak",
+        "change": "VLA-RFT 用 world simulator 给可验证奖励，Ctrl-World 强调可控生成，Latent Action Pretraining 则把预测表征回流到动作学习。",
+        "comparison": "8 月还以适配为主，本月开始直接改变策略训练目标。",
+        "evidence_ids": ["2510.00406", "2510.10125", "2509.18428"],
+        "maturity": "训练闭环已经出现，仿真偏差仍高。",
+        "bottleneck": "奖励投机与 simulator bias。",
+        "implication": "优先看同时报告模型预测质量和策略真实成功率的工作。"
+      },
+      {
+        "title": "视频驱动双臂学习成为数据规模化的第二战场",
+        "grade": "B",
+        "kind": "weak",
+        "change": "DexMan、Parse-Augment-Distill 与真实人类活动视频预训练共同指向少机器人示教的双臂学习。",
+        "comparison": "从 7 月单项数据转换扩散为生成视频、单视频蒸馏和大规模人类活动三类路线。",
+        "evidence_ids": ["2510.08475", "2509.20286", "2510.21571"],
+        "maturity": "多团队验证，硬件与任务覆盖仍有限。",
+        "bottleneck": "双臂同步、遮挡和接触力缺失。",
+        "implication": "数据引擎应优先解决可执行性过滤，而不是只扩大视频总量。"
+      }
+    ],
+    "2025-11": [
+      {
+        "title": "世界模型终于开始用规划成功率证明自己",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "WorldPlanner 把 action-conditioned visual world model 接入 MCTS/MPC；跨本体灵巧世界模型与 Ctrl-World 构成独立跟进。",
+        "comparison": "比 8 月的生成/适配信号更接近闭环决策，但仍缺正式评审与规模化真机验证。",
+        "evidence_ids": ["2511.03077", "2511.01177", "2510.10125"],
+        "maturity": "闭环 PoC。",
+        "bottleneck": "长时预测误差和规划计算量。",
+        "implication": "世界模型团队的关键里程碑应是同算力下的控制收益。"
+      },
+      {
+        "title": "跨本体迁移从模型适配转向数据分布设计",
+        "grade": "B",
+        "kind": "weak",
+        "change": "X-Diffusion、InternData-A1 与 X-VLA 分别统一人类示范、合成数据和软提示式跨本体策略。",
+        "comparison": "相比“为每台机器人做 adapter”，本月更多工作试图在数据和动作空间层消除本体差异。",
+        "evidence_ids": ["2511.04671", "2511.16651", "2510.10274"],
+        "maturity": "多路线并行，尚无统一跨本体 benchmark。",
+        "bottleneck": "动作坐标标准、硬件观测差异和负迁移。",
+        "implication": "跨本体数据协议可能比单一 VLA 权重更具平台价值。"
+      },
+      {
+        "title": "VLA 开始从示范学习走向“从经验学习”",
+        "grade": "C",
+        "kind": "weak",
+        "change": "π*0.6 明确强调 experience learning，与 VLA-RFT 的可验证奖励形成呼应。",
+        "comparison": "共识仍是离线模仿；在线经验闭环尚属少数。",
+        "evidence_ids": ["2511.14759", "2510.00406"],
+        "maturity": "两个高信号项目，独立复现弱。",
+        "bottleneck": "真实机器人安全探索和奖励设计。",
+        "implication": "跟踪拥有部署场景、可持续回收失败数据的团队。"
+      }
+    ],
+    "2025-12": [
+      {
+        "title": "世界模型与搜索/规划形成方法簇",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Motus、Large Video Planner、STORM 与 WorldPlanner 从统一 latent action、视频规划器和 search-guided generation 三路汇合。",
+        "comparison": "这是全年首次在同月出现三项以上、不同作者团队的 planning-oriented world model。",
+        "evidence_ids": ["2512.13030", "2512.15840", "2512.18477", "2511.03077"],
+        "maturity": "研究密度高，同行评审滞后明显。",
+        "bottleneck": "可执行性校验与长时 roll-out 漂移。",
+        "implication": "2026 年应观察这批工作能否转化为真实机器人闭环收益。"
+      },
+      {
+        "title": "双系统跨出 manipulation，开始覆盖导航与视频策略",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Video2Act、Ground Slow Move Fast 与 DualVLA 显示快慢分工可跨视频策略、导航和通用代理。",
+        "comparison": "10 月主要是 VLA 内部推理；本月开始形成跨任务架构语言。",
+        "evidence_ids": ["2512.03044", "2512.08186", "2511.22134"],
+        "maturity": "跨任务概念扩散，统一实验标准缺失。",
+        "bottleneck": "不同任务的时钟频率和状态抽象不统一。",
+        "implication": "双系统价值在于复用调度框架，而非统一一个超大模型。"
+      },
+      {
+        "title": "低成本示范采集与合成开始合流",
+        "grade": "B",
+        "kind": "weak",
+        "change": "RoboWheel、One-Shot Demonstration Synthesis 和 InternData-A1 覆盖真实人类示范、单样本合成与高保真合成预训练。",
+        "comparison": "数据规模化从单一 teleoperation 扩展为真实—合成混合流水线。",
+        "evidence_ids": ["2512.02729", "2512.09297", "2511.16651"],
+        "maturity": "数据引擎成形，但跨团队采用尚未验证。",
+        "bottleneck": "数据质量过滤与许可合规。",
+        "implication": "评估数据公司时，应要求展示对下游多机器人成功率的边际贡献。"
+      }
+    ],
+    "2026-01": [
+      {
+        "title": "latent action world model 从实验室走向 in-the-wild",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Learning Latent Action World Models In The Wild、Cosmos Policy 与 Motus 分别覆盖野外视频、视频模型微调和统一 latent action。",
+        "comparison": "12 月强调搜索，本月强调如何从开放视频获得可执行潜变量。",
+        "evidence_ids": ["2601.05230", "2601.16163", "2512.13030"],
+        "maturity": "跨月多团队，真实环境可控性仍弱。",
+        "bottleneck": "动作语义不可辨识和时序对齐。",
+        "implication": "把 inverse dynamics 与可执行性奖励视为核心能力，而非附属模块。"
+      },
+      {
+        "title": "Action CoT 与非对称专家正在重写大小脑接口",
+        "grade": "B",
+        "kind": "weak",
+        "change": "ACoT-VLA、TwinBrainVLA 与 DualVLA 从动作链推理、非对称混合专家和部分解耦三种方式定义高低层接口。",
+        "comparison": "相比显式 planner 调 policy，这些工作更倾向于可联合训练的内部接口。",
+        "evidence_ids": ["2601.11404", "2601.14133", "2511.22134"],
+        "maturity": "架构簇形成，实时性尚未标准化。",
+        "bottleneck": "慢分支是否真的提升成功率而非只增加计算。",
+        "implication": "需要按任务难度自适应启用慢推理。"
+      },
+      {
+        "title": "人类中心数据被推到跨本体预训练主线",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Being-H0.5、RoboWheel 和 InternData-A1 都把人类数据转化为 generalist policy 的可扩展监督。",
+        "comparison": "2025 年的零散数据编辑开始收敛为预训练数据栈。",
+        "evidence_ids": ["2601.12993", "2512.02729", "2511.16651"],
+        "maturity": "模型规模化信号明确，独立机器人平台验证仍有限。",
+        "bottleneck": "人类动作与机器人动力学不一致。",
+        "implication": "关注能将人类视频、少量真机和在线修正闭环结合的团队。"
+      }
+    ],
+    "2026-02": [
+      {
+        "title": "世界模型开始承担 RL 模拟器与在线自纠错",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "WoVR、Self-Correcting VLA 与 World-Gymnast 分别用于后训练模拟、稀疏想象修正和世界模型内 RL。",
+        "comparison": "相比 2025 年底的离线规划，这是一轮更靠近策略优化的迁移。",
+        "evidence_ids": ["2602.13977", "2602.21633", "2602.02454"],
+        "maturity": "多团队新兴趋势，真实机器人长期稳定性未确认。",
+        "bottleneck": "模型偏差会被 RL 放大。",
+        "implication": "验证时需报告 simulator exploitation 和真机回归测试。"
+      },
+      {
+        "title": "快慢系统开始感知力、接触与完成状态",
+        "grade": "B",
+        "kind": "weak",
+        "change": "FAVLA 将力适应写入 fast–slow 架构，StreamVLA 用 completion-state gating 打破固定 reason–act 循环，自纠错框架补上终止判断。",
+        "comparison": "双系统从“多想一步”转向“何时想、何时停、何时改动作”。",
+        "evidence_ids": ["2602.23648", "2602.01100", "2602.01811"],
+        "maturity": "接口创新明显，跨平台复现不足。",
+        "bottleneck": "事件触发器的误报与控制抖动。",
+        "implication": "调度器、状态估计和 verifier 将成为独立技术层。"
+      },
+      {
+        "title": "egocentric 数据开始真正服务灵巧规模化",
+        "grade": "B",
+        "kind": "weak",
+        "change": "EgoScale、Joint-Aligned Latent Action 与 Being-H0.5 把第一视角人类数据接入灵巧和跨本体预训练。",
+        "comparison": "9 月 OpenEgo 还是数据集信号，本月已有训练管线和泛化目标。",
+        "evidence_ids": ["2602.16710", "2602.21736", "2601.12993"],
+        "maturity": "数据规模化起步。",
+        "bottleneck": "手—物接触状态和第三维动作不可观测。",
+        "implication": "具备可穿戴采集与物理对齐工具链的团队可能形成数据壁垒。"
+      }
+    ],
+    "2026-03": [
+      {
+        "title": "world model 的新门槛是“动作可执行”",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "EVA 用 inverse-dynamics rewards 对齐可执行动作，DreamPlan 用视频世界模型训练 planner，DIAL 用 latent world model 解耦 intent/action。",
+        "comparison": "视频质量不再是主论据，策略可执行性成为共同评价轴。",
+        "evidence_ids": ["2603.17808", "2603.16860", "2603.29844"],
+        "maturity": "三团队同时出现，评审与长期真机数据仍滞后。",
+        "bottleneck": "逆动力学奖励的偏差和闭环漂移。",
+        "implication": "这是比论文数量更重要的评价范式迁移。"
+      },
+      {
+        "title": "灵巧操作从单步抓取转向可观测的长时接触",
+        "grade": "B",
+        "kind": "weak",
+        "change": "DexDrummer、UniDex 与 OmniVTA 分别覆盖长时演奏、通用手控制和视触觉世界模型。",
+        "comparison": "相比早期 reward shaping，任务与感知都更接近连续接触闭环。",
+        "evidence_ids": ["2603.22263", "2603.22264", "2603.19201"],
+        "maturity": "真实机器人证据增强，硬件可复制性仍有限。",
+        "bottleneck": "高频触觉、动作空间维度和设备差异。",
+        "implication": "优先跟踪“传感器—数据—策略”一体化团队。"
+      },
+      {
+        "title": "论文量激增，但不能把提交周期当成技术爆发",
+        "grade": "D",
+        "kind": "cooling",
+        "change": "自动宽召回候选显著上升，基础模型命名占比最高；同期官方同行评审覆盖仍低。",
+        "comparison": "增长既包含真实扩散，也受到会议周期与 VLA 命名泛化影响。",
+        "evidence_ids": ["2603.28545", "2603.29844"],
+        "maturity": "数量强、质量分化。",
+        "bottleneck": "统一真机评测和独立复现。",
+        "implication": "本月趋势判断应降低数量权重，提高真实机器人和开放资产权重。"
+      }
+    ],
+    "2026-04": [
+      {
+        "title": "触觉与 world model 开始合流",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Touch Dreaming、FingerEye 与 OmniVTA 把触觉用于未来预测、连续感知和接触世界建模。",
+        "comparison": "8 月只是多模态 VLA 接口；本月触觉开始改变训练目标和状态预测。",
+        "evidence_ids": ["2604.13015", "2604.20689", "2603.19201"],
+        "maturity": "跨团队、跨月信号明确。",
+        "bottleneck": "低成本传感器一致性与大规模同步数据。",
+        "implication": "触觉世界模型可能先在装配、工具使用和柔性物体中兑现。"
+      },
+      {
+        "title": "双系统进入异步 coarse-to-fine 调度",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Libra-VLA、Trace-Conditioned Planning 与 DIAL 不再固定每步完整推理，而是在轨迹、意图和动作层分配不同计算。",
+        "comparison": "比 2025 年的显式 fast–slow 更接近实时系统设计。",
+        "evidence_ids": ["2604.24921", "2604.21924", "2603.29844"],
+        "maturity": "架构成熟度上升，工程 benchmark 缺失。",
+        "bottleneck": "异步状态陈旧与延迟抖动。",
+        "implication": "控制频率、端到端延迟和恢复时间应进入标准评测。"
+      },
+      {
+        "title": "foundation model 开始接受垂直本体与可控行为约束",
+        "grade": "C",
+        "kind": "weak",
+        "change": "π0.7 强调 steerable generalist policy，Open-H-Embodiment 把医疗机器人纳入大规模基础模型数据。",
+        "comparison": "通用性从“同一权重做更多任务”转向“可控制地适应高约束域”。",
+        "evidence_ids": ["2604.15483", "2604.21017"],
+        "maturity": "两个高信号工作，独立验证不足。",
+        "bottleneck": "高风险域的安全验证与数据治理。",
+        "implication": "通用底座与垂直合规层可能形成分层市场。"
+      }
+    ],
+    "2026-05": [
+      {
+        "title": "视频模型正在被改造成 generalist policy，而非外置 world model",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Turning Video Models into Generalist Robot Policies、τ0-WM 与 Cosmos Policy 把视频预测和动作生成压进同一训练栈。",
+        "comparison": "2025 年视频模型多是数据或模拟器；现在开始直接承担控制表示。",
+        "evidence_ids": ["2605.27817", "2606.01027", "2601.16163"],
+        "maturity": "跨团队方向明确，实时控制成本仍高。",
+        "bottleneck": "像素生成冗余与动作时延。",
+        "implication": "未来胜出的可能是压缩 latent video-action model，而非最大视频生成器。"
+      },
+      {
+        "title": "连续推理开始取代离散 reason–act 循环",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Continuous Reasoning、Libra-VLA 与 StreamVLA 都试图让思考与控制异步或连续发生。",
+        "comparison": "大小脑竞争由模块命名转向时钟与状态同步。",
+        "evidence_ids": ["2606.00229", "2604.24921", "2602.01100"],
+        "maturity": "三团队连续出现。",
+        "bottleneck": "推理状态陈旧、测试时计算不可控。",
+        "implication": "系统软件和推理调度会成为 VLA 部署的关键护城河。"
+      },
+      {
+        "title": "generalist 底座开始向软体与灵巧专用能力下沉",
+        "grade": "B",
+        "kind": "weak",
+        "change": "DeMaVLA、BORA 与 Qwen-VLA 分别覆盖可变形物体、真实灵巧在线适配和跨任务/本体统一。",
+        "comparison": "相较只做 kitchen benchmark，任务物理性明显增强。",
+        "evidence_ids": ["2605.31286", "2605.30226", "2605.30280"],
+        "maturity": "真实任务信号增强，开放与独立复现待确认。",
+        "bottleneck": "专用数据稀缺与在线适配安全。",
+        "implication": "通用模型价值将通过高难度垂直任务兑现，而不是只看平均 benchmark。"
+      }
+    ],
+    "2026-06": [
+      {
+        "title": "大小脑接口正在变成可监督的 3D 轨迹语言",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Dense Embodied CoT、3D HAMSTER 与 Continuous Reasoning 分别提供密集思维监督、3D 轨迹桥接和连续推理。",
+        "comparison": "从抽象语言计划进化到可落地的几何中间表示。",
+        "evidence_ids": ["2606.30552", "2606.31329", "2606.00229"],
+        "maturity": "跨团队新兴趋势，标准数据格式尚未形成。",
+        "bottleneck": "中间监督获取成本和错误计划的可恢复性。",
+        "implication": "3D trajectory token/trace 可能成为跨模型、跨控制器的接口标准。"
+      },
+      {
+        "title": "触觉从专用 policy 升级为 VLA 的预测通道",
+        "grade": "B",
+        "kind": "weak",
+        "change": "UniTacVLA、CoDex 与 Touch Dreaming 分别统一触觉理解/预测、无示范组合灵巧任务和触觉想象。",
+        "comparison": "相较 2025 年仅做感知融合，本月出现预测和组合泛化目标。",
+        "evidence_ids": ["2606.31723", "2606.31909", "2604.13015"],
+        "maturity": "方法簇初成，硬件标准化不足。",
+        "bottleneck": "传感器寿命、同步频率和跨手型迁移。",
+        "implication": "触觉数据层可能成为新基础设施赛道。"
+      },
+      {
+        "title": "开放训练栈与人类视频迁移同时加速",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Scalable Behavior Cloning、Human-as-Humanoid 与 Qwen-VLA 分别强调开放数据/训练/评测、人类对齐本体和跨本体统一。",
+        "comparison": "开放不再只等于放权重，而是开始覆盖数据与评测。",
+        "evidence_ids": ["2606.27375", "2606.32009", "2605.30280"],
+        "maturity": "资产开放信号强，独立采用尚需时间。",
+        "bottleneck": "数据许可、硬件可复现与评测碎片化。",
+        "implication": "跟踪外部团队是否在 3–6 个月内真正采用这些资产。"
+      }
+    ],
+    "2026-07": [
+      {
+        "title": "论文报告 100K 小时级真实轨迹，暂不是已确认趋势",
+        "grade": "C",
+        "kind": "weak",
+        "change": "Xiaomi-Robotics-1 论文报告超过 100K 小时真实轨迹，Data Pyramid 讨论数据层级；若数据口径能被下游能力和开放评测验证，数据工程门槛将显著抬高。",
+        "comparison": "本月仅覆盖 1–29 日，不能与完整月数量比较。",
+        "evidence_ids": ["2607.15330", "2607.24744"],
+        "maturity": "超大规模单团队信号。",
+        "bottleneck": "数据质量、任务分布与外部可验证性。",
+        "implication": "未来应问“有效多样性/小时”，而不只看总小时。"
+      },
+      {
+        "title": "视触觉 world model 与 VLA 自纠错正在闭环",
+        "grade": "C",
+        "kind": "weak",
+        "change": "ViTacWorld、τ 与 DC-WAM 分别从视触觉世界模型、未来视觉监督和 world-action model 推进接触闭环。",
+        "comparison": "6 月的触觉预测在本月进一步接到世界—动作联合建模。",
+        "evidence_ids": ["2607.22530", "2607.24485", "2607.25918"],
+        "maturity": "三项同月信号，但都未经长期独立验证。",
+        "bottleneck": "触觉数据规模与未来监督偏差。",
+        "implication": "这是最值得跟踪的非共识信号之一，验证点是失败恢复率而非单次成功率。"
+      },
+      {
+        "title": "具身 Agent OS 可能成为模型之上的系统层",
+        "grade": "C",
+        "kind": "weak",
+        "change": "PhyAgentOS 把认知规划与物理执行解耦，并强调自演化操作系统；它呼应过去一年的双系统和调度趋势。",
+        "comparison": "此前多是论文内架构，本月出现系统软件层叙事。",
+        "evidence_ids": ["2607.16636"],
+        "maturity": "单项早期信号。",
+        "bottleneck": "接口标准、实时性、安全隔离和跨硬件兼容。",
+        "implication": "若未来出现跨模型/跨机器人的第三方采用，系统层可能形成独立平台价值。"
+      }
+    ]
+  }
+}
