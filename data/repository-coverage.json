@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-07-29",
+  "repository_count": 42,
+  "url_verified": 42,
+  "paper_mapped": 34,
+  "arxiv_mapped": 34,
+  "doi_mapped": 1,
+  "archived": 1,
+  "license_missing_or_unrecognized": 12,
+  "by_asset_type": {
+    "dataset": 9,
+    "framework": 10,
+    "model": 9,
+    "benchmark": 10,
+    "code": 4
+  },
+  "by_topic": {
+    "policy_learning": 8,
+    "simulation_transfer": 2,
+    "humanoid_whole_body": 2,
+    "foundation_models": 7,
+    "dexterous_manipulation": 7,
+    "world_models": 2
+  },
+  "independent_adoption_bands": {
+    "高": 17,
+    "中高": 5,
+    "中": 12,
+    "早期/低证据": 8
+  },
+  "scoring_note": "独立采用分不使用 stars；由外部 issue/PR 作者、贡献者广度、近 100 个 PR 的合并数、forks 和 release 新鲜度组成。它是 GitHub 公开信号代理，不是科研影响力结论。",
+  "warning": "Stars are stored as reach metadata but excluded from the independent-adoption score. A missing reverse-dependency count remains null and is never replaced by forks."
+}

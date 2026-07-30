@@ -6,22 +6,42 @@ titleTemplate: 过去 12 个月研究趋势分析
 hero:
   name: 具身智能研究雷达
   text: 从论文热度到技术兑现
-  tagline: 2025.07–2026.06 主分析 · 2026.07 临时完整版（截至 29 日）· 全球统一口径
+  tagline: 30,604 条 arXiv 母集 · 12,015 条发表版本 · 15 类开放主题 · 2026.07 完整研判
   actions:
     - theme: brand
       text: 阅读执行摘要 →
       link: /analysis/executive-summary
     - theme: alt
+      text: 查看语料扩充
+      link: /analysis/corpus-expansion
+    - theme: alt
       text: 浏览月度雷达
       link: /monthly/
-    - theme: alt
-      text: 下载完整报告
-      link: https://raw.githubusercontent.com/JoenHune/embodied-ai-radar/main/embodied-ai-radar-report.md
 
 features:
+  - icon: 🛰️
+    title: 两年宽召回母库
+    details: 30,604 条 arXiv、12,015 条发表版本与 40,345 个 canonical works 分层呈现
+    link: /analysis/corpus-expansion
+    linkText: 查看覆盖审计
+  - icon: 📚
+    title: 正式发表工作
+    details: ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics 独立采集
+    link: /database/publications
+    linkText: 浏览发表数据库
+  - icon: 🧭
+    title: 15 类开放主题体系
+    details: 五类稳定月度序列之外，新增人形全身、导航、HRI、数据引擎、安全、持续学习等方向
+    link: /frontiers/
+    linkText: 查看前沿方向
+  - icon: 💻
+    title: GitHub 采用证据
+    details: 42 个仓库逐一核验；stars 只作传播旁证，独立参与另行评分
+    link: /analysis/open-source-ecosystem
+    linkText: 查看开源雷达
   - icon: 🧠
     title: 具身基础模型
-    details: VLA、generalist policy 与多任务预训练的跨月演进
+    details: 稳定月度序列：VLA、generalist policy 与多任务预训练的跨月演进
     link: /directions/foundation-models
     linkText: 查看专题
   - icon: ⚡
@@ -41,7 +61,7 @@ features:
     linkText: 查看专题
   - icon: 🔁
     title: 通用机器人学习
-    details: 跨任务、跨本体、数据规模化与 diffusion/flow policy
+    details: 稳定月度序列：跨任务、跨本体、数据规模化与 diffusion/flow policy
     link: /directions/general-robot-learning
     linkText: 查看专题
   - icon: ✅
@@ -52,10 +72,10 @@ features:
 ---
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>12 + 1</strong><span>完整月份 + 7 月临时完整版</span></div>
-  <div class="radar-kpi"><strong>5</strong><span>固定主方向</span></div>
-  <div class="radar-kpi"><strong>A–D</strong><span>趋势证据等级</span></div>
-  <div class="radar-kpi"><strong>v1</strong><span>按首次提交月归档</span></div>
+  <div class="radar-kpi"><strong>30,604</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>12,015</strong><span>正式发表母集</span></div>
+  <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
+  <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 
-> 本站把“事实记录”“趋势推断”和“战略判断”分层呈现。统计来自结构化数据，可由脚本复算；论文名、日期、同行评审状态与外部链接均保留证据来源。
+> 本站把“母集发现”“自动相关候选”“精选精读”“趋势推断”和“战略判断”分层呈现。五类月度序列用于保持历史可比性，15 类 v2 体系用于发现不属于旧框架的早期方向；所有统计均由结构化数据和脚本派生。

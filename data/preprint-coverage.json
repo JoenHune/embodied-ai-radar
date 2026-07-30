@@ -1,0 +1,237 @@
+{
+  "generated_at": "2026-07-30",
+  "window": {
+    "from": "2024-07-01",
+    "until": "2026-07-29"
+  },
+  "mother_corpus": 30604,
+  "included": 8886,
+  "candidate": 5646,
+  "manual_review": 9710,
+  "with_doi": 2810,
+  "by_query": {
+    "robot_crosslist": 12929,
+    "cs_ro": 23225,
+    "embodied_crosslist": 2291
+  },
+  "by_primary_topic": {
+    "dexterous_manipulation": 915,
+    "policy_learning": 2217,
+    "humanoid_whole_body": 1501,
+    "human_robot_interaction": 583,
+    "world_models": 568,
+    "data_engines": 256,
+    "spatial_perception": 424,
+    "reasoning_planning": 595,
+    "navigation_mobile_manipulation": 435,
+    "simulation_transfer": 314,
+    "foundation_models": 891,
+    "safety_evaluation": 121,
+    "embodied_multisensory": 23,
+    "multi_robot_coordination": 37,
+    "continual_deployment_learning": 6
+  },
+  "months": {
+    "2024-07": {
+      "mother_corpus": 907,
+      "included": 198,
+      "candidate": 132,
+      "manual_review": 365,
+      "cs_ro": 695,
+      "supplement_only": 212
+    },
+    "2024-08": {
+      "mother_corpus": 692,
+      "included": 145,
+      "candidate": 113,
+      "manual_review": 268,
+      "cs_ro": 518,
+      "supplement_only": 174
+    },
+    "2024-09": {
+      "mother_corpus": 1287,
+      "included": 318,
+      "candidate": 234,
+      "manual_review": 503,
+      "cs_ro": 1074,
+      "supplement_only": 213
+    },
+    "2024-10": {
+      "mother_corpus": 1215,
+      "included": 302,
+      "candidate": 200,
+      "manual_review": 452,
+      "cs_ro": 945,
+      "supplement_only": 270
+    },
+    "2024-11": {
+      "mother_corpus": 976,
+      "included": 223,
+      "candidate": 167,
+      "manual_review": 371,
+      "cs_ro": 759,
+      "supplement_only": 217
+    },
+    "2024-12": {
+      "mother_corpus": 925,
+      "included": 208,
+      "candidate": 145,
+      "manual_review": 311,
+      "cs_ro": 650,
+      "supplement_only": 275
+    },
+    "2025-01": {
+      "mother_corpus": 673,
+      "included": 131,
+      "candidate": 109,
+      "manual_review": 275,
+      "cs_ro": 498,
+      "supplement_only": 175
+    },
+    "2025-02": {
+      "mother_corpus": 973,
+      "included": 263,
+      "candidate": 184,
+      "manual_review": 294,
+      "cs_ro": 722,
+      "supplement_only": 251
+    },
+    "2025-03": {
+      "mother_corpus": 1493,
+      "included": 413,
+      "candidate": 252,
+      "manual_review": 524,
+      "cs_ro": 1173,
+      "supplement_only": 320
+    },
+    "2025-04": {
+      "mother_corpus": 1035,
+      "included": 247,
+      "candidate": 177,
+      "manual_review": 394,
+      "cs_ro": 814,
+      "supplement_only": 221
+    },
+    "2025-05": {
+      "mother_corpus": 1368,
+      "included": 419,
+      "candidate": 253,
+      "manual_review": 388,
+      "cs_ro": 1007,
+      "supplement_only": 361
+    },
+    "2025-06": {
+      "mother_corpus": 1214,
+      "included": 347,
+      "candidate": 214,
+      "manual_review": 352,
+      "cs_ro": 873,
+      "supplement_only": 341
+    },
+    "2025-07": {
+      "mother_corpus": 1060,
+      "included": 265,
+      "candidate": 187,
+      "manual_review": 374,
+      "cs_ro": 801,
+      "supplement_only": 259
+    },
+    "2025-08": {
+      "mother_corpus": 1066,
+      "included": 288,
+      "candidate": 213,
+      "manual_review": 330,
+      "cs_ro": 785,
+      "supplement_only": 281
+    },
+    "2025-09": {
+      "mother_corpus": 1512,
+      "included": 469,
+      "candidate": 284,
+      "manual_review": 475,
+      "cs_ro": 1180,
+      "supplement_only": 332
+    },
+    "2025-10": {
+      "mother_corpus": 1348,
+      "included": 427,
+      "candidate": 241,
+      "manual_review": 418,
+      "cs_ro": 1031,
+      "supplement_only": 317
+    },
+    "2025-11": {
+      "mother_corpus": 1162,
+      "included": 347,
+      "candidate": 203,
+      "manual_review": 360,
+      "cs_ro": 854,
+      "supplement_only": 308
+    },
+    "2025-12": {
+      "mother_corpus": 1122,
+      "included": 299,
+      "candidate": 230,
+      "manual_review": 347,
+      "cs_ro": 825,
+      "supplement_only": 297
+    },
+    "2026-01": {
+      "mother_corpus": 979,
+      "included": 280,
+      "candidate": 160,
+      "manual_review": 296,
+      "cs_ro": 700,
+      "supplement_only": 279
+    },
+    "2026-02": {
+      "mother_corpus": 1392,
+      "included": 466,
+      "candidate": 263,
+      "manual_review": 390,
+      "cs_ro": 1056,
+      "supplement_only": 336
+    },
+    "2026-03": {
+      "mother_corpus": 1949,
+      "included": 694,
+      "candidate": 386,
+      "manual_review": 524,
+      "cs_ro": 1507,
+      "supplement_only": 442
+    },
+    "2026-04": {
+      "mother_corpus": 1319,
+      "included": 392,
+      "candidate": 254,
+      "manual_review": 401,
+      "cs_ro": 970,
+      "supplement_only": 349
+    },
+    "2026-05": {
+      "mother_corpus": 1737,
+      "included": 559,
+      "candidate": 360,
+      "manual_review": 457,
+      "cs_ro": 1240,
+      "supplement_only": 497
+    },
+    "2026-06": {
+      "mother_corpus": 1918,
+      "included": 735,
+      "candidate": 411,
+      "manual_review": 469,
+      "cs_ro": 1516,
+      "supplement_only": 402
+    },
+    "2026-07": {
+      "mother_corpus": 1282,
+      "included": 451,
+      "candidate": 274,
+      "manual_review": 372,
+      "cs_ro": 1032,
+      "supplement_only": 250
+    }
+  },
+  "method_note": "Mother corpus is the deduplicated union of complete cs.RO monthly pulls and targeted cs.AI/cs.CV/cs.LG supplementary queries. Included is an automated v2 relevance state, not the hand-curated top-paper set."
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI Radar GitHub Repository Evidence",
+  "type": "object",
+  "required": [
+    "repo_full_name",
+    "html_url",
+    "stars",
+    "forks",
+    "created_at",
+    "updated_at",
+    "archived",
+    "asset_type",
+    "relevance"
+  ],
+  "properties": {
+    "repo_full_name": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+    "html_url": {"type": "string", "format": "uri"},
+    "description": {"type": ["string", "null"]},
+    "topics": {"type": "array", "items": {"type": "string"}},
+    "stars": {"type": "integer", "minimum": 0},
+    "forks": {"type": "integer", "minimum": 0},
+    "created_at": {"type": "string"},
+    "updated_at": {"type": "string"},
+    "pushed_at": {"type": ["string", "null"]},
+    "license": {"type": ["string", "null"]},
+    "archived": {"type": "boolean"},
+    "asset_type": {
+      "enum": ["code", "dataset", "model", "benchmark", "framework", "awesome_list", "unknown"]
+    },
+    "paper_ids": {"type": "array", "items": {"type": "string"}},
+    "dois": {"type": "array", "items": {"type": "string"}},
+    "primary_topic": {"type": ["string", "null"]},
+    "topics_research": {"type": "array", "items": {"type": "string"}},
+    "independent_adoption": {
+      "type": "object",
+      "properties": {
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "signals": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "relevance": {"type": "object"}
+  }
+}

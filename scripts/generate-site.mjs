@@ -9,6 +9,11 @@ const trends = read('data/trends.json')
 const forecasts = read('data/forecasts.json')
 const directions = read('data/directions.json')
 const peerRecords = read('data/peer-review.json').records
+const preprintCoverage = read('data/preprint-coverage.json')
+const publicationCoverage = read('data/publication-coverage.json')
+const officialCoverage = read('data/official-container-coverage.json')
+const repositoryCoverage = read('data/repository-coverage.json')
+const workCoverage = read('data/work-coverage.json')
 
 const topics = {
   foundation: { label: '具身基础模型', slug: 'foundation-models' },
@@ -718,10 +723,22 @@ function executiveSummary() {
 
 # 执行摘要
 
-> **版本**：v1.0 · **更新日期**：2026 年 7 月 29 日<br>
+> **版本**：v2.1 · **更新日期**：2026 年 7 月 30 日<br>
 > **主分析期**：2025.07–2026.06 · **精读**：${curated.length} 篇 · **官方评审锚点**：${peerRecords.length} 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
+
+::: tip v2.1 扩容说明
+旧五类月度序列继续作为可比的精选分析层；它不再代表全部数据量。新版同时维护两年宽召回母库、正式发表母库、严格官方 proceedings 和 GitHub 证据，并将方向体系扩展为 15 类。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
+:::
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>${preprintCoverage.mother_corpus.toLocaleString('zh-CN')}</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>${publicationCoverage.in_window_records.toLocaleString('zh-CN')}</strong><span>窗口内正式发表记录</span></div>
+  <div class="radar-kpi"><strong>${officialCoverage.strict_official_records.toLocaleString('zh-CN')}</strong><span>严格官方 proceedings</span></div>
+  <div class="radar-kpi"><strong>${workCoverage.canonical_works.toLocaleString('zh-CN')}</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>${repositoryCoverage.repository_count.toLocaleString('zh-CN')}</strong><span>GitHub 核验仓库</span></div>
+</div>
 
 ## 六个年度判断
 
@@ -732,7 +749,7 @@ function executiveSummary() {
 5. **跨本体更可能通过共享表示 + 小型 adapter 实现。** “一个权重直接覆盖所有机器人”的证据仍不足。
 6. **数据护城河正在迁移到部署闭环。** 未来关键指标不是总小时，而是失败覆盖、修正效率和新任务上线速度。
 
-## 数据概览
+## 精选月度分析层
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${analysis.length}</strong><span>主分析期候选</span></div>

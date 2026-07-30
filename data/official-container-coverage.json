@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-07-29",
+  "strict_official_records": 824,
+  "containers_complete": 4,
+  "containers_expected": 4,
+  "by_venue": {
+    "CoRL": 527,
+    "RSS": 297
+  },
+  "relevance_screen": {
+    "included": 297,
+    "candidate": 33,
+    "manual_review": 494,
+    "excluded": 0
+  },
+  "manifests": [
+    {
+      "container_id": "rss20",
+      "venue": "RSS",
+      "event_year": 2024,
+      "bibliographic_year": 2024,
+      "publication_date": "2024-07-15",
+      "url": "https://www.roboticsproceedings.org/rss20/",
+      "parser": "rss",
+      "expected_count": 134,
+      "observed_count": 134,
+      "complete": true,
+      "content_sha256": "bfe31ffcbdfa82f76596ae05d5cff3042a6360c5eb6c41375de1231c69dd06b6",
+      "fetched_at": "2026-07-29"
+    },
+    {
+      "container_id": "rss21",
+      "venue": "RSS",
+      "event_year": 2025,
+      "bibliographic_year": 2025,
+      "publication_date": "2025-06-21",
+      "url": "https://www.roboticsproceedings.org/rss21/",
+      "parser": "rss",
+      "expected_count": 163,
+      "observed_count": 163,
+      "complete": true,
+      "content_sha256": "9514d1526929f1b05724202499f0487279436688b72749d3dcb65d9d15a39944",
+      "fetched_at": "2026-07-29"
+    },
+    {
+      "container_id": "pmlr-v270",
+      "venue": "CoRL",
+      "event_year": 2024,
+      "bibliographic_year": 2025,
+      "publication_date": "2025-01-12",
+      "url": "https://proceedings.mlr.press/v270/",
+      "parser": "pmlr",
+      "expected_count": 264,
+      "observed_count": 264,
+      "complete": true,
+      "content_sha256": "c35b8a187d14776eb2050245832cd6c6f9d60c6688caa718b3aed3dbac9ad745",
+      "fetched_at": "2026-07-29"
+    },
+    {
+      "container_id": "pmlr-v305",
+      "venue": "CoRL",
+      "event_year": 2025,
+      "bibliographic_year": 2025,
+      "publication_date": "2025-10-07",
+      "url": "https://proceedings.mlr.press/v305/",
+      "parser": "pmlr",
+      "expected_count": 263,
+      "observed_count": 263,
+      "complete": true,
+      "content_sha256": "d916177de628bdc806cf1b0385a67994589479936bbe74751acbba88a47d0b04",
+      "fetched_at": "2026-07-29"
+    }
+  ],
+  "method_note": "Every record is present in a complete official proceedings container. Relevance is a title-level automated screen until abstract enrichment."
+}

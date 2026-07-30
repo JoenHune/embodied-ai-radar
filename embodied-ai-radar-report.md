@@ -8,10 +8,22 @@
 
 ## 执行摘要
 
-> **版本**：v1.0 · **更新日期**：2026 年 7 月 29 日<br>
+> **版本**：v2.1 · **更新日期**：2026 年 7 月 30 日<br>
 > **主分析期**：2025.07–2026.06 · **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
+
+::: tip v2.1 扩容说明
+旧五类月度序列继续作为可比的精选分析层；它不再代表全部数据量。新版同时维护两年宽召回母库、正式发表母库、严格官方 proceedings 和 GitHub 证据，并将方向体系扩展为 15 类。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
+:::
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>30,604</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>10,254</strong><span>窗口内正式发表记录</span></div>
+  <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
+  <div class="radar-kpi"><strong>40,345</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
+</div>
 
 ### 六个年度判断
 
@@ -22,7 +34,7 @@
 5. **跨本体更可能通过共享表示 + 小型 adapter 实现。** “一个权重直接覆盖所有机器人”的证据仍不足。
 6. **数据护城河正在迁移到部署闭环。** 未来关键指标不是总小时，而是失败覆盖、修正效率和新任务上线速度。
 
-### 数据概览
+### 精选月度分析层
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1841</strong><span>主分析期候选</span></div>
@@ -119,6 +131,39 @@
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,060</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>265</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>187</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>347</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 20 | 7.5% | 29 | -9 | -31.0% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 21 | 7.9% | 23 | -2 | -8.7% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 11 | 4.2% | 22 | -11 | -50.0% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 23 | 8.7% | 45 | -22 | -48.9% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 44 | 16.6% | 55 | -11 | -20.0% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 13 | 4.9% | 17 | -4 | -23.5% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 30 | 11.3% | 23 | +7 | +30.4% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 72 | 27.2% | 82 | -10 | -12.2% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 7 | 2.6% | 8 | -1 | -12.5% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 9 | 3.4% | 12 | -3 | -25.0% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 12 | 4.5% | 24 | -12 | -50.0% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 2 | 0.8% | 6 | -4 | -66.7% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.4% | 0 | +1 | 新增 |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 0 | 0.0% | 1 | -1 | -100.0% |
+| **总计** | **265** | **100.0%** | **347** | **-82** | **-23.6%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 趋势证据卡
@@ -244,6 +289,39 @@
 
 
 
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,066</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>288</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>213</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>265</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 26 | 9.0% | 20 | +6 | +30.0% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 25 | 8.7% | 21 | +4 | +19.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 10 | 3.5% | 11 | -1 | -9.1% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 22 | 7.6% | 23 | -1 | -4.3% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 66 | 22.9% | 44 | +22 | +50.0% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 12 | 4.2% | 13 | -1 | -7.7% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 21 | 7.3% | 30 | -9 | -30.0% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 66 | 22.9% | 72 | -6 | -8.3% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 9 | 3.1% | 7 | +2 | +28.6% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 12 | 4.2% | 9 | +3 | +33.3% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 12 | 4.2% | 12 | 0 | 0.0% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 4 | 1.4% | 2 | +2 | +100.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 2 | 0.7% | 1 | +1 | +100.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 0.3% | 0 | +1 | 新增 |
+| **总计** | **288** | **100.0%** | **265** | **+23** | **+8.7%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
+
+
 ### 趋势证据卡
 
 
@@ -365,6 +443,39 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,512</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>469</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>284</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>288</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 47 | 10.0% | 26 | +21 | +80.8% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 34 | 7.2% | 25 | +9 | +36.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 13 | 2.8% | 10 | +3 | +30.0% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 46 | 9.8% | 22 | +24 | +109.1% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 70 | 14.9% | 66 | +4 | +6.1% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 32 | 6.8% | 12 | +20 | +166.7% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 32 | 6.8% | 21 | +11 | +52.4% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 124 | 26.4% | 66 | +58 | +87.9% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 16 | 3.4% | 9 | +7 | +77.8% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 17 | 3.6% | 12 | +5 | +41.7% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 25 | 5.3% | 12 | +13 | +108.3% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 8 | 1.7% | 4 | +4 | +100.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0.2% | 0 | +1 | 新增 |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 3 | 0.6% | 2 | +1 | +50.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 0.2% | 1 | 0 | 0.0% |
+| **总计** | **469** | **100.0%** | **288** | **+181** | **+62.8%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 趋势证据卡
@@ -490,6 +601,39 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 
 
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,348</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>427</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>241</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>469</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 59 | 13.8% | 47 | +12 | +25.5% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 29 | 6.8% | 34 | -5 | -14.7% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 25 | 5.9% | 13 | +12 | +92.3% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 38 | 8.9% | 46 | -8 | -17.4% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 81 | 19.0% | 70 | +11 | +15.7% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 19 | 4.4% | 32 | -13 | -40.6% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 19 | 4.4% | 32 | -13 | -40.6% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 105 | 24.6% | 124 | -19 | -15.3% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 3 | 0.7% | 16 | -13 | -81.3% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 13 | 3.0% | 17 | -4 | -23.5% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 22 | 5.2% | 25 | -3 | -12.0% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 11 | 2.6% | 8 | +3 | +37.5% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 1 | -1 | -100.0% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 3 | 0.7% | 3 | 0 | 0.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 0 | 0.0% | 1 | -1 | -100.0% |
+| **总计** | **427** | **100.0%** | **469** | **-42** | **-9.0%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
+
+
 ### 趋势证据卡
 
 
@@ -611,6 +755,39 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,162</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>347</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>203</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>427</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 48 | 13.8% | 59 | -11 | -18.6% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 24 | 6.9% | 29 | -5 | -17.2% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 19 | 5.5% | 25 | -6 | -24.0% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 32 | 9.2% | 38 | -6 | -15.8% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 58 | 16.7% | 81 | -23 | -28.4% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 16 | 4.6% | 19 | -3 | -15.8% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 19 | 5.5% | 19 | 0 | 0.0% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 87 | 25.1% | 105 | -18 | -17.1% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 8 | 2.3% | 3 | +5 | +166.7% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 13 | 3.7% | 13 | 0 | 0.0% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 16 | 4.6% | 22 | -6 | -27.3% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 4 | 1.2% | 11 | -7 | -63.6% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0.3% | 0 | +1 | 新增 |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.3% | 3 | -2 | -66.7% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 0.3% | 0 | +1 | 新增 |
+| **总计** | **347** | **100.0%** | **427** | **-80** | **-18.7%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 趋势证据卡
@@ -736,6 +913,39 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 
 
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,122</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>299</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>230</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>347</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 46 | 15.4% | 48 | -2 | -4.2% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 22 | 7.4% | 24 | -2 | -8.3% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 29 | 9.7% | 19 | +10 | +52.6% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 18 | 6.0% | 32 | -14 | -43.8% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 38 | 12.7% | 58 | -20 | -34.5% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 19 | 6.4% | 16 | +3 | +18.8% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 20 | 6.7% | 19 | +1 | +5.3% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 75 | 25.1% | 87 | -12 | -13.8% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 10 | 3.3% | 8 | +2 | +25.0% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 7 | 2.3% | 13 | -6 | -46.2% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 10 | 3.3% | 16 | -6 | -37.5% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 4 | 1.3% | 4 | 0 | 0.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 1 | -1 | -100.0% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 0 | 0.0% | 1 | -1 | -100.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 0.3% | 1 | 0 | 0.0% |
+| **总计** | **299** | **100.0%** | **347** | **-48** | **-13.8%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
+
+
 ### 趋势证据卡
 
 
@@ -858,6 +1068,39 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>979</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>280</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>160</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>299</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 30 | 10.7% | 46 | -16 | -34.8% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 15 | 5.4% | 22 | -7 | -31.8% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 21 | 7.5% | 29 | -8 | -27.6% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 27 | 9.6% | 18 | +9 | +50.0% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 37 | 13.2% | 38 | -1 | -2.6% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 16 | 5.7% | 19 | -3 | -15.8% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 25 | 8.9% | 20 | +5 | +25.0% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 72 | 25.7% | 75 | -3 | -4.0% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 7 | 2.5% | 10 | -3 | -30.0% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 14 | 5.0% | 7 | +7 | +100.0% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 14 | 5.0% | 10 | +4 | +40.0% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 1 | 0.4% | 4 | -3 | -75.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.4% | 0 | +1 | 新增 |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 0 | 0.0% | 1 | -1 | -100.0% |
+| **总计** | **280** | **100.0%** | **299** | **-19** | **-6.4%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 趋势证据卡
@@ -985,6 +1228,39 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 
 
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,392</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>466</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>263</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>280</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 74 | 15.9% | 30 | +44 | +146.7% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 24 | 5.2% | 15 | +9 | +60.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 41 | 8.8% | 21 | +20 | +95.2% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 49 | 10.5% | 27 | +22 | +81.5% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 87 | 18.7% | 37 | +50 | +135.1% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 22 | 4.7% | 16 | +6 | +37.5% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 25 | 5.4% | 25 | 0 | 0.0% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 91 | 19.5% | 72 | +19 | +26.4% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 12 | 2.6% | 7 | +5 | +71.4% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 13 | 2.8% | 14 | -1 | -7.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 23 | 4.9% | 14 | +9 | +64.3% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 4 | 0.9% | 1 | +3 | +300.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 0 | 0.0% | 1 | -1 | -100.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 0.2% | 0 | +1 | 新增 |
+| **总计** | **466** | **100.0%** | **280** | **+186** | **+66.4%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
+
+
 ### 趋势证据卡
 
 
@@ -1106,6 +1382,39 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,949</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>694</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>386</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>466</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 95 | 13.7% | 74 | +21 | +28.4% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 29 | 4.2% | 24 | +5 | +20.8% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 49 | 7.1% | 41 | +8 | +19.5% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 74 | 10.7% | 49 | +25 | +51.0% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 121 | 17.4% | 87 | +34 | +39.1% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 49 | 7.1% | 22 | +27 | +122.7% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 29 | 4.2% | 25 | +4 | +16.0% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 157 | 22.6% | 91 | +66 | +72.5% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 19 | 2.7% | 12 | +7 | +58.3% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 23 | 3.3% | 13 | +10 | +76.9% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 39 | 5.6% | 23 | +16 | +69.6% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 5 | 0.7% | 4 | +1 | +25.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 3 | 0.4% | 0 | +3 | 新增 |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 2 | 0.3% | 1 | +1 | +100.0% |
+| **总计** | **694** | **100.0%** | **466** | **+228** | **+48.9%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 趋势证据卡
@@ -1232,6 +1541,39 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 
 
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,319</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>392</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>254</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>694</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 49 | 12.5% | 95 | -46 | -48.4% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 20 | 5.1% | 29 | -9 | -31.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 32 | 8.2% | 49 | -17 | -34.7% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 42 | 10.7% | 74 | -32 | -43.2% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 67 | 17.1% | 121 | -54 | -44.6% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 26 | 6.6% | 49 | -23 | -46.9% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 25 | 6.4% | 29 | -4 | -13.8% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 89 | 22.7% | 157 | -68 | -43.3% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 7 | 1.8% | 19 | -12 | -63.2% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 10 | 2.6% | 23 | -13 | -56.5% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 20 | 5.1% | 39 | -19 | -48.7% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 4 | 1.0% | 5 | -1 | -20.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.3% | 3 | -2 | -66.7% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 0 | 0.0% | 2 | -2 | -100.0% |
+| **总计** | **392** | **100.0%** | **694** | **-302** | **-43.5%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
+
+
 ### 趋势证据卡
 
 
@@ -1353,6 +1695,39 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,737</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>559</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>360</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>392</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 94 | 16.8% | 49 | +45 | +91.8% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 35 | 6.3% | 20 | +15 | +75.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 53 | 9.5% | 32 | +21 | +65.6% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 47 | 8.4% | 42 | +5 | +11.9% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 66 | 11.8% | 67 | -1 | -1.5% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 19 | 3.4% | 26 | -7 | -26.9% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 24 | 4.3% | 25 | -1 | -4.0% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 138 | 24.7% | 89 | +49 | +55.1% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 21 | 3.8% | 7 | +14 | +200.0% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 15 | 2.7% | 10 | +5 | +50.0% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 33 | 5.9% | 20 | +13 | +65.0% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 9 | 1.6% | 4 | +5 | +125.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 0 | 0 | — |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 4 | 0.7% | 1 | +3 | +300.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 0.2% | 0 | +1 | 新增 |
+| **总计** | **559** | **100.0%** | **392** | **+167** | **+42.6%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 趋势证据卡
@@ -1478,6 +1853,39 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 
 
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,918</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>735</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>411</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>559</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 112 | 15.2% | 94 | +18 | +19.1% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 36 | 4.9% | 35 | +1 | +2.9% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 83 | 11.3% | 53 | +30 | +56.6% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 85 | 11.6% | 47 | +38 | +80.9% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 121 | 16.5% | 66 | +55 | +83.3% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 29 | 3.9% | 19 | +10 | +52.6% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 29 | 3.9% | 24 | +5 | +20.8% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 141 | 19.2% | 138 | +3 | +2.2% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 26 | 3.5% | 21 | +5 | +23.8% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 27 | 3.7% | 15 | +12 | +80.0% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 30 | 4.1% | 33 | -3 | -9.1% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 10 | 1.4% | 9 | +1 | +11.1% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 2 | 0.3% | 0 | +2 | 新增 |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.1% | 4 | -3 | -75.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 3 | 0.4% | 1 | +2 | +200.0% |
+| **总计** | **735** | **100.0%** | **559** | **+176** | **+31.5%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
+
+
 ### 趋势证据卡
 
 
@@ -1597,6 +2005,39 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | **总计** | **166** | **100.0%** | **358** | **-192** | **-53.6%** | **57** | **+109** | **+191.2%** |
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
+
+
+### v2 扩展主题结构（15 类）
+
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>1,282</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>451</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>274</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>735</strong><span>上月直接候选</span></div>
+</div>
+
+| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+|---|---:|---:|---:|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 67 | 14.9% | 112 | -45 | -40.2% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 31 | 6.9% | 36 | -5 | -13.9% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 47 | 10.4% | 83 | -36 | -43.4% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 43 | 9.5% | 85 | -42 | -49.4% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 63 | 14.0% | 121 | -58 | -47.9% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 26 | 5.8% | 29 | -3 | -10.3% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 35 | 7.8% | 29 | +6 | +20.7% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 87 | 19.3% | 141 | -54 | -38.3% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 15 | 3.3% | 26 | -11 | -42.3% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 14 | 3.1% | 27 | -13 | -48.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 14 | 3.1% | 30 | -16 | -53.3% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 5 | 1.1% | 10 | -5 | -50.0% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 2 | -2 | -100.0% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.2% | 1 | 0 | 0.0% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 3 | 0.7% | 3 | 0 | 0.0% |
+| **总计** | **451** | **100.0%** | **735** | **-284** | **-38.6%** |
+
+跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
 ### 7 月完整研判（截至 29 日）
@@ -2809,8 +3250,12 @@ JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避�
 
 ## 检索、分类与趋势判定方法
 
-> **版本**：v1.0 · **数据截点**：2026 年 7 月 29 日（Asia/Shanghai）<br>
+> **版本**：v2.1 · **数据截点**：2026 年 7 月 29 日（Asia/Shanghai）<br>
 > 本页描述的是可复算流程；任何依赖人工判断的步骤都会明确标注。
+
+::: tip 两层分析体系
+旧五类数据保留为稳定月度序列，用于连续的环比、同比与精读分析；新版另建 30,604 条 arXiv 母集、12,015 条发表版本和 40,345 个 canonical works 的开放主题层，用来发现旧分类容纳不了的新方向。两层不能混用分母。详见[语料扩充协议](/methods/expansion-protocol)与[覆盖审计](/analysis/corpus-expansion)。
+:::
 
 ### 时间口径
 
@@ -2833,9 +3278,13 @@ flowchart LR
   D --> E["结构化证据库<br/>CSV / JSON 单一来源<br/> "]
 ```
 
-宽召回优先保证“不漏掉使用新命名的工作”。当前轻量统计语料以 [Semantic Scholar Academic Graph](https://www.semanticscholar.org/product/api) 检索并只保留带官方 arXiv external ID 的记录；94 篇高信号样本再通过 arXiv 页面/API 逐条核对 ID、标题、`published`（v1）与摘要，其中主分析期 84 篇、7 月临时完整版 10 篇。若 arXiv Atom 批量接口可用，仓库也保留以 `cs.RO` 为核心的全量采集脚本。分类关键词只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
+宽召回优先保证“不漏掉使用新命名的工作”。v2 已完整拉取窗口内 `cs.RO` 23,225 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,379 条机器人/具身交叉记录，合并去重后形成 30,604 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,015 条版本记录；母集保留窗口前的 ICRA 2024 以支持版本合并，窗口计数按会议事件日或出版社日期计算。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
 
-### 五类主方向
+94 篇高信号样本继续作为精读层，逐条核对 ID、标题、`published`（v1）、摘要、实验和开放资产。分类规则只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
+
+### 稳定序列与开放主题
+
+下列五类只服务历史可比的月度深度分析，不再被定义为领域的固定边界。
 
 | 代码 | 主方向 | 纳入重点 | 关键边界 |
 |---|---|---|---|
@@ -2846,6 +3295,8 @@ flowchart LR
 | D5 | 通用机器人学习 | 跨任务/本体、模仿与强化学习、diffusion/flow policy、数据规模化 | 不能仅是特定任务传统控制 |
 
 一篇论文可以拥有多个 `topics`，但只有一个 `primary_topic`。全站的方向数量统计只按主方向计数，防止重复加总；跨方向分析使用多标签。
+
+v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界模型、灵巧操作、人形与全身控制、导航与移动操作、人机交互、策略学习、数据引擎、仿真与迁移、空间感知、安全与评测、持续/部署学习、多机器人协同、具身多感官。方向数可以随回归集与跨月证据调整；分类变化必须与真实趋势变化分开报告。
 
 ### 同行评审证据
 
@@ -2884,11 +3335,14 @@ flowchart LR
 
 ### 可复算性
 
-- `config/taxonomy.json` 固化主题词、排除词、标签和 venue 清单。
-- `data/papers.json` 是论文记录的唯一结构化来源。
+- `config/taxonomy.json` 固化旧五类稳定序列；`config/taxonomy-v2.json` 固化开放主题、排除词与回归规则。
+- `config/source-registry.json` 固化 venue、官方容器和发现源边界。
+- `data/papers.json` 是精选月度层的数据源。
+- `data/preprints.json`、`data/publications.json`、`data/official-proceedings.json`、`data/official-programs.json` 与 `data/repositories.json` 是 v2 各证据层的数据源。
+- `data/works.json` 是跨版本去重后的 canonical work graph；发表日期绝不覆盖 arXiv `v1` 的首次公开日期。
 - `data/trends.json` 记录人工趋势判断及其论文 ID。
-- `scripts/generate-site.mjs` 生成月度统计、论文表、机构表和参考索引。
-- `scripts/audit-data.mjs` 检查重复 ID、日期范围、趋势证据、官方评审链接与数字一致性。
+- `scripts/generate-site.mjs` 与 `scripts/generate-v2-pages.mjs` 生成月度统计、母库页面、发表索引、主题页和 GitHub 页面。
+- `scripts/audit-data.mjs` 与 `scripts/audit-v2.mjs` 检查重复 ID、日期范围、官方容器对账、趋势证据、公开下载文件哈希与数字一致性。
 
 生成页面不是数据源，不应手工修改其中的数量。修正应先进入结构化文件，再重新生成。
 

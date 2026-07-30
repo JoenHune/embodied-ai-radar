@@ -10,3 +10,9 @@ data/processed/
 docs/public/papers.json
 docs/public/papers.csv
 docs/public/embodied-ai-radar-report.md
+docs/public/preprints.json
+docs/public/publications.json
+docs/public/official-proceedings.json
+docs/public/official-programs.json
+docs/public/repositories.json
+docs/public/works.json

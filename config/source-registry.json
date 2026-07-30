@@ -1,0 +1,203 @@
+{
+  "version": "2.0",
+  "updated": "2026-07-29",
+  "window": {
+    "from": "2024-07-01",
+    "until": "2026-07-29"
+  },
+  "conference_sources": [
+    {
+      "venue": "ICRA",
+      "full_name": "IEEE International Conference on Robotics and Automation",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/icra",
+      "years": [2024, 2025, 2026],
+      "event_dates": {"2024": "2024-05-13"},
+      "tier": "core",
+      "official_index": "https://ieeexplore.ieee.org/xpl/conhome/1000639/all-proceedings"
+    },
+    {
+      "venue": "IROS",
+      "full_name": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/iros",
+      "years": [2024, 2025, 2026],
+      "tier": "core",
+      "official_index": "https://ieeexplore.ieee.org/xpl/conhome/1000393/all-proceedings"
+    },
+    {
+      "venue": "RSS",
+      "full_name": "Robotics: Science and Systems",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/rss",
+      "years": [2024, 2025, 2026],
+      "tier": "core",
+      "official_index": "https://www.roboticsproceedings.org/"
+    },
+    {
+      "venue": "CoRL",
+      "full_name": "Conference on Robot Learning",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/corl",
+      "years": [2024, 2025, 2026],
+      "tier": "core",
+      "official_index": "https://proceedings.mlr.press/"
+    },
+    {
+      "venue": "HRI",
+      "full_name": "ACM/IEEE International Conference on Human-Robot Interaction",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/hri",
+      "years": [2024, 2025, 2026],
+      "tier": "extended",
+      "official_index": "https://dl.acm.org/conference/hri"
+    },
+    {
+      "venue": "Humanoids",
+      "full_name": "IEEE-RAS International Conference on Humanoid Robots",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/humanoids",
+      "years": [2024, 2025, 2026],
+      "tier": "extended",
+      "official_index": "https://ieeexplore.ieee.org/xpl/conhome/1002042/all-proceedings"
+    },
+    {
+      "venue": "ICLR",
+      "full_name": "International Conference on Learning Representations",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/iclr",
+      "years": [2024, 2025, 2026],
+      "tier": "cross_field",
+      "official_index": "https://openreview.net/group?id=ICLR.cc"
+    },
+    {
+      "venue": "ICML",
+      "full_name": "International Conference on Machine Learning",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/icml",
+      "years": [2024, 2025, 2026],
+      "tier": "cross_field",
+      "official_index": "https://proceedings.mlr.press/"
+    },
+    {
+      "venue": "NeurIPS",
+      "full_name": "Conference on Neural Information Processing Systems",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/nips",
+      "years": [2024, 2025, 2026],
+      "tier": "cross_field",
+      "official_index": "https://proceedings.neurips.cc/"
+    },
+    {
+      "venue": "CVPR",
+      "full_name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/cvpr",
+      "years": [2024, 2025, 2026],
+      "tier": "cross_field",
+      "official_index": "https://openaccess.thecvf.com/"
+    },
+    {
+      "venue": "ICCV",
+      "full_name": "IEEE/CVF International Conference on Computer Vision",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/iccv",
+      "years": [2025],
+      "tier": "cross_field",
+      "official_index": "https://openaccess.thecvf.com/"
+    },
+    {
+      "venue": "ECCV",
+      "full_name": "European Conference on Computer Vision",
+      "discovery": "DBLP",
+      "dblp_stream": "streams/conf/eccv",
+      "years": [2024, 2026],
+      "tier": "cross_field",
+      "official_index": "https://www.ecva.net/papers.php"
+    }
+  ],
+  "journal_sources": [
+    {
+      "venue": "RA-L",
+      "full_name": "IEEE Robotics and Automation Letters",
+      "discovery": "Crossref exact ISSN stream",
+      "issn": "2377-3766",
+      "tier": "core",
+      "official_index": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369"
+    },
+    {
+      "venue": "T-RO",
+      "full_name": "IEEE Transactions on Robotics",
+      "discovery": "Crossref exact ISSN stream",
+      "issn": "1552-3098",
+      "tier": "core",
+      "official_index": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8860"
+    },
+    {
+      "venue": "IJRR",
+      "full_name": "The International Journal of Robotics Research",
+      "discovery": "Crossref exact ISSN stream",
+      "issn": "1741-3176",
+      "tier": "core",
+      "official_index": "https://journals.sagepub.com/home/ijr"
+    },
+    {
+      "venue": "Science Robotics",
+      "full_name": "Science Robotics",
+      "discovery": "Crossref exact ISSN stream",
+      "issn": "2470-9476",
+      "tier": "core",
+      "official_index": "https://www.science.org/journal/scirobotics"
+    },
+    {
+      "venue": "Nature Machine Intelligence",
+      "full_name": "Nature Machine Intelligence",
+      "discovery": "Crossref exact ISSN stream",
+      "issn": "2522-5839",
+      "tier": "cross_field",
+      "official_index": "https://www.nature.com/natmachintell/"
+    }
+  ],
+  "arxiv_sources": {
+    "core_query": "cat:cs.RO",
+    "supplementary_categories": ["cs.AI", "cs.CV", "cs.LG"],
+    "date_rule": "arXiv v1 published date",
+    "queries": [
+      {
+        "id": "cs_ro",
+        "query": "cat:cs.RO",
+        "tier": "core"
+      },
+      {
+        "id": "robot_crosslist",
+        "query": "(cat:cs.AI OR cat:cs.CV OR cat:cs.LG) AND (all:robot OR all:robotic OR all:manipulation OR all:locomotion OR all:humanoid OR all:grasping)",
+        "tier": "supplement"
+      },
+      {
+        "id": "embodied_crosslist",
+        "query": "(cat:cs.AI OR cat:cs.CV OR cat:cs.LG) AND (all:\"embodied intelligence\" OR all:\"embodied agent\" OR all:\"vision-language-action\" OR all:\"robot policy\" OR all:teleoperation OR all:bimanual)",
+        "tier": "supplement"
+      }
+    ]
+  },
+  "github_sources": {
+    "api": "https://api.github.com",
+    "minimum_fields": [
+      "repo_full_name",
+      "html_url",
+      "description",
+      "topics",
+      "stars",
+      "forks",
+      "created_at",
+      "updated_at",
+      "pushed_at",
+      "license",
+      "archived",
+      "paper_ids",
+      "dois",
+      "asset_type",
+      "independent_adoption"
+    ]
+  }
+}

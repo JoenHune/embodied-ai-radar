@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI Radar Canonical Work",
+  "type": "object",
+  "required": [
+    "work_id",
+    "title",
+    "authors",
+    "primary_topic",
+    "topics",
+    "relevance",
+    "versions"
+  ],
+  "properties": {
+    "work_id": {
+      "type": "string",
+      "pattern": "^(arxiv|doi|title):"
+    },
+    "title": {"type": "string", "minLength": 1},
+    "authors": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "institutions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "abstract": {"type": "string"},
+    "first_public_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "first_public_date_precision": {
+      "enum": ["day", "month", "year", "unknown"]
+    },
+    "primary_topic": {"type": "string"},
+    "topics": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "relevance": {
+      "type": "object",
+      "required": ["status", "score", "classifier_version"],
+      "properties": {
+        "status": {"enum": ["included", "candidate", "excluded", "manual_review"]},
+        "score": {"type": "number"},
+        "classifier_version": {"type": "string"},
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "arxiv_id": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}\\.[0-9]{4,5}$"
+    },
+    "doi": {"type": ["string", "null"]},
+    "repositories": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "url"],
+        "properties": {
+          "kind": {"enum": ["preprint", "conference", "journal", "project", "repository"]},
+          "url": {"type": "string", "format": "uri"},
+          "date": {"type": ["string", "null"]},
+          "venue": {"type": ["string", "null"]},
+          "year": {"type": ["integer", "null"]},
+          "status": {"type": ["string", "null"]},
+          "evidence_source": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

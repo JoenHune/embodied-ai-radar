@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI Radar Publication Version",
+  "type": "object",
+  "required": [
+    "publication_id",
+    "title",
+    "authors",
+    "venue",
+    "year",
+    "publication_type",
+    "official_url",
+    "verification_status",
+    "relevance"
+  ],
+  "properties": {
+    "publication_id": {"type": "string"},
+    "title": {"type": "string", "minLength": 1},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "abstract": {"type": "string"},
+    "venue": {"type": "string"},
+    "year": {"type": "integer"},
+    "publication_type": {"enum": ["conference", "journal"]},
+    "publication_date": {"type": ["string", "null"]},
+    "semantic_scholar_publication_date": {"type": ["string", "null"]},
+    "date_precision": {"enum": ["day", "month", "year", "unknown"]},
+    "doi": {"type": ["string", "null"]},
+    "arxiv_id": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}\\.[0-9]{4,5}$"
+    },
+    "official_url": {"type": "string", "format": "uri"},
+    "discovery_url": {"type": ["string", "null"]},
+    "verification_status": {
+      "enum": [
+        "peer_reviewed_official_proceedings",
+        "publisher_url_from_registered_doi",
+        "official_publisher_page_verified",
+        "discovered_needs_official_check"
+      ]
+    },
+    "primary_topic": {"type": ["string", "null"]},
+    "topics": {"type": "array", "items": {"type": "string"}},
+    "relevance": {"type": "object"},
+    "semantic_scholar_id": {"type": ["string", "null"]},
+    "citation_count_snapshot": {"type": ["integer", "null"]},
+    "citation_snapshot_date": {"type": ["string", "null"]}
+  }
+}

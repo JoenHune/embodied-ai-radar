@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-07-29",
+  "records": 3161,
+  "by_venue": {
+    "ICRA": 2951,
+    "RSS": 210
+  },
+  "by_status": {
+    "official_program_only": 2951,
+    "official_accepted_pending_proceedings": 210
+  },
+  "relevance_screen": {
+    "manual_review": 1499,
+    "candidate": 601,
+    "included": 917,
+    "excluded": 144
+  },
+  "strict_peer_reviewed_records": 0,
+  "source_pages": [
+    {
+      "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_1.html",
+      "sha256": "5742ccd42fcf9867c179491008a5b8621ffc9cb38fe4653d3d38a44fd8baeb96"
+    },
+    {
+      "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_2.html",
+      "sha256": "3a324dacf9752842a528b794bc49dec6277a175313d6b89047ead1e67fab1ba2"
+    },
+    {
+      "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html",
+      "sha256": "fa5d71c2a800320a3517ce97a89123ccd1a6511dae590cb4597d011df75a5fff"
+    },
+    {
+      "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html",
+      "sha256": "18529cdcd184237aeeb883647318a17c73d9c64c15e13d7b28758afd3e6392fe"
+    },
+    {
+      "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html",
+      "sha256": "909baa20d330fe84189e044a60f6ee58be39e5db90436739b90f02ccb5da8ece"
+    },
+    {
+      "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_6.html",
+      "sha256": "013c3414447f884e42be61c96d80271b836cc2459afcfdeb412bc8289825b15d"
+    },
+    {
+      "url": "https://roboticsconference.org/program/papers/",
+      "sha256": "5fda9641e2c2e0b68021a2b5c12a6c9d755b0e33a9a4edddec39519c143166f9"
+    }
+  ],
+  "warning": "ICRA 2026 records are official program entries, not verified proceedings. RSS 2026 records are accepted papers pending an official proceedings volume. Neither enters the strict peer-review coverage numerator."
+}

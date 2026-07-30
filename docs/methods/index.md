@@ -4,8 +4,12 @@ outline: deep
 
 # 检索、分类与趋势判定方法
 
-> **版本**：v1.0 · **数据截点**：2026 年 7 月 29 日（Asia/Shanghai）<br>
+> **版本**：v2.1 · **数据截点**：2026 年 7 月 29 日（Asia/Shanghai）<br>
 > 本页描述的是可复算流程；任何依赖人工判断的步骤都会明确标注。
+
+::: tip 两层分析体系
+旧五类数据保留为稳定月度序列，用于连续的环比、同比与精读分析；新版另建 30,604 条 arXiv 母集、12,015 条发表版本和 40,345 个 canonical works 的开放主题层，用来发现旧分类容纳不了的新方向。两层不能混用分母。详见[语料扩充协议](/methods/expansion-protocol)与[覆盖审计](/analysis/corpus-expansion)。
+:::
 
 ## 时间口径
 
@@ -28,9 +32,13 @@ flowchart LR
   D --> E["结构化证据库<br/>CSV / JSON 单一来源<br/> "]
 ```
 
-宽召回优先保证“不漏掉使用新命名的工作”。当前轻量统计语料以 [Semantic Scholar Academic Graph](https://www.semanticscholar.org/product/api) 检索并只保留带官方 arXiv external ID 的记录；94 篇高信号样本再通过 arXiv 页面/API 逐条核对 ID、标题、`published`（v1）与摘要，其中主分析期 84 篇、7 月临时完整版 10 篇。若 arXiv Atom 批量接口可用，仓库也保留以 `cs.RO` 为核心的全量采集脚本。分类关键词只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
+宽召回优先保证“不漏掉使用新命名的工作”。v2 已完整拉取窗口内 `cs.RO` 23,225 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,379 条机器人/具身交叉记录，合并去重后形成 30,604 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,015 条版本记录；母集保留窗口前的 ICRA 2024 以支持版本合并，窗口计数按会议事件日或出版社日期计算。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
 
-## 五类主方向
+94 篇高信号样本继续作为精读层，逐条核对 ID、标题、`published`（v1）、摘要、实验和开放资产。分类规则只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
+
+## 稳定序列与开放主题
+
+下列五类只服务历史可比的月度深度分析，不再被定义为领域的固定边界。
 
 | 代码 | 主方向 | 纳入重点 | 关键边界 |
 |---|---|---|---|
@@ -41,6 +49,8 @@ flowchart LR
 | D5 | 通用机器人学习 | 跨任务/本体、模仿与强化学习、diffusion/flow policy、数据规模化 | 不能仅是特定任务传统控制 |
 
 一篇论文可以拥有多个 `topics`，但只有一个 `primary_topic`。全站的方向数量统计只按主方向计数，防止重复加总；跨方向分析使用多标签。
+
+v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界模型、灵巧操作、人形与全身控制、导航与移动操作、人机交互、策略学习、数据引擎、仿真与迁移、空间感知、安全与评测、持续/部署学习、多机器人协同、具身多感官。方向数可以随回归集与跨月证据调整；分类变化必须与真实趋势变化分开报告。
 
 ## 同行评审证据
 
@@ -79,11 +89,14 @@ flowchart LR
 
 ## 可复算性
 
-- `config/taxonomy.json` 固化主题词、排除词、标签和 venue 清单。
-- `data/papers.json` 是论文记录的唯一结构化来源。
+- `config/taxonomy.json` 固化旧五类稳定序列；`config/taxonomy-v2.json` 固化开放主题、排除词与回归规则。
+- `config/source-registry.json` 固化 venue、官方容器和发现源边界。
+- `data/papers.json` 是精选月度层的数据源。
+- `data/preprints.json`、`data/publications.json`、`data/official-proceedings.json`、`data/official-programs.json` 与 `data/repositories.json` 是 v2 各证据层的数据源。
+- `data/works.json` 是跨版本去重后的 canonical work graph；发表日期绝不覆盖 arXiv `v1` 的首次公开日期。
 - `data/trends.json` 记录人工趋势判断及其论文 ID。
-- `scripts/generate-site.mjs` 生成月度统计、论文表、机构表和参考索引。
-- `scripts/audit-data.mjs` 检查重复 ID、日期范围、趋势证据、官方评审链接与数字一致性。
+- `scripts/generate-site.mjs` 与 `scripts/generate-v2-pages.mjs` 生成月度统计、母库页面、发表索引、主题页和 GitHub 页面。
+- `scripts/audit-data.mjs` 与 `scripts/audit-v2.mjs` 检查重复 ID、日期范围、官方容器对账、趋势证据、公开下载文件哈希与数字一致性。
 
 生成页面不是数据源，不应手工修改其中的数量。修正应先进入结构化文件，再重新生成。
 

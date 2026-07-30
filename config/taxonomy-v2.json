@@ -1,0 +1,263 @@
+{
+  "version": "2.1",
+  "updated": "2026-07-29",
+  "design": {
+    "unit": "canonical research work",
+    "primary_topic_rule": "Each work receives exactly one primary topic and may receive multiple secondary topics.",
+    "layers": [
+      "model_and_system",
+      "physical_capability",
+      "learning_and_infrastructure"
+    ]
+  },
+  "categories": {
+    "foundation_models": {
+      "code": "D1",
+      "label": "具身基础模型与通才策略",
+      "layer": "model_and_system",
+      "include": [
+        "vision-language-action", "vision language action", "vla model",
+        "robot foundation model", "robotic foundation model", "generalist robot",
+        "generalist policy", "general-purpose robot", "language-conditioned policy",
+        "language conditioned policy", "multitask robot policy", "robot pretraining",
+        "robot pre-training", "large-scale robot model"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "action", "policy"]
+    },
+    "reasoning_planning": {
+      "code": "D2",
+      "label": "分层推理、规划与记忆",
+      "layer": "model_and_system",
+      "include": [
+        "system 1", "system 2", "system-1", "system-2", "fast-slow", "fast slow",
+        "planner-policy", "planner policy", "hierarchical reasoning", "hierarchical policy",
+        "high-level planner", "low-level policy", "task planning", "motion planning",
+        "vlm planner", "embodied reasoning", "chain-of-thought", "chain of thought",
+        "long-horizon planning", "long horizon planning", "robot memory",
+        "failure recovery", "test-time adaptation", "test time adaptation"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "action", "policy", "control"]
+    },
+    "world_models": {
+      "code": "D3",
+      "label": "世界模型与预测控制",
+      "layer": "model_and_system",
+      "include": [
+        "world model", "action-conditioned video", "action conditioned video",
+        "robot video prediction", "latent action", "predictive dynamics",
+        "dynamics model", "model-based planning", "model based planning",
+        "generative simulation", "video prediction for robot", "future prediction",
+        "action-conditioned generation", "action conditioned generation"
+      ],
+      "required_context": [
+        "robot", "robotic", "manipulation", "action", "control", "policy",
+        "planning", "interaction", "embodied", "dynamics"
+      ]
+    },
+    "dexterous_manipulation": {
+      "code": "D4",
+      "label": "灵巧、双臂与接触操作",
+      "layer": "physical_capability",
+      "include": [
+        "dexterous", "in-hand", "in hand manipulation", "bimanual", "dual-arm",
+        "dual arm", "tactile manipulation", "contact-rich", "contact rich",
+        "hand-arm", "hand arm", "multifinger", "multi-finger", "robotic hand",
+        "grasp synthesis", "grasping policy", "non-prehensile", "nonprehensile",
+        "tool use", "deformable object manipulation"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "hand", "grasp", "tactile", "contact"]
+    },
+    "humanoid_whole_body": {
+      "code": "D5",
+      "label": "人形、运动与全身控制",
+      "layer": "physical_capability",
+      "include": [
+        "humanoid", "whole-body control", "whole body control",
+        "whole-body manipulation", "whole body manipulation", "legged robot",
+        "quadruped", "biped", "locomotion", "loco-manipulation", "loco manipulation",
+        "parkour", "motor skill", "motion imitation", "human motion retargeting"
+      ],
+      "required_context": ["robot", "robotic", "humanoid", "legged", "quadruped", "biped", "control"]
+    },
+    "navigation_mobile_manipulation": {
+      "code": "D6",
+      "label": "导航与移动操作",
+      "layer": "physical_capability",
+      "include": [
+        "mobile manipulation", "mobile manipulator", "visual navigation",
+        "vision-language navigation", "vision language navigation", "object navigation",
+        "semantic navigation", "social navigation", "active exploration",
+        "navigation policy", "nav-manipulation", "nav manipulation",
+        "embodied navigation", "goal-conditioned navigation"
+      ],
+      "required_context": ["robot", "robotic", "embodied", "navigation", "mobile", "manipulation"]
+    },
+    "human_robot_interaction": {
+      "code": "D7",
+      "label": "人机协作与交互学习",
+      "layer": "physical_capability",
+      "include": [
+        "human-robot interaction", "human robot interaction", "human-robot collaboration",
+        "human robot collaboration", "shared autonomy", "interactive learning",
+        "learning from human feedback", "preference learning", "assistive robot",
+        "collaborative robot", "social robot", "language-guided correction",
+        "online correction", "human-in-the-loop", "human in the loop"
+      ],
+      "required_context": ["robot", "robotic", "embodied", "interaction", "collaboration", "assistive"]
+    },
+    "policy_learning": {
+      "code": "D8",
+      "label": "策略学习与优化",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "robot learning", "imitation learning", "reinforcement learning",
+        "diffusion policy", "flow policy", "flow matching policy",
+        "behavior cloning", "behaviour cloning", "offline reinforcement",
+        "online reinforcement", "visuomotor policy", "manipulation policy",
+        "skill learning", "policy distillation", "policy optimization",
+        "cross-embodiment", "cross embodiment", "cross-robot", "multi-robot learning"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "policy", "control", "locomotion"]
+    },
+    "data_engines": {
+      "code": "D9",
+      "label": "数据引擎与人类视频学习",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "robot dataset", "robotics dataset", "data engine", "data scaling",
+        "large-scale robot data", "large scale robot data", "robot demonstration",
+        "teleoperation", "tele-operation", "human video", "internet video",
+        "egocentric video", "play data", "autonomous data collection",
+        "data curation", "data mixture", "trajectory dataset"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "action", "trajectory"]
+    },
+    "simulation_transfer": {
+      "code": "D10",
+      "label": "仿真、合成数据与 Sim-to-Real",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "sim-to-real", "sim2real", "simulation-to-reality", "simulation to reality",
+        "synthetic robot data", "robot simulation", "robotics simulator",
+        "digital twin", "domain randomization", "procedural generation",
+        "synthetic demonstration", "simulation data", "physics simulator",
+        "neural simulator", "generative simulator"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "policy", "control", "simulation"]
+    },
+    "spatial_perception": {
+      "code": "D11",
+      "label": "动作关联的空间感知与表征",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "affordance", "actionable 3d", "actionable representation", "spatial reasoning",
+        "robot perception", "3d representation", "4d representation",
+        "point cloud policy", "scene graph", "semantic scene representation",
+        "object-centric representation", "object centric representation",
+        "visual representation for robot", "active perception", "tactile perception",
+        "visuotactile", "vision-tactile", "vision tactile"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "action", "affordance", "tactile"]
+    },
+    "safety_evaluation": {
+      "code": "D12",
+      "label": "评测、安全、可靠性与故障恢复",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "robot benchmark", "robotics benchmark", "benchmark suite",
+        "embodied benchmark", "policy evaluation", "robot safety", "safe robot",
+        "safe reinforcement learning", "failure detection", "failure recovery",
+        "uncertainty estimation", "out-of-distribution", "out of distribution",
+        "robustness evaluation", "risk-sensitive", "risk sensitive",
+        "runtime assurance", "verification of robot", "robot reliability"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "policy", "control", "safety"]
+    },
+    "continual_deployment_learning": {
+      "code": "D13",
+      "label": "持续学习、部署学习与自改进",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "continual robot learning", "continual learning for robot",
+        "self-improving robot", "self improving robot", "learning from experience",
+        "learning while deploying", "fleet learning", "deployment data flywheel",
+        "offline-to-online", "offline to online", "online robot learning",
+        "online reinforcement learning", "autonomous recovery",
+        "experience replay for robot", "lifelong robot learning",
+        "test-time adaptation", "test time adaptation", "policy self-improvement"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "policy", "deployment"]
+    },
+    "multi_robot_coordination": {
+      "code": "D14",
+      "label": "多机器人协同与群体智能",
+      "layer": "physical_capability",
+      "include": [
+        "multi-robot learning", "multi robot learning", "multi-robot coordination",
+        "multi robot coordination", "collaborative vla", "cooperative manipulation",
+        "robot-to-robot", "robot to robot", "multi-agent world model",
+        "multi agent world model", "decentralized robot learning",
+        "swarm learning", "heterogeneous robot team", "robot team coordination"
+      ],
+      "required_context": ["robot", "robotic", "embodied", "coordination", "cooperative", "multi-agent"]
+    },
+    "embodied_multisensory": {
+      "code": "D15",
+      "label": "触觉、力觉与多模态身体感知",
+      "layer": "learning_and_infrastructure",
+      "include": [
+        "visuotactile", "vision-tactile", "vision tactile",
+        "tactile-language-action", "tactile language action",
+        "force-aware policy", "force aware policy", "proprioceptive policy",
+        "contact sensing", "robot audio", "multisensory manipulation",
+        "tactile foundation model", "contact-aware world model",
+        "contact aware world model", "tactile representation",
+        "force-torque sensing", "force torque sensing"
+      ],
+      "required_context": ["robot", "robotic", "manipulation", "embodied", "tactile", "force", "contact"]
+    }
+  },
+  "horizontal_tags": {
+    "real_robot": ["real robot", "real-world robot", "physical robot", "hardware experiment", "on-robot"],
+    "multi_task": ["multi-task", "multitask", "multiple tasks", "diverse tasks"],
+    "cross_embodiment": ["cross-embodiment", "cross embodiment", "cross-robot", "multiple robot embodiments"],
+    "long_horizon": ["long-horizon", "long horizon", "long-duration", "multi-stage", "multi step task"],
+    "open_code": ["github.com", "code is available", "open-source code", "open source code"],
+    "open_data": ["dataset is available", "data is available", "release the dataset", "open dataset"],
+    "open_model": ["model weights", "open model", "release the model", "checkpoint is available"],
+    "tactile": ["tactile", "force-torque", "force torque", "visuotactile"],
+    "language_conditioned": ["language-conditioned", "language conditioned", "natural language instruction"],
+    "3d_4d": ["3d", "4d", "point cloud", "gaussian splatting", "voxel"],
+    "synthetic_data": ["synthetic data", "simulation data", "generated demonstrations"],
+    "benchmark": ["benchmark", "evaluation suite", "challenge"],
+    "safety": ["safety", "safe policy", "failure detection", "uncertainty", "risk-sensitive"]
+  },
+  "boundary_terms": [
+    "robot", "robotic", "manipulation", "embodied", "locomotion", "grasp",
+    "policy", "humanoid", "mobile manipulator", "quadruped", "bimanual",
+    "tactile", "teleoperation", "affordance", "visuomotor"
+  ],
+  "exclude_unless_robot_action_context": [
+    "autonomous driving", "self-driving", "visual odometry", "slam",
+    "video generation", "text-to-video", "image generation",
+    "gui agent", "web agent", "game agent"
+  ],
+  "hard_exclude_context": [
+    "molecular dynamics", "molecular simulation", "drug discovery",
+    "zebrafish", "animal locomotion", "autonomous vehicle",
+    "self-driving vehicle", "gui visual agent", "web browsing agent"
+  ],
+  "robot_action_context": [
+    "robot manipulation", "robotic manipulation", "mobile manipulation",
+    "humanoid robot", "robotic hand", "robot arm", "robot policy",
+    "physical robot", "legged robot", "quadruped robot", "robot control",
+    "robot learning", "embodied agent", "tactile manipulation"
+  ],
+  "legacy_mapping": {
+    "foundation": "foundation_models",
+    "dual_system": "reasoning_planning",
+    "dexterous": "dexterous_manipulation",
+    "world_model": "world_models",
+    "general_learning": "policy_learning"
+  }
+}
