@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import subprocess
 import time
 import urllib.parse
 import urllib.request
@@ -30,26 +31,77 @@ RAW = ROOT / "data" / "raw" / "official-programs"
 OUTPUT = ROOT / "data" / "official-programs.json"
 COVERAGE = ROOT / "data" / "official-program-coverage.json"
 RAW.mkdir(parents=True, exist_ok=True)
-SNAPSHOT_DATE = "2026-07-29"
+SNAPSHOT_DATE = json.loads(
+    (ROOT / "config" / "source-registry.json").read_text()
+)["window"]["until"]
 USER_AGENT = "embodied-ai-radar/2.0 research-radar@example.com"
+FETCH_AUDIT: list[dict] = []
 
 
 def fetch(url: str, cache_name: str) -> str:
-    cache = RAW / cache_name
+    stem, dot, suffix = cache_name.rpartition(".")
+    dated_name = (
+        f"{stem}-through-{SNAPSHOT_DATE}.{suffix}"
+        if dot
+        else f"{cache_name}-through-{SNAPSHOT_DATE}"
+    )
+    cache = RAW / dated_name
     if cache.exists() and cache.stat().st_size > 100:
+        FETCH_AUDIT.append({"cache_name": cache_name, "status": "current_snapshot_cache"})
         return cache.read_text(errors="replace")
+    prior_cache = RAW / cache_name
+    # PaperCept's multi-megabyte content pages can be too slow for a full
+    # repeated transfer. Revalidate the live URL, then parse the previously
+    # checksummed body and disclose that provenance in coverage metadata.
+    if prior_cache.exists() and prior_cache.stat().st_size > 1_000_000:
+        head = subprocess.run(
+            [
+                "curl", "--fail", "--location", "--silent", "--show-error",
+                "--head", "--max-time", "30", "--user-agent", USER_AGENT, url,
+            ],
+            capture_output=True,
+        )
+        if head.returncode == 0:
+            FETCH_AUDIT.append(
+                {"cache_name": cache_name, "status": "live_url_revalidated_prior_body"}
+            )
+            return prior_cache.read_text(errors="replace")
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in range(5):
         try:
             with urllib.request.urlopen(request, timeout=120) as response:
                 body = response.read().decode("utf-8", errors="replace")
             cache.write_text(body)
+            FETCH_AUDIT.append({"cache_name": cache_name, "status": "fresh_body"})
             time.sleep(1.1)
             return body
         except Exception:
-            if attempt == 4:
-                raise
-            time.sleep(3 * (attempt + 1))
+            # The system Python on some macOS hosts only offers an older TLS
+            # stack. curl uses the current system transport and keeps the
+            # source refresh reproducible without weakening TLS.
+            try:
+                result = subprocess.run(
+                    [
+                        "curl", "--fail", "--location", "--silent",
+                        "--show-error", "--max-time", "120",
+                        "--user-agent", USER_AGENT, url,
+                    ],
+                    check=True,
+                    capture_output=True,
+                )
+                body = result.stdout.decode("utf-8", errors="replace")
+                cache.write_text(body)
+                FETCH_AUDIT.append({"cache_name": cache_name, "status": "fresh_body"})
+                return body
+            except subprocess.CalledProcessError:
+                if prior_cache.exists() and prior_cache.stat().st_size > 100:
+                    FETCH_AUDIT.append(
+                        {"cache_name": cache_name, "status": "live_fetch_failed_prior_body"}
+                    )
+                    return prior_cache.read_text(errors="replace")
+                if attempt == 4:
+                    raise
+                time.sleep(3 * (attempt + 1))
     raise RuntimeError("unreachable")
 
 
@@ -220,6 +272,7 @@ def main() -> None:
         ),
         "strict_peer_reviewed_records": 0,
         "source_pages": [*icra_pages, *rss_pages],
+        "source_refresh": FETCH_AUDIT,
         "warning": (
             "ICRA 2026 records are official program entries, not verified proceedings. "
             "RSS 2026 records are accepted papers pending an official proceedings volume. "

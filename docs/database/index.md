@@ -14,7 +14,7 @@ outline: deep
 - [2025 年候选](/database/2025)
 - [2026 年候选](/database/2026)
 
-JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避免单页过大。
+JSON/CSV 包含全部 2650 条纳入统计记录；网页按年份拆分，避免单页过大。
 
 ## 精读与核验记录
 
@@ -114,5 +114,15 @@ JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避�
 | 2607.24485 | [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07 | 灵巧操作 | high | 精读 | — |
 | 2607.24744 | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07 | 通用机器人学习 | high | 精读 | — |
 | 2607.25918 | [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.27549 | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07 | 通用机器人学习 | high | 精读 | — |
+| 2607.27599 | [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.27782 | [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07 | 通用机器人学习 | high | 精读 | — |
+| 2607.28391 | [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07 | 灵巧操作 | high | 精读 | — |
+| 2607.28596 | [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07 | 灵巧操作 | high | 精读 | — |
+| 2607.28625 | [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07 | 通用机器人学习 | high | 精读 | — |
+| 2607.29172 | [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07 | 具身基础模型 | high | 精读 | — |
+| 2607.29302 | [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.29569 | [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07 | 具身基础模型 | high | 精读 | — |
+| 2607.29613 | [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07 | 世界模型 | high | 精读 | — |
 
 <!-- 更新标记：论文证据库 最后更新 2026.07 -->

@@ -28,7 +28,9 @@ LEGACY_PAPERS = ROOT / "data" / "papers.json"
 LEGACY_PEERS = ROOT / "data" / "peer-review.json"
 OUTPUT = ROOT / "data" / "works.json"
 COVERAGE = ROOT / "data" / "work-coverage.json"
-SNAPSHOT_DATE = "2026-07-29"
+SNAPSHOT_DATE = json.loads(
+    (ROOT / "config" / "source-registry.json").read_text()
+)["window"]["until"]
 
 
 def read(path: Path, fallback):

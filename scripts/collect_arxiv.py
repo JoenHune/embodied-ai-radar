@@ -229,7 +229,7 @@ def period(row: dict) -> str:
         return "baseline"
     if "2025-07-01" <= day <= "2026-06-30":
         return "analysis"
-    if "2026-07-01" <= day <= "2026-07-29":
+    if "2026-07-01" <= day <= "2026-07-31":
         return "snapshot"
     return "outside"
 

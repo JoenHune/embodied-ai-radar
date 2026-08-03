@@ -111,7 +111,7 @@ def main() -> None:
             payload = fetch(topic, query, year)
             for work in payload.get("data", []):
                 row = normalize(work)
-                if not row or not ("2024-07-01" <= row["first_submitted"] <= "2026-07-29"):
+                if not row or not ("2024-07-01" <= row["first_submitted"] <= "2026-08-04"):
                     continue
                 if row["id"] not in merged:
                     merged[row["id"]] = row

@@ -26,7 +26,9 @@ OUTPUT = ROOT / "data" / "official-proceedings.json"
 COVERAGE = ROOT / "data" / "official-container-coverage.json"
 RAW.mkdir(parents=True, exist_ok=True)
 USER_AGENT = "embodied-ai-radar/2.0 research-radar@example.com"
-SNAPSHOT_DATE = "2026-07-29"
+SNAPSHOT_DATE = json.loads(
+    (ROOT / "config" / "source-registry.json").read_text()
+)["window"]["until"]
 
 CONTAINERS = [
     {
@@ -73,7 +75,10 @@ CONTAINERS = [
 
 
 def fetch(container: dict) -> str:
-    cache = RAW / f"{container['container_id']}.html"
+    # Official containers are usually immutable, but a dated cache makes each
+    # radar refresh a real source check instead of silently reusing the prior
+    # snapshot forever.
+    cache = RAW / f"{container['container_id']}-through-{SNAPSHOT_DATE}.html"
     if cache.exists() and cache.stat().st_size > 1000:
         return cache.read_text(errors="replace")
     request = urllib.request.Request(container["url"], headers={"User-Agent": USER_AGENT})

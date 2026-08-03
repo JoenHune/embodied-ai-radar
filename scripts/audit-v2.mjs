@@ -14,9 +14,13 @@ const programs = read('data/official-programs.json')
 const programCoverage = read('data/official-program-coverage.json')
 const repositories = read('data/repositories.json')
 const repositoryCoverage = read('data/repository-coverage.json')
+const githubWatchlist = read('data/github-watchlist.json')
 const works = read('data/works.json')
 const workCoverage = read('data/work-coverage.json')
 const taxonomy = read('config/taxonomy-v2.json')
+const sourceRegistry = read('config/source-registry.json')
+const cutoff = sourceRegistry.window.until
+const csRoCount = preprints.filter((row) => row.categories.includes('cs.RO')).length
 const errors = []
 const warnings = []
 const assert = (condition, message) => { if (!condition) errors.push(message) }
@@ -38,19 +42,19 @@ assert(preprints.every((row) => /^\d{4}\.\d{4,5}$/.test(row.arxiv_id)),
   'invalid arXiv ID in v2 preprints')
 assert(preprints.every((row) => row.categories?.length), 'preprint categories missing')
 assert(preprints.every((row) =>
-  row.first_submitted >= '2024-07-01' && row.first_submitted <= '2026-07-29'),
+  row.first_submitted >= sourceRegistry.window.from && row.first_submitted <= cutoff),
   'preprint outside frozen window')
-assert(preprints.filter((row) => row.categories.includes('cs.RO')).length === 23225,
-  'cs.RO complete count must equal 23,225')
+assert(csRoCount >= 23336,
+  `cs.RO complete count unexpectedly small: ${csRoCount}`)
 assert(Object.values(preprintCoverage.months).reduce((sum, row) => sum + row.mother_corpus, 0) === preprints.length,
   'preprint monthly funnel does not sum to mother corpus')
-assert(Object.values(preprintCoverage.months).reduce((sum, row) => sum + row.cs_ro, 0) === 23225,
-  'monthly cs.RO counts do not sum to 23,225')
+assert(Object.values(preprintCoverage.months).reduce((sum, row) => sum + row.cs_ro, 0) === csRoCount,
+  `monthly cs.RO counts do not sum to ${csRoCount}`)
 assert(preprintCoverage.included >= 8800, 'v2 included preprints unexpectedly small')
 
 assert(publications.length === publicationCoverage.mother_corpus,
   'publication mother-corpus count mismatch')
-assert(publications.length >= 12000,
+assert(publications.length >= 12150,
   `publication corpus unexpectedly small: ${publications.length}`)
 assert(unique(publications.map((row) => row.publication_id)),
   'duplicate publication IDs')
@@ -113,9 +117,19 @@ assert(repositories.every((row) =>
   'invalid IAS-GH score')
 assert(repositoryCoverage.warning.includes('Stars') && repositoryCoverage.warning.includes('forks'),
   'GitHub scoring warning missing')
+assert(repositories.every((row) => row.metadata_snapshot_date === cutoff),
+  'GitHub metadata snapshot does not match source cutoff')
+assert(githubWatchlist.length >= 4, 'recent-paper GitHub watchlist unexpectedly small')
+assert(unique(githubWatchlist.map((row) => row.repo_full_name.toLowerCase())),
+  'duplicate GitHub watchlist repositories')
+assert(githubWatchlist.every((row) =>
+  row.status === 'new_repo_pending_adoption_audit'
+  && row.snapshot_date === cutoff
+  && row.html_url === `https://github.com/${row.repo_full_name}`),
+  'invalid GitHub watchlist record')
 
 assert(works.length === workCoverage.canonical_works, 'canonical work count mismatch')
-assert(works.length >= 40000, `canonical work graph unexpectedly small: ${works.length}`)
+assert(works.length >= 40500, `canonical work graph unexpectedly small: ${works.length}`)
 assert(unique(works.map((row) => row.work_id)), 'duplicate canonical work IDs')
 assert(workCoverage.strict_peer_reviewed_works >= 830,
   'strict peer-reviewed canonical works unexpectedly small')
@@ -135,6 +149,7 @@ for (const file of [
   'data/official-proceedings.json',
   'data/official-programs.json',
   'data/repositories.json',
+  'data/github-watchlist.json',
   'data/works.json',
 ]) {
   assert(fileSize(file) < 100 * 1024 * 1024, `${file} exceeds GitHub 100 MiB file limit`)
@@ -171,6 +186,11 @@ for (const month of [
   assert(monthlyPage.includes('## v2 扩展主题结构（15 类）'),
     `${month} monthly page missing v2 month-over-month topic structure`)
 }
+const augustPage = fs.readFileSync(path.join(root, 'docs', 'monthly', '2026-08.md'), 'utf8')
+assert(augustPage.includes('月初快照，截至 4 日'),
+  'August early snapshot missing')
+assert(augustPage.includes('月初空窗，不计算 −100%'),
+  'August false month-over-month warning missing')
 const corpusPage = fs.readFileSync(path.join(root, 'docs', 'analysis', 'corpus-expansion.md'), 'utf8')
 assert(corpusPage.includes(preprints.length.toLocaleString('zh-CN')),
   'corpus page preprint KPI mismatch')

@@ -4,7 +4,7 @@ outline: deep
 
 # v2 语料扩充协议
 
-> 版本：2.1 · 数据截点：2026-07-29。本协议解决的不是“再补几个关键词”，而是让 arXiv、正式发表和开源生态各自拥有完整、可追溯的母集。
+> 版本：2.2 · 数据截点：2026-08-04。本协议解决的不是“再补几个关键词”，而是让 arXiv、正式发表和开源生态各自拥有完整、可追溯的母集。
 
 ## 一、目标与完成定义
 
@@ -38,11 +38,11 @@ flowchart LR
 
 ### 3.1 母集边界
 
-- 核心：2024-07-01 至 2026-07-29 的 `cs.RO` 月度全量。
+- 核心：2024-07-01 至 2026-08-04 的 `cs.RO` 月度全量。
 - 补充：`cs.AI`、`cs.CV`、`cs.LG` 中包含 robot、robotic、manipulation、locomotion、humanoid、grasping、embodied intelligence、VLA、teleoperation、bimanual 等动作语境的论文。
 - 月份：Atom `<published>`，即 v1 日期；修订和正式发表都不能改变首次公开月。
 
-审计时对每月 count-only 请求复算，`cs.RO` 共 23,225 条；旧版最终库不是这个母集的子集证明，因为绝大多数记录没有保留 arXiv categories。
+审计时对每月 count-only 请求复算，`cs.RO` 共 23,336 条；旧版最终库不是这个母集的子集证明，因为绝大多数记录没有保留 arXiv categories。
 
 ### 3.2 分页与缓存
 
@@ -108,6 +108,8 @@ IAS-GH（0–100）不使用 stars，分项为：
 - release 新鲜度。
 
 stars 仍展示为传播元数据。GitHub 通用 API 没有稳定的反向依赖总数，因此缺失保持 `null`，绝不用 forks 冒充 dependents。真正的研究采用还要补第三方代码使用、包依赖、独立复现或 benchmark 渗透。
+
+当月新论文发现的仓库先进入 `data/github-watchlist.json`：只刷新 canonical URL、stars/forks、license 和推送时间，状态固定为 `new_repo_pending_adoption_audit`。只有完成与旧仓相同的 issue/PR 外部作者、贡献者和依赖审计后，才能进入 IAS-GH 排名，避免新仓因 stars 或作者自身活跃被误读为独立采用。
 
 ## 六、canonical work 与去重
 
@@ -190,4 +192,4 @@ v2 主方向包括：
 5. 检查弱信号的验证路标与反证，而不是每月重写预测。
 6. 发布结构化数据、生成页面、运行链接与构建审计，最后版本化部署。
 
-<!-- 更新标记：v2 语料扩充协议 最后更新 2026.07 -->
+<!-- 更新标记：v2 语料扩充协议 最后更新 2026.08 -->

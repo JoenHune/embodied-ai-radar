@@ -4,7 +4,7 @@ outline: deep
 
 # D6 · 导航与移动操作
 
-> v2 层级：physical_capability。当前 canonical works 783 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
+> v2 层级：physical_capability。当前 canonical works 784 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
 
 ## 纳入边界
 

@@ -1,0 +1,25 @@
+{
+  "updated_at": "2026-08-04",
+  "repositories": [
+    {
+      "repo_full_name": "XiangchengZhang/world-action-planner",
+      "paper_id": "2607.27599",
+      "signal_zh": "用动作条件世界模型在候选动作上做预测搜索，代表 world model 从生成走向在线规划。"
+    },
+    {
+      "repo_full_name": "ajaysridhar0/barx",
+      "paper_id": "2607.27549",
+      "signal_zh": "以行为对齐表征而非关节空间对齐进行跨本体迁移。"
+    },
+    {
+      "repo_full_name": "zhuolifeng/FA-RDP",
+      "paper_id": "2607.28596",
+      "signal_zh": "在接触前后切换动作频率，把接触时序作为策略结构问题。"
+    },
+    {
+      "repo_full_name": "SunnyYWD/ActFovea",
+      "paper_id": "2607.29169",
+      "signal_zh": "新近论文直接公布的代码仓，先纳入早期观察，待独立采用审计。"
+    }
+  ]
+}

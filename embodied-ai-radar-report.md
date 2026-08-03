@@ -1,27 +1,31 @@
 # 具身智能研究雷达
 
-> **版本**：v1.0 · **数据截点**：2026 年 7 月 29 日<br>
-> **主分析期**：2025 年 7 月—2026 年 6 月 · **临时完整版**：2026 年 7 月 1–29 日
+> **版本**：v2.2 · **数据截点**：2026 年 8 月 4 日<br>
+> **主分析期**：2025 年 7 月—2026 年 6 月 · **7 月完整月** · **8 月前瞻快照**：1–4 日
 
 ---
 
 
 ## 执行摘要
 
-> **版本**：v2.1 · **更新日期**：2026 年 7 月 30 日<br>
+> **版本**：v2.2 · **更新日期**：2026 年 8 月 4 日<br>
 > **主分析期**：2025.07–2026.06 · **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
 
-::: tip v2.1 扩容说明
+::: tip v2.2 扩容说明
 旧五类月度序列继续作为可比的精选分析层；它不再代表全部数据量。新版同时维护两年宽召回母库、正式发表母库、严格官方 proceedings 和 GitHub 证据，并将方向体系扩展为 15 类。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
 :::
 
+::: info 8 月更新
+7 月已收完整月，新增 30–31 日 10 篇高信号精读；8 月截至 4 日的 arXiv API 仍无新 v1，因此只发布早期路标快照，不把发布空窗写成降温。正式发表、官方 proceedings 与 GitHub 元数据已独立刷新。
+:::
+
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,604</strong><span>arXiv 宽召回母集</span></div>
-  <div class="radar-kpi"><strong>10,254</strong><span>窗口内正式发表记录</span></div>
+  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表记录</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>40,345</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>40,605</strong><span>去重 canonical works</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 
@@ -65,14 +69,14 @@
 
 按当前证据排序：**实时 VLA 执行栈、verifier/自纠错、部署数据飞轮、控制导向 world model、触觉预测通道、跨本体动作接口、3D trace，以及高风险的 Embodied Agent OS。** 详见[未来判断](/analysis/weak-signals)。
 
-<!-- 更新标记：执行摘要 最后更新 2026.07 -->
+<!-- 更新标记：执行摘要 最后更新 2026.08 -->
 
 ---
 
 
 ## 月度研究雷达
 
-> 主分析期按 arXiv v1 月份归档；2026 年 7 月为截至 29 日的临时完整版。候选数量衡量统一查询下的研究密度，精读样本用于技术判断；7 月环比/同比是暂定观测值。
+> 主分析期按 arXiv v1 月份归档；2026 年 7 月已收完整月，2026 年 8 月另列月初快照。候选数量衡量统一查询下的研究密度，精读样本用于技术判断。
 
 | 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
@@ -88,7 +92,8 @@
 | [2026 年 4 月](/monthly/2026-04) | 134 | -100 | -42.7% | +92 | +219.0% | 具身基础模型（57） | 7 | 4/7 |
 | [2026 年 5 月](/monthly/2026-05) | 203 | +69 | +51.5% | +95 | +88.0% | 具身基础模型（101） | 7 | 6/7 |
 | [2026 年 6 月](/monthly/2026-06) | 358 | +155 | +76.4% | +251 | +234.6% | 具身基础模型（162） | 7 | 6/7 |
-| [2026 年 7 月（截至 29 日）](/monthly/2026-07) | 166 | -192 | -53.6% | +109 | +191.2% | 具身基础模型（82） | 10 | 6/10 |
+| [2026 年 7 月（完整月）](/monthly/2026-07) | 176 | -182 | -50.8% | +119 | +208.8% | 具身基础模型（84） | 20 | 13/20 |
+| [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |
 
 ### 怎么读月度页
 
@@ -97,7 +102,7 @@
 3. 用官方同行评审锚点区分“arXiv 密集”与“已有独立评审路线”。
 4. 最后看弱信号与反证；前者寻找未来，后者防止把命名潮误判为能力跃迁。
 
-<!-- 更新标记：月度总览 最后更新 2026.07 -->
+<!-- 更新标记：月度总览 最后更新 2026.08 -->
 
 ---
 
@@ -135,7 +140,7 @@
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,060</strong><span>当月 arXiv 母集</span></div>
@@ -253,7 +258,7 @@
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-07 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2025-07 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -291,7 +296,7 @@
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,066</strong><span>当月 arXiv 母集</span></div>
@@ -409,7 +414,7 @@
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-08 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2025-08 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -447,7 +452,7 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,512</strong><span>当月 arXiv 母集</span></div>
@@ -565,7 +570,7 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-09 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2025-09 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -603,7 +608,7 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,348</strong><span>当月 arXiv 母集</span></div>
@@ -721,7 +726,7 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-10 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2025-10 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -759,7 +764,7 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,162</strong><span>当月 arXiv 母集</span></div>
@@ -877,7 +882,7 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-11 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2025-11 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -915,7 +920,7 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,122</strong><span>当月 arXiv 母集</span></div>
@@ -1034,7 +1039,7 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-12 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2025-12 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -1072,7 +1077,7 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>979</strong><span>当月 arXiv 母集</span></div>
@@ -1192,7 +1197,7 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-01 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-01 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -1230,7 +1235,7 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,392</strong><span>当月 arXiv 母集</span></div>
@@ -1348,7 +1353,7 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-02 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-02 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -1386,7 +1391,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,949</strong><span>当月 arXiv 母集</span></div>
@@ -1505,7 +1510,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-03 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-03 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -1543,7 +1548,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,319</strong><span>当月 arXiv 母集</span></div>
@@ -1661,7 +1666,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-04 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-04 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -1699,7 +1704,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,737</strong><span>当月 arXiv 母集</span></div>
@@ -1817,7 +1822,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-05 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-05 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -1855,7 +1860,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,918</strong><span>当月 arXiv 母集</span></div>
@@ -1972,119 +1977,121 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-06 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-06 月度雷达 最后更新 2026.08 -->
 
 ---
 
 
-## 2026 年 7 月研究雷达（临时完整版）
+## 2026 年 7 月研究雷达（完整月）
 
-> **临时完整版（截至 7 月 29 日）。** 本页按接近完整月的深度撰写，并展示相对 6 月和 2025 年 7 月的观测环比/同比。由于仍缺 7 月 30–31 日、月末提交及索引回填，所有 7 月数量均为暂定值，负环比不直接判定为降温。
+> **7 月完整月。** 旧五类稳定序列已补入 30–31 日 10 篇高信号精读；v2 完整母集覆盖至 31 日。两套 taxonomy 的分母不同，页内分表呈现、不直接相加。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>166</strong><span>纳入统计候选</span></div>
-  <div class="radar-kpi"><strong>10</strong><span>逐条核验精读</span></div>
-  <div class="radar-kpi"><strong>6/10</strong><span>核验确认真机</span></div>
+  <div class="radar-kpi"><strong>176</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>20</strong><span>逐条核验精读</span></div>
+  <div class="radar-kpi"><strong>13/20</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
 </div>
 
 ### 一句话结论
 
-截至 7 月 29 日，候选数量较 6 月完整月回落但同比仍明显增长；数量共识仍是基础模型，更领先的信号集中在侧车式纠错、进度/记忆状态与视触觉 world model。
+7 月完整月总量较 6 月回落，但月末的世界模型决策化、失败纠错、触觉未来监督和行为对齐跨本体迁移组成了比总量更值得跟踪的弱信号。
 
 ### 主题结构
 
 | 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 82 | 49.4% | 162 | -80 | -49.4% | 17 | +65 | +382.4% |
-| [大小脑与双系统](/directions/dual-system) | 4 | 2.4% | 3 | +1 | +33.3% | 1 | +3 | +300.0% |
-| [灵巧操作](/directions/dexterous-manipulation) | 22 | 13.3% | 57 | -35 | -61.4% | 12 | +10 | +83.3% |
-| [世界模型](/directions/world-models) | 31 | 18.7% | 54 | -23 | -42.6% | 4 | +27 | +675.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 27 | 16.3% | 82 | -55 | -67.1% | 23 | +4 | +17.4% |
-| **总计** | **166** | **100.0%** | **358** | **-192** | **-53.6%** | **57** | **+109** | **+191.2%** |
+| [具身基础模型](/directions/foundation-models) | 84 | 47.7% | 162 | -78 | -48.1% | 17 | +67 | +394.1% |
+| [大小脑与双系统](/directions/dual-system) | 4 | 2.3% | 3 | +1 | +33.3% | 1 | +3 | +300.0% |
+| [灵巧操作](/directions/dexterous-manipulation) | 24 | 13.6% | 57 | -33 | -57.9% | 12 | +12 | +100.0% |
+| [世界模型](/directions/world-models) | 34 | 19.3% | 54 | -20 | -37.0% | 4 | +30 | +750.0% |
+| [通用机器人学习](/directions/general-robot-learning) | 30 | 17.0% | 82 | -52 | -63.4% | 23 | +7 | +30.4% |
+| **总计** | **176** | **100.0%** | **358** | **-182** | **-50.8%** | **57** | **+119** | **+208.8%** |
 
 > 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
 
 
 ### v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>1,282</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>451</strong><span>v2 直接候选</span></div>
-  <div class="radar-kpi"><strong>274</strong><span>边界候选</span></div>
+  <div class="radar-kpi"><strong>1,444</strong><span>当月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>506</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>307</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>735</strong><span>上月直接候选</span></div>
 </div>
 
 | v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
-| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 67 | 14.9% | 112 | -45 | -40.2% |
-| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 31 | 6.9% | 36 | -5 | -13.9% |
-| D3 · [世界模型与预测控制](/frontiers/world-models) | 47 | 10.4% | 83 | -36 | -43.4% |
-| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 43 | 9.5% | 85 | -42 | -49.4% |
-| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 63 | 14.0% | 121 | -58 | -47.9% |
-| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 26 | 5.8% | 29 | -3 | -10.3% |
-| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 35 | 7.8% | 29 | +6 | +20.7% |
-| D8 · [策略学习与优化](/frontiers/policy-learning) | 87 | 19.3% | 141 | -54 | -38.3% |
-| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 15 | 3.3% | 26 | -11 | -42.3% |
-| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 14 | 3.1% | 27 | -13 | -48.1% |
-| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 14 | 3.1% | 30 | -16 | -53.3% |
-| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 5 | 1.1% | 10 | -5 | -50.0% |
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 74 | 14.6% | 112 | -38 | -33.9% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 32 | 6.3% | 36 | -4 | -11.1% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 57 | 11.3% | 83 | -26 | -31.3% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 50 | 9.9% | 85 | -35 | -41.2% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 70 | 13.8% | 121 | -51 | -42.1% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 26 | 5.1% | 29 | -3 | -10.3% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 37 | 7.3% | 29 | +8 | +27.6% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 102 | 20.2% | 141 | -39 | -27.7% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 16 | 3.2% | 26 | -10 | -38.5% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 14 | 2.8% | 27 | -13 | -48.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 18 | 3.6% | 30 | -12 | -40.0% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 6 | 1.2% | 10 | -4 | -40.0% |
 | D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% | 2 | -2 | -100.0% |
 | D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 0.2% | 1 | 0 | 0.0% |
-| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 3 | 0.7% | 3 | 0 | 0.0% |
-| **总计** | **451** | **100.0%** | **735** | **-284** | **-38.6%** |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 3 | 0.6% | 3 | 0 | 0.0% |
+| **总计** | **506** | **100.0%** | **735** | **-229** | **-31.2%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 
 
-### 7 月完整研判（截至 29 日）
+### 7 月完整月研判
 
-#### 数量层：环比回落，但还不能写成技术降温
+#### 数量层：完整月环比回落，但不等于技术降温
 
-**事实。** 本库截至 7 月 29 日纳入 166 条候选，较 6 月完整月的 358 条减少 192 条（-53.6%）；相对 2025 年 7 月的 57 条则增加 109 条（+191.2%）。具身基础模型仍占 49.4%，而 6 月为 45.3%。
+**事实。** v2 宽召回在 7 月收录 1444 条母集、506 条直接候选；6 月分别为 1918 和 735，直接候选环比 -31.2%。上方旧五类稳定序列收录 176 条候选；它用于历史可比，不代表全量论文数。
 
-**解释。** 这组环比把 29 天的不完整窗口与 30 天完整月直接比较，还叠加了 arXiv/Semantic Scholar 的索引滞后和 6 月月末集中提交。因此它适合描述“截至截点已观察到多少”，不适合单凭负增长判定方向降温。真正值得看的，是总量回落时哪些小方向仍出现跨团队、真机或新评价指标。
+**解释。** 现在的环比已是完整月对完整月，可以确认 7 月总量低于 6 月。但会议周期与集中提交仍可放大单月波动；而 7 月 30–31 日反而集中出现多项高信号工作。所以“数量回落”是事实，“技术降温”仍需跨月和独立实验证据。
 
 #### 共识主线：规模化 VLA 仍最热，但信息增量正在下降
 
-[Xiaomi-Robotics-1](https://arxiv.org/abs/2607.15330) 把论文自报训练规模推到 100K 小时级，[Data Pyramid](https://arxiv.org/abs/2607.24744) 则试图解释不同数据层级的作用。它们共同说明“更大、更杂的数据”仍是最强共识，但目前独立可核验的有效多样性、失败覆盖和每小时边际收益不足。对基金研判而言，单纯拥有大数字已不能构成充分差异；更重要的是数据能否缩短新任务上线时间，并在真实机器人上持续回收失败。
+[Xiaomi-Robotics-1](https://arxiv.org/abs/2607.15330) 把论文自报训练规模推到 100K 小时级，[Data Pyramid](https://arxiv.org/abs/2607.24744) 试图解释不同数据层级的作用。“更大、更杂的数据”仍是最强共识，但单纯拥有大数字已不足以构成差异；更关键的是有效多样性、失败覆盖、新任务上线时间与每小时的真机边际收益。
 
-#### 非共识线索：多个不同名字指向同一组瓶颈迁移
+#### 月末弱信号：不同名词开始指向同一瓶颈
 
-| 早期命题 | 7 月蛛丝马迹 | 为什么可能领先于共识 | 当前反证 |
-|---|---|---|---|
-| VLA 从“生成动作”转向“评价并纠正动作” | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804)；[TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](https://arxiv.org/abs/2607.02840)；[Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models](https://arxiv.org/abs/2607.03751) | monitor、触觉纠错和价值评估采用不同命名，却都把能力增量放在冻结/保留主策略之外的测试时侧车 | 缺少统一的恢复率、误报率、额外时延和安全 benchmark |
-| 长时任务从语言分解转向物理进度与持久状态 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212)；[HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449)；[PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | progress、working/episodic memory、session verifier 都在表示“任务现在究竟做到哪一步” | 任务和硬件仍窄，模块越多越难归因失败 |
-| 触觉从输入模态转向 world model / post-training 信号 | [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530)；[τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485)；[TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](https://arxiv.org/abs/2607.02840)；[DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 多团队开始用触觉预测未来、生成纠正片段和评估策略，而非只做一次性融合 | 传感器异构、数据少，跨硬件迁移尚未兑现 |
-| 动态操作需要独立于基础 VLA 的短时动力学层 | [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | DynaWM 不重训主 VLA，而用多视角历史和动作条件重新生成移动目标轨迹 | 目前主要是自建仿真，单项工作不足以升级为趋势 |
+| 潜在瓶颈迁移 | 月末证据 | 当前判断 |
+|---|---|---|
+| world model 从“预测画面”走向“搜索/评价动作” | [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599)；[BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302)；[WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 三个独立项目分别用于规划搜索、策略排序与 critic 学习，为 B 级新兴簇；仍缺正式评审和第三方对照。 |
+| 失败从事后统计变成训练信号 | [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782)；[CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172)；[WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 动作级纠错、托管 API 反复微调与世界 critic 用不同名词指向同一数据飞轮；应优先跟踪失败覆盖率和单次修正成本。 |
+| 接触操作需要“未来触觉 + 变频控制” | [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391)；[FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 一项用力/形变/滑移未来监督动作，一项在接触前后切换推理频率；仍需跨传感器和跨材料验证。 |
+| 跨本体接口从关节动作转向行为对齐表征 | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 真机 sim-to-real 进度增益使其成为 C 级高新颖信号，但尚不是跨团队趋势。 |
+| 安全约束开始进入生成式策略内部 | [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | CBF 不再只做末端滤波，而是影响整个 flow-matching denoising；感知错误与未建模风险仍是反证。 |
+| 人类数据引擎开始追求全链路同步 | [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 150 小时、17M 帧、75,000 episodes 与多视角/全身/手/物体/音频/触觉对齐是稀缺数据设计；但尚未证明下游真机收益。 |
 
 #### 证据成熟度：为什么这些信号仍不是 A 级
 
 | 命题 | 当前等级 | 已有证据 | 升级到 A 级需要什么 |
 |---|---|---|---|
-| 在线评价与纠错侧车 | B | 3 个独立作者团队；跨 backbone、真实机器人和测试时 scaling 均已出现 | 至少两项正式同行评审；第三方复现能同时提高恢复率并控制时延 |
+| 在线评价与纠错侧车 | B | 多个独立团队；跨 backbone、真机、失败纠错与未来 latent critic 均已出现 | 至少两项正式同行评审；第三方复现能同时提高恢复率并控制时延 |
 | 进度—记忆—运行时状态 | B | 全尺寸双臂装配、真实长时记忆任务、19+ 本体系统验证等互补证据 | 开放接口被独立团队采用；跨机器人统一记录 completion、replan 和 failure provenance |
-| 视触觉 world model | B | 6–7 月连续出现多个独立团队，且已连接数据生成、评估和纠错 | 跨传感器 benchmark；在同等真实数据量下稳定改善闭环恢复 |
-| Embodied Agent OS | C | 单项目提出 session、verification、memory 和 safety 服务 | 至少两个外部模型/机器人团队采用同一运行时，不依赖原项目自定义 benchmark |
+| 视触觉 world model | B | 6–7 月连续出现多个独立团队，已连接数据生成、评估、纠错和接触变频控制 | 跨传感器 benchmark；同等真实数据量下稳定改善闭环恢复 |
+| Embodied Agent OS | C | 单项目提出 session、verification、memory 和 safety 服务 | 至少两个外部模型/机器人团队采用同一运行时 |
 
 #### 对未来 6–12 个月的判断
 
-1. **高置信：verifier/corrector 会成为 VLA 的标准侧车。** 主模型继续负责 proposal，轻量 dynamics/value/safety 模块负责打断、排序和恢复。最先兑现的指标会是 success-per-call、contact failure recovery 和低时延异常检测，而不是再提高一轮平均 benchmark。
+1. **高置信：verifier/critic/corrector 会成为 VLA 的标准侧车。** 主模型负责 proposal，轻量 dynamics/value/safety 模块负责打断、排序和恢复。WCM 与 RedFlow 提高了置信度，但仍须跨策略第三方复现。
 2. **中高置信：大小脑会演化成 Executor–Monitor/Sentry–Planner 的三层系统。** “第三层”未必是更大的模型，更可能是持续维护任务进度、记忆和完成条件的状态层。
-3. **中高置信：触觉 world model 会先在失败恢复和后训练兑现。** 它短期不会成为所有 VLA 的必选输入，但在插入、装配、滑移和材料交互中会成为高价值监督源。
+3. **中高置信：触觉 world model 会先在失败恢复和后训练兑现。** TacWAM 的未来力/形变监督与 FA-RDP 的接触阶段变频是两条互补路线；短期不会成为所有 VLA 的必选输入。
 4. **中等置信：数据竞争将从总小时迁移到有效多样性和失败覆盖。** 能公开数据组成、去重、纠正效率与下游边际收益的团队，会比只披露总小时的团队更快建立可信度。
-5. **中低置信：Embodied Agent OS 可能形成独立平台层。** 只有当第三方模型和不同硬件愿意复用其 session、verification 和 safety 接口时，才会从论文系统升级为生态。
+5. **中置信：world model 会分化成“控制迭代”和“数据/评估基础设施”。** WCM/World Action Planner 代表前者，BWM 代表后者；只报告视频质量的中间路线会被边缘化。
+6. **中低置信：Embodied Agent OS 可能形成独立平台层。** 只有当第三方模型和不同硬件愿意复用其 session、verification 和 safety 接口时，才会从论文系统升级为生态。
 
 #### 研究与团队跟踪清单
 
-- 对 VLA 团队，新增追问：发生偏差后何时检测、何时打断、恢复成功率是多少、每次恢复增加多少时延。
-- 对数据团队，新增追问：总小时中独立场景/技能/失败的有效覆盖，以及新增 1,000 小时带来的真实任务边际提升。
-- 对 world model 团队，坚持同算力、同真实数据量下比较控制收益；只有视频更清晰不算升级。
-- 对双系统/Agent OS 团队，要求记录模块级 failure provenance，并验证 planner、memory、verifier 可独立替换。
-- 8 月更新时优先检查三类路标：第三方复现、跨触觉硬件结果、统一恢复 benchmark；若没有出现，B 级信号不继续上调。
+- VLA：要求披露失败检测时机、恢复成功率、每次恢复时延和误报代价。
+- 数据团队：跟踪独立场景/技能/失败的有效覆盖，以及新增 1,000 小时的真机边际收益。
+- world model：坚持同算力、同真实数据量下比较控制收益；只有视频更清晰不算升级。
+- 开源项目：stars 只作传播旁证；优先找无作者重叠的下游采用、真实 import 和复现结果。
 
 
 ### 趋势证据卡
@@ -2096,7 +2103,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 **变化。** Xiaomi-Robotics-1 论文报告超过 100K 小时真实轨迹，Data Pyramid 讨论数据层级；若数据口径能被下游能力和开放评测验证，数据工程门槛将显著抬高。
 
-**对比。** 截至 29 日，7 月候选量明显低于 6 月完整月、但显著高于 2025 年 7 月；规模主线仍在扩张，单月环比受窗口与索引滞后影响。
+**对比。** 7 月完整月候选量低于 6 月、但显著高于 2025 年 7 月；高召回语料为 506 对 735，环比 −31.2%，仍需结合 6 月集中提交效应解读。
 
 **证据。** [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330)；[Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744)
 
@@ -2188,8 +2195,18 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 |---|---|---|---|---|
 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) | 2026-07-02 | 大小脑与双系统 | 在冻结 VLA 之外加入 latent dynamics 监视、事件触发截断与梯度引导重规划，让固定 action chunk 变成按执行偏差自适应的闭环控制。 | 真机 · 多任务 · 长时序 · 开放资产 |
 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) | 2026-07-03 | 大小脑与双系统 | 将长时 VLA 拆成高频 Executor、工作记忆 Sentry 和慢速 Planner，并用可增删改的跨模态记忆在真实机器人上处理非马尔可夫任务。 | 真机 · 多任务 · 长时序 · 开放资产 |
+| [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07-30 | 通用机器人学习 | 证明末端执行器轨迹等行为对齐表征可以绕开关节空间差异，将多本体数据真正转化为新本体增益。 | 真机 · 多任务 · 跨本体 · 开放资产 |
+| [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07-30 | 世界模型 | 让 VLM 提案、动作条件世界模型预演，再用优化与搜索修改计划，把 world model 从表象生成推向决策空间。 | 多任务 · 长时序 · 开放资产 |
+| [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07-31 | 世界模型 | 把动作条件视频模型同时做成仿真器、数据引擎和策略评估器，直接对齐预测质量与机器人决策用途。 | 真机 · 多任务 · 开放资产 |
+| [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07-30 | 灵巧操作 | 用变频策略匹配接触前的多模态路径与接触后的快速力反馈，把控制频率本身变成可学习结构。 | 多任务 · 开放资产 |
 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) | 2026-07-01 | 具身基础模型 | 把 VLA 推进到全尺寸双臂家具装配，以连续进度预测衔接最多 7 个子任务和 1,550 个控制步，并在真实 Kinova Gen3 上验证。 | 真机 · 多任务 · 长时序 |
+| [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07-31 | 具身基础模型 | 将真机部署奖励转换为托管 SFT API 可接受的监督数据，在不访问权重、梯度或损失的情况下形成两轮部署飞轮。 | 真机 · 多任务 · 跨本体 |
+| [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07-31 | 具身基础模型 | 不在 VLA 输出后外挂安全滤波器，而把 CBF 约束写入 flow-matching 去噪过程，直接约束整个 action chunk。 | 真机 · 多任务 · 跨本体 |
 | [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | 2026-07-18 | 大小脑与双系统 | 以 session 运行时、文件化状态、语义验证、记忆和安全服务解耦认知规划与异构机器人执行，并覆盖 19+ 仿真/实体本体。 | 真机 · 跨本体 |
+| [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07-30 | 通用机器人学习 | 把失败轨迹拆成动作级负例和可替换的成功动作，以约十分之一的样本量学到部署后纠错。 | 真机 · 多任务 |
+| [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07-30 | 灵巧操作 | 将未来触觉中的力、形变和滑移变成 world-action model 的训练监督，但隔离部署时不可见的未来信息。 | 真机 · 多任务 |
+| [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07-30 | 通用机器人学习 | 把真实家庭改造为同步采集工厂，将第一/第三人称视频、全身与手部运动、物体轨迹、音频和触觉对齐到同一交互流。 | 多任务 · 长时序 |
+| [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07-31 | 世界模型 | 让 critic 在估值之外同时预测未来 latent，用世界建模目标补足单帧价值估计对部分可观测控制的状态缺口。 | 真机 · 多任务 |
 | [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | 2026-07-01 | 世界模型 | 用动作条件、多视角动态表征和 flow-matching DiT 重生成移动物体操作轨迹，并在四类基础 VLA 上测试可插拔增益。 | 多任务 |
 | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | 2026-07-16 | 具身基础模型 | 用超过 100K 小时 UMI 真实轨迹和自动语言标注预训练基础 VLA，展示数据与模型规模向真实机器人零样本和少样本能力传导。 | 真机 |
 | [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07-28 | 世界模型 | 用时间差 flow matching、轨迹加权和 DynaRoute 注意力偏置，把世界模型容量从外观重建转向控制相关动态。 | 真机 |
@@ -2197,7 +2214,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07-27 | 灵巧操作 | 以未来视觉 latent 监督学习 action-conditioned 时空触觉表征，在部署零额外开销下适配预训练 VLA。 | 摘要未确认 |
 | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07-27 | 通用机器人学习 | 以真实机器人、UMI、人类 ego/exo、仿真和通用视觉语言五层数据金字塔梳理具身数据配方与能力关系。 | 摘要未确认 |
 
-精读样本明确开放披露 2/10；只在摘要、comment 或已核验项目页明确披露时记为“是”。
+精读样本明确开放披露 6/20；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
 ### 同行评审锚点
 
@@ -2212,7 +2229,93 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-07 月度雷达 最后更新 2026.07 -->
+<!-- 更新标记：2026-07 月度雷达 最后更新 2026.08 -->
+
+---
+
+
+## 2026 年 8 月研究雷达（月初快照，截至 4 日）
+
+> **这是早期快照，不是完整月。** 本站按 arXiv 首次提交 v1 日期归档。截至 2026-08-04，三组官方 API 查询在 8 月窗口均返回 0 条；这可能受月初/周末发布节奏与索引时点影响，不构成任何方向降温的证据。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>0</strong><span>8 月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>0</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>10,404</strong><span>窗口内发表版本</span></div>
+  <div class="radar-kpi"><strong>42 + 4</strong><span>已审计 + 新仓观察</span></div>
+</div>
+
+### 一句话结论
+
+8 月目前还没有可按 v1 日期归档的 arXiv 新论文，所以本页不制造“月度趋势”；现阶段最有价值的更新是用 7 月末的小众信号设置 8 月验证路标，同时跟踪正式发表和 GitHub 独立采用是否跟上。
+
+### 主题结构与环比
+
+| v2 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
+|---|---:|---:|---:|---|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 0 | 74 | — | 尚无 8 月 v1，不做方向推断 |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 0 | 32 | — | 尚无 8 月 v1，不做方向推断 |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 0 | 57 | — | 尚无 8 月 v1，不做方向推断 |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 0 | 50 | — | 尚无 8 月 v1，不做方向推断 |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 0 | 70 | — | 尚无 8 月 v1，不做方向推断 |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 0 | 26 | — | 尚无 8 月 v1，不做方向推断 |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 0 | 37 | — | 尚无 8 月 v1，不做方向推断 |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 0 | 102 | — | 尚无 8 月 v1，不做方向推断 |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 0 | 16 | — | 尚无 8 月 v1，不做方向推断 |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 0 | 14 | — | 尚无 8 月 v1，不做方向推断 |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 0 | 18 | — | 尚无 8 月 v1，不做方向推断 |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 0 | 6 | — | 尚无 8 月 v1，不做方向推断 |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0 | — | 尚无 8 月 v1，不做方向推断 |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 0 | 1 | — | 尚无 8 月 v1，不做方向推断 |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 0 | 3 | — | 尚无 8 月 v1，不做方向推断 |
+| **总计** | **0** | **506** | **—** | **月初空窗，不计算 −100%** |
+
+这里仍然展示 7 月绝对数，满足环比追踪的可追溯性；但由于本月分子还是“尚无发布样本”，任何百分比都会误导，因此显式标记为不可比。
+
+### 8 月要验证的六条早期命题
+
+| 命题 | 7 月末触发点 | 升级路标 | 反证/降级条件 |
+|---|---|---|---|
+| verifier/critic/corrector 成为 VLA 标准侧车 | [RedFlow](https://arxiv.org/abs/2607.27782)、[WCM](https://arxiv.org/abs/2607.29613) | 第三方策略接入同一评价/纠错器，同时报告检测召回、恢复成功率和时延 | 只在自有策略有效，或计算开销抵消成功率收益 |
+| world model 用决策效用而非画质生存 | [World Action Planner](https://arxiv.org/abs/2607.27599)、[BWM](https://arxiv.org/abs/2607.29302)、[WCM](https://arxiv.org/abs/2607.29613) | 同算力/同数据下稳定改善规划、策略排序或 RL 样本效率 | 只剩视频指标，与真机成功率相关性低 |
+| 触觉优先成为未来预测与接触控制信号 | [TacWAM](https://arxiv.org/abs/2607.28391)、[FA-RDP](https://arxiv.org/abs/2607.28596) | 跨传感器/手型复现，对未知物体保持失败恢复收益 | 增益仅存在于单一硬件、单一材料或封闭任务 |
+| 失败覆盖比总数据小时更关键 | [RedFlow](https://arxiv.org/abs/2607.27782)、[CLIFT](https://arxiv.org/abs/2607.29172) | 团队披露失败类型分布、每轮回收成本和新任务上线周期 | 大规模离线预训练在没有部署回流时仍能稳定处理长尾失败 |
+| 行为对齐表征成为跨本体中间层 | [Cross-Embodiment Transfer](https://arxiv.org/abs/2607.27549) | 多个独立团队用少量目标本体数据复现增益，并报告负迁移 | 性能仍主要由目标硬件数据量决定 |
+| 安全从外挂滤波进入 generative policy 内部 | [Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 在感知不确定、接触动力学偏差下仍保持安全，且不破坏任务语义 | 形式保证只在理想 CBF 假设下成立，真实开放世界误报/漏报过高 |
+
+### 给研究布局的当前判断
+
+1. **不追 8 月月初的“最热 topic”，先看观测性指标。** 恢复成功率、价值误差、接触滑移、进度校准和负迁移比新模型名更能预示瓶颈迁移。
+2. **高置信主线是“可评价、可打断、可恢复”的 VLA 执行栈。** 它会同时拉动 critic/verifier、runtime、失败数据与安全边界，比单一算法标签更像一个长期平台机会。
+3. **中高置信主线是 world model 的功能分化。** 控制型模型追求短 horizon 决策收益，基础设施型模型追求风险预演、数据生成和策略排序；两者的评估不应混为一个视频质量榜单。
+4. **中置信主线是人类中心数据引擎。** ACE-Data-0 表明视角、运动、物体、声音和接触的时空同步可能比纯小时规模更稀缺；但在出现真机下游收益前，仍只是高质量数据信号。
+
+### 月末新增精读锚点
+
+| 论文 | v1 日期 | 一句话贡献 | 证据标签 |
+|---|---|---|---|
+| [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07-30 | 证明末端执行器轨迹等行为对齐表征可以绕开关节空间差异，将多本体数据真正转化为新本体增益。 | 真机 · 多任务 · 跨本体 · 开放资产 |
+| [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07-30 | 让 VLM 提案、动作条件世界模型预演，再用优化与搜索修改计划，把 world model 从表象生成推向决策空间。 | 多任务 · 长时序 · 开放资产 |
+| [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07-30 | 把失败轨迹拆成动作级负例和可替换的成功动作，以约十分之一的样本量学到部署后纠错。 | 真机 · 多任务 |
+| [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07-30 | 将未来触觉中的力、形变和滑移变成 world-action model 的训练监督，但隔离部署时不可见的未来信息。 | 真机 · 多任务 |
+| [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07-30 | 用变频策略匹配接触前的多模态路径与接触后的快速力反馈，把控制频率本身变成可学习结构。 | 多任务 · 开放资产 |
+| [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07-30 | 把真实家庭改造为同步采集工厂，将第一/第三人称视频、全身与手部运动、物体轨迹、音频和触觉对齐到同一交互流。 | 多任务 · 长时序 |
+| [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07-31 | 将真机部署奖励转换为托管 SFT API 可接受的监督数据，在不访问权重、梯度或损失的情况下形成两轮部署飞轮。 | 真机 · 多任务 · 跨本体 |
+| [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07-31 | 把动作条件视频模型同时做成仿真器、数据引擎和策略评估器，直接对齐预测质量与机器人决策用途。 | 真机 · 多任务 · 开放资产 |
+| [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07-31 | 不在 VLA 输出后外挂安全滤波器，而把 CBF 约束写入 flow-matching 去噪过程，直接约束整个 action chunk。 | 真机 · 多任务 · 跨本体 |
+| [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07-31 | 让 critic 在估值之外同时预测未来 latent，用世界建模目标补足单帧价值估计对部分可观测控制的状态缺口。 | 真机 · 多任务 |
+
+### 正式发表与 GitHub 更新
+
+- 正式发表母库现为 12,165 条版本，其中窗口内 10,404 条、自动直接相关 2,670 条；新增主要来自期刊 Crossref 记录，不自动等于严格官方同行评审锚点。
+- 完整官方 proceedings 仍为 824 条；ICRA 2026 官方 program 与 RSS 2026 官方录用清单共 3,161 条，但后者尚无 RSS 22 proceedings，不进严格分子。
+- GitHub 已刷新 42 个已审计仓库的 stars、forks、license 和推送时间，并将 4 个 7 月末新论文仓库单列为待独立采用审计的观察清单。
+
+### 下次更新触发条件
+
+一旦 arXiv API 出现 8 月首批 v1，本页将补入全量主题结构、绝对数和环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
+
+<!-- 更新标记：2026-08 月度雷达 最后更新 2026.08 -->
 
 ---
 
@@ -2282,11 +2385,11 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 - **视频模型正在被改造成 generalist policy，而非外置 world model（B）**：Turning Video Models into Generalist Robot Policies、τ0-WM 与 Cosmos Policy 把视频预测和动作生成压进同一训练栈。
 - **连续推理开始取代离散 reason–act 循环（B）**：Continuous Reasoning、Libra-VLA 与 StreamVLA 都试图让思考与控制异步或连续发生。
 
-### 2026 年 7 月临时完整版
+### 2026 年 7 月完整月与 8 月早期快照
 
-截至 29 日，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在在线评价/纠错、进度—记忆—运行时状态和视触觉 world model。Agent OS 保持 C 级，需等待第三方采用。
+7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 4 日尚无可归档 arXiv v1，暂不从 0 条样本推断趋势。
 
-<!-- 更新标记：季度演进 最后更新 2026.07 -->
+<!-- 更新标记：季度演进 最后更新 2026.08 -->
 
 ---
 
@@ -2354,7 +2457,7 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 
 ## 弱信号探测与未来判断
 
-> 热门 topic 说明共识已经形成；本页寻找的是尚未成为高频标签、却可能提前暴露下一轮瓶颈迁移的“蛛丝马迹”。预测截至 2026-07-29，不是事实陈述。
+> 热门 topic 说明共识已经形成；本页寻找的是尚未成为高频标签、却可能提前暴露下一轮瓶颈迁移的“蛛丝马迹”。预测截至 2026-08-04，不是事实陈述。
 
 ### 共识热度与弱信号有什么不同
 
@@ -2398,11 +2501,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 3–9 个月
 
-**已经观察到的事实。** fast–slow、异步 coarse-to-fine、连续推理和 real-time VLA 在不同团队连续出现，解决的共同问题是推理频率与控制频率不匹配。
+**已经观察到的事实。** fast–slow、异步 coarse-to-fine、连续推理和 real-time VLA 在不同团队连续出现；7 月末又出现接触前后自适应控制频率和直接修改 action-chunk 去噪过程的安全约束。
 
 **我们的判断。** 下一轮有价值的基础设施将是 completion gating、异步缓存、动作 horizon 自适应、边缘部署和故障恢复，而不是单纯增加 VLM 参数。
 
-**论文证据。** [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648)；[Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921)；[Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229)；[Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684)
+**论文证据。** [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648)；[Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921)；[Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229)；[Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684)；[FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596)；[Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2414,11 +2517,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 3–12 个月
 
-**已经观察到的事实。** 在线搜索、稀疏世界想象、自逆动力学奖励和 Action CoT 都在引入动作候选验证，而不只是生成下一步。
+**已经观察到的事实。** 在线搜索、稀疏世界想象、自逆动力学奖励和 Action CoT 都在引入动作候选验证；RedFlow 把失败转成动作级纠错，WCM 则用未来 latent 预测重做 critic 的状态估计。
 
 **我们的判断。** 高低层分工将从 planner–policy 两块模型转向 policy + lightweight verifier + recovery loop；验证器可能比慢推理模型更快形成独立组件。
 
-**论文证据。** [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643)；[Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404)
+**论文证据。** [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643)；[Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404)；[RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782)；[WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2430,11 +2533,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 6–12 个月
 
-**已经观察到的事实。** 从经验学习、低成本真实人类示范、开放训练栈，以及论文报告的 100K 小时级真实轨迹，把数据竞争从一次性 dataset 推向持续运营。
+**已经观察到的事实。** 从经验学习、100K 小时级轨迹到 ACE 的 75,000 个同步多模态交互 episode，数据竞争正从一次性 dataset 走向持续运营；CLIFT 进一步证明即使只有托管 SFT API，部署失败也能被改写成下一轮训练数据。
 
 **我们的判断。** 数据量仍重要，但最具区分度的会是失败覆盖率、修正效率和任务分布更新速度；真正的 moat 在部署闭环而非公开抓取视频。
 
-**论文证据。** [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)；[RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729)；[Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375)；[Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330)
+**论文证据。** [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)；[RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729)；[Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375)；[Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330)；[ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625)；[CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2446,11 +2549,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 3–9 个月
 
-**已经观察到的事实。** MCTS/MPC、RL simulator、executable alignment 和直接视频策略四条路线都把评估目标推向动作。
+**已经观察到的事实。** MCTS/MPC、RL simulator、executable alignment 和直接视频策略都把评估目标推向动作；7 月末的 World Action Planner、BWM 和 WCM 分别把世界模型用于计划搜索、策略排序/数据生成和价值估计。
 
 **我们的判断。** 世界模型会分化为两类：为策略提供紧凑 latent dynamics 的控制模型，以及为数据合成服务的高保真生成器；中间态的“漂亮视频模型”将降温。
 
-**论文证据。** [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077)；[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817)
+**论文证据。** [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077)；[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817)；[World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599)；[BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302)；[WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2462,11 +2565,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 中高 · 6–18 个月
 
-**已经观察到的事实。** 触觉从 VLA 融合扩展到视触觉世界建模、touch dreaming、统一理解/预测和 7 月的规模化世界模型。
+**已经观察到的事实。** 触觉从 VLA 融合扩展到视触觉世界建模、touch dreaming 和统一理解/预测；TacWAM 开始显式预测力、形变与滑移，FA-RDP 则用力反馈改变接触前后的策略频率。
 
 **我们的判断。** 触觉最先兑现的指标会是接触失败检测、材料/滑移预测和动作恢复，不是开放词汇理解。
 
-**论文证据。** [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706)；[OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201)；[Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015)；[UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723)；[ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530)
+**论文证据。** [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706)；[OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201)；[Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015)；[UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723)；[ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530)；[TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391)；[FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2478,11 +2581,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 中高 · 6–18 个月
 
-**已经观察到的事实。** 软提示、跨本体人类示范、人类中心预训练、通用灵巧手套件和 human-as-humanoid 共同尝试消除动作表示差异。
+**已经观察到的事实。** 软提示、跨本体人类示范、通用灵巧手套件和 human-as-humanoid 共同尝试消除动作表示差异；新的行为对齐实验表明，末端执行器轨迹比直接共享关节动作更有机会跨本体迁移。
 
 **我们的判断。** 一个权重直接覆盖所有机器人不太现实；更可能形成共享时空/接触表征，加少量 embodiment adapter 与安全约束。
 
-**论文证据。** [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671)；[Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009)
+**论文证据。** [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671)；[Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009)；[Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2498,7 +2601,7 @@ flowchart LR
 
 **我们的判断。** 自然语言计划太抽象、关节动作太具体，3D trace 是可验证且相对跨本体的中间层候选。
 
-**论文证据。** [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721)；[Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924)；[Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552)；[3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329)
+**论文证据。** [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721)；[Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924)；[Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552)；[3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329)；[Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -2526,7 +2629,7 @@ flowchart LR
 
 每月新增论文后，先检查路标而不是重写预测：出现第三方采用、真实机器人恢复率、跨硬件 benchmark 或开放训练资产时升级；连续两个季度没有独立跟进、只剩同团队系列工作或真机增益消失时降级。
 
-<!-- 更新标记：弱信号与未来判断 最后更新 2026.07 -->
+<!-- 更新标记：弱信号与未来判断 最后更新 2026.08 -->
 
 ---
 
@@ -3142,7 +3245,7 @@ flowchart LR
 - [2025 年候选](/database/2025)
 - [2026 年候选](/database/2026)
 
-JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避免单页过大。
+JSON/CSV 包含全部 2650 条纳入统计记录；网页按年份拆分，避免单页过大。
 
 ### 精读与核验记录
 
@@ -3242,6 +3345,16 @@ JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避�
 | 2607.24485 | [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07 | 灵巧操作 | high | 精读 | — |
 | 2607.24744 | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07 | 通用机器人学习 | high | 精读 | — |
 | 2607.25918 | [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.27549 | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07 | 通用机器人学习 | high | 精读 | — |
+| 2607.27599 | [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.27782 | [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07 | 通用机器人学习 | high | 精读 | — |
+| 2607.28391 | [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07 | 灵巧操作 | high | 精读 | — |
+| 2607.28596 | [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07 | 灵巧操作 | high | 精读 | — |
+| 2607.28625 | [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07 | 通用机器人学习 | high | 精读 | — |
+| 2607.29172 | [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07 | 具身基础模型 | high | 精读 | — |
+| 2607.29302 | [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07 | 世界模型 | high | 精读 | — |
+| 2607.29569 | [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07 | 具身基础模型 | high | 精读 | — |
+| 2607.29613 | [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07 | 世界模型 | high | 精读 | — |
 
 <!-- 更新标记：论文证据库 最后更新 2026.07 -->
 
@@ -3250,11 +3363,11 @@ JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避�
 
 ## 检索、分类与趋势判定方法
 
-> **版本**：v2.1 · **数据截点**：2026 年 7 月 29 日（Asia/Shanghai）<br>
+> **版本**：v2.2 · **数据截点**：2026 年 8 月 4 日（Asia/Shanghai）<br>
 > 本页描述的是可复算流程；任何依赖人工判断的步骤都会明确标注。
 
 ::: tip 两层分析体系
-旧五类数据保留为稳定月度序列，用于连续的环比、同比与精读分析；新版另建 30,604 条 arXiv 母集、12,015 条发表版本和 40,345 个 canonical works 的开放主题层，用来发现旧分类容纳不了的新方向。两层不能混用分母。详见[语料扩充协议](/methods/expansion-protocol)与[覆盖审计](/analysis/corpus-expansion)。
+旧五类数据保留为稳定月度序列，用于连续的环比、同比与精读分析；新版另建 30,766 条 arXiv 母集、12,165 条发表版本和 40,605 个 canonical works 的开放主题层，用来发现旧分类容纳不了的新方向。两层不能混用分母。详见[语料扩充协议](/methods/expansion-protocol)与[覆盖审计](/analysis/corpus-expansion)。
 :::
 
 ### 时间口径
@@ -3262,9 +3375,10 @@ JSON/CSV 包含全部 2640 条纳入统计记录；网页按年份拆分，避�
 | 层级 | 时间范围 | 用途 | 深度 |
 |---|---|---|---|
 | 主分析期 | 2025-07-01—2026-06-30 | 逐月趋势、重点论文、实验与开放性指标 | 精读 + 完整分类 |
-| 临时完整版 | 2026-07-01—2026-07-29 | 完整趋势研判 + 早期信号 | 展示暂定环比/同比，待月末回填 |
+| 完整月更新 | 2026-07-01—2026-07-31 | 完整趋势研判 + 早期信号 | 完整月环比/同比 |
+| 前瞻快照 | 2026-08-01—2026-08-04 | 月初增量与验证路标 | 尚无 v1 时不计算误导性环比 |
 | 同比基线 | 2024-07-01—2025-06-30 | 数量、主题、机构结构 | 轻量分类 |
-| 同行评审窗口 | 2024-07-01—2026-07-29 | 处理提出、投稿、录用与发表之间的滞后 | 官方证据核验 |
+| 同行评审窗口 | 2024-07-01—2026-08-04 | 处理提出、投稿、录用与发表之间的滞后 | 官方证据核验 |
 
 月份统一由 [arXiv](https://arxiv.org/) 首次提交版本 `v1` 的日期确定。修订版本更新摘要、DOI 与发表信息，但不重复计数。会议发表月只表示评审完成，并不替代研究首次公开时间。
 
@@ -3278,9 +3392,9 @@ flowchart LR
   D --> E["结构化证据库<br/>CSV / JSON 单一来源<br/> "]
 ```
 
-宽召回优先保证“不漏掉使用新命名的工作”。v2 已完整拉取窗口内 `cs.RO` 23,225 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,379 条机器人/具身交叉记录，合并去重后形成 30,604 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,015 条版本记录；母集保留窗口前的 ICRA 2024 以支持版本合并，窗口计数按会议事件日或出版社日期计算。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
+宽召回优先保证“不漏掉使用新命名的工作”。v2 已完整拉取窗口内 `cs.RO` 23,336 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,430 条机器人/具身交叉记录，合并去重后形成 30,766 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,165 条版本记录、窗口内 10,404 条；母集保留窗口前的 ICRA 2024 以支持版本合并。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
 
-94 篇高信号样本继续作为精读层，逐条核对 ID、标题、`published`（v1）、摘要、实验和开放资产。分类规则只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
+104 篇高信号样本继续作为精读层，逐条核对 ID、标题、`published`（v1）、摘要、实验和开放资产。分类规则只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
 
 ### 稳定序列与开放主题
 
@@ -3315,7 +3429,7 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 | 指标 | 计算方式 | 注意 |
 |---|---|---|
 | 主题占比 | 某主方向论文数 / 当月纳入论文数 | 多标签不重复计数 |
-| 环比 / 同比 | 同时展示与上月 / 上年同月的绝对增量和百分比 | 7 月为 1–29 日暂定值，不据负环比直接判定降温 |
+| 环比 / 同比 | 同时展示与上月 / 上年同月的绝对增量和百分比 | 7 月为完整月；8 月无 v1 时保留 7 月参照数、不计算 −100% |
 | 机构集中度 | 头部 5 家机构去重论文数 / 有机构信息论文数 | 多机构合著按每家计一篇 |
 | 真实机器人验证率 | 明确报告物理机器人实验的论文数 / 主分析期论文数 | 摘要未披露时不做正向推断 |
 | 多任务 / 跨本体 / 长时序 | 满足对应证据标签的论文数 / 主分析期论文数 | 任务变体不自动等于多任务 |
@@ -3346,7 +3460,7 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 
 生成页面不是数据源，不应手工修改其中的数量。修正应先进入结构化文件，再重新生成。
 
-<!-- 更新标记：检索与分类方法 最后更新 2026.07 -->
+<!-- 更新标记：检索与分类方法 最后更新 2026.08 -->
 
 ---
 
@@ -3360,7 +3474,7 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 - 研究对象位于机器人或具身交互边界内；
 - 方法直接学习、生成、规划或执行动作，或为这些能力提供数据与动力学模型；
 - 标题、摘要或正式方法说明能支持至少一个主方向；
-- 首次公开时间落入分析、基线或 7 月临时完整窗口。
+- 首次公开时间落入分析、基线、7 月完整月或 8 月前瞻窗口。
 
 ### 典型边界样本
 
@@ -3388,7 +3502,7 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 3. **机构信息不完整。** arXiv 元数据本身通常不含 affiliation；机构统计仅使用 OpenAlex 归一化结果和人工核验记录，并显示有效分母。
 4. **近期同行评审覆盖率天然偏低。** 这反映发表滞后，不能直接解释为研究质量下降。
 5. **会议周期会造成提交堆积。** 月度页面对显著集中提交做备注，不把截稿周期自动解释为技术爆发。
-6. **百分比受小样本和不完整窗口影响。** 所有图表保留绝对数量；2026 年 7 月展示截至 29 日的暂定环比/同比，但不据此直接判定方向降温。
+6. **百分比受小样本和不完整窗口影响。** 所有图表保留绝对数量；2026 年 7 月已是完整月，8 月月初若尚无 v1，明确标记不可比而不计算 −100%。
 7. **一句话贡献与局限是研究判断。** 它们不是作者原文，站点将其与可核验事实分开表述。
 8. **轻量统计是统一查询的候选指数。** 当前批量 arXiv Atom 接口触发限流后，宽召回改用 Semantic Scholar 的 arXiv external ID 索引；因此候选数量适合做同口径环比/同比，不应解释为 cs.RO 的完整论文总量。
 
@@ -3396,79 +3510,79 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 
 市场规模、公司融资、商业订单、供应链和公司级尽调不在本期范围。本报告只提供研究证据，可作为后续商业模块的技术底座。
 
-<!-- 更新标记：纳排与局限 最后更新 2026.07 -->
+<!-- 更新标记：纳排与局限 最后更新 2026.08 -->
 
 ---
 
 
-## 审校报告
+## 内容与数据审校报告
 
-> **审校对象**：月度研究雷达、2026 年 7 月临时完整版、执行摘要、年度综合、弱信号与未来判断<br>
-> **审校依据**：`data/papers.json`、`data/trends.json`、`data/peer-review.json`、arXiv 官方摘要/HTML 页面、官方 proceedings<br>
-> **审校范围**：事实准确性、专有名词、数据一致性、事实/推断分层
+> **审校对象**：执行摘要、2026 年 7 月完整月、2026 年 8 月早期快照、弱信号与未来判断、GitHub 证据页<br>
+> **数据截点**：2026-08-04<br>
+> **审校依据**：结构化论文库、arXiv v1 日期、官方 proceedings / OpenReview / 期刊页面、GitHub API 元数据
 
 ### 一、已直接修改的问题
 
 | 位置 | 修改前 | 修改后 | 说明 |
 |---|---|---|---|
-| 执行摘要总论 | “具身智能正从……” | 增加“综合判断（推断）” | 防止把年度归纳写成已证实事实 |
-| 数据指标 | “开放资产确认” | “明确开放披露” | 本库确认的是摘要/comment/项目页披露，不等于本地复现 |
-| 7 月规模信号 | “100K 小时级真实轨迹” | “论文报告 100K 小时级真实轨迹” | 规模为论文自报，尚无独立审计 |
-| Agent OS 预测 | “首次” | “在本次语料中首次” | 避免无边界的全球首创断言 |
-| VLA-Corrector 作者 | Semantic Scholar 缩写/异写 | Yi Pan、Qi Lu 等 arXiv 官方写法 | 以 arXiv 作者列表为准 |
-| 7 月主方向 | DynaWM、VLA-Corrector、HiMe 初筛均落入基础模型 | 分别改为世界模型、大小脑与双系统、大小脑与双系统 | 按方法主贡献而非标题中的 VLA 关键词归类 |
-| 7 月时间口径 | “前瞻快照，不参与比较” | “截至 29 日临时完整版，展示暂定环比/同比” | 按新增需求更新；同时保留不完整窗口警示 |
+| 7 月时间口径 | 7 月 1–29 日临时版 | 7 月 1–31 日完整月 | 已补齐 30–31 日首次提交并重算统计 |
+| 8 月月报 | 无独立页面 | 8 月 1–4 日早期快照 | 截点内三路 arXiv 官方查询尚无 v1；不把零记录解释为降温 |
+| 月度主题结构 | 缺少完整环比列 | 同时展示绝对量、上月量、环比增量和环比百分比 | 避免只看热门主题份额 |
+| 同行评审表述 | official program / pending 可能被误读为严格锚点 | 只有正式 proceedings、期刊正式页或最终录用状态进入严格分子 | 3,161 条 program / pending 与 824 条严格记录分层展示 |
+| 未来判断文字 | “控制叠代”“来至” | “控制迭代”“来自” | 确认的中文用字错误 |
 
 ### 二、无需改动的正确项
 
 | 项目 | 核查结果 |
 |---|---|
-| 主分析期精读数 | 84 篇，与 12 个月 × 每月 7 篇一致 |
-| 7 月临时完整版精读数 | 10 篇，与结构化记录一致 |
-| 官方同行评审锚点 | 30 条，唯一性与官方域名检查通过 |
-| 真实机器人 / 多任务 / 跨本体 / 长时序 | 均由精读记录重新计算，分母统一为 84 |
-| 趋势论文链接 | 所有 `evidence_ids` 均存在于论文库 |
-| B 级趋势 | 均至少 3 篇、2 个独立第一作者团队；7 月 3 条 B 级信号分别有 3–4 篇证据 |
-| 月度主题结构 | 13 个月均展示上月候选、环比绝对增量、环比百分比、同比绝对增量和同比百分比 |
+| 月度去重 | 同一论文只计一个主方向，多标签不重复计数 |
+| 7 月精读 | 共 20 条，其中 30–31 日新增 10 条；结构化 ID 唯一 |
+| 8 月环比 | 以“—”标记不可比，没有制造 −100% |
+| GitHub | 42 个已评分仓库和 4 个新仓观察项分层；新 stars 未倒推采用分 |
+| 预测分层 | 事实、分析推断和未来判断分开，并给出升级路标与反证条件 |
 
 ### 三、待确认的专有名词
 
-无。论文标题和模型名保留 arXiv/官方 proceedings 原文；例如 TACO 标题中的 `forScalable` 是 arXiv 原页写法，不擅自改写。中英文主题名称在全站统一。
+无。论文标题和模型名保留来源原文；TACO 标题中的 `forScalable` 是 arXiv 页面原始写法，不擅自改写。
 
 ### 四、事实与数据核查
 
-#### 4.1 已验证一致
+#### 4.1 已验证一致的关键数据
 
-- `data/papers.json`：3,082 条记录、2,640 条纳入统计、94 条精读。
-- 主分析期候选 1,841 条；同比基线候选 633 条。
-- 五方向主分析期合计 1,841 条，未因多标签重复计数。
-- 2026 年 7 月截至 29 日候选 166 条；2026 年 6 月 358 条，暂定环比 −192（−53.6%）；2025 年 7 月 57 条，暂定同比 +109（+191.2%）。
-- 7 月五方向候选为 82 / 4 / 22 / 31 / 27，合计 166；精读真机 6/10，明确开放披露 2/10。
-- 30 个官方评审链接在采集阶段均返回 HTTP 200；站点构建的内部链接检查通过。
+- 轻量分析库共 3,092 条，2,650 条纳入月度统计，104 条精读；其中主分析期 84 条、2026 年 7 月 20 条。
+- 旧五类口径的 7 月候选为 176 条，6 月为 358 条，环比 −182（−50.8%）；2025 年 7 月为 57 条，同比 +119（+208.8%）。
+- 高召回 arXiv 语料共 30,766 条，纳入 8,941 条；7 月纳入 506 条，6 月 735 条，环比 −229（−31.2%）。两套口径分表呈现、不混算。
+- 正式发表母语料 12,165 条，时间窗内 10,404 条、纳入 2,670 条；严格官方会议/期刊容器记录 824 条。
+- 合并后共有 40,605 个 canonical works，其中 838 个具有严格同行评审证据。
+- 7 月旧五类分布为 84 / 4 / 24 / 34 / 30，合计 176。
 
-#### 4.2 可接受的研究判断
+#### 4.2 有微调但可接受的表述
 
-- “verifier/corrector 标准侧车”“三层 Executor–Sentry–Planner”“触觉 world model 先在恢复兑现”等属于未来判断，已明确标注置信度并给出升级路标与反证。
-- A/B/C/D 是趋势证据强度，不是对单篇论文质量或团队优劣的评分。
-- 7 月负环比只作为截至 29 日观测值，不被直接解释为技术降温；这是对不完整窗口、索引滞后和 6 月集中提交的保守处理。
+- “世界模型决策化”“VLA 标准侧车”“部署数据飞轮”等属于分析命名，不冒充论文原始术语。
+- A/B/C/D 表示趋势证据强度，不是论文质量、团队价值或投资优先级评分。
+- “论文报告 100K 小时”“真实机器人实验”“明确开放披露”均按原论文或项目页陈述记录，不等于第三方审计、生产部署或独立复现。
 
 #### 4.3 时效性备注
 
-- 数据截点为 2026-07-29。
-- 2026 年 7 月为 1–29 日临时完整版，可展示暂定比较，但仍缺 30–31 日、月末提交与索引回填。
-- CVPR 2026 等新近论文已使用官方页面，但近期月份的同行评审覆盖率仍受发表滞后影响。
+- 7 月已经是完整月，但与 6 月比较仍可能受会议周期和集中提交影响；负环比不足以单独证明技术降温。
+- 8 月 1–4 日的零记录只代表本次官方 API 查询截点内尚无可归入的 v1，页面不计算环比百分比。
+- GitHub stars、forks、license 和推送时间更新至 8 月 4 日；issue/PR 独立采用分仍保留 7 月 29 日快照。
 
-### 五、技术名词一致性
+### 五、人名与身份核查
 
-- `VLA`、`world model`、`fast–slow`、`verifier`、`latent action` 和 `embodiment adapter` 保留英文。
-- “大小脑与双系统”用于中文分类；未要求原论文必须采用 System 1/System 2 命名。
+本轮新增页面不依赖人物身份判断；论文作者与机构字段保留结构化来源，不在趋势正文中扩写未经核验的职位。
+
+### 六、技术名词一致性
+
+- `VLA`、`world model`、`fast–slow`、`verifier`、`critic`、`latent action` 和 `embodiment adapter` 保留英文。
+- “大小脑与双系统”用于中文分类，不要求原论文采用 System 1/System 2 命名。
 - “真实机器人”只表示明确的物理机器人实验，不等于部署级成熟。
 
-### 六、审校结论
+### 七、审校结论
 
-未发现未处理的确认错误或待确认专名。关键数字可从结构化数据复算；7 月新增精读论文的 ID、标题、v1 日期和作者已对照 arXiv 官方页，预测性表述与事实记录分开，并附可证伪条件。
+未留下确认错误或待确认专名。7 月已按完整月重算，月度主题结构包含环比数据，8 月以早期快照单列；晚 7 月论文、GitHub 新仓观察项和官方发表数据均进入结构化来源。经此次审校，事实、推断和预测的边界保持清晰。
 
-<!-- 更新标记：内容审校报告 最后更新 2026.07 -->
+<!-- 更新标记：内容审校报告 最后更新 2026.08 -->
 
 ---
 
@@ -3511,6 +3625,8 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 30. Shengbang Liu, Yueru Jia, Yuyang Yan, Jiaming Liu, Xinran Y. Zhang, Qiuxuan Feng, Yandong Guo, Shiji Zhou, et al.. (2026). [TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](https://arxiv.org/abs/2607.02840). arXiv:2607.02840.
 31. Xinyi Xie, Zican Hu, Zhanyun Liu, Yicheng Dong, Wenhao Wu, Zhenhong Sun, Haoran Li, Chunlin Chen, et al.. (2026). [Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models](https://arxiv.org/abs/2607.03751). arXiv:2607.03751.
 32. Xiaomi Robotics Team, Jun Guo, Piaopiao Jin, Jason Li, Peiyan Li, Yingyan Li, Futeng Liu, Wanli Peng, et al.. (2026). [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330). arXiv:2607.15330.
+33. Yuxin Chen, Hari Srikanth, Nathan Jew, Menglin Wu, Pengcheng Wang, Junli Ren, Masayoshi Tomizuka, Peng Xu, et al.. (2026). [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172). arXiv:2607.29172.
+34. Kasra Sinaei, Hung-Chieh Wu, Donald Ebeigbe. (2026). [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569). arXiv:2607.29569.
 ### 大小脑与双系统
 
 1. Zhenyang Liu, Yongchong Gu, Sixiao Zheng, Yanwei Fu, Xiangyang Xue, Yu-Gang Jiang. (2025). [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424). arXiv:2507.01424.
@@ -3553,6 +3669,8 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 16. Xidong Zhang, Yichi Zhang, Jiaxin Shi, Fucai Zhu, Siyu Zhu, Michael Yu Wang, Xiaojun Wu, Weihao Yuan. (2026). [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723). arXiv:2606.31723.
 17. Bowen Jiang, William Painter Reger, Roberto Martin-Martin. (2026). [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909). arXiv:2606.31909.
 18. Ning Cheng, Jinan Xu, Wanlin Li, Yangzhi Chen, Jing Gao, Yiqun Wang, Kelan Peng, Wenjuan Han. (2026). [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485). arXiv:2607.24485.
+19. Lei Jin, Yiding Ma, Xin Zhang, Chen Gao, Wei Wu, Yong Li. (2026). [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391). arXiv:2607.28391.
+20. Lifeng Zhuo, Wendi Chen, Han Xue, Shirun Tang, Jun Lv, Cewu Lu, Chuan Wen. (2026). [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596). arXiv:2607.28596.
 ### 世界模型
 
 1. Yuhang Huang, Jiazhao Zhang, Shilong Zou, Xinwang Liu, Ruizhen Hu, Kai Xu. (2025). [LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html). *CoRL 2025*.
@@ -3582,6 +3700,9 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 25. Chongkei Chang, Zhidong Deng. (2026). [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604). arXiv:2607.02604.
 26. Yunao Huang, Shiyu Sang, Haotao Lu, Suting Ni, Shijie Wu, Ziyang Guo, Ye Shi, Jingya Wang. (2026). [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530). arXiv:2607.22530.
 27. Haoyuan Ji, Lingxiang Fan, Shang Su, Yinqiao Lu, Mengkai Shi, Jun Gao, Shuo Feng. (2026). [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918). arXiv:2607.25918.
+28. Xiangcheng Zhang, Yilun Du. (2026). [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599). arXiv:2607.27599.
+29. BWM Team. (2026). [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302). arXiv:2607.29302.
+30. Senyu Fei, Xiaopeng Yu, Siyin Wang, Xianzhong Zhao, Jingjing Gong, Xipeng Qiu. (2026). [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613). arXiv:2607.29613.
 ### 通用机器人学习
 
 1. Lirui Wang, Xinlei Chen, Jialiang Zhao, Kaiming He. (2024). [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html). *NeurIPS 2024*.
@@ -3606,6 +3727,9 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 20. Arthur Allshire, Himanshu Gaurav Singh, Ritvik Singh, Adam Rashid, Hongsuk Choi, David McAllister, Justin Yu, Yiyuan Chen, et al.. (2026). [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375). arXiv:2606.27375.
 21. Xiaopeng Lin, Ruoqi Yang, Shijie Lian, Zhaolong Shen, Bin Yu, Changti Wu, Haibao Liu, Yuxiang Zhang, et al.. (2026). [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009). arXiv:2606.32009.
 22. Yifan Ye, Yankai Fu, Yaoxu Lv, Bohan Hou, Jun Cen, Lingdong Kong, Duo Zheng, Tianxing Chen, et al.. (2026). [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744). arXiv:2607.24744.
+23. Ajay Sridhar, Jensen Gao, Jonathan Yang, Jean Mercat, Suneel Belkhale, Dorsa Sadigh. (2026). [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549). arXiv:2607.27549.
+24. Zhengyang Yan, Junhao Li, Fangqi Zhu, Zijun Wang, Quanxin Shou, Yikun Miao, Xiaoyi Pang, Zicong Hong, et al.. (2026). [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782). arXiv:2607.27782.
+25. Yukang Cao, Haozhe Xie, Beichen Wen, Runmao Yao, Yinghao Liu, Yue Huang, Zhichao Liao, Yunxiang Wang, et al.. (2026). [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625). arXiv:2607.28625.
 
 <!-- 更新标记：参考文献 最后更新 2026.07 -->
 

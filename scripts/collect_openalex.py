@@ -35,7 +35,7 @@ QUERIES = {
 def month_end(month_key: str) -> str:
     year, month = map(int, month_key.split("-"))
     if month_key == "2026-07":
-        return "2026-07-29"
+        return "2026-07-31"
     if month == 12:
         next_year, next_month = year + 1, 1
     else:

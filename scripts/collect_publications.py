@@ -249,7 +249,10 @@ def choose_crossref_date(item: dict) -> tuple[str | None, str]:
 
 
 def collect_crossref(source: dict) -> list[dict]:
-    cache = RAW / f"crossref-{source['venue'].lower().replace(' ', '-')}.json"
+    cutoff = REGISTRY["window"]["until"]
+    cache = RAW / (
+        f"crossref-{source['venue'].lower().replace(' ', '-')}-through-{cutoff}.json"
+    )
     if cache.exists() and cache.stat().st_size > 100:
         cached = json.loads(cache.read_text())
         items = cached.get("items", [])

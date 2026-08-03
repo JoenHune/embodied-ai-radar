@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29",
+  "generated_at": "2026-08-04",
   "records": 3161,
   "by_venue": {
     "ICRA": 2951,
@@ -43,7 +43,37 @@
     },
     {
       "url": "https://roboticsconference.org/program/papers/",
-      "sha256": "5fda9641e2c2e0b68021a2b5c12a6c9d755b0e33a9a4edddec39519c143166f9"
+      "sha256": "67a89616cd12c521f56242958d3b6c729e76cadb29acc96ac8c2a73caa3646cb"
+    }
+  ],
+  "source_refresh": [
+    {
+      "cache_name": "icra26-day-1.html",
+      "status": "current_snapshot_cache"
+    },
+    {
+      "cache_name": "icra26-day-2.html",
+      "status": "current_snapshot_cache"
+    },
+    {
+      "cache_name": "icra26-day-3.html",
+      "status": "live_url_revalidated_prior_body"
+    },
+    {
+      "cache_name": "icra26-day-4.html",
+      "status": "live_url_revalidated_prior_body"
+    },
+    {
+      "cache_name": "icra26-day-5.html",
+      "status": "live_url_revalidated_prior_body"
+    },
+    {
+      "cache_name": "icra26-day-6.html",
+      "status": "fresh_body"
+    },
+    {
+      "cache_name": "rss26-accepted.html",
+      "status": "fresh_body"
     }
   ],
   "warning": "ICRA 2026 records are official program entries, not verified proceedings. RSS 2026 records are accepted papers pending an official proceedings volume. Neither enters the strict peer-review coverage numerator."

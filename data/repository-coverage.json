@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29",
+  "generated_at": "2026-08-04",
   "repository_count": 42,
   "url_verified": 42,
   "paper_mapped": 34,
@@ -29,5 +29,11 @@
     "早期/低证据": 8
   },
   "scoring_note": "独立采用分不使用 stars；由外部 issue/PR 作者、贡献者广度、近 100 个 PR 的合并数、forks 和 release 新鲜度组成。它是 GitHub 公开信号代理，不是科研影响力结论。",
-  "warning": "Stars are stored as reach metadata but excluded from the independent-adoption score. A missing reverse-dependency count remains null and is never replaced by forks."
+  "warning": "Stars, forks and repository metadata were refreshed on the generated date. Independent-adoption scores retain their earlier observation date; newly discovered repositories remain a separate watchlist until the same issue/PR and dependency audit is completed.",
+  "metadata_refreshed": 42,
+  "adoption_score_snapshot": "2026-07-29",
+  "new_watchlist_count": 4,
+  "new_watchlist_status": {
+    "new_repo_pending_adoption_audit": 4
+  }
 }

@@ -68,7 +68,12 @@ def month_bounds(key: str) -> tuple[str, str]:
 
 
 def fetch(query_id: str, query: str, month: str, start: int, page_size: int) -> str:
-    cache = RAW / f"{month}-{query_id}-{start:05d}.xml"
+    _, upper = month_bounds(month)
+    # The original July cache stopped on 2026-07-29 but did not encode its
+    # cutoff. Version recent-month caches by upper bound so closing a month or
+    # advancing a live snapshot can never silently reuse a shorter feed.
+    cutoff_tag = f"-to-{upper[:8]}" if month >= "2026-07" else ""
+    cache = RAW / f"{month}-{query_id}-{start:05d}{cutoff_tag}.xml"
     if cache.exists() and cache.stat().st_size > 1000:
         return cache.read_text()
     lower, upper = month_bounds(month)

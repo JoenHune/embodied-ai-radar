@@ -4,7 +4,7 @@ outline: deep
 
 # D10 · 仿真、合成数据与 Sim-to-Real
 
-> v2 层级：learning_and_infrastructure。当前 canonical works 701 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
+> v2 层级：learning_and_infrastructure。当前 canonical works 702 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
 
 ## 纳入边界
 
@@ -102,7 +102,7 @@ outline: deep
 | [High-Fidelity Simulated Data Generation for Real-World Zero-Shot Robotic Manipulation Learning with Gaussian Splatting](https://arxiv.org/abs/2510.10637) | 2025-10-12 | RA-L 2026 | 否 | — |
 | [Learn to Navigate in Dynamic Environments with Normalized LiDAR Scans](https://ieeexplore.ieee.org/document/10611247) | 2024-05-13 | ICRA 2024 | 否 | — |
 | [RPMArt: Towards Robust Perception and Manipulation for Articulated Objects](https://arxiv.org/abs/2403.16023) | — | IROS 2024 | 否 | — |
-| [Aim My Robot: Precision Local Navigation to Any Object](https://arxiv.org/abs/2411.14770) | 2024-11-22 | RA-L 2025 | 否 | — |
 | [Robotic Object Insertion with a Soft Wrist through Sim-to-Real Privileged Training](https://arxiv.org/abs/2408.17061) | 2024-08-30 | IROS 2024 | 否 | — |
 | [Sim2Real Bilevel Adaptation for Object Surface Classification using Vision-Based Tactile Sensors](https://arxiv.org/abs/2311.01380) | — | ICRA 2024 | 否 | — |
 | [PolyFit: A Peg-in-hole Assembly Framework for Unseen Polygon Shapes via Sim-to-real Adaptation](https://arxiv.org/abs/2312.02531) | — | IROS 2024 | 否 | — |
+| [REPeat: A Real2Sim2Real Approach for Pre-acquisition of Soft Food Items in Robot-assisted Feeding](https://arxiv.org/abs/2410.10017) | 2024-10-13 | IROS 2024 | 否 | — |

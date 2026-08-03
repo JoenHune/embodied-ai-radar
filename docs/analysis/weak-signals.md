@@ -4,7 +4,7 @@ outline: deep
 
 # 弱信号探测与未来判断
 
-> 热门 topic 说明共识已经形成；本页寻找的是尚未成为高频标签、却可能提前暴露下一轮瓶颈迁移的“蛛丝马迹”。预测截至 2026-07-29，不是事实陈述。
+> 热门 topic 说明共识已经形成；本页寻找的是尚未成为高频标签、却可能提前暴露下一轮瓶颈迁移的“蛛丝马迹”。预测截至 2026-08-04，不是事实陈述。
 
 ## 共识热度与弱信号有什么不同
 
@@ -48,11 +48,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 3–9 个月
 
-**已经观察到的事实。** fast–slow、异步 coarse-to-fine、连续推理和 real-time VLA 在不同团队连续出现，解决的共同问题是推理频率与控制频率不匹配。
+**已经观察到的事实。** fast–slow、异步 coarse-to-fine、连续推理和 real-time VLA 在不同团队连续出现；7 月末又出现接触前后自适应控制频率和直接修改 action-chunk 去噪过程的安全约束。
 
 **我们的判断。** 下一轮有价值的基础设施将是 completion gating、异步缓存、动作 horizon 自适应、边缘部署和故障恢复，而不是单纯增加 VLM 参数。
 
-**论文证据。** [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648)；[Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921)；[Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229)；[Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684)
+**论文证据。** [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648)；[Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921)；[Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229)；[Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684)；[FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596)；[Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -64,11 +64,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 3–12 个月
 
-**已经观察到的事实。** 在线搜索、稀疏世界想象、自逆动力学奖励和 Action CoT 都在引入动作候选验证，而不只是生成下一步。
+**已经观察到的事实。** 在线搜索、稀疏世界想象、自逆动力学奖励和 Action CoT 都在引入动作候选验证；RedFlow 把失败转成动作级纠错，WCM 则用未来 latent 预测重做 critic 的状态估计。
 
 **我们的判断。** 高低层分工将从 planner–policy 两块模型转向 policy + lightweight verifier + recovery loop；验证器可能比慢推理模型更快形成独立组件。
 
-**论文证据。** [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643)；[Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404)
+**论文证据。** [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643)；[Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404)；[RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782)；[WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -80,11 +80,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 6–12 个月
 
-**已经观察到的事实。** 从经验学习、低成本真实人类示范、开放训练栈，以及论文报告的 100K 小时级真实轨迹，把数据竞争从一次性 dataset 推向持续运营。
+**已经观察到的事实。** 从经验学习、100K 小时级轨迹到 ACE 的 75,000 个同步多模态交互 episode，数据竞争正从一次性 dataset 走向持续运营；CLIFT 进一步证明即使只有托管 SFT API，部署失败也能被改写成下一轮训练数据。
 
 **我们的判断。** 数据量仍重要，但最具区分度的会是失败覆盖率、修正效率和任务分布更新速度；真正的 moat 在部署闭环而非公开抓取视频。
 
-**论文证据。** [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)；[RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729)；[Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375)；[Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330)
+**论文证据。** [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)；[RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729)；[Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375)；[Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330)；[ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625)；[CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -96,11 +96,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 高 · 3–9 个月
 
-**已经观察到的事实。** MCTS/MPC、RL simulator、executable alignment 和直接视频策略四条路线都把评估目标推向动作。
+**已经观察到的事实。** MCTS/MPC、RL simulator、executable alignment 和直接视频策略都把评估目标推向动作；7 月末的 World Action Planner、BWM 和 WCM 分别把世界模型用于计划搜索、策略排序/数据生成和价值估计。
 
 **我们的判断。** 世界模型会分化为两类：为策略提供紧凑 latent dynamics 的控制模型，以及为数据合成服务的高保真生成器；中间态的“漂亮视频模型”将降温。
 
-**论文证据。** [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077)；[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817)
+**论文证据。** [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077)；[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)；[EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808)；[Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817)；[World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599)；[BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302)；[WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -112,11 +112,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 中高 · 6–18 个月
 
-**已经观察到的事实。** 触觉从 VLA 融合扩展到视触觉世界建模、touch dreaming、统一理解/预测和 7 月的规模化世界模型。
+**已经观察到的事实。** 触觉从 VLA 融合扩展到视触觉世界建模、touch dreaming 和统一理解/预测；TacWAM 开始显式预测力、形变与滑移，FA-RDP 则用力反馈改变接触前后的策略频率。
 
 **我们的判断。** 触觉最先兑现的指标会是接触失败检测、材料/滑移预测和动作恢复，不是开放词汇理解。
 
-**论文证据。** [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706)；[OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201)；[Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015)；[UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723)；[ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530)
+**论文证据。** [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706)；[OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201)；[Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015)；[UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723)；[ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530)；[TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391)；[FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -128,11 +128,11 @@ flowchart LR
 
 **置信度 / 时间窗：** 中高 · 6–18 个月
 
-**已经观察到的事实。** 软提示、跨本体人类示范、人类中心预训练、通用灵巧手套件和 human-as-humanoid 共同尝试消除动作表示差异。
+**已经观察到的事实。** 软提示、跨本体人类示范、通用灵巧手套件和 human-as-humanoid 共同尝试消除动作表示差异；新的行为对齐实验表明，末端执行器轨迹比直接共享关节动作更有机会跨本体迁移。
 
 **我们的判断。** 一个权重直接覆盖所有机器人不太现实；更可能形成共享时空/接触表征，加少量 embodiment adapter 与安全约束。
 
-**论文证据。** [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671)；[Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009)
+**论文证据。** [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671)；[Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009)；[Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -148,7 +148,7 @@ flowchart LR
 
 **我们的判断。** 自然语言计划太抽象、关节动作太具体，3D trace 是可验证且相对跨本体的中间层候选。
 
-**论文证据。** [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721)；[Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924)；[Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552)；[3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329)
+**论文证据。** [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721)；[Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924)；[Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552)；[3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329)；[Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549)
 
 | 验证路标 | 反证条件 |
 |---|---|
@@ -176,4 +176,4 @@ flowchart LR
 
 每月新增论文后，先检查路标而不是重写预测：出现第三方采用、真实机器人恢复率、跨硬件 benchmark 或开放训练资产时升级；连续两个季度没有独立跟进、只剩同团队系列工作或真机增益消失时降级。
 
-<!-- 更新标记：弱信号与未来判断 最后更新 2026.07 -->
+<!-- 更新标记：弱信号与未来判断 最后更新 2026.08 -->

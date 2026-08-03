@@ -73,9 +73,9 @@ for (const paper of papers) {
 const included = papers.filter((paper) => paper.included)
 const curated = papers.filter((paper) => paper.curated)
 assert(included.length >= 2000, `included corpus unexpectedly small: ${included.length}`)
-assert(curated.length === 94, `expected 94 curated papers, got ${curated.length}`)
+assert(curated.length === 104, `expected 104 curated papers, got ${curated.length}`)
 assert(curated.filter((paper) => paper.period === 'analysis').length === 84, 'expected 84 main-period curated papers')
-assert(curated.filter((paper) => paper.period === 'provisional').length === 10, 'expected 10 provisional-July curated papers')
+assert(curated.filter((paper) => paper.period === 'provisional').length === 20, 'expected 20 complete-July curated papers')
 
 const normalizedTitles = new Map()
 for (const paper of included) {
@@ -148,11 +148,20 @@ for (const [month, items] of Object.entries(trends.months)) {
     const expectedTotal = `| **总计** | **${current.length}** | **100.0%** | **${previous.length}** | **${signed(current.length - previous.length)}** | **${changeRate(current.length, previous.length)}** | **${baseline.length}** | **${signed(current.length - baseline.length)}** | **${changeRate(current.length, baseline.length)}** |`
     assert(text.includes(expectedTotal), `${month}: MoM/YoY total row mismatch`)
     if (month === '2026-07') {
-      assert(text.includes('临时完整版（截至 7 月 29 日）'), 'July provisional coverage note missing')
-      assert(text.includes('## 7 月完整研判（截至 29 日）'), 'July deep-dive section missing')
+      assert(text.includes('**7 月完整月。**'), 'July complete-month coverage note missing')
+      assert(text.includes('## 7 月完整月研判'), 'July deep-dive section missing')
       assert(items.length === 5, 'July must contain 5 full trend cards')
     }
   }
+}
+
+const augustPage = path.join(docs, 'monthly', '2026-08.md')
+assert(fs.existsSync(augustPage), 'August early-snapshot page missing')
+if (fs.existsSync(augustPage)) {
+  const text = fs.readFileSync(augustPage, 'utf8')
+  assert(text.includes('月初快照，截至 4 日'), 'August snapshot cutoff missing')
+  assert(text.includes('月初空窗，不计算 −100%'), 'August no-false-MoM warning missing')
+  assert(text.includes('## 8 月要验证的六条早期命题'), 'August forward-signal section missing')
 }
 
 assert(forecasts.signals.length >= 6, 'future signals unexpectedly sparse')

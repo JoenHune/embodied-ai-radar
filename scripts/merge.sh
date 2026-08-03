@@ -18,8 +18,8 @@ downgrade_headings() {
 cat > "$OUTPUT" <<'HEADER'
 # 具身智能研究雷达
 
-> **版本**：v1.0 · **数据截点**：2026 年 7 月 29 日<br>
-> **主分析期**：2025 年 7 月—2026 年 6 月 · **临时完整版**：2026 年 7 月 1–29 日
+> **版本**：v2.2 · **数据截点**：2026 年 8 月 4 日<br>
+> **主分析期**：2025 年 7 月—2026 年 6 月 · **7 月完整月** · **8 月前瞻快照**：1–4 日
 
 ---
 
@@ -41,6 +41,7 @@ PAGES=(
   "docs/monthly/2026-05.md"
   "docs/monthly/2026-06.md"
   "docs/monthly/2026-07.md"
+  "docs/monthly/2026-08.md"
   "docs/quarterly/index.md"
   "docs/analysis/annual.md"
   "docs/analysis/weak-signals.md"

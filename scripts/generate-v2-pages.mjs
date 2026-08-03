@@ -34,11 +34,13 @@ const officialPrograms = read('data/official-programs.json', [])
 const officialProgramCoverage = read('data/official-program-coverage.json', {})
 const repositories = read('data/repositories.json', [])
 const repositoryCoverage = read('data/repository-coverage.json', {})
+const githubWatchlist = read('data/github-watchlist.json', [])
 const works = read('data/works.json', [])
 const workCoverage = read('data/work-coverage.json', {})
 const legacyPapers = read('data/papers.json', [])
 const legacyPeers = read('data/peer-review.json', { records: [] }).records
 const includedPreprints = preprints.filter((row) => row.relevance?.status === 'included')
+const snapshotDate = sourceRegistry.window?.until ?? preprintCoverage.generated_at ?? '2026-08-04'
 
 const topicEntries = Object.entries(taxonomy.categories)
 const topicSlug = (key) => key.replaceAll('_', '-')
@@ -62,6 +64,7 @@ for (const [source, publicName] of [
   ['data/official-proceedings.json', 'official-proceedings.json'],
   ['data/official-programs.json', 'official-programs.json'],
   ['data/repositories.json', 'repositories.json'],
+  ['data/github-watchlist.json', 'github-watchlist.json'],
   ['data/works.json', 'works.json'],
 ]) {
   const input = path.join(root, source)
@@ -89,7 +92,7 @@ write('analysis/corpus-expansion.md', `${frontmatter}
 
 # 语料扩充与覆盖审计
 
-> 数据截点：2026-07-29。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
+> 数据截点：${snapshotDate}。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${fmt(preprintCoverage.mother_corpus ?? preprints.length)}</strong><span>arXiv 母集</span></div>
@@ -150,7 +153,7 @@ ${taxonomyRows}
 - ICRA/IROS 的 PaperCept 节目单可能含 RA-L 转投展示，canonical 合并时必须避免双计。
 - 新 taxonomy 正在通过正例、边界例和反例回归；完成前，旧五类月度序列保留作稳定对照，不把分类变化误写成趋势变化。
 
-<!-- 更新标记：语料扩充与覆盖审计 最后更新 2026.07 -->
+<!-- 更新标记：语料扩充与覆盖审计 最后更新 2026.08 -->
 `)
 
 const repoRows = repositories.map((repo) => {
@@ -162,11 +165,15 @@ const repoRows = repositories.map((repo) => {
   return `| [${repo.repo_full_name}](${repo.html_url}) ${badge} | ${repo.category_zh} | ${paperLinks} | ${repo.independent_adoption.score}（${repo.independent_adoption.band_zh}） | ${repo.forks} / ${repo.watchers_subscribers} | ${repo.license ?? '未识别'} | ${repo.pushed_at?.slice(0, 10) ?? '—'} |`
 }).join('\n')
 
+const watchlistRows = githubWatchlist.map((repo) =>
+  `| [${repo.repo_full_name}](${repo.html_url}) | [${repo.paper_id}](https://arxiv.org/abs/${repo.paper_id}) | ${repo.stars} / ${repo.forks} | ${repo.license ?? '未识别'} | ${clean(repo.signal_zh)} | ${repo.pushed_at?.slice(0, 10) ?? '—'} |`
+).join('\n') || '| — | — | — | — | — | — |'
+
 write('analysis/open-source-ecosystem.md', `${frontmatter}
 
 # GitHub 与开源生态证据
 
-> 快照：2026-07-29。所有 ${repositories.length} 个仓库 URL 均通过 GitHub API 解析；stars 仅作传播规模旁证，不进入独立采用分。
+> 元数据快照：${snapshotDate}。所有 ${repositories.length} 个已审计仓库 URL 均通过 GitHub API 解析；stars 仅作传播规模旁证，不进入独立采用分。IAS-GH 的 issue/PR 作者抽样仍是 ${repositoryCoverage.adoption_score_snapshot ?? '上一轮'} 快照，本次不用新 stars 倒推采用分。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${repositoryCoverage.repository_count ?? repositories.length}</strong><span>已核验仓库</span></div>
@@ -183,13 +190,23 @@ IAS-GH（0–100）由近 12 个月外部 issue/PR 作者、贡献者广度、�
 |---|---|---|---:|---:|---|---|
 ${repoRows}
 
+## 7 月末新仓观察清单
+
+| 仓库 | 论文 | stars / forks | License | 为什么追踪 | 最近推送 |
+|---|---|---:|---|---|---|
+${watchlistRows}
+
+这 ${githubWatchlist.length} 个仓库均已通过 GitHub API 核验，但仍是“新仓待采用审计”：尚未抽样外部 issue/PR 作者、反向依赖和无作者重叠的复现，因此不与 42 个已评分仓库混排。
+
 ## 下一层采用证据
 
 仓库进入“独立研究采用”还需要至少一种更强证据：第三方仓库真实 import/配置使用、包注册表依赖、无作者重叠的独立复现，或后续论文把它作为 benchmark/训练基础设施而非 related work 引用。
 
 [下载完整仓库证据 JSON](/embodied-ai-radar/repositories.json)
 
-<!-- 更新标记：GitHub 与开源生态证据 最后更新 2026.07 -->
+[下载新仓观察清单 JSON](/embodied-ai-radar/github-watchlist.json)
+
+<!-- 更新标记：GitHub 与开源生态证据 最后更新 2026.08 -->
 `)
 
 const publicationPagesDirectory = path.join(docs, 'database', 'publications')
@@ -268,7 +285,7 @@ for (const month of [
   const expandedSection = `
 ## v2 扩展主题结构（15 类）
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月截至 29 日，负环比仍按临时值处理。
+> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${fmt(currentAll.length)}</strong><span>当月 arXiv 母集</span></div>
@@ -294,6 +311,109 @@ ${expandedRows}
   }
   fs.writeFileSync(target, `${content.slice(0, insertAt)}\n${expandedSection}${content.slice(insertAt)}`)
 }
+
+const augustMonth = '2026-08'
+const augustAll = preprints.filter((row) => row.first_submitted?.startsWith(augustMonth))
+const augustIncluded = includedPreprints.filter((row) => row.first_submitted?.startsWith(augustMonth))
+const julyIncluded = includedPreprints.filter((row) => row.first_submitted?.startsWith('2026-07'))
+const augustCandidate = augustAll.filter((row) => row.relevance?.status === 'candidate').length
+const augustTopicRows = topicEntries.map(([key, item]) => {
+  const current = augustIncluded.filter((row) => row.primary_topic === key).length
+  const previous = julyIncluded.filter((row) => row.primary_topic === key).length
+  return `| ${item.code} · [${item.label}](/frontiers/${topicSlug(key)}) | ${current} | ${previous} | — | 尚无 8 月 v1，不做方向推断 |`
+}).join('\n')
+const lateJulyIds = new Set([
+  '2607.27549', '2607.27599', '2607.27782', '2607.28391', '2607.28596',
+  '2607.28625', '2607.29172', '2607.29302', '2607.29569', '2607.29613',
+])
+const lateJulyRows = legacyPapers
+  .filter((paper) => lateJulyIds.has(paper.id))
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map((paper) => {
+    const evidence = [
+      paper.evidence?.real_robot ? '真机' : null,
+      paper.evidence?.multi_task ? '多任务' : null,
+      paper.evidence?.cross_embodiment ? '跨本体' : null,
+      paper.evidence?.long_horizon ? '长时序' : null,
+      (paper.evidence?.open_code || paper.evidence?.open_data || paper.evidence?.open_model) ? '开放资产' : null,
+    ].filter(Boolean).join(' · ') || '摘要未确认'
+    return `| [${clean(paper.title)}](${paper.arxiv_url}) | ${paper.first_submitted} | ${clean(paper.contribution_zh)} | ${evidence} |`
+  }).join('\n') || '| — | — | — | — |'
+
+write('monthly/2026-08.md', `${frontmatter}
+
+# 2026 年 8 月研究雷达（月初快照，截至 4 日）
+
+> **这是早期快照，不是完整月。** 本站按 arXiv 首次提交 v1 日期归档。截至 ${snapshotDate}，三组官方 API 查询在 8 月窗口均返回 0 条；这可能受月初/周末发布节奏与索引时点影响，不构成任何方向降温的证据。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>${fmt(augustAll.length)}</strong><span>8 月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>${fmt(augustIncluded.length)}</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>${fmt(publicationCoverage.in_window_records ?? publications.length)}</strong><span>窗口内发表版本</span></div>
+  <div class="radar-kpi"><strong>${repositories.length} + ${githubWatchlist.length}</strong><span>已审计 + 新仓观察</span></div>
+</div>
+
+## 一句话结论
+
+8 月目前还没有可按 v1 日期归档的 arXiv 新论文，所以本页不制造“月度趋势”；现阶段最有价值的更新是用 7 月末的小众信号设置 8 月验证路标，同时跟踪正式发表和 GitHub 独立采用是否跟上。
+
+## 主题结构与环比
+
+| v2 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
+|---|---:|---:|---:|---|
+${augustTopicRows}
+| **总计** | **${augustIncluded.length}** | **${julyIncluded.length}** | **—** | **月初空窗，不计算 −100%** |
+
+这里仍然展示 7 月绝对数，满足环比追踪的可追溯性；但由于本月分子还是“尚无发布样本”，任何百分比都会误导，因此显式标记为不可比。
+
+## 8 月要验证的六条早期命题
+
+| 命题 | 7 月末触发点 | 升级路标 | 反证/降级条件 |
+|---|---|---|---|
+| verifier/critic/corrector 成为 VLA 标准侧车 | [RedFlow](https://arxiv.org/abs/2607.27782)、[WCM](https://arxiv.org/abs/2607.29613) | 第三方策略接入同一评价/纠错器，同时报告检测召回、恢复成功率和时延 | 只在自有策略有效，或计算开销抵消成功率收益 |
+| world model 用决策效用而非画质生存 | [World Action Planner](https://arxiv.org/abs/2607.27599)、[BWM](https://arxiv.org/abs/2607.29302)、[WCM](https://arxiv.org/abs/2607.29613) | 同算力/同数据下稳定改善规划、策略排序或 RL 样本效率 | 只剩视频指标，与真机成功率相关性低 |
+| 触觉优先成为未来预测与接触控制信号 | [TacWAM](https://arxiv.org/abs/2607.28391)、[FA-RDP](https://arxiv.org/abs/2607.28596) | 跨传感器/手型复现，对未知物体保持失败恢复收益 | 增益仅存在于单一硬件、单一材料或封闭任务 |
+| 失败覆盖比总数据小时更关键 | [RedFlow](https://arxiv.org/abs/2607.27782)、[CLIFT](https://arxiv.org/abs/2607.29172) | 团队披露失败类型分布、每轮回收成本和新任务上线周期 | 大规模离线预训练在没有部署回流时仍能稳定处理长尾失败 |
+| 行为对齐表征成为跨本体中间层 | [Cross-Embodiment Transfer](https://arxiv.org/abs/2607.27549) | 多个独立团队用少量目标本体数据复现增益，并报告负迁移 | 性能仍主要由目标硬件数据量决定 |
+| 安全从外挂滤波进入 generative policy 内部 | [Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 在感知不确定、接触动力学偏差下仍保持安全，且不破坏任务语义 | 形式保证只在理想 CBF 假设下成立，真实开放世界误报/漏报过高 |
+
+## 给研究布局的当前判断
+
+1. **不追 8 月月初的“最热 topic”，先看观测性指标。** 恢复成功率、价值误差、接触滑移、进度校准和负迁移比新模型名更能预示瓶颈迁移。
+2. **高置信主线是“可评价、可打断、可恢复”的 VLA 执行栈。** 它会同时拉动 critic/verifier、runtime、失败数据与安全边界，比单一算法标签更像一个长期平台机会。
+3. **中高置信主线是 world model 的功能分化。** 控制型模型追求短 horizon 决策收益，基础设施型模型追求风险预演、数据生成和策略排序；两者的评估不应混为一个视频质量榜单。
+4. **中置信主线是人类中心数据引擎。** ACE-Data-0 表明视角、运动、物体、声音和接触的时空同步可能比纯小时规模更稀缺；但在出现真机下游收益前，仍只是高质量数据信号。
+
+## 月末新增精读锚点
+
+| 论文 | v1 日期 | 一句话贡献 | 证据标签 |
+|---|---|---|---|
+${lateJulyRows}
+
+## 正式发表与 GitHub 更新
+
+- 正式发表母库现为 ${fmt(publications.length)} 条版本，其中窗口内 ${fmt(publicationCoverage.in_window_records ?? 0)} 条、自动直接相关 ${fmt(publicationCoverage.included_in_window ?? 0)} 条；新增主要来自期刊 Crossref 记录，不自动等于严格官方同行评审锚点。
+- 完整官方 proceedings 仍为 ${fmt(official.length)} 条；ICRA 2026 官方 program 与 RSS 2026 官方录用清单共 ${fmt(officialPrograms.length)} 条，但后者尚无 RSS 22 proceedings，不进严格分子。
+- GitHub 已刷新 ${repositories.length} 个已审计仓库的 stars、forks、license 和推送时间，并将 ${githubWatchlist.length} 个 7 月末新论文仓库单列为待独立采用审计的观察清单。
+
+## 下次更新触发条件
+
+一旦 arXiv API 出现 8 月首批 v1，本页将补入全量主题结构、绝对数和环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
+
+<!-- 更新标记：2026-08 月度雷达 最后更新 2026.08 -->
+`)
+
+const monthlyIndexPath = path.join(docs, 'monthly', 'index.md')
+const monthlyIndexContent = fs.readFileSync(monthlyIndexPath, 'utf8')
+const augustIndexRow = `| [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |`
+const monthlyIndexMarker = '\n\n## 怎么读月度页'
+if (!monthlyIndexContent.includes(monthlyIndexMarker)) {
+  throw new Error('cannot locate monthly index insertion point')
+}
+fs.writeFileSync(
+  monthlyIndexPath,
+  monthlyIndexContent.replace(monthlyIndexMarker, `\n${augustIndexRow}${monthlyIndexMarker}`),
+)
 
 const monthKeys = [...new Set(preprints.map((row) => row.first_submitted?.slice(0, 7)).filter(Boolean))].sort()
 for (const [key, item] of topicEntries) {

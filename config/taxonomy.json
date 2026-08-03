@@ -1,10 +1,11 @@
 {
   "version": "1.0",
-  "updated": "2026-07-29",
+  "updated": "2026-08-04",
   "analysis_period": ["2025-07-01", "2026-06-30"],
   "baseline_period": ["2024-07-01", "2025-06-30"],
-  "snapshot_period": ["2026-07-01", "2026-07-29"],
-  "peer_review_period": ["2024-07-01", "2026-07-29"],
+  "snapshot_period": ["2026-07-01", "2026-07-31"],
+  "forward_snapshot_period": ["2026-08-01", "2026-08-04"],
+  "peer_review_period": ["2024-07-01", "2026-08-04"],
   "categories": {
     "foundation": {
       "label": "具身基础模型",

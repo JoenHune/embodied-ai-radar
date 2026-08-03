@@ -4,11 +4,11 @@ outline: deep
 
 # 语料扩充与覆盖审计
 
-> 数据截点：2026-07-29。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
+> 数据截点：2026-08-04。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,604</strong><span>arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>10,254</strong><span>窗口内正式发表母集</span></div>
+  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>完整官方容器记录</span></div>
   <div class="radar-kpi"><strong>3,161</strong><span>官方节目/待 proceedings</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
@@ -16,7 +16,7 @@ outline: deep
 
 ## 为什么旧数据看起来很多，实际仍然小
 
-旧版的 3,082 条记录来自五组 Semantic Scholar 关键词宽召回，其中只有 30 条正式发表锚点。它没有把 arXiv 全量采集结果并入主库，Semantic Scholar 的分页 token 也未完整消费；同时，旧 schema 强制要求 arXiv ID，导致没有预印本映射的期刊/会议论文无法入库。
+旧版的 3,092 条记录来自五组 Semantic Scholar 关键词宽召回，其中只有 30 条正式发表锚点。它没有把 arXiv 全量采集结果并入主库，Semantic Scholar 的分页 token 也未完整消费；同时，旧 schema 强制要求 arXiv ID，导致没有预印本映射的期刊/会议论文无法入库。
 
 新版拆成三条独立管线：
 
@@ -30,12 +30,12 @@ outline: deep
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | CoRL | 265 | 265 | 117 | 39 | 109 | 0 | 0 | 0 |
 | ICRA | 3366 | 1605 | 455 | 287 | 809 | 3357 | 2037 | 3366 |
-| IJRR | 258 | 258 | 72 | 47 | 135 | 222 | 98 | 258 |
+| IJRR | 263 | 263 | 75 | 47 | 137 | 222 | 98 | 263 |
 | IROS | 3568 | 3568 | 922 | 621 | 1920 | 3561 | 1805 | 3568 |
-| RA-L | 3596 | 3596 | 846 | 627 | 2048 | 3508 | 1318 | 3596 |
+| RA-L | 3740 | 3740 | 875 | 629 | 2160 | 3502 | 1314 | 3740 |
 | RSS | 135 | 135 | 50 | 20 | 65 | 35 | 17 | 134 |
 | Science Robotics | 274 | 274 | 44 | 48 | 178 | 245 | 16 | 274 |
-| T-RO | 553 | 553 | 131 | 97 | 317 | 521 | 250 | 553 |
+| T-RO | 554 | 554 | 132 | 97 | 317 | 521 | 250 | 554 |
 
 “母集”是 venue 内采到的全部论文版本；“直接候选”是 v2 词表与语境自动筛出的具身智能工作，并非最终趋势结论。DBLP/Crossref/Semantic Scholar 只承担发现或字段补全；严格同行评审标签仍需官方 proceedings、OpenReview 最终录用或出版社文章页。
 
@@ -89,4 +89,4 @@ outline: deep
 - ICRA/IROS 的 PaperCept 节目单可能含 RA-L 转投展示，canonical 合并时必须避免双计。
 - 新 taxonomy 正在通过正例、边界例和反例回归；完成前，旧五类月度序列保留作稳定对照，不把分类变化误写成趋势变化。
 
-<!-- 更新标记：语料扩充与覆盖审计 最后更新 2026.07 -->
+<!-- 更新标记：语料扩充与覆盖审计 最后更新 2026.08 -->

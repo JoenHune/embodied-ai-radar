@@ -93,6 +93,7 @@ for (const file of [
   'data/curated-2025h2.json',
   'data/curated-2026h1.json',
   'data/curated-2026-07-extra.json',
+  'data/curated-2026-07-late.json',
 ]) {
   const dataset = read(file, { records: [] })
   for (const record of dataset.records ?? []) {

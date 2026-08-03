@@ -6,7 +6,7 @@ titleTemplate: 过去 12 个月研究趋势分析
 hero:
   name: 具身智能研究雷达
   text: 从论文热度到技术兑现
-  tagline: 30,604 条 arXiv 母集 · 12,015 条发表版本 · 15 类开放主题 · 2026.07 完整研判
+  tagline: 30,766 条 arXiv 母集 · 12,165 条发表版本 · 15 类开放主题 · 2026.08 早期快照
   actions:
     - theme: brand
       text: 阅读执行摘要 →
@@ -21,7 +21,7 @@ hero:
 features:
   - icon: 🛰️
     title: 两年宽召回母库
-    details: 30,604 条 arXiv、12,015 条发表版本与 40,345 个 canonical works 分层呈现
+    details: 30,766 条 arXiv、12,165 条发表版本与 40,605 个 canonical works 分层呈现
     link: /analysis/corpus-expansion
     linkText: 查看覆盖审计
   - icon: 📚
@@ -36,7 +36,7 @@ features:
     linkText: 查看前沿方向
   - icon: 💻
     title: GitHub 采用证据
-    details: 42 个仓库逐一核验；stars 只作传播旁证，独立参与另行评分
+    details: 42 个已审计仓库 + 4 个新仓观察；stars 只作传播旁证
     link: /analysis/open-source-ecosystem
     linkText: 查看开源雷达
   - icon: 🧠
@@ -72,10 +72,10 @@ features:
 ---
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,604</strong><span>arXiv 宽召回母集</span></div>
-  <div class="radar-kpi"><strong>12,015</strong><span>正式发表母集</span></div>
+  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>12,165</strong><span>正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
+  <div class="radar-kpi"><strong>42 + 4</strong><span>GitHub 已审计 + 新仓观察</span></div>
 </div>
 
 > 本站把“母集发现”“自动相关候选”“精选精读”“趋势推断”和“战略判断”分层呈现。五类月度序列用于保持历史可比性，15 类 v2 体系用于发现不属于旧框架的早期方向；所有统计均由结构化数据和脚本派生。

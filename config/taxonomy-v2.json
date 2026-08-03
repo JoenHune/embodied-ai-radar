@@ -1,6 +1,6 @@
 {
   "version": "2.1",
-  "updated": "2026-07-29",
+  "updated": "2026-08-04",
   "design": {
     "unit": "canonical research work",
     "primary_topic_rule": "Each work receives exactly one primary topic and may receive multiple secondary topics.",

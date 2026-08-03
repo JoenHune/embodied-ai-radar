@@ -4,20 +4,24 @@ outline: deep
 
 # 执行摘要
 
-> **版本**：v2.1 · **更新日期**：2026 年 7 月 30 日<br>
+> **版本**：v2.2 · **更新日期**：2026 年 8 月 4 日<br>
 > **主分析期**：2025.07–2026.06 · **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
 
-::: tip v2.1 扩容说明
+::: tip v2.2 扩容说明
 旧五类月度序列继续作为可比的精选分析层；它不再代表全部数据量。新版同时维护两年宽召回母库、正式发表母库、严格官方 proceedings 和 GitHub 证据，并将方向体系扩展为 15 类。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
 :::
 
+::: info 8 月更新
+7 月已收完整月，新增 30–31 日 10 篇高信号精读；8 月截至 4 日的 arXiv API 仍无新 v1，因此只发布早期路标快照，不把发布空窗写成降温。正式发表、官方 proceedings 与 GitHub 元数据已独立刷新。
+:::
+
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,604</strong><span>arXiv 宽召回母集</span></div>
-  <div class="radar-kpi"><strong>10,254</strong><span>窗口内正式发表记录</span></div>
+  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表记录</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>40,345</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>40,605</strong><span>去重 canonical works</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 
@@ -61,4 +65,4 @@ outline: deep
 
 按当前证据排序：**实时 VLA 执行栈、verifier/自纠错、部署数据飞轮、控制导向 world model、触觉预测通道、跨本体动作接口、3D trace，以及高风险的 Embodied Agent OS。** 详见[未来判断](/analysis/weak-signals)。
 
-<!-- 更新标记：执行摘要 最后更新 2026.07 -->
+<!-- 更新标记：执行摘要 最后更新 2026.08 -->

@@ -7,13 +7,14 @@
 ## 覆盖范围
 
 - 主分析：2025 年 7 月—2026 年 6 月
-- 临时完整版：2026 年 7 月 1–29 日（展示暂定环比/同比，月末回填）
+- 完整月更新：2026 年 7 月 1–31 日
+- 前瞻快照：2026 年 8 月 1–4 日（尚无可归档 arXiv v1，不做趋势外推）
 - 同比基线：2024 年 7 月—2025 年 6 月
-- arXiv 宽召回：30,604 条母集，其中 23,225 条属于 `cs.RO`
-- 正式发表：12,015 条版本记录；母集保留 ICRA 2024 作版本去重，窗口统计按会议事件日/出版社日期另算
+- arXiv 宽召回：30,766 条母集，其中 23,336 条属于 `cs.RO`
+- 正式发表：12,165 条版本记录，窗口内 10,404 条；母集保留 ICRA 2024 作版本去重
 - 严格官方层：824 条完整 proceedings 记录，另有 3,161 条官方 program / pending
-- 去重工作图：40,345 个 canonical works
-- 开源层：42 个已核验 GitHub 仓库
+- 去重工作图：40,605 个 canonical works
+- 开源层：42 个已审计 GitHub 仓库 + 4 个新仓观察项
 - 主题体系：五类稳定月度序列 + 15 类 v2 开放方向
 
 ## 本地开发
@@ -31,6 +32,7 @@ npm run collect:publications
 npm run collect:official
 npm run collect:official-programs
 npm run import:github
+npm run refresh:github
 npm run merge:v2
 npm run generate
 npm run audit
@@ -45,6 +47,7 @@ v2 的核心结构化数据源：
 - `data/official-proceedings.json`：逐容器对账的严格官方记录
 - `data/official-programs.json`：尚未进入正式 proceedings 的官方节目/录用记录
 - `data/repositories.json`：GitHub 仓库与论文映射
+- `data/github-watchlist.json`：新论文代码仓的早期观察清单，不与已评分仓库混排
 - `data/works.json`：跨预印本、发表版本、官方记录和代码仓库去重后的 canonical work graph
 
 `data/papers.json` 仍保留为旧五类月度分析的稳定序列。新母库与旧序列分层维护，避免 taxonomy 扩展被误判为真实趋势变化。页面、统计表和下载文件均由脚本生成。

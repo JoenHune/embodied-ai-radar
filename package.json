@@ -12,6 +12,7 @@
     "collect:official": "python3 scripts/collect_official_containers.py",
     "collect:official-programs": "python3 scripts/collect_official_programs.py",
     "import:github": "python3 scripts/import_github_audit.py",
+    "refresh:github": "python3 scripts/refresh_github_metadata.py",
     "merge:v2": "python3 scripts/merge_corpora_v2.py",
     "prepare:data": "node scripts/prepare-data.mjs",
     "generate": "node scripts/generate-site.mjs && node scripts/generate-v2-pages.mjs",
