@@ -10,6 +10,9 @@ const trends = read('data/trends.json')
 const forecasts = read('data/forecasts.json')
 const directions = read('data/directions.json')
 const peers = read('data/peer-review.json').records
+const currentPreprints = read('data/preprints.json')
+const currentTaxonomy = read('config/taxonomy-v2.json')
+const currentIncluded = currentPreprints.filter((paper) => paper.relevance?.status === 'included')
 const validTopics = new Set(['foundation', 'dual_system', 'dexterous', 'world_model', 'general_learning'])
 const errors = []
 const warnings = []
@@ -133,20 +136,19 @@ for (const [month, items] of Object.entries(trends.months)) {
   assert(fs.existsSync(page), `${month}: generated page missing`)
   if (fs.existsSync(page)) {
     const text = fs.readFileSync(page, 'utf8')
-    const current = included.filter((paper) => paper.v1_month === month)
-    const previous = included.filter((paper) => paper.v1_month === previousMonth(month))
-    const baseline = included.filter((paper) => paper.v1_month === previousYearMonth(month))
-    const currentCounts = topicCounts(current)
-    const previousCounts = topicCounts(previous)
-    const baselineCounts = topicCounts(baseline)
+    const current = currentIncluded.filter((paper) => paper.first_submitted.startsWith(month))
+    const previous = currentIncluded.filter((paper) => paper.first_submitted.startsWith(previousMonth(month)))
     assert(text.includes(`<strong>${current.length}</strong><span>纳入统计候选</span>`), `${month}: generated count mismatch`)
+    assert(text.includes('## 主题结构与环比'), `${month}: current topic structure missing`)
     assert(text.includes('| 环比增量 | 环比 |'), `${month}: month-over-month topic columns missing`)
-    for (const topic of validTopics) {
-      const expectedRow = `| [${topicLabels[topic]}](/directions/${topicSlugs[topic]}) | ${currentCounts[topic]} | ${percent(currentCounts[topic], current.length)} | ${previousCounts[topic]} | ${signed(currentCounts[topic] - previousCounts[topic])} | ${changeRate(currentCounts[topic], previousCounts[topic])} | ${baselineCounts[topic]} | ${signed(currentCounts[topic] - baselineCounts[topic])} | ${changeRate(currentCounts[topic], baselineCounts[topic])} |`
-      assert(text.includes(expectedRow), `${month}/${topic}: MoM/YoY topic row mismatch`)
+    for (const [topic, item] of Object.entries(currentTaxonomy.categories)) {
+      const currentCount = current.filter((paper) => paper.primary_topic === topic).length
+      const previousCount = previous.filter((paper) => paper.primary_topic === topic).length
+      const expectedRow = `| ${item.code} · [${item.label}](/frontiers/${topic.replaceAll('_', '-')}) | ${currentCount} | ${percent(currentCount, current.length)} | ${previousCount} | ${signed(currentCount - previousCount)} | ${changeRate(currentCount, previousCount)} |`
+      assert(text.includes(expectedRow), `${month}/${topic}: current MoM topic row mismatch`)
     }
-    const expectedTotal = `| **总计** | **${current.length}** | **100.0%** | **${previous.length}** | **${signed(current.length - previous.length)}** | **${changeRate(current.length, previous.length)}** | **${baseline.length}** | **${signed(current.length - baseline.length)}** | **${changeRate(current.length, baseline.length)}** |`
-    assert(text.includes(expectedTotal), `${month}: MoM/YoY total row mismatch`)
+    const expectedTotal = `| **总计** | **${current.length}** | **100.0%** | **${previous.length}** | **${signed(current.length - previous.length)}** | **${changeRate(current.length, previous.length)}** |`
+    assert(text.includes(expectedTotal), `${month}: current MoM total row mismatch`)
     if (month === '2026-07') {
       assert(text.includes('**7 月完整月。**'), 'July complete-month coverage note missing')
       assert(text.includes('## 7 月完整月研判'), 'July deep-dive section missing')
@@ -175,7 +177,6 @@ for (const [key, direction] of Object.entries(directions)) {
   assert(validTopics.has(key), `invalid direction key ${key}`)
   assert(direction.representative_ids.length >= 6, `${key}: representative set too small`)
   for (const id of direction.representative_ids) assert(byId.has(id), `${key}: missing representative ${id}`)
-  assert(fs.existsSync(path.join(docs, 'directions', `${direction.slug}.md`)), `${key}: generated direction page missing`)
 }
 
 const publicJson = path.join(docs, 'public/papers.json')

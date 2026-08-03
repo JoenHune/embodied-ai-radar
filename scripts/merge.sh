@@ -18,7 +18,7 @@ downgrade_headings() {
 cat > "$OUTPUT" <<'HEADER'
 # 具身智能研究雷达
 
-> **版本**：v2.2 · **数据截点**：2026 年 8 月 4 日<br>
+> **数据截点**：2026 年 8 月 4 日<br>
 > **主分析期**：2025 年 7 月—2026 年 6 月 · **7 月完整月** · **8 月前瞻快照**：1–4 日
 
 ---
@@ -45,18 +45,29 @@ PAGES=(
   "docs/quarterly/index.md"
   "docs/analysis/annual.md"
   "docs/analysis/weak-signals.md"
-  "docs/directions/foundation-models.md"
-  "docs/directions/dual-system.md"
-  "docs/directions/dexterous-manipulation.md"
-  "docs/directions/world-models.md"
-  "docs/directions/general-robot-learning.md"
+  "docs/frontiers/index.md"
+  "docs/frontiers/foundation-models.md"
+  "docs/frontiers/reasoning-planning.md"
+  "docs/frontiers/world-models.md"
+  "docs/frontiers/dexterous-manipulation.md"
+  "docs/frontiers/humanoid-whole-body.md"
+  "docs/frontiers/navigation-mobile-manipulation.md"
+  "docs/frontiers/human-robot-interaction.md"
+  "docs/frontiers/policy-learning.md"
+  "docs/frontiers/data-engines.md"
+  "docs/frontiers/simulation-transfer.md"
+  "docs/frontiers/spatial-perception.md"
+  "docs/frontiers/safety-evaluation.md"
+  "docs/frontiers/continual-deployment-learning.md"
+  "docs/frontiers/multi-robot-coordination.md"
+  "docs/frontiers/embodied-multisensory.md"
   "docs/analysis/peer-review.md"
   "docs/analysis/institutions.md"
   "docs/analysis/benchmarks.md"
   "docs/database/index.md"
   "docs/methods/index.md"
+  "docs/methods/expansion-protocol.md"
   "docs/methods/inclusion.md"
-  "docs/methods/content-audit-report.md"
   "docs/references.md"
 )
 

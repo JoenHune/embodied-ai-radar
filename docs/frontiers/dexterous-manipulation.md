@@ -4,7 +4,7 @@ outline: deep
 
 # D4 · 灵巧、双臂与接触操作
 
-> v2 层级：physical_capability。当前 canonical works 2802 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
+> 归属层级：物理能力。当前纳入 1234 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -46,41 +46,25 @@ outline: deep
 
 | 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
 |---|---|---|---|---|
-| [MOKA: Open-World Robotic Manipulation through Mark-Based Visual Prompting](https://arxiv.org/abs/2403.03174) | — | RSS 2024、RSS 2024 | 是 | — |
-| [Demonstrating OK-Robot: What Really Matters in Integrating Open-Knowledge Models for Robotics](https://arxiv.org/abs/2401.12202) | — | RSS 2024、RSS 2024 | 是 | — |
 | [Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes](https://arxiv.org/abs/2405.07908) | — | RSS 2024、RSS 2024 | 是 | — |
-| [Hamilton-Jacobi Reachability Analysis for Hybrid Systems with Controlled and Forced Transitions](https://arxiv.org/abs/2309.10893) | — | RSS 2024、RSS 2024 | 是 | — |
-| [Demonstrating Event-Triggered Investigation and Sample Collection for Human Scientists using Field Robots and Large Foundation Models](https://doi.org/10.15607/rss.2024.xx.017) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
-| [ConTac: Continuum-Emulated Soft Skinned Arm with Vision-based Shape Sensing and Contact-aware Manipulation](https://doi.org/10.15607/rss.2024.xx.097) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
 | [Demonstrating Learning from Humans on Open-Source Dexterous Robot Hands](https://doi.org/10.15607/rss.2024.xx.014) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
-| ["Stack It Up!": 3D Stable Structure Generation from 2D Hand-drawn Sketch](https://arxiv.org/abs/2508.02093) | 2025-08-04 | CoRL 2025 | 是 | — |
 | [$\texttt{SPIN}$: distilling $\texttt{Skill-RRT}$ for long-horizon prehensile and non-prehensile manipulation](https://arxiv.org/abs/2502.18015) | 2025-02-25 | CoRL 2025 | 是 | — |
 | [3D-ViTac: Learning Fine-Grained Manipulation with Visuo-Tactile Sensing](https://arxiv.org/abs/2410.24091) | 2024-10-31 | CoRL 2024、CoRL 2024 | 是 | — |
 | [A low-cost and lightweight 6 DoF bimanual arm for dynamic and contact-rich manipulation](https://arxiv.org/abs/2502.16908) | 2025-02-24 | RSS 2025 | 是 | — |
 | [ACE: A Cross-platform and visual-Exoskeletons System for Low-Cost Dexterous Teleoperation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
-| [AimBot: A Simple Auxiliary Visual Cue to Enhance Spatial Awareness of Visuomotor Policies](https://arxiv.org/abs/2508.08113) | 2025-08-11 | CoRL 2025 | 是 | — |
 | [ALOHA Unleashed: A Simple Recipe for Robot Dexterity](https://arxiv.org/abs/2410.13126) | 2024-10-17 | CoRL 2024、CoRL 2024 | 是 | — |
-| [An Open-Source Soft Robotic Platform for Autonomous Aerial Manipulation in the Wild](https://arxiv.org/abs/2409.07662) | 2024-09-11 | CoRL 2024、CoRL 2024 | 是 | — |
-| [AnyPlace: Learning Generalizable Object Placement for Robot Manipulation](https://proceedings.mlr.press/v305/zhao25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
 | [AnyRotate: Gravity-Invariant In-Hand Object Rotation with Sim-to-Real Touch](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [APEX-MR: Multi-Robot Asynchronous Planning and Execution for Cooperative Assembly](https://arxiv.org/abs/2503.15836) | 2025-03-20 | RSS 2025 | 是 | — |
 | [ARCH: Hierarchical Hybrid Learning for Long-Horizon Contact-Rich Robotic Assembly](https://arxiv.org/abs/2409.16451) | 2024-09-24 | CoRL 2025 | 是 | — |
-| [Autonomous Interactive Correction MLLM for Robust Robotic Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
-| [Behavior Synthesis via Contact-Aware Fisher Information Maximization](https://arxiv.org/abs/2505.12214) | 2025-05-18 | RSS 2025 | 是 | — |
 | [Bimanual Dexterity for Complex Tasks](https://arxiv.org/abs/2411.13677) | 2024-11-20 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Bridging Perception and Action: Spatially-Grounded Mid-Level Representations for Robot Generalization](https://arxiv.org/abs/2506.06196) | 2025-06-06 | RSS 2025 | 是 | — |
 | [ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered Scenes](https://arxiv.org/abs/2506.14317) | 2025-06-17 | CoRL 2025 | 是 | — |
-| [Co-Design of Soft Gripper with Neural Physics](https://arxiv.org/abs/2505.20404) | 2025-05-26 | CoRL 2025 | 是 | — |
 | [COMBO-Grasp: Learning Constraint-Based Manipulation for Bimanual Occluded Grasping](https://arxiv.org/abs/2502.08054) | 2025-02-12 | CoRL 2025 | 是 | — |
 | [Complementarity-Free Multi-Contact Modeling and Optimization for Dexterous Manipulation](https://arxiv.org/abs/2408.07855) | 2024-08-14 | RSS 2025 | 是 | — |
 | [CordViP: Correspondence-based Visuomotor Policy for Dexterous Manipulation in Real-World](https://arxiv.org/abs/2502.08449) | 2025-02-12 | RSS 2025 | 是 | — |
-| [Cross-Sensor Touch Generation](https://arxiv.org/abs/2510.09817) | 2025-10-10 | CoRL 2025 | 是 | — |
 | [D-CODA: Diffusion for Coordinated Dual-Arm Data Augmentation](https://arxiv.org/abs/2505.04860) | 2025-05-08 | CoRL 2025 | 是 | — |
 | [D-Cubed: Latent Diffusion Trajectory Optimisation for Dexterous Deformable Manipulation](https://proceedings.mlr.press/v305/yamada25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
-| [D3RoMa: Disparity Diffusion-based Depth Sensing for Material-Agnostic Robotic Manipulation](https://arxiv.org/abs/2409.14365) | 2024-09-22 | CoRL 2024、CoRL 2024 | 是 | — |
-| [Demonstrating Multi-Suction Item Picking at Scale via Multi-Modal Learning of Pick Success](https://arxiv.org/abs/2506.10359) | 2025-06-12 | RSS 2025 | 是 | — |
 | [Demonstrating REASSEMBLE: A Multimodal Dataset for Contact-rich Robotic Assembly and Disassembly](https://www.roboticsproceedings.org/rss21/p059.html) | 2025-06-21 | RSS 2025 | 是 | — |
-| [Demonstrating the Octopi-1.5 Visual-Tactile-Language Model](https://arxiv.org/abs/2507.09985) | 2025-07-14 | RSS 2025 | 是 | — |
 | [Dex1B: Learning with 1B Demonstrations for Dexterous Manipulation](https://arxiv.org/abs/2506.17198) | 2025-06-20 | RSS 2025 | 是 | — |
 | [DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://doi.org/10.15607/rss.2024.xx.043) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
 | [DexCatch: Learning to Catch Arbitrary Objects with Dexterous Hands](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
@@ -93,16 +77,32 @@ outline: deep
 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | 2025-05-28 | CoRL 2025 | 是 | — |
 | [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | 2025-05-12 | RSS 2025 | 是 | — |
 | [Diffusion Meets DAgger: Supercharging Eye-in-hand Imitation Learning](https://doi.org/10.15607/rss.2024.xx.048) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
-| [Discovering Robotic Interaction Modes with Discrete Representation Learning](https://arxiv.org/abs/2410.20258) | 2024-10-26 | CoRL 2024、CoRL 2024 | 是 | — |
-| [Distilling On-device Language Models for Robot Planning with Minimal Human Intervention](https://arxiv.org/abs/2506.17486) | 2025-06-20 | CoRL 2025 | 是 | — |
 | [DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove](https://arxiv.org/abs/2502.07730) | 2025-02-11 | RSS 2025 | 是 | — |
-| [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://doi.org/10.15607/rss.2024.xx.120) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
-| [Efficient Data Collection for Robotic Manipulation via Compositional Generalization](https://doi.org/10.15607/rss.2024.xx.013) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
 | [emg2tendon: From sEMG Signals to Tendon Control in Musculoskeletal Hands](https://arxiv.org/abs/2508.08269) | 2025-07-29 | RSS 2025 | 是 | — |
-| [Ensuring Force Safety in Vision-Guided Robotic Manipulation via Implicit Tactile Calibration](https://arxiv.org/abs/2412.10349) | 2024-12-13 | CoRL 2025 | 是 | — |
-| [Evaluating Real-World Robot Manipulation Policies in Simulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
-| [Eye, Robot: Learning to Look to Act with a BC-RL Perception-Action Loop](https://arxiv.org/abs/2506.10968) | 2025-06-12 | CoRL 2025 | 是 | — |
 | [Fabrica: Dual-Arm Assembly of General Multi-Part Objects via Integrated Planning and Learning](https://arxiv.org/abs/2506.05168) | 2025-06-05 | CoRL 2025 | 是 | — |
 | [FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432) | 2025-02-24 | RSS 2025 | 是 | — |
-| [Fail2Progress: Learning from Real-World Robot Failures with Stein Variational Inference](https://arxiv.org/abs/2509.01746) | 2025-09-01 | CoRL 2025 | 是 | — |
 | [FFHFlow: Diverse and Uncertainty-Aware Dexterous Grasp Generation via Flow Variational Inference](https://arxiv.org/abs/2407.15161) | 2024-07-21 | CoRL 2025 | 是 | — |
+| [GeoDEx: A Unified Geometric Framework for Tactile Dexterous and Extrinsic Manipulation under Force Uncertainty](https://arxiv.org/abs/2505.00647) | 2025-05-01 | RSS 2025 | 是 | — |
+| [Get a Grip: Multi-Finger Grasp Evaluation at Scale Enables Robust Sim-to-Real Transfer](https://arxiv.org/abs/2410.23701) | 2024-10-31 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Global Contact-Rich Planning with Sparsity-Rich Semidefinite Relaxations](https://arxiv.org/abs/2502.02829) | 2025-02-05 | RSS 2025 | 是 | — |
+| [GraspQP: Differentiable Optimization of Force Closure for Diverse and Robust Dexterous Grasping](https://arxiv.org/abs/2508.15002) | 2025-08-20 | CoRL 2025 | 是 | — |
+| [Gripper Pose and Object Pointflow as Interfaces for Robotic Bimanual Manipulation](https://www.roboticsproceedings.org/rss21/p160.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [Hierarchical and Modular Network on Non-prehensile Manipulation in General Environments](https://arxiv.org/abs/2502.20843) | 2025-02-28 | RSS 2025 | 是 | — |
+| [InterACT: Inter-dependency Aware Action Chunking with Hierarchical Attention Transformers for Bimanual Manipulation](https://arxiv.org/abs/2409.07914) | 2024-09-12 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Jacta: A Versatile Planner for Learning Dexterous and Whole-body Manipulation](https://arxiv.org/abs/2408.01258) | 2024-08-02 | CoRL 2024、CoRL 2024 | 是 | — |
+| [KineDex: Learning Tactile-Informed Visuomotor Policies via Kinesthetic Teaching for Dexterous Manipulation](https://arxiv.org/abs/2505.01974) | 2025-05-04 | CoRL 2025 | 是 | — |
+| [KineSoft: Learning Proprioceptive Manipulation Policies with Soft Robot Hands](https://arxiv.org/abs/2503.01078) | 2025-03-03 | CoRL 2025 | 是 | — |
+| [Learning Long-Horizon Robot Manipulation Skills via Privileged Action](https://arxiv.org/abs/2502.15442) | 2025-02-21 | CoRL 2025 | 是 | — |
+| [Learning Visuotactile Estimation and Control for Non-prehensile Manipulation under Occlusions](https://arxiv.org/abs/2412.13157) | 2024-12-17 | CoRL 2024、CoRL 2024 | 是 | — |
+| [MimicTouch: Leveraging Multi-modal Human Tactile Demonstrations for Contact-rich Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Mobile ALOHA: Learning Bimanual Mobile Manipulation using Low-Cost Whole-Body Teleoperation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Morphologically Symmetric Reinforcement Learning for Ambidextrous Bimanual Manipulation](https://arxiv.org/abs/2505.05287) | 2025-05-08 | CoRL 2025 | 是 | — |
+| [Neural Attention Field: Emerging Point Relevance in 3D Scenes for One-Shot Dexterous Grasping](https://arxiv.org/abs/2410.23039) | 2024-10-30 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Object-Centric Dexterous Manipulation from Human Motion Data](https://arxiv.org/abs/2411.04005) | 2024-11-06 | CoRL 2024、CoRL 2024 | 是 | — |
+| [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://arxiv.org/abs/2406.08858) | 2024-06-13 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Physics-Driven Data Generation for Contact-Rich Manipulation via Trajectory Optimization](https://arxiv.org/abs/2502.20382) | 2025-02-27 | RSS 2025 | 是 | — |
+| [PianoMime: Learning a Generalist, Dexterous Piano Player from Internet Demonstrations](https://arxiv.org/abs/2407.18178) | 2024-07-25 | CoRL 2024、CoRL 2024 | 是 | — |
+| [PP-Tac: Paper Picking Using Omnidirectional Tactile Feedback in Dexterous Robotic Hands](https://www.roboticsproceedings.org/rss21/p056.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://arxiv.org/abs/2409.01652) | 2024-09-03 | CoRL 2024、CoRL 2024 | 是 | — |
+| [ResPilot: Teleoperated Finger Gaiting via Gaussian Process Residual Learning](https://arxiv.org/abs/2409.09140) | 2024-09-13 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Robust Dexterous Grasping of General Objects](https://proceedings.mlr.press/v305/zhang25h.html) | 2025-10-07 | CoRL 2025 | 是 | — |

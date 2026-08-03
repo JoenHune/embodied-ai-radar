@@ -6,7 +6,7 @@ outline: deep
 
 > 本页共 132 条；直接候选 21，边界候选 23。DOI/发现记录不自动等于严格官方核验。
 
-| 工作 | v2 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
+| 工作 | 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
 |---|---|---|---|---|---|---:|
 | [Miniature deep-sea morphable robot with multimodal locomotion](https://www.science.org/doi/10.1126/scirobotics.adp7821) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adp7821) | 70 |
 | [A review of learning-based dynamics models for robotic manipulation](https://www.science.org/doi/10.1126/scirobotics.adt1497) | 世界模型与预测控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adt1497) | 61 |

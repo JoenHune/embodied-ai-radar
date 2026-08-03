@@ -7,21 +7,31 @@ outline: deep
 > 主分析期为 2025 年 7 月—2026 年 6 月。同比增长只在同一宽召回查询口径内有效，不代表全部机器人论文的绝对市场份额。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>1841</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>633</strong><span>同比基线候选</span></div>
+  <div class="radar-kpi"><strong>5221</strong><span>主分析期候选</span></div>
+  <div class="radar-kpi"><strong>3214</strong><span>同比基线候选</span></div>
   <div class="radar-kpi"><strong>84</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>30</strong><span>官方评审锚点</span></div>
 </div>
 
-## 五方向年度结构
+## 15 个方向年度结构
 
 | 方向 | 同比基线 | 主分析期 | 绝对增量 | 主分析期占比 |
 |---|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 157 | 843 | +686 | 45.8% |
-| [大小脑与双系统](/directions/dual-system) | 7 | 25 | +18 | 1.4% |
-| [灵巧操作](/directions/dexterous-manipulation) | 134 | 250 | +116 | 13.6% |
-| [世界模型](/directions/world-models) | 70 | 228 | +158 | 12.4% |
-| [通用机器人学习](/directions/general-robot-learning) | 265 | 495 | +230 | 26.9% |
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 124 | 700 | +576 | 13.4% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 250 | 314 | +64 | 6.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 135 | 386 | +251 | 7.4% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 369 | 503 | +134 | 9.6% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 582 | 856 | +274 | 16.4% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 137 | 272 | +135 | 5.2% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 250 | 298 | +48 | 5.7% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 913 | 1217 | +304 | 23.3% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 96 | 145 | +49 | 2.8% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 127 | 173 | +46 | 3.3% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 154 | 256 | +102 | 4.9% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 50 | 66 | +16 | 1.3% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 2 | 4 | +2 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 16 | 20 | +4 | 0.4% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 9 | 11 | +2 | 0.2% |
 
 最显著的事实是具身基础模型候选增量远高于其他方向；但弱信号更多出现在双系统调度、触觉 world model、失败恢复和数据闭环，这些领域的论文数量反而不占主导。
 
@@ -57,5 +67,3 @@ outline: deep
 ## 下一步
 
 真正领先于共识的八项判断见[弱信号探测与未来判断](/analysis/weak-signals)。每项都包含 3–24 个月验证路标和反证条件。
-
-<!-- 更新标记：年度综合 最后更新 2026.07 -->

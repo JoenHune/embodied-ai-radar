@@ -29,6 +29,17 @@ const unique = (values) => new Set(values).size === values.length
 const hash = (file) => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
 const fileSize = (file) => fs.statSync(path.join(root, file)).size
 const publicCopy = (name) => path.join(root, 'docs', 'public', path.basename(name))
+const pct = (numerator, denominator) => denominator ? `${(numerator / denominator * 100).toFixed(1)}%` : '—'
+const signed = (value) => value > 0 ? `+${value}` : String(value)
+const change = (current, previous) => {
+  if (!previous) return current ? '新增' : '—'
+  const value = (current - previous) / previous * 100
+  return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`
+}
+const previousMonth = (month) => {
+  const [year, value] = month.split('-').map(Number)
+  return value === 1 ? `${year - 1}-12` : `${year}-${String(value - 1).padStart(2, '0')}`
+}
 
 assert(Object.keys(taxonomy.categories).length === 15,
   `expected 15 v2 topics, got ${Object.keys(taxonomy.categories).length}`)
@@ -169,7 +180,7 @@ const requiredPages = [
   'docs/methods/expansion-protocol.md',
 ]
 for (const file of requiredPages) {
-  assert(fs.existsSync(path.join(root, file)), `v2 generated page missing: ${file}`)
+  assert(fs.existsSync(path.join(root, file)), `generated page missing: ${file}`)
 }
 assert(fs.readdirSync(path.join(root, 'docs', 'frontiers')).filter((name) => name.endsWith('.md')).length === 16,
   'expected 15 frontier pages plus index')
@@ -183,8 +194,16 @@ for (const month of [
   '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07',
 ]) {
   const monthlyPage = fs.readFileSync(path.join(root, 'docs', 'monthly', `${month}.md`), 'utf8')
-  assert(monthlyPage.includes('## v2 扩展主题结构（15 类）'),
-    `${month} monthly page missing v2 month-over-month topic structure`)
+  assert(monthlyPage.includes('## 主题结构与环比'),
+    `${month} monthly page missing current month-over-month topic structure`)
+  const current = preprints.filter((row) => row.relevance?.status === 'included' && row.first_submitted.startsWith(month))
+  const previous = preprints.filter((row) => row.relevance?.status === 'included' && row.first_submitted.startsWith(previousMonth(month)))
+  for (const [key, item] of Object.entries(taxonomy.categories)) {
+    const currentCount = current.filter((row) => row.primary_topic === key).length
+    const previousCount = previous.filter((row) => row.primary_topic === key).length
+    const row = `| ${item.code} · [${item.label}](/frontiers/${key.replaceAll('_', '-')}) | ${currentCount} | ${pct(currentCount, current.length)} | ${previousCount} | ${signed(currentCount - previousCount)} | ${change(currentCount, previousCount)} |`
+    assert(monthlyPage.includes(row), `${month}/${key}: current direction row mismatch`)
+  }
 }
 const augustPage = fs.readFileSync(path.join(root, 'docs', 'monthly', '2026-08.md'), 'utf8')
 assert(augustPage.includes('月初快照，截至 4 日'),
@@ -199,6 +218,61 @@ assert(corpusPage.includes(String(official.length)),
 const githubPage = fs.readFileSync(path.join(root, 'docs', 'analysis', 'open-source-ecosystem.md'), 'utf8')
 assert((githubPage.match(/img\.shields\.io\/github\/stars/g) ?? []).length === repositories.length,
   'not every GitHub row has a star badge')
+
+const visualizationPath = path.join(root, 'docs', '.vitepress', 'data', 'home-visualizations.json')
+assert(fs.existsSync(visualizationPath), 'homepage visualization data missing')
+if (fs.existsSync(visualizationPath)) {
+  const visualization = JSON.parse(fs.readFileSync(visualizationPath, 'utf8'))
+  assert(visualization.period?.monthCount === 12, 'homepage trend must use 12 complete months')
+  assert(visualization.shareTrend?.months?.length === 12, 'homepage trend month labels incomplete')
+  assert(visualization.shareTrend?.series?.length === 8, 'homepage trend must contain top seven directions plus other')
+  for (let index = 0; index < 12; index += 1) {
+    const shareTotal = visualization.shareTrend.series.reduce(
+      (sum, series) => sum + Number(series.shares[index] ?? 0), 0,
+    )
+    const countTotal = visualization.shareTrend.series.reduce(
+      (sum, series) => sum + Number(series.counts[index] ?? 0), 0,
+    )
+    assert(Math.abs(shareTotal - 100) < 0.02,
+      `homepage direction shares do not sum to 100% at index ${index}: ${shareTotal}`)
+    assert(countTotal === visualization.shareTrend.monthlyTotals[index],
+      `homepage direction counts do not sum to monthly total at index ${index}`)
+  }
+  assert(visualization.sankey?.linkCount === 24, 'homepage Sankey must contain 24 strongest links')
+  const sankeyNames = new Set(visualization.sankey?.nodes?.map((node) => node.name))
+  assert(visualization.sankey?.links?.every((link) =>
+    sankeyNames.has(link.source) && sankeyNames.has(link.target) && link.value > 0),
+  'homepage Sankey contains an invalid link')
+}
+
+const homePage = fs.readFileSync(path.join(root, 'docs', 'index.md'), 'utf8')
+assert(homePage.includes('<ResearchVisuals />'), 'homepage visualization component missing')
+const forbiddenPageTraces = [
+  '**版本**', 'v2.2', 'v2 体系', 'v2 主方向', 'v2 included', '旧五类', '旧口径',
+  '旧版', '新版', '扩展分类试运行', '扩展主题结构', '更新标记',
+]
+const markdownFiles = []
+const collectMarkdown = (directory) => {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const target = path.join(directory, entry.name)
+    if (entry.isDirectory() && entry.name !== 'dist') collectMarkdown(target)
+    else if (entry.isFile() && entry.name.endsWith('.md')) markdownFiles.push(target)
+  }
+}
+collectMarkdown(path.join(root, 'docs'))
+for (const file of markdownFiles) {
+  const text = fs.readFileSync(file, 'utf8')
+  for (const trace of forbiddenPageTraces) {
+    assert(!text.includes(trace), `page version trace "${trace}" found in ${path.relative(root, file)}`)
+  }
+  assert(!text.includes('/directions/'),
+    `retired direction route found in ${path.relative(root, file)}`)
+}
+assert(!fs.existsSync(path.join(root, 'docs', 'methods', 'content-audit-report.md')),
+  'internal content-audit history should not be published as a page')
+assert(!fs.existsSync(path.join(root, 'docs', 'directions'))
+  || fs.readdirSync(path.join(root, 'docs', 'directions')).length === 0,
+'retired direction pages should not remain in the published source tree')
 
 if (warnings.length) console.warn(`V2 warnings (${warnings.length}):\n- ${warnings.join('\n- ')}`)
 if (errors.length) {

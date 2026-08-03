@@ -4,7 +4,7 @@ outline: deep
 
 # D5 · 人形、运动与全身控制
 
-> v2 层级：physical_capability。当前 canonical works 2824 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
+> 归属层级：物理能力。当前纳入 1987 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -49,8 +49,6 @@ outline: deep
 | [Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising World Model Learning](https://arxiv.org/abs/2408.14472) | 2024-08-26 | RSS 2024、RSS 2024 | 是 | — |
 | [Design and Control of a Bipedal Robotic Character](https://arxiv.org/abs/2501.05204) | 2025-01-09 | RSS 2024、RSS 2024 | 是 | — |
 | [RL2AC: Reinforcement Learning-based Rapid Online Adaptive Control for Legged Robot Robust Locomotion](https://doi.org/10.15607/rss.2024.xx.060) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
-| [Perceive With Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception](https://arxiv.org/abs/2403.08185) | — | CoRL 2024、CoRL 2024、IJRR 2025 | 是 | — |
-| [Parallel and Proximal Linear-Quadratic Methods for Real-Time Constrained Model-Predictive Control](https://doi.org/10.15607/rss.2024.xx.002) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
 | [Linear-time Differential Inverse Kinematics: an Augmented Lagrangian Perspective](https://doi.org/10.15607/rss.2024.xx.110) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
 | [A Unified and General Humanoid Whole-Body Controller for Fine-Grained Locomotion](https://www.roboticsproceedings.org/rss21/p067.html) | 2025-06-21 | RSS 2025 | 是 | — |
 | [Action Space Design in Reinforcement Learning for Robot Motor Skills](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
@@ -99,10 +97,12 @@ outline: deep
 | [Learning a Unified Policy for Position and Force Control in Legged Loco-Manipulation](https://arxiv.org/abs/2505.20829) | 2025-05-27 | CoRL 2025 | 是 | — |
 | [Learning Decentralized Multi-Biped Control for Payload Transport](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Learning Deployable Locomotion Control via Differentiable Simulation](https://proceedings.mlr.press/v305/schwarke25a.html) | 2025-10-07 | CoRL 2025 | 是 | — |
-| [Learning Differentiable Tensegrity Dynamics using Graph Neural Networks](https://arxiv.org/abs/2410.12216) | 2024-10-16 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Learning Getting-Up Policies for Real-World Humanoid Robots](https://arxiv.org/abs/2502.12152) | 2025-02-17 | RSS 2025 | 是 | — |
 | [Learning Granular Media Avalanche Behavior for Indirectly Manipulating Obstacles on a Granular Slope](https://arxiv.org/abs/2407.01898) | 2024-07-02 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Learning H-Infinity Locomotion Control](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Learning Humanoid Standing-up Control across Diverse Postures](https://arxiv.org/abs/2502.08378) | 2025-02-12 | RSS 2025 | 是 | — |
 | [Learning Quadruped Locomotion Using Differentiable Simulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Learning Robotic Locomotion Affordances and Photorealistic Simulators from Human-Captured Data](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning Visual Parkour from Generated Images](https://arxiv.org/abs/2411.00083) | 2024-10-31 | CoRL 2024、CoRL 2024 | 是 | — |
+| [LocoFormer: Generalist Locomotion via Long-context Adaptation](https://arxiv.org/abs/2509.23745) | 2025-09-28 | CoRL 2025 | 是 | — |
+| [LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing](https://arxiv.org/abs/2505.23175) | 2025-05-29 | CoRL 2025 | 是 | — |

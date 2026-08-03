@@ -4,7 +4,7 @@ outline: deep
 
 # D9 · 数据引擎与人类视频学习
 
-> v2 层级：learning_and_infrastructure。当前 canonical works 544 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
+> 归属层级：学习与基础设施。当前纳入 343 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -67,42 +67,42 @@ outline: deep
 | [GELLO: A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators](https://arxiv.org/abs/2309.13037) | — | IROS 2024 | 否 | — |
 | [EgoMimic: Scaling Imitation Learning via Egocentric Video](https://arxiv.org/abs/2410.24221) | 2024-10-31 | ICRA 2025 | 否 | — |
 | [R+X: Retrieval and Execution from Everyday Human Videos](https://arxiv.org/abs/2407.12957) | 2024-07-17 | ICRA 2025 | 否 | — |
-| [SICNav: Safe and Interactive Crowd Navigation Using Model Predictive Control and Bilevel Optimization](https://arxiv.org/abs/2310.10982) | — | T-RO 2025 | 否 | — |
-| [Geometric Retargeting: A Principled, Ultrafast Neural Hand Retargeting Algorithm](https://arxiv.org/abs/2503.07541) | 2025-03-10 | IROS 2025 | 否 | — |
 | [Radiance Fields for Robotic Teleoperation](https://arxiv.org/abs/2407.20194) | 2024-07-29 | IROS 2024 | 否 | — |
 | [Diff-IP2D: Diffusion-Based Hand-Object Interaction Prediction on Egocentric Videos](https://arxiv.org/abs/2405.04370) | — | IROS 2025 | 否 | — |
-| [SAFER-Splat: A Control Barrier Function for Safe Navigation with Online Gaussian Splatting Maps](https://arxiv.org/abs/2409.09868) | 2024-09-15 | ICRA 2025 | 否 | — |
 | [Learning Fabric Manipulation in the Real World with Human Videos](https://arxiv.org/abs/2211.02832) | — | ICRA 2024 | 否 | — |
-| [GraspSAM: When Segment Anything Model Meets Grasp Detection](https://arxiv.org/abs/2409.12521) | 2024-09-19 | ICRA 2025 | 否 | — |
 | [AeroHaptix: A Wearable Vibrotactile Feedback System for Enhancing Collision Avoidance in UAV Teleoperation](https://arxiv.org/abs/2407.12105) | 2024-07-16 | RA-L 2025 | 否 | — |
-| [Digiforests: a Longitudinal Lidar Dataset for Forestry Robotics](https://ieeexplore.ieee.org/document/11128697) | 2025-01-01 | ICRA 2025 | 否 | — |
 | [TreeScope: An Agricultural Robotics Dataset for LiDAR-Based Mapping of Trees in Forests and Orchards](https://arxiv.org/abs/2310.02162) | — | ICRA 2024 | 否 | — |
 | [Learning Semantic Traversability With Egocentric Video and Automated Annotation Strategy](https://arxiv.org/abs/2406.02989) | — | RA-L 2024 | 否 | — |
 | [Passive Bilateral Surgical Teleoperation With RCM and Spatial Constraints in the Presence of Time Delays](https://ieeexplore.ieee.org/document/3502221) | 2025-01-01 | T-RO 2025 | 否 | — |
 | [RTAGrasp: Learning Task-Oriented Grasping from Human Videos via Retrieval, Transfer, and Alignment](https://arxiv.org/abs/2409.16033) | 2024-09-24 | ICRA 2025 | 否 | — |
-| [SALON: Self-supervised Adaptive Learning for Off-road Navigation](https://arxiv.org/abs/2412.07826) | 2024-12-10 | ICRA 2025 | 否 | — |
 | [Cybernetic avatars: Teleoperation technologies from in-body monitoring to social interaction](https://www.science.org/doi/10.1126/scirobotics.adg1842) | 2024-11-20 | Science Robotics 2024 | 否 | — |
 | [E-BTS: Event-Based Tactile Sensor for Haptic Teleoperation in Augmented Reality](https://ieeexplore.ieee.org/document/3502215) | 2025-01-01 | T-RO 2025 | 否 | — |
 | [One-Shot Imitation under Mismatched Execution](https://arxiv.org/abs/2409.06615) | 2024-09-10 | ICRA 2025 | 否 | — |
-| [Virtual elasto-plastic robot compliance to active environments](https://www.science.org/doi/10.1126/scirobotics.adq1703) | 2025-02-26 | Science Robotics 2025 | 否 | — |
 | [Cooperative vs. Teleoperation Control of the Steady Hand Eye Robot with Adaptive Sclera Force Control: A Comparative Study](https://arxiv.org/abs/2312.01631) | — | ICRA 2024 | 否 | — |
 | [Passivity-Based Control of Distributed Teleoperation With Velocity/Force Manipulability Optimization](https://ieeexplore.ieee.org/document/3508192) | 2025-01-01 | T-RO 2025 | 否 | — |
 | [Hierarchical Deep Learning for Intention Estimation of Teleoperation Manipulation in Assembly Tasks](https://arxiv.org/abs/2403.19770) | — | ICRA 2024 | 否 | — |
 | [Reality Fusion: Robust Real-time Immersive Mobile Robot Teleoperation with Volumetric Visual Data Fusion](https://arxiv.org/abs/2408.01225) | 2024-08-02 | IROS 2024 | 否 | — |
 | [Robotic Offline RL from Internet Videos via Value-Function Learning](https://ieeexplore.ieee.org/document/10611575) | 2024-05-13 | ICRA 2024 | 否 | — |
 | [TELESIM: A Modular and Plug-and-Play Framework for Robotic Arm Teleoperation using a Digital Twin](https://arxiv.org/abs/2309.10579) | — | ICRA 2024 | 否 | — |
-| [Thermal Voyager: A Comparative Study of RGB and Thermal Cameras for Night-Time Autonomous Navigation](https://ieeexplore.ieee.org/document/10611311) | 2024-05-13 | ICRA 2024 | 否 | — |
-| [A Non-Linear Model Predictive Task-Space Controller Satisfying Shape Constraints for Tendon-Driven Continuum Robots](https://arxiv.org/abs/2409.09970) | 2024-09-16 | RA-L 2025 | 否 | — |
 | [Chain-of-Modality: Learning Manipulation Programs from Multimodal Human Videos with Vision-Language-Models](https://arxiv.org/abs/2504.13351) | 2025-04-17 | ICRA 2025 | 否 | — |
 | [Control-Barrier-Aided Teleoperation with Visual-Inertial SLAM for Safe MAV Navigation in Complex Environments](https://arxiv.org/abs/2403.04331) | — | ICRA 2024 | 否 | — |
 | [Linearized Virtual Energy Tank for Passivity-Based Bilateral Teleoperation Using Linear MPC](https://ieeexplore.ieee.org/document/3554447) | 2025-01-01 | T-RO 2025 | 否 | — |
 | [User-customizable Shared Control for Robot Teleoperation via Virtual Reality](https://arxiv.org/abs/2403.13177) | — | IROS 2024 | 否 | — |
 | [Adaptive Neural Network Synchronous Tracking Control for Teleoperation Robots Under Event-Triggered Mechanism](https://ieeexplore.ieee.org/document/3455894) | 2024-11-01 | RA-L 2024 | 否 | — |
-| [MotIF: Motion Instruction Fine-tuning](https://arxiv.org/abs/2409.10683) | 2024-09-16 | RA-L 2025、ICRA 2026 | 否 | — |
 | [A Digital Twin-Driven Immersive Teleoperation Framework for Robot-Assisted Microsurgery](https://ieeexplore.ieee.org/document/10801954) | 2024-01-01 | IROS 2024 | 否 | — |
 | [Exploring Cognitive Load Dynamics in Human-Machine Interaction for Teleoperation: A User-Centric Perspective on Remote Operation System Design](https://ieeexplore.ieee.org/document/10802226) | 2024-01-01 | IROS 2024 | 否 | — |
-| [Investigating Haptic Feedback in Vision-Deficient Millirobot Telemanipulation](https://ieeexplore.ieee.org/document/3397529) | 2024-07-01 | RA-L 2024 | 否 | — |
 | [Passivity-Based Teleoperation With Variable Rotational Impedance Control](https://ieeexplore.ieee.org/document/3490260) | 2024-12-01 | RA-L 2024 | 否 | — |
 | [Self-supervised 6-DoF Robot Grasping by Demonstration via Augmented Reality Teleoperation System](https://arxiv.org/abs/2404.03067) | — | ICRA 2024 | 否 | — |
 | [A Tetherless Soft Robotic Wearable Haptic Human Machine Interface for Robot Teleoperation](https://ieeexplore.ieee.org/document/10802410) | 2024-01-01 | IROS 2024 | 否 | — |
-| [An Expert Ensemble for Detecting Anomalous Scenes, Interactions, and Behaviors in Autonomous Driving](https://arxiv.org/abs/2502.16389) | 2025-02-23 | IJRR 2024 | 否 | — |
+| [Position Prediction for Space Teleoperation With SAO-CNN-BiGRU-Attention Algorithm](https://ieeexplore.ieee.org/document/3498700) | 2024-12-01 | RA-L 2024 | 否 | — |
+| [Stability and Transparency in Mixed Reality Bilateral Human Teleoperation](https://arxiv.org/abs/2410.09679) | 2024-10-13 | T-RO 2025、ICRA 2026 | 否 | — |
+| [A Tactile Lightweight Exoskeleton for Teleoperation: Design and Control Performance](https://ieeexplore.ieee.org/document/10802732) | 2024-01-01 | IROS 2024 | 否 | — |
+| [DART: Dexterous Augmented Reality Teleoperation Platform for Large-Scale Robot Data Collection in Simulation](https://ieeexplore.ieee.org/document/11128299) | 2025-01-01 | ICRA 2025 | 否 | — |
+| [Lie Group-Based User Motion Refinement Control for Teleoperation of a Constrained Robot Arm](https://ieeexplore.ieee.org/document/3401135) | 2024-07-01 | RA-L 2024 | 否 | — |
+| [Sampling-Based Grasp and Collision Prediction for Assisted Teleoperation](https://arxiv.org/abs/2504.18186) | 2025-04-25 | ICRA 2025 | 否 | — |
+| [SPOTS: Stable Placement of Objects with Reasoning in Semi-Autonomous Teleoperation Systems](https://arxiv.org/abs/2309.13937) | — | ICRA 2024 | 否 | — |
+| [Adaptive User Interface With Parallel Neural Networks for Robot Teleoperation](https://ieeexplore.ieee.org/document/3518085) | 2025-02-01 | RA-L 2025 | 否 | — |
+| [DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model](https://arxiv.org/abs/2405.07309) | — | IROS 2025 | 否 | — |
+| [Intelligent Mode-switching Framework for Teleoperation](https://arxiv.org/abs/2402.06047) | — | ICRA 2024 | 否 | — |
+| [Perfectly Undetectable False Data Injection Attacks on Encrypted Bilateral Teleoperation System based on Dynamic Symmetry and Malleability](https://arxiv.org/abs/2409.13061) | 2024-09-19 | ICRA 2025 | 否 | — |
+| [Towards Real-Time Generation of Delay-Compensated Video Feeds for Outdoor Mobile Robot Teleoperation](https://arxiv.org/abs/2409.09921) | 2024-09-16 | ICRA 2025 | 否 | — |

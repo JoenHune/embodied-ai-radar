@@ -1,0 +1,599 @@
+{
+  "asOf": "2026-08-04",
+  "period": {
+    "from": "2025-08-01",
+    "until": "2026-07-31",
+    "monthCount": 12
+  },
+  "shareTrend": {
+    "months": [
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07"
+    ],
+    "monthlyTotals": [
+      288,
+      469,
+      427,
+      347,
+      299,
+      280,
+      466,
+      694,
+      392,
+      559,
+      735,
+      506
+    ],
+    "series": [
+      {
+        "key": "policy_learning",
+        "code": "D8",
+        "name": "策略学习",
+        "counts": [
+          66,
+          124,
+          105,
+          87,
+          75,
+          72,
+          91,
+          157,
+          89,
+          138,
+          141,
+          102
+        ],
+        "shares": [
+          22.917,
+          26.439,
+          24.59,
+          25.072,
+          25.084,
+          25.714,
+          19.528,
+          22.622,
+          22.704,
+          24.687,
+          19.184,
+          20.158
+        ]
+      },
+      {
+        "key": "humanoid_whole_body",
+        "code": "D5",
+        "name": "人形与全身控制",
+        "counts": [
+          66,
+          70,
+          81,
+          58,
+          38,
+          37,
+          87,
+          121,
+          67,
+          66,
+          121,
+          70
+        ],
+        "shares": [
+          22.917,
+          14.925,
+          18.97,
+          16.715,
+          12.709,
+          13.214,
+          18.67,
+          17.435,
+          17.092,
+          11.807,
+          16.463,
+          13.834
+        ]
+      },
+      {
+        "key": "foundation_models",
+        "code": "D1",
+        "name": "具身基础模型",
+        "counts": [
+          26,
+          47,
+          59,
+          48,
+          46,
+          30,
+          74,
+          95,
+          49,
+          94,
+          112,
+          74
+        ],
+        "shares": [
+          9.028,
+          10.021,
+          13.817,
+          13.833,
+          15.385,
+          10.714,
+          15.88,
+          13.689,
+          12.5,
+          16.816,
+          15.238,
+          14.625
+        ]
+      },
+      {
+        "key": "dexterous_manipulation",
+        "code": "D4",
+        "name": "灵巧与接触操作",
+        "counts": [
+          22,
+          46,
+          38,
+          32,
+          18,
+          27,
+          49,
+          74,
+          42,
+          47,
+          85,
+          50
+        ],
+        "shares": [
+          7.639,
+          9.808,
+          8.899,
+          9.222,
+          6.02,
+          9.643,
+          10.515,
+          10.663,
+          10.714,
+          8.408,
+          11.565,
+          9.881
+        ]
+      },
+      {
+        "key": "world_models",
+        "code": "D3",
+        "name": "世界模型",
+        "counts": [
+          10,
+          13,
+          25,
+          19,
+          29,
+          21,
+          41,
+          49,
+          32,
+          53,
+          83,
+          57
+        ],
+        "shares": [
+          3.472,
+          2.772,
+          5.855,
+          5.476,
+          9.699,
+          7.5,
+          8.798,
+          7.061,
+          8.163,
+          9.481,
+          11.293,
+          11.265
+        ]
+      },
+      {
+        "key": "reasoning_planning",
+        "code": "D2",
+        "name": "推理、规划与记忆",
+        "counts": [
+          25,
+          34,
+          29,
+          24,
+          22,
+          15,
+          24,
+          29,
+          20,
+          35,
+          36,
+          32
+        ],
+        "shares": [
+          8.681,
+          7.249,
+          6.792,
+          6.916,
+          7.358,
+          5.357,
+          5.15,
+          4.179,
+          5.102,
+          6.261,
+          4.898,
+          6.324
+        ]
+      },
+      {
+        "key": "human_robot_interaction",
+        "code": "D7",
+        "name": "人机协作",
+        "counts": [
+          21,
+          32,
+          19,
+          19,
+          20,
+          25,
+          25,
+          29,
+          25,
+          24,
+          29,
+          37
+        ],
+        "shares": [
+          7.292,
+          6.823,
+          4.45,
+          5.476,
+          6.689,
+          8.929,
+          5.365,
+          4.179,
+          6.378,
+          4.293,
+          3.946,
+          7.312
+        ]
+      },
+      {
+        "key": "other",
+        "code": "其他",
+        "name": "其他方向",
+        "counts": [
+          52,
+          103,
+          71,
+          60,
+          51,
+          53,
+          75,
+          140,
+          68,
+          102,
+          128,
+          84
+        ],
+        "shares": [
+          18.056,
+          21.962,
+          16.628,
+          17.291,
+          17.057,
+          18.929,
+          16.094,
+          20.173,
+          17.347,
+          18.247,
+          17.415,
+          16.601
+        ]
+      }
+    ]
+  },
+  "sankey": {
+    "nodes": [
+      {
+        "name": "主方向 · D5",
+        "code": "D5",
+        "key": "humanoid_whole_body",
+        "side": "主方向",
+        "label": "D5 人形与全身控制"
+      },
+      {
+        "name": "关联方向 · D8",
+        "code": "D8",
+        "key": "policy_learning",
+        "side": "关联方向",
+        "label": "D8 策略学习"
+      },
+      {
+        "name": "主方向 · D8",
+        "code": "D8",
+        "key": "policy_learning",
+        "side": "主方向",
+        "label": "D8 策略学习"
+      },
+      {
+        "name": "关联方向 · D4",
+        "code": "D4",
+        "key": "dexterous_manipulation",
+        "side": "关联方向",
+        "label": "D4 灵巧与接触操作"
+      },
+      {
+        "name": "主方向 · D1",
+        "code": "D1",
+        "key": "foundation_models",
+        "side": "主方向",
+        "label": "D1 具身基础模型"
+      },
+      {
+        "name": "主方向 · D4",
+        "code": "D4",
+        "key": "dexterous_manipulation",
+        "side": "主方向",
+        "label": "D4 灵巧与接触操作"
+      },
+      {
+        "name": "关联方向 · D5",
+        "code": "D5",
+        "key": "humanoid_whole_body",
+        "side": "关联方向",
+        "label": "D5 人形与全身控制"
+      },
+      {
+        "name": "关联方向 · D10",
+        "code": "D10",
+        "key": "simulation_transfer",
+        "side": "关联方向",
+        "label": "D10 仿真与迁移"
+      },
+      {
+        "name": "主方向 · D3",
+        "code": "D3",
+        "key": "world_models",
+        "side": "主方向",
+        "label": "D3 世界模型"
+      },
+      {
+        "name": "关联方向 · D12",
+        "code": "D12",
+        "key": "safety_evaluation",
+        "side": "关联方向",
+        "label": "D12 安全与评测"
+      },
+      {
+        "name": "关联方向 · D9",
+        "code": "D9",
+        "key": "data_engines",
+        "side": "关联方向",
+        "label": "D9 数据引擎"
+      },
+      {
+        "name": "关联方向 · D1",
+        "code": "D1",
+        "key": "foundation_models",
+        "side": "关联方向",
+        "label": "D1 具身基础模型"
+      },
+      {
+        "name": "关联方向 · D2",
+        "code": "D2",
+        "key": "reasoning_planning",
+        "side": "关联方向",
+        "label": "D2 推理、规划与记忆"
+      },
+      {
+        "name": "关联方向 · D3",
+        "code": "D3",
+        "key": "world_models",
+        "side": "关联方向",
+        "label": "D3 世界模型"
+      },
+      {
+        "name": "主方向 · D6",
+        "code": "D6",
+        "key": "navigation_mobile_manipulation",
+        "side": "主方向",
+        "label": "D6 导航与移动操作"
+      },
+      {
+        "name": "主方向 · D10",
+        "code": "D10",
+        "key": "simulation_transfer",
+        "side": "主方向",
+        "label": "D10 仿真与迁移"
+      },
+      {
+        "name": "主方向 · D11",
+        "code": "D11",
+        "key": "spatial_perception",
+        "side": "主方向",
+        "label": "D11 空间感知"
+      }
+    ],
+    "links": [
+      {
+        "source": "主方向 · D5",
+        "target": "关联方向 · D8",
+        "value": 373,
+        "sourceKey": "humanoid_whole_body",
+        "targetKey": "policy_learning"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D4",
+        "value": 357,
+        "sourceKey": "policy_learning",
+        "targetKey": "dexterous_manipulation"
+      },
+      {
+        "source": "主方向 · D1",
+        "target": "关联方向 · D4",
+        "value": 325,
+        "sourceKey": "foundation_models",
+        "targetKey": "dexterous_manipulation"
+      },
+      {
+        "source": "主方向 · D4",
+        "target": "关联方向 · D8",
+        "value": 210,
+        "sourceKey": "dexterous_manipulation",
+        "targetKey": "policy_learning"
+      },
+      {
+        "source": "主方向 · D1",
+        "target": "关联方向 · D8",
+        "value": 163,
+        "sourceKey": "foundation_models",
+        "targetKey": "policy_learning"
+      },
+      {
+        "source": "主方向 · D5",
+        "target": "关联方向 · D4",
+        "value": 152,
+        "sourceKey": "humanoid_whole_body",
+        "targetKey": "dexterous_manipulation"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D5",
+        "value": 143,
+        "sourceKey": "policy_learning",
+        "targetKey": "humanoid_whole_body"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D10",
+        "value": 137,
+        "sourceKey": "policy_learning",
+        "targetKey": "simulation_transfer"
+      },
+      {
+        "source": "主方向 · D5",
+        "target": "关联方向 · D10",
+        "value": 136,
+        "sourceKey": "humanoid_whole_body",
+        "targetKey": "simulation_transfer"
+      },
+      {
+        "source": "主方向 · D3",
+        "target": "关联方向 · D8",
+        "value": 131,
+        "sourceKey": "world_models",
+        "targetKey": "policy_learning"
+      },
+      {
+        "source": "主方向 · D3",
+        "target": "关联方向 · D4",
+        "value": 108,
+        "sourceKey": "world_models",
+        "targetKey": "dexterous_manipulation"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D12",
+        "value": 105,
+        "sourceKey": "policy_learning",
+        "targetKey": "safety_evaluation"
+      },
+      {
+        "source": "主方向 · D4",
+        "target": "关联方向 · D9",
+        "value": 103,
+        "sourceKey": "dexterous_manipulation",
+        "targetKey": "data_engines"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D1",
+        "value": 101,
+        "sourceKey": "policy_learning",
+        "targetKey": "foundation_models"
+      },
+      {
+        "source": "主方向 · D5",
+        "target": "关联方向 · D9",
+        "value": 95,
+        "sourceKey": "humanoid_whole_body",
+        "targetKey": "data_engines"
+      },
+      {
+        "source": "主方向 · D1",
+        "target": "关联方向 · D12",
+        "value": 78,
+        "sourceKey": "foundation_models",
+        "targetKey": "safety_evaluation"
+      },
+      {
+        "source": "主方向 · D1",
+        "target": "关联方向 · D2",
+        "value": 74,
+        "sourceKey": "foundation_models",
+        "targetKey": "reasoning_planning"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D3",
+        "value": 73,
+        "sourceKey": "policy_learning",
+        "targetKey": "world_models"
+      },
+      {
+        "source": "主方向 · D6",
+        "target": "关联方向 · D4",
+        "value": 70,
+        "sourceKey": "navigation_mobile_manipulation",
+        "targetKey": "dexterous_manipulation"
+      },
+      {
+        "source": "主方向 · D3",
+        "target": "关联方向 · D1",
+        "value": 70,
+        "sourceKey": "world_models",
+        "targetKey": "foundation_models"
+      },
+      {
+        "source": "主方向 · D1",
+        "target": "关联方向 · D9",
+        "value": 67,
+        "sourceKey": "foundation_models",
+        "targetKey": "data_engines"
+      },
+      {
+        "source": "主方向 · D8",
+        "target": "关联方向 · D9",
+        "value": 67,
+        "sourceKey": "policy_learning",
+        "targetKey": "data_engines"
+      },
+      {
+        "source": "主方向 · D10",
+        "target": "关联方向 · D8",
+        "value": 64,
+        "sourceKey": "simulation_transfer",
+        "targetKey": "policy_learning"
+      },
+      {
+        "source": "主方向 · D11",
+        "target": "关联方向 · D4",
+        "value": 62,
+        "sourceKey": "spatial_perception",
+        "targetKey": "dexterous_manipulation"
+      }
+    ],
+    "linkCount": 24,
+    "paperCount": 5462
+  }
+}

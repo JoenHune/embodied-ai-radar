@@ -6,7 +6,7 @@ outline: deep
 
 > 本页共 70 条；直接候选 17，边界候选 10。DOI/发现记录不自动等于严格官方核验。
 
-| 工作 | v2 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
+| 工作 | 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
 |---|---|---|---|---|---|---:|
 | [Visual-tactile pretraining and online multitask learning for humanlike manipulation dexterity](https://www.science.org/doi/10.1126/scirobotics.ady2869) | 灵巧、双臂与接触操作 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.ady2869) | 14 |
 | [Learning realistic lip motions for humanoid face robots](https://www.science.org/doi/10.1126/scirobotics.adx3017) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adx3017) | 8 |

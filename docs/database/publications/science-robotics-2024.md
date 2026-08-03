@@ -6,7 +6,7 @@ outline: deep
 
 > 本页共 72 条；直接候选 6，边界候选 15。DOI/发现记录不自动等于严格官方核验。
 
-| 工作 | v2 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
+| 工作 | 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
 |---|---|---|---|---|---|---:|
 | [NeuralFeels with neural fields: Visuotactile perception for in-hand manipulation](https://www.science.org/doi/10.1126/scirobotics.adl0628) | 动作关联的空间感知与表征 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adl0628) | 116 |
 | [Intrinsic sense of touch for intuitive physical human-robot interaction](https://www.science.org/doi/10.1126/scirobotics.adn4008) | 人机协作与交互学习 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adn4008) | 75 |

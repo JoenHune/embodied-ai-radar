@@ -10,7 +10,8 @@ const read = (name, fallback) => {
 const write = (name, content) => {
   const target = path.join(docs, name)
   fs.mkdirSync(path.dirname(target), { recursive: true })
-  fs.writeFileSync(target, `${content.trim()}\n`)
+  const latestOnly = content.replace(/\n?<!-- 更新标记：[^\n]*-->\n?/g, '\n')
+  fs.writeFileSync(target, `${latestOnly.trim()}\n`)
 }
 const frontmatter = `---\noutline: deep\n---`
 const clean = (value = '') => String(value).replaceAll('|', '\\|').replace(/\s+/g, ' ').trim()
@@ -38,13 +39,34 @@ const githubWatchlist = read('data/github-watchlist.json', [])
 const works = read('data/works.json', [])
 const workCoverage = read('data/work-coverage.json', {})
 const legacyPapers = read('data/papers.json', [])
-const legacyPeers = read('data/peer-review.json', { records: [] }).records
 const includedPreprints = preprints.filter((row) => row.relevance?.status === 'included')
 const snapshotDate = sourceRegistry.window?.until ?? preprintCoverage.generated_at ?? '2026-08-04'
 
 const topicEntries = Object.entries(taxonomy.categories)
 const topicSlug = (key) => key.replaceAll('_', '-')
 const topicLabel = (key) => taxonomy.categories[key]?.label ?? key ?? '待复核'
+const compactTopicLabel = {
+  foundation_models: '具身基础模型',
+  reasoning_planning: '推理、规划与记忆',
+  world_models: '世界模型',
+  dexterous_manipulation: '灵巧与接触操作',
+  humanoid_whole_body: '人形与全身控制',
+  navigation_mobile_manipulation: '导航与移动操作',
+  human_robot_interaction: '人机协作',
+  policy_learning: '策略学习',
+  data_engines: '数据引擎',
+  simulation_transfer: '仿真与迁移',
+  spatial_perception: '空间感知',
+  safety_evaluation: '安全与评测',
+  continual_deployment_learning: '持续与部署学习',
+  multi_robot_coordination: '多机器人协同',
+  embodied_multisensory: '多模态身体感知',
+}
+const layerLabel = {
+  model_and_system: '模型与系统',
+  physical_capability: '物理能力',
+  learning_and_infrastructure: '学习与基础设施',
+}
 const screeningLabel = {
   included: '直接候选',
   candidate: '边界候选',
@@ -57,6 +79,105 @@ const verificationLabel = {
   publisher_url_from_registered_doi: 'DOI 已登记，待逐页核验',
   discovered_needs_official_check: '仅发现，待官方核验',
 }
+
+const cutoffDate = new Date(`${snapshotDate}T00:00:00Z`)
+const cutoffMonthEnd = new Date(Date.UTC(
+  cutoffDate.getUTCFullYear(),
+  cutoffDate.getUTCMonth() + 1,
+  0,
+)).getUTCDate()
+const latestCompleteDate = cutoffDate.getUTCDate() === cutoffMonthEnd
+  ? cutoffDate
+  : new Date(Date.UTC(cutoffDate.getUTCFullYear(), cutoffDate.getUTCMonth(), 0))
+const latestCompleteMonth = `${latestCompleteDate.getUTCFullYear()}-${String(latestCompleteDate.getUTCMonth() + 1).padStart(2, '0')}`
+const visualizationMonths = [...new Set(includedPreprints
+  .map((row) => row.first_submitted?.slice(0, 7))
+  .filter((month) => month && month <= latestCompleteMonth))]
+  .sort()
+  .slice(-12)
+const visualizationFrom = `${visualizationMonths[0]}-01`
+const [visualizationYear, visualizationMonth] = visualizationMonths.at(-1).split('-').map(Number)
+const visualizationLastDay = new Date(Date.UTC(visualizationYear, visualizationMonth, 0)).getUTCDate()
+const visualizationUntil = `${visualizationMonths.at(-1)}-${String(visualizationLastDay).padStart(2, '0')}`
+const visualizationPreprints = includedPreprints.filter((row) =>
+  row.first_submitted >= visualizationFrom && row.first_submitted <= visualizationUntil)
+const directionTotals = Object.fromEntries(topicEntries.map(([key]) => [
+  key,
+  visualizationPreprints.filter((row) => row.primary_topic === key).length,
+]))
+const leadingDirections = topicEntries
+  .map(([key]) => key)
+  .sort((left, right) => directionTotals[right] - directionTotals[left])
+  .slice(0, 7)
+const monthlyTotals = visualizationMonths.map((month) =>
+  visualizationPreprints.filter((row) => row.first_submitted.startsWith(month)).length)
+const shareSeries = leadingDirections.map((key) => ({
+  key,
+  code: taxonomy.categories[key].code,
+  name: compactTopicLabel[key] ?? topicLabel(key),
+  counts: visualizationMonths.map((month) => visualizationPreprints.filter((row) =>
+    row.first_submitted.startsWith(month) && row.primary_topic === key).length),
+})).map((series) => ({
+  ...series,
+  shares: series.counts.map((count, index) => Number((count / monthlyTotals[index] * 100).toFixed(3))),
+}))
+const otherCounts = visualizationMonths.map((month) => visualizationPreprints.filter((row) =>
+  row.first_submitted.startsWith(month) && !leadingDirections.includes(row.primary_topic)).length)
+shareSeries.push({
+  key: 'other',
+  code: '其他',
+  name: '其他方向',
+  counts: otherCounts,
+  shares: otherCounts.map((count, index) => Number((count / monthlyTotals[index] * 100).toFixed(3))),
+})
+
+const cooccurrence = new Map()
+for (const paper of visualizationPreprints) {
+  for (const secondary of paper.topics ?? []) {
+    if (secondary === paper.primary_topic || !taxonomy.categories[secondary]) continue
+    const key = `${paper.primary_topic}>${secondary}`
+    cooccurrence.set(key, (cooccurrence.get(key) ?? 0) + 1)
+  }
+}
+const sankeyLinks = [...cooccurrence.entries()]
+  .sort(([, left], [, right]) => right - left)
+  .slice(0, 24)
+  .map(([pair, value]) => {
+    const [sourceKey, targetKey] = pair.split('>')
+    return {
+      source: `主方向 · ${taxonomy.categories[sourceKey].code}`,
+      target: `关联方向 · ${taxonomy.categories[targetKey].code}`,
+      value,
+      sourceKey,
+      targetKey,
+    }
+  })
+const sankeyNodeNames = new Set(sankeyLinks.flatMap((link) => [link.source, link.target]))
+const sankeyNodes = [...sankeyNodeNames].map((name) => {
+  const [side, code] = name.split(' · ')
+  const [key, item] = topicEntries.find(([, value]) => value.code === code)
+  return {
+    name,
+    code,
+    key,
+    side,
+    label: `${code} ${compactTopicLabel[key] ?? item.label}`,
+  }
+})
+const visualizationData = {
+  asOf: snapshotDate,
+  period: { from: visualizationFrom, until: visualizationUntil, monthCount: visualizationMonths.length },
+  shareTrend: { months: visualizationMonths, monthlyTotals, series: shareSeries },
+  sankey: {
+    nodes: sankeyNodes,
+    links: sankeyLinks,
+    linkCount: sankeyLinks.length,
+    paperCount: visualizationPreprints.length,
+  },
+}
+const visualizationDataPath = path.join(docs, '.vitepress', 'data', 'home-visualizations.json')
+fs.mkdirSync(path.dirname(visualizationDataPath), { recursive: true })
+fs.writeFileSync(visualizationDataPath, `${JSON.stringify(visualizationData, null, 2)}\n`)
 
 for (const [source, publicName] of [
   ['data/preprints.json', 'preprints.json'],
@@ -102,11 +223,9 @@ write('analysis/corpus-expansion.md', `${frontmatter}
   <div class="radar-kpi"><strong>${fmt(repositoryCoverage.repository_count ?? repositories.length)}</strong><span>GitHub 核验仓库</span></div>
 </div>
 
-## 为什么旧数据看起来很多，实际仍然小
+## 当前证据库结构
 
-旧版的 ${legacyPapers.length.toLocaleString('zh-CN')} 条记录来自五组 Semantic Scholar 关键词宽召回，其中只有 ${legacyPeers.length} 条正式发表锚点。它没有把 arXiv 全量采集结果并入主库，Semantic Scholar 的分页 token 也未完整消费；同时，旧 schema 强制要求 arXiv ID，导致没有预印本映射的期刊/会议论文无法入库。
-
-新版拆成三条独立管线：
+网站统一使用三条独立管线，并以 canonical work 合并同一研究的预印本、正式发表与代码仓库：
 
 1. **arXiv 母集**：完整 cs.RO 月度拉取，再补 cs.AI/CV/LG 中的机器人与具身主题；月份始终按 v1。
 2. **正式发表母集**：ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR、Science Robotics 独立采集；无 arXiv ID 也可存在。
@@ -118,7 +237,7 @@ write('analysis/corpus-expansion.md', `${frontmatter}
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 ${coverageRows}
 
-“母集”是 venue 内采到的全部论文版本；“直接候选”是 v2 词表与语境自动筛出的具身智能工作，并非最终趋势结论。DBLP/Crossref/Semantic Scholar 只承担发现或字段补全；严格同行评审标签仍需官方 proceedings、OpenReview 最终录用或出版社文章页。
+“母集”是 venue 内采到的全部论文版本；“直接候选”是当前词表与语境自动筛出的具身智能工作，并非最终趋势结论。DBLP/Crossref/Semantic Scholar 只承担发现或字段补全；严格同行评审标签仍需官方 proceedings、OpenReview 最终录用或出版社文章页。
 
 ## 严格官方容器对账
 
@@ -130,7 +249,7 @@ ${officialRows}
 
 截至截点另有 ${officialProgramCoverage.by_venue?.ICRA ?? 0} 条 ICRA 2026 官方 program 记录和 ${officialProgramCoverage.by_venue?.RSS ?? 0} 条 RSS 2026 官方录用记录。前者可能含 RA-L/T-RO/RAM 展示，后者尚待 RSS 22 proceedings；两类均进入发现母集，但严格覆盖率分子为 0。
 
-## v2 方向体系：从五类扩展到 ${topicEntries.length} 类
+## 当前 ${topicEntries.length} 个研究方向
 
 | 编号 | 方向 | 层级 | 代表检索表达 |
 |---|---|---|---|
@@ -151,9 +270,8 @@ ${taxonomyRows}
 
 - IEEE Xplore、Science 与 SAGE 的 DOI 已进入发现母集；严格标签要继续逐条回到出版社页面核验。
 - ICRA/IROS 的 PaperCept 节目单可能含 RA-L 转投展示，canonical 合并时必须避免双计。
-- 新 taxonomy 正在通过正例、边界例和反例回归；完成前，旧五类月度序列保留作稳定对照，不把分类变化误写成趋势变化。
+- 分类规则持续通过正例、边界例和反例回归；每次规则变化都会单独记录，不能把分类迁移误写成趋势变化。
 
-<!-- 更新标记：语料扩充与覆盖审计 最后更新 2026.08 -->
 `)
 
 const repoRows = repositories.map((repo) => {
@@ -239,7 +357,7 @@ for (const [key, rows] of [...publicationGroups].sort(([a], [b]) => a.localeComp
 
 > 本页共 ${rows.length} 条；直接候选 ${rows.filter((row) => row.relevance?.status === 'included').length}，边界候选 ${rows.filter((row) => row.relevance?.status === 'candidate').length}。DOI/发现记录不自动等于严格官方核验。
 
-| 工作 | v2 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
+| 工作 | 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
 |---|---|---|---|---|---|---:|
 ${table}
 `)
@@ -283,33 +401,36 @@ for (const month of [
     return `| ${item.code} · [${item.label}](/frontiers/${topicSlug(key)}) | ${current} | ${pct(current, currentIncluded.length)} | ${previous} | ${signed(current - previous)} | ${change(current, previous)} |`
   }).join('\n')
   const expandedSection = `
-## v2 扩展主题结构（15 类）
+## 主题结构与环比
 
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 ${topicEntries.length} 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${fmt(currentAll.length)}</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>${fmt(currentIncluded.length)}</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>${fmt(currentIncluded.length)}</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>${fmt(currentCandidate)}</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>${fmt(previousIncluded.length)}</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 ${expandedRows}
 | **总计** | **${currentIncluded.length}** | **100.0%** | **${previousIncluded.length}** | **${signed(currentIncluded.length - previousIncluded.length)}** | **${change(currentIncluded.length, previousIncluded.length)}** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
 `
-  const content = fs.readFileSync(target, 'utf8')
+  const content = fs.readFileSync(target, 'utf8').replace(
+    /<strong>[\d,]+<\/strong><span>纳入统计候选<\/span>/,
+    `<strong>${fmt(currentIncluded.length)}</strong><span>纳入统计候选</span>`,
+  )
   const topicStart = content.indexOf('## 主题结构')
-  const insertAt = topicStart >= 0
-    ? content.indexOf('\n\n## ', topicStart + '## 主题结构'.length)
+  const nextSection = topicStart >= 0
+    ? content.indexOf('\n## ', topicStart + '## 主题结构'.length)
     : -1
-  if (insertAt < 0) {
-    throw new Error(`cannot locate topic-structure insertion point in ${target}`)
+  if (topicStart < 0 || nextSection < 0) {
+    throw new Error(`cannot replace topic-structure section in ${target}`)
   }
-  fs.writeFileSync(target, `${content.slice(0, insertAt)}\n${expandedSection}${content.slice(insertAt)}`)
+  fs.writeFileSync(target, `${content.slice(0, topicStart)}${expandedSection.trim()}\n${content.slice(nextSection + 1)}`)
 }
 
 const augustMonth = '2026-08'
@@ -348,7 +469,7 @@ write('monthly/2026-08.md', `${frontmatter}
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${fmt(augustAll.length)}</strong><span>8 月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>${fmt(augustIncluded.length)}</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>${fmt(augustIncluded.length)}</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>${fmt(publicationCoverage.in_window_records ?? publications.length)}</strong><span>窗口内发表版本</span></div>
   <div class="radar-kpi"><strong>${repositories.length} + ${githubWatchlist.length}</strong><span>已审计 + 新仓观察</span></div>
 </div>
@@ -359,7 +480,7 @@ write('monthly/2026-08.md', `${frontmatter}
 
 ## 主题结构与环比
 
-| v2 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
+| 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
 |---|---:|---:|---:|---|
 ${augustTopicRows}
 | **总计** | **${augustIncluded.length}** | **${julyIncluded.length}** | **—** | **月初空窗，不计算 −100%** |
@@ -403,22 +524,51 @@ ${lateJulyRows}
 <!-- 更新标记：2026-08 月度雷达 最后更新 2026.08 -->
 `)
 
-const monthlyIndexPath = path.join(docs, 'monthly', 'index.md')
-const monthlyIndexContent = fs.readFileSync(monthlyIndexPath, 'utf8')
-const augustIndexRow = `| [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |`
-const monthlyIndexMarker = '\n\n## 怎么读月度页'
-if (!monthlyIndexContent.includes(monthlyIndexMarker)) {
-  throw new Error('cannot locate monthly index insertion point')
-}
-fs.writeFileSync(
-  monthlyIndexPath,
-  monthlyIndexContent.replace(monthlyIndexMarker, `\n${augustIndexRow}${monthlyIndexMarker}`),
-)
+const radarMonths = [
+  '2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12',
+  '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07',
+]
+const radarMonthRows = radarMonths.map((month) => {
+  const current = includedPreprints.filter((row) => row.first_submitted.startsWith(month))
+  const previous = includedPreprints.filter((row) => row.first_submitted.startsWith(previousCalendarMonth(month)))
+  const baselineMonth = `${Number(month.slice(0, 4)) - 1}-${month.slice(5)}`
+  const baseline = includedPreprints.filter((row) => row.first_submitted.startsWith(baselineMonth))
+  const dominant = topicEntries
+    .map(([key]) => key)
+    .sort((left, right) =>
+      current.filter((row) => row.primary_topic === right).length
+      - current.filter((row) => row.primary_topic === left).length)[0]
+  const dominantCount = current.filter((row) => row.primary_topic === dominant).length
+  const curated = legacyPapers.filter((paper) => paper.v1_month === month && paper.curated)
+  const real = curated.filter((paper) => paper.evidence?.real_robot).length
+  const label = month === '2026-07' ? '2026 年 7 月（完整月）' : `${month.slice(0, 4)} 年 ${Number(month.slice(5))} 月`
+  return `| [${label}](/monthly/${month}) | ${current.length} | ${signed(current.length - previous.length)} | ${change(current.length, previous.length)} | ${signed(current.length - baseline.length)} | ${change(current.length, baseline.length)} | ${taxonomy.categories[dominant].code} · ${compactTopicLabel[dominant]}（${dominantCount}） | ${curated.length} | ${real}/${curated.length} |`
+}).join('\n')
+write('monthly/index.md', `${frontmatter}
 
-const monthKeys = [...new Set(preprints.map((row) => row.first_submitted?.slice(0, 7)).filter(Boolean))].sort()
+# 月度研究雷达
+
+> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 ${topicEntries.length} 个研究方向。2026 年 8 月仍是月初快照，因此保留 7 月参照数但不计算误导性的百分比。
+
+| 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
+|---|---:|---:|---:|---:|---:|---|---:|---:|
+${radarMonthRows}
+| [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |
+
+## 怎么读月度页
+
+1. 先看绝对数量、环比和同比，判断变化是短期波动还是跨年结构增长。
+2. 再看精读论文的真机、跨任务/本体、长时序和开放资产。
+3. 用官方同行评审锚点区分“arXiv 密集”与“已有独立评审路线”。
+4. 最后看弱信号与反证；前者寻找未来，后者防止把命名潮误判为能力跃迁。
+`)
+
+const monthKeys = [...new Set(preprints
+  .map((row) => row.first_submitted?.slice(0, 7))
+  .filter((month) => month && month <= latestCompleteMonth))].sort()
 for (const [key, item] of topicEntries) {
   const rows = works
-    .filter((work) => work.primary_topic === key)
+    .filter((work) => work.primary_topic === key && work.relevance?.status === 'included')
     .sort((a, b) =>
       Number(b.strict_peer_reviewed) - Number(a.strict_peer_reviewed)
       || (b.citation_count_snapshot ?? -1) - (a.citation_count_snapshot ?? -1)
@@ -444,7 +594,7 @@ for (const [key, item] of topicEntries) {
 
 # ${item.code} · ${item.label}
 
-> v2 层级：${item.layer}。当前 canonical works ${rows.length} 条；此页是扩展分类试运行，不直接改写旧五类历史序列。
+> 归属层级：${layerLabel[item.layer] ?? item.layer}。当前纳入 ${rows.length} 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -468,13 +618,27 @@ ${representativeRows}
 
 write('frontiers/index.md', `${frontmatter}
 
-# ${topicEntries.length} 个研究前沿
+# ${topicEntries.length} 个研究方向
 
-> 五类旧体系保留作稳定趋势对照；v2 从扩充后的 arXiv、正式发表和 GitHub 语料中拆出更细科学问题。
+> 本站当前统一使用以下 ${topicEntries.length} 个主方向。每项工作只计一个主方向，可同时拥有多个关联方向与证据标签。
 
-| 编号 | 方向 | 层级 | v2 included works |
+| 编号 | 方向 | 层级 | 纳入工作 |
 |---|---|---|---:|
-${topicEntries.map(([key, item]) => `| ${item.code} | [${item.label}](/frontiers/${topicSlug(key)}) | ${item.layer} | ${works.filter((work) => work.primary_topic === key && work.relevance?.status === 'included').length} |`).join('\n')}
+${topicEntries.map(([key, item]) => `| ${item.code} | [${item.label}](/frontiers/${topicSlug(key)}) | ${layerLabel[item.layer] ?? item.layer} | ${works.filter((work) => work.primary_topic === key && work.relevance?.status === 'included').length} |`).join('\n')}
 `)
 
-console.log(`Generated v2 coverage pages: ${preprints.length} preprints, ${publications.length} publications, ${official.length} strict official records, ${officialPrograms.length} program/pending records, ${repositories.length} repositories, ${works.length} works.`)
+const stripGeneratedPageMarkers = (directory) => {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const target = path.join(directory, entry.name)
+    if (entry.isDirectory()) {
+      stripGeneratedPageMarkers(target)
+    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      const content = fs.readFileSync(target, 'utf8')
+      const cleaned = content.replace(/\n?<!-- 更新标记：[^\n]*-->\n?/g, '\n')
+      if (cleaned !== content) fs.writeFileSync(target, cleaned)
+    }
+  }
+}
+stripGeneratedPageMarkers(docs)
+
+console.log(`Generated current coverage pages: ${preprints.length} preprints, ${publications.length} publications, ${official.length} strict official records, ${officialPrograms.length} program/pending records, ${repositories.length} repositories, ${works.length} works.`)

@@ -10,9 +10,25 @@ outline: deep
 
 人类视频、无标签动作和 egocentric/接触表示成为弱信号主线；flow policy 扩散，触觉首次进入 VLA 统一空间，但世界模型的闭环控制证据仍弱。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 270 | 103 | 3 | 48 | 22 | 94 |
+本季度共纳入 1022 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 93 | 9.1% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 80 | 7.8% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 34 | 3.3% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 91 | 8.9% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 180 | 17.6% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 57 | 5.6% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 83 | 8.1% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 262 | 25.6% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 32 | 3.1% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 38 | 3.7% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 49 | 4.8% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 14 | 1.4% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 6 | 0.6% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 2 | 0.2% |
 
 **阶段证据链：**
 
@@ -25,9 +41,25 @@ outline: deep
 
 fast–slow 形成架构簇，world model 从生成与适配转向后训练、搜索和 MPC；跨本体问题从 adapter 转向数据和动作表示。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 383 | 196 | 6 | 34 | 45 | 102 |
+本季度共纳入 1073 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 153 | 14.3% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 75 | 7.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 73 | 6.8% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 88 | 8.2% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 177 | 16.5% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 54 | 5.0% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 58 | 5.4% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 267 | 24.9% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 21 | 2.0% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 33 | 3.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 48 | 4.5% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 19 | 1.8% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 4 | 0.4% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 2 | 0.2% |
 
 **阶段证据链：**
 
@@ -40,9 +72,25 @@ fast–slow 形成架构簇，world model 从生成与适配转向后训练、�
 
 latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异步触发重写大小脑接口，3 月集中出现 executable alignment、长时接触和真实评测。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 493 | 224 | 8 | 69 | 59 | 133 |
+本季度共纳入 1440 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 199 | 13.8% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 68 | 4.7% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 111 | 7.7% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 150 | 10.4% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 245 | 17.0% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 87 | 6.0% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 79 | 5.5% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 320 | 22.2% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 38 | 2.6% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 50 | 3.5% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 76 | 5.3% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 10 | 0.7% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 4 | 0.3% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 3 | 0.2% |
 
 **阶段证据链：**
 
@@ -55,9 +103,25 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 
 连续推理、coarse-to-fine 调度、3D trace 与 real-time execution 使 VLA 竞争进入系统层；触觉从融合模态升级为预测与 world model 通道。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 695 | 320 | 8 | 99 | 102 | 166 |
+本季度共纳入 1686 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 255 | 15.1% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 91 | 5.4% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 168 | 10.0% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 174 | 10.3% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 254 | 15.1% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 74 | 4.4% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 78 | 4.6% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 368 | 21.8% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 54 | 3.2% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 52 | 3.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 83 | 4.9% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 23 | 1.4% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 2 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 6 | 0.4% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 4 | 0.2% |
 
 **阶段证据链：**
 
@@ -70,5 +134,3 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 ## 2026 年 7 月完整月与 8 月早期快照
 
 7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 4 日尚无可归档 arXiv v1，暂不从 0 条样本推断趋势。
-
-<!-- 更新标记：季度演进 最后更新 2026.08 -->

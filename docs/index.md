@@ -30,8 +30,8 @@ features:
     link: /database/publications
     linkText: 浏览发表数据库
   - icon: 🧭
-    title: 15 类开放主题体系
-    details: 五类稳定月度序列之外，新增人形全身、导航、HRI、数据引擎、安全、持续学习等方向
+    title: 15 个研究方向
+    details: 从基础模型、策略学习延伸到人形全身、导航、HRI、数据引擎、安全与持续学习
     link: /frontiers/
     linkText: 查看前沿方向
   - icon: 💻
@@ -40,30 +40,30 @@ features:
     link: /analysis/open-source-ecosystem
     linkText: 查看开源雷达
   - icon: 🧠
-    title: 具身基础模型
-    details: 稳定月度序列：VLA、generalist policy 与多任务预训练的跨月演进
-    link: /directions/foundation-models
-    linkText: 查看专题
+    title: 具身基础模型与通才策略
+    details: VLA、generalist policy、多任务预训练与通用执行接口
+    link: /frontiers/foundation-models
+    linkText: 查看方向
   - icon: ⚡
-    title: 大小脑与双系统
-    details: 高层推理与低层控制从概念分工走向可执行系统
-    link: /directions/dual-system
-    linkText: 查看专题
+    title: 分层推理、规划与记忆
+    details: 高层推理、任务规划、记忆与低层策略从概念分工走向实时闭环
+    link: /frontiers/reasoning-planning
+    linkText: 查看方向
   - icon: 🦾
-    title: 灵巧操作
+    title: 灵巧、双臂与接触操作
     details: 双臂、触觉、臂手协同与接触密集操作
-    link: /directions/dexterous-manipulation
-    linkText: 查看专题
+    link: /frontiers/dexterous-manipulation
+    linkText: 查看方向
   - icon: 🌐
-    title: 世界模型
+    title: 世界模型与预测控制
     details: 只统计真正服务动作、规划、控制或机器人数据生成的工作
-    link: /directions/world-models
-    linkText: 查看专题
+    link: /frontiers/world-models
+    linkText: 查看方向
   - icon: 🔁
-    title: 通用机器人学习
-    details: 稳定月度序列：跨任务、跨本体、数据规模化与 diffusion/flow policy
-    link: /directions/general-robot-learning
-    linkText: 查看专题
+    title: 策略学习与优化
+    details: 模仿与强化学习、diffusion/flow policy、跨任务优化和部署后训练
+    link: /frontiers/policy-learning
+    linkText: 查看方向
   - icon: ✅
     title: 同行评审锚点
     details: 将 arXiv 信号与官方 proceedings、OpenReview 和期刊页面分开核验
@@ -78,4 +78,8 @@ features:
   <div class="radar-kpi"><strong>42 + 4</strong><span>GitHub 已审计 + 新仓观察</span></div>
 </div>
 
-> 本站把“母集发现”“自动相关候选”“精选精读”“趋势推断”和“战略判断”分层呈现。五类月度序列用于保持历史可比性，15 类 v2 体系用于发现不属于旧框架的早期方向；所有统计均由结构化数据和脚本派生。
+本站直接呈现当前研究全景：15 个方向使用统一主分类，每篇论文可附带多个关联方向。下面的占比趋势和共现关系均由结构化数据生成；流量变化是研究注意力线索，不单独等同于技术成熟度。
+
+<ResearchVisuals />
+
+> 数据截至 2026 年 8 月 4 日。月度图只使用最近 12 个完整月，8 月月初快照不与完整月份混算；桑基图展示同一论文的方向共现，不表示方向发生迁移。

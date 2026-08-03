@@ -14,11 +14,9 @@ outline: deep
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 
-## 为什么旧数据看起来很多，实际仍然小
+## 当前证据库结构
 
-旧版的 3,092 条记录来自五组 Semantic Scholar 关键词宽召回，其中只有 30 条正式发表锚点。它没有把 arXiv 全量采集结果并入主库，Semantic Scholar 的分页 token 也未完整消费；同时，旧 schema 强制要求 arXiv ID，导致没有预印本映射的期刊/会议论文无法入库。
-
-新版拆成三条独立管线：
+网站统一使用三条独立管线，并以 canonical work 合并同一研究的预印本、正式发表与代码仓库：
 
 1. **arXiv 母集**：完整 cs.RO 月度拉取，再补 cs.AI/CV/LG 中的机器人与具身主题；月份始终按 v1。
 2. **正式发表母集**：ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR、Science Robotics 独立采集；无 arXiv ID 也可存在。
@@ -37,7 +35,7 @@ outline: deep
 | Science Robotics | 274 | 274 | 44 | 48 | 178 | 245 | 16 | 274 |
 | T-RO | 554 | 554 | 132 | 97 | 317 | 521 | 250 | 554 |
 
-“母集”是 venue 内采到的全部论文版本；“直接候选”是 v2 词表与语境自动筛出的具身智能工作，并非最终趋势结论。DBLP/Crossref/Semantic Scholar 只承担发现或字段补全；严格同行评审标签仍需官方 proceedings、OpenReview 最终录用或出版社文章页。
+“母集”是 venue 内采到的全部论文版本；“直接候选”是当前词表与语境自动筛出的具身智能工作，并非最终趋势结论。DBLP/Crossref/Semantic Scholar 只承担发现或字段补全；严格同行评审标签仍需官方 proceedings、OpenReview 最终录用或出版社文章页。
 
 ## 严格官方容器对账
 
@@ -52,7 +50,7 @@ outline: deep
 
 截至截点另有 2951 条 ICRA 2026 官方 program 记录和 210 条 RSS 2026 官方录用记录。前者可能含 RA-L/T-RO/RAM 展示，后者尚待 RSS 22 proceedings；两类均进入发现母集，但严格覆盖率分子为 0。
 
-## v2 方向体系：从五类扩展到 15 类
+## 当前 15 个研究方向
 
 | 编号 | 方向 | 层级 | 代表检索表达 |
 |---|---|---|---|
@@ -87,6 +85,4 @@ outline: deep
 
 - IEEE Xplore、Science 与 SAGE 的 DOI 已进入发现母集；严格标签要继续逐条回到出版社页面核验。
 - ICRA/IROS 的 PaperCept 节目单可能含 RA-L 转投展示，canonical 合并时必须避免双计。
-- 新 taxonomy 正在通过正例、边界例和反例回归；完成前，旧五类月度序列保留作稳定对照，不把分类变化误写成趋势变化。
-
-<!-- 更新标记：语料扩充与覆盖审计 最后更新 2026.08 -->
+- 分类规则持续通过正例、边界例和反例回归；每次规则变化都会单独记录，不能把分类迁移误写成趋势变化。

@@ -1,6 +1,6 @@
 # 具身智能研究雷达
 
-> **版本**：v2.2 · **数据截点**：2026 年 8 月 4 日<br>
+> **数据截点**：2026 年 8 月 4 日<br>
 > **主分析期**：2025 年 7 月—2026 年 6 月 · **7 月完整月** · **8 月前瞻快照**：1–4 日
 
 ---
@@ -8,13 +8,13 @@
 
 ## 执行摘要
 
-> **版本**：v2.2 · **更新日期**：2026 年 8 月 4 日<br>
-> **主分析期**：2025.07–2026.06 · **精读**：84 篇 · **官方评审锚点**：30 条
+> **数据截至**：2026 年 8 月 4 日 · **主分析期**：2025.07–2026.06<br>
+> **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
 
-::: tip v2.2 扩容说明
-旧五类月度序列继续作为可比的精选分析层；它不再代表全部数据量。新版同时维护两年宽召回母库、正式发表母库、严格官方 proceedings 和 GitHub 证据，并将方向体系扩展为 15 类。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
+::: tip 统一分析口径
+全站主题结构统一使用当前 15 个研究方向，并同时维护 arXiv 母库、正式发表母库、严格官方 proceedings 与 GitHub 证据。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
 :::
 
 ::: info 8 月更新
@@ -31,7 +31,7 @@
 
 ### 六个年度判断
 
-1. **基础模型是最大共识，不再是最早信号。** 主分析期统一查询口径下，具身基础模型候选占比最高；方向已经拥挤，差异转向执行、数据与后训练。
+1. **策略学习构成数量底座，VLA 是最显眼的命名共识。** 真正拉开差异的部分已转向执行、数据、后训练和真实机器人闭环。
 2. **大小脑的真正拐点是实时系统。** fast–slow 名称本身价值有限，completion gating、continuous reasoning、verifier 和 3D trace 才是接口创新。
 3. **world model 的淘汰赛开始。** 能否在同算力下提高闭环规划、RL 样本效率或失败恢复，将把控制模型与普通视频生成分开。
 4. **触觉从“小众传感器”变成领先指标。** 它最可能先在接触失败恢复、材料/滑移预测和灵巧 world model 中兑现。
@@ -41,8 +41,8 @@
 ### 精选月度分析层
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>1841</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>633</strong><span>同比基线候选</span></div>
+  <div class="radar-kpi"><strong>5221</strong><span>主分析期候选</span></div>
+  <div class="radar-kpi"><strong>3214</strong><span>同比基线候选</span></div>
   <div class="radar-kpi"><strong>59/84</strong><span>精读真机确认</span></div>
   <div class="radar-kpi"><strong>16/84</strong><span>精读明确开放披露</span></div>
 </div>
@@ -69,30 +69,28 @@
 
 按当前证据排序：**实时 VLA 执行栈、verifier/自纠错、部署数据飞轮、控制导向 world model、触觉预测通道、跨本体动作接口、3D trace，以及高风险的 Embodied Agent OS。** 详见[未来判断](/analysis/weak-signals)。
 
-<!-- 更新标记：执行摘要 最后更新 2026.08 -->
-
 ---
 
 
 ## 月度研究雷达
 
-> 主分析期按 arXiv v1 月份归档；2026 年 7 月已收完整月，2026 年 8 月另列月初快照。候选数量衡量统一查询下的研究密度，精读样本用于技术判断。
+> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 15 个研究方向。2026 年 8 月仍是月初快照，因此保留 7 月参照数但不计算误导性的百分比。
 
 | 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
-| [2025 年 7 月](/monthly/2025-07) | 57 | -50 | -46.7% | +31 | +119.2% | 通用机器人学习（23） | 7 | 6/7 |
-| [2025 年 8 月](/monthly/2025-08) | 75 | +18 | +31.6% | +55 | +275.0% | 具身基础模型（29） | 7 | 5/7 |
-| [2025 年 9 月](/monthly/2025-09) | 138 | +63 | +84.0% | +97 | +236.6% | 具身基础模型（57） | 7 | 5/7 |
-| [2025 年 10 月](/monthly/2025-10) | 140 | +2 | +1.4% | +79 | +129.5% | 具身基础模型（72） | 7 | 4/7 |
-| [2025 年 11 月](/monthly/2025-11) | 119 | -21 | -15.0% | +84 | +240.0% | 具身基础模型（65） | 7 | 5/7 |
-| [2025 年 12 月](/monthly/2025-12) | 124 | +5 | +4.2% | +84 | +210.0% | 具身基础模型（59） | 7 | 5/7 |
-| [2026 年 1 月](/monthly/2026-01) | 85 | -39 | -31.5% | +55 | +183.3% | 具身基础模型（36） | 7 | 3/7 |
-| [2026 年 2 月](/monthly/2026-02) | 174 | +89 | +104.7% | +130 | +295.5% | 具身基础模型（84） | 7 | 5/7 |
-| [2026 年 3 月](/monthly/2026-03) | 234 | +60 | +34.5% | +155 | +196.2% | 具身基础模型（104） | 7 | 5/7 |
-| [2026 年 4 月](/monthly/2026-04) | 134 | -100 | -42.7% | +92 | +219.0% | 具身基础模型（57） | 7 | 4/7 |
-| [2026 年 5 月](/monthly/2026-05) | 203 | +69 | +51.5% | +95 | +88.0% | 具身基础模型（101） | 7 | 6/7 |
-| [2026 年 6 月](/monthly/2026-06) | 358 | +155 | +76.4% | +251 | +234.6% | 具身基础模型（162） | 7 | 6/7 |
-| [2026 年 7 月（完整月）](/monthly/2026-07) | 176 | -182 | -50.8% | +119 | +208.8% | 具身基础模型（84） | 20 | 13/20 |
+| [2025 年 7 月](/monthly/2025-07) | 265 | -82 | -23.6% | +67 | +33.8% | D8 · 策略学习（72） | 7 | 6/7 |
+| [2025 年 8 月](/monthly/2025-08) | 288 | +23 | +8.7% | +143 | +98.6% | D5 · 人形与全身控制（66） | 7 | 5/7 |
+| [2025 年 9 月](/monthly/2025-09) | 469 | +181 | +62.8% | +151 | +47.5% | D8 · 策略学习（124） | 7 | 5/7 |
+| [2025 年 10 月](/monthly/2025-10) | 427 | -42 | -9.0% | +125 | +41.4% | D8 · 策略学习（105） | 7 | 4/7 |
+| [2025 年 11 月](/monthly/2025-11) | 347 | -80 | -18.7% | +124 | +55.6% | D8 · 策略学习（87） | 7 | 5/7 |
+| [2025 年 12 月](/monthly/2025-12) | 299 | -48 | -13.8% | +91 | +43.8% | D8 · 策略学习（75） | 7 | 5/7 |
+| [2026 年 1 月](/monthly/2026-01) | 280 | -19 | -6.4% | +149 | +113.7% | D8 · 策略学习（72） | 7 | 3/7 |
+| [2026 年 2 月](/monthly/2026-02) | 466 | +186 | +66.4% | +203 | +77.2% | D8 · 策略学习（91） | 7 | 5/7 |
+| [2026 年 3 月](/monthly/2026-03) | 694 | +228 | +48.9% | +281 | +68.0% | D8 · 策略学习（157） | 7 | 5/7 |
+| [2026 年 4 月](/monthly/2026-04) | 392 | -302 | -43.5% | +145 | +58.7% | D8 · 策略学习（89） | 7 | 4/7 |
+| [2026 年 5 月](/monthly/2026-05) | 559 | +167 | +42.6% | +140 | +33.4% | D8 · 策略学习（138） | 7 | 6/7 |
+| [2026 年 6 月](/monthly/2026-06) | 735 | +176 | +31.5% | +388 | +111.8% | D8 · 策略学习（141） | 7 | 6/7 |
+| [2026 年 7 月（完整月）](/monthly/2026-07) | 506 | -229 | -31.2% | +241 | +90.9% | D8 · 策略学习（102） | 20 | 13/20 |
 | [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |
 
 ### 怎么读月度页
@@ -102,18 +100,16 @@
 3. 用官方同行评审锚点区分“arXiv 密集”与“已有独立评审路线”。
 4. 最后看弱信号与反证；前者寻找未来，后者防止把命名潮误判为能力跃迁。
 
-<!-- 更新标记：月度总览 最后更新 2026.08 -->
-
 ---
 
 
 ## 2025 年 7 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-06，同比月为 2024-07。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-06，同比月为 2024-07。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>57</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>265</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>6/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -123,33 +119,18 @@
 
 人类视频开始被拆成可迁移的动作先验；与此同时，空间增强很热，但尚未等于通用性。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 17 | 29.8% | 38 | -21 | -55.3% | 4 | +13 | +325.0% |
-| [大小脑与双系统](/directions/dual-system) | 1 | 1.8% | 2 | -1 | -50.0% | 0 | +1 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 12 | 21.1% | 20 | -8 | -40.0% | 6 | +6 | +100.0% |
-| [世界模型](/directions/world-models) | 4 | 7.0% | 14 | -10 | -71.4% | 3 | +1 | +33.3% |
-| [通用机器人学习](/directions/general-robot-learning) | 23 | 40.4% | 33 | -10 | -30.3% | 13 | +10 | +76.9% |
-| **总计** | **57** | **100.0%** | **107** | **-50** | **-46.7%** | **26** | **+31** | **+119.2%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,060</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>265</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>265</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>187</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>347</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 20 | 7.5% | 29 | -9 | -31.0% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 21 | 7.9% | 23 | -2 | -8.7% |
@@ -169,8 +150,6 @@
 | **总计** | **265** | **100.0%** | **347** | **-82** | **-23.6%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -235,13 +214,13 @@
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) | 2025-07-02 | 大小脑与双系统 | 用 VLM、视频扩散式情景世界模型和 flow-matching 低层策略组成三系统，在约 36 Hz 下兼顾记忆、未来预测与真实机器人长时序控制。 | 真机 · 长时序 · 开放资产 |
-| [EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling](https://arxiv.org/abs/2507.05198) | 2025-07-07 | 世界模型 | 联合可微物理参数对齐与条件视频扩散外观对齐，缩小 Real2Sim2Real 差距，并报告真实任务平均成功率提升 29.17%。 | 真机 · 开放资产 |
-| [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) | 2025-07-21 | 具身基础模型 | GR-3 以网络视觉语言数据、VR 人类轨迹和机器人轨迹协同训练，展示新物体/环境/抽象指令、双臂移动与长时序真实任务泛化。 | 真机 · 多任务 · 长时序 |
-| [H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523) | 2025-07-31 | 通用机器人学习 | 以 2B diffusion transformer 先学大规模第一视角人类手部先验，再用模块化动作编解码器适配不同机器人，显著提升双臂真实操作。 | 真机 · 跨本体 |
-| [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) | 2025-07-01 | 具身基础模型 | 把现成视觉几何基础模型的深度感知特征以即插即用方式注入 VLA，在无需额外深度传感器的前提下提升仿真与真实场景的空间操作。 | 真机 |
-| [EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow](https://arxiv.org/abs/2507.06224) | 2025-07-08 | 通用机器人学习 | 从无动作标签视频预测 embodiment-centric flow，再借 URDF 约束转成可执行动作，覆盖遮挡、柔性物体及非位移操作。 | 真机 |
-| [Towards Human-level Dexterity via Robot Learning](https://arxiv.org/abs/2507.09117) | 2025-07-12 | 灵巧操作 | 以结构化探索、采样式规划和视触觉人类示范为主线，总结可扩展多指灵巧操作强化学习的一套方法体系。 | 摘要未确认 |
+| [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) | 2025-07-02 | 具身基础模型与通才策略 | 用 VLM、视频扩散式情景世界模型和 flow-matching 低层策略组成三系统，在约 36 Hz 下兼顾记忆、未来预测与真实机器人长时序控制。 | 真机 · 长时序 · 开放资产 |
+| [EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling](https://arxiv.org/abs/2507.05198) | 2025-07-07 | 世界模型与预测控制 | 联合可微物理参数对齐与条件视频扩散外观对齐，缩小 Real2Sim2Real 差距，并报告真实任务平均成功率提升 29.17%。 | 真机 · 开放资产 |
+| [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) | 2025-07-21 | 具身基础模型与通才策略 | GR-3 以网络视觉语言数据、VR 人类轨迹和机器人轨迹协同训练，展示新物体/环境/抽象指令、双臂移动与长时序真实任务泛化。 | 真机 · 多任务 · 长时序 |
+| [H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523) | 2025-07-31 | 灵巧、双臂与接触操作 | 以 2B diffusion transformer 先学大规模第一视角人类手部先验，再用模块化动作编解码器适配不同机器人，显著提升双臂真实操作。 | 真机 · 跨本体 |
+| [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) | 2025-07-01 | 具身基础模型与通才策略 | 把现成视觉几何基础模型的深度感知特征以即插即用方式注入 VLA，在无需额外深度传感器的前提下提升仿真与真实场景的空间操作。 | 真机 |
+| [EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow](https://arxiv.org/abs/2507.06224) | 2025-07-08 | 灵巧、双臂与接触操作 | 从无动作标签视频预测 embodiment-centric flow，再借 URDF 约束转成可执行动作，覆盖遮挡、柔性物体及非位移操作。 | 真机 |
+| [Towards Human-level Dexterity via Robot Learning](https://arxiv.org/abs/2507.09117) | 2025-07-12 | 策略学习与优化 | 以结构化探索、采样式规划和视触觉人类示范为主线，总结可扩展多指灵巧操作强化学习的一套方法体系。 | 摘要未确认 |
 
 精读样本明确开放披露 2/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -258,18 +237,16 @@
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-07 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2025 年 8 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-07，同比月为 2024-08。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-07，同比月为 2024-08。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>75</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>288</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>5/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>1</strong><span>官方评审锚点</span></div>
@@ -279,33 +256,18 @@
 
 视频生成器开始越过“数据增强”，直接扮演策略；与此同时，世界模型仍更像适配器，而非可靠规划器。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 29 | 38.7% | 17 | +12 | +70.6% | 0 | +29 | 新增 |
-| [大小脑与双系统](/directions/dual-system) | 0 | 0.0% | 1 | -1 | -100.0% | 0 | 0 | — |
-| [灵巧操作](/directions/dexterous-manipulation) | 11 | 14.7% | 12 | -1 | -8.3% | 8 | +3 | +37.5% |
-| [世界模型](/directions/world-models) | 6 | 8.0% | 4 | +2 | +50.0% | 1 | +5 | +500.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 29 | 38.7% | 23 | +6 | +26.1% | 11 | +18 | +163.6% |
-| **总计** | **75** | **100.0%** | **57** | **+18** | **+31.6%** | **20** | **+55** | **+275.0%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,066</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>288</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>288</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>213</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>265</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 26 | 9.0% | 20 | +6 | +30.0% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 25 | 8.7% | 21 | +4 | +19.0% |
@@ -325,8 +287,6 @@
 | **总计** | **288** | **100.0%** | **265** | **+23** | **+8.7%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -391,13 +351,13 @@
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [EO-1: An Open Unified Embodied Foundation Model for General Robot Control](https://arxiv.org/abs/2508.21112) | 2025-08-28 | 具身基础模型 | EO-1 在统一 decoder 中结合自回归与 flow matching，以 EO-Data1.5M 做交错 vision-text-action 预训练，覆盖多本体长时序灵巧控制。 | 真机 · 跨本体 · 长时序 · 开放资产 |
-| [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08-05 | 通用机器人学习 | 用一次训练的离线世界模型承载 diffusion policy 的强化学习适配，避开数百万次真实交互，并在 CALVIN 与真实技能上验证。 | 真机 · 多任务 · 开放资产 |
-| [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | 2025-08-04 | 具身基础模型 | 通过检索 10–20 条新任务示范，把 in-context adaptation 后置注入预训练 π0-FAST，无需参数更新即可快速教新任务。 | 多任务 · 开放资产 |
-| [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706) | 2025-08-12 | 灵巧操作 | 以双路触觉编码器和 135K 样本 ObjTac 对齐视觉、语言与多类触觉传感器，在夹爪和灵巧手真实任务上显著增益。 | 真机 · 开放资产 |
-| [Video Generators are Robot Policies](https://arxiv.org/abs/2508.00795) | 2025-08-01 | 通用机器人学习 | 把机器人视频生成与动作生成端到端联合，显示无动作视频可在少量机器人示范下提升新物体、背景和任务的真实泛化。 | 真机 |
-| [Masquerade: Learning from In-the-wild Human Videos using Data-Editing](https://arxiv.org/abs/2508.09976) | 2025-08-13 | 通用机器人学习 | 把野外第一视角人类视频经 3D 手姿态、去人体和机器人叠加编辑为机器人化示范，675K 帧预训练后仅需每任务 50 条机器人示范。 | 长时序 |
-| [GWM: Towards Scalable Gaussian World Models for Robotic Manipulation](https://arxiv.org/abs/2508.17600) | 2025-08-25 | 世界模型 | 以 3D VAE、latent DiT 与 Gaussian Splatting 预测动作后的三维高斯场，既作表征预训练也作模型式 RL 的神经模拟器。 | 真机 |
+| [EO-1: An Open Unified Embodied Foundation Model for General Robot Control](https://arxiv.org/abs/2508.21112) | 2025-08-28 | 具身基础模型与通才策略 | EO-1 在统一 decoder 中结合自回归与 flow matching，以 EO-Data1.5M 做交错 vision-text-action 预训练，覆盖多本体长时序灵巧控制。 | 真机 · 跨本体 · 长时序 · 开放资产 |
+| [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08-05 | 策略学习与优化 | 用一次训练的离线世界模型承载 diffusion policy 的强化学习适配，避开数百万次真实交互，并在 CALVIN 与真实技能上验证。 | 真机 · 多任务 · 开放资产 |
+| [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | 2025-08-04 | 具身基础模型与通才策略 | 通过检索 10–20 条新任务示范，把 in-context adaptation 后置注入预训练 π0-FAST，无需参数更新即可快速教新任务。 | 多任务 · 开放资产 |
+| [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706) | 2025-08-12 | 触觉、力觉与多模态身体感知 | 以双路触觉编码器和 135K 样本 ObjTac 对齐视觉、语言与多类触觉传感器，在夹爪和灵巧手真实任务上显著增益。 | 真机 · 开放资产 |
+| [Video Generators are Robot Policies](https://arxiv.org/abs/2508.00795) | 2025-08-01 | 灵巧、双臂与接触操作 | 把机器人视频生成与动作生成端到端联合，显示无动作视频可在少量机器人示范下提升新物体、背景和任务的真实泛化。 | 真机 |
+| [Masquerade: Learning from In-the-wild Human Videos using Data-Editing](https://arxiv.org/abs/2508.09976) | 2025-08-13 | 数据引擎与人类视频学习 | 把野外第一视角人类视频经 3D 手姿态、去人体和机器人叠加编辑为机器人化示范，675K 帧预训练后仅需每任务 50 条机器人示范。 | 长时序 |
+| [GWM: Towards Scalable Gaussian World Models for Robotic Manipulation](https://arxiv.org/abs/2508.17600) | 2025-08-25 | 世界模型与预测控制 | 以 3D VAE、latent DiT 与 Gaussian Splatting 预测动作后的三维高斯场，既作表征预训练也作模型式 RL 的神经模拟器。 | 真机 |
 
 精读样本明确开放披露 4/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -414,18 +374,16 @@
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-08 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2025 年 9 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-08，同比月为 2024-09。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-08，同比月为 2024-09。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>138</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>469</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>5/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -435,33 +393,18 @@
 
 flow matching 正在成为通用策略的新执行底座；与此同时，在线搜索被塞进 VLA 推理环。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 57 | 41.3% | 29 | +28 | +96.6% | 5 | +52 | +1040.0% |
-| [大小脑与双系统](/directions/dual-system) | 2 | 1.4% | 0 | +2 | 新增 | 0 | +2 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 25 | 18.1% | 11 | +14 | +127.3% | 7 | +18 | +257.1% |
-| [世界模型](/directions/world-models) | 12 | 8.7% | 6 | +6 | +100.0% | 4 | +8 | +200.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 42 | 30.4% | 29 | +13 | +44.8% | 25 | +17 | +68.0% |
-| **总计** | **138** | **100.0%** | **75** | **+63** | **+84.0%** | **41** | **+97** | **+236.6%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,512</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>469</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>469</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>284</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>288</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 47 | 10.0% | 26 | +21 | +80.8% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 34 | 7.2% | 25 | +9 | +36.0% |
@@ -481,8 +424,6 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 | **总计** | **469** | **100.0%** | **288** | **+181** | **+62.8%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -547,13 +488,13 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation](https://arxiv.org/abs/2509.05513) | 2025-09-05 | 通用机器人学习 | OpenEgo 统一六个公开视频集为 1107 小时、290 任务、600+ 环境的手姿态与时间定位动作原语数据，服务灵巧 VLA 预训练。 | 开放资产 |
-| [ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training](https://arxiv.org/abs/2509.01819) | 2025-09-01 | 通用机器人学习 | ManiFlow 用 consistency flow 将高维动作生成压到 1–2 步，并在单臂、双臂与人形真实平台上验证多模态通用操作。 | 真机 · 多任务 |
-| [Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video](https://arxiv.org/abs/2509.20286) | 2025-09-24 | 通用机器人学习 | PAD 将单条人类视频解析成机器人关键点动作，用双臂任务与运动规划无仿真扩增，再蒸馏成可泛化视觉运动策略。 | 真机 · 多任务 |
-| [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | 2025-09-26 | 大小脑与双系统 | VLA-Reasoner 以世界模型 rollout、KDE 置信采样和 MCTS 为现成 VLA 增加测试时前瞻，在真实长时序任务上纠偏。 | 真机 · 长时序 |
-| [Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions](https://arxiv.org/abs/2509.07445) | 2025-09-09 | 灵巧操作 | Text2Touch 让 LLM 为 70+ 环境变量设计短奖励，经 sim-to-real 蒸馏在四指触觉手上完成多轴 in-hand rotation。 | 真机 |
-| [Latent Action Pretraining Through World Modeling](https://arxiv.org/abs/2509.18428) | 2025-09-22 | 世界模型 | LAWM 通过世界建模从无标签人/机器人视频学习 latent action，使较小模仿学习模型跨任务、环境与本体迁移。 | 真机 |
-| [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661) | 2025-09-29 | 灵巧操作 | CEDex 用人类式接触表征、拓扑合并与 SDF 物理约束，把同一抓取先验扩展到任意形态的灵巧手并规模化生成数据。 | 跨本体 |
+| [OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation](https://arxiv.org/abs/2509.05513) | 2025-09-05 | 灵巧、双臂与接触操作 | OpenEgo 统一六个公开视频集为 1107 小时、290 任务、600+ 环境的手姿态与时间定位动作原语数据，服务灵巧 VLA 预训练。 | 开放资产 |
+| [ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training](https://arxiv.org/abs/2509.01819) | 2025-09-01 | 策略学习与优化 | ManiFlow 用 consistency flow 将高维动作生成压到 1–2 步，并在单臂、双臂与人形真实平台上验证多模态通用操作。 | 真机 · 多任务 |
+| [Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video](https://arxiv.org/abs/2509.20286) | 2025-09-24 | 数据引擎与人类视频学习 | PAD 将单条人类视频解析成机器人关键点动作，用双臂任务与运动规划无仿真扩增，再蒸馏成可泛化视觉运动策略。 | 真机 · 多任务 |
+| [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | 2025-09-26 | 具身基础模型与通才策略 | VLA-Reasoner 以世界模型 rollout、KDE 置信采样和 MCTS 为现成 VLA 增加测试时前瞻，在真实长时序任务上纠偏。 | 真机 · 长时序 |
+| [Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions](https://arxiv.org/abs/2509.07445) | 2025-09-09 | 灵巧、双臂与接触操作 | Text2Touch 让 LLM 为 70+ 环境变量设计短奖励，经 sim-to-real 蒸馏在四指触觉手上完成多轴 in-hand rotation。 | 真机 |
+| [Latent Action Pretraining Through World Modeling](https://arxiv.org/abs/2509.18428) | 2025-09-22 | 世界模型与预测控制 | LAWM 通过世界建模从无标签人/机器人视频学习 latent action，使较小模仿学习模型跨任务、环境与本体迁移。 | 真机 |
+| [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661) | 2025-09-29 | 灵巧、双臂与接触操作 | CEDex 用人类式接触表征、拓扑合并与 SDF 物理约束，把同一抓取先验扩展到任意形态的灵巧手并规模化生成数据。 | 跨本体 |
 
 精读样本明确开放披露 1/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -570,18 +511,16 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-09 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2025 年 10 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-09，同比月为 2024-10。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-09，同比月为 2024-10。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>140</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>427</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>4/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -591,33 +530,18 @@ flow matching 正在成为通用策略的新执行底座；与此同时，在线
 
 fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱动双臂学习成为数据规模化的第二战场。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 72 | 51.4% | 57 | +15 | +26.3% | 8 | +64 | +800.0% |
-| [大小脑与双系统](/directions/dual-system) | 2 | 1.4% | 2 | 0 | 0.0% | 0 | +2 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 13 | 9.3% | 25 | -12 | -48.0% | 12 | +1 | +8.3% |
-| [世界模型](/directions/world-models) | 16 | 11.4% | 12 | +4 | +33.3% | 14 | +2 | +14.3% |
-| [通用机器人学习](/directions/general-robot-learning) | 37 | 26.4% | 42 | -5 | -11.9% | 27 | +10 | +37.0% |
-| **总计** | **140** | **100.0%** | **138** | **+2** | **+1.4%** | **61** | **+79** | **+129.5%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,348</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>427</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>427</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>241</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>469</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 59 | 13.8% | 47 | +12 | +25.5% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 29 | 6.8% | 34 | -5 | -14.7% |
@@ -637,8 +561,6 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 | **总计** | **427** | **100.0%** | **469** | **-42** | **-9.0%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -703,13 +625,13 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274) | 2025-10-11 | 具身基础模型 | X-VLA 用每个数据源的软提示吸收跨本体异构数据，在 6 个仿真与 3 台真实机器人上兼顾灵巧性、适配速度和规模化。 | 真机 · 跨本体 |
-| [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) | 2025-10-24 | 通用机器人学习 | 将无脚本真实人类手部视频自动切分、描述并恢复 3D 动作，构成 100 万 episode/2600 万帧的 hand-VLA 预训练语料。 | 真机 · 多任务 |
-| [VLA-R1: Enhancing Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2510.01623) | 2025-10-02 | 大小脑与双系统 | VLA-R1 用 RLVR/GRPO 与 13K 条 affordance-trajectory CoT 数据共同强化空间推理和动作执行，并覆盖仿真与真实机器人。 | 真机 |
-| [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | 2025-10-11 | 世界模型 | Ctrl-World 以多视角预测、逐帧动作条件和姿态记忆支持通用策略的长时序 imagination rollout，用于低成本评估和改进。 | 长时序 |
-| [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337) | 2025-10-21 | 大小脑与双系统 | MoTVLA 让预训练 VLM 承担慢速语义规划、专用 transformer 生成快速运动分解，再驱动 action expert 实时执行。 | 真机 |
-| [VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators](https://arxiv.org/abs/2510.00406) | 2025-10-01 | 世界模型 | VLA-RFT 把真实交互训练的动作条件世界模型当可控模拟器，以可验证轨迹奖励在少于 400 步内完成 VLA 强化微调。 | 摘要未确认 |
-| [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475) | 2025-10-09 | 灵巧操作 | DexMan 从无标定第三视角人类或生成视频估计手物运动，以接触奖励在仿真人形机器人上学习双臂灵巧技能。 | 摘要未确认 |
+| [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274) | 2025-10-11 | 策略学习与优化 | X-VLA 用每个数据源的软提示吸收跨本体异构数据，在 6 个仿真与 3 台真实机器人上兼顾灵巧性、适配速度和规模化。 | 真机 · 跨本体 |
+| [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) | 2025-10-24 | 具身基础模型与通才策略 | 将无脚本真实人类手部视频自动切分、描述并恢复 3D 动作，构成 100 万 episode/2600 万帧的 hand-VLA 预训练语料。 | 真机 · 多任务 |
+| [VLA-R1: Enhancing Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2510.01623) | 2025-10-02 | 具身基础模型与通才策略 | VLA-R1 用 RLVR/GRPO 与 13K 条 affordance-trajectory CoT 数据共同强化空间推理和动作执行，并覆盖仿真与真实机器人。 | 真机 |
+| [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | 2025-10-11 | 世界模型与预测控制 | Ctrl-World 以多视角预测、逐帧动作条件和姿态记忆支持通用策略的长时序 imagination rollout，用于低成本评估和改进。 | 长时序 |
+| [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337) | 2025-10-21 | 具身基础模型与通才策略 | MoTVLA 让预训练 VLM 承担慢速语义规划、专用 transformer 生成快速运动分解，再驱动 action expert 实时执行。 | 真机 |
+| [VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators](https://arxiv.org/abs/2510.00406) | 2025-10-01 | 具身基础模型与通才策略 | VLA-RFT 把真实交互训练的动作条件世界模型当可控模拟器，以可验证轨迹奖励在少于 400 步内完成 VLA 强化微调。 | 摘要未确认 |
+| [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475) | 2025-10-09 | 灵巧、双臂与接触操作 | DexMan 从无标定第三视角人类或生成视频估计手物运动，以接触奖励在仿真人形机器人上学习双臂灵巧技能。 | 摘要未确认 |
 
 精读样本明确开放披露 0/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -726,18 +648,16 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-10 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2025 年 11 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-10，同比月为 2024-11。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-10，同比月为 2024-11。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>119</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>347</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>5/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>1</strong><span>官方评审锚点</span></div>
@@ -747,33 +667,18 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 世界模型终于开始用规划成功率证明自己；与此同时，VLA 开始从示范学习走向“从经验学习”。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 65 | 54.6% | 72 | -7 | -9.7% | 7 | +58 | +828.6% |
-| [大小脑与双系统](/directions/dual-system) | 1 | 0.8% | 2 | -1 | -50.0% | 0 | +1 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 9 | 7.6% | 13 | -4 | -30.8% | 10 | -1 | -10.0% |
-| [世界模型](/directions/world-models) | 13 | 10.9% | 16 | -3 | -18.8% | 3 | +10 | +333.3% |
-| [通用机器人学习](/directions/general-robot-learning) | 31 | 26.1% | 37 | -6 | -16.2% | 15 | +16 | +106.7% |
-| **总计** | **119** | **100.0%** | **140** | **-21** | **-15.0%** | **35** | **+84** | **+240.0%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,162</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>347</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>347</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>203</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>427</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 48 | 13.8% | 59 | -11 | -18.6% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 24 | 6.9% | 29 | -5 | -17.2% |
@@ -793,8 +698,6 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 | **总计** | **347** | **100.0%** | **427** | **-80** | **-18.7%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -859,13 +762,13 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](https://arxiv.org/abs/2511.16651) | 2025-11-20 | 通用机器人学习 | InternData-A1 以自动仿真流水线生成 63 万轨迹/7433 小时、4 本体/70 任务数据，报告纯合成预训练可匹配 π0 并零样本 sim-to-real。 | 真机 · 多任务 · 跨本体 · 长时序 · 开放资产 |
-| [Scaling Cross-Embodiment World Models for Dexterous Manipulation](https://arxiv.org/abs/2511.01177) | 2025-11-03 | 世界模型 | 把不同人手/机器人手统一为 3D 粒子与末端位移场，以跨本体世界模型和 MPC 在新硬件上迁移刚体及柔性操作。 | 真机 · 跨本体 |
-| [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077) | 2025-11-04 | 世界模型 | WorldPlanner 用数小时无结构 play data 学动作条件视频世界模型、动作采样器和可选奖励，再以 MCTS+MPC 在真实机器人上规划。 | 真机 · 长时序 |
-| [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) | 2025-11-06 | 通用机器人学习 | X-Diffusion 将人类动作视为机器人动作的噪声对应物，只在高噪声层引入跨本体人类示范，五个真实任务平均提升 16%。 | 真机 · 跨本体 |
-| [Dexterous Robotic Piano Playing at Scale](https://arxiv.org/abs/2511.02504) | 2025-11-04 | 灵巧操作 | OmniPianist 训练 2000+ 专项 RL 智能体并汇成百万轨迹 RP1M++，再以 flow transformer 蒸馏出覆盖近千曲目的双手策略。 | 多任务 |
-| [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759) | 2025-11-18 | 具身基础模型 | RECAP 把示范、在线 rollout 与专家纠正统一为 advantage-conditioned VLA 强化学习，使 π*0.6 在家庭与商业设备任务中持续改进。 | 真机 |
-| [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134) | 2025-11-27 | 大小脑与双系统 | DualVLA 通过双层数据裁剪与双教师蒸馏缓解推理微调导致的动作退化，并提出按 reasoning/intention/action/alignment 分解的 VLA Score。 | 摘要未确认 |
+| [InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](https://arxiv.org/abs/2511.16651) | 2025-11-20 | 具身基础模型与通才策略 | InternData-A1 以自动仿真流水线生成 63 万轨迹/7433 小时、4 本体/70 任务数据，报告纯合成预训练可匹配 π0 并零样本 sim-to-real。 | 真机 · 多任务 · 跨本体 · 长时序 · 开放资产 |
+| [Scaling Cross-Embodiment World Models for Dexterous Manipulation](https://arxiv.org/abs/2511.01177) | 2025-11-03 | 灵巧、双臂与接触操作 | 把不同人手/机器人手统一为 3D 粒子与末端位移场，以跨本体世界模型和 MPC 在新硬件上迁移刚体及柔性操作。 | 真机 · 跨本体 |
+| [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077) | 2025-11-04 | 世界模型与预测控制 | WorldPlanner 用数小时无结构 play data 学动作条件视频世界模型、动作采样器和可选奖励，再以 MCTS+MPC 在真实机器人上规划。 | 真机 · 长时序 |
+| [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) | 2025-11-06 | 策略学习与优化 | X-Diffusion 将人类动作视为机器人动作的噪声对应物，只在高噪声层引入跨本体人类示范，五个真实任务平均提升 16%。 | 真机 · 跨本体 |
+| [Dexterous Robotic Piano Playing at Scale](https://arxiv.org/abs/2511.02504) | 2025-11-04 | 灵巧、双臂与接触操作 | OmniPianist 训练 2000+ 专项 RL 智能体并汇成百万轨迹 RP1M++，再以 flow transformer 蒸馏出覆盖近千曲目的双手策略。 | 多任务 |
+| [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759) | 2025-11-18 | 具身基础模型与通才策略 | RECAP 把示范、在线 rollout 与专家纠正统一为 advantage-conditioned VLA 强化学习，使 π*0.6 在家庭与商业设备任务中持续改进。 | 真机 |
+| [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134) | 2025-11-27 | 具身基础模型与通才策略 | DualVLA 通过双层数据裁剪与双教师蒸馏缓解推理微调导致的动作退化，并提出按 reasoning/intention/action/alignment 分解的 VLA Score。 | 摘要未确认 |
 
 精读样本明确开放披露 1/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -882,18 +785,16 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-11 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2025 年 12 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-11，同比月为 2024-12。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-11，同比月为 2024-12。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>124</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>299</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>5/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>2</strong><span>官方评审锚点</span></div>
@@ -903,33 +804,18 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 世界模型与搜索/规划形成方法簇；与此同时，低成本示范采集与合成开始合流。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 59 | 47.6% | 65 | -6 | -9.2% | 13 | +46 | +353.8% |
-| [大小脑与双系统](/directions/dual-system) | 3 | 2.4% | 1 | +2 | +200.0% | 0 | +3 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 12 | 9.7% | 9 | +3 | +33.3% | 7 | +5 | +71.4% |
-| [世界模型](/directions/world-models) | 16 | 12.9% | 13 | +3 | +23.1% | 4 | +12 | +300.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 34 | 27.4% | 31 | +3 | +9.7% | 16 | +18 | +112.5% |
-| **总计** | **124** | **100.0%** | **119** | **+5** | **+4.2%** | **40** | **+84** | **+210.0%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,122</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>299</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>299</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>230</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>347</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 46 | 15.4% | 48 | -2 | -4.2% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 22 | 7.4% | 24 | -2 | -8.3% |
@@ -949,8 +835,6 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 | **总计** | **299** | **100.0%** | **347** | **-48** | **-13.8%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1015,13 +899,13 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) | 2025-12-15 | 世界模型 | Motus 用 MoT 统一理解、视频生成和动作专家，并以 optical-flow latent action 支持世界模型、VLA、逆动力学等多种模式。 | 真机 |
-| [Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840) | 2025-12-17 | 世界模型 | 以互联网规模人类活动视频预训练开放视频规划器，零样本生成新场景任务的视频计划并后处理为可执行真实机器人动作。 | 真机 · 多任务 · 开放资产 |
-| [Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation](https://arxiv.org/abs/2512.08186) | 2025-12-09 | 大小脑与双系统 | DualVLN 让 VLM 全局规划器慢速生成中程像素目标，轻量 diffusion transformer 快速输出连续轨迹，在真实动态环境实现长时序导航。 | 真机 · 长时序 |
-| [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://arxiv.org/abs/2512.09297) | 2025-12-10 | 灵巧操作 | BiDemoSyn 从一条真实示范分解协调不变量与对象相关调整，数小时合成数千条双臂接触轨迹，并展示新平台零样本迁移。 | 真机 · 跨本体 |
-| [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729) | 2025-12-02 | 通用机器人学习 | RoboWheel 将单目/RGB-D 人类手物视频重建为物理可行接触轨迹，再重定向到夹爪、灵巧手和人形本体并做仿真扩增。 | 跨本体 |
-| [Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling](https://arxiv.org/abs/2512.03044) | 2025-12-02 | 大小脑与双系统 | Video2Act 以视频扩散模型作低频慢系统、DiT 动作头作快速系统，通过空间边界与跨帧运动条件提升真实任务成功率。 | 真机 |
-| [STORM: Search-Guided Generative World Models for Robotic Manipulation](https://arxiv.org/abs/2512.18477) | 2025-12-20 | 世界模型 | STORM 让 diffusion VLA 提议动作、视频世界模型预测结果、MCTS 搜索与重规划，在 SimplerEnv 达到 51.0% 平均成功率。 | 长时序 |
+| [Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) | 2025-12-15 | 世界模型与预测控制 | Motus 用 MoT 统一理解、视频生成和动作专家，并以 optical-flow latent action 支持世界模型、VLA、逆动力学等多种模式。 | 真机 |
+| [Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840) | 2025-12-17 | 具身基础模型与通才策略 | 以互联网规模人类活动视频预训练开放视频规划器，零样本生成新场景任务的视频计划并后处理为可执行真实机器人动作。 | 真机 · 多任务 · 开放资产 |
+| [Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation](https://arxiv.org/abs/2512.08186) | 2025-12-09 | 分层推理、规划与记忆 | DualVLN 让 VLM 全局规划器慢速生成中程像素目标，轻量 diffusion transformer 快速输出连续轨迹，在真实动态环境实现长时序导航。 | 真机 · 长时序 |
+| [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://arxiv.org/abs/2512.09297) | 2025-12-10 | 灵巧、双臂与接触操作 | BiDemoSyn 从一条真实示范分解协调不变量与对象相关调整，数小时合成数千条双臂接触轨迹，并展示新平台零样本迁移。 | 真机 · 跨本体 |
+| [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729) | 2025-12-02 | 策略学习与优化 | RoboWheel 将单目/RGB-D 人类手物视频重建为物理可行接触轨迹，再重定向到夹爪、灵巧手和人形本体并做仿真扩增。 | 跨本体 |
+| [Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling](https://arxiv.org/abs/2512.03044) | 2025-12-02 | 策略学习与优化 | Video2Act 以视频扩散模型作低频慢系统、DiT 动作头作快速系统，通过空间边界与跨帧运动条件提升真实任务成功率。 | 真机 |
+| [STORM: Search-Guided Generative World Models for Robotic Manipulation](https://arxiv.org/abs/2512.18477) | 2025-12-20 | 世界模型与预测控制 | STORM 让 diffusion VLA 提议动作、视频世界模型预测结果、MCTS 搜索与重规划，在 SimplerEnv 达到 51.0% 平均成功率。 | 长时序 |
 
 精读样本明确开放披露 1/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1039,18 +923,16 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2025-12 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 1 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-12，同比月为 2025-01。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2025-12，同比月为 2025-01。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>85</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>280</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>3/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>4</strong><span>官方评审锚点</span></div>
@@ -1060,33 +942,18 @@ fast–slow 从隐式分工变成显式训练目标；与此同时，视频驱�
 
 latent action world model 从实验室走向 in-the-wild；与此同时，人类中心数据被推到跨本体预训练主线。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 36 | 42.4% | 59 | -23 | -39.0% | 9 | +27 | +300.0% |
-| [大小脑与双系统](/directions/dual-system) | 3 | 3.5% | 3 | 0 | 0.0% | 0 | +3 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 7 | 8.2% | 12 | -5 | -41.7% | 8 | -1 | -12.5% |
-| [世界模型](/directions/world-models) | 13 | 15.3% | 16 | -3 | -18.8% | 3 | +10 | +333.3% |
-| [通用机器人学习](/directions/general-robot-learning) | 26 | 30.6% | 34 | -8 | -23.5% | 10 | +16 | +160.0% |
-| **总计** | **85** | **100.0%** | **124** | **-39** | **-31.5%** | **30** | **+55** | **+183.3%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>979</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>280</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>280</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>160</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>299</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 30 | 10.7% | 46 | -16 | -34.8% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 15 | 5.4% | 22 | -7 | -31.8% |
@@ -1106,8 +973,6 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 | **总计** | **280** | **100.0%** | **299** | **-19** | **-6.4%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1171,13 +1036,13 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) | 2026-01-16 | 大小脑与双系统 | 把 Chain-of-Thought 直接落在动作空间，以显式粗轨迹和隐式动作先验共同条件化下游动作头，缩短语义推理到连续控制的距离。 | 真机 · 开放资产 |
-| [UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation](https://arxiv.org/abs/2601.04629) | 2026-01-08 | 灵巧操作 | 统一 VR 与主从式输入，在共享控制栈中加入零空间避碰和奇异规避，为双臂灵巧操作提供可开源的数据采集底座。 | 多任务 · 长时序 · 开放资产 |
-| [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://arxiv.org/abs/2601.16163) | 2026-01-22 | 世界模型 | 用单阶段后训练把预训练视频模型直接改造成动作、未来状态和价值联合生成器，并以测试时规划提升双臂真实任务表现。 | 真机 · 开放资产 |
-| [Green-VLA: Staged Vision-Language-Action Model for Generalist Robots](https://arxiv.org/abs/2602.00919) | 2026-01-31 | 具身基础模型 | 以五阶段课程、3,000 小时示范和统一的本体感知动作接口，把 VLM grounding、多本体预训练、单本体适配与 RL 对齐串成可部署的 generalist VLA。 | 真机 · 跨本体 · 长时序 |
-| [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993) | 2026-01-19 | 具身基础模型 | 以 35,000 小时、30 种本体的 UniHand-2.0 和统一动作空间训练人类中心 VLA，并用 Mixture-of-Flow 分离共享运动原语与本体专家。 | 多任务 · 跨本体 |
-| [Learning Latent Action World Models In The Wild](https://arxiv.org/abs/2601.05230) | 2026-01-08 | 世界模型 | 从无动作标注的 in-the-wild 视频学习受约束连续 latent actions，并用控制器映射已知动作以支持世界模型规划。 | 摘要未确认 |
-| [TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers](https://arxiv.org/abs/2601.14133) | 2026-01-20 | 大小脑与双系统 | 以冻结 generalist VLM 与可训练 specialist VLM 构成双路径，通过 AsyMoT 查询未被破坏的语义能力并驱动 flow-matching 动作专家。 | 摘要未确认 |
+| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) | 2026-01-16 | 具身基础模型与通才策略 | 把 Chain-of-Thought 直接落在动作空间，以显式粗轨迹和隐式动作先验共同条件化下游动作头，缩短语义推理到连续控制的距离。 | 真机 · 开放资产 |
+| [UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation](https://arxiv.org/abs/2601.04629) | 2026-01-08 | 灵巧、双臂与接触操作 | 统一 VR 与主从式输入，在共享控制栈中加入零空间避碰和奇异规避，为双臂灵巧操作提供可开源的数据采集底座。 | 多任务 · 长时序 · 开放资产 |
+| [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://arxiv.org/abs/2601.16163) | 2026-01-22 | 世界模型与预测控制 | 用单阶段后训练把预训练视频模型直接改造成动作、未来状态和价值联合生成器，并以测试时规划提升双臂真实任务表现。 | 真机 · 开放资产 |
+| [Green-VLA: Staged Vision-Language-Action Model for Generalist Robots](https://arxiv.org/abs/2602.00919) | 2026-01-31 | 具身基础模型与通才策略 | 以五阶段课程、3,000 小时示范和统一的本体感知动作接口，把 VLM grounding、多本体预训练、单本体适配与 RL 对齐串成可部署的 generalist VLA。 | 真机 · 跨本体 · 长时序 |
+| [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993) | 2026-01-19 | 策略学习与优化 | 以 35,000 小时、30 种本体的 UniHand-2.0 和统一动作空间训练人类中心 VLA，并用 Mixture-of-Flow 分离共享运动原语与本体专家。 | 多任务 · 跨本体 |
+| [Learning Latent Action World Models In The Wild](https://arxiv.org/abs/2601.05230) | 2026-01-08 | 世界模型与预测控制 | 从无动作标注的 in-the-wild 视频学习受约束连续 latent actions，并用控制器映射已知动作以支持世界模型规划。 | 摘要未确认 |
+| [TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers](https://arxiv.org/abs/2601.14133) | 2026-01-20 | 具身基础模型与通才策略 | 以冻结 generalist VLM 与可训练 specialist VLM 构成双路径，通过 AsyMoT 查询未被破坏的语义能力并驱动 flow-matching 动作专家。 | 摘要未确认 |
 
 精读样本明确开放披露 3/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1197,18 +1062,16 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-01 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 2 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-01，同比月为 2025-02。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-01，同比月为 2025-02。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>174</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>466</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>5/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -1218,33 +1081,18 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 世界模型开始承担 RL 模拟器与在线自纠错；与此同时，egocentric 数据开始真正服务灵巧规模化。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 84 | 48.3% | 36 | +48 | +133.3% | 14 | +70 | +500.0% |
-| [大小脑与双系统](/directions/dual-system) | 1 | 0.6% | 3 | -2 | -66.7% | 0 | +1 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 22 | 12.6% | 7 | +15 | +214.3% | 7 | +15 | +214.3% |
-| [世界模型](/directions/world-models) | 23 | 13.2% | 13 | +10 | +76.9% | 4 | +19 | +475.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 44 | 25.3% | 26 | +18 | +69.2% | 19 | +25 | +131.6% |
-| **总计** | **174** | **100.0%** | **85** | **+89** | **+104.7%** | **44** | **+130** | **+295.5%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,392</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>466</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>466</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>263</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>280</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 74 | 15.9% | 30 | +44 | +146.7% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 24 | 5.2% | 15 | +9 | +60.0% |
@@ -1264,8 +1112,6 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 | **总计** | **466** | **100.0%** | **280** | **+186** | **+66.4%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1330,13 +1176,13 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684) | 2026-02-13 | 具身基础模型 | 以跨本体预训练、异步执行训练和动作块时间对齐，让开放 VLA 在消费级 GPU 上实现平滑实时双臂控制。 | 真机 · 跨本体 · 开放资产 |
-| [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633) | 2026-02-25 | 世界模型 | 以任务进度和未来轨迹趋势构成稀疏世界想象，再把预测状态转成密集奖励在线修正动作。 | 真机 · 开放资产 |
-| [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977) | 2026-02-15 | 世界模型 | 通过可控动作条件视频模型、关键帧初始化 rollout 和模型—策略共同演化，降低想象滚动的幻觉深度并用于 VLA 的 RL 后训练。 | 真机 · 跨本体 · 长时序 |
-| [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710) | 2026-02-18 | 通用机器人学习 | 在 20,854 小时动作标注第一视角人类视频上建立 scaling law，并以轻量 human-robot mid-training 迁移到 22-DoF 灵巧手。 | 真机 · 跨本体 · 长时序 |
-| [Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](https://arxiv.org/abs/2602.21736) | 2026-02-25 | 通用机器人学习 | 以逆动力学和真实动作联合对齐 latent action，在 7.5M 段、2,000 多小时人类视频上预训练可迁移的行为表征。 | 真机 |
-| [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721) | 2026-02-27 | 世界模型 | 把未来 3D 几何预测与历史 4D 时空表征同时注入动作生成，使 VLA 显式建模场景动态与空间结构。 | 长时序 |
-| [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648) | 2026-02-27 | 大小脑与双系统 | 将低频 VLM 感知规划与高频力反馈动作专家解耦，并根据预测的力变化动态调度控制频率。 | 摘要未确认 |
+| [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684) | 2026-02-13 | 具身基础模型与通才策略 | 以跨本体预训练、异步执行训练和动作块时间对齐，让开放 VLA 在消费级 GPU 上实现平滑实时双臂控制。 | 真机 · 跨本体 · 开放资产 |
+| [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633) | 2026-02-25 | 具身基础模型与通才策略 | 以任务进度和未来轨迹趋势构成稀疏世界想象，再把预测状态转成密集奖励在线修正动作。 | 真机 · 开放资产 |
+| [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977) | 2026-02-15 | 世界模型与预测控制 | 通过可控动作条件视频模型、关键帧初始化 rollout 和模型—策略共同演化，降低想象滚动的幻觉深度并用于 VLA 的 RL 后训练。 | 真机 · 跨本体 · 长时序 |
+| [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710) | 2026-02-18 | 灵巧、双臂与接触操作 | 在 20,854 小时动作标注第一视角人类视频上建立 scaling law，并以轻量 human-robot mid-training 迁移到 22-DoF 灵巧手。 | 真机 · 跨本体 · 长时序 |
+| [Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](https://arxiv.org/abs/2602.21736) | 2026-02-25 | 世界模型与预测控制 | 以逆动力学和真实动作联合对齐 latent action，在 7.5M 段、2,000 多小时人类视频上预训练可迁移的行为表征。 | 真机 |
+| [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721) | 2026-02-27 | 具身基础模型与通才策略 | 把未来 3D 几何预测与历史 4D 时空表征同时注入动作生成，使 VLA 显式建模场景动态与空间结构。 | 长时序 |
+| [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648) | 2026-02-27 | 具身基础模型与通才策略 | 将低频 VLM 感知规划与高频力反馈动作专家解耦，并根据预测的力变化动态调度控制频率。 | 摘要未确认 |
 
 精读样本明确开放披露 2/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1353,18 +1199,16 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-02 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 3 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-02，同比月为 2025-03。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-02，同比月为 2025-03。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>234</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>694</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>5/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>3</strong><span>官方评审锚点</span></div>
@@ -1374,33 +1218,18 @@ latent action world model 从实验室走向 in-the-wild；与此同时，人类
 
 world model 的新门槛是“动作可执行”；与此同时，论文量激增，但不能把提交周期当成技术爆发。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 104 | 44.4% | 84 | +20 | +23.8% | 19 | +85 | +447.4% |
-| [大小脑与双系统](/directions/dual-system) | 4 | 1.7% | 1 | +3 | +300.0% | 2 | +2 | +100.0% |
-| [灵巧操作](/directions/dexterous-manipulation) | 40 | 17.1% | 22 | +18 | +81.8% | 18 | +22 | +122.2% |
-| [世界模型](/directions/world-models) | 23 | 9.8% | 23 | 0 | 0.0% | 6 | +17 | +283.3% |
-| [通用机器人学习](/directions/general-robot-learning) | 63 | 26.9% | 44 | +19 | +43.2% | 34 | +29 | +85.3% |
-| **总计** | **234** | **100.0%** | **174** | **+60** | **+34.5%** | **79** | **+155** | **+196.2%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,949</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>694</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>694</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>386</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>466</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 95 | 13.7% | 74 | +21 | +28.4% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 29 | 4.2% | 24 | +5 | +20.8% |
@@ -1420,8 +1249,6 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | **总计** | **694** | **100.0%** | **466** | **+228** | **+48.9%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1485,13 +1312,13 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) | 2026-03-23 | 灵巧操作 | 将 50K 轨迹、八种灵巧手、FAAS 统一动作空间、3D VLA 与便携采集装置组成 universal dexterous foundation suite。 | 摘要未确认 |
-| [DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming](https://arxiv.org/abs/2603.22263) | 2026-03-23 | 灵巧操作 | 以架子鼓把手内控制、反复接触和长时序双手协调合并为统一测试床，并用规划加 residual RL 实现 sim-to-real。 | 真机 · 多任务 · 长时序 |
-| [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545) | 2026-03-30 | 通用机器人学习 | 用 20 个实体任务、10,812 条专家轨迹和成对 real-to-sim 场景，为 VLA/WAM 提供可诊断的统一真实机器人评测。 | 真机 · 多任务 |
-| [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808) | 2026-03-18 | 世界模型 | 把 inverse dynamics model 反用作奖励模型，以速度、加速度、jerk 和本体约束对视频世界模型做可执行性对齐。 | 真机 |
-| [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201) | 2026-03-19 | 世界模型 | 以 21K+ 轨迹、86 任务的视觉—触觉—动作数据训练双流世界模型，并用 60Hz 触觉反射闭环纠偏。 | 真机 |
-| [DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA](https://arxiv.org/abs/2603.29844) | 2026-03-31 | 大小脑与双系统 | 用可微 latent intent bottleneck 连接 System-2 的未来表征与 System-1 的逆动力学控制，并以两阶段训练稳定端到端优化。 | 真机 |
-| [DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models](https://arxiv.org/abs/2603.16860) | 2026-03-17 | 大小脑与双系统 | 先用零样本 VLM 收集次优交互训练动作条件视频世界模型，再在想象 rollout 中强化微调高层 planner。 | 摘要未确认 |
+| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) | 2026-03-23 | 数据引擎与人类视频学习 | 将 50K 轨迹、八种灵巧手、FAAS 统一动作空间、3D VLA 与便携采集装置组成 universal dexterous foundation suite。 | 摘要未确认 |
+| [DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming](https://arxiv.org/abs/2603.22263) | 2026-03-23 | 灵巧、双臂与接触操作 | 以架子鼓把手内控制、反复接触和长时序双手协调合并为统一测试床，并用规划加 residual RL 实现 sim-to-real。 | 真机 · 多任务 · 长时序 |
+| [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545) | 2026-03-30 | 具身基础模型与通才策略 | 用 20 个实体任务、10,812 条专家轨迹和成对 real-to-sim 场景，为 VLA/WAM 提供可诊断的统一真实机器人评测。 | 真机 · 多任务 |
+| [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808) | 2026-03-18 | 世界模型与预测控制 | 把 inverse dynamics model 反用作奖励模型，以速度、加速度、jerk 和本体约束对视频世界模型做可执行性对齐。 | 真机 |
+| [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201) | 2026-03-19 | 灵巧、双臂与接触操作 | 以 21K+ 轨迹、86 任务的视觉—触觉—动作数据训练双流世界模型，并用 60Hz 触觉反射闭环纠偏。 | 真机 |
+| [DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA](https://arxiv.org/abs/2603.29844) | 2026-03-31 | 世界模型与预测控制 | 用可微 latent intent bottleneck 连接 System-2 的未来表征与 System-1 的逆动力学控制，并以两阶段训练稳定端到端优化。 | 真机 |
+| [DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models](https://arxiv.org/abs/2603.16860) | 2026-03-17 | 世界模型与预测控制 | 先用零样本 VLM 收集次优交互训练动作条件视频世界模型，再在想象 rollout 中强化微调高层 planner。 | 摘要未确认 |
 
 精读样本明确开放披露 0/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1510,18 +1337,16 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-03 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 4 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-03，同比月为 2025-04。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-03，同比月为 2025-04。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>134</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>392</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>4/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -1531,33 +1356,18 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 触觉与 world model 开始合流；与此同时，foundation model 开始接受垂直本体与可控行为约束。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 57 | 42.5% | 104 | -47 | -45.2% | 4 | +53 | +1325.0% |
-| [大小脑与双系统](/directions/dual-system) | 2 | 1.5% | 4 | -2 | -50.0% | 0 | +2 | 新增 |
-| [灵巧操作](/directions/dexterous-manipulation) | 19 | 14.2% | 40 | -21 | -52.5% | 15 | +4 | +26.7% |
-| [世界模型](/directions/world-models) | 20 | 14.9% | 23 | -3 | -13.0% | 5 | +15 | +300.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 36 | 26.9% | 63 | -27 | -42.9% | 18 | +18 | +100.0% |
-| **总计** | **134** | **100.0%** | **234** | **-100** | **-42.7%** | **42** | **+92** | **+219.0%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,319</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>392</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>392</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>254</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>694</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 49 | 12.5% | 95 | -46 | -48.4% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 20 | 5.1% | 29 | -9 | -31.0% |
@@ -1577,8 +1387,6 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | **总计** | **392** | **100.0%** | **694** | **-302** | **-43.5%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1643,13 +1451,13 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017) | 2026-04-22 | 具身基础模型 | 汇集 50 多家机构、多种手术本体的同步视频—运动学开放数据，并展示 medical VLA 与多本体 action-conditioned simulator。 | 跨本体 · 长时序 · 开放资产 |
-| [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04-16 | 具身基础模型 | 通过把策略、表现元数据和子目标图像等多模态上下文纳入训练，使单一 foundation policy 可被精细 steer 并出现跨本体、组合任务和灵巧能力。 | 多任务 · 跨本体 · 长时序 |
-| [Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924) | 2026-04-23 | 大小脑与双系统 | 以任务管理 VLM 反复输出剩余子任务与 2D visual trace，驱动短时 VLA 执行器并在失败后自动保留未完成步骤。 | 真机 · 长时序 |
-| [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](https://arxiv.org/abs/2604.26848) | 2026-04-29 | 世界模型 | 在统一 diffusion 过程中联合去噪未来时空 latent 与动作，并以深度和末端几何调制动作注意力。 | 真机 · 多任务 |
-| [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015) | 2026-04-14 | 灵巧操作 | 把低身稳定控制、全身 VR 数据采集和 touch dreaming 结合，使 humanoid policy 同时预测动作块、未来关节力与触觉 latent。 | 真机 |
-| [FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689) | 2026-04-22 | 灵巧操作 | 用指尖双目视觉与柔顺接触环实现从接近到接触后的连续感知，并以组结构融合策略减轻模态捷径。 | 真机 |
-| [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921) | 2026-04-27 | 大小脑与双系统 | 将宏观离散方向规划和微观连续位姿对齐分给异步双系统，并提出动作分解粒度存在学习均衡点。 | 摘要未确认 |
+| [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017) | 2026-04-22 | 具身基础模型与通才策略 | 汇集 50 多家机构、多种手术本体的同步视频—运动学开放数据，并展示 medical VLA 与多本体 action-conditioned simulator。 | 跨本体 · 长时序 · 开放资产 |
+| [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04-16 | 具身基础模型与通才策略 | 通过把策略、表现元数据和子目标图像等多模态上下文纳入训练，使单一 foundation policy 可被精细 steer 并出现跨本体、组合任务和灵巧能力。 | 多任务 · 跨本体 · 长时序 |
+| [Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924) | 2026-04-23 | 具身基础模型与通才策略 | 以任务管理 VLM 反复输出剩余子任务与 2D visual trace，驱动短时 VLA 执行器并在失败后自动保留未完成步骤。 | 真机 · 长时序 |
+| [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](https://arxiv.org/abs/2604.26848) | 2026-04-29 | 世界模型与预测控制 | 在统一 diffusion 过程中联合去噪未来时空 latent 与动作，并以深度和末端几何调制动作注意力。 | 真机 · 多任务 |
+| [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015) | 2026-04-14 | 人形、运动与全身控制 | 把低身稳定控制、全身 VR 数据采集和 touch dreaming 结合，使 humanoid policy 同时预测动作块、未来关节力与触觉 latent。 | 真机 |
+| [FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689) | 2026-04-22 | 灵巧、双臂与接触操作 | 用指尖双目视觉与柔顺接触环实现从接近到接触后的连续感知，并以组结构融合策略减轻模态捷径。 | 真机 |
+| [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921) | 2026-04-27 | 具身基础模型与通才策略 | 将宏观离散方向规划和微观连续位姿对齐分给异步双系统，并提出动作分解粒度存在学习均衡点。 | 摘要未确认 |
 
 精读样本明确开放披露 1/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1666,18 +1474,16 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-04 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 5 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-04，同比月为 2025-05。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-04，同比月为 2025-05。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>203</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>559</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>6/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -1687,33 +1493,18 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 视频模型正在被改造成 generalist policy，而非外置 world model；与此同时，generalist 底座开始向软体与灵巧专用能力下沉。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 101 | 49.8% | 57 | +44 | +77.2% | 36 | +65 | +180.6% |
-| [大小脑与双系统](/directions/dual-system) | 3 | 1.5% | 2 | +1 | +50.0% | 3 | 0 | 0.0% |
-| [灵巧操作](/directions/dexterous-manipulation) | 23 | 11.3% | 19 | +4 | +21.1% | 16 | +7 | +43.8% |
-| [世界模型](/directions/world-models) | 28 | 13.8% | 20 | +8 | +40.0% | 9 | +19 | +211.1% |
-| [通用机器人学习](/directions/general-robot-learning) | 48 | 23.6% | 36 | +12 | +33.3% | 44 | +4 | +9.1% |
-| **总计** | **203** | **100.0%** | **134** | **+69** | **+51.5%** | **108** | **+95** | **+88.0%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,737</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>559</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>559</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>360</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>392</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 94 | 16.8% | 49 | +45 | +91.8% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 35 | 6.3% | 20 | +15 | +75.0% |
@@ -1733,8 +1524,6 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | **总计** | **559** | **100.0%** | **392** | **+167** | **+42.6%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1799,13 +1588,13 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280) | 2026-05-28 | 具身基础模型 | 以 embodiment-aware prompt 和统一动作—轨迹预测，把操作、导航、轨迹预测及多源数据纳入单一 Qwen-VLA。 | 真机 · 多任务 · 跨本体 |
-| [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817) | 2026-05-27 | 世界模型 | 保持 video planner 本体无关，仅为各机器人训练基于 Jacobian 的 IDM，形成可替换视频模型的闭环 VERA 路线。 | 真机 · 跨本体 |
-| [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286) | 2026-05-29 | 具身基础模型 | 以约 5,000 小时双臂真实示范预训练，再用失败纠正轨迹和 HiL DAgger 学习跨服装类别的通用折叠策略。 | 真机 · 多任务 |
-| [OneVLA: A Unified Framework for Embodied Tasks](https://arxiv.org/abs/2606.01241) | 2026-05-31 | 具身基础模型 | 用统一 action head 和渐进式多阶段训练把导航与操作纳入同一 VLA，探索跨任务正迁移。 | 真机 · 长时序 |
-| [BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models](https://arxiv.org/abs/2605.30226) | 2026-05-28 | 灵巧操作 | 用离线动作条件 critic 稳定价值学习，再冻结 VLA 基座，以人类介入的 chunk-wise residual 做低风险在线适配。 | 真机 |
-| [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229) | 2026-05-29 | 大小脑与双系统 | 把可共享、可验证的 Gaussian continuous thoughts 作为 VLA 推理介质，并以教师消费学生 latent 的动作改善来约束推理。 | 真机 |
-| [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | 2026-05-31 | 世界模型 | 以共享视频 diffusion backbone 统一动作生成、未来视频模拟和进度评分，并在约 27,300 小时混合数据上训练。 | 长时序 |
+| [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280) | 2026-05-28 | 具身基础模型与通才策略 | 以 embodiment-aware prompt 和统一动作—轨迹预测，把操作、导航、轨迹预测及多源数据纳入单一 Qwen-VLA。 | 真机 · 多任务 · 跨本体 |
+| [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817) | 2026-05-27 | 具身基础模型与通才策略 | 保持 video planner 本体无关，仅为各机器人训练基于 Jacobian 的 IDM，形成可替换视频模型的闭环 VERA 路线。 | 真机 · 跨本体 |
+| [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286) | 2026-05-29 | 具身基础模型与通才策略 | 以约 5,000 小时双臂真实示范预训练，再用失败纠正轨迹和 HiL DAgger 学习跨服装类别的通用折叠策略。 | 真机 · 多任务 |
+| [OneVLA: A Unified Framework for Embodied Tasks](https://arxiv.org/abs/2606.01241) | 2026-05-31 | 具身基础模型与通才策略 | 用统一 action head 和渐进式多阶段训练把导航与操作纳入同一 VLA，探索跨任务正迁移。 | 真机 · 长时序 |
+| [BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models](https://arxiv.org/abs/2605.30226) | 2026-05-28 | 策略学习与优化 | 用离线动作条件 critic 稳定价值学习，再冻结 VLA 基座，以人类介入的 chunk-wise residual 做低风险在线适配。 | 真机 |
+| [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229) | 2026-05-29 | 具身基础模型与通才策略 | 把可共享、可验证的 Gaussian continuous thoughts 作为 VLA 推理介质，并以教师消费学生 latent 的动作改善来约束推理。 | 真机 |
+| [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | 2026-05-31 | 世界模型与预测控制 | 以共享视频 diffusion backbone 统一动作生成、未来视频模拟和进度评分，并在约 27,300 小时混合数据上训练。 | 长时序 |
 
 精读样本明确开放披露 0/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1822,18 +1611,16 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-05 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 6 月研究雷达
 
-> **统计口径。** 自动宽召回候选用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-05，同比月为 2025-06。
+> **统计口径。** 当前 15 个研究方向用于数量结构；7 篇精读样本用于实验与开放性指标。上月为 2026-05，同比月为 2025-06。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>358</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>735</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>7</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>6/7</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -1843,33 +1630,18 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 大小脑接口正在变成可监督的 3D 轨迹语言；与此同时，开放训练栈与人类视频迁移同时加速。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 162 | 45.3% | 101 | +61 | +60.4% | 38 | +124 | +326.3% |
-| [大小脑与双系统](/directions/dual-system) | 3 | 0.8% | 3 | 0 | 0.0% | 2 | +1 | +50.0% |
-| [灵巧操作](/directions/dexterous-manipulation) | 57 | 15.9% | 23 | +34 | +147.8% | 20 | +37 | +185.0% |
-| [世界模型](/directions/world-models) | 54 | 15.1% | 28 | +26 | +92.9% | 14 | +40 | +285.7% |
-| [通用机器人学习](/directions/general-robot-learning) | 82 | 22.9% | 48 | +34 | +70.8% | 33 | +49 | +148.5% |
-| **总计** | **358** | **100.0%** | **203** | **+155** | **+76.4%** | **107** | **+251** | **+234.6%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,918</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>735</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>735</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>411</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>559</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 112 | 15.2% | 94 | +18 | +19.1% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 36 | 4.9% | 35 | +1 | +2.9% |
@@ -1889,8 +1661,6 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | **总计** | **735** | **100.0%** | **559** | **+176** | **+31.5%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 趋势证据卡
 
 
@@ -1954,13 +1724,13 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375) | 2026-06-25 | 通用机器人学习 | 发布 3,500 小时、130K episodes、195 任务的 ABC-130K，以及硬件、训练、仿真和真实评测全栈。 | 真机 · 多任务 · 开放资产 |
-| [Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552) | 2026-06-29 | 大小脑与双系统 | 以 60M 帧的 dense ECoT 对齐跨本体高层认知，同时由 flow action expert 输出连续动作且推理时可跳过 CoT。 | 真机 · 跨本体 |
-| [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009) | 2026-06-30 | 通用机器人学习 | 通过 ego-exo 同步、60-DoF 动作重定向和 FK-aware supervision，把人类视频转成可直接训练 humanoid VLA 的动作标签。 | 真机 · 跨本体 |
-| [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329) | 2026-06-30 | 大小脑与双系统 | 让高层 VLM 直接输出 metric 3D waypoint，并无缝接入点云低层策略，修正 2D guidance 的深度歧义。 | 真机 |
-| [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723) | 2026-06-30 | 灵巧操作 | 以统一 tactile latent 同时建模当前接触语义和未来变化，再用 tactile-action mixed controller 高频修正低频动作块。 | 真机 |
-| [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028) | 2026-06-30 | 世界模型 | 把低层动力学演化与高分辨率视觉合成解耦，通过级联 latent 生成在保留接触细节的同时最高加速 3.97 倍。 | 真机 |
-| [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909) | 2026-06-30 | 灵巧操作 | 让 VLM 提取功能和场景约束，经解析优化筛选功能抓取，再以 RL 形成可 sim-to-real 的抓—移—触发组合策略。 | 摘要未确认 |
+| [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375) | 2026-06-25 | 策略学习与优化 | 发布 3,500 小时、130K episodes、195 任务的 ABC-130K，以及硬件、训练、仿真和真实评测全栈。 | 真机 · 多任务 · 开放资产 |
+| [Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552) | 2026-06-29 | 分层推理、规划与记忆 | 以 60M 帧的 dense ECoT 对齐跨本体高层认知，同时由 flow action expert 输出连续动作且推理时可跳过 CoT。 | 真机 · 跨本体 |
+| [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009) | 2026-06-30 | 数据引擎与人类视频学习 | 通过 ego-exo 同步、60-DoF 动作重定向和 FK-aware supervision，把人类视频转成可直接训练 humanoid VLA 的动作标签。 | 真机 · 跨本体 |
+| [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329) | 2026-06-30 | 具身基础模型与通才策略 | 让高层 VLM 直接输出 metric 3D waypoint，并无缝接入点云低层策略，修正 2D guidance 的深度歧义。 | 真机 |
+| [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723) | 2026-06-30 | 具身基础模型与通才策略 | 以统一 tactile latent 同时建模当前接触语义和未来变化，再用 tactile-action mixed controller 高频修正低频动作块。 | 真机 |
+| [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028) | 2026-06-30 | 世界模型与预测控制 | 把低层动力学演化与高分辨率视觉合成解耦，通过级联 latent 生成在保留接触细节的同时最高加速 3.97 倍。 | 真机 |
+| [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909) | 2026-06-30 | 灵巧、双臂与接触操作 | 让 VLM 提取功能和场景约束，经解析优化筛选功能抓取，再以 RL 形成可 sim-to-real 的抓—移—触发组合策略。 | 摘要未确认 |
 
 精读样本明确开放披露 1/7；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -1977,18 +1747,16 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-06 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
 ## 2026 年 7 月研究雷达（完整月）
 
-> **7 月完整月。** 旧五类稳定序列已补入 30–31 日 10 篇高信号精读；v2 完整母集覆盖至 31 日。两套 taxonomy 的分母不同，页内分表呈现、不直接相加。
+> **7 月完整月。** arXiv 母集覆盖至 31 日，并补入 30–31 日 10 篇高信号精读；主题结构统一采用当前 15 个研究方向。
 
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>176</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>506</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>20</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>13/20</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>0</strong><span>官方评审锚点</span></div>
@@ -1998,32 +1766,18 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 7 月完整月总量较 6 月回落，但月末的世界模型决策化、失败纠错、触觉未来监督和行为对齐跨本体迁移组成了比总量更值得跟踪的弱信号。
 
-### 主题结构
+### 主题结构与环比
 
-| 主方向 | 本月候选 | 占比 | 上月候选 | 环比增量 | 环比 | 同比候选 | 同比增量 | 同比 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 84 | 47.7% | 162 | -78 | -48.1% | 17 | +67 | +394.1% |
-| [大小脑与双系统](/directions/dual-system) | 4 | 2.3% | 3 | +1 | +33.3% | 1 | +3 | +300.0% |
-| [灵巧操作](/directions/dexterous-manipulation) | 24 | 13.6% | 57 | -33 | -57.9% | 12 | +12 | +100.0% |
-| [世界模型](/directions/world-models) | 34 | 19.3% | 54 | -20 | -37.0% | 4 | +30 | +750.0% |
-| [通用机器人学习](/directions/general-robot-learning) | 30 | 17.0% | 82 | -52 | -63.4% | 23 | +7 | +30.4% |
-| **总计** | **176** | **100.0%** | **358** | **-182** | **-50.8%** | **57** | **+119** | **+208.8%** |
-
-> 自动宽召回对 VLA 命名敏感，不能单独解释为能力增长；大小脑类因常使用隐式架构命名，自动数量是保守下界。
-
-
-### v2 扩展主题结构（15 类）
-
-> 本表来自完整 arXiv 宽召回母库，只统计 v2 自动判为“直接候选”的记录；它与上方旧五类稳定序列使用不同 taxonomy，不能直接相加。2026 年 7 月已覆盖至 31 日，环比为完整月对完整月。
+> 本表使用当前 15 个研究方向，只统计自动判为“直接候选”的记录。每篇论文只计一个主方向，环比同时展示绝对量和百分比。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>1,444</strong><span>当月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>506</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>506</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>307</strong><span>边界候选</span></div>
   <div class="radar-kpi"><strong>735</strong><span>上月直接候选</span></div>
 </div>
 
-| v2 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
+| 主方向 | 本月 | 占比 | 上月 | 环比增量 | 环比 |
 |---|---:|---:|---:|---:|---:|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 74 | 14.6% | 112 | -38 | -33.9% |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 32 | 6.3% | 36 | -4 | -11.1% |
@@ -2043,13 +1797,11 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 | **总计** | **506** | **100.0%** | **735** | **-229** | **-31.2%** |
 
 跨月比较时，应先看绝对数量与独立论文簇，再用正式发表和 GitHub 采用证据判断是否从 arXiv 热点走向兑现。
-
-
 ### 7 月完整月研判
 
 #### 数量层：完整月环比回落，但不等于技术降温
 
-**事实。** v2 宽召回在 7 月收录 1444 条母集、506 条直接候选；6 月分别为 1918 和 735，直接候选环比 -31.2%。上方旧五类稳定序列收录 176 条候选；它用于历史可比，不代表全量论文数。
+**事实。** 7 月宽召回收录 1444 条母集、506 条直接候选；6 月分别为 1918 和 735，直接候选环比 -31.2%。
 
 **解释。** 现在的环比已是完整月对完整月，可以确认 7 月总量低于 6 月。但会议周期与集中提交仍可放大单月波动；而 7 月 30–31 日反而集中出现多项高信号工作。所以“数量回落”是事实，“技术降温”仍需跨月和独立实验证据。
 
@@ -2193,26 +1945,26 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 | 论文 | v1 日期 | 主方向 | 一句话贡献 | 证据标签 |
 |---|---|---|---|---|
-| [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) | 2026-07-02 | 大小脑与双系统 | 在冻结 VLA 之外加入 latent dynamics 监视、事件触发截断与梯度引导重规划，让固定 action chunk 变成按执行偏差自适应的闭环控制。 | 真机 · 多任务 · 长时序 · 开放资产 |
-| [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) | 2026-07-03 | 大小脑与双系统 | 将长时 VLA 拆成高频 Executor、工作记忆 Sentry 和慢速 Planner，并用可增删改的跨模态记忆在真实机器人上处理非马尔可夫任务。 | 真机 · 多任务 · 长时序 · 开放资产 |
-| [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07-30 | 通用机器人学习 | 证明末端执行器轨迹等行为对齐表征可以绕开关节空间差异，将多本体数据真正转化为新本体增益。 | 真机 · 多任务 · 跨本体 · 开放资产 |
-| [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07-30 | 世界模型 | 让 VLM 提案、动作条件世界模型预演，再用优化与搜索修改计划，把 world model 从表象生成推向决策空间。 | 多任务 · 长时序 · 开放资产 |
-| [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07-31 | 世界模型 | 把动作条件视频模型同时做成仿真器、数据引擎和策略评估器，直接对齐预测质量与机器人决策用途。 | 真机 · 多任务 · 开放资产 |
-| [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07-30 | 灵巧操作 | 用变频策略匹配接触前的多模态路径与接触后的快速力反馈，把控制频率本身变成可学习结构。 | 多任务 · 开放资产 |
-| [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) | 2026-07-01 | 具身基础模型 | 把 VLA 推进到全尺寸双臂家具装配，以连续进度预测衔接最多 7 个子任务和 1,550 个控制步，并在真实 Kinova Gen3 上验证。 | 真机 · 多任务 · 长时序 |
-| [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07-31 | 具身基础模型 | 将真机部署奖励转换为托管 SFT API 可接受的监督数据，在不访问权重、梯度或损失的情况下形成两轮部署飞轮。 | 真机 · 多任务 · 跨本体 |
-| [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07-31 | 具身基础模型 | 不在 VLA 输出后外挂安全滤波器，而把 CBF 约束写入 flow-matching 去噪过程，直接约束整个 action chunk。 | 真机 · 多任务 · 跨本体 |
-| [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | 2026-07-18 | 大小脑与双系统 | 以 session 运行时、文件化状态、语义验证、记忆和安全服务解耦认知规划与异构机器人执行，并覆盖 19+ 仿真/实体本体。 | 真机 · 跨本体 |
-| [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07-30 | 通用机器人学习 | 把失败轨迹拆成动作级负例和可替换的成功动作，以约十分之一的样本量学到部署后纠错。 | 真机 · 多任务 |
-| [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07-30 | 灵巧操作 | 将未来触觉中的力、形变和滑移变成 world-action model 的训练监督，但隔离部署时不可见的未来信息。 | 真机 · 多任务 |
-| [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07-30 | 通用机器人学习 | 把真实家庭改造为同步采集工厂，将第一/第三人称视频、全身与手部运动、物体轨迹、音频和触觉对齐到同一交互流。 | 多任务 · 长时序 |
-| [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07-31 | 世界模型 | 让 critic 在估值之外同时预测未来 latent，用世界建模目标补足单帧价值估计对部分可观测控制的状态缺口。 | 真机 · 多任务 |
-| [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | 2026-07-01 | 世界模型 | 用动作条件、多视角动态表征和 flow-matching DiT 重生成移动物体操作轨迹，并在四类基础 VLA 上测试可插拔增益。 | 多任务 |
-| [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | 2026-07-16 | 具身基础模型 | 用超过 100K 小时 UMI 真实轨迹和自动语言标注预训练基础 VLA，展示数据与模型规模向真实机器人零样本和少样本能力传导。 | 真机 |
-| [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07-28 | 世界模型 | 用时间差 flow matching、轨迹加权和 DynaRoute 注意力偏置，把世界模型容量从外观重建转向控制相关动态。 | 真机 |
-| [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530) | 2026-07-24 | 世界模型 | 联合公开真实触觉数据与仿真，训练可生成视觉—触觉—动作 rollout 的世界模型，用于策略数据增强和离线评估。 | 摘要未确认 |
-| [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07-27 | 灵巧操作 | 以未来视觉 latent 监督学习 action-conditioned 时空触觉表征，在部署零额外开销下适配预训练 VLA。 | 摘要未确认 |
-| [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07-27 | 通用机器人学习 | 以真实机器人、UMI、人类 ego/exo、仿真和通用视觉语言五层数据金字塔梳理具身数据配方与能力关系。 | 摘要未确认 |
+| [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) | 2026-07-02 | 具身基础模型与通才策略 | 在冻结 VLA 之外加入 latent dynamics 监视、事件触发截断与梯度引导重规划，让固定 action chunk 变成按执行偏差自适应的闭环控制。 | 真机 · 多任务 · 长时序 · 开放资产 |
+| [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) | 2026-07-03 | 具身基础模型与通才策略 | 将长时 VLA 拆成高频 Executor、工作记忆 Sentry 和慢速 Planner，并用可增删改的跨模态记忆在真实机器人上处理非马尔可夫任务。 | 真机 · 多任务 · 长时序 · 开放资产 |
+| [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07-30 | 策略学习与优化 | 证明末端执行器轨迹等行为对齐表征可以绕开关节空间差异，将多本体数据真正转化为新本体增益。 | 真机 · 多任务 · 跨本体 · 开放资产 |
+| [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07-30 | 世界模型与预测控制 | 让 VLM 提案、动作条件世界模型预演，再用优化与搜索修改计划，把 world model 从表象生成推向决策空间。 | 多任务 · 长时序 · 开放资产 |
+| [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07-31 | 策略学习与优化 | 把动作条件视频模型同时做成仿真器、数据引擎和策略评估器，直接对齐预测质量与机器人决策用途。 | 真机 · 多任务 · 开放资产 |
+| [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07-30 | 灵巧、双臂与接触操作 | 用变频策略匹配接触前的多模态路径与接触后的快速力反馈，把控制频率本身变成可学习结构。 | 多任务 · 开放资产 |
+| [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) | 2026-07-01 | 具身基础模型与通才策略 | 把 VLA 推进到全尺寸双臂家具装配，以连续进度预测衔接最多 7 个子任务和 1,550 个控制步，并在真实 Kinova Gen3 上验证。 | 真机 · 多任务 · 长时序 |
+| [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07-31 | 人形、运动与全身控制 | 将真机部署奖励转换为托管 SFT API 可接受的监督数据，在不访问权重、梯度或损失的情况下形成两轮部署飞轮。 | 真机 · 多任务 · 跨本体 |
+| [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07-31 | 具身基础模型与通才策略 | 不在 VLA 输出后外挂安全滤波器，而把 CBF 约束写入 flow-matching 去噪过程，直接约束整个 action chunk。 | 真机 · 多任务 · 跨本体 |
+| [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | 2026-07-18 | 具身基础模型与通才策略 | 以 session 运行时、文件化状态、语义验证、记忆和安全服务解耦认知规划与异构机器人执行，并覆盖 19+ 仿真/实体本体。 | 真机 · 跨本体 |
+| [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07-30 | 策略学习与优化 | 把失败轨迹拆成动作级负例和可替换的成功动作，以约十分之一的样本量学到部署后纠错。 | 真机 · 多任务 |
+| [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07-30 | 灵巧、双臂与接触操作 | 将未来触觉中的力、形变和滑移变成 world-action model 的训练监督，但隔离部署时不可见的未来信息。 | 真机 · 多任务 |
+| [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07-30 | 数据引擎与人类视频学习 | 把真实家庭改造为同步采集工厂，将第一/第三人称视频、全身与手部运动、物体轨迹、音频和触觉对齐到同一交互流。 | 多任务 · 长时序 |
+| [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07-31 | 具身基础模型与通才策略 | 让 critic 在估值之外同时预测未来 latent，用世界建模目标补足单帧价值估计对部分可观测控制的状态缺口。 | 真机 · 多任务 |
+| [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | 2026-07-01 | 具身基础模型与通才策略 | 用动作条件、多视角动态表征和 flow-matching DiT 重生成移动物体操作轨迹，并在四类基础 VLA 上测试可插拔增益。 | 多任务 |
+| [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | 2026-07-16 | 具身基础模型与通才策略 | 用超过 100K 小时 UMI 真实轨迹和自动语言标注预训练基础 VLA，展示数据与模型规模向真实机器人零样本和少样本能力传导。 | 真机 |
+| [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07-28 | 世界模型与预测控制 | 用时间差 flow matching、轨迹加权和 DynaRoute 注意力偏置，把世界模型容量从外观重建转向控制相关动态。 | 真机 |
+| [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530) | 2026-07-24 | 世界模型与预测控制 | 联合公开真实触觉数据与仿真，训练可生成视觉—触觉—动作 rollout 的世界模型，用于策略数据增强和离线评估。 | 摘要未确认 |
+| [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07-27 | 具身基础模型与通才策略 | 以未来视觉 latent 监督学习 action-conditioned 时空触觉表征，在部署零额外开销下适配预训练 VLA。 | 摘要未确认 |
+| [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07-27 | 策略学习与优化 | 以真实机器人、UMI、人类 ego/exo、仿真和通用视觉语言五层数据金字塔梳理具身数据配方与能力关系。 | 摘要未确认 |
 
 精读样本明确开放披露 6/20；只在摘要、comment 或已核验项目页明确披露时记为“是”。
 
@@ -2229,8 +1981,6 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 - “open-source / will release” 与实际可下载、可复现实验分开记录。
 - 世界模型必须展示动作、规划、控制或数据生成价值；纯视频质量不计。
 
-<!-- 更新标记：2026-07 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
@@ -2240,7 +1990,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>0</strong><span>8 月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>0</strong><span>v2 直接候选</span></div>
+  <div class="radar-kpi"><strong>0</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>10,404</strong><span>窗口内发表版本</span></div>
   <div class="radar-kpi"><strong>42 + 4</strong><span>已审计 + 新仓观察</span></div>
 </div>
@@ -2251,7 +2001,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 ### 主题结构与环比
 
-| v2 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
+| 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
 |---|---:|---:|---:|---|
 | D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 0 | 74 | — | 尚无 8 月 v1，不做方向推断 |
 | D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 0 | 32 | — | 尚无 8 月 v1，不做方向推断 |
@@ -2315,8 +2065,6 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 一旦 arXiv API 出现 8 月首批 v1，本页将补入全量主题结构、绝对数和环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
 
-<!-- 更新标记：2026-08 月度雷达 最后更新 2026.08 -->
-
 ---
 
 
@@ -2328,9 +2076,25 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 人类视频、无标签动作和 egocentric/接触表示成为弱信号主线；flow policy 扩散，触觉首次进入 VLA 统一空间，但世界模型的闭环控制证据仍弱。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 270 | 103 | 3 | 48 | 22 | 94 |
+本季度共纳入 1022 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 93 | 9.1% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 80 | 7.8% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 34 | 3.3% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 91 | 8.9% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 180 | 17.6% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 57 | 5.6% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 83 | 8.1% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 262 | 25.6% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 32 | 3.1% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 38 | 3.7% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 49 | 4.8% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 14 | 1.4% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 6 | 0.6% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 2 | 0.2% |
 
 **阶段证据链：**
 
@@ -2343,9 +2107,25 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 fast–slow 形成架构簇，world model 从生成与适配转向后训练、搜索和 MPC；跨本体问题从 adapter 转向数据和动作表示。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 383 | 196 | 6 | 34 | 45 | 102 |
+本季度共纳入 1073 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 153 | 14.3% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 75 | 7.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 73 | 6.8% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 88 | 8.2% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 177 | 16.5% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 54 | 5.0% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 58 | 5.4% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 267 | 24.9% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 21 | 2.0% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 33 | 3.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 48 | 4.5% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 19 | 1.8% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 4 | 0.4% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 2 | 0.2% |
 
 **阶段证据链：**
 
@@ -2358,9 +2138,25 @@ fast–slow 形成架构簇，world model 从生成与适配转向后训练、�
 
 latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异步触发重写大小脑接口，3 月集中出现 executable alignment、长时接触和真实评测。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 493 | 224 | 8 | 69 | 59 | 133 |
+本季度共纳入 1440 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 199 | 13.8% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 68 | 4.7% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 111 | 7.7% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 150 | 10.4% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 245 | 17.0% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 87 | 6.0% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 79 | 5.5% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 320 | 22.2% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 38 | 2.6% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 50 | 3.5% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 76 | 5.3% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 10 | 0.7% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0.0% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 4 | 0.3% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 3 | 0.2% |
 
 **阶段证据链：**
 
@@ -2373,9 +2169,25 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 
 连续推理、coarse-to-fine 调度、3D trace 与 real-time execution 使 VLA 竞争进入系统层；触觉从融合模态升级为预测与 world model 通道。
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| 695 | 320 | 8 | 99 | 102 | 166 |
+本季度共纳入 1686 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 255 | 15.1% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 91 | 5.4% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 168 | 10.0% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 174 | 10.3% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 254 | 15.1% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 74 | 4.4% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 78 | 4.6% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 368 | 21.8% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 54 | 3.2% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 52 | 3.1% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 83 | 4.9% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 23 | 1.4% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 2 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 6 | 0.4% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 4 | 0.2% |
 
 **阶段证据链：**
 
@@ -2389,8 +2201,6 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 
 7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 4 日尚无可归档 arXiv v1，暂不从 0 条样本推断趋势。
 
-<!-- 更新标记：季度演进 最后更新 2026.08 -->
-
 ---
 
 
@@ -2399,21 +2209,31 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 > 主分析期为 2025 年 7 月—2026 年 6 月。同比增长只在同一宽召回查询口径内有效，不代表全部机器人论文的绝对市场份额。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>1841</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>633</strong><span>同比基线候选</span></div>
+  <div class="radar-kpi"><strong>5221</strong><span>主分析期候选</span></div>
+  <div class="radar-kpi"><strong>3214</strong><span>同比基线候选</span></div>
   <div class="radar-kpi"><strong>84</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>30</strong><span>官方评审锚点</span></div>
 </div>
 
-### 五方向年度结构
+### 15 个方向年度结构
 
 | 方向 | 同比基线 | 主分析期 | 绝对增量 | 主分析期占比 |
 |---|---:|---:|---:|---:|
-| [具身基础模型](/directions/foundation-models) | 157 | 843 | +686 | 45.8% |
-| [大小脑与双系统](/directions/dual-system) | 7 | 25 | +18 | 1.4% |
-| [灵巧操作](/directions/dexterous-manipulation) | 134 | 250 | +116 | 13.6% |
-| [世界模型](/directions/world-models) | 70 | 228 | +158 | 12.4% |
-| [通用机器人学习](/directions/general-robot-learning) | 265 | 495 | +230 | 26.9% |
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 124 | 700 | +576 | 13.4% |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 250 | 314 | +64 | 6.0% |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 135 | 386 | +251 | 7.4% |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 369 | 503 | +134 | 9.6% |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 582 | 856 | +274 | 16.4% |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 137 | 272 | +135 | 5.2% |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 250 | 298 | +48 | 5.7% |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 913 | 1217 | +304 | 23.3% |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 96 | 145 | +49 | 2.8% |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 127 | 173 | +46 | 3.3% |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 154 | 256 | +102 | 4.9% |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 50 | 66 | +16 | 1.3% |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 2 | 4 | +2 | 0.1% |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 16 | 20 | +4 | 0.4% |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 9 | 11 | +2 | 0.2% |
 
 最显著的事实是具身基础模型候选增量远高于其他方向；但弱信号更多出现在双系统调度、触觉 world model、失败恢复和数据闭环，这些领域的论文数量反而不占主导。
 
@@ -2449,8 +2269,6 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 ### 下一步
 
 真正领先于共识的八项判断见[弱信号探测与未来判断](/analysis/weak-signals)。每项都包含 3–24 个月验证路标和反证条件。
-
-<!-- 更新标记：年度综合 最后更新 2026.07 -->
 
 ---
 
@@ -2629,437 +2447,1557 @@ flowchart LR
 
 每月新增论文后，先检查路标而不是重写预测：出现第三方采用、真实机器人恢复率、跨硬件 benchmark 或开放训练资产时升级；连续两个季度没有独立跟进、只剩同团队系列工作或真机增益消失时降级。
 
-<!-- 更新标记：弱信号与未来判断 最后更新 2026.08 -->
+---
+
+
+## 15 个研究方向
+
+> 本站当前统一使用以下 15 个主方向。每项工作只计一个主方向，可同时拥有多个关联方向与证据标签。
+
+| 编号 | 方向 | 层级 | 纳入工作 |
+|---|---|---|---:|
+| D1 | [具身基础模型与通才策略](/frontiers/foundation-models) | 模型与系统 | 924 |
+| D2 | [分层推理、规划与记忆](/frontiers/reasoning-planning) | 模型与系统 | 819 |
+| D3 | [世界模型与预测控制](/frontiers/world-models) | 模型与系统 | 616 |
+| D4 | [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 物理能力 | 1234 |
+| D5 | [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 物理能力 | 1987 |
+| D6 | [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 物理能力 | 530 |
+| D7 | [人机协作与交互学习](/frontiers/human-robot-interaction) | 物理能力 | 789 |
+| D8 | [策略学习与优化](/frontiers/policy-learning) | 学习与基础设施 | 2768 |
+| D9 | [数据引擎与人类视频学习](/frontiers/data-engines) | 学习与基础设施 | 343 |
+| D10 | [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 学习与基础设施 | 401 |
+| D11 | [动作关联的空间感知与表征](/frontiers/spatial-perception) | 学习与基础设施 | 518 |
+| D12 | [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 学习与基础设施 | 161 |
+| D13 | [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 学习与基础设施 | 8 |
+| D14 | [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 物理能力 | 51 |
+| D15 | [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 学习与基础设施 | 28 |
 
 ---
 
 
-## 具身基础模型
+## D1 · 具身基础模型与通才策略
 
-> 把视觉、语言、机器人状态与连续动作放入可跨任务复用的预训练—后训练框架，核心不只是模型规模，而是数据覆盖、动作表示、实时执行和经验学习。
+> 归属层级：模型与系统。当前纳入 924 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
-<div class="radar-kpis">
-  <div class="radar-kpi"><strong>843</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>157</strong><span>同比基线候选</span></div>
-  <div class="radar-kpi"><strong>9</strong><span>官方评审锚点</span></div>
-  <div class="radar-kpi"><strong>45.8%</strong><span>主分析期占比</span></div>
-</div>
+### 纳入边界
 
-### 跨月演进
+核心表达：`vision-language-action`、`vision language action`、`vla model`、`robot foundation model`、`robotic foundation model`、`generalist robot`、`generalist policy`、`general-purpose robot`、`language-conditioned policy`、`language conditioned policy`、`multitask robot policy`、`robot pretraining`、`robot pre-training`、`large-scale robot model`。
 
-- 2024 H2：OpenVLA、π0 等工作确立开放 VLA 与 flow action generation 的基线。
-- 2025 H1：π0.5、FAST、SpatialVLA 把开放世界泛化、动作 tokenization 与空间表征带入同行评审。
-- 2025 H2：研究从“是否可做 VLA”分化到效率、跨本体、经验学习和开放数据配方。
-- 2026 H1：steerable、real-time、垂直物理任务和跨本体统一成为主线，执行系统开始与模型本体同等重要。
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`action`、`policy`。
 
-| 月份 | 候选数 | 相对热度 |
-|---|---:|---|
-| 2025-07 | 17 | █ |
-| 2025-08 | 29 | ██ |
-| 2025-09 | 57 | ████ |
-| 2025-10 | 72 | █████ |
-| 2025-11 | 65 | █████ |
-| 2025-12 | 59 | ████ |
-| 2026-01 | 36 | ███ |
-| 2026-02 | 84 | ██████ |
-| 2026-03 | 104 | ████████ |
-| 2026-04 | 57 | ████ |
-| 2026-05 | 101 | ███████ |
-| 2026-06 | 162 | ████████████ |
+### 月度结构与环比
 
-### 技术路线对比
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 1 | — | 0 | +1 | 新增 |
+| 2024-08 | 0 | 2024-07 | 1 | -1 | -100.0% |
+| 2024-09 | 6 | 2024-08 | 0 | +6 | 新增 |
+| 2024-10 | 6 | 2024-09 | 6 | 0 | 0.0% |
+| 2024-11 | 6 | 2024-10 | 6 | 0 | 0.0% |
+| 2024-12 | 7 | 2024-11 | 6 | +1 | +16.7% |
+| 2025-01 | 6 | 2024-12 | 7 | -1 | -14.3% |
+| 2025-02 | 11 | 2025-01 | 6 | +5 | +83.3% |
+| 2025-03 | 20 | 2025-02 | 11 | +9 | +81.8% |
+| 2025-04 | 3 | 2025-03 | 20 | -17 | -85.0% |
+| 2025-05 | 29 | 2025-04 | 3 | +26 | +866.7% |
+| 2025-06 | 29 | 2025-05 | 29 | 0 | 0.0% |
+| 2025-07 | 20 | 2025-06 | 29 | -9 | -31.0% |
+| 2025-08 | 26 | 2025-07 | 20 | +6 | +30.0% |
+| 2025-09 | 47 | 2025-08 | 26 | +21 | +80.8% |
+| 2025-10 | 59 | 2025-09 | 47 | +12 | +25.5% |
+| 2025-11 | 48 | 2025-10 | 59 | -11 | -18.6% |
+| 2025-12 | 46 | 2025-11 | 48 | -2 | -4.2% |
+| 2026-01 | 30 | 2025-12 | 46 | -16 | -34.8% |
+| 2026-02 | 74 | 2026-01 | 30 | +44 | +146.7% |
+| 2026-03 | 95 | 2026-02 | 74 | +21 | +28.4% |
+| 2026-04 | 49 | 2026-03 | 95 | -46 | -48.4% |
+| 2026-05 | 94 | 2026-04 | 49 | +45 | +91.8% |
+| 2026-06 | 112 | 2026-05 | 94 | +18 | +19.1% |
+| 2026-07 | 74 | 2026-06 | 112 | -38 | -33.9% |
 
-| 路线 | 核心表示/机制 | 优势 | 当前局限 |
-|---|---|---|---|
-| 自回归 action token | 离散动作 token / chunk | 训练与语言模型兼容 | 量化误差、控制频率 |
-| Diffusion / flow action | 连续轨迹分布 | 多峰动作、平滑控制 | 采样延迟、闭环修正 |
-| 分层 / 双系统 VLA | 语义计划 + 低层执行 | 长时任务、可解释接口 | 模块误差与异步调度 |
-| 视频—动作统一模型 | 预测未来 + 生成动作 | 人类视频扩展、world knowledge | 像素冗余、可执行性 |
+### 代表工作与证据
 
-### 代表工作
-
-| 论文 | v1 月份 | 状态 | 一句话贡献 |
-|---|---|---|---|
-| [π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) | 2024-10 | [RSS 2025](https://www.roboticsproceedings.org/rss21/p010.html) | Robot learning holds tremendous promise to unlock the full potential of flexible, general, and dexterous robot systems, as well as to address some of the deepest questions in artificial intelligence |
-| [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747) | 2025-01 | [RSS 2025](https://www.roboticsproceedings.org/rss21/p012.html) | Autoregressive sequence models, such as Transformer-based vision-language action (VLA) policies, can be tremendously effective for capturing complex and generalizable robotic behaviors |
-| [π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054) | 2025-04 | [CoRL 2025](https://proceedings.mlr.press/v305/black25a.html) | In order for robots to be useful, they must perform practically relevant tasks in the real world, outside of the lab |
-| [EO-1: An Open Unified Embodied Foundation Model for General Robot Control](https://arxiv.org/abs/2508.21112) | 2025-08 | arXiv | EO-1 在统一 decoder 中结合自回归与 flow matching，以 EO-Data1.5M 做交错 vision-text-action 预训练，覆盖多本体长时序灵巧控制。 |
-| [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759) | 2025-11 | arXiv | RECAP 把示范、在线 rollout 与专家纠正统一为 advantage-conditioned VLA 强化学习，使 π*0.6 在家庭与商业设备任务中持续改进。 |
-| [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684) | 2026-02 | arXiv | 以跨本体预训练、异步执行训练和动作块时间对齐，让开放 VLA 在消费级 GPU 上实现平滑实时双臂控制。 |
-| [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04 | arXiv | 通过把策略、表现元数据和子目标图像等多模态上下文纳入训练，使单一 foundation policy 可被精细 steer 并出现跨本体、组合任务和灵巧能力。 |
-| [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280) | 2026-05 | arXiv | 以 embodiment-aware prompt 和统一动作—轨迹预测，把操作、导航、轨迹预测及多源数据纳入单一 Qwen-VLA。 |
-
-### 同行评审锚点
-
-| 工作 | Venue | arXiv |
-|---|---|---|
-| [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html) | CoRL 2024 | [2406.09246](https://arxiv.org/abs/2406.09246) |
-| [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) | NeurIPS 2024 | [2409.20537](https://arxiv.org/abs/2409.20537) |
-| [π₀: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html) | RSS 2025 | [2410.24164](https://arxiv.org/abs/2410.24164) |
-| [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) | RSS 2025 | [2501.15830](https://arxiv.org/abs/2501.15830) |
-| [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) | RSS 2025 | [2501.09747](https://arxiv.org/abs/2501.09747) |
-| [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) | RSS 2025 | [2505.06111](https://arxiv.org/abs/2505.06111) |
-| [π₀.₅: A Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html) | CoRL 2025 | [2504.16054](https://arxiv.org/abs/2504.16054) |
-| [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) | CoRL 2025 | [2508.19958](https://arxiv.org/abs/2508.19958) |
-| [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) | CVPR 2026 | [2601.08325](https://arxiv.org/abs/2601.08325) |
-
-### 成熟度、瓶颈与战略判断
-
-**成熟度。** 已从概念验证进入多团队真实机器人阶段；但“通用”仍高度依赖训练机器人、任务模板和评测环境。
-
-**关键瓶颈。**
-
-- 实时推理与控制频率
-- 长尾失败恢复
-- 跨本体负迁移
-- 可持续部署数据闭环
-- 安全与不确定性
-
-**战略判断。** 短期不应只按模型参数或 benchmark 排名判断团队；应重点比较真实部署时延、数据飞轮、跨本体适配成本和失败恢复。
-
-<!-- 更新标记：具身基础模型 最后更新 2026.07 -->
-
----
-
-
-## 大小脑与双系统
-
-> 由慢速语义推理/规划与快速反应控制协同完成任务；本报告也纳入未使用 System 1/2 命名、但实际具备高层意图与低层策略分工的工作。
-
-<div class="radar-kpis">
-  <div class="radar-kpi"><strong>25</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>7</strong><span>同比基线候选</span></div>
-  <div class="radar-kpi"><strong>7</strong><span>官方评审锚点</span></div>
-  <div class="radar-kpi"><strong>1.4%</strong><span>主分析期占比</span></div>
-</div>
-
-### 跨月演进
-
-- 2024 H2：Embodied CoT 证明显式中间推理可改善机器人控制。
-- 2025 H1：Reactive Diffusion Policy 等工作把 slow–fast 分工落到视觉—触觉控制。
-- 2025 H2：VLA-Reasoner、MoTVLA、DualVLA 形成搜索、快慢统一和部分解耦三条路线。
-- 2026 H1：Action CoT、异步 coarse-to-fine、连续推理和 3D trace 使接口从语言计划走向可执行中间表示。
-
-| 月份 | 候选数 | 相对热度 |
-|---|---:|---|
-| 2025-07 | 1 | ███ |
-| 2025-08 | 0 | █ |
-| 2025-09 | 2 | ██████ |
-| 2025-10 | 2 | ██████ |
-| 2025-11 | 1 | ███ |
-| 2025-12 | 3 | █████████ |
-| 2026-01 | 3 | █████████ |
-| 2026-02 | 1 | ███ |
-| 2026-03 | 4 | ████████████ |
-| 2026-04 | 2 | ██████ |
-| 2026-05 | 3 | █████████ |
-| 2026-06 | 3 | █████████ |
-
-### 技术路线对比
-
-| 路线 | 核心表示/机制 | 优势 | 当前局限 |
-|---|---|---|---|
-| 显式 planner–policy | VLM/LLM 计划后调用 policy | 模块可替换、易解释 | 计划误差难恢复 |
-| 统一 fast–slow 模型 | 共享表征、不同计算路径 | 端到端优化、延迟较低 | 分工是否真实存在难验证 |
-| 搜索 / verifier | 生成候选并用模型或奖励验证 | 失败检测与自纠错 | 测试时计算高 |
-| 3D trace / latent intent | 中间轨迹或潜意图连接动作 | 更接近几何执行、可跨本体 | 监督获取与接口标准 |
-
-### 代表工作
-
-| 论文 | v1 月份 | 状态 | 一句话贡献 |
-|---|---|---|---|
-| [Robotic Control via Embodied Chain-of-Thought Reasoning](https://arxiv.org/abs/2407.08693) | 2024-07 | [CoRL 2024](https://proceedings.mlr.press/v270/zawalski25a.html) | A key limitation of learned robot control policies is their inability to generalize outside their training data |
-| [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://arxiv.org/abs/2503.02881) | 2025-03 | [RSS 2025](https://www.roboticsproceedings.org/rss21/p052.html) | Humans can accomplish complex contact-rich tasks using vision and touch, with highly reactive capabilities such as fast response to external changes and adaptive control of contact forces; however, this remains challenging for robots |
-| [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | 2025-09 | arXiv | VLA-Reasoner 以世界模型 rollout、KDE 置信采样和 MCTS 为现成 VLA 增加测试时前瞻，在真实长时序任务上纠偏。 |
-| [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337) | 2025-10 | arXiv | MoTVLA 让预训练 VLM 承担慢速语义规划、专用 transformer 生成快速运动分解，再驱动 action expert 实时执行。 |
-| [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134) | 2025-11 | arXiv | DualVLA 通过双层数据裁剪与双教师蒸馏缓解推理微调导致的动作退化，并提出按 reasoning/intention/action/alignment 分解的 VLA Score。 |
-| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) | 2026-01 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | 把 Chain-of-Thought 直接落在动作空间，以显式粗轨迹和隐式动作先验共同条件化下游动作头，缩短语义推理到连续控制的距离。 |
-| [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921) | 2026-04 | arXiv | 将宏观离散方向规划和微观连续位姿对齐分给异步双系统，并提出动作分解粒度存在学习均衡点。 |
-| [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229) | 2026-05 | arXiv | 把可共享、可验证的 Gaussian continuous thoughts 作为 VLA 推理介质，并以教师消费学生 latent 的动作改善来约束推理。 |
-| [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329) | 2026-06 | arXiv | 让高层 VLM 直接输出 metric 3D waypoint，并无缝接入点云低层策略，修正 2D guidance 的深度歧义。 |
-
-### 同行评审锚点
-
-| 工作 | Venue | arXiv |
-|---|---|---|
-| [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) | CoRL 2024 | [2407.08693](https://arxiv.org/abs/2407.08693) |
-| [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html) | CoRL 2024 | [2409.01652](https://arxiv.org/abs/2409.01652) |
-| [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html) | CoRL 2025 | [2502.16707](https://arxiv.org/abs/2502.16707) |
-| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | CVPR 2026 | [2601.11404](https://arxiv.org/abs/2601.11404) |
-| [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) | CVPR 2026 | [2601.01618](https://arxiv.org/abs/2601.01618) |
-| [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) | CVPR 2026 | [2603.07648](https://arxiv.org/abs/2603.07648) |
-| [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) | CVPR 2026 | [2512.05955](https://arxiv.org/abs/2512.05955) |
-
-### 成熟度、瓶颈与战略判断
-
-**成熟度。** 架构概念已获得多项同行评审锚点，正在向实时系统和故障恢复迁移。
-
-**关键瓶颈。**
-
-- 何时触发慢推理
-- 异步状态陈旧
-- 验证器可靠性
-- 接口误差传播
-- 安全终止
-
-**战略判断。** 真正的机会可能在推理调度、verifier、恢复和中间表示，而不是把两个模型简单串联。
-
-<!-- 更新标记：大小脑与双系统 最后更新 2026.07 -->
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [RoboCasa: Large-Scale Simulation of Household Tasks for Generalist Robots](https://doi.org/10.15607/rss.2024.xx.050) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [$\pi_0.5$: a Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [$π_{0.5}$: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054) | 2025-04-22 | CoRL 2025 | 是 | — |
+| [$π_0$: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) | 2024-10-31 | RSS 2025 | 是 | [Physical-Intelligence/openpi](https://github.com/Physical-Intelligence/openpi) |
+| [3DS-VLA: A 3D Spatial-Aware Vision Language Action Model for Robust Multi-Task Manipulation](https://proceedings.mlr.press/v305/li25g.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) | 2026-01-16 | CVPR 2026 | 是 | [AgibotTech/ACoT-VLA](https://github.com/AgibotTech/ACoT-VLA) |
+| [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://arxiv.org/abs/2601.08325) | 2026-01-13 | CVPR 2026 | 是 | — |
+| [AutoEval: Autonomous Evaluation of Generalist Robot Manipulation Policies in the Real World](https://arxiv.org/abs/2503.24278) | 2025-03-31 | CoRL 2025 | 是 | — |
+| [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://arxiv.org/abs/2502.05450) | 2025-02-08 | RSS 2025 | 是 | — |
+| [ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action Models](https://arxiv.org/abs/2506.16211) | 2025-06-19 | CoRL 2025 | 是 | — |
+| [Cross-Hand Latent Representation for Vision-Language-Action Models](https://arxiv.org/abs/2603.10158) | 2026-03-10 | CVPR 2026 | 是 | — |
+| [Elucidating the Design Space of Torque-aware Vision-Language-Action Models](https://proceedings.mlr.press/v305/zhang25k.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [EndoVLA: Dual-Phase Vision-Language-Action for Precise Autonomous Tracking in Endoscopy](https://proceedings.mlr.press/v305/kit25a.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747) | 2025-01-16 | RSS 2025 | 是 | — |
+| [Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success](https://arxiv.org/abs/2502.19645) | 2025-02-27 | RSS 2025 | 是 | — |
+| [FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Flow Models](https://proceedings.mlr.press/v305/reuss25a.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models](https://arxiv.org/abs/2509.23655) | 2025-09-28 | CoRL 2025 | 是 | — |
+| [Generalist Robot Manipulation beyond Action Labeled Data](https://arxiv.org/abs/2509.19958) | 2025-09-24 | CoRL 2025 | 是 | — |
+| [GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data](https://arxiv.org/abs/2505.03233) | 2025-05-06 | CoRL 2025 | 是 | — |
+| [HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers](https://arxiv.org/abs/2410.05273) | 2024-09-12 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://arxiv.org/abs/2508.19958) | 2025-08-27 | CoRL 2025 | 是 | — |
+| [Mechanistic interpretability for steering vision-language-action models](https://arxiv.org/abs/2509.00328) | 2025-08-30 | CoRL 2025 | 是 | — |
+| [Octo: An Open-Source Generalist Robot Policy](https://doi.org/10.15607/rss.2024.xx.090) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246) | 2024-06-13 | CoRL 2024、CoRL 2024 | 是 | [openvla/openvla](https://github.com/openvla/openvla) |
+| [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | 2025-08-04 | CoRL 2025 | 是 | — |
+| [RoboArena: Distributed Real-World Evaluation of Generalist Robot Policies](https://arxiv.org/abs/2506.18123) | 2025-06-22 | CoRL 2025 | 是 | — |
+| [RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation](https://arxiv.org/abs/2509.08820) | 2025-09-10 | CoRL 2025 | 是 | — |
+| [RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation](https://arxiv.org/abs/2412.13877) | 2024-12-18 | RSS 2025 | 是 | — |
+| [RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models](https://arxiv.org/abs/2506.17811) | 2025-06-21 | CoRL 2025 | 是 | — |
+| [Shortcut Learning in Generalist Robot Policies: The Role of Dataset Diversity and Fragmentation](https://arxiv.org/abs/2508.06426) | 2025-08-08 | CoRL 2025 | 是 | — |
+| [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model](https://arxiv.org/abs/2501.15830) | 2025-01-27 | RSS 2025 | 是 | — |
+| [Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance](https://arxiv.org/abs/2410.13816) | 2024-10-17 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks](https://arxiv.org/abs/2412.06224) | 2024-12-09 | RSS 2025 | 是 | — |
+| [UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111) | 2025-05-09 | RSS 2025 | 是 | — |
+| [TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2409.12514) | 2024-09-19 | RA-L 2025 | 否 | — |
+| [PD-VLA: Accelerating Vision-Language-Action Model Integrated with Action Chunking via Parallel Decoding](https://arxiv.org/abs/2503.02310) | 2025-03-04 | IROS 2025 | 否 | — |
+| [Beyond Sight: Finetuning Generalist Robot Policies with Heterogeneous Sensors via Language Grounding](https://arxiv.org/abs/2501.04693) | 2025-01-08 | ICRA 2025 | 否 | — |
+| [GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot](https://arxiv.org/abs/2403.13358) | — | IROS 2024 | 否 | — |
+| [RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model](https://arxiv.org/abs/2409.19590) | 2024-09-29 | IROS 2025 | 否 | — |
+| [ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models](https://arxiv.org/abs/2409.15250) | 2024-09-23 | ICRA 2025 | 否 | — |
+| [Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust](https://arxiv.org/abs/2410.01971) | 2024-10-02 | ICRA 2025 | 否 | — |
+| [MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models](https://arxiv.org/abs/2503.08007) | 2025-03-11 | ICRA 2025 | 否 | — |
+| [ManiFoundation Model for General-Purpose Robotic Manipulation of Contact Synthesis with Arbitrary Objects and Robots](https://arxiv.org/abs/2405.06964) | — | IROS 2024 | 否 | — |
+| [RLRC: Reinforcement Learning-based Recovery for Compressed Vision-Language-Action Models](https://arxiv.org/abs/2506.17639) | 2025-06-21 | RA-L 2026 | 否 | — |
+| [A Taxonomy for Evaluating Generalist Robot Manipulation Policies](https://arxiv.org/abs/2503.01238) | 2025-03-03 | RA-L 2026、ICRA 2026 | 否 | — |
+| [VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback](https://ieeexplore.ieee.org/document/3692345) | 2026-07-01 | RA-L 2026 | 否 | — |
+| [Effective Tuning Strategies for Generalist Robot Manipulation Policies](https://arxiv.org/abs/2410.01220) | 2024-10-02 | ICRA 2025 | 否 | — |
+| [CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion](https://arxiv.org/abs/2601.09512) | 2026-01-14 | RA-L 2026 | 否 | — |
+| [REALM: A Real-to-Sim Validated Benchmark for Generalization in Robotic Manipulation](https://arxiv.org/abs/2512.19562) | 2025-12-22 | RA-L 2026 | 否 | — |
+| [PointVLA: Injecting the 3D World into Vision-Language-Action Models](https://arxiv.org/abs/2503.07511) | 2025-03-10 | RA-L 2026 | 否 | — |
+| [Beyond alignment: Why robotic foundation models need context-aware safety](https://www.science.org/doi/10.1126/scirobotics.aef2191) | 2026-04-29 | Science Robotics 2026 | 否 | — |
+| [BFA++: Hierarchical Best-Feature-Aware Token Prune for Multi-View Vision Language Action Model](https://arxiv.org/abs/2602.20566) | 2026-02-24 | RA-L 2026 | 否 | — |
+| [CapsDT: Diffusion-Transformer for Capsule Robot Manipulation](https://arxiv.org/abs/2506.16263) | 2025-06-19 | IROS 2025 | 否 | — |
+| [CLAP: A Closed-Loop Diffusion Transformer Action Foundation Model for Robotic Manipulation](https://ieeexplore.ieee.org/document/11246478) | 2025-01-01 | IROS 2025 | 否 | — |
+| [ThermoAct:Thermal-Aware Vision-Language-Action Models for Robotic Perception and Decision-Making](https://arxiv.org/abs/2603.25044) | 2026-03-26 | RA-L 2026 | 否 | — |
+| [Dynamic Maclaurin-Series-Based Vision-Language-Action Model](https://ieeexplore.ieee.org/document/3683324) | 2026-07-01 | RA-L 2026 | 否 | — |
+| [From autonomy to alliance: Robotic foundation models must learn with us, not just for us](https://www.science.org/doi/10.1126/scirobotics.aea1822) | 2026-04-22 | Science Robotics 2026 | 否 | — |
+| [$Δ$VLA: Prior-Guided Vision-Language-Action Models via World Knowledge Variation](https://arxiv.org/abs/2603.08361) | 2026-03-09 | 预印本 | 否 | — |
+| [$μ$VLA: On Recurrent Memory for Partially Observable Manipulation in VLA Models](https://arxiv.org/abs/2606.12497) | 2026-06-10 | 预印本 | 否 | — |
+| [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04-16 | 预印本 | 否 | — |
 
 ---
 
 
-## 灵巧操作
+## D2 · 分层推理、规划与记忆
 
-> 覆盖多指手、双臂、臂手协同、触觉与接触密集操作；判断成熟度时优先看长时连续接触、真实机器人和跨硬件可复现性。
+> 归属层级：模型与系统。当前纳入 819 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
-<div class="radar-kpis">
-  <div class="radar-kpi"><strong>250</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>134</strong><span>同比基线候选</span></div>
-  <div class="radar-kpi"><strong>5</strong><span>官方评审锚点</span></div>
-  <div class="radar-kpi"><strong>13.6%</strong><span>主分析期占比</span></div>
-</div>
+### 纳入边界
 
-### 跨月演进
+核心表达：`system 1`、`system 2`、`system-1`、`system-2`、`fast-slow`、`fast slow`、`planner-policy`、`planner policy`、`hierarchical reasoning`、`hierarchical policy`、`high-level planner`、`low-level policy`、`task planning`、`motion planning`、`vlm planner`、`embodied reasoning`、`chain-of-thought`、`chain of thought`、`long-horizon planning`、`long horizon planning`、`robot memory`、`failure recovery`、`test-time adaptation`、`test time adaptation`。
 
-- 2024–2025 H1：DexUMI、Reactive Diffusion Policy 把可扩展人类示范与视觉—触觉快慢策略带入评审主线。
-- 2025 H2：egocentric 数据、接触表示、生成视频和语言设计奖励扩大监督来源。
-- 2026 Q1：长时演奏、通用手控制和视触觉世界模型让灵巧操作从抓取走向连续任务。
-- 2026 Q2：touch dreaming、连续视触觉传感与统一触觉 VLA 形成“预测—控制—恢复”闭环。
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`action`、`policy`、`control`。
 
-| 月份 | 候选数 | 相对热度 |
-|---|---:|---|
-| 2025-07 | 12 | ███ |
-| 2025-08 | 11 | ██ |
-| 2025-09 | 25 | █████ |
-| 2025-10 | 13 | ███ |
-| 2025-11 | 9 | ██ |
-| 2025-12 | 12 | ███ |
-| 2026-01 | 7 | █ |
-| 2026-02 | 22 | █████ |
-| 2026-03 | 40 | ████████ |
-| 2026-04 | 19 | ████ |
-| 2026-05 | 23 | █████ |
-| 2026-06 | 57 | ████████████ |
+### 月度结构与环比
 
-### 技术路线对比
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 11 | — | 0 | +11 | 新增 |
+| 2024-08 | 10 | 2024-07 | 11 | -1 | -9.1% |
+| 2024-09 | 25 | 2024-08 | 10 | +15 | +150.0% |
+| 2024-10 | 31 | 2024-09 | 25 | +6 | +24.0% |
+| 2024-11 | 17 | 2024-10 | 31 | -14 | -45.2% |
+| 2024-12 | 17 | 2024-11 | 17 | 0 | 0.0% |
+| 2025-01 | 9 | 2024-12 | 17 | -8 | -47.1% |
+| 2025-02 | 16 | 2025-01 | 9 | +7 | +77.8% |
+| 2025-03 | 34 | 2025-02 | 16 | +18 | +112.5% |
+| 2025-04 | 25 | 2025-03 | 34 | -9 | -26.5% |
+| 2025-05 | 32 | 2025-04 | 25 | +7 | +28.0% |
+| 2025-06 | 23 | 2025-05 | 32 | -9 | -28.1% |
+| 2025-07 | 21 | 2025-06 | 23 | -2 | -8.7% |
+| 2025-08 | 25 | 2025-07 | 21 | +4 | +19.0% |
+| 2025-09 | 34 | 2025-08 | 25 | +9 | +36.0% |
+| 2025-10 | 29 | 2025-09 | 34 | -5 | -14.7% |
+| 2025-11 | 24 | 2025-10 | 29 | -5 | -17.2% |
+| 2025-12 | 22 | 2025-11 | 24 | -2 | -8.3% |
+| 2026-01 | 15 | 2025-12 | 22 | -7 | -31.8% |
+| 2026-02 | 24 | 2026-01 | 15 | +9 | +60.0% |
+| 2026-03 | 29 | 2026-02 | 24 | +5 | +20.8% |
+| 2026-04 | 20 | 2026-03 | 29 | -9 | -31.0% |
+| 2026-05 | 35 | 2026-04 | 20 | +15 | +75.0% |
+| 2026-06 | 36 | 2026-05 | 35 | +1 | +2.9% |
+| 2026-07 | 32 | 2026-06 | 36 | -4 | -11.1% |
 
-| 路线 | 核心表示/机制 | 优势 | 当前局限 |
-|---|---|---|---|
-| 遥操作 / UMI | 直接采集人类或领导臂示范 | 高质量、真实接触 | 设备成本与动作映射 |
-| 人类视频 / egocentric | 从第一视角或手部视频预训练 | 规模大、硬件无关 | 缺失力和动作标签 |
-| 仿真 / 生成数据 | 合成接触、奖励或视频 | 覆盖长尾、成本低 | sim-to-real 与可行性过滤 |
-| 视触觉策略 / world model | 预测接触与未来状态 | 失败恢复、精细控制 | 传感器标准化 |
+### 代表工作与证据
 
-### 代表工作
-
-| 论文 | v1 月份 | 状态 | 一句话贡献 |
-|---|---|---|---|
-| [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://arxiv.org/abs/2503.02881) | 2025-03 | [RSS 2025](https://www.roboticsproceedings.org/rss21/p052.html) | Humans can accomplish complex contact-rich tasks using vision and touch, with highly reactive capabilities such as fast response to external changes and adaptive control of contact forces; however, this remains challenging for robots |
-| [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | 2025-05 | [CoRL 2025](https://proceedings.mlr.press/v305/xu25b.html) | We present DexUMI - a data collection and policy learning framework that uses the human hand as the natural interface to transfer dexterous manipulation skills to various robot hands |
-| [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706) | 2025-08 | arXiv | 以双路触觉编码器和 135K 样本 ObjTac 对齐视觉、语言与多类触觉传感器，在夹爪和灵巧手真实任务上显著增益。 |
-| [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661) | 2025-09 | arXiv | CEDex 用人类式接触表征、拓扑合并与 SDF 物理约束，把同一抓取先验扩展到任意形态的灵巧手并规模化生成数据。 |
-| [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475) | 2025-10 | arXiv | DexMan 从无标定第三视角人类或生成视频估计手物运动，以接触奖励在仿真人形机器人上学习双臂灵巧技能。 |
-| [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201) | 2026-03 | arXiv | 以 21K+ 轨迹、86 任务的视觉—触觉—动作数据训练双流世界模型，并用 60Hz 触觉反射闭环纠偏。 |
-| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) | 2026-03 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) | 将 50K 轨迹、八种灵巧手、FAAS 统一动作空间、3D VLA 与便携采集装置组成 universal dexterous foundation suite。 |
-| [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015) | 2026-04 | arXiv | 把低身稳定控制、全身 VR 数据采集和 touch dreaming 结合，使 humanoid policy 同时预测动作块、未来关节力与触觉 latent。 |
-| [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723) | 2026-06 | arXiv | 以统一 tactile latent 同时建模当前接触语义和未来变化，再用 tactile-action mixed controller 高频修正低频动作块。 |
-
-### 同行评审锚点
-
-| 工作 | Venue | arXiv |
-|---|---|---|
-| [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html) | CoRL 2024 | [2406.08858](https://arxiv.org/abs/2406.08858) |
-| [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) | RSS 2025 | [2503.02881](https://arxiv.org/abs/2503.02881) |
-| [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) | CoRL 2025 | [2505.21864](https://arxiv.org/abs/2505.21864) |
-| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) | CVPR 2026 | [2603.22264](https://arxiv.org/abs/2603.22264) |
-| [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | CVPR 2026 | [2603.10158](https://arxiv.org/abs/2603.10158) |
-
-### 成熟度、瓶颈与战略判断
-
-**成熟度。** 真实机器人证据显著增强，但硬件、传感器和 benchmark 仍碎片化。
-
-**关键瓶颈。**
-
-- 触觉硬件一致性
-- 高频同步数据
-- 跨手型动作空间
-- 长时接触误差
-- 安全与耐久
-
-**战略判断。** 具备硬件、数据协议和策略闭环的一体化团队更可能积累壁垒；单次炫技 demo 的可复制性有限。
-
-<!-- 更新标记：灵巧操作 最后更新 2026.07 -->
-
----
-
-
-## 世界模型
-
-> 只纳入与动作、交互、规划、控制或机器人数据生成直接相关的预测模型；普通视频生成不计入。
-
-<div class="radar-kpis">
-  <div class="radar-kpi"><strong>228</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>70</strong><span>同比基线候选</span></div>
-  <div class="radar-kpi"><strong>5</strong><span>官方评审锚点</span></div>
-  <div class="radar-kpi"><strong>12.4%</strong><span>主分析期占比</span></div>
-</div>
-
-### 跨月演进
-
-- 2025 H1：Unified World Models、LaDi-WM、ParticleFormer 为视频—动作联合、latent dynamics 与物理 3D 预测提供同行评审锚点。
-- 2025 Q3：world model 主要承担数据生成、适配和 real-to-sim-to-real。
-- 2025 Q4：WorldPlanner、Motus、STORM 把搜索、MPC 与 latent action 接入闭环。
-- 2026 H1：RL simulator、executable alignment、视触觉预测和视频—动作统一使评价标准转向控制收益。
-
-| 月份 | 候选数 | 相对热度 |
-|---|---:|---|
-| 2025-07 | 4 | █ |
-| 2025-08 | 6 | █ |
-| 2025-09 | 12 | ███ |
-| 2025-10 | 16 | ████ |
-| 2025-11 | 13 | ███ |
-| 2025-12 | 16 | ████ |
-| 2026-01 | 13 | ███ |
-| 2026-02 | 23 | █████ |
-| 2026-03 | 23 | █████ |
-| 2026-04 | 20 | ████ |
-| 2026-05 | 28 | ██████ |
-| 2026-06 | 54 | ████████████ |
-
-### 技术路线对比
-
-| 路线 | 核心表示/机制 | 优势 | 当前局限 |
-|---|---|---|---|
-| 像素 / 视频预测 | 生成未来观测 | 可利用网络视频、可解释 | 计算冗余、动作可执行性弱 |
-| latent dynamics | 在紧凑状态空间预测 | 规划高效、易接 policy | 语义丢失、潜变量不可辨识 |
-| 3D / 4D 物理模型 | 点云、几何或材质状态预测 | 空间与接触更明确 | 传感与建模成本高 |
-| world-action unified | 联合预测视频和动作 | 训练目标统一、可直接控制 | 模型偏差与奖励投机 |
-
-### 代表工作
-
-| 论文 | v1 月份 | 状态 | 一句话贡献 |
-|---|---|---|---|
-| [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://arxiv.org/abs/2504.02792) | 2025-04 | [RSS 2025](https://www.roboticsproceedings.org/rss21/p015.html) | Imitation learning has emerged as a promising approach towards building generalist robots |
-| [LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation](https://arxiv.org/abs/2505.11528) | 2025-05 | [CoRL 2025](https://proceedings.mlr.press/v305/huang25a.html) | Predictive manipulation has recently gained considerable attention in the Embodied AI community due to its potential to improve robot policy performance by leveraging predicted states |
-| [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://arxiv.org/abs/2506.23126) | 2025-06 | [CoRL 2025](https://proceedings.mlr.press/v305/huang25c.html) | 3D world models (i.e., learning-based 3D dynamics models) offer a promising approach to generalizable robotic manipulation by capturing the underlying physics of environment evolution conditioned on robot actions |
-| [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077) | 2025-11 | arXiv | WorldPlanner 用数小时无结构 play data 学动作条件视频世界模型、动作采样器和可选奖励，再以 MCTS+MPC 在真实机器人上规划。 |
-| [Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) | 2025-12 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) | Motus 用 MoT 统一理解、视频生成和动作专家，并以 optical-flow latent action 支持世界模型、VLA、逆动力学等多种模式。 |
-| [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977) | 2026-02 | arXiv | 通过可控动作条件视频模型、关键帧初始化 rollout 和模型—策略共同演化，降低想象滚动的幻觉深度并用于 VLA 的 RL 后训练。 |
-| [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808) | 2026-03 | arXiv | 把 inverse dynamics model 反用作奖励模型，以速度、加速度、jerk 和本体约束对视频世界模型做可执行性对齐。 |
-| [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201) | 2026-03 | arXiv | 以 21K+ 轨迹、86 任务的视觉—触觉—动作数据训练双流世界模型，并用 60Hz 触觉反射闭环纠偏。 |
-| [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817) | 2026-05 | arXiv | 保持 video planner 本体无关，仅为各机器人训练基于 Jacobian 的 IDM，形成可替换视频模型的闭环 VERA 路线。 |
-| [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | 2026-05 | arXiv | 以共享视频 diffusion backbone 统一动作生成、未来视频模拟和进度评分，并在约 27,300 小时混合数据上训练。 |
-
-### 同行评审锚点
-
-| 工作 | Venue | arXiv |
-|---|---|---|
-| [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) | RSS 2025 | [2504.02792](https://arxiv.org/abs/2504.02792) |
-| [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) | CoRL 2025 | [2505.11528](https://arxiv.org/abs/2505.11528) |
-| [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) | CoRL 2025 | [2506.23126](https://arxiv.org/abs/2506.23126) |
-| [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) | CVPR 2026 | [2512.13030](https://arxiv.org/abs/2512.13030) |
-| [PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) | CVPR 2026 | [2601.03782](https://arxiv.org/abs/2601.03782) |
-
-### 成熟度、瓶颈与战略判断
-
-**成熟度。** 同行评审证据较强，但真实机器人长时闭环仍是分水岭。
-
-**关键瓶颈。**
-
-- 长时 roll-out 漂移
-- model bias
-- 逆动力学可执行性
-- 规划算力
-- 真实接触建模
-
-**战略判断。** 把‘是否在同算力下提高真实控制成功率’设为硬门槛，避免把生成质量误判为机器人能力。
-
-<!-- 更新标记：世界模型 最后更新 2026.07 -->
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [AutoGPT+P: Affordance-based Task Planning using Large Language Models](https://arxiv.org/abs/2402.10778) | — | RSS 2024、RSS 2024 | 是 | — |
+| [Collision-Affording Point Trees: SIMD-Amenable Nearest Neighbors for Fast Motion Planning with Pointclouds](https://doi.org/10.15607/rss.2024.xx.038) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Motion Planning in Foliated Manifolds using Repetition Roadmap](https://doi.org/10.15607/rss.2024.xx.036) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [A biconvex method for minimum-time motion planning through sequences of convex sets](https://arxiv.org/abs/2504.18978) | 2025-04-26 | RSS 2025 | 是 | — |
+| [APRICOT: Active Preference Learning and Constraint-Aware Task Planning with LLMs](https://arxiv.org/abs/2410.19656) | 2024-10-25 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments](https://arxiv.org/abs/2509.06953) | 2025-09-08 | CoRL 2025 | 是 | — |
+| [Differentiable GPU-Parallelized Task and Motion Planning](https://arxiv.org/abs/2411.11833) | 2024-11-18 | RSS 2025 | 是 | — |
+| [DiffusionSeeder: Seeding Motion Optimization with Diffusion for Rapid Motion Planning](https://arxiv.org/abs/2410.16727) | 2024-10-22 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Effective Sampling for Robot Motion Planning Through the Lens of Lattices](https://arxiv.org/abs/2502.04908) | 2025-02-07 | RSS 2025 | 是 | — |
+| [Hierarchical Temporal Logic Task and Motion Planning for Multi-Robot Systems](https://arxiv.org/abs/2504.18899) | 2025-04-26 | RSS 2025 | 是 | — |
+| [INTERPRET: Interactive Predicate Learning from Language Feedback for Generalizable Task Planning](https://doi.org/10.15607/rss.2024.xx.034) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [KoopMotion: Learning Almost Divergence Free Koopman Flow Fields for Motion Planning](https://arxiv.org/abs/2509.09074) | 2025-09-11 | CoRL 2025 | 是 | — |
+| [Language-Augmented Symbolic Planner for Open-World Task Planning](https://arxiv.org/abs/2407.09792) | 2024-07-13 | RSS 2024、RSS 2024 | 是 | — |
+| [Language-guided Manipulator Motion Planning with Bounded Task Space](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Meta-Optimization and Program Search using Language Models for Task and Motion Planning](https://arxiv.org/abs/2505.03725) | 2025-05-06 | CoRL 2025 | 是 | — |
+| [Multi-agent Reinforcement Learning with Hybrid Action Space for Free Gait Motion Planning of Hexapod Robots](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Multimodal Fused Learning for Solving the Generalized Traveling Salesman Problem in Robotic Task Planning](https://arxiv.org/abs/2506.16931) | 2025-06-20 | CoRL 2025 | 是 | — |
+| [NOD-TAMP: Generalizable Long-Horizon Planning with Neural Object Descriptors](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Partially Observable Task and Motion Planning with Uncertainty and Risk Awareness](https://doi.org/10.15607/rss.2024.xx.118) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Planning from Point Clouds over Continuous Actions for Multi-object Rearrangement](https://arxiv.org/abs/2509.04645) | 2025-09-04 | CoRL 2025 | 是 | — |
+| [Robotic Control via Embodied Chain-of-Thought Reasoning](https://arxiv.org/abs/2407.08693) | 2024-07-11 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Search-TTA: A Multimodal Test-Time Adaptation Framework for Visual Search in the Wild](https://arxiv.org/abs/2505.11350) | 2025-05-16 | CoRL 2025 | 是 | — |
+| [Superfast Configuration-Space Convex Set Computation on GPUs for Online Motion Planning](https://arxiv.org/abs/2504.10783) | 2025-04-15 | RSS 2025 | 是 | — |
+| [Train-Once Plan-Anywhere Kinodynamic Motion Planning via Diffusion Trees](https://arxiv.org/abs/2508.21001) | 2025-08-28 | CoRL 2025 | 是 | — |
+| [Training Strategies for Efficient Embodied Reasoning](https://arxiv.org/abs/2505.08243) | 2025-05-13 | CoRL 2025 | 是 | — |
+| [SMART-LLM: Smart Multi-Agent Robot Task Planning using Large Language Models](https://arxiv.org/abs/2309.10062) | — | IROS 2024 | 否 | — |
+| [AutoTAMP: Autoregressive Task and Motion Planning with LLMs as Translators and Checkers](https://arxiv.org/abs/2306.06531) | — | ICRA 2024 | 否 | — |
+| [CoPa: General Robotic Manipulation through Spatial Constraints of Parts with Foundation Models](https://arxiv.org/abs/2403.08248) | — | IROS 2024 | 否 | — |
+| [ISR-LLM: Iterative Self-Refined Large Language Model for Long-Horizon Sequential Task Planning](https://arxiv.org/abs/2308.13724) | — | ICRA 2024 | 否 | — |
+| [GPT-4V(ision) for Robotics: Multimodal Task Planning From Human Demonstration](https://arxiv.org/abs/2311.12015) | — | RA-L 2024 | 否 | — |
+| [LLM3: Large Language Model-based Task and Motion Planning with Motion Failure Reasoning](https://arxiv.org/abs/2403.11552) | — | IROS 2024 | 否 | — |
+| [Guiding Long-Horizon Task and Motion Planning with Vision Language Models](https://arxiv.org/abs/2410.02193) | 2024-10-03 | ICRA 2025 | 否 | — |
+| [EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning](https://arxiv.org/abs/2309.11414) | — | ICRA 2024 | 否 | — |
+| [Statler: State-Maintaining Language Models for Embodied Reasoning](https://arxiv.org/abs/2306.17840) | — | ICRA 2024 | 否 | — |
+| [Vision-Language Interpreter for Robot Task Planning](https://arxiv.org/abs/2311.00967) | — | ICRA 2024 | 否 | — |
+| [DELTA: Decomposed Efficient Long-Term Robot Task Planning Using Large Language Models](https://arxiv.org/abs/2404.03275) | — | ICRA 2025 | 否 | — |
+| [VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model](https://arxiv.org/abs/2410.08792) | 2024-10-11 | IROS 2025 | 否 | — |
+| [GRID: Scene-Graph-based Instruction-driven Robotic Task Planning](https://arxiv.org/abs/2309.07726) | — | IROS 2024 | 否 | — |
+| [Towards Generalizable Vision-Language Robotic Manipulation: A Benchmark and LLM-guided 3D Policy](https://arxiv.org/abs/2410.01345) | 2024-10-02 | ICRA 2025 | 否 | — |
+| [Can Vehicle Motion Planning Generalize to Realistic Long-tail Scenarios?](https://arxiv.org/abs/2404.07569) | — | IROS 2024 | 否 | — |
+| [Motion Planning Diffusion: Learning and Adapting Robot Motion Planning with Diffusion Models](https://arxiv.org/abs/2412.19948) | 2024-12-27 | T-RO 2025 | 否 | — |
+| [LiP-LLM: Integrating Linear Programming and dependency graph with Large Language Models for multi-robot task planning](https://arxiv.org/abs/2410.21040) | 2024-10-28 | RA-L 2025 | 否 | — |
+| [LLM-as-BT-Planner: Leveraging LLMs for Behavior Tree Generation in Robot Task Planning](https://arxiv.org/abs/2409.10444) | 2024-09-16 | ICRA 2025 | 否 | — |
+| [ROG-Map: An Efficient Robocentric Occupancy Grid Map for Large-scene and High-resolution LiDAR-based Motion Planning](https://arxiv.org/abs/2302.14819) | — | IROS 2024 | 否 | — |
+| [Non-Euclidean motion planning with graphs of geodesically convex sets](https://arxiv.org/abs/2305.06341) | — | IJRR 2024 | 否 | — |
+| [DiMSam: Diffusion Models as Samplers for Task and Motion Planning under Partial Observability](https://arxiv.org/abs/2306.13196) | — | IROS 2024 | 否 | — |
+| [Kinematic-aware Prompting for Generalizable Articulated Object Manipulation with LLMs](https://arxiv.org/abs/2311.02847) | — | ICRA 2024 | 否 | — |
+| [Safety Aware Task Planning via Large Language Models in Robotics](https://arxiv.org/abs/2503.15707) | 2025-03-19 | IROS 2025 | 否 | — |
+| [Sce2DriveX: A Generalized MLLM Framework for Scene-to-Drive Learning](https://arxiv.org/abs/2502.14917) | — | RA-L 2025、ICRA 2026 | 否 | — |
+| [Extended Tree Search for Robot Task and Motion Planning](https://arxiv.org/abs/2103.05456) | — | IROS 2024 | 否 | — |
+| [FLTRNN: Faithful Long-Horizon Task Planning for Robotics with Large Language Models](https://ieeexplore.ieee.org/document/10611663) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [db-CBS: Discontinuity-Bounded Conflict-Based Search for Multi-Robot Kinodynamic Motion Planning](https://arxiv.org/abs/2309.16445) | — | ICRA 2024 | 否 | — |
+| [iDb-A*: Iterative Search and Optimization for Optimal Kinodynamic Motion Planning](https://arxiv.org/abs/2311.03553) | — | T-RO 2025 | 否 | — |
+| [Conflict-Based Model Predictive Control for Scalable Multi-Robot Motion Planning](https://arxiv.org/abs/2303.01619) | — | ICRA 2024 | 否 | — |
+| [RoboDexVLM: Visual Language Model-Enabled Task Planning and Motion Control for Dexterous Robot Manipulation](https://arxiv.org/abs/2503.01616) | 2025-03-03 | IROS 2025 | 否 | — |
+| [GG-LLM: Geometrically Grounding Large Language Models for Zero-shot Human Activity Forecasting in Human-Aware Task Planning](https://arxiv.org/abs/2310.20034) | — | ICRA 2024 | 否 | — |
+| [Multi-Modal MPPI and Active Inference for Reactive Task and Motion Planning](https://arxiv.org/abs/2312.02328) | — | RA-L 2024 | 否 | — |
+| [Real-time Whole-body Motion Planning for Mobile Manipulators Using Environment-adaptive Search and Spatial-temporal Optimization](https://ieeexplore.ieee.org/document/10610192) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Fast and Accurate Task Planning using Neuro-Symbolic Language Models and Multi-level Goal Decomposition](https://arxiv.org/abs/2409.19250) | 2024-09-28 | ICRA 2025 | 否 | — |
+| [iDb-RRT: Sampling-based Kinodynamic Motion Planning with Motion Primitives and Trajectory Optimization](https://arxiv.org/abs/2403.10745) | — | IROS 2024 | 否 | — |
 
 ---
 
 
-## 通用机器人学习
+## D3 · 世界模型与预测控制
 
-> 覆盖跨任务/本体迁移、人类视频学习、模仿与强化学习、diffusion/flow policy 和数据规模化，是其他四类方法落地的共同训练底座。
+> 归属层级：模型与系统。当前纳入 616 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
-<div class="radar-kpis">
-  <div class="radar-kpi"><strong>495</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>265</strong><span>同比基线候选</span></div>
-  <div class="radar-kpi"><strong>4</strong><span>官方评审锚点</span></div>
-  <div class="radar-kpi"><strong>26.9%</strong><span>主分析期占比</span></div>
-</div>
+### 纳入边界
 
-### 跨月演进
+核心表达：`world model`、`action-conditioned video`、`action conditioned video`、`robot video prediction`、`latent action`、`predictive dynamics`、`dynamics model`、`model-based planning`、`model based planning`、`generative simulation`、`video prediction for robot`、`future prediction`、`action-conditioned generation`、`action conditioned generation`。
 
-- 2024–2025 H1：diffusion/flow policy、latent action 和大规模机器人数据确立通用训练底座。
-- 2025 H2：无标签视频、数据编辑、合成数据和跨本体 diffusion 扩大非机器人监督。
-- 2026 Q1：egocentric 人类数据与在线/离线 RL 开始补足接触和经验学习。
-- 2026 Q2：开放数据—训练—评测栈与 human-as-humanoid 指向共享表示 + 本体适配器。
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`action`、`control`、`policy`、`planning`、`interaction`、`embodied`、`dynamics`。
 
-| 月份 | 候选数 | 相对热度 |
-|---|---:|---|
-| 2025-07 | 23 | ███ |
-| 2025-08 | 29 | ████ |
-| 2025-09 | 42 | ██████ |
-| 2025-10 | 37 | █████ |
-| 2025-11 | 31 | █████ |
-| 2025-12 | 34 | █████ |
-| 2026-01 | 26 | ████ |
-| 2026-02 | 44 | ██████ |
-| 2026-03 | 63 | █████████ |
-| 2026-04 | 36 | █████ |
-| 2026-05 | 48 | ███████ |
-| 2026-06 | 82 | ████████████ |
+### 月度结构与环比
 
-### 技术路线对比
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 6 | — | 0 | +6 | 新增 |
+| 2024-08 | 3 | 2024-07 | 6 | -3 | -50.0% |
+| 2024-09 | 12 | 2024-08 | 3 | +9 | +300.0% |
+| 2024-10 | 17 | 2024-09 | 12 | +5 | +41.7% |
+| 2024-11 | 8 | 2024-10 | 17 | -9 | -52.9% |
+| 2024-12 | 7 | 2024-11 | 8 | -1 | -12.5% |
+| 2025-01 | 4 | 2024-12 | 7 | -3 | -42.9% |
+| 2025-02 | 8 | 2025-01 | 4 | +4 | +100.0% |
+| 2025-03 | 19 | 2025-02 | 8 | +11 | +137.5% |
+| 2025-04 | 11 | 2025-03 | 19 | -8 | -42.1% |
+| 2025-05 | 18 | 2025-04 | 11 | +7 | +63.6% |
+| 2025-06 | 22 | 2025-05 | 18 | +4 | +22.2% |
+| 2025-07 | 11 | 2025-06 | 22 | -11 | -50.0% |
+| 2025-08 | 10 | 2025-07 | 11 | -1 | -9.1% |
+| 2025-09 | 13 | 2025-08 | 10 | +3 | +30.0% |
+| 2025-10 | 25 | 2025-09 | 13 | +12 | +92.3% |
+| 2025-11 | 19 | 2025-10 | 25 | -6 | -24.0% |
+| 2025-12 | 29 | 2025-11 | 19 | +10 | +52.6% |
+| 2026-01 | 21 | 2025-12 | 29 | -8 | -27.6% |
+| 2026-02 | 41 | 2026-01 | 21 | +20 | +95.2% |
+| 2026-03 | 49 | 2026-02 | 41 | +8 | +19.5% |
+| 2026-04 | 32 | 2026-03 | 49 | -17 | -34.7% |
+| 2026-05 | 53 | 2026-04 | 32 | +21 | +65.6% |
+| 2026-06 | 83 | 2026-05 | 53 | +30 | +56.6% |
+| 2026-07 | 57 | 2026-06 | 83 | -26 | -31.3% |
 
-| 路线 | 核心表示/机制 | 优势 | 当前局限 |
-|---|---|---|---|
-| Imitation / behavior cloning | 从示范直接学习 | 稳定、工程成熟 | 分布外恢复弱 |
-| Diffusion / flow policy | 生成多峰动作分布 | 精细连续控制 | 推理时延与反馈修正 |
-| Offline / online RL | 用奖励改进策略 | 能从失败和部署经验学习 | 奖励、安全与样本成本 |
-| 人类视频 / 跨本体 | 共享视觉—动作或接触表征 | 数据规模大、迁移潜力高 | 动力学与动作空间不一致 |
+### 代表工作与证据
 
-### 代表工作
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Diffusion Dynamics Models with Generative State Estimation for Cloth Manipulation](https://arxiv.org/abs/2503.11999) | 2025-03-15 | CoRL 2025 | 是 | — |
+| [DreamGen: Unlocking Generalization in Robot Learning through Video World Models](https://arxiv.org/abs/2505.12705) | 2025-05-19 | CoRL 2025 | 是 | [NVIDIA/GR00T-Dreams](https://github.com/NVIDIA/GR00T-Dreams) |
+| [Dynamic 3D Gaussian Tracking for Graph-Based Neural Dynamics Modeling](https://arxiv.org/abs/2410.18912) | 2024-10-24 | CoRL 2024、CoRL 2024 | 是 | — |
+| [LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation](https://arxiv.org/abs/2505.11528) | 2025-05-13 | CoRL 2025 | 是 | — |
+| [Learned Perceptive Forward Dynamics Model for Safe and Platform-aware Robotic Navigation](https://arxiv.org/abs/2504.19322) | 2025-04-27 | RSS 2025 | 是 | — |
+| [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [Learning to Walk from Three Minutes of Real-World Data with Semi-structured Dynamics Models](https://arxiv.org/abs/2410.09163) | 2024-10-11 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving](https://arxiv.org/abs/2504.16923) | 2025-04-23 | RSS 2025 | 是 | — |
+| [Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) | 2025-12-15 | CVPR 2026 | 是 | — |
+| [Multi-Task Interactive Robot Fleet Learning with Visual World Models](https://arxiv.org/abs/2410.22689) | 2024-10-30 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos](https://arxiv.org/abs/2506.15680) | 2025-06-18 | RSS 2025 | 是 | — |
+| [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://arxiv.org/abs/2506.23126) | 2025-06-29 | CoRL 2025 | 是 | — |
+| [PIN-WM: Learning Physics-INformed World Models for Non-Prehensile Manipulation](https://arxiv.org/abs/2504.16693) | 2025-04-23 | RSS 2025 | 是 | — |
+| [PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://arxiv.org/abs/2601.03782) | 2026-01-07 | CVPR 2026 | 是 | — |
+| [Prompting with the Future: Open-World Model Predictive Control with Interactive Digital Twins](https://arxiv.org/abs/2506.13761) | 2025-06-16 | RSS 2025 | 是 | — |
+| [RoboPack: Learning Tactile-Informed Dynamics Models for Dense Packing](https://arxiv.org/abs/2407.01418) | 2024-07-01 | RSS 2024、RSS 2024 | 是 | — |
+| [SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World RL](https://proceedings.mlr.press/v305/hu25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://arxiv.org/abs/2504.02792) | 2025-04-03 | RSS 2025 | 是 | — |
+| [WoMAP: World Models For Embodied Open-Vocabulary Object Localization](https://arxiv.org/abs/2506.01600) | 2025-06-02 | CoRL 2025 | 是 | — |
+| [World Models for General Surgical Grasping](https://doi.org/10.15607/rss.2024.xx.041) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [A review of learning-based dynamics models for robotic manipulation](https://www.science.org/doi/10.1126/scirobotics.adt1497) | 2025-09-17 | Science Robotics 2025 | 否 | — |
+| [WMNav: Integrating Vision-Language Models into World Models for Object Goal Navigation](https://arxiv.org/abs/2503.02247) | 2025-03-04 | IROS 2025 | 否 | — |
+| [Renderworld: World Model with Self-Supervised 3D Label](https://arxiv.org/abs/2409.11356) | — | ICRA 2025 | 否 | — |
+| [World Model-based Perception for Visual Legged Locomotion](https://arxiv.org/abs/2409.16784) | 2024-09-25 | ICRA 2025 | 否 | — |
+| [AnyCar to Anywhere: Learning Universal Dynamics Model for Agile and Adaptive Mobility](https://arxiv.org/abs/2409.15783) | 2024-09-24 | ICRA 2025 | 否 | — |
+| [MoDem-V2: Visuo-Motor World Models for Real-World Robot Manipulation](https://arxiv.org/abs/2309.14236) | — | ICRA 2024 | 否 | — |
+| [Probing Multimodal LLMs as World Models for Driving](https://arxiv.org/abs/2405.05956) | — | RA-L 2025、ICRA 2026 | 否 | — |
+| [FlowDreamer: A RGB-D World Model with Flow-based Motion Representations for Robot Manipulation](https://arxiv.org/abs/2505.10075) | 2025-05-15 | RA-L 2026、ICRA 2026 | 否 | — |
+| [TWIST: Teacher-Student World Model Distillation for Efficient Sim-to-Real Transfer](https://arxiv.org/abs/2311.03622) | — | ICRA 2024 | 否 | — |
+| [X-MOBILITY: End-To-End Generalizable Navigation via World Modeling](https://arxiv.org/abs/2410.17491) | 2024-10-23 | ICRA 2025 | 否 | — |
+| [LUMOS: Language-Conditioned Imitation Learning with World Models](https://arxiv.org/abs/2503.10370) | 2025-03-13 | ICRA 2025 | 否 | — |
+| [Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling](https://arxiv.org/abs/2502.00622) | 2025-02-02 | RA-L 2026 | 否 | — |
+| [Planning with Adaptive World Models for Autonomous Driving](https://arxiv.org/abs/2406.10714) | — | ICRA 2025 | 否 | — |
+| [ManiGaussian++: General Robotic Bimanual Manipulation with Hierarchical Gaussian World Model](https://arxiv.org/abs/2506.19842) | 2025-06-24 | IROS 2025 | 否 | — |
+| [R-AIF: Solving Sparse-Reward Robotic Tasks from Pixels with Active Inference and World Models](https://arxiv.org/abs/2409.14216) | 2024-09-21 | ICRA 2025 | 否 | — |
+| [Residual Learning towards High-fidelity Vehicle Dynamics Modeling with Transformer](https://arxiv.org/abs/2502.11800) | 2025-02-17 | RA-L 2025 | 否 | — |
+| [QT-TDM: Planning With Transformer Dynamics Model and Autoregressive Q-Learning](https://arxiv.org/abs/2407.18841) | — | RA-L 2025 | 否 | — |
+| [Learning Coordinated Bimanual Manipulation Policies using State Diffusion and Inverse Dynamics Models](https://arxiv.org/abs/2503.23271) | 2025-03-30 | ICRA 2025 | 否 | — |
+| [Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving](https://arxiv.org/abs/2409.15730) | 2024-09-24 | ICRA 2025 | 否 | — |
+| [Online Adaptation of Learned Vehicle Dynamics Model with Meta-Learning Approach](https://arxiv.org/abs/2409.14950) | 2024-09-23 | IROS 2024 | 否 | — |
+| [A Deep Reinforcement Learning Framework and Methodology for Reducing the Sim-to-Real Gap in ASV Navigation](https://arxiv.org/abs/2407.08263) | 2024-07-11 | IROS 2024 | 否 | — |
+| [OccTENS: 3D Occ upancy World Model via Te mporal N ext- S cale Prediction](https://arxiv.org/abs/2509.03887) | — | RA-L 2026、ICRA 2026 | 否 | — |
+| [Data-Driven Dynamics Modeling of Miniature Robotic Blimps Using Neural ODEs With Parameter Auto-Tuning](https://arxiv.org/abs/2404.18580) | — | RA-L 2024 | 否 | — |
+| [From Pixels to Predicates: Learning Symbolic World Models via Pretrained VLMs](https://ieeexplore.ieee.org/document/3662533) | 2026-04-01 | RA-L 2026 | 否 | — |
+| [Learning dynamics models for velocity estimation in autonomous racing](https://arxiv.org/abs/2408.15610) | 2024-08-28 | IROS 2024 | 否 | — |
+| [Online Calibration of a Single-Track Ground Vehicle Dynamics Model by Tight Fusion with Visual-Inertial Odometry](https://arxiv.org/abs/2309.11148) | — | ICRA 2024 | 否 | — |
+| [STAGE: A Stream-Centric Generative World Model for Long-Horizon Driving-Scene Simulation](https://arxiv.org/abs/2506.13138) | — | IROS 2025 | 否 | — |
+| [Dynamics Modeling using Visual Terrain Features for High-Speed Autonomous Off-Road Driving](https://arxiv.org/abs/2412.00581) | 2024-11-30 | ICRA 2025 | 否 | — |
+| [Imagine-2-Drive: Leveraging High-Fidelity World Models via Multi-Modal Diffusion Policies](https://arxiv.org/abs/2411.10171) | 2024-11-15 | IROS 2025 | 否 | — |
+| [KUDA: Keypoints to Unify Dynamics Learning and Visual Prompting for Open-Vocabulary Robotic Manipulation](https://arxiv.org/abs/2503.10546) | 2025-03-13 | ICRA 2025 | 否 | — |
+| [Task-Oriented Active Learning of Model Preconditions for Inaccurate Dynamics Models](https://arxiv.org/abs/2401.04007) | — | ICRA 2024 | 否 | — |
+| [Automatic Configuration of Multi-Agent Model Predictive Controllers based on Semantic Graph World Models](https://arxiv.org/abs/2311.01180) | — | ICRA 2024 | 否 | — |
+| [LIMT: Language-Informed Multi-Task Visual World Models](https://arxiv.org/abs/2407.13466) | 2024-07-18 | ICRA 2025 | 否 | — |
+| [Model-based Policy Optimization using Symbolic World Model](https://arxiv.org/abs/2407.13518) | 2024-07-18 | IROS 2024 | 否 | — |
+| [PerlAD: Towards Enhanced Closed-loop End-to-end Autonomous Driving with Pseudo-simulation-based Reinforcement Learning](https://arxiv.org/abs/2603.14908) | 2026-03-16 | RA-L 2026 | 否 | — |
+| [PosePilot: Steering Camera Pose for Generative World Models with Self-supervised Depth](https://arxiv.org/abs/2505.01729) | — | IROS 2025 | 否 | — |
+| [SimWorld: A Unified Benchmark for Simulator-Conditioned Scene Generation via World Model](https://arxiv.org/abs/2503.13952) | — | IROS 2025 | 否 | — |
+| [Behavior-Controllable Stable Dynamics Models on Riemannian Configuration Manifolds](https://ieeexplore.ieee.org/document/3647763) | 2026-01-01 | T-RO 2026、ICRA 2026 | 否 | — |
+| [Beyond Simulation: Benchmarking World Models for Planning and Causality in Autonomous Driving](https://arxiv.org/abs/2508.01922) | 2025-08-03 | ICRA 2025 | 否 | — |
+| [Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model](https://arxiv.org/abs/2512.01924) | 2025-12-01 | RA-L 2026、ICRA 2026 | 否 | — |
 
-| 论文 | v1 月份 | 状态 | 一句话贡献 |
-|---|---|---|---|
-| [UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111) | 2025-05 | [RSS 2025](https://www.roboticsproceedings.org/rss21/p014.html) | A generalist robot should perform effectively across various environments |
-| [EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow](https://arxiv.org/abs/2507.06224) | 2025-07 | arXiv | 从无动作标签视频预测 embodiment-centric flow，再借 URDF 约束转成可执行动作，覆盖遮挡、柔性物体及非位移操作。 |
-| [H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523) | 2025-07 | arXiv | 以 2B diffusion transformer 先学大规模第一视角人类手部先验，再用模块化动作编解码器适配不同机器人，显著提升双臂真实操作。 |
-| [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) | 2025-11 | arXiv | X-Diffusion 将人类动作视为机器人动作的噪声对应物，只在高噪声层引入跨本体人类示范，五个真实任务平均提升 16%。 |
-| [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729) | 2025-12 | arXiv | RoboWheel 将单目/RGB-D 人类手物视频重建为物理可行接触轨迹，再重定向到夹爪、灵巧手和人形本体并做仿真扩增。 |
-| [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993) | 2026-01 | arXiv | 以 35,000 小时、30 种本体的 UniHand-2.0 和统一动作空间训练人类中心 VLA，并用 Mixture-of-Flow 分离共享运动原语与本体专家。 |
-| [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710) | 2026-02 | arXiv | 在 20,854 小时动作标注第一视角人类视频上建立 scaling law，并以轻量 human-robot mid-training 迁移到 22-DoF 灵巧手。 |
-| [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375) | 2026-06 | arXiv | 发布 3,500 小时、130K episodes、195 任务的 ABC-130K，以及硬件、训练、仿真和真实评测全栈。 |
-| [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009) | 2026-06 | arXiv | 通过 ego-exo 同步、60-DoF 动作重定向和 FK-aware supervision，把人类视频转成可直接训练 humanoid VLA 的动作标签。 |
+---
 
-### 同行评审锚点
 
-| 工作 | Venue | arXiv |
-|---|---|---|
-| [HumanPlus: Humanoid Shadowing and Imitation from Humans](https://proceedings.mlr.press/v270/fu25a.html) | CoRL 2024 | [2406.10454](https://arxiv.org/abs/2406.10454) |
-| [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) | RSS 2025 | [2502.05450](https://arxiv.org/abs/2502.05450) |
-| [Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) | RSS 2025 | [2412.01770](https://arxiv.org/abs/2412.01770) |
-| [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) | CVPR 2026 | [2511.15200](https://arxiv.org/abs/2511.15200) |
+## D4 · 灵巧、双臂与接触操作
 
-### 成熟度、瓶颈与战略判断
+> 归属层级：物理能力。当前纳入 1234 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
-**成熟度。** 方法工具链最成熟，但跨本体、长时序和开放世界的同时成立仍少见。
+### 纳入边界
 
-**关键瓶颈。**
+核心表达：`dexterous`、`in-hand`、`in hand manipulation`、`bimanual`、`dual-arm`、`dual arm`、`tactile manipulation`、`contact-rich`、`contact rich`、`hand-arm`、`hand arm`、`multifinger`、`multi-finger`、`robotic hand`、`grasp synthesis`、`grasping policy`、`non-prehensile`、`nonprehensile`、`tool use`、`deformable object manipulation`。
 
-- 数据有效多样性
-- 失败与修正数据
-- 动作空间标准
-- 在线学习安全
-- 统一评测
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`hand`、`grasp`、`tactile`、`contact`。
 
-**战略判断。** 长期价值更可能来自可持续数据飞轮、跨本体接口和开放训练基础设施，而不是单一 policy 名称。
+### 月度结构与环比
 
-<!-- 更新标记：通用机器人学习 最后更新 2026.07 -->
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 21 | — | 0 | +21 | 新增 |
+| 2024-08 | 21 | 2024-07 | 21 | 0 | 0.0% |
+| 2024-09 | 30 | 2024-08 | 21 | +9 | +42.9% |
+| 2024-10 | 33 | 2024-09 | 30 | +3 | +10.0% |
+| 2024-11 | 31 | 2024-10 | 33 | -2 | -6.1% |
+| 2024-12 | 24 | 2024-11 | 31 | -7 | -22.6% |
+| 2025-01 | 15 | 2024-12 | 24 | -9 | -37.5% |
+| 2025-02 | 31 | 2025-01 | 15 | +16 | +106.7% |
+| 2025-03 | 46 | 2025-02 | 31 | +15 | +48.4% |
+| 2025-04 | 33 | 2025-03 | 46 | -13 | -28.3% |
+| 2025-05 | 39 | 2025-04 | 33 | +6 | +18.2% |
+| 2025-06 | 45 | 2025-05 | 39 | +6 | +15.4% |
+| 2025-07 | 23 | 2025-06 | 45 | -22 | -48.9% |
+| 2025-08 | 22 | 2025-07 | 23 | -1 | -4.3% |
+| 2025-09 | 46 | 2025-08 | 22 | +24 | +109.1% |
+| 2025-10 | 38 | 2025-09 | 46 | -8 | -17.4% |
+| 2025-11 | 32 | 2025-10 | 38 | -6 | -15.8% |
+| 2025-12 | 18 | 2025-11 | 32 | -14 | -43.8% |
+| 2026-01 | 27 | 2025-12 | 18 | +9 | +50.0% |
+| 2026-02 | 49 | 2026-01 | 27 | +22 | +81.5% |
+| 2026-03 | 74 | 2026-02 | 49 | +25 | +51.0% |
+| 2026-04 | 42 | 2026-03 | 74 | -32 | -43.2% |
+| 2026-05 | 47 | 2026-04 | 42 | +5 | +11.9% |
+| 2026-06 | 85 | 2026-05 | 47 | +38 | +80.9% |
+| 2026-07 | 50 | 2026-06 | 85 | -35 | -41.2% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes](https://arxiv.org/abs/2405.07908) | — | RSS 2024、RSS 2024 | 是 | — |
+| [Demonstrating Learning from Humans on Open-Source Dexterous Robot Hands](https://doi.org/10.15607/rss.2024.xx.014) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [$\texttt{SPIN}$: distilling $\texttt{Skill-RRT}$ for long-horizon prehensile and non-prehensile manipulation](https://arxiv.org/abs/2502.18015) | 2025-02-25 | CoRL 2025 | 是 | — |
+| [3D-ViTac: Learning Fine-Grained Manipulation with Visuo-Tactile Sensing](https://arxiv.org/abs/2410.24091) | 2024-10-31 | CoRL 2024、CoRL 2024 | 是 | — |
+| [A low-cost and lightweight 6 DoF bimanual arm for dynamic and contact-rich manipulation](https://arxiv.org/abs/2502.16908) | 2025-02-24 | RSS 2025 | 是 | — |
+| [ACE: A Cross-platform and visual-Exoskeletons System for Low-Cost Dexterous Teleoperation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [ALOHA Unleashed: A Simple Recipe for Robot Dexterity](https://arxiv.org/abs/2410.13126) | 2024-10-17 | CoRL 2024、CoRL 2024 | 是 | — |
+| [AnyRotate: Gravity-Invariant In-Hand Object Rotation with Sim-to-Real Touch](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [APEX-MR: Multi-Robot Asynchronous Planning and Execution for Cooperative Assembly](https://arxiv.org/abs/2503.15836) | 2025-03-20 | RSS 2025 | 是 | — |
+| [ARCH: Hierarchical Hybrid Learning for Long-Horizon Contact-Rich Robotic Assembly](https://arxiv.org/abs/2409.16451) | 2024-09-24 | CoRL 2025 | 是 | — |
+| [Bimanual Dexterity for Complex Tasks](https://arxiv.org/abs/2411.13677) | 2024-11-20 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Bridging Perception and Action: Spatially-Grounded Mid-Level Representations for Robot Generalization](https://arxiv.org/abs/2506.06196) | 2025-06-06 | RSS 2025 | 是 | — |
+| [ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered Scenes](https://arxiv.org/abs/2506.14317) | 2025-06-17 | CoRL 2025 | 是 | — |
+| [COMBO-Grasp: Learning Constraint-Based Manipulation for Bimanual Occluded Grasping](https://arxiv.org/abs/2502.08054) | 2025-02-12 | CoRL 2025 | 是 | — |
+| [Complementarity-Free Multi-Contact Modeling and Optimization for Dexterous Manipulation](https://arxiv.org/abs/2408.07855) | 2024-08-14 | RSS 2025 | 是 | — |
+| [CordViP: Correspondence-based Visuomotor Policy for Dexterous Manipulation in Real-World](https://arxiv.org/abs/2502.08449) | 2025-02-12 | RSS 2025 | 是 | — |
+| [D-CODA: Diffusion for Coordinated Dual-Arm Data Augmentation](https://arxiv.org/abs/2505.04860) | 2025-05-08 | CoRL 2025 | 是 | — |
+| [D-Cubed: Latent Diffusion Trajectory Optimisation for Dexterous Deformable Manipulation](https://proceedings.mlr.press/v305/yamada25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Demonstrating REASSEMBLE: A Multimodal Dataset for Contact-rich Robotic Assembly and Disassembly](https://www.roboticsproceedings.org/rss21/p059.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [Dex1B: Learning with 1B Demonstrations for Dexterous Manipulation](https://arxiv.org/abs/2506.17198) | 2025-06-20 | RSS 2025 | 是 | — |
+| [DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://doi.org/10.15607/rss.2024.xx.043) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [DexCatch: Learning to Catch Arbitrary Objects with Dexterous Hands](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [DexGraspNet 2.0: Learning Generative Dexterous Grasping in Large-scale Synthetic Cluttered Scenes](https://arxiv.org/abs/2410.23004) | 2024-10-30 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Dexonomy: Synthesizing All Dexterous Grasp Types in a Grasp Taxonomy](https://arxiv.org/abs/2504.18829) | 2025-04-26 | RSS 2025 | 是 | — |
+| [Dexplore: Scalable Neural Control for Dexterous Manipulation from Reference-Scoped Exploration](https://arxiv.org/abs/2509.09671) | 2025-09-11 | CoRL 2025 | 是 | — |
+| [DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation](https://arxiv.org/abs/2509.18830) | 2025-09-23 | CoRL 2025 | 是 | — |
+| [DexterityGen: Foundation Controller for Unprecedented Dexterity](https://arxiv.org/abs/2502.04307) | 2025-02-06 | RSS 2025 | 是 | — |
+| [DextrAH-G: Pixels-to-Action Dexterous Arm-Hand Grasping with Geometric Fabrics](https://arxiv.org/abs/2407.02274) | 2024-07-02 | CoRL 2024、CoRL 2024 | 是 | — |
+| [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | 2025-05-28 | CoRL 2025 | 是 | — |
+| [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | 2025-05-12 | RSS 2025 | 是 | — |
+| [Diffusion Meets DAgger: Supercharging Eye-in-hand Imitation Learning](https://doi.org/10.15607/rss.2024.xx.048) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove](https://arxiv.org/abs/2502.07730) | 2025-02-11 | RSS 2025 | 是 | — |
+| [emg2tendon: From sEMG Signals to Tendon Control in Musculoskeletal Hands](https://arxiv.org/abs/2508.08269) | 2025-07-29 | RSS 2025 | 是 | — |
+| [Fabrica: Dual-Arm Assembly of General Multi-Part Objects via Integrated Planning and Learning](https://arxiv.org/abs/2506.05168) | 2025-06-05 | CoRL 2025 | 是 | — |
+| [FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432) | 2025-02-24 | RSS 2025 | 是 | — |
+| [FFHFlow: Diverse and Uncertainty-Aware Dexterous Grasp Generation via Flow Variational Inference](https://arxiv.org/abs/2407.15161) | 2024-07-21 | CoRL 2025 | 是 | — |
+| [GeoDEx: A Unified Geometric Framework for Tactile Dexterous and Extrinsic Manipulation under Force Uncertainty](https://arxiv.org/abs/2505.00647) | 2025-05-01 | RSS 2025 | 是 | — |
+| [Get a Grip: Multi-Finger Grasp Evaluation at Scale Enables Robust Sim-to-Real Transfer](https://arxiv.org/abs/2410.23701) | 2024-10-31 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Global Contact-Rich Planning with Sparsity-Rich Semidefinite Relaxations](https://arxiv.org/abs/2502.02829) | 2025-02-05 | RSS 2025 | 是 | — |
+| [GraspQP: Differentiable Optimization of Force Closure for Diverse and Robust Dexterous Grasping](https://arxiv.org/abs/2508.15002) | 2025-08-20 | CoRL 2025 | 是 | — |
+| [Gripper Pose and Object Pointflow as Interfaces for Robotic Bimanual Manipulation](https://www.roboticsproceedings.org/rss21/p160.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [Hierarchical and Modular Network on Non-prehensile Manipulation in General Environments](https://arxiv.org/abs/2502.20843) | 2025-02-28 | RSS 2025 | 是 | — |
+| [InterACT: Inter-dependency Aware Action Chunking with Hierarchical Attention Transformers for Bimanual Manipulation](https://arxiv.org/abs/2409.07914) | 2024-09-12 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Jacta: A Versatile Planner for Learning Dexterous and Whole-body Manipulation](https://arxiv.org/abs/2408.01258) | 2024-08-02 | CoRL 2024、CoRL 2024 | 是 | — |
+| [KineDex: Learning Tactile-Informed Visuomotor Policies via Kinesthetic Teaching for Dexterous Manipulation](https://arxiv.org/abs/2505.01974) | 2025-05-04 | CoRL 2025 | 是 | — |
+| [KineSoft: Learning Proprioceptive Manipulation Policies with Soft Robot Hands](https://arxiv.org/abs/2503.01078) | 2025-03-03 | CoRL 2025 | 是 | — |
+| [Learning Long-Horizon Robot Manipulation Skills via Privileged Action](https://arxiv.org/abs/2502.15442) | 2025-02-21 | CoRL 2025 | 是 | — |
+| [Learning Visuotactile Estimation and Control for Non-prehensile Manipulation under Occlusions](https://arxiv.org/abs/2412.13157) | 2024-12-17 | CoRL 2024、CoRL 2024 | 是 | — |
+| [MimicTouch: Leveraging Multi-modal Human Tactile Demonstrations for Contact-rich Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Mobile ALOHA: Learning Bimanual Mobile Manipulation using Low-Cost Whole-Body Teleoperation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Morphologically Symmetric Reinforcement Learning for Ambidextrous Bimanual Manipulation](https://arxiv.org/abs/2505.05287) | 2025-05-08 | CoRL 2025 | 是 | — |
+| [Neural Attention Field: Emerging Point Relevance in 3D Scenes for One-Shot Dexterous Grasping](https://arxiv.org/abs/2410.23039) | 2024-10-30 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Object-Centric Dexterous Manipulation from Human Motion Data](https://arxiv.org/abs/2411.04005) | 2024-11-06 | CoRL 2024、CoRL 2024 | 是 | — |
+| [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://arxiv.org/abs/2406.08858) | 2024-06-13 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Physics-Driven Data Generation for Contact-Rich Manipulation via Trajectory Optimization](https://arxiv.org/abs/2502.20382) | 2025-02-27 | RSS 2025 | 是 | — |
+| [PianoMime: Learning a Generalist, Dexterous Piano Player from Internet Demonstrations](https://arxiv.org/abs/2407.18178) | 2024-07-25 | CoRL 2024、CoRL 2024 | 是 | — |
+| [PP-Tac: Paper Picking Using Omnidirectional Tactile Feedback in Dexterous Robotic Hands](https://www.roboticsproceedings.org/rss21/p056.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://arxiv.org/abs/2409.01652) | 2024-09-03 | CoRL 2024、CoRL 2024 | 是 | — |
+| [ResPilot: Teleoperated Finger Gaiting via Gaussian Process Residual Learning](https://arxiv.org/abs/2409.09140) | 2024-09-13 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Robust Dexterous Grasping of General Objects](https://proceedings.mlr.press/v305/zhang25h.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+
+---
+
+
+## D5 · 人形、运动与全身控制
+
+> 归属层级：物理能力。当前纳入 1987 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`humanoid`、`whole-body control`、`whole body control`、`whole-body manipulation`、`whole body manipulation`、`legged robot`、`quadruped`、`biped`、`locomotion`、`loco-manipulation`、`loco manipulation`、`parkour`、`motor skill`、`motion imitation`、`human motion retargeting`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`humanoid`、`legged`、`quadruped`、`biped`、`control`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 42 | — | 0 | +42 | 新增 |
+| 2024-08 | 25 | 2024-07 | 42 | -17 | -40.5% |
+| 2024-09 | 73 | 2024-08 | 25 | +48 | +192.0% |
+| 2024-10 | 49 | 2024-09 | 73 | -24 | -32.9% |
+| 2024-11 | 41 | 2024-10 | 49 | -8 | -16.3% |
+| 2024-12 | 37 | 2024-11 | 41 | -4 | -9.8% |
+| 2025-01 | 16 | 2024-12 | 37 | -21 | -56.8% |
+| 2025-02 | 47 | 2025-01 | 16 | +31 | +193.8% |
+| 2025-03 | 73 | 2025-02 | 47 | +26 | +55.3% |
+| 2025-04 | 44 | 2025-03 | 73 | -29 | -39.7% |
+| 2025-05 | 80 | 2025-04 | 44 | +36 | +81.8% |
+| 2025-06 | 55 | 2025-05 | 80 | -25 | -31.3% |
+| 2025-07 | 44 | 2025-06 | 55 | -11 | -20.0% |
+| 2025-08 | 66 | 2025-07 | 44 | +22 | +50.0% |
+| 2025-09 | 70 | 2025-08 | 66 | +4 | +6.1% |
+| 2025-10 | 81 | 2025-09 | 70 | +11 | +15.7% |
+| 2025-11 | 58 | 2025-10 | 81 | -23 | -28.4% |
+| 2025-12 | 38 | 2025-11 | 58 | -20 | -34.5% |
+| 2026-01 | 37 | 2025-12 | 38 | -1 | -2.6% |
+| 2026-02 | 87 | 2026-01 | 37 | +50 | +135.1% |
+| 2026-03 | 121 | 2026-02 | 87 | +34 | +39.1% |
+| 2026-04 | 67 | 2026-03 | 121 | -54 | -44.6% |
+| 2026-05 | 66 | 2026-04 | 67 | -1 | -1.5% |
+| 2026-06 | 121 | 2026-05 | 66 | +55 | +83.3% |
+| 2026-07 | 70 | 2026-06 | 121 | -51 | -42.1% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising World Model Learning](https://arxiv.org/abs/2408.14472) | 2024-08-26 | RSS 2024、RSS 2024 | 是 | — |
+| [Design and Control of a Bipedal Robotic Character](https://arxiv.org/abs/2501.05204) | 2025-01-09 | RSS 2024、RSS 2024 | 是 | — |
+| [RL2AC: Reinforcement Learning-based Rapid Online Adaptive Control for Legged Robot Robust Locomotion](https://doi.org/10.15607/rss.2024.xx.060) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Linear-time Differential Inverse Kinematics: an Augmented Lagrangian Perspective](https://doi.org/10.15607/rss.2024.xx.110) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [A Unified and General Humanoid Whole-Body Controller for Fine-Grained Locomotion](https://www.roboticsproceedings.org/rss21/p067.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [Action Space Design in Reinforcement Learning for Robot Motor Skills](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Adaptive Locomotion on Mud through Proprioceptive Sensing of Substrate Properties](https://arxiv.org/abs/2504.19607) | 2025-04-28 | RSS 2025 | 是 | — |
+| [AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile Robotic Manipulation](https://arxiv.org/abs/2508.07770) | 2025-08-11 | CoRL 2025 | 是 | — |
+| [Agile But Safe: Learning Collision-Free High-Speed Legged Locomotion](https://doi.org/10.15607/rss.2024.xx.059) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control](https://arxiv.org/abs/2505.03738) | 2025-05-06 | RSS 2025 | 是 | — |
+| [ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills](https://arxiv.org/abs/2502.01143) | 2025-02-03 | RSS 2025 | 是 | — |
+| [BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds](https://arxiv.org/abs/2502.10363) | 2025-02-14 | RSS 2025 | 是 | — |
+| [BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities](https://arxiv.org/abs/2503.05652) | 2025-03-07 | CoRL 2025 | 是 | — |
+| [Bi-Level Motion Imitation for Humanoid Robots](https://arxiv.org/abs/2410.01968) | 2024-10-02 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Bipedal Balance Control with Whole-body Musculoskeletal Standing and Falling Simulations](https://arxiv.org/abs/2506.09383) | 2025-06-11 | CoRL 2025 | 是 | — |
+| [CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks](https://arxiv.org/abs/2506.08931) | 2025-06-10 | CoRL 2025 | 是 | — |
+| [Contrastive Forward Prediction Reinforcement Learning for Adaptive Fault-Tolerant Legged Robots](https://proceedings.mlr.press/v305/fu25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Demonstrating Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot](https://arxiv.org/abs/2504.17249) | 2025-04-24 | RSS 2025 | 是 | — |
+| [DiffuseLoco: Real-Time Legged Locomotion Control with Diffusion from Offline Datasets](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Discrete-Time Hybrid Automata Learning: Legged Locomotion Meets Skateboarding](https://arxiv.org/abs/2503.01842) | 2025-03-03 | RSS 2025 | 是 | — |
+| [Disentangled Multi-Context Meta-Learning: Unlocking robust and Generalized Task Learning](https://arxiv.org/abs/2509.01297) | 2025-09-01 | CoRL 2025 | 是 | — |
+| [Dynamic Safety in Complex Environments: Synthesizing Safety Filters with Poisson's Equation](https://arxiv.org/abs/2505.06794) | 2025-05-11 | RSS 2025 | 是 | — |
+| [Embrace Contacts: humanoid shadowing with full body ground contacts](https://proceedings.mlr.press/v305/zhuang25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Expressive Whole-Body Control for Humanoid Robots](https://doi.org/10.15607/rss.2024.xx.107) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots](https://arxiv.org/abs/2505.06883) | 2025-05-11 | CoRL 2025 | 是 | — |
+| [First Order Model-Based RL through Decoupled Backpropagation](https://arxiv.org/abs/2509.00215) | 2025-08-29 | CoRL 2025 | 是 | — |
+| [From Tabula Rasa to Emergent Abilities: Discovering Robot Skills via Real-World Unsupervised Quality-Diversity](https://arxiv.org/abs/2508.19172) | 2025-08-26 | CoRL 2025 | 是 | — |
+| [Gain Tuning Is Not What You Need: Reward Gain Adaptation for Constrained Locomotion Learning](https://arxiv.org/abs/2510.10759) | 2025-10-12 | RSS 2025 | 是 | — |
+| [Gait-Net-augmented Implicit Kino-dynamic MPC for Dynamic Variable-frequency Humanoid Locomotion over Discrete Terrains](https://arxiv.org/abs/2502.02934) | 2025-02-05 | RSS 2025 | 是 | — |
+| [Gaitor: Learning a Unified Representation Across Gaits for Real-World Quadruped Locomotion](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Generalized Animal Imitator: Agile Locomotion with Versatile Motion Prior](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Granular Loco-Manipulation: Repositioning Rocks Through Strategic Sand Avalanche](https://arxiv.org/abs/2505.12934) | 2025-05-19 | CoRL 2025 | 是 | — |
+| [Guided Reinforcement Learning for Robust Multi-Contact Loco-Manipulation](https://arxiv.org/abs/2410.13817) | 2024-10-17 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching](https://arxiv.org/abs/2508.03068) | 2025-08-05 | CoRL 2025 | 是 | — |
+| [Harmon: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions](https://arxiv.org/abs/2410.12773) | 2024-10-16 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control](https://arxiv.org/abs/2505.24198) | 2025-05-30 | CoRL 2025 | 是 | — |
+| [HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit](https://arxiv.org/abs/2502.13013) | 2025-02-18 | RSS 2025 | 是 | — |
+| [HuB: Learning Extreme Humanoid Balance](https://arxiv.org/abs/2505.07294) | 2025-05-12 | CoRL 2025 | 是 | — |
+| [Human2LocoMan: Learning Versatile Quadrupedal Manipulation with Human Pretraining](https://arxiv.org/abs/2506.16475) | 2025-06-19 | RSS 2025 | 是 | — |
+| [Humanoid Parkour Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Humanoid Policy ~ Human Policy](https://arxiv.org/abs/2503.13441) | 2025-03-17 | CoRL 2025 | 是 | — |
+| [HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation](https://doi.org/10.15607/rss.2024.xx.061) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [HumanPlus: Humanoid Shadowing and Imitation from Humans](https://arxiv.org/abs/2406.10454) | 2024-06-15 | CoRL 2024、CoRL 2024 | 是 | — |
+| [HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [In-Flight Attitude Control of a Quadruped using Deep Reinforcement Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning](https://arxiv.org/abs/2504.21738) | 2025-04-30 | RSS 2025 | 是 | — |
+| [Learning a Distributed Hierarchical Locomotion Controller for Embodied Cooperation](https://arxiv.org/abs/2407.06499) | 2024-07-09 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning a Unified Policy for Position and Force Control in Legged Loco-Manipulation](https://arxiv.org/abs/2505.20829) | 2025-05-27 | CoRL 2025 | 是 | — |
+| [Learning Decentralized Multi-Biped Control for Payload Transport](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning Deployable Locomotion Control via Differentiable Simulation](https://proceedings.mlr.press/v305/schwarke25a.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Learning Getting-Up Policies for Real-World Humanoid Robots](https://arxiv.org/abs/2502.12152) | 2025-02-17 | RSS 2025 | 是 | — |
+| [Learning Granular Media Avalanche Behavior for Indirectly Manipulating Obstacles on a Granular Slope](https://arxiv.org/abs/2407.01898) | 2024-07-02 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning H-Infinity Locomotion Control](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning Humanoid Standing-up Control across Diverse Postures](https://arxiv.org/abs/2502.08378) | 2025-02-12 | RSS 2025 | 是 | — |
+| [Learning Quadruped Locomotion Using Differentiable Simulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning Robotic Locomotion Affordances and Photorealistic Simulators from Human-Captured Data](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning Visual Parkour from Generated Images](https://arxiv.org/abs/2411.00083) | 2024-10-31 | CoRL 2024、CoRL 2024 | 是 | — |
+| [LocoFormer: Generalist Locomotion via Long-context Adaptation](https://arxiv.org/abs/2509.23745) | 2025-09-28 | CoRL 2025 | 是 | — |
+| [LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing](https://arxiv.org/abs/2505.23175) | 2025-05-29 | CoRL 2025 | 是 | — |
+
+---
+
+
+## D6 · 导航与移动操作
+
+> 归属层级：物理能力。当前纳入 530 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`mobile manipulation`、`mobile manipulator`、`visual navigation`、`vision-language navigation`、`vision language navigation`、`object navigation`、`semantic navigation`、`social navigation`、`active exploration`、`navigation policy`、`nav-manipulation`、`nav manipulation`、`embodied navigation`、`goal-conditioned navigation`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`embodied`、`navigation`、`mobile`、`manipulation`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 10 | — | 0 | +10 | 新增 |
+| 2024-08 | 4 | 2024-07 | 10 | -6 | -60.0% |
+| 2024-09 | 19 | 2024-08 | 4 | +15 | +375.0% |
+| 2024-10 | 19 | 2024-09 | 19 | 0 | 0.0% |
+| 2024-11 | 6 | 2024-10 | 19 | -13 | -68.4% |
+| 2024-12 | 13 | 2024-11 | 6 | +7 | +116.7% |
+| 2025-01 | 4 | 2024-12 | 13 | -9 | -69.2% |
+| 2025-02 | 12 | 2025-01 | 4 | +8 | +200.0% |
+| 2025-03 | 14 | 2025-02 | 12 | +2 | +16.7% |
+| 2025-04 | 6 | 2025-03 | 14 | -8 | -57.1% |
+| 2025-05 | 13 | 2025-04 | 6 | +7 | +116.7% |
+| 2025-06 | 17 | 2025-05 | 13 | +4 | +30.8% |
+| 2025-07 | 13 | 2025-06 | 17 | -4 | -23.5% |
+| 2025-08 | 12 | 2025-07 | 13 | -1 | -7.7% |
+| 2025-09 | 32 | 2025-08 | 12 | +20 | +166.7% |
+| 2025-10 | 19 | 2025-09 | 32 | -13 | -40.6% |
+| 2025-11 | 16 | 2025-10 | 19 | -3 | -15.8% |
+| 2025-12 | 19 | 2025-11 | 16 | +3 | +18.8% |
+| 2026-01 | 16 | 2025-12 | 19 | -3 | -15.8% |
+| 2026-02 | 22 | 2026-01 | 16 | +6 | +37.5% |
+| 2026-03 | 49 | 2026-02 | 22 | +27 | +122.7% |
+| 2026-04 | 26 | 2026-03 | 49 | -23 | -46.9% |
+| 2026-05 | 19 | 2026-04 | 26 | -7 | -26.9% |
+| 2026-06 | 29 | 2026-05 | 19 | +10 | +52.6% |
+| 2026-07 | 26 | 2026-06 | 29 | -3 | -10.3% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Demonstrating Adaptive Mobile Manipulation in Retail Environments](https://doi.org/10.15607/rss.2024.xx.047) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Demonstrating Arena 3.0: Advancing Social Navigation in Collaborative and Highly Dynamic Environments](https://doi.org/10.15607/rss.2024.xx.074) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Bilevel Learning for Bilevel Planning](https://arxiv.org/abs/2502.08697) | 2025-02-12 | RSS 2025 | 是 | — |
+| [CARE: Enhancing Safety of Visual Navigation through Collision Avoidance via Repulsive Estimation](https://arxiv.org/abs/2506.03834) | 2025-06-04 | CoRL 2025 | 是 | — |
+| [Context-Aware Replanning with Pre-explored Semantic Map for Object Navigation](https://arxiv.org/abs/2409.04837) | 2024-09-07 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Continuously Improving Mobile Manipulation with Autonomous Real-World RL](https://arxiv.org/abs/2409.20568) | 2024-09-30 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Demonstrating Arena 5.0: A Photorealistic ROS2 Simulation Framework for Developing and Benchmarking Social Navigation](https://www.roboticsproceedings.org/rss21/p092.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [LeLaN: Learning A Language-Conditioned Navigation Policy from In-the-Wild Video](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation](https://arxiv.org/abs/2509.01658) | 2025-09-01 | CoRL 2025 | 是 | — |
+| [ObjectReact: Learning Object-Relative Control for Visual Navigation](https://arxiv.org/abs/2509.09594) | 2025-09-11 | CoRL 2025 | 是 | — |
+| [RoboEXP: Action-Conditioned Scene Graph via Interactive Exploration for Robotic Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [SafeMimic: Towards Safe and Autonomous Human-to-Robot Imitation for Mobile Manipulation](https://arxiv.org/abs/2506.15847) | 2025-06-18 | RSS 2025 | 是 | — |
+| [TaMMa: Target-driven Multi-subscene Mobile Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning](https://arxiv.org/abs/2412.10447) | 2024-12-11 | CoRL 2024、CoRL 2024 | 是 | — |
+| [VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation](https://arxiv.org/abs/2312.03275) | — | ICRA 2024 | 否 | — |
+| [Bridging Zero-shot Object Navigation and Foundation Models through Pixel-Guided Navigation Skill](https://arxiv.org/abs/2309.10309) | — | ICRA 2024 | 否 | — |
+| [Language-Grounded Dynamic Scene Graphs for Interactive Object Search With Mobile Manipulation](https://arxiv.org/abs/2403.08605) | — | RA-L 2024 | 否 | — |
+| [HM3D-OVON: A Dataset and Benchmark for Open-Vocabulary Object Goal Navigation](https://arxiv.org/abs/2409.14296) | 2024-09-22 | IROS 2024 | 否 | — |
+| [Closed-Loop Open-Vocabulary Mobile Manipulation with GPT-4V](https://arxiv.org/abs/2404.10220) | — | ICRA 2025 | 否 | — |
+| [RoboHop: Segment-based Topological Map Representation for Open-World Visual Navigation](https://arxiv.org/abs/2405.05792) | — | ICRA 2024 | 否 | — |
+| [DynaMem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation](https://arxiv.org/abs/2411.04999) | 2024-11-07 | ICRA 2025 | 否 | — |
+| [Dynamic Open-Vocabulary 3D Scene Graphs for Long-term Language-Guided Mobile Manipulation](https://arxiv.org/abs/2410.11989) | 2024-10-15 | RA-L 2025 | 否 | — |
+| [TriHelper: Zero-Shot Object Navigation with Dynamic Assistance](https://arxiv.org/abs/2403.15223) | — | IROS 2024 | 否 | — |
+| [Learning Generalizable Feature Fields for Mobile Manipulation](https://arxiv.org/abs/2403.07563) | — | IROS 2025 | 否 | — |
+| [ApexNav: An Adaptive Exploration Strategy for Zero-Shot Object Navigation with Target-centric Semantic Fusion](https://arxiv.org/abs/2504.14478) | 2025-04-20 | RA-L 2025、ICRA 2026 | 否 | — |
+| [BUMBLE: Unifying Reasoning and Acting with Vision-Language Models for Building-wide Mobile Manipulation](https://arxiv.org/abs/2410.06237) | 2024-10-08 | ICRA 2025 | 否 | — |
+| [NaviDiffusor: Cost-Guided Diffusion Model for Visual Navigation](https://arxiv.org/abs/2504.10003) | 2025-04-14 | ICRA 2025 | 否 | — |
+| [EMMA: Scaling Mobile Manipulation via Egocentric Human Data](https://arxiv.org/abs/2509.04443) | 2025-09-04 | RA-L 2026、ICRA 2026 | 否 | — |
+| [Harmonic Mobile Manipulation](https://arxiv.org/abs/2312.06639) | — | IROS 2024 | 否 | — |
+| [DR-MPC: Deep Residual Model Predictive Control for Real-world Social Navigation](https://arxiv.org/abs/2410.10646) | 2024-10-14 | RA-L 2025 | 否 | — |
+| [Multi-Floor Zero-Shot Object Navigation Policy](https://arxiv.org/abs/2409.10906) | 2024-09-17 | ICRA 2025 | 否 | — |
+| [OLiVia-Nav: An Online Lifelong Vision Language Approach for Mobile Robot Social Navigation](https://arxiv.org/abs/2409.13675) | 2024-09-20 | ICRA 2025 | 否 | — |
+| [Dynamic object goal pushing with mobile manipulators through model-free constrained reinforcement learning](https://arxiv.org/abs/2502.01546) | 2025-02-03 | ICRA 2025 | 否 | — |
+| [From Cognition to Precognition: A Future-Aware Framework for Social Navigation](https://arxiv.org/abs/2409.13244) | 2024-09-20 | ICRA 2025 | 否 | — |
+| [One Map to Find Them All: Real-time Open-Vocabulary Mapping for Zero-shot Multi-Object Navigation](https://arxiv.org/abs/2409.11764) | 2024-09-18 | ICRA 2025 | 否 | — |
+| [TDANet: Target-Directed Attention Network for Object-Goal Visual Navigation With Zero-Shot Ability](https://arxiv.org/abs/2404.08353) | — | RA-L 2024 | 否 | — |
+| [HabiCrowd: A High Performance Simulator for Crowd-Aware Visual Navigation](https://arxiv.org/abs/2306.11377) | — | IROS 2024 | 否 | — |
+| [Learning to Drive Anywhere with Model-Based Reannotation](https://arxiv.org/abs/2505.05592) | 2025-05-08 | RA-L 2026、ICRA 2026 | 否 | — |
+| [Malicious Path Manipulations via Exploitation of Representation Vulnerabilities of Vision-Language Navigation Systems](https://arxiv.org/abs/2407.07392) | 2024-07-10 | IROS 2024 | 否 | — |
+| [VLN-Game: Vision-Language Equilibrium Search for Zero-Shot Semantic Navigation](https://arxiv.org/abs/2411.11609) | 2024-11-18 | T-RO 2026 | 否 | — |
+| [Active-Perceptive Motion Generation for Mobile Manipulation](https://arxiv.org/abs/2310.00433) | — | ICRA 2024 | 否 | — |
+| [Revolutionizing Battery Disassembly: The Design and Implementation of a Battery Disassembly Autonomous Mobile Manipulator Robot(BEAM-1)](https://arxiv.org/abs/2407.06590) | 2024-07-09 | IROS 2024 | 否 | — |
+| [Exploitation-Guided Exploration for Semantic Embodied Navigation](https://arxiv.org/abs/2311.03357) | — | ICRA 2024 | 否 | — |
+| [Social Navigation in Crowded Environments with Model Predictive Control and Deep Learning-Based Human Trajectory Prediction](https://arxiv.org/abs/2309.16838) | — | IROS 2024 | 否 | — |
+| [ForceSight: Text-Guided Mobile Manipulation with Visual-Force Goals](https://arxiv.org/abs/2309.12312) | — | ICRA 2024 | 否 | — |
+| [ORLA*: Mobile Manipulator-Based Object Rearrangement with Lazy A](https://arxiv.org/abs/2309.13707) | — | ICRA 2025 | 否 | — |
+| [Sim2Real Transfer for Audio-Visual Navigation with Frequency-Adaptive Acoustic Field Prediction](https://arxiv.org/abs/2405.02821) | — | IROS 2024 | 否 | — |
+| [Whole-Body Teleoperation for Mobile Manipulation at Zero Added Cost](https://arxiv.org/abs/2409.15095) | 2024-09-23 | RA-L 2025 | 否 | — |
+| [MAkEable: Memory-centered and Affordance-based Task Execution Framework for Transferable Mobile Manipulation Skills](https://arxiv.org/abs/2401.16899) | — | IROS 2024 | 否 | — |
+| [BaSeNet: A Learning-based Mobile Manipulator Base Pose Sequence Planning for Pickup Tasks](https://arxiv.org/abs/2406.08653) | — | IROS 2024 | 否 | — |
+| [MORE: Mobile Manipulation Rearrangement Through Grounded Language Reasoning](https://arxiv.org/abs/2505.03035) | 2025-05-05 | IROS 2025 | 否 | — |
+| [OpenBench: A New Benchmark and Baseline for Semantic Navigation in Smart Logistics](https://arxiv.org/abs/2502.09238) | 2025-02-13 | ICRA 2025 | 否 | — |
+| [Planning Optimal Trajectories for Mobile Manipulators under End-effector Trajectory Continuity Constraint](https://arxiv.org/abs/2309.12251) | — | ICRA 2024 | 否 | — |
+| [HSPNav: Hierarchical Scene Prior Learning for Visual Semantic Navigation Towards Real Settings](https://ieeexplore.ieee.org/document/10610061) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [osmAG-LLM: Zero-Shot Open-Vocabulary Object Navigation via Semantic Maps and Large Language Models Reasoning](https://arxiv.org/abs/2507.12753) | 2025-07-17 | RA-L 2026、ICRA 2026 | 否 | — |
+| [A CBF-Adaptive Control Architecture for Visual Navigation for UAV in the Presence of Uncertainties](https://arxiv.org/abs/2402.10729) | — | ICRA 2024 | 否 | — |
+| [A Map-free Deep Learning-based Framework for Gate-to-Gate Monocular Visual Navigation aboard Miniaturized Aerial Vehicles](https://arxiv.org/abs/2503.05251) | 2025-03-07 | ICRA 2025 | 否 | — |
+| [Coupled Active Perception and Manipulation Planning for a Mobile Manipulator in Precision Agriculture Applications](https://arxiv.org/abs/2309.16778) | — | ICRA 2024 | 否 | — |
+| [DOZE: A Dataset for Open-Vocabulary Zero-Shot Object Navigation in Dynamic Environments](https://arxiv.org/abs/2402.19007) | — | RA-L 2024 | 否 | — |
+| [Learning Implicit Social Navigation Behavior using Deep Inverse Reinforcement Learning](https://arxiv.org/abs/2501.06946) | 2025-01-12 | RA-L 2025 | 否 | — |
+
+---
+
+
+## D7 · 人机协作与交互学习
+
+> 归属层级：物理能力。当前纳入 789 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`human-robot interaction`、`human robot interaction`、`human-robot collaboration`、`human robot collaboration`、`shared autonomy`、`interactive learning`、`learning from human feedback`、`preference learning`、`assistive robot`、`collaborative robot`、`social robot`、`language-guided correction`、`online correction`、`human-in-the-loop`、`human in the loop`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`embodied`、`interaction`、`collaboration`、`assistive`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 17 | — | 0 | +17 | 新增 |
+| 2024-08 | 13 | 2024-07 | 17 | -4 | -23.5% |
+| 2024-09 | 26 | 2024-08 | 13 | +13 | +100.0% |
+| 2024-10 | 20 | 2024-09 | 26 | -6 | -23.1% |
+| 2024-11 | 15 | 2024-10 | 20 | -5 | -25.0% |
+| 2024-12 | 21 | 2024-11 | 15 | +6 | +40.0% |
+| 2025-01 | 20 | 2024-12 | 21 | -1 | -4.8% |
+| 2025-02 | 24 | 2025-01 | 20 | +4 | +20.0% |
+| 2025-03 | 30 | 2025-02 | 24 | +6 | +25.0% |
+| 2025-04 | 17 | 2025-03 | 30 | -13 | -43.3% |
+| 2025-05 | 24 | 2025-04 | 17 | +7 | +41.2% |
+| 2025-06 | 23 | 2025-05 | 24 | -1 | -4.2% |
+| 2025-07 | 30 | 2025-06 | 23 | +7 | +30.4% |
+| 2025-08 | 21 | 2025-07 | 30 | -9 | -30.0% |
+| 2025-09 | 32 | 2025-08 | 21 | +11 | +52.4% |
+| 2025-10 | 19 | 2025-09 | 32 | -13 | -40.6% |
+| 2025-11 | 19 | 2025-10 | 19 | 0 | 0.0% |
+| 2025-12 | 20 | 2025-11 | 19 | +1 | +5.3% |
+| 2026-01 | 25 | 2025-12 | 20 | +5 | +25.0% |
+| 2026-02 | 25 | 2026-01 | 25 | 0 | 0.0% |
+| 2026-03 | 29 | 2026-02 | 25 | +4 | +16.0% |
+| 2026-04 | 25 | 2026-03 | 29 | -4 | -13.8% |
+| 2026-05 | 24 | 2026-04 | 25 | -1 | -4.0% |
+| 2026-06 | 29 | 2026-05 | 24 | +5 | +20.8% |
+| 2026-07 | 37 | 2026-06 | 29 | +8 | +27.6% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [CoRI: Communication of Robot Intent for Physical Human-Robot Interaction](https://arxiv.org/abs/2505.20537) | 2025-05-26 | CoRL 2025 | 是 | — |
+| [Demonstrating a Control Framework for Physical Human-Robot Interaction Toward Industrial Applications](https://arxiv.org/abs/2502.02967) | 2025-02-05 | RSS 2025 | 是 | — |
+| [Demonstrating HumanTHOR: A Simulation Platform and Benchmark for Human-Robot Collaboration in a Shared Workspace](https://doi.org/10.15607/rss.2024.xx.029) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [FlashBack: Consistency Model-Accelerated Shared Autonomy](https://arxiv.org/abs/2505.16892) | 2025-05-22 | CoRL 2025 | 是 | — |
+| [Optimal Interactive Learning on the Job via Facility Location Planning](https://arxiv.org/abs/2505.00490) | 2025-05-01 | RSS 2025 | 是 | — |
+| [PrioriTouch: Adapting to User Contact Preferences for Whole-Arm Physical Human-Robot Interaction](https://arxiv.org/abs/2509.18447) | 2025-09-22 | CoRL 2025 | 是 | — |
+| [Risk-Calibrated Human-Robot Interaction via Set-Valued Intent Prediction](https://doi.org/10.15607/rss.2024.xx.027) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Sense and Sensibility: What makes an social robot convincing to high-school students?](https://www.roboticsproceedings.org/rss21/p082.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [SocialNav-SUB: Benchmarking VLMs for Scene Understanding in Social Robot Navigation](https://arxiv.org/abs/2509.08757) | 2025-09-10 | CoRL 2025 | 是 | — |
+| [Task Adaptation in Industrial Human-Robot Interaction: Leveraging Riemannian Motion Policies](https://doi.org/10.15607/rss.2024.xx.026) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Text2Interaction: Establishing Safe and Preferable Human-Robot Interaction](https://arxiv.org/abs/2408.06105) | 2024-08-12 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Towards Uncertainty Unification: A Case Study for Preference Learning](https://arxiv.org/abs/2503.19317) | 2025-03-25 | RSS 2025 | 是 | — |
+| [TRANSIC: Sim-to-Real Policy Transfer by Learning from Online Correction](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Users and Wizards in Conversations: How WoZ Interface Choices Define Human-Robot Interactions](https://arxiv.org/abs/2603.28338) | 2026-03-30 | RSS 2025 | 是 | — |
+| [Vocal Sandbox: Continual Learning and Adaptation for Situated Human-Robot Collaboration](https://arxiv.org/abs/2411.02599) | 2024-11-04 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Robot learning on the job: Human-in-the-loop autonomy and learning during deployment](https://arxiv.org/abs/2211.08416) | — | IJRR 2024 | 否 | — |
+| [Enhancing the LLM-Based Robot Manipulation Through Human-Robot Collaboration](https://arxiv.org/abs/2406.14097) | — | RA-L 2024 | 否 | — |
+| [Intrinsic sense of touch for intuitive physical human-robot interaction](https://www.science.org/doi/10.1126/scirobotics.adn4008) | 2024-08-21 | Science Robotics 2024 | 否 | — |
+| [Rethinking Social Robot Navigation: Leveraging the Best of Two Worlds](https://arxiv.org/abs/2309.13466) | — | ICRA 2024 | 否 | — |
+| [Social robots as conversational catalysts: Enhancing long-term human-human interaction at home](https://www.science.org/doi/10.1126/scirobotics.adk3307) | 2025-03-12 | Science Robotics 2025 | 否 | — |
+| [Promoting Trust in Industrial Human-Robot Collaboration Through Preference-Based Optimization](https://ieeexplore.ieee.org/document/3455792) | 2024-11-01 | RA-L 2024 | 否 | — |
+| [Decision Making for Human-in-the-loop Robotic Agents via Uncertainty-Aware Reinforcement Learning](https://arxiv.org/abs/2303.06710) | — | ICRA 2024 | 否 | — |
+| [Development of compositionality through interactive learning of language and action of robots](https://www.science.org/doi/10.1126/scirobotics.adp0751) | 2025-01-22 | Science Robotics 2025 | 否 | — |
+| [Cellular-enabled Collaborative Robots Planning and Operations for Search-and-Rescue Scenarios](https://arxiv.org/abs/2403.09177) | — | ICRA 2024 | 否 | — |
+| [Characterizing the Complexity of Social Robot Navigation Scenarios](https://arxiv.org/abs/2405.11410) | — | RA-L 2025 | 否 | — |
+| [A survey of communicating robot learning during human-robot interaction](https://journals.sagepub.com/doi/10.1177/02783649241281369) | 2024-10-07 | IJRR 2024 | 否 | — |
+| [PlanCollabNL: Leveraging Large Language Models for Adaptive Plan Generation in Human-Robot Collaboration](https://ieeexplore.ieee.org/document/10610055) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [GPT-Driven Gestures: Leveraging Large Language Models to Generate Expressive Robot Motion for Enhanced Human-Robot Interaction](https://ieeexplore.ieee.org/document/3547631) | 2025-05-01 | RA-L 2025 | 否 | — |
+| [Human-Robot Gym: Benchmarking Reinforcement Learning in Human-Robot Collaboration](https://arxiv.org/abs/2310.06208) | — | ICRA 2024 | 否 | — |
+| [SocialGAIL: Faithful Crowd Simulation for Social Robot Navigation](https://ieeexplore.ieee.org/document/10610371) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [CushSense: Soft, Stretchable, and Comfortable Tactile-Sensing Skin for Physical Human-Robot Interaction](https://arxiv.org/abs/2405.03155) | — | ICRA 2024 | 否 | — |
+| [PRO-MIND: Proximity and Reactivity Optimisation of robot Motion to tune safety limits, human stress, and productivity in INDustrial settings](https://arxiv.org/abs/2409.06864) | 2024-09-10 | T-RO 2025 | 否 | — |
+| [AutoSpatial: Visual-Language Reasoning for Social Robot Navigation through Efficient Spatial Reasoning Learning](https://arxiv.org/abs/2503.07557) | 2025-03-10 | IROS 2025 | 否 | — |
+| [Jacquard V2: Refining Datasets using the Human In the Loop Data Correction Method](https://arxiv.org/abs/2402.05747) | — | ICRA 2024 | 否 | — |
+| [MoVEInt: Mixture of Variational Experts for Learning Human-Robot Interactions from Demonstrations](https://arxiv.org/abs/2407.07636) | 2024-07-10 | RA-L 2024 | 否 | — |
+| [Trust-Preserved Human-Robot Shared Autonomy Enabled by Bayesian Relational Event Modeling](https://arxiv.org/abs/2311.02009) | — | RA-L 2024 | 否 | — |
+| [A Learning-Based Framework for Safe Human-Robot Collaboration with Multiple Backup Control Barrier Functions](https://arxiv.org/abs/2310.05865) | — | ICRA 2024 | 否 | — |
+| [Interactive Distance Field Mapping and Planning to Enable Human-Robot Collaboration](https://arxiv.org/abs/2403.09988) | — | RA-L 2024 | 否 | — |
+| [Planning Human-Robot Co-manipulation with Human Motor Control Objectives and Multi-component Reaching Strategies](https://arxiv.org/abs/2412.13474) | 2024-12-18 | RA-L 2025 | 否 | — |
+| [Social-LLaVA: Enhancing Social Robot Navigation through Human-Language Reasoning](https://ieeexplore.ieee.org/document/11247618) | 2025-01-01 | IROS 2025 | 否 | — |
+| [Dynamic Collaborative Workspace Based on Human Interference Estimation for Safe and Productive Human-Robot Collaboration](https://ieeexplore.ieee.org/document/3405352) | 2024-07-01 | RA-L 2024 | 否 | — |
+| [Hierarchical Human Motion Intention Prediction for Increasing Efficacy of Human-Robot Collaboration](https://ieeexplore.ieee.org/document/3430131) | 2024-09-01 | RA-L 2024 | 否 | — |
+| [Legible and Proactive Robot Planning for Prosocial Human-Robot Interactions](https://arxiv.org/abs/2404.03734) | — | ICRA 2024 | 否 | — |
+| [To Ask or not to Ask: Human-in-the-loop Contextual Bandits with Applications in Robot-Assisted Feeding](https://arxiv.org/abs/2405.06908) | — | ICRA 2025 | 否 | — |
+| [Towards Proactive Safe Human-Robot Collaborations via Data-Efficient Conditional Behavior Prediction](https://arxiv.org/abs/2311.11893) | — | ICRA 2024 | 否 | — |
+| [EgoPAT3Dv2: Predicting 3D Action Target from 2D Egocentric Vision for Human-Robot Interaction](https://arxiv.org/abs/2403.05046) | — | ICRA 2024 | 否 | — |
+| [AutoMisty: A Multi-Agent LLM Framework for Automated Code Generation in the Misty Social Robot](https://arxiv.org/abs/2503.06791) | 2025-03-09 | IROS 2025 | 否 | — |
+| [Robot Interaction Behavior Generation based on Social Motion Forecasting for Human-Robot Interaction](https://arxiv.org/abs/2402.04768) | — | ICRA 2024 | 否 | — |
+| [Shared Autonomy via Variable Impedance Control and Virtual Potential Fields for Encoding Human Demonstrations](https://arxiv.org/abs/2403.12720) | — | ICRA 2024 | 否 | — |
+| [A probabilistic approach for learning and adapting shared control skills with the human in the loop](https://ieeexplore.ieee.org/document/10610956) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Enhanced Human-Robot Collaboration with Intent Prediction using Deep Inverse Reinforcement Learning](https://ieeexplore.ieee.org/document/10610595) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Interactive Learning of Physical Object Properties Through Robot Manipulation and Database of Object Measurements](https://arxiv.org/abs/2404.07344) | — | IROS 2024 | 否 | — |
+| [Multi-Agent Strategy Explanations for Human-Robot Collaboration](https://arxiv.org/abs/2311.11955) | — | ICRA 2024 | 否 | — |
+| [Multi-Camera Hand-Eye Calibration for Human-Robot Collaboration in Industrial Robotic Workcells](https://arxiv.org/abs/2406.11392) | — | RA-L 2024 | 否 | — |
+| [UGotMe: An Embodied System for Affective Human-Robot Interaction](https://arxiv.org/abs/2410.18373) | 2024-10-24 | ICRA 2025 | 否 | — |
+| [A Multi-Task Energy-Aware Impedance Controller for Enhanced Safety in Physical Human-Robot Interaction](https://ieeexplore.ieee.org/document/3519871) | 2025-02-01 | RA-L 2025 | 否 | — |
+| [Dual-modal Tactile E-skin: Enabling Bidirectional Human-Robot Interaction via Integrated Tactile Perception and Feedback](https://arxiv.org/abs/2402.05725) | — | ICRA 2024 | 否 | — |
+| [Haptic-Assisted Collaborative Robot Framework for Improved Situational Awareness in Skull Base Surgery](https://arxiv.org/abs/2401.11709) | — | ICRA 2024 | 否 | — |
+| [Human-in-the-Loop Gaussian Splatting for Robotic Teleoperation](https://ieeexplore.ieee.org/document/3632755) | 2026-01-01 | RA-L 2026、ICRA 2026 | 否 | — |
+| [IDAGC: Adaptive Generalized Human-Robot Collaboration via Human Intent Estimation and Multimodal Policy Learning](https://arxiv.org/abs/2507.04620) | 2025-07-07 | IROS 2025 | 否 | — |
+
+---
+
+
+## D8 · 策略学习与优化
+
+> 归属层级：学习与基础设施。当前纳入 2768 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`robot learning`、`imitation learning`、`reinforcement learning`、`diffusion policy`、`flow policy`、`flow matching policy`、`behavior cloning`、`behaviour cloning`、`offline reinforcement`、`online reinforcement`、`visuomotor policy`、`manipulation policy`、`skill learning`、`policy distillation`、`policy optimization`、`cross-embodiment`、`cross embodiment`、`cross-robot`、`multi-robot learning`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`policy`、`control`、`locomotion`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 64 | — | 0 | +64 | 新增 |
+| 2024-08 | 51 | 2024-07 | 64 | -13 | -20.3% |
+| 2024-09 | 80 | 2024-08 | 51 | +29 | +56.9% |
+| 2024-10 | 87 | 2024-09 | 80 | +7 | +8.8% |
+| 2024-11 | 58 | 2024-10 | 87 | -29 | -33.3% |
+| 2024-12 | 55 | 2024-11 | 58 | -3 | -5.2% |
+| 2025-01 | 41 | 2024-12 | 55 | -14 | -25.5% |
+| 2025-02 | 81 | 2025-01 | 41 | +40 | +97.6% |
+| 2025-03 | 121 | 2025-02 | 81 | +40 | +49.4% |
+| 2025-04 | 63 | 2025-03 | 121 | -58 | -47.9% |
+| 2025-05 | 130 | 2025-04 | 63 | +67 | +106.3% |
+| 2025-06 | 82 | 2025-05 | 130 | -48 | -36.9% |
+| 2025-07 | 72 | 2025-06 | 82 | -10 | -12.2% |
+| 2025-08 | 66 | 2025-07 | 72 | -6 | -8.3% |
+| 2025-09 | 124 | 2025-08 | 66 | +58 | +87.9% |
+| 2025-10 | 105 | 2025-09 | 124 | -19 | -15.3% |
+| 2025-11 | 87 | 2025-10 | 105 | -18 | -17.1% |
+| 2025-12 | 75 | 2025-11 | 87 | -12 | -13.8% |
+| 2026-01 | 72 | 2025-12 | 75 | -3 | -4.0% |
+| 2026-02 | 91 | 2026-01 | 72 | +19 | +26.4% |
+| 2026-03 | 157 | 2026-02 | 91 | +66 | +72.5% |
+| 2026-04 | 89 | 2026-03 | 157 | -68 | -43.3% |
+| 2026-05 | 138 | 2026-04 | 89 | +49 | +55.1% |
+| 2026-06 | 141 | 2026-05 | 138 | +3 | +2.2% |
+| 2026-07 | 102 | 2026-06 | 141 | -39 | -27.7% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Developing Design Guidelines for Older Adults with Robot Learning from Demonstration](https://doi.org/10.15607/rss.2024.xx.030) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://doi.org/10.15607/rss.2024.xx.067) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [A Dual Approach to Imitation Learning from Observations with Offline Datasets](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Action-Free Reasoning for Policy Generalization](https://arxiv.org/abs/2502.03729) | 2025-02-06 | CoRL 2025 | 是 | — |
+| [Adapt3R: Adaptive 3D Scene Representation for Domain Transfer in Imitation Learning](https://arxiv.org/abs/2503.04877) | 2025-03-06 | CoRL 2025 | 是 | — |
+| [Adapting by Analogy: OOD Generalization of Visuomotor Policies via Functional Correspondence](https://arxiv.org/abs/2506.12678) | 2025-06-15 | CoRL 2025 | 是 | — |
+| [Adaptive Language-Guided Abstraction from Contrastive Explanations](https://arxiv.org/abs/2409.08212) | 2024-09-12 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Agreement Volatility: A Second-Order Metric for Uncertainty Quantification in Surgical Robot Learning](https://proceedings.mlr.press/v305/thompson25a.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons](https://arxiv.org/abs/2503.03081) | 2025-03-05 | CoRL 2025 | 是 | — |
+| [ArticuBot: Learning Universal Articulated Object Manipulation Policy via Large Scale Simulation](https://arxiv.org/abs/2503.03045) | 2025-03-04 | RSS 2025 | 是 | — |
+| [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://arxiv.org/abs/2603.07648) | 2026-03-08 | CVPR 2026 | 是 | — |
+| [BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark](https://arxiv.org/abs/2407.07788) | 2024-07-10 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Body Transformer: Leveraging Robot Embodiment for Policy Learning](https://arxiv.org/abs/2408.06316) | 2024-08-12 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Bootstrapping Reinforcement Learning with Imitation for Vision-Based Agile Flight](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Bridging the gap between Learning-to-plan, Motion Primitives and Safe Reinforcement Learning](https://arxiv.org/abs/2408.14063) | 2024-08-26 | CoRL 2024、CoRL 2024 | 是 | — |
+| [CaRL: Learning Scalable Planning Policies with Simple Rewards](https://arxiv.org/abs/2504.17838) | 2025-04-24 | CoRL 2025 | 是 | — |
+| [CDP: Towards Robust Autoregressive Visuomotor Policy Learning via Causal Diffusion](https://arxiv.org/abs/2506.14769) | 2025-06-17 | CoRL 2025 | 是 | — |
+| [CLASS: Contrastive Learning via Action Sequence Supervision for Robot Manipulation](https://arxiv.org/abs/2508.01600) | 2025-08-03 | CoRL 2025 | 是 | — |
+| [CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language Supervision](https://arxiv.org/abs/2411.00508) | 2024-11-01 | RSS 2025 | 是 | — |
+| [ClutterGen: A Cluttered Scene Generator for Robot Learning](https://arxiv.org/abs/2407.05425) | 2024-07-07 | CoRL 2024、CoRL 2024 | 是 | — |
+| [CodeDiffuser: Attention-Enhanced Diffusion Policy via VLM-Generated Code for Instruction Ambiguity](https://arxiv.org/abs/2506.16652) | 2025-06-19 | RSS 2025 | 是 | — |
+| [Constraint-Preserving Data Generation for One-Shot Visuomotor Policy Generalization](https://proceedings.mlr.press/v305/lin25b.html) | 2025-10-07 | CoRL 2025 | 是 | — |
+| [Continuous Control with Coarse-to-fine Reinforcement Learning](https://arxiv.org/abs/2407.07787) | 2024-07-10 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Contrastive Imitation Learning for Language-guided Multi-Task Robotic Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Crossing the Human-Robot Embodiment Gap with Sim-to-Real RL using One Human Demonstration](https://arxiv.org/abs/2504.12609) | 2025-04-17 | CoRL 2025 | 是 | — |
+| [CtRL-Sim: Reactive and Controllable Driving Agents with Offline Reinforcement Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Data Retrieval with Importance Weights for Few-Shot Imitation Learning](https://arxiv.org/abs/2509.01657) | 2025-09-01 | CoRL 2025 | 是 | — |
+| [Decentralized Aerial Manipulation of a Cable-Suspended Load using Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2508.01522) | 2025-08-02 | CoRL 2025 | 是 | — |
+| [DemoGen: Synthetic Demonstration Generation for Data-Efficient Visuomotor Policy Learning](https://arxiv.org/abs/2502.16932) | 2025-02-24 | RSS 2025 | 是 | — |
+| [Demonstrating LEAP Hand v2: Low-Cost, Easy-to-Assemble, High-Performance Hand for Robot Learning](https://www.roboticsproceedings.org/rss21/p132.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [DemoSpeedup: Accelerating Visuomotor Policies via Entropy-Guided Demonstration Acceleration](https://arxiv.org/abs/2506.05064) | 2025-06-05 | CoRL 2025 | 是 | — |
+| [DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot Control](https://arxiv.org/abs/2502.05855) | 2025-02-09 | CoRL 2025 | 是 | — |
+| [Divide, Discover, Deploy: Factorized Skill Learning with Symmetry and Style Priors](https://arxiv.org/abs/2508.19953) | 2025-08-27 | CoRL 2025 | 是 | — |
+| [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08-05 | CoRL 2025 | 是 | — |
+| [Dreamitate: Real-World Visuomotor Policy Learning via Video Generation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Dynamic Rank Adjustment in Diffusion Policies for Efficient and Flexible Training](https://arxiv.org/abs/2502.03822) | 2025-02-06 | RSS 2025 | 是 | — |
+| [Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Equivariant Diffusion Policy](https://arxiv.org/abs/2407.01812) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Few-Shot Neuro-Symbolic Imitation Learning for Long-Horizon Planning and Acting](https://arxiv.org/abs/2508.21501) | 2025-08-29 | CoRL 2025 | 是 | — |
+| [FLARE: Robot Learning with Implicit World Modeling](https://arxiv.org/abs/2505.15659) | 2025-05-21 | CoRL 2025 | 是 | — |
+| [FlowRetrieval: Flow-Guided Data Retrieval for Few-Shot Imitation Learning](https://arxiv.org/abs/2408.16944) | 2024-08-29 | CoRL 2024、CoRL 2024 | 是 | — |
+| [GenDP: 3D Semantic Fields for Category-Level Generalizable Diffusion Policy](https://arxiv.org/abs/2410.17488) | 2024-10-23 | CoRL 2024、CoRL 2024 | 是 | — |
+| [General Flow as Foundation Affordance for Scalable Robot Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Genetic Algorithm for Curriculum Design in Multi-Agent Reinforcement Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [HACMan++: Spatially-Grounded Motion Primitives for Manipulation](https://arxiv.org/abs/2407.08585) | 2024-07-11 | RSS 2024、RSS 2024 | 是 | — |
+| [Handling Long-Term Safety and Uncertainty in Safe Reinforcement Learning](https://arxiv.org/abs/2409.12045) | 2024-09-18 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Imitation Bootstrapped Reinforcement Learning](https://doi.org/10.15607/rss.2024.xx.056) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Imitation Learning Based on Disentangled Representation Learning of Behavioral Characteristics](https://arxiv.org/abs/2509.04737) | 2025-09-05 | CoRL 2025 | 是 | — |
+| [IMLE Policy: Fast and Sample Efficient Visuomotor Policy Learning via Implicit Maximum Likelihood Estimation](https://arxiv.org/abs/2502.12371) | 2025-02-17 | RSS 2025 | 是 | — |
+| [Is Your Imitation Learning Policy Better than Mine? Policy Comparison with Near-Optimal Stopping](https://arxiv.org/abs/2503.10966) | 2025-03-14 | RSS 2025 | 是 | — |
+| [JaxRobotarium: Training and Deploying Multi-Robot Policies in 10 Minutes](https://arxiv.org/abs/2505.06771) | 2025-05-10 | CoRL 2025 | 是 | — |
+| [KDPE: A Kernel Density Estimation Strategy for Diffusion Policy Trajectory Selection](https://arxiv.org/abs/2508.10511) | 2025-08-14 | CoRL 2025 | 是 | — |
+| [Keypoint Action Tokens Enable In-Context Imitation Learning in Robotics](https://doi.org/10.15607/rss.2024.xx.096) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [KOI: Accelerating Online Imitation Learning via Hybrid Key-state Guidance](https://arxiv.org/abs/2408.02912) | 2024-08-06 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning Robot Soccer from Egocentric Vision with Deep Reinforcement Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Learning to Manipulate Anywhere: A Visual Generalizable Framework For Reinforcement Learning](https://arxiv.org/abs/2407.15815) | 2024-07-22 | CoRL 2024、CoRL 2024 | 是 | — |
+| [LLARVA: Vision-Action Instruction Tuning Enhances Robot Learning](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [LodeStar: Long-horizon Dexterity via Synthetic Data Augmentation from Human Demonstrations](https://arxiv.org/abs/2508.17547) | 2025-08-24 | CoRL 2025 | 是 | — |
+| [MaIL: Improving Imitation Learning with Selective State Space Models](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+
+---
+
+
+## D9 · 数据引擎与人类视频学习
+
+> 归属层级：学习与基础设施。当前纳入 343 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`robot dataset`、`robotics dataset`、`data engine`、`data scaling`、`large-scale robot data`、`large scale robot data`、`robot demonstration`、`teleoperation`、`tele-operation`、`human video`、`internet video`、`egocentric video`、`play data`、`autonomous data collection`、`data curation`、`data mixture`、`trajectory dataset`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`action`、`trajectory`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 11 | — | 0 | +11 | 新增 |
+| 2024-08 | 5 | 2024-07 | 11 | -6 | -54.5% |
+| 2024-09 | 12 | 2024-08 | 5 | +7 | +140.0% |
+| 2024-10 | 9 | 2024-09 | 12 | -3 | -25.0% |
+| 2024-11 | 3 | 2024-10 | 9 | -6 | -66.7% |
+| 2024-12 | 7 | 2024-11 | 3 | +4 | +133.3% |
+| 2025-01 | 4 | 2024-12 | 7 | -3 | -42.9% |
+| 2025-02 | 7 | 2025-01 | 4 | +3 | +75.0% |
+| 2025-03 | 10 | 2025-02 | 7 | +3 | +42.9% |
+| 2025-04 | 12 | 2025-03 | 10 | +2 | +20.0% |
+| 2025-05 | 8 | 2025-04 | 12 | -4 | -33.3% |
+| 2025-06 | 8 | 2025-05 | 8 | 0 | 0.0% |
+| 2025-07 | 7 | 2025-06 | 8 | -1 | -12.5% |
+| 2025-08 | 9 | 2025-07 | 7 | +2 | +28.6% |
+| 2025-09 | 16 | 2025-08 | 9 | +7 | +77.8% |
+| 2025-10 | 3 | 2025-09 | 16 | -13 | -81.3% |
+| 2025-11 | 8 | 2025-10 | 3 | +5 | +166.7% |
+| 2025-12 | 10 | 2025-11 | 8 | +2 | +25.0% |
+| 2026-01 | 7 | 2025-12 | 10 | -3 | -30.0% |
+| 2026-02 | 12 | 2026-01 | 7 | +5 | +71.4% |
+| 2026-03 | 19 | 2026-02 | 12 | +7 | +58.3% |
+| 2026-04 | 7 | 2026-03 | 19 | -12 | -63.2% |
+| 2026-05 | 21 | 2026-04 | 7 | +14 | +200.0% |
+| 2026-06 | 26 | 2026-05 | 21 | +5 | +23.8% |
+| 2026-07 | 16 | 2026-06 | 26 | -10 | -38.5% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Casper: Inferring Diverse Intents for Assistive Teleoperation with Vision Language Models](https://arxiv.org/abs/2506.14727) | 2025-06-17 | CoRL 2025 | 是 | — |
+| [Conformalized Teleoperation: Confidently Mapping Human Inputs to High-Dimensional Robot Actions](https://doi.org/10.15607/rss.2024.xx.008) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [FERMI: Flexible Radio Mapping with a Hybrid Propagation Model and Scalable Autonomous Data Collection](https://arxiv.org/abs/2504.14862) | 2025-04-21 | RSS 2025 | 是 | — |
+| [Flow as the Cross-Domain Manipulation Interface](https://arxiv.org/abs/2407.15208) | 2024-07-21 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Flying Hand: End-Effector-Centric Framework for Versatile Aerial Manipulation Teleoperation and Policy Learning](https://arxiv.org/abs/2504.10334) | 2025-04-14 | RSS 2025 | 是 | — |
+| [Gen2Act: Human Video Generation in Novel Scenarios enables Generalizable Robot Manipulation](https://arxiv.org/abs/2409.16283) | 2024-09-24 | CoRL 2025 | 是 | — |
+| [ImMimic: Cross-Domain Imitation from Human Videos via Mapping and Interpolation](https://arxiv.org/abs/2509.10952) | 2025-09-13 | CoRL 2025 | 是 | — |
+| [Interface-level Intent Inference for Environment-agnostic Robot Teleoperation Assistance](https://www.roboticsproceedings.org/rss21/p081.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [Lucid-XR: An Extended-Reality Data Engine for Robotic Manipulation](https://arxiv.org/abs/2605.00244) | 2026-04-30 | CoRL 2025 | 是 | — |
+| [MimicFunc: Imitating Tool Manipulation from a Single Human Video via Functional Correspondence](https://arxiv.org/abs/2508.13534) | 2025-08-19 | CoRL 2025 | 是 | — |
+| [Online Transfer and Adaptation of Tactile Skill: A Teleoperation Framework](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | [OpenTeleVision/TeleVision](https://github.com/OpenTeleVision/TeleVision) |
+| [Phantom: Training Robots Without Robots Using Only Human Videos](https://arxiv.org/abs/2503.00779) | 2025-03-02 | CoRL 2025 | 是 | — |
+| [Re-Mix: Optimizing Data Mixtures for Large Scale Imitation Learning](https://arxiv.org/abs/2408.14037) | 2024-08-26 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Robot Data Curation with Mutual Information Estimators](https://arxiv.org/abs/2502.08623) | 2025-02-12 | RSS 2025 | 是 | — |
+| [Scaling Robot Policy Learning via Zero-Shot Labeling with Foundation Models](https://arxiv.org/abs/2410.17772) | 2024-10-23 | CoRL 2024、CoRL 2024 | 是 | — |
+| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) | 2026-03-23 | CVPR 2026 | 是 | — |
+| [GELLO: A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators](https://arxiv.org/abs/2309.13037) | — | IROS 2024 | 否 | — |
+| [EgoMimic: Scaling Imitation Learning via Egocentric Video](https://arxiv.org/abs/2410.24221) | 2024-10-31 | ICRA 2025 | 否 | — |
+| [R+X: Retrieval and Execution from Everyday Human Videos](https://arxiv.org/abs/2407.12957) | 2024-07-17 | ICRA 2025 | 否 | — |
+| [Radiance Fields for Robotic Teleoperation](https://arxiv.org/abs/2407.20194) | 2024-07-29 | IROS 2024 | 否 | — |
+| [Diff-IP2D: Diffusion-Based Hand-Object Interaction Prediction on Egocentric Videos](https://arxiv.org/abs/2405.04370) | — | IROS 2025 | 否 | — |
+| [Learning Fabric Manipulation in the Real World with Human Videos](https://arxiv.org/abs/2211.02832) | — | ICRA 2024 | 否 | — |
+| [AeroHaptix: A Wearable Vibrotactile Feedback System for Enhancing Collision Avoidance in UAV Teleoperation](https://arxiv.org/abs/2407.12105) | 2024-07-16 | RA-L 2025 | 否 | — |
+| [TreeScope: An Agricultural Robotics Dataset for LiDAR-Based Mapping of Trees in Forests and Orchards](https://arxiv.org/abs/2310.02162) | — | ICRA 2024 | 否 | — |
+| [Learning Semantic Traversability With Egocentric Video and Automated Annotation Strategy](https://arxiv.org/abs/2406.02989) | — | RA-L 2024 | 否 | — |
+| [Passive Bilateral Surgical Teleoperation With RCM and Spatial Constraints in the Presence of Time Delays](https://ieeexplore.ieee.org/document/3502221) | 2025-01-01 | T-RO 2025 | 否 | — |
+| [RTAGrasp: Learning Task-Oriented Grasping from Human Videos via Retrieval, Transfer, and Alignment](https://arxiv.org/abs/2409.16033) | 2024-09-24 | ICRA 2025 | 否 | — |
+| [Cybernetic avatars: Teleoperation technologies from in-body monitoring to social interaction](https://www.science.org/doi/10.1126/scirobotics.adg1842) | 2024-11-20 | Science Robotics 2024 | 否 | — |
+| [E-BTS: Event-Based Tactile Sensor for Haptic Teleoperation in Augmented Reality](https://ieeexplore.ieee.org/document/3502215) | 2025-01-01 | T-RO 2025 | 否 | — |
+| [One-Shot Imitation under Mismatched Execution](https://arxiv.org/abs/2409.06615) | 2024-09-10 | ICRA 2025 | 否 | — |
+| [Cooperative vs. Teleoperation Control of the Steady Hand Eye Robot with Adaptive Sclera Force Control: A Comparative Study](https://arxiv.org/abs/2312.01631) | — | ICRA 2024 | 否 | — |
+| [Passivity-Based Control of Distributed Teleoperation With Velocity/Force Manipulability Optimization](https://ieeexplore.ieee.org/document/3508192) | 2025-01-01 | T-RO 2025 | 否 | — |
+| [Hierarchical Deep Learning for Intention Estimation of Teleoperation Manipulation in Assembly Tasks](https://arxiv.org/abs/2403.19770) | — | ICRA 2024 | 否 | — |
+| [Reality Fusion: Robust Real-time Immersive Mobile Robot Teleoperation with Volumetric Visual Data Fusion](https://arxiv.org/abs/2408.01225) | 2024-08-02 | IROS 2024 | 否 | — |
+| [Robotic Offline RL from Internet Videos via Value-Function Learning](https://ieeexplore.ieee.org/document/10611575) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [TELESIM: A Modular and Plug-and-Play Framework for Robotic Arm Teleoperation using a Digital Twin](https://arxiv.org/abs/2309.10579) | — | ICRA 2024 | 否 | — |
+| [Chain-of-Modality: Learning Manipulation Programs from Multimodal Human Videos with Vision-Language-Models](https://arxiv.org/abs/2504.13351) | 2025-04-17 | ICRA 2025 | 否 | — |
+| [Control-Barrier-Aided Teleoperation with Visual-Inertial SLAM for Safe MAV Navigation in Complex Environments](https://arxiv.org/abs/2403.04331) | — | ICRA 2024 | 否 | — |
+| [Linearized Virtual Energy Tank for Passivity-Based Bilateral Teleoperation Using Linear MPC](https://ieeexplore.ieee.org/document/3554447) | 2025-01-01 | T-RO 2025 | 否 | — |
+| [User-customizable Shared Control for Robot Teleoperation via Virtual Reality](https://arxiv.org/abs/2403.13177) | — | IROS 2024 | 否 | — |
+| [Adaptive Neural Network Synchronous Tracking Control for Teleoperation Robots Under Event-Triggered Mechanism](https://ieeexplore.ieee.org/document/3455894) | 2024-11-01 | RA-L 2024 | 否 | — |
+| [A Digital Twin-Driven Immersive Teleoperation Framework for Robot-Assisted Microsurgery](https://ieeexplore.ieee.org/document/10801954) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Exploring Cognitive Load Dynamics in Human-Machine Interaction for Teleoperation: A User-Centric Perspective on Remote Operation System Design](https://ieeexplore.ieee.org/document/10802226) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Passivity-Based Teleoperation With Variable Rotational Impedance Control](https://ieeexplore.ieee.org/document/3490260) | 2024-12-01 | RA-L 2024 | 否 | — |
+| [Self-supervised 6-DoF Robot Grasping by Demonstration via Augmented Reality Teleoperation System](https://arxiv.org/abs/2404.03067) | — | ICRA 2024 | 否 | — |
+| [A Tetherless Soft Robotic Wearable Haptic Human Machine Interface for Robot Teleoperation](https://ieeexplore.ieee.org/document/10802410) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Position Prediction for Space Teleoperation With SAO-CNN-BiGRU-Attention Algorithm](https://ieeexplore.ieee.org/document/3498700) | 2024-12-01 | RA-L 2024 | 否 | — |
+| [Stability and Transparency in Mixed Reality Bilateral Human Teleoperation](https://arxiv.org/abs/2410.09679) | 2024-10-13 | T-RO 2025、ICRA 2026 | 否 | — |
+| [A Tactile Lightweight Exoskeleton for Teleoperation: Design and Control Performance](https://ieeexplore.ieee.org/document/10802732) | 2024-01-01 | IROS 2024 | 否 | — |
+| [DART: Dexterous Augmented Reality Teleoperation Platform for Large-Scale Robot Data Collection in Simulation](https://ieeexplore.ieee.org/document/11128299) | 2025-01-01 | ICRA 2025 | 否 | — |
+| [Lie Group-Based User Motion Refinement Control for Teleoperation of a Constrained Robot Arm](https://ieeexplore.ieee.org/document/3401135) | 2024-07-01 | RA-L 2024 | 否 | — |
+| [Sampling-Based Grasp and Collision Prediction for Assisted Teleoperation](https://arxiv.org/abs/2504.18186) | 2025-04-25 | ICRA 2025 | 否 | — |
+| [SPOTS: Stable Placement of Objects with Reasoning in Semi-Autonomous Teleoperation Systems](https://arxiv.org/abs/2309.13937) | — | ICRA 2024 | 否 | — |
+| [Adaptive User Interface With Parallel Neural Networks for Robot Teleoperation](https://ieeexplore.ieee.org/document/3518085) | 2025-02-01 | RA-L 2025 | 否 | — |
+| [DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model](https://arxiv.org/abs/2405.07309) | — | IROS 2025 | 否 | — |
+| [Intelligent Mode-switching Framework for Teleoperation](https://arxiv.org/abs/2402.06047) | — | ICRA 2024 | 否 | — |
+| [Perfectly Undetectable False Data Injection Attacks on Encrypted Bilateral Teleoperation System based on Dynamic Symmetry and Malleability](https://arxiv.org/abs/2409.13061) | 2024-09-19 | ICRA 2025 | 否 | — |
+| [Towards Real-Time Generation of Delay-Compensated Video Feeds for Outdoor Mobile Robot Teleoperation](https://arxiv.org/abs/2409.09921) | 2024-09-16 | ICRA 2025 | 否 | — |
+
+---
+
+
+## D10 · 仿真、合成数据与 Sim-to-Real
+
+> 归属层级：学习与基础设施。当前纳入 401 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`sim-to-real`、`sim2real`、`simulation-to-reality`、`simulation to reality`、`synthetic robot data`、`robot simulation`、`robotics simulator`、`digital twin`、`domain randomization`、`procedural generation`、`synthetic demonstration`、`simulation data`、`physics simulator`、`neural simulator`、`generative simulator`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`policy`、`control`、`simulation`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 5 | — | 0 | +5 | 新增 |
+| 2024-08 | 2 | 2024-07 | 5 | -3 | -60.0% |
+| 2024-09 | 10 | 2024-08 | 2 | +8 | +400.0% |
+| 2024-10 | 17 | 2024-09 | 10 | +7 | +70.0% |
+| 2024-11 | 16 | 2024-10 | 17 | -1 | -5.9% |
+| 2024-12 | 5 | 2024-11 | 16 | -11 | -68.8% |
+| 2025-01 | 5 | 2024-12 | 5 | 0 | 0.0% |
+| 2025-02 | 14 | 2025-01 | 5 | +9 | +180.0% |
+| 2025-03 | 14 | 2025-02 | 14 | 0 | 0.0% |
+| 2025-04 | 11 | 2025-03 | 14 | -3 | -21.4% |
+| 2025-05 | 16 | 2025-04 | 11 | +5 | +45.5% |
+| 2025-06 | 12 | 2025-05 | 16 | -4 | -25.0% |
+| 2025-07 | 9 | 2025-06 | 12 | -3 | -25.0% |
+| 2025-08 | 12 | 2025-07 | 9 | +3 | +33.3% |
+| 2025-09 | 17 | 2025-08 | 12 | +5 | +41.7% |
+| 2025-10 | 13 | 2025-09 | 17 | -4 | -23.5% |
+| 2025-11 | 13 | 2025-10 | 13 | 0 | 0.0% |
+| 2025-12 | 7 | 2025-11 | 13 | -6 | -46.2% |
+| 2026-01 | 14 | 2025-12 | 7 | +7 | +100.0% |
+| 2026-02 | 13 | 2026-01 | 14 | -1 | -7.1% |
+| 2026-03 | 23 | 2026-02 | 13 | +10 | +76.9% |
+| 2026-04 | 10 | 2026-03 | 23 | -13 | -56.5% |
+| 2026-05 | 15 | 2026-04 | 10 | +5 | +50.0% |
+| 2026-06 | 27 | 2026-05 | 15 | +12 | +80.0% |
+| 2026-07 | 14 | 2026-06 | 27 | -13 | -48.1% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Automated Creation of Digital Cousins for Robust Policy Learning](https://arxiv.org/abs/2410.07408) | 2024-10-09 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation](https://arxiv.org/abs/2502.10894) | 2025-02-15 | RSS 2025 | 是 | — |
+| [Bridging the Sim-to-Real Gap from the Information Bottleneck Perspective](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Demonstrating GPU Parallelized Robot Simulation and Rendering for Generalizable Embodied AI with ManiSkill3](https://www.roboticsproceedings.org/rss21/p021.html) | 2025-06-21 | RSS 2025 | 是 | — |
+| [DrEureka: Language Model Guided Sim-To-Real Transfer](https://doi.org/10.15607/rss.2024.xx.094) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [FetchBot: Learning Generalizable Object Fetching in Cluttered Scenes via Zero-Shot Sim2Real](https://arxiv.org/abs/2502.17894) | 2025-02-25 | CoRL 2025 | 是 | — |
+| [Function Based Sim-to-Real Learning for Shape Control of Deformable Free-form Surfaces](https://doi.org/10.15607/rss.2024.xx.098) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Natural Language Can Help Bridge the Sim2Real Gap](https://doi.org/10.15607/rss.2024.xx.126) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Neural Robot Dynamics](https://arxiv.org/abs/2508.15755) | 2025-08-21 | CoRL 2025 | 是 | — |
+| [One View, Many Worlds: Single-Image to 3D Object Meets Generative Domain Randomization for One-Shot 6D Pose Estimation](https://arxiv.org/abs/2509.07978) | 2025-09-09 | CoRL 2025 | 是 | — |
+| [Reconciling Reality through Simulation: A Real-To-Sim-to-Real Approach for Robust Manipulation](https://doi.org/10.15607/rss.2024.xx.015) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [ScissorBot: Learning Generalizable Scissor Skill for Paper Cutting via Simulation, Imitation, and Sim2Real](https://arxiv.org/abs/2409.13966) | 2024-09-21 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Sim-to-Real Transfer via 3D Feature Fields for Vision-and-Language Navigation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [SimShear: Sim-to-Real Shear-based Tactile Servoing](https://arxiv.org/abs/2508.20561) | 2025-08-28 | CoRL 2025 | 是 | — |
+| [The Sound of Simulation: Learning Multimodal Sim-to-Real Robot Policies with Generative Audio](https://arxiv.org/abs/2507.02864) | 2025-07-03 | CoRL 2025 | 是 | — |
+| [TieBot: Learning to Knot a Tie from Visual Demonstration through a Real-to-Sim-to-Real Approach](https://arxiv.org/abs/2407.03245) | 2024-07-03 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Wheeled Lab: Modern Sim2Real for Low-cost, Open-source Wheeled Robotics](https://arxiv.org/abs/2502.07380) | 2025-02-11 | CoRL 2025 | 是 | — |
+| [SplatSim: Zero-Shot Sim2Real Transfer of RGB Manipulation Policies Using Gaussian Splatting](https://arxiv.org/abs/2409.10161) | 2024-09-16 | ICRA 2025 | 否 | — |
+| [Learning to Fly in Seconds](https://arxiv.org/abs/2311.13081) | — | RA-L 2024 | 否 | — |
+| [Sim-to-Real of Soft Robots With Learned Residual Physics](https://arxiv.org/abs/2402.01086) | — | RA-L 2024 | 否 | — |
+| [Local Policies Enable Zero-shot Long-horizon Manipulation](https://arxiv.org/abs/2410.22332) | 2024-10-29 | ICRA 2025 | 否 | — |
+| [S2R-ViT for Multi-Agent Cooperative Perception: Bridging the Gap from Simulation to Reality](https://arxiv.org/abs/2307.07935) | — | ICRA 2024 | 否 | — |
+| [DiffusionNOCS: Managing Symmetry and Uncertainty in Sim2Real Multi-Modal Category-level Pose Estimation](https://arxiv.org/abs/2402.12647) | — | IROS 2024 | 否 | — |
+| [Domain Randomization for Sim2real Transfer of Automatically Generated Grasping Datasets](https://arxiv.org/abs/2310.04517) | — | ICRA 2024 | 否 | — |
+| [Bridging the Sim-to-Real Gap with Dynamic Compliance Tuning for Industrial Insertion](https://arxiv.org/abs/2311.07499) | — | ICRA 2024 | 否 | — |
+| [ASGrasp: Generalizable Transparent Object Reconstruction and 6-DoF Grasp Detection from RGB-D Active Stereo Camera](https://arxiv.org/abs/2405.05648) | — | ICRA 2024 | 否 | — |
+| [DISCOVERSE: Efficient Robot Simulation in Complex High-Fidelity Environments](https://arxiv.org/abs/2507.21981) | 2025-07-29 | IROS 2025 | 否 | — |
+| [Dynamics as Prompts: In-Context Learning for Sim-to-Real System Identifications](https://arxiv.org/abs/2410.20357) | 2024-10-27 | RA-L 2025 | 否 | — |
+| [Learning on the Fly: Rapid Policy Adaptation via Differentiable Simulation](https://arxiv.org/abs/2508.21065) | 2025-08-28 | RA-L 2026、ICRA 2026 | 否 | — |
+| [Close the Sim2real Gap via Physically-based Structured Light Synthetic Data Simulation](https://arxiv.org/abs/2407.12449) | 2024-07-17 | ICRA 2024 | 否 | — |
+| [Sim-to-real transfer of adaptive control parameters for AUV stabilisation under current disturbance](https://arxiv.org/abs/2310.11075) | — | IJRR 2024 | 否 | — |
+| [What Matters in Learning A Zero-Shot Sim-to-Real RL Policy for Quadrotor Control? A Comprehensive Study](https://arxiv.org/abs/2412.11764) | 2024-12-16 | RA-L 2025、ICRA 2026 | 否 | — |
+| [Continual Domain Randomization](https://arxiv.org/abs/2403.12193) | — | IROS 2024 | 否 | — |
+| [TactGen: Tactile Sensory Data Generation via Zero-Shot Sim-to-Real Transfer](https://ieeexplore.ieee.org/document/3521967) | 2025-01-01 | T-RO 2025 | 否 | — |
+| [One Net to Rule Them All: Domain Randomization in Quadcopter Racing Across Different Platforms](https://arxiv.org/abs/2504.21586) | 2025-04-30 | ICRA 2025 | 否 | — |
+| [Bridging the Sim-to-Real Gap with Bayesian Inference](https://arxiv.org/abs/2403.16644) | — | IROS 2024 | 否 | — |
+| [High-Fidelity Simulated Data Generation for Real-World Zero-Shot Robotic Manipulation Learning with Gaussian Splatting](https://arxiv.org/abs/2510.10637) | 2025-10-12 | RA-L 2026 | 否 | — |
+| [Robotic Object Insertion with a Soft Wrist through Sim-to-Real Privileged Training](https://arxiv.org/abs/2408.17061) | 2024-08-30 | IROS 2024 | 否 | — |
+| [Sim2Real Bilevel Adaptation for Object Surface Classification using Vision-Based Tactile Sensors](https://arxiv.org/abs/2311.01380) | — | ICRA 2024 | 否 | — |
+| [PolyFit: A Peg-in-hole Assembly Framework for Unseen Polygon Shapes via Sim-to-real Adaptation](https://arxiv.org/abs/2312.02531) | — | IROS 2024 | 否 | — |
+| [REPeat: A Real2Sim2Real Approach for Pre-acquisition of Soft Food Items in Robot-assisted Feeding](https://arxiv.org/abs/2410.10017) | 2024-10-13 | IROS 2024 | 否 | — |
+| [Sim-to-Real Grasp Detection with Global-to-Local RGB-D Adaptation](https://arxiv.org/abs/2403.11511) | — | ICRA 2024 | 否 | — |
+| [DexSim2Real$^{2}$: Building Explicit World Model for Precise Articulated Object Dexterous Manipulation](https://arxiv.org/abs/2409.08750) | 2024-09-13 | T-RO 2025 | 否 | — |
+| [Domain Randomization for Object Detection in Manufacturing Applications using Synthetic Data: A Comprehensive Study](https://arxiv.org/abs/2506.07539) | 2025-06-09 | ICRA 2025 | 否 | — |
+| [Impact of Static Friction on Sim2Real in Robotic Reinforcement Learning](https://arxiv.org/abs/2503.01255) | 2025-03-03 | IROS 2025 | 否 | — |
+| [Learning Multi-Scale Context Mask-RCNN Network for Slant Angled Aerial Imagery in Instance Segmentation in a Sim2Real setup](https://ieeexplore.ieee.org/document/10610358) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [FalconGym: A Photorealistic Simulation Framework for Zero-Shot Sim-to-Real Vision-Based Quadrotor Navigation](https://arxiv.org/abs/2503.02198) | 2025-03-04 | IROS 2025 | 否 | — |
+| [Integrating Model-based Control and RL for Sim2Real Transfer of Tight Insertion Policies](https://arxiv.org/abs/2505.11858) | 2025-05-17 | ICRA 2025 | 否 | — |
+| [MetaMVUC: Active Learning for Sample-Efficient Sim-to-Real Domain Adaptation in Robotic Grasping](https://ieeexplore.ieee.org/document/3544083) | 2025-04-01 | RA-L 2025 | 否 | — |
+| [Quantifying the Sim2Real Gap: Model-Based Verification and Validation in Autonomous Ground Systems](https://ieeexplore.ieee.org/document/3546126) | 2025-04-01 | RA-L 2025 | 否 | — |
+| [Skill Transfer and Discovery for Sim-to-Real Learning: A Representation-Based Viewpoint](https://arxiv.org/abs/2404.05051) | — | IROS 2024 | 否 | — |
+| [SurgEM: A Vision-Based Surgery Environment Modeling Framework for Constructing a Digital Twin Toward Autonomous Soft Tissue Manipulation](https://ieeexplore.ieee.org/document/3466074) | 2024-11-01 | RA-L 2024 | 否 | — |
+| [Tracking cloth deformation: A novel dataset for closing the sim-to-real gap for robotic cloth manipulation learning](https://journals.sagepub.com/doi/10.1177/02783649251317617) | 2025-02-08 | IJRR 2025 | 否 | — |
+| [BayRnTune: Adaptive Bayesian Domain Randomization via Strategic Fine-tuning](https://arxiv.org/abs/2310.10606) | — | IROS 2024 | 否 | — |
+| [Domain Randomization for Learning to Navigate in Human Environments](https://ieeexplore.ieee.org/document/3521178) | 2025-02-01 | RA-L 2025 | 否 | — |
+| [Test-Time Certifiable Self-Supervision to Bridge the Sim2Real Gap in Event-Based Satellite Pose Estimation](https://arxiv.org/abs/2409.06240) | 2024-09-10 | IROS 2024 | 否 | — |
+| [Closing the Visual Sim-to-Real Gap with Object-Composable NeRFs](https://arxiv.org/abs/2403.04114) | — | ICRA 2024 | 否 | — |
+| [Fine Manipulation Using a Tactile Skin: Learning in Simulation and Sim-to-Real Transfer](https://arxiv.org/abs/2409.12735) | 2024-09-19 | IROS 2024 | 否 | — |
+| [RLPP: A Residual Method for Zero-Shot Real-World Autonomous Racing on Scaled Platforms](https://arxiv.org/abs/2501.17311) | 2025-01-28 | ICRA 2025 | 否 | — |
+| [SuPerPM: A Surgical Perception Framework Based on Deep Point Matching Learned from Physical Constrained Simulation Data](https://arxiv.org/abs/2309.13863) | — | IROS 2024 | 否 | — |
+
+---
+
+
+## D11 · 动作关联的空间感知与表征
+
+> 归属层级：学习与基础设施。当前纳入 518 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`affordance`、`actionable 3d`、`actionable representation`、`spatial reasoning`、`robot perception`、`3d representation`、`4d representation`、`point cloud policy`、`scene graph`、`semantic scene representation`、`object-centric representation`、`object centric representation`、`visual representation for robot`、`active perception`、`tactile perception`、`visuotactile`、`vision-tactile`、`vision tactile`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`action`、`affordance`、`tactile`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 8 | — | 0 | +8 | 新增 |
+| 2024-08 | 8 | 2024-07 | 8 | 0 | 0.0% |
+| 2024-09 | 19 | 2024-08 | 8 | +11 | +137.5% |
+| 2024-10 | 8 | 2024-09 | 19 | -11 | -57.9% |
+| 2024-11 | 16 | 2024-10 | 8 | +8 | +100.0% |
+| 2024-12 | 8 | 2024-11 | 16 | -8 | -50.0% |
+| 2025-01 | 3 | 2024-12 | 8 | -5 | -62.5% |
+| 2025-02 | 8 | 2025-01 | 3 | +5 | +166.7% |
+| 2025-03 | 20 | 2025-02 | 8 | +12 | +150.0% |
+| 2025-04 | 16 | 2025-03 | 20 | -4 | -20.0% |
+| 2025-05 | 16 | 2025-04 | 16 | 0 | 0.0% |
+| 2025-06 | 24 | 2025-05 | 16 | +8 | +50.0% |
+| 2025-07 | 12 | 2025-06 | 24 | -12 | -50.0% |
+| 2025-08 | 12 | 2025-07 | 12 | 0 | 0.0% |
+| 2025-09 | 25 | 2025-08 | 12 | +13 | +108.3% |
+| 2025-10 | 22 | 2025-09 | 25 | -3 | -12.0% |
+| 2025-11 | 16 | 2025-10 | 22 | -6 | -27.3% |
+| 2025-12 | 10 | 2025-11 | 16 | -6 | -37.5% |
+| 2026-01 | 14 | 2025-12 | 10 | +4 | +40.0% |
+| 2026-02 | 23 | 2026-01 | 14 | +9 | +64.3% |
+| 2026-03 | 39 | 2026-02 | 23 | +16 | +69.6% |
+| 2026-04 | 20 | 2026-03 | 39 | -19 | -48.7% |
+| 2026-05 | 33 | 2026-04 | 20 | +13 | +65.0% |
+| 2026-06 | 30 | 2026-05 | 33 | -3 | -9.1% |
+| 2026-07 | 18 | 2026-06 | 30 | -12 | -40.0% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Hierarchical Open-Vocabulary 3D Scene Graphs for Language-Grounded Robot Navigation](https://arxiv.org/abs/2403.17846) | — | RSS 2024、RSS 2024 | 是 | — |
+| [CLAMP: Crowdsourcing a LArge-scale in-the-wild haptic dataset with an open-source device for Multimodal robot Perception](https://arxiv.org/abs/2505.21495) | 2025-05-27 | CoRL 2025 | 是 | — |
+| [GLOVER++: Unleashing the Potential of Affordance Learning from Human Behaviors for Robotic Manipulation](https://arxiv.org/abs/2505.11865) | 2025-05-17 | CoRL 2025 | 是 | — |
+| [GraphEQA: Using 3D Semantic Scene Graphs for Real-time Embodied Question Answering](https://arxiv.org/abs/2412.14480) | 2024-12-19 | CoRL 2025 | 是 | — |
+| [HRP: Human Affordances for Robotic Pre-Training](https://arxiv.org/abs/2407.18911) | 2024-07-26 | RSS 2024、RSS 2024 | 是 | — |
+| [Learning from 10 Demos: Generalisable and Sample-Efficient Policy Learning with Oriented Affordance Frames](https://arxiv.org/abs/2410.12124) | 2024-10-15 | CoRL 2025 | 是 | — |
+| [O$^3$Afford: One-Shot 3D Object-to-Object Affordance Grounding for Generalizable Robotic Manipulation](https://arxiv.org/abs/2509.06233) | 2025-09-07 | CoRL 2025 | 是 | — |
+| [Physically Embodied Gaussian Splatting: A Visually Learnt and Physically Grounded 3D Representation for Robotics](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [RAM: Retrieval-Based Affordance Transfer for Generalizable Zero-Shot Robotic Manipulation](https://arxiv.org/abs/2407.04689) | 2024-07-05 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Reactive In-Air Clothing Manipulation with Confidence-Aware Dense Correspondence and Visuotactile Affordance](https://arxiv.org/abs/2509.03889) | 2025-09-04 | CoRL 2025 | 是 | — |
+| [RoboPoint: A Vision-Language Model for Spatial Affordance Prediction in Robotics](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [SAVOR: Skill Affordance Learning from Visuo-Haptic Perception for Robot-Assisted Bite Acquisition](https://arxiv.org/abs/2506.02353) | 2025-06-03 | CoRL 2025 | 是 | — |
+| [Tag Map: A Text-Based Map for Spatial Reasoning and Navigation with Large Language Models](https://arxiv.org/abs/2409.15451) | 2024-09-23 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Vision in Action: Learning Active Perception from Human Demonstrations](https://arxiv.org/abs/2506.15666) | 2025-06-18 | CoRL 2025 | 是 | — |
+| [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](https://arxiv.org/abs/2309.16650) | — | ICRA 2024 | 否 | — |
+| [Clio: Real-Time Task-Driven Open-Set 3D Scene Graphs](https://arxiv.org/abs/2404.13696) | — | RA-L 2024 | 否 | — |
+| [NeuralFeels with neural fields: Visuotactile perception for in-hand manipulation](https://www.science.org/doi/10.1126/scirobotics.adl0628) | 2024-11-13 | Science Robotics 2024 | 否 | — |
+| [Collaborative Dynamic 3D Scene Graphs for Automated Driving](https://arxiv.org/abs/2309.06635) | — | ICRA 2024 | 否 | — |
+| [TacSL: A Library for Visuotactile Sensor Simulation and Learning](https://arxiv.org/abs/2408.06506) | 2024-08-12 | T-RO 2025 | 否 | — |
+| [RT-Affordance: Affordances are Versatile Intermediate Representations for Robot Manipulation](https://arxiv.org/abs/2411.02704) | 2024-11-05 | ICRA 2025 | 否 | — |
+| [ManipVQA: Injecting Robotic Affordance and Physically Grounded Information into Multi-Modal Large Language Models](https://arxiv.org/abs/2403.11289) | — | IROS 2024 | 否 | — |
+| [Optimal Scene Graph Planning with Large Language Model Guidance](https://arxiv.org/abs/2309.09182) | — | ICRA 2024 | 否 | — |
+| [SG-Bot: Object Rearrangement via Coarse-to-Fine Robotic Imagination on Scene Graphs](https://arxiv.org/abs/2309.12188) | — | ICRA 2024 | 否 | — |
+| [ViTacTip: Design and Verification of a Novel Biomimetic Physical Vision-Tactile Fusion Sensor](https://arxiv.org/abs/2402.00199) | — | ICRA 2024 | 否 | — |
+| [AffordGrasp: In-Context Affordance Reasoning for Open-Vocabulary Task-Oriented Grasping in Clutter](https://arxiv.org/abs/2503.00778) | 2025-03-02 | IROS 2025 | 否 | — |
+| [Beyond Bare Queries: Open-Vocabulary Object Grounding with 3D Scene Graph](https://arxiv.org/abs/2406.07113) | — | ICRA 2025 | 否 | — |
+| [UAD: Unsupervised Affordance Distillation for Generalization in Robotic Manipulation](https://arxiv.org/abs/2506.09284) | 2025-06-10 | ICRA 2025 | 否 | — |
+| [Open Scene Graphs for Open-World Object-Goal Navigation](https://arxiv.org/abs/2508.04678) | 2025-08-06 | IJRR 2025 | 否 | — |
+| [TartanGround: A Large-Scale Dataset for Ground Robot Perception and Navigation](https://arxiv.org/abs/2505.10696) | 2025-05-15 | IROS 2025 | 否 | — |
+| [Language-Conditioned Affordance-Pose Detection in 3D Point Clouds](https://arxiv.org/abs/2309.10911) | — | ICRA 2024 | 否 | — |
+| [Outram: One-shot Global Localization via Triangulated Scene Graph and Global Outlier Pruning](https://arxiv.org/abs/2309.08914) | — | ICRA 2024 | 否 | — |
+| [Articulated Object Manipulation with Coarse-to-fine Affordance for Mitigating the Effect of Point Cloud Noise](https://arxiv.org/abs/2402.18699) | — | ICRA 2024 | 否 | — |
+| [Long-Term Human Trajectory Prediction Using 3D Dynamic Scene Graphs](https://arxiv.org/abs/2405.00552) | — | RA-L 2024 | 否 | — |
+| [Composing Pre-Trained Object-Centric Representations for Robotics From "What" and "Where" Foundation Models](https://arxiv.org/abs/2404.13474) | — | ICRA 2024 | 否 | — |
+| [Open-Vocabulary Affordance Detection using Knowledge Distillation and Text-Point Correlation](https://arxiv.org/abs/2309.10932) | — | ICRA 2024 | 否 | — |
+| [PreAfford: Universal Affordance-Based Pre-Grasping for Diverse Objects and Environments](https://arxiv.org/abs/2404.03634) | — | IROS 2024 | 否 | — |
+| [MR-COGraphs: Communication-efficient Multi-Robot Open-vocabulary Mapping System via 3D Scene Graphs](https://arxiv.org/abs/2412.18381) | 2024-12-24 | RA-L 2025 | 否 | — |
+| [NaturalVLM: Leveraging Fine-Grained Natural Language for Affordance-Guided Visual Manipulation](https://arxiv.org/abs/2403.08355) | — | RA-L 2024、ICRA 2026 | 否 | — |
+| [FunGraph: Functionality Aware 3D Scene Graphs for Language-Prompted Scene Interaction](https://arxiv.org/abs/2503.07909) | 2025-03-10 | IROS 2025 | 否 | — |
+| [OceanSim: A GPU-Accelerated Underwater Robot Perception Simulation Framework](https://arxiv.org/abs/2503.01074) | 2025-03-03 | IROS 2025 | 否 | — |
+| [Commonsense Scene Graph-based Target Localization for Object Search](https://arxiv.org/abs/2404.00343) | — | IROS 2024 | 否 | — |
+| [3D Force and Contact Estimation for a Soft-Bubble Visuotactile Sensor Using FEM](https://arxiv.org/abs/2310.11372) | — | ICRA 2024 | 否 | — |
+| [UniAff: A Unified Representation of Affordances for Tool Usage and Articulation with Vision-Language Models](https://arxiv.org/abs/2409.20551) | 2024-09-30 | ICRA 2025 | 否 | — |
+| [Snake Robot with Tactile Perception Navigates on Large-scale Challenging Terrain](https://arxiv.org/abs/2312.03225) | — | ICRA 2024 | 否 | — |
+| [TacFlex: Multimode Tactile Imprints Simulation for Visuotactile Sensors With Coating Patterns](https://ieeexplore.ieee.org/document/3576970) | 2025-01-01 | T-RO 2025、ICRA 2026 | 否 | — |
+| [Shared visuo-tactile interactive perception for robust object pose estimation](https://journals.sagepub.com/doi/10.1177/02783649241301443) | 2024-12-18 | IJRR 2024 | 否 | — |
+| [ViTa-Zero: Zero-shot Visuotactile Object 6D Pose Estimation](https://arxiv.org/abs/2504.13179) | 2025-04-17 | ICRA 2025 | 否 | — |
+| [A Parameter-Efficient Tuning Framework for Language-guided Object Grounding and Robot Grasping](https://arxiv.org/abs/2409.19457) | 2024-09-28 | ICRA 2025 | 否 | — |
+| [DynamicGSG: Dynamic 3D Gaussian Scene Graphs for Environment Adaptation](https://arxiv.org/abs/2502.15309) | 2025-02-21 | IROS 2025 | 否 | — |
+| [GaussianGraph: 3D Gaussian-Based Scene Graph Generation for Open-World Scene Understanding](https://arxiv.org/abs/2503.04034) | — | IROS 2025 | 否 | — |
+| [Lost & Found: Tracking Changes from Egocentric Observations in 3D Dynamic Scene Graphs](https://arxiv.org/abs/2411.19162) | 2024-11-28 | RA-L 2025 | 否 | — |
+| [Perceptual Factors for Environmental Modeling in Robotic Active Perception](https://arxiv.org/abs/2309.10620) | — | ICRA 2024 | 否 | — |
+| [Point2Graph: An End-to-end Point Cloud-based 3D Open-Vocabulary Scene Graph for Robot Navigation](https://arxiv.org/abs/2409.10350) | 2024-09-16 | ICRA 2025 | 否 | — |
+| [Visual-Tactile Perception Based Control Strategy for Complex Robot Peg-in-Hole Process via Topological and Geometric Reasoning](https://ieeexplore.ieee.org/document/3436334) | 2024-10-01 | RA-L 2024 | 否 | — |
+| [ToolEENet: Tool Affordance 6D Pose Estimation](https://arxiv.org/abs/2404.04193) | — | IROS 2024 | 否 | — |
+| [Belief Scene Graphs: Expanding Partial Scenes with Objects through Computation of Expectation](https://arxiv.org/abs/2402.03840) | — | ICRA 2024 | 否 | — |
+| [Caging in Time: A Framework for Robust Object Manipulation under Uncertainties and Limited Robot Perception](https://arxiv.org/abs/2410.16481) | 2024-10-21 | IJRR 2025 | 否 | — |
+| [Collaborative Dynamic 3D Scene Graphs for Open-Vocabulary Urban Scene Understanding](https://arxiv.org/abs/2503.08474) | 2025-03-11 | IROS 2025 | 否 | — |
+| [CuriousBot: Interactive Mobile Exploration via Actionable 3D Relational Object Graph](https://arxiv.org/abs/2501.13338) | 2025-01-23 | RA-L 2026 | 否 | — |
+| [EMBOSR: Embodied Spatial Reasoning for Enhanced Situated Question Answering in 3D Scenes](https://ieeexplore.ieee.org/document/10801720) | 2024-01-01 | IROS 2024 | 否 | — |
+
+---
+
+
+## D12 · 评测、安全、可靠性与故障恢复
+
+> 归属层级：学习与基础设施。当前纳入 161 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`robot benchmark`、`robotics benchmark`、`benchmark suite`、`embodied benchmark`、`policy evaluation`、`robot safety`、`safe robot`、`safe reinforcement learning`、`failure detection`、`failure recovery`、`uncertainty estimation`、`out-of-distribution`、`out of distribution`、`robustness evaluation`、`risk-sensitive`、`risk sensitive`、`runtime assurance`、`verification of robot`、`robot reliability`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`policy`、`control`、`safety`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 2 | — | 0 | +2 | 新增 |
+| 2024-08 | 2 | 2024-07 | 2 | 0 | 0.0% |
+| 2024-09 | 4 | 2024-08 | 2 | +2 | +100.0% |
+| 2024-10 | 4 | 2024-09 | 4 | 0 | 0.0% |
+| 2024-11 | 4 | 2024-10 | 4 | 0 | 0.0% |
+| 2024-12 | 6 | 2024-11 | 4 | +2 | +50.0% |
+| 2025-01 | 3 | 2024-12 | 6 | -3 | -50.0% |
+| 2025-02 | 3 | 2025-01 | 3 | 0 | 0.0% |
+| 2025-03 | 4 | 2025-02 | 3 | +1 | +33.3% |
+| 2025-04 | 3 | 2025-03 | 4 | -1 | -25.0% |
+| 2025-05 | 9 | 2025-04 | 3 | +6 | +200.0% |
+| 2025-06 | 6 | 2025-05 | 9 | -3 | -33.3% |
+| 2025-07 | 2 | 2025-06 | 6 | -4 | -66.7% |
+| 2025-08 | 4 | 2025-07 | 2 | +2 | +100.0% |
+| 2025-09 | 8 | 2025-08 | 4 | +4 | +100.0% |
+| 2025-10 | 11 | 2025-09 | 8 | +3 | +37.5% |
+| 2025-11 | 4 | 2025-10 | 11 | -7 | -63.6% |
+| 2025-12 | 4 | 2025-11 | 4 | 0 | 0.0% |
+| 2026-01 | 1 | 2025-12 | 4 | -3 | -75.0% |
+| 2026-02 | 4 | 2026-01 | 1 | +3 | +300.0% |
+| 2026-03 | 5 | 2026-02 | 4 | +1 | +25.0% |
+| 2026-04 | 4 | 2026-03 | 5 | -1 | -20.0% |
+| 2026-05 | 9 | 2026-04 | 4 | +5 | +125.0% |
+| 2026-06 | 10 | 2026-05 | 9 | +1 | +11.1% |
+| 2026-07 | 6 | 2026-06 | 10 | -4 | -40.0% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Can We Detect Failures Without Failure Data? Uncertainty-Aware Runtime Failure Detection for Imitation Learning Policies](https://arxiv.org/abs/2503.08558) | 2025-03-11 | RSS 2025 | 是 | — |
+| [RACER: Epistemic Risk-Sensitive RL Enables Fast Driving with Fewer Crashes](https://doi.org/10.15607/rss.2024.xx.080) | 2024-01-01 | RSS 2024、RSS 2024 | 是 | — |
+| [Real-Time Out-of-Distribution Failure Prevention via Multi-Modal Reasoning](https://arxiv.org/abs/2505.10547) | 2025-05-15 | CoRL 2025 | 是 | — |
+| [Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures](https://arxiv.org/abs/2505.00779) | 2025-05-01 | CoRL 2025 | 是 | — |
+| [Semantically Safe Robot Manipulation: From Semantic Scene Understanding to Motion Safeguards](https://arxiv.org/abs/2410.15185) | 2024-10-19 | RA-L 2025 | 否 | — |
+| [PIETRA: Physics-Informed Evidential Learning for Traversing Out-of-Distribution Terrain](https://arxiv.org/abs/2409.03005) | 2024-09-04 | RA-L 2025 | 否 | — |
+| [Deep Evidential Uncertainty Estimation for Semantic Segmentation under Out-Of-Distribution Obstacles](https://ieeexplore.ieee.org/document/10611342) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Integrating Predictive Motion Uncertainties with Distributionally Robust Risk-Aware Control for Safe Robot Navigation in Crowds](https://arxiv.org/abs/2403.05081) | — | ICRA 2024 | 否 | — |
+| [Sensor-based distributionally robust control for safe robot navigation in dynamic environments](https://arxiv.org/abs/2405.18251) | — | IJRR 2025 | 否 | — |
+| [Recover: A Neuro-Symbolic Framework for Failure Detection and Recovery](https://arxiv.org/abs/2404.00756) | — | IROS 2024 | 否 | — |
+| [HR-APR: APR-agnostic Framework with Uncertainty Estimation and Hierarchical Refinement for Camera Relocalisation](https://arxiv.org/abs/2402.14371) | — | ICRA 2024 | 否 | — |
+| [Generative Modeling of Residuals for Real-Time Risk-Sensitive Safety with Discrete-Time Control Barrier Functions](https://arxiv.org/abs/2311.05802) | — | ICRA 2024 | 否 | — |
+| [Updating Robot Safety Representations Online from Natural Language Feedback](https://arxiv.org/abs/2409.14580) | 2024-09-22 | ICRA 2025 | 否 | — |
+| [Wait, That Feels Familiar: Learning to Extrapolate Human Preferences for Preference-Aligned Path Planning](https://arxiv.org/abs/2309.09912) | — | ICRA 2024 | 否 | — |
+| [Adaptive Prediction Ensemble: Improving Out-of-Distribution Generalization of Motion Forecasting](https://arxiv.org/abs/2407.09475) | 2024-07-12 | RA-L 2025 | 否 | — |
+| [Safe Robot Reflexes: A Taxonomy-Based Decision and Modulation Framework](https://ieeexplore.ieee.org/document/3519421) | 2025-01-01 | T-RO 2025 | 否 | — |
+| [Improving Out-of-Distribution Generalization of Trajectory Prediction for Autonomous Driving via Polynomial Representations](https://arxiv.org/abs/2407.13431) | — | IROS 2024 | 否 | — |
+| [A Hierarchical Framework for Robot Safety using Whole-body Tactile Sensors](https://ieeexplore.ieee.org/document/10610834) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Towards Safe Robot Use with Edged or Pointed Objects: A Surrogate Study Assembling a Human Hand Injury Protection Database](https://arxiv.org/abs/2404.04004) | — | ICRA 2024 | 否 | — |
+| [A Multimodal Handover Failure Detection Dataset and Baselines](https://arxiv.org/abs/2402.18319) | — | ICRA 2024 | 否 | — |
+| [Designing Control Barrier Function via Probabilistic Enumeration for Safe Reinforcement Learning Navigation](https://arxiv.org/abs/2504.21643) | 2025-04-30 | RA-L 2025 | 否 | — |
+| [A Unified Interaction Control Framework for Safe Robotic Ultrasound Scanning with Human-Intention-Aware Compliance](https://arxiv.org/abs/2411.19545) | 2024-11-29 | IROS 2024 | 否 | — |
+| [Evidential Uncertainty Estimation for Multi-Modal Trajectory Prediction](https://arxiv.org/abs/2503.05274) | 2025-03-07 | IROS 2025 | 否 | — |
+| [Large-scale Indoor Mapping with Failure Detection and Recovery in SLAM](https://ieeexplore.ieee.org/document/10802593) | 2024-01-01 | IROS 2024 | 否 | — |
+| [OCCUQ: Exploring Efficient Uncertainty Quantification for 3D Occupancy Prediction](https://arxiv.org/abs/2503.10605) | — | ICRA 2025 | 否 | — |
+| [Estimating Control Barriers from Offline Data](https://arxiv.org/abs/2503.10641) | 2025-02-21 | ICRA 2025 | 否 | — |
+| [VLM Can Be a Good Assistant: Enhancing Embodied Visual Tracking with Self-Improving Vision-Language Models](https://arxiv.org/abs/2505.20718) | 2025-05-27 | IROS 2025 | 否 | — |
+| [Risk-Sensitive Extended Kalman Filter](https://arxiv.org/abs/2305.11573) | — | ICRA 2024 | 否 | — |
+| [Bio-Inspired Plastic Neural Networks for Zero-Shot Out-of-Distribution Generalization in Complex Animal-Inspired Robots](https://arxiv.org/abs/2503.12406) | 2025-03-16 | IROS 2025 | 否 | — |
+| [Learning When to Ask for Help: Efficient Interactive Navigation via Implicit Uncertainty Estimation](https://arxiv.org/abs/2305.16502) | — | ICRA 2024 | 否 | — |
+| [ToMPC: Task-oriented Model Predictive Control via ADMM for Safe Robotic Manipulation](https://arxiv.org/abs/2603.13944) | 2026-03-14 | RA-L 2025 | 否 | — |
+| [Mitigating Hallucinations in YOLO-based Object Detection Models: A Revisit to Out-of-Distribution Detection](https://ieeexplore.ieee.org/document/11245852) | 2025-01-01 | IROS 2025 | 否 | — |
+| [Road Obstacle Detection based on Unknown Objectness Scores](https://arxiv.org/abs/2403.18207) | — | ICRA 2024 | 否 | — |
+| [A Metacognitive Approach to Out-of-Distribution Detection for Segmentation](https://arxiv.org/abs/2311.07578) | — | ICRA 2024 | 否 | — |
+| [DOSE3: Diffusion-Based Unified Out-of-Distribution Detection on $\mathbb{SE}(3)$ Trajectories](https://ieeexplore.ieee.org/document/3640358) | 2026-02-01 | RA-L 2026 | 否 | — |
+| [Dynamic Residual Safe Reinforcement Learning for Multi-Agent Safety-Critical Scenarios Decision-Making](https://arxiv.org/abs/2504.06670) | 2025-04-09 | IROS 2025 | 否 | — |
+| [HD-OOD3D: Supervised and Unsupervised Out-of-Distribution object detection in LiDAR data](https://arxiv.org/abs/2410.23767) | — | IROS 2025 | 否 | — |
+| [SVN-ICP: Uncertainty Estimation of ICP-based LiDAR Odometry using Stein Variational Newton](https://arxiv.org/abs/2509.08069) | 2025-09-09 | RA-L 2025、ICRA 2026 | 否 | — |
+| [Uncertainty-Aware Shape Estimation of a Surgical Continuum Manipulator in Constrained Environments using Fiber Bragg Grating Sensors](https://arxiv.org/abs/2405.07104) | — | ICRA 2024 | 否 | — |
+| [AugInsert: Learning Robust Visual-Force Policies via Data Augmentation for Object Assembly Tasks](https://arxiv.org/abs/2410.14968) | 2024-10-19 | IROS 2025 | 否 | — |
+| [Differentiable Obstacle Avoidance Framework for Robot Safety](https://ieeexplore.ieee.org/document/3664595) | 2026-04-01 | RA-L 2026 | 否 | — |
+| [Improving Out-of-Distribution Generalization of Learned Dynamics by Learning Pseudometrics and Constraint Manifolds](https://arxiv.org/abs/2403.12245) | — | ICRA 2024 | 否 | — |
+| [Learning Robot Safety from Sparse Human Feedback using Conformal Prediction](https://arxiv.org/abs/2501.04823) | 2025-01-08 | T-RO 2026 | 否 | — |
+| [Masked γ-SSL: Learning Uncertainty Estimation via Masked Image Modeling](https://ieeexplore.ieee.org/document/10610398) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Trajectory Tracking Runtime Assurance for Systems with Partially Unknown Dynamics](https://ieeexplore.ieee.org/document/10611237) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [A Single Hydraulic Bellows-Based MRI-Safe Robotic Needle Driver Capable of Independent and Coupled Needle Translation and Rotation](https://ieeexplore.ieee.org/document/3661718) | 2026-01-01 | T-RO 2026、ICRA 2026 | 否 | — |
+| [Anomaly detection for generic failure monitoring in robotic assembly, screwing and manipulation](https://arxiv.org/abs/2509.26308) | 2025-09-30 | RA-L 2026 | 否 | — |
+| [CUEMP: Correspondence Uncertainty Estimation With Motion Priors for Dense Visual Odometry](https://ieeexplore.ieee.org/document/3666386) | 2026-04-01 | RA-L 2026 | 否 | — |
+| [Distributional Decision Transformer: Risk-Sensitive Offline RL via Quantile-Based Critics and Stochastic Return](https://ieeexplore.ieee.org/document/11247007) | 2025-01-01 | IROS 2025 | 否 | — |
+| [Failure Detection and Recovery for Quadrotors in the Presence of Severe Rotor Failures With Multiple Model $\mathcal {L}_{1}$ Adaptive Controller](https://ieeexplore.ieee.org/document/3630964) | 2026-01-01 | RA-L 2026 | 否 | — |
+| [Failure Detection With Zero-Shot Error Correction in Robotic Manipulation](https://ieeexplore.ieee.org/document/3678124) | 2026-05-01 | RA-L 2026 | 否 | — |
+| [Sequential Probabilistic Descriptor via Uncertainty-Aware Multi-Modal Fusion for Safety-Critical Place Recognition](https://ieeexplore.ieee.org/document/3669806) | 2026-04-01 | RA-L 2026 | 否 | — |
+| [A Framework for the Systematic Evaluation of Obstacle Avoidance and Object-Aware Controllers](https://arxiv.org/abs/2510.24683) | 2025-10-28 | 预印本 | 否 | — |
+| [A Sensor-Aware Phenomenological Framework for Lidar Degradation Simulation and SLAM Robustness Evaluation](https://arxiv.org/abs/2512.08653) | 2025-12-09 | 预印本 | 否 | — |
+| [AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning](https://arxiv.org/abs/2607.15714) | 2026-07-17 | 预印本 | 否 | — |
+| [ActProbe: Action-Space Probe for Early Failure Detection of Generative Robot Policies](https://arxiv.org/abs/2606.08508) | 2026-06-07 | 预印本 | 否 | — |
+| [An Open-Source Software Toolkit & Benchmark Suite for the Evaluation and Adaptation of Multimodal Action Models](https://arxiv.org/abs/2506.09172) | 2025-06-10 | 预印本 | 否 | — |
+| [Analysis of Deep-Learning Methods in an ISO/TS 15066-Compliant Human-Robot Safety Framework](https://arxiv.org/abs/2511.19094) | 2025-11-24 | 预印本 | 否 | — |
+| [ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation](https://arxiv.org/abs/2510.02298) | 2025-10-02 | RA-L 2026 | 否 | — |
+| [ATOM-CBF: Adaptive Safe Perception-Based Control under Out-of-Distribution Measurements](https://arxiv.org/abs/2511.08741) | 2025-11-11 | 预印本 | 否 | — |
+
+---
+
+
+## D13 · 持续学习、部署学习与自改进
+
+> 归属层级：学习与基础设施。当前纳入 8 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`continual robot learning`、`continual learning for robot`、`self-improving robot`、`self improving robot`、`learning from experience`、`learning while deploying`、`fleet learning`、`deployment data flywheel`、`offline-to-online`、`offline to online`、`online robot learning`、`online reinforcement learning`、`autonomous recovery`、`experience replay for robot`、`lifelong robot learning`、`test-time adaptation`、`test time adaptation`、`policy self-improvement`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`policy`、`deployment`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 0 | — | 0 | 0 | — |
+| 2024-08 | 0 | 2024-07 | 0 | 0 | — |
+| 2024-09 | 0 | 2024-08 | 0 | 0 | — |
+| 2024-10 | 0 | 2024-09 | 0 | 0 | — |
+| 2024-11 | 0 | 2024-10 | 0 | 0 | — |
+| 2024-12 | 0 | 2024-11 | 0 | 0 | — |
+| 2025-01 | 0 | 2024-12 | 0 | 0 | — |
+| 2025-02 | 0 | 2025-01 | 0 | 0 | — |
+| 2025-03 | 1 | 2025-02 | 0 | +1 | 新增 |
+| 2025-04 | 0 | 2025-03 | 1 | -1 | -100.0% |
+| 2025-05 | 1 | 2025-04 | 0 | +1 | 新增 |
+| 2025-06 | 0 | 2025-05 | 1 | -1 | -100.0% |
+| 2025-07 | 0 | 2025-06 | 0 | 0 | — |
+| 2025-08 | 0 | 2025-07 | 0 | 0 | — |
+| 2025-09 | 1 | 2025-08 | 0 | +1 | 新增 |
+| 2025-10 | 0 | 2025-09 | 1 | -1 | -100.0% |
+| 2025-11 | 1 | 2025-10 | 0 | +1 | 新增 |
+| 2025-12 | 0 | 2025-11 | 1 | -1 | -100.0% |
+| 2026-01 | 0 | 2025-12 | 0 | 0 | — |
+| 2026-02 | 0 | 2026-01 | 0 | 0 | — |
+| 2026-03 | 0 | 2026-02 | 0 | 0 | — |
+| 2026-04 | 0 | 2026-03 | 0 | 0 | — |
+| 2026-05 | 0 | 2026-04 | 0 | 0 | — |
+| 2026-06 | 2 | 2026-05 | 0 | +2 | 新增 |
+| 2026-07 | 0 | 2026-06 | 2 | -2 | -100.0% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [SIME: Enhancing Policy Self-Improvement with Modal-level Exploration](https://arxiv.org/abs/2505.01396) | 2025-05-02 | IROS 2025 | 否 | — |
+| [MAER-Nav: Bidirectional Motion Learning Through Mirror-Augmented Experience Replay for Robot Navigation](https://arxiv.org/abs/2503.23908) | 2025-03-31 | IROS 2025 | 否 | — |
+| [Overparametrization helps offline-to-online generalization of closed-loop control from pixels](https://ieeexplore.ieee.org/document/10610284) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Safe Offline-to-Online Multi-Agent Decision Transformer: A Safety Conscious Sequence Modeling Approach](https://ieeexplore.ieee.org/document/10801292) | 2024-01-01 | IROS 2024 | 否 | — |
+| [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980) | 2026-06-18 | 预印本 | 否 | — |
+| [LACY: A Vision-Language Model-based Language-Action Cycle for Self-Improving Robotic Manipulation](https://arxiv.org/abs/2511.02239) | 2025-11-04 | ICRA 2026 | 否 | — |
+| [SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation](https://arxiv.org/abs/2606.10305) | 2026-06-09 | 预印本 | 否 | — |
+| [SOE: Sample-Efficient Robot Policy Self-Improvement via On-Manifold Exploration](https://arxiv.org/abs/2509.19292) | 2025-09-23 | ICRA 2026 | 否 | — |
+
+---
+
+
+## D14 · 多机器人协同与群体智能
+
+> 归属层级：物理能力。当前纳入 51 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`multi-robot learning`、`multi robot learning`、`multi-robot coordination`、`multi robot coordination`、`collaborative vla`、`cooperative manipulation`、`robot-to-robot`、`robot to robot`、`multi-agent world model`、`multi agent world model`、`decentralized robot learning`、`swarm learning`、`heterogeneous robot team`、`robot team coordination`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`embodied`、`coordination`、`cooperative`、`multi-agent`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 0 | — | 0 | 0 | — |
+| 2024-08 | 0 | 2024-07 | 0 | 0 | — |
+| 2024-09 | 1 | 2024-08 | 0 | +1 | 新增 |
+| 2024-10 | 1 | 2024-09 | 1 | 0 | 0.0% |
+| 2024-11 | 1 | 2024-10 | 1 | 0 | 0.0% |
+| 2024-12 | 1 | 2024-11 | 1 | 0 | 0.0% |
+| 2025-01 | 1 | 2024-12 | 1 | 0 | 0.0% |
+| 2025-02 | 0 | 2025-01 | 1 | -1 | -100.0% |
+| 2025-03 | 6 | 2025-02 | 0 | +6 | 新增 |
+| 2025-04 | 3 | 2025-03 | 6 | -3 | -50.0% |
+| 2025-05 | 2 | 2025-04 | 3 | -1 | -33.3% |
+| 2025-06 | 0 | 2025-05 | 2 | -2 | -100.0% |
+| 2025-07 | 1 | 2025-06 | 0 | +1 | 新增 |
+| 2025-08 | 2 | 2025-07 | 1 | +1 | +100.0% |
+| 2025-09 | 3 | 2025-08 | 2 | +1 | +50.0% |
+| 2025-10 | 3 | 2025-09 | 3 | 0 | 0.0% |
+| 2025-11 | 1 | 2025-10 | 3 | -2 | -66.7% |
+| 2025-12 | 0 | 2025-11 | 1 | -1 | -100.0% |
+| 2026-01 | 1 | 2025-12 | 0 | +1 | 新增 |
+| 2026-02 | 0 | 2026-01 | 1 | -1 | -100.0% |
+| 2026-03 | 3 | 2026-02 | 0 | +3 | 新增 |
+| 2026-04 | 1 | 2026-03 | 3 | -2 | -66.7% |
+| 2026-05 | 4 | 2026-04 | 1 | +3 | +300.0% |
+| 2026-06 | 1 | 2026-05 | 4 | -3 | -75.0% |
+| 2026-07 | 1 | 2026-06 | 1 | 0 | 0.0% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [Capability-Aware Shared Hypernetworks for Flexible Heterogeneous Multi-Robot Coordination](https://arxiv.org/abs/2501.06058) | 2025-01-10 | CoRL 2025 | 是 | — |
+| [Latent Theory of Mind: A Decentralized Diffusion Architecture for Cooperative Manipulation](https://arxiv.org/abs/2505.09144) | 2025-05-14 | CoRL 2025 | 是 | — |
+| [Benchmarking Multi-Robot Coordination in Realistic, Unstructured Human-Shared Environments](https://ieeexplore.ieee.org/document/10611005) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Behavior Tree Capabilities for Dynamic Multi-Robot Task Allocation with Heterogeneous Robot Teams](https://arxiv.org/abs/2402.02833) | — | ICRA 2024 | 否 | — |
+| [Optimal Trajectory Planning for Cooperative Manipulation with Multiple Quadrotors Using Control Barrier Functions](https://arxiv.org/abs/2503.01096) | 2025-03-03 | ICRA 2025 | 否 | — |
+| [Integrating Online Learning and Connectivity Maintenance for Communication-Aware Multi-Robot Coordination](https://arxiv.org/abs/2410.05798) | 2024-10-08 | IROS 2024 | 否 | — |
+| [D3G: Learning Multi-robot Coordination from Demonstrations](https://ieeexplore.ieee.org/document/10801743) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Online Multi-Robot Coordination and Cooperation with Task Precedence Relationships](https://arxiv.org/abs/2509.15052) | 2025-09-18 | T-RO 2025 | 否 | — |
+| [Deadlock-Aware Control for Multirobot Coordination With Multiple Safety Constraints](https://ieeexplore.ieee.org/document/3600159) | 2025-01-01 | T-RO 2025、ICRA 2026 | 否 | — |
+| [Design of a Multi-robot Coordination System based on Functional Expressions using Large Language Models](https://ieeexplore.ieee.org/document/10802571) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Communicating Intent as Behaviour Trees for Decentralised Multi-Robot Coordination](https://ieeexplore.ieee.org/document/10610441) | 2024-05-13 | ICRA 2024 | 否 | — |
+| [Closed-Loop Cooperative Manipulation of Deformable Tissue via Visual Feedback Using Multiple Continuum Surgical Manipulators](https://ieeexplore.ieee.org/document/3551540) | 2025-05-01 | RA-L 2025 | 否 | — |
+| [Leader-Follower Cooperative Manipulation Under Spatio-Temporal Constraints](https://ieeexplore.ieee.org/document/10802449) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Multi-Robot Coordination in an Adversarial Graph-Traversal Game](https://ieeexplore.ieee.org/document/11247499) | 2025-01-01 | IROS 2025 | 否 | — |
+| [Alternating Partition Prioritized Planning for Scalable Multi-Robot Coordination in Congested Environments](https://ieeexplore.ieee.org/document/3587841) | 2025-09-01 | RA-L 2025 | 否 | — |
+| [k-Robust Conflict-Based Search with Continuous time for Multi-robot Coordination](https://ieeexplore.ieee.org/document/10801503) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Physical Coupling for Collaboration in Heterogeneous Robot Teams](https://ieeexplore.ieee.org/document/3655268) | 2026-03-01 | RA-L 2026 | 否 | — |
+| [A Multimodal Stochastic Planning Approach for Navigation and Multi-Robot Coordination](https://arxiv.org/abs/2509.19168) | 2025-09-23 | ICRA 2026 | 否 | — |
+| [Adaptive Obstacle-Aware Task Assignment and Planning for Heterogeneous Robot Teaming](https://arxiv.org/abs/2510.14063) | 2025-10-15 | 预印本 | 否 | — |
+| [Adaptive Visual Perception for Robotic Construction Process: A Multi-Robot Coordination Framework](https://arxiv.org/abs/2412.11275) | 2024-12-15 | 预印本 | 否 | — |
+| [BlueME: Robust Underwater Robot-to-Robot Communication Using Compact Magnetoelectric Antennas](https://arxiv.org/abs/2411.09241) | 2024-11-14 | 预印本 | 否 | — |
+| [CoDiMAD: Diffusion-Based Privileged Distillation for Communication-Free Multi-Robot Coordination](https://arxiv.org/abs/2607.09587) | 2026-07-10 | 预印本 | 否 | — |
+| [Commerge: Communication-Efficient, Robust, and Fast LiDAR Map Merging Framework for Multi-Robot Coordination in Resource-Constrained Scenarios](https://arxiv.org/abs/2606.25386) | 2026-06-24 | 预印本 | 否 | — |
+| [Destination-to-Chutes Task Mapping Optimization for Multi-Robot Coordination in Robotic Sorting Systems](https://arxiv.org/abs/2510.03472) | 2025-10-03 | 预印本 | 否 | — |
+| [Distributed GNEP Algorithms without Multiplier Sharing and Applications to Multi-Robot Coordination and Contextual Bandit-Based Active Learning](https://arxiv.org/abs/2606.00759) | 2026-05-30 | 预印本 | 否 | — |
+| [Distributed Linear Quadratic Gaussian for Multi-Robot Coordination with Localization Uncertainty](https://arxiv.org/abs/2504.03126) | 2025-03-26 | 预印本 | 否 | — |
+| [EmboTeam: Grounding LLM Reasoning into Reactive Behavior Trees via PDDL for Embodied Multi-Robot Collaboration](https://arxiv.org/abs/2601.11063) | 2026-01-16 | 预印本 | 否 | — |
+| [Event-Based Distributed Linear Quadratic Gaussian for Multi-Robot Coordination with Localization Uncertainty](https://arxiv.org/abs/2504.03125) | 2025-03-28 | 预印本 | 否 | — |
+| [Failure-Aware Multi-Robot Coordination for Resilient and Adaptive Target Tracking](https://arxiv.org/abs/2508.02529) | 2025-08-04 | 预印本 | 否 | — |
+| [Fault-Tolerant Multi-Robot Coordination with Limited Sensing within Confined Environments](https://arxiv.org/abs/2505.15036) | 2025-05-21 | 预印本 | 否 | — |
+| [Federated Single-Agent Robotics: Multi-Robot Coordination Without Intra-Robot Multi-Agent Fragmentation](https://arxiv.org/abs/2604.11028) | 2026-04-13 | 预印本 | 否 | — |
+| [FLEET: Formal Language-Grounded Scheduling for Heterogeneous Robot Teams](https://arxiv.org/abs/2510.07417) | 2025-10-08 | 预印本 | 否 | — |
+| [GA3T: A Ground-Aerial Terrain Traversability Dataset for Heterogeneous Robot Teams in Unstructured Environments](https://arxiv.org/abs/2605.06478) | 2026-05-07 | 预印本 | 否 | — |
+| [Learning Multi-Robot Coordination through Locality-Based Factorized Multi-Agent Actor-Critic Algorithm](https://arxiv.org/abs/2503.18816) | 2025-03-24 | 预印本 | 否 | — |
+| [Lyapunov Stability-Driven Control Algorithm for Heterogeneous Multi-Robot Coordination (I)](https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_394) | — | ICRA 2026 | 否 | — |
+| [MoRoCo: An Online Topology-Adaptive Framework for Multi-Operator Multi-Robot Coordination under Restricted Communication](https://arxiv.org/abs/2508.07657) | 2025-08-11 | 预印本 | 否 | — |
+| [Multi Robot Coordination in Highly Dynamic Environments: Tackling Asymmetric Obstacles and Limited Communication](https://arxiv.org/abs/2509.08859) | 2025-09-09 | 预印本 | 否 | — |
+| [Multi-robot coordination for connectivity recovery after unpredictable environment changes](https://arxiv.org/abs/2503.11520) | 2025-03-14 | 预印本 | 否 | — |
+| [Multi-Robot Coordination for Planning under Context Uncertainty](https://arxiv.org/abs/2603.13748) | 2026-03-14 | 预印本 | 否 | — |
+| [Multi-Robot Coordination in V2X Environments](https://arxiv.org/abs/2605.06662) | 2026-05-07 | 预印本 | 否 | — |
+| [Multi-Robot Coordination Induced in an Adversarial Graph-Traversal Game](https://arxiv.org/abs/2409.08222) | 2024-09-12 | 预印本 | 否 | — |
+| [Multi-Robot Coordination Under Physical Limitations](https://arxiv.org/abs/2503.20723) | 2025-03-26 | 预印本 | 否 | — |
+| [Multi-Robot Coordination with Adversarial Perception](https://arxiv.org/abs/2504.09047) | 2025-04-12 | 预印本 | 否 | — |
+| [Programmable Assembly and Cooperative Manipulation of Heterogeneous Microspheres Via Optoelectronic Tweezers](https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_237) | — | ICRA 2026 | 否 | — |
+| [Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination](https://arxiv.org/abs/2603.28156) | 2026-03-30 | 预印本 | 否 | — |
+| [RoboComm: A DID-based scalable and privacy-preserving Robot-to-Robot interaction over state channels](https://arxiv.org/abs/2504.09517) | 2025-04-13 | 预印本 | 否 | — |
+| [Safe and Socially Aware Multi-Robot Coordination in Multi-Human Social Care Settings](https://arxiv.org/abs/2507.02521) | 2025-07-03 | 预印本 | 否 | — |
+| [Safe Consensus of Cooperative Manipulation with Hierarchical Event-Triggered Control Barrier Functions](https://arxiv.org/abs/2603.06356) | 2026-03-06 | 预印本 | 否 | — |
+| [Scout-Assisted Planning for Heterogeneous Robot Teams under Partially Known Environments](https://arxiv.org/abs/2605.22693) | 2026-05-21 | 预印本 | 否 | — |
+| [SDHN: Skewness-Driven Hypergraph Networks for Enhanced Localized Multi-Robot Coordination](https://arxiv.org/abs/2504.06684) | 2025-04-09 | 预印本 | 否 | — |
+| [Switching control of underactuated multi-channel systems with input constraints for cooperative manipulation](https://arxiv.org/abs/2511.22810) | 2025-11-27 | 预印本 | 否 | — |
+
+---
+
+
+## D15 · 触觉、力觉与多模态身体感知
+
+> 归属层级：学习与基础设施。当前纳入 28 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+
+### 纳入边界
+
+核心表达：`visuotactile`、`vision-tactile`、`vision tactile`、`tactile-language-action`、`tactile language action`、`force-aware policy`、`force aware policy`、`proprioceptive policy`、`contact sensing`、`robot audio`、`multisensory manipulation`、`tactile foundation model`、`contact-aware world model`、`contact aware world model`、`tactile representation`、`force-torque sensing`、`force torque sensing`。
+
+必须同时出现的机器人/动作语境：`robot`、`robotic`、`manipulation`、`embodied`、`tactile`、`force`、`contact`。
+
+### 月度结构与环比
+
+| 月份 | 本月 | 对比月 | 上月 | 环比增量 | 环比 |
+|---|---:|---|---:|---:|---:|
+| 2024-07 | 0 | — | 0 | 0 | — |
+| 2024-08 | 1 | 2024-07 | 0 | +1 | 新增 |
+| 2024-09 | 1 | 2024-08 | 1 | 0 | 0.0% |
+| 2024-10 | 1 | 2024-09 | 1 | 0 | 0.0% |
+| 2024-11 | 1 | 2024-10 | 1 | 0 | 0.0% |
+| 2024-12 | 0 | 2024-11 | 1 | -1 | -100.0% |
+| 2025-01 | 0 | 2024-12 | 0 | 0 | — |
+| 2025-02 | 1 | 2025-01 | 0 | +1 | 新增 |
+| 2025-03 | 1 | 2025-02 | 1 | 0 | 0.0% |
+| 2025-04 | 0 | 2025-03 | 1 | -1 | -100.0% |
+| 2025-05 | 2 | 2025-04 | 0 | +2 | 新增 |
+| 2025-06 | 1 | 2025-05 | 2 | -1 | -50.0% |
+| 2025-07 | 0 | 2025-06 | 1 | -1 | -100.0% |
+| 2025-08 | 1 | 2025-07 | 0 | +1 | 新增 |
+| 2025-09 | 1 | 2025-08 | 1 | 0 | 0.0% |
+| 2025-10 | 0 | 2025-09 | 1 | -1 | -100.0% |
+| 2025-11 | 1 | 2025-10 | 0 | +1 | 新增 |
+| 2025-12 | 1 | 2025-11 | 1 | 0 | 0.0% |
+| 2026-01 | 0 | 2025-12 | 1 | -1 | -100.0% |
+| 2026-02 | 1 | 2026-01 | 0 | +1 | 新增 |
+| 2026-03 | 2 | 2026-02 | 1 | +1 | +100.0% |
+| 2026-04 | 0 | 2026-03 | 2 | -2 | -100.0% |
+| 2026-05 | 1 | 2026-04 | 0 | +1 | 新增 |
+| 2026-06 | 3 | 2026-05 | 1 | +2 | +200.0% |
+| 2026-07 | 3 | 2026-06 | 3 | 0 | 0.0% |
+
+### 代表工作与证据
+
+| 工作 | 首次公开 | 发表版本 | 严格同行评审 | GitHub |
+|---|---|---|---|---|
+| [exUMI: Extensible Robot Teaching System with Action-aware Task-agnostic Tactile Representation](https://arxiv.org/abs/2509.14688) | 2025-09-18 | CoRL 2025 | 是 | — |
+| [Multimodal Visual-Tactile Representation Learning through Self-Supervised Contrastive Pre-Training](https://arxiv.org/abs/2401.12024) | — | ICRA 2024 | 否 | — |
+| [UniT: Data Efficient Tactile Representation with Generalization to Unseen Objects](https://arxiv.org/abs/2408.06481) | 2024-08-12 | RA-L 2025 | 否 | — |
+| [Soft Magnetic Skin With Motion and Contact Sensing for Anthropomorphic Robotic Finger](https://ieeexplore.ieee.org/document/3495590) | 2024-12-01 | RA-L 2024 | 否 | — |
+| [UniTac-NV: A Unified Tactile Representation For Non-Vision-Based Tactile Sensors](https://arxiv.org/abs/2506.19699) | 2025-06-24 | IROS 2025 | 否 | — |
+| [Contact sensing methodology based on propagation of interaction-induced deformation in elastic beams](https://journals.sagepub.com/doi/10.1177/02783649261419836) | 2026-02-04 | IJRR 2026 | 否 | — |
+| [Object Extrinsic Contact Surface Reconstruction through Extrinsic Contact Sensing from Visuo-tactile Measurements](https://ieeexplore.ieee.org/document/11247448) | 2025-01-01 | IROS 2025 | 否 | — |
+| [Semantic-Geometric-Physical-Driven Robot Manipulation Skill Transfer via Skill Library and Tactile Representation](https://arxiv.org/abs/2411.11714) | 2024-11-18 | IROS 2025 | 否 | — |
+| [Distributed Contact Sensing Enabled by Vibration Propagation on Robot End-Effector](https://ieeexplore.ieee.org/document/11247041) | 2025-01-01 | IROS 2025 | 否 | — |
+| [Shape-Space Deformer: Unified Visuo-Tactile Representations for Robotic Manipulation of Deformable Objects](https://arxiv.org/abs/2409.12419) | 2024-09-19 | ICRA 2025 | 否 | — |
+| [$N_0$-VTLA: Scaling Vision-Tactile-Language-Action Model with Latent Tactile Tokens](https://arxiv.org/abs/2607.23782) | 2026-07-26 | 预印本 | 否 | — |
+| [A Model-Based Decoupling Strategy for Proprioception and Contact Sensing in an Architected Soft Manipulator](https://arxiv.org/abs/2607.15582) | 2026-07-17 | 预印本 | 否 | — |
+| [Active Contact Sensing for Robust Robot-to-Human Object Handover](https://arxiv.org/abs/2605.04610) | 2026-05-06 | 预印本 | 否 | — |
+| [Bayesian Active Object Recognition and 6D Pose Estimation from Multimodal Contact Sensing](https://arxiv.org/abs/2603.21410) | 2026-03-22 | 预印本 | 否 | — |
+| [ContactFusion: Stochastic Poisson Surface Maps from Visual and Contact Sensing](https://arxiv.org/abs/2503.16592) | 2025-03-20 | 预印本 | 否 | — |
+| [FG-CLTP: Fine-Grained Contrastive Language Tactile Pretraining for Robotic Manipulation](https://arxiv.org/abs/2603.10871) | 2026-03-11 | 预印本 | 否 | — |
+| [Grasping Force Estimation for Markerless Visuotactile Sensors](https://arxiv.org/abs/2410.22825) | 2024-10-30 | 预印本 | 否 | — |
+| [HapTile: A Haptic-Informed Vision-Tactile-Language-Action Dataset for Contact-Rich Imitation Learning](https://arxiv.org/abs/2606.04825) | 2026-06-03 | 预印本 | 否 | — |
+| [Imagining the Sense of Touch: Touch-Informed Manipulation via Imagined Tactile Representations](https://arxiv.org/abs/2607.01684) | 2026-07-02 | 预印本 | 否 | — |
+| [LightTact: A Visual-Tactile Fingertip Sensor for Deformation-Independent Contact Sensing](https://arxiv.org/abs/2512.20591) | 2025-12-23 | RSS 2026 | 否 | — |
+| [MicCheck: Repurposing Off-the-Shelf Pin Microphones for Easy and Low-Cost Contact Sensing](https://arxiv.org/abs/2511.18299) | 2025-11-23 | 预印本 | 否 | — |
+| [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706) | 2025-08-12 | 预印本 | 否 | — |
+| [RETRO: REthinking Tactile Representation Learning with Material PriOrs](https://arxiv.org/abs/2505.14319) | 2025-05-20 | 预印本 | 否 | — |
+| [Sensor-Invariant Tactile Representation](https://arxiv.org/abs/2502.19638) | 2025-02-27 | 预印本 | 否 | — |
+| [TactX: Learning Shared Tactile Representations Across Diverse Sensors](https://arxiv.org/abs/2606.31236) | 2026-06-30 | 预印本 | 否 | — |
+| [Toward Gripper-Integrated Active Electrosense for Pre-Contact Sensing in Underwater Soft Grippers](https://arxiv.org/abs/2606.03204) | 2026-06-02 | 预印本 | 否 | — |
+| [UniForce: A Unified Latent Force Model for Robot Manipulation with Diverse Tactile Sensors](https://arxiv.org/abs/2602.01153) | 2026-02-01 | 预印本 | 否 | — |
+| [VTLA: Vision-Tactile-Language-Action Model with Preference Learning for Insertion Manipulation](https://arxiv.org/abs/2505.09577) | 2025-05-14 | 预印本 | 否 | — |
 
 ---
 
@@ -3086,38 +4024,36 @@ flowchart LR
 
 | 工作 | arXiv | Venue | 主方向 | 机构（最多三家） |
 |---|---|---|---|---|
-| [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html) | [2406.09246](https://arxiv.org/abs/2406.09246) | CoRL 2024 | 具身基础模型 | Stanford University、UC Berkeley、Toyota Research Institute |
-| [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) | [2407.08693](https://arxiv.org/abs/2407.08693) | CoRL 2024 | 大小脑与双系统 | UC Berkeley、Stanford University、University of Warsaw |
-| [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html) | [2409.01652](https://arxiv.org/abs/2409.01652) | CoRL 2024 | 大小脑与双系统 | Stanford University、Columbia University |
-| [HumanPlus: Humanoid Shadowing and Imitation from Humans](https://proceedings.mlr.press/v270/fu25a.html) | [2406.10454](https://arxiv.org/abs/2406.10454) | CoRL 2024 | 通用机器人学习 | Stanford University |
-| [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html) | [2406.08858](https://arxiv.org/abs/2406.08858) | CoRL 2024 | 灵巧操作 | Carnegie Mellon University、Shanghai Jiao Tong University |
-| [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) | [2409.20537](https://arxiv.org/abs/2409.20537) | NeurIPS 2024 | 具身基础模型 | MIT CSAIL、Meta FAIR |
-| [π₀: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html) | [2410.24164](https://arxiv.org/abs/2410.24164) | RSS 2025 | 具身基础模型 | Physical Intelligence |
-| [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) | [2501.15830](https://arxiv.org/abs/2501.15830) | RSS 2025 | 具身基础模型 | Shanghai AI Laboratory、Fudan University、Shanghai Jiao Tong University |
-| [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) | [2501.09747](https://arxiv.org/abs/2501.09747) | RSS 2025 | 具身基础模型 | Physical Intelligence、UC Berkeley、Stanford University |
-| [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) | [2505.06111](https://arxiv.org/abs/2505.06111) | RSS 2025 | 具身基础模型 | The University of Hong Kong、OpenDriveLab、AgiBot |
-| [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) | [2504.02792](https://arxiv.org/abs/2504.02792) | RSS 2025 | 世界模型 | University of Washington、Toyota Research Institute |
-| [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) | [2502.05450](https://arxiv.org/abs/2502.05450) | RSS 2025 | 通用机器人学习 | Institute of Automation, Chinese Academy of Sciences、University of Chinese Academy of Sciences |
-| [Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) | [2412.01770](https://arxiv.org/abs/2412.01770) | RSS 2025 | 通用机器人学习 | MIT、University of Washington、Stanford University |
-| [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) | [2503.02881](https://arxiv.org/abs/2503.02881) | RSS 2025 | 灵巧操作 | Shanghai Jiao Tong University、Tsinghua University、Shanghai Qizhi Institute |
-| [π₀.₅: A Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html) | [2504.16054](https://arxiv.org/abs/2504.16054) | CoRL 2025 | 具身基础模型 | Physical Intelligence、UC Berkeley、Stanford University |
-| [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html) | [2502.16707](https://arxiv.org/abs/2502.16707) | CoRL 2025 | 大小脑与双系统 | Cornell University、The Chinese University of Hong Kong、Yale University |
-| [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) | [2505.11528](https://arxiv.org/abs/2505.11528) | CoRL 2025 | 世界模型 | National University of Defense Technology、Peking University、Shenzhen University |
-| [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) | [2505.21864](https://arxiv.org/abs/2505.21864) | CoRL 2025 | 灵巧操作 | Stanford University、Columbia University、J.P. Morgan AI Research |
-| [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) | [2508.19958](https://arxiv.org/abs/2508.19958) | CoRL 2025 | 具身基础模型 | Westlake University、Zhejiang University、Xi'an Jiaotong University |
-| [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) | [2506.23126](https://arxiv.org/abs/2506.23126) | CoRL 2025 | 世界模型 | Stanford University、The RAI Institute |
-| [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) | [2601.08325](https://arxiv.org/abs/2601.08325) | CVPR 2026 | 具身基础模型 | Fudan University、Shanghai Innovation Institute、Nanyang Technological University |
-| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | [2601.11404](https://arxiv.org/abs/2601.11404) | CVPR 2026 | 大小脑与双系统 | Beihang University、AgiBot |
-| [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) | [2601.01618](https://arxiv.org/abs/2601.01618) | CVPR 2026 | 大小脑与双系统 | Peking University、Beijing Academy of Artificial Intelligence、University of Sydney |
-| [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) | [2512.13030](https://arxiv.org/abs/2512.13030) | CVPR 2026 | 世界模型 | Tsinghua University、ShengShu、Peking University |
-| [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) | [2603.07648](https://arxiv.org/abs/2603.07648) | CVPR 2026 | 大小脑与双系统 | Sun Yat-sen University、Peng Cheng Laboratory、Yinwang Intelligent Technology |
-| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) | [2603.22264](https://arxiv.org/abs/2603.22264) | CVPR 2026 | 灵巧操作 | Tsinghua University、Shanghai Qizhi Institute、Sun Yat-sen University |
-| [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | [2603.10158](https://arxiv.org/abs/2603.10158) | CVPR 2026 | 灵巧操作 | UC San Diego、Amazon FAR、UC Berkeley |
-| [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) | [2511.15200](https://arxiv.org/abs/2511.15200) | CVPR 2026 | 通用机器人学习 | NVIDIA、Carnegie Mellon University、UC Berkeley |
-| [PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) | [2601.03782](https://arxiv.org/abs/2601.03782) | CVPR 2026 | 世界模型 | Stanford University、NVIDIA |
-| [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) | [2512.05955](https://arxiv.org/abs/2512.05955) | CVPR 2026 | 大小脑与双系统 | University of Maryland、University of Illinois Urbana-Champaign、Harvard University |
-
-<!-- 更新标记：同行评审锚点 最后更新 2026.07 -->
+| [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html) | [2406.09246](https://arxiv.org/abs/2406.09246) | CoRL 2024 | 具身基础模型与通才策略 | Stanford University、UC Berkeley、Toyota Research Institute |
+| [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) | [2407.08693](https://arxiv.org/abs/2407.08693) | CoRL 2024 | 分层推理、规划与记忆 | UC Berkeley、Stanford University、University of Warsaw |
+| [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html) | [2409.01652](https://arxiv.org/abs/2409.01652) | CoRL 2024 | 灵巧、双臂与接触操作 | Stanford University、Columbia University |
+| [HumanPlus: Humanoid Shadowing and Imitation from Humans](https://proceedings.mlr.press/v270/fu25a.html) | [2406.10454](https://arxiv.org/abs/2406.10454) | CoRL 2024 | 人形、运动与全身控制 | Stanford University |
+| [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html) | [2406.08858](https://arxiv.org/abs/2406.08858) | CoRL 2024 | 人形、运动与全身控制 | Carnegie Mellon University、Shanghai Jiao Tong University |
+| [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) | [2409.20537](https://arxiv.org/abs/2409.20537) | NeurIPS 2024 | 具身基础模型与通才策略 | MIT CSAIL、Meta FAIR |
+| [π₀: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html) | [2410.24164](https://arxiv.org/abs/2410.24164) | RSS 2025 | 具身基础模型与通才策略 | Physical Intelligence |
+| [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) | [2501.15830](https://arxiv.org/abs/2501.15830) | RSS 2025 | 具身基础模型与通才策略 | Shanghai AI Laboratory、Fudan University、Shanghai Jiao Tong University |
+| [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) | [2501.09747](https://arxiv.org/abs/2501.09747) | RSS 2025 | 具身基础模型与通才策略 | Physical Intelligence、UC Berkeley、Stanford University |
+| [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) | [2505.06111](https://arxiv.org/abs/2505.06111) | RSS 2025 | 具身基础模型与通才策略 | The University of Hong Kong、OpenDriveLab、AgiBot |
+| [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) | [2504.02792](https://arxiv.org/abs/2504.02792) | RSS 2025 | 世界模型与预测控制 | University of Washington、Toyota Research Institute |
+| [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) | [2502.05450](https://arxiv.org/abs/2502.05450) | RSS 2025 | 具身基础模型与通才策略 | Institute of Automation, Chinese Academy of Sciences、University of Chinese Academy of Sciences |
+| [Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) | [2412.01770](https://arxiv.org/abs/2412.01770) | RSS 2025 | 策略学习与优化 | MIT、University of Washington、Stanford University |
+| [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) | [2503.02881](https://arxiv.org/abs/2503.02881) | RSS 2025 | 策略学习与优化 | Shanghai Jiao Tong University、Tsinghua University、Shanghai Qizhi Institute |
+| [π₀.₅: A Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html) | [2504.16054](https://arxiv.org/abs/2504.16054) | CoRL 2025 | 具身基础模型与通才策略 | Physical Intelligence、UC Berkeley、Stanford University |
+| [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html) | [2502.16707](https://arxiv.org/abs/2502.16707) | CoRL 2025 | 灵巧、双臂与接触操作 | Cornell University、The Chinese University of Hong Kong、Yale University |
+| [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) | [2505.11528](https://arxiv.org/abs/2505.11528) | CoRL 2025 | 世界模型与预测控制 | National University of Defense Technology、Peking University、Shenzhen University |
+| [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) | [2505.21864](https://arxiv.org/abs/2505.21864) | CoRL 2025 | 灵巧、双臂与接触操作 | Stanford University、Columbia University、J.P. Morgan AI Research |
+| [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) | [2508.19958](https://arxiv.org/abs/2508.19958) | CoRL 2025 | 具身基础模型与通才策略 | Westlake University、Zhejiang University、Xi'an Jiaotong University |
+| [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) | [2506.23126](https://arxiv.org/abs/2506.23126) | CoRL 2025 | 世界模型与预测控制 | Stanford University、The RAI Institute |
+| [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) | [2601.08325](https://arxiv.org/abs/2601.08325) | CVPR 2026 | 具身基础模型与通才策略 | Fudan University、Shanghai Innovation Institute、Nanyang Technological University |
+| [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | [2601.11404](https://arxiv.org/abs/2601.11404) | CVPR 2026 | 具身基础模型与通才策略 | Beihang University、AgiBot |
+| [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) | [2601.01618](https://arxiv.org/abs/2601.01618) | CVPR 2026 | 具身基础模型与通才策略 | Peking University、Beijing Academy of Artificial Intelligence、University of Sydney |
+| [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) | [2512.13030](https://arxiv.org/abs/2512.13030) | CVPR 2026 | 世界模型与预测控制 | Tsinghua University、ShengShu、Peking University |
+| [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) | [2603.07648](https://arxiv.org/abs/2603.07648) | CVPR 2026 | 策略学习与优化 | Sun Yat-sen University、Peng Cheng Laboratory、Yinwang Intelligent Technology |
+| [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) | [2603.22264](https://arxiv.org/abs/2603.22264) | CVPR 2026 | 数据引擎与人类视频学习 | Tsinghua University、Shanghai Qizhi Institute、Sun Yat-sen University |
+| [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | [2603.10158](https://arxiv.org/abs/2603.10158) | CVPR 2026 | 具身基础模型与通才策略 | UC San Diego、Amazon FAR、UC Berkeley |
+| [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) | [2511.15200](https://arxiv.org/abs/2511.15200) | CVPR 2026 | 人形、运动与全身控制 | NVIDIA、Carnegie Mellon University、UC Berkeley |
+| [PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) | [2601.03782](https://arxiv.org/abs/2601.03782) | CVPR 2026 | 世界模型与预测控制 | Stanford University、NVIDIA |
+| [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) | [2512.05955](https://arxiv.org/abs/2512.05955) | CVPR 2026 | 具身基础模型与通才策略 | University of Maryland、University of Illinois Urbana-Champaign、Harvard University |
 
 ---
 
@@ -3128,77 +4064,75 @@ flowchart LR
 
 | 排名 | 机构 | 相关工作 | 官方评审工作 | 方向布局 | 代表工作 |
 |---:|---|---:|---:|---|---|
-| 1 | Stanford University | 10 | 4 | 具身基础模型、大小脑与双系统、通用机器人学习、灵巧操作、世界模型 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html)；[ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html) |
-| 2 | UC Berkeley | 7 | 4 | 具身基础模型、大小脑与双系统、灵巧操作、通用机器人学习 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html)；[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) |
-| 3 | Physical Intelligence | 5 | 3 | 具身基础模型 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[π₀: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html)；[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) |
-| 4 | Carnegie Mellon University | 3 | 3 | 灵巧操作、通用机器人学习 | [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html)；[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) |
-| 5 | Tsinghua University | 5 | 2 | 灵巧操作、世界模型、通用机器人学习 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) |
-| 6 | Fudan University | 4 | 2 | 具身基础模型、大小脑与双系统 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html)；[TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) |
-| 7 | Shanghai Innovation Institute | 4 | 2 | 灵巧操作、具身基础模型、大小脑与双系统 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html)；[TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) |
-| 8 | Shanghai Jiao Tong University | 4 | 2 | 灵巧操作、具身基础模型 | [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html)；[SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) |
-| 9 | NVIDIA | 3 | 2 | 灵巧操作、通用机器人学习、世界模型 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html)；[PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) |
-| 10 | Peking University | 3 | 2 | 世界模型、大小脑与双系统 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html)；[Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html)；[Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) |
-| 11 | Zhejiang University | 3 | 2 | 具身基础模型、大小脑与双系统 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html)；[VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) |
-| 12 | AgiBot | 2 | 2 | 具身基础模型、大小脑与双系统 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) |
-| 13 | Beihang University | 2 | 2 | 具身基础模型、大小脑与双系统 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) |
-| 14 | Columbia University | 2 | 2 | 大小脑与双系统、灵巧操作 | [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html)；[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) |
-| 15 | Institute of Automation, Chinese Academy of Sciences | 2 | 2 | 通用机器人学习、大小脑与双系统 | [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html)；[Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
-| 16 | MIT | 2 | 2 | 具身基础模型、通用机器人学习 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) |
-| 17 | Shanghai Qizhi Institute | 2 | 2 | 灵巧操作 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) |
-| 18 | The Chinese University of Hong Kong | 2 | 2 | 大小脑与双系统、通用机器人学习 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) |
-| 19 | Toyota Research Institute | 2 | 2 | 具身基础模型、世界模型 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) |
-| 20 | Amazon FAR | 2 | 1 | 灵巧操作、大小脑与双系统 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 21 | Cornell University | 2 | 1 | 大小脑与双系统、通用机器人学习 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) |
-| 22 | Horizon Robotics | 2 | 1 | 世界模型、通用机器人学习 | [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523)；[Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) |
-| 23 | Shanghai AI Laboratory | 2 | 1 | 具身基础模型、灵巧操作 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) |
-| 24 | Sun Yat-sen University | 2 | 1 | 大小脑与双系统、灵巧操作 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) |
-| 25 | University of North Carolina at Chapel Hill | 2 | 1 | 灵巧操作、具身基础模型 | [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
-| 26 | University of Washington | 2 | 1 | 世界模型、通用机器人学习 | [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html)；[Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) |
-| 27 | Beijing Academy of Artificial Intelligence | 1 | 1 | 大小脑与双系统 | [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
-| 28 | Google DeepMind | 1 | 1 | 具身基础模型 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html) |
-| 29 | Harvard University | 1 | 1 | 大小脑与双系统 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 30 | J.P. Morgan AI Research | 1 | 1 | 灵巧操作 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) |
-| 31 | Meta FAIR | 1 | 1 | 具身基础模型 | [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) |
-| 32 | MIT CSAIL | 1 | 1 | 具身基础模型 | [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) |
-| 33 | Nanyang Technological University | 1 | 1 | 具身基础模型 | [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) |
-| 34 | National University of Defense Technology | 1 | 1 | 世界模型 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) |
-| 35 | Northwestern Polytechnical University | 1 | 1 | 具身基础模型 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) |
-| 36 | OpenDriveLab | 1 | 1 | 具身基础模型 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) |
-| 37 | Peng Cheng Laboratory | 1 | 1 | 大小脑与双系统 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) |
-| 38 | ShanghaiTech University | 1 | 1 | 具身基础模型 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) |
-| 39 | ShengShu | 1 | 1 | 世界模型 | [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) |
-| 40 | Shenzhen University | 1 | 1 | 世界模型 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) |
-| 41 | The RAI Institute | 1 | 1 | 世界模型 | [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) |
-| 42 | The University of Hong Kong | 1 | 1 | 具身基础模型 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) |
-| 43 | UC San Diego | 1 | 1 | 灵巧操作 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) |
-| 44 | University of Chinese Academy of Sciences | 1 | 1 | 通用机器人学习 | [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) |
-| 45 | University of Electronic Science and Technology of China | 1 | 1 | 具身基础模型 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
-| 46 | University of Illinois Urbana-Champaign | 1 | 1 | 大小脑与双系统 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 47 | University of Maryland | 1 | 1 | 大小脑与双系统 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 48 | University of Pennsylvania | 1 | 1 | 大小脑与双系统 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 49 | University of Sydney | 1 | 1 | 大小脑与双系统 | [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
-| 50 | University of Warsaw | 1 | 1 | 大小脑与双系统 | [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) |
-| 51 | Westlake University | 1 | 1 | 具身基础模型 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
-| 52 | Xi'an Jiaotong University | 1 | 1 | 具身基础模型 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
-| 53 | Yale University | 1 | 1 | 大小脑与双系统 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html) |
-| 54 | Yinwang Intelligent Technology | 1 | 1 | 大小脑与双系统 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) |
-| 55 | Alibaba DAMO Academy | 1 | 0 | 大小脑与双系统 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) |
-| 56 | ByteDance Seed | 1 | 0 | 具身基础模型 | [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) |
-| 57 | East China Normal University | 1 | 0 | 大小脑与双系统 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) |
-| 58 | EvoMind Tech | 1 | 0 | 具身基础模型 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
-| 59 | IAAR-Shanghai | 1 | 0 | 具身基础模型 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
-| 60 | Microsoft Research | 1 | 0 | 通用机器人学习 | [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) |
-| 61 | Mitsubishi Electric Research Laboratories | 1 | 0 | 具身基础模型 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
-| 62 | University of Cambridge | 1 | 0 | 具身基础模型 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
-| 63 | University of Oxford | 1 | 0 | 具身基础模型 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
+| 1 | Stanford University | 10 | 4 | 具身基础模型与通才策略、分层推理、规划与记忆、灵巧、双臂与接触操作、人形、运动与全身控制、策略学习与优化、世界模型与预测控制 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html)；[ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html) |
+| 2 | UC Berkeley | 7 | 4 | 具身基础模型与通才策略、分层推理、规划与记忆、灵巧、双臂与接触操作、人形、运动与全身控制 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html)；[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) |
+| 3 | Physical Intelligence | 5 | 3 | 具身基础模型与通才策略 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[π₀: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html)；[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) |
+| 4 | Carnegie Mellon University | 3 | 3 | 人形、运动与全身控制、灵巧、双臂与接触操作 | [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html)；[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) |
+| 5 | Tsinghua University | 5 | 2 | 策略学习与优化、世界模型与预测控制、数据引擎与人类视频学习、灵巧、双臂与接触操作、具身基础模型与通才策略 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) |
+| 6 | Fudan University | 4 | 2 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html)；[TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) |
+| 7 | Shanghai Innovation Institute | 4 | 2 | 策略学习与优化、具身基础模型与通才策略 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html)；[TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) |
+| 8 | Shanghai Jiao Tong University | 4 | 2 | 人形、运动与全身控制、具身基础模型与通才策略、策略学习与优化 | [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html)；[SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) |
+| 9 | NVIDIA | 3 | 2 | 灵巧、双臂与接触操作、人形、运动与全身控制、世界模型与预测控制 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html)；[PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) |
+| 10 | Peking University | 3 | 2 | 世界模型与预测控制、具身基础模型与通才策略 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html)；[Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html)；[Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) |
+| 11 | Zhejiang University | 3 | 2 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html)；[VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) |
+| 12 | AgiBot | 2 | 2 | 具身基础模型与通才策略 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) |
+| 13 | Beihang University | 2 | 2 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) |
+| 14 | Columbia University | 2 | 2 | 灵巧、双臂与接触操作 | [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html)；[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) |
+| 15 | Institute of Automation, Chinese Academy of Sciences | 2 | 2 | 具身基础模型与通才策略 | [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html)；[Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
+| 16 | MIT | 2 | 2 | 具身基础模型与通才策略、策略学习与优化 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) |
+| 17 | Shanghai Qizhi Institute | 2 | 2 | 策略学习与优化、数据引擎与人类视频学习 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) |
+| 18 | The Chinese University of Hong Kong | 2 | 2 | 灵巧、双臂与接触操作、人形、运动与全身控制 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) |
+| 19 | Toyota Research Institute | 2 | 2 | 具身基础模型与通才策略、世界模型与预测控制 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) |
+| 20 | Amazon FAR | 2 | 1 | 具身基础模型与通才策略 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
+| 21 | Cornell University | 2 | 1 | 灵巧、双臂与接触操作、策略学习与优化 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) |
+| 22 | Horizon Robotics | 2 | 1 | 世界模型与预测控制、灵巧、双臂与接触操作 | [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523)；[Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) |
+| 23 | Shanghai AI Laboratory | 2 | 1 | 具身基础模型与通才策略、策略学习与优化 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) |
+| 24 | Sun Yat-sen University | 2 | 1 | 策略学习与优化、数据引擎与人类视频学习 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) |
+| 25 | University of North Carolina at Chapel Hill | 2 | 1 | 数据引擎与人类视频学习、具身基础模型与通才策略 | [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
+| 26 | University of Washington | 2 | 1 | 世界模型与预测控制、策略学习与优化 | [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html)；[Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) |
+| 27 | Beijing Academy of Artificial Intelligence | 1 | 1 | 具身基础模型与通才策略 | [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
+| 28 | Google DeepMind | 1 | 1 | 具身基础模型与通才策略 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html) |
+| 29 | Harvard University | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
+| 30 | J.P. Morgan AI Research | 1 | 1 | 灵巧、双臂与接触操作 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) |
+| 31 | Meta FAIR | 1 | 1 | 具身基础模型与通才策略 | [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) |
+| 32 | MIT CSAIL | 1 | 1 | 具身基础模型与通才策略 | [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) |
+| 33 | Nanyang Technological University | 1 | 1 | 具身基础模型与通才策略 | [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) |
+| 34 | National University of Defense Technology | 1 | 1 | 世界模型与预测控制 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) |
+| 35 | Northwestern Polytechnical University | 1 | 1 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) |
+| 36 | OpenDriveLab | 1 | 1 | 具身基础模型与通才策略 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) |
+| 37 | Peng Cheng Laboratory | 1 | 1 | 策略学习与优化 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) |
+| 38 | ShanghaiTech University | 1 | 1 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) |
+| 39 | ShengShu | 1 | 1 | 世界模型与预测控制 | [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) |
+| 40 | Shenzhen University | 1 | 1 | 世界模型与预测控制 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) |
+| 41 | The RAI Institute | 1 | 1 | 世界模型与预测控制 | [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) |
+| 42 | The University of Hong Kong | 1 | 1 | 具身基础模型与通才策略 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) |
+| 43 | UC San Diego | 1 | 1 | 具身基础模型与通才策略 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) |
+| 44 | University of Chinese Academy of Sciences | 1 | 1 | 具身基础模型与通才策略 | [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) |
+| 45 | University of Electronic Science and Technology of China | 1 | 1 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
+| 46 | University of Illinois Urbana-Champaign | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
+| 47 | University of Maryland | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
+| 48 | University of Pennsylvania | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
+| 49 | University of Sydney | 1 | 1 | 具身基础模型与通才策略 | [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
+| 50 | University of Warsaw | 1 | 1 | 分层推理、规划与记忆 | [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) |
+| 51 | Westlake University | 1 | 1 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
+| 52 | Xi'an Jiaotong University | 1 | 1 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
+| 53 | Yale University | 1 | 1 | 灵巧、双臂与接触操作 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html) |
+| 54 | Yinwang Intelligent Technology | 1 | 1 | 策略学习与优化 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) |
+| 55 | Alibaba DAMO Academy | 1 | 0 | 具身基础模型与通才策略 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) |
+| 56 | ByteDance Seed | 1 | 0 | 具身基础模型与通才策略 | [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) |
+| 57 | East China Normal University | 1 | 0 | 具身基础模型与通才策略 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) |
+| 58 | EvoMind Tech | 1 | 0 | 具身基础模型与通才策略 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
+| 59 | IAAR-Shanghai | 1 | 0 | 具身基础模型与通才策略 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
+| 60 | Microsoft Research | 1 | 0 | 具身基础模型与通才策略 | [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) |
+| 61 | Mitsubishi Electric Research Laboratories | 1 | 0 | 具身基础模型与通才策略 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
+| 62 | University of Cambridge | 1 | 0 | 具身基础模型与通才策略 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
+| 63 | University of Oxford | 1 | 0 | 具身基础模型与通才策略 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
 
 ### 读表原则
 
 - 产量不是唯一质量指标；持续跨月、跨方向和独立评审证据更重要。
 - arXiv 通常不含 affiliation，本页只使用官方 proceedings 和已核验作者/项目页。
 - “团队”按论文作者组合与独立项目线判断，不将同一系列版本重复视为独立验证。
-
-<!-- 更新标记：团队与机构雷达 最后更新 2026.07 -->
 
 ---
 
@@ -3228,8 +4162,6 @@ flowchart LR
 | 触觉/灵巧 | 跨传感器和跨手型迁移、接触失败恢复 | 防止硬件专用结果被误读为通用能力 |
 | 开放性 | 代码、数据、权重、硬件配置与评测脚本 | 支持独立复现和后续采用 |
 
-<!-- 更新标记：评估基准 最后更新 2026.07 -->
-
 ---
 
 
@@ -3251,123 +4183,121 @@ JSON/CSV 包含全部 2650 条纳入统计记录；网页按年份拆分，避�
 
 | arXiv ID | 论文 | v1 月份 | 主方向 | 置信度 | 层级 | 同行评审 |
 |---|---|---|---|---|---|---|
-| 2507.00416 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) | 2025-07 | 具身基础模型 | high | 精读 | — |
-| 2507.01424 | [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) | 2025-07 | 大小脑与双系统 | high | 精读 | — |
-| 2507.05198 | [EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling](https://arxiv.org/abs/2507.05198) | 2025-07 | 世界模型 | high | 精读 | — |
-| 2507.06224 | [EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow](https://arxiv.org/abs/2507.06224) | 2025-07 | 通用机器人学习 | high | 精读 | — |
-| 2507.09117 | [Towards Human-level Dexterity via Robot Learning](https://arxiv.org/abs/2507.09117) | 2025-07 | 灵巧操作 | high | 精读 | — |
-| 2507.15493 | [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) | 2025-07 | 具身基础模型 | high | 精读 | — |
-| 2507.23523 | [H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523) | 2025-07 | 通用机器人学习 | high | 精读 | — |
-| 2508.00795 | [Video Generators are Robot Policies](https://arxiv.org/abs/2508.00795) | 2025-08 | 通用机器人学习 | high | 精读 | — |
-| 2508.02062 | [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | 2025-08 | 具身基础模型 | high | 精读 | — |
-| 2508.03645 | [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08 | 通用机器人学习 | high | 精读 | — |
-| 2508.08706 | [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706) | 2025-08 | 灵巧操作 | high | 精读 | — |
-| 2508.09976 | [Masquerade: Learning from In-the-wild Human Videos using Data-Editing](https://arxiv.org/abs/2508.09976) | 2025-08 | 通用机器人学习 | high | 精读 | — |
-| 2508.17600 | [GWM: Towards Scalable Gaussian World Models for Robotic Manipulation](https://arxiv.org/abs/2508.17600) | 2025-08 | 世界模型 | high | 精读 | — |
-| 2508.21112 | [EO-1: An Open Unified Embodied Foundation Model for General Robot Control](https://arxiv.org/abs/2508.21112) | 2025-08 | 具身基础模型 | high | 精读 | — |
-| 2509.01819 | [ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training](https://arxiv.org/abs/2509.01819) | 2025-09 | 通用机器人学习 | high | 精读 | — |
-| 2509.05513 | [OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation](https://arxiv.org/abs/2509.05513) | 2025-09 | 通用机器人学习 | high | 精读 | — |
-| 2509.07445 | [Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions](https://arxiv.org/abs/2509.07445) | 2025-09 | 灵巧操作 | high | 精读 | — |
-| 2509.18428 | [Latent Action Pretraining Through World Modeling](https://arxiv.org/abs/2509.18428) | 2025-09 | 世界模型 | high | 精读 | — |
-| 2509.20286 | [Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video](https://arxiv.org/abs/2509.20286) | 2025-09 | 通用机器人学习 | high | 精读 | — |
-| 2509.22643 | [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | 2025-09 | 大小脑与双系统 | high | 精读 | — |
-| 2509.24661 | [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661) | 2025-09 | 灵巧操作 | high | 精读 | — |
-| 2510.00406 | [VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators](https://arxiv.org/abs/2510.00406) | 2025-10 | 世界模型 | high | 精读 | — |
-| 2510.01623 | [VLA-R1: Enhancing Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2510.01623) | 2025-10 | 大小脑与双系统 | high | 精读 | — |
-| 2510.08475 | [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475) | 2025-10 | 灵巧操作 | high | 精读 | — |
-| 2510.10125 | [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | 2025-10 | 世界模型 | high | 精读 | — |
-| 2510.10274 | [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274) | 2025-10 | 具身基础模型 | high | 精读 | — |
-| 2510.18337 | [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337) | 2025-10 | 大小脑与双系统 | high | 精读 | — |
-| 2510.21571 | [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) | 2025-10 | 通用机器人学习 | high | 精读 | — |
-| 2511.01177 | [Scaling Cross-Embodiment World Models for Dexterous Manipulation](https://arxiv.org/abs/2511.01177) | 2025-11 | 世界模型 | high | 精读 | — |
-| 2511.02504 | [Dexterous Robotic Piano Playing at Scale](https://arxiv.org/abs/2511.02504) | 2025-11 | 灵巧操作 | high | 精读 | — |
-| 2511.03077 | [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077) | 2025-11 | 世界模型 | high | 精读 | — |
-| 2511.04671 | [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) | 2025-11 | 通用机器人学习 | high | 精读 | — |
-| 2511.14759 | [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759) | 2025-11 | 具身基础模型 | high | 精读 | — |
-| 2511.16651 | [InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](https://arxiv.org/abs/2511.16651) | 2025-11 | 通用机器人学习 | high | 精读 | — |
-| 2511.22134 | [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134) | 2025-11 | 大小脑与双系统 | high | 精读 | — |
-| 2512.02729 | [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729) | 2025-12 | 通用机器人学习 | high | 精读 | — |
-| 2512.03044 | [Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling](https://arxiv.org/abs/2512.03044) | 2025-12 | 大小脑与双系统 | high | 精读 | — |
-| 2512.08186 | [Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation](https://arxiv.org/abs/2512.08186) | 2025-12 | 大小脑与双系统 | high | 精读 | — |
-| 2512.09297 | [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://arxiv.org/abs/2512.09297) | 2025-12 | 灵巧操作 | high | 精读 | — |
-| 2512.13030 | [Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) | 2025-12 | 世界模型 | high | 精读 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) |
-| 2512.15840 | [Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840) | 2025-12 | 世界模型 | high | 精读 | — |
-| 2512.18477 | [STORM: Search-Guided Generative World Models for Robotic Manipulation](https://arxiv.org/abs/2512.18477) | 2025-12 | 世界模型 | high | 精读 | — |
-| 2601.04629 | [UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation](https://arxiv.org/abs/2601.04629) | 2026-01 | 灵巧操作 | high | 精读 | — |
-| 2601.05230 | [Learning Latent Action World Models In The Wild](https://arxiv.org/abs/2601.05230) | 2026-01 | 世界模型 | high | 精读 | — |
-| 2601.11404 | [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) | 2026-01 | 大小脑与双系统 | high | 精读 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html) |
-| 2601.12993 | [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993) | 2026-01 | 具身基础模型 | high | 精读 | — |
-| 2601.14133 | [TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers](https://arxiv.org/abs/2601.14133) | 2026-01 | 大小脑与双系统 | high | 精读 | — |
-| 2601.16163 | [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://arxiv.org/abs/2601.16163) | 2026-01 | 世界模型 | high | 精读 | — |
-| 2602.00919 | [Green-VLA: Staged Vision-Language-Action Model for Generalist Robots](https://arxiv.org/abs/2602.00919) | 2026-01 | 具身基础模型 | high | 精读 | — |
-| 2602.12684 | [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684) | 2026-02 | 具身基础模型 | high | 精读 | — |
-| 2602.13977 | [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977) | 2026-02 | 世界模型 | high | 精读 | — |
-| 2602.16710 | [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710) | 2026-02 | 通用机器人学习 | high | 精读 | — |
-| 2602.21633 | [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633) | 2026-02 | 世界模型 | high | 精读 | — |
-| 2602.21736 | [Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](https://arxiv.org/abs/2602.21736) | 2026-02 | 通用机器人学习 | high | 精读 | — |
-| 2602.23648 | [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648) | 2026-02 | 大小脑与双系统 | high | 精读 | — |
-| 2602.23721 | [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721) | 2026-02 | 世界模型 | high | 精读 | — |
-| 2603.16860 | [DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models](https://arxiv.org/abs/2603.16860) | 2026-03 | 大小脑与双系统 | high | 精读 | — |
-| 2603.17808 | [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808) | 2026-03 | 世界模型 | high | 精读 | — |
-| 2603.19201 | [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201) | 2026-03 | 世界模型 | high | 精读 | — |
-| 2603.22263 | [DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming](https://arxiv.org/abs/2603.22263) | 2026-03 | 灵巧操作 | high | 精读 | — |
-| 2603.22264 | [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) | 2026-03 | 灵巧操作 | high | 精读 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) |
-| 2603.28545 | [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545) | 2026-03 | 通用机器人学习 | high | 精读 | — |
-| 2603.29844 | [DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA](https://arxiv.org/abs/2603.29844) | 2026-03 | 大小脑与双系统 | high | 精读 | — |
-| 2604.13015 | [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015) | 2026-04 | 灵巧操作 | high | 精读 | — |
-| 2604.15483 | [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04 | 具身基础模型 | high | 精读 | — |
-| 2604.20689 | [FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689) | 2026-04 | 灵巧操作 | high | 精读 | — |
-| 2604.21017 | [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017) | 2026-04 | 具身基础模型 | high | 精读 | — |
-| 2604.21924 | [Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924) | 2026-04 | 大小脑与双系统 | high | 精读 | — |
-| 2604.24921 | [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921) | 2026-04 | 大小脑与双系统 | high | 精读 | — |
-| 2604.26848 | [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](https://arxiv.org/abs/2604.26848) | 2026-04 | 世界模型 | high | 精读 | — |
-| 2605.27817 | [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817) | 2026-05 | 世界模型 | high | 精读 | — |
-| 2605.30226 | [BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models](https://arxiv.org/abs/2605.30226) | 2026-05 | 灵巧操作 | high | 精读 | — |
-| 2605.30280 | [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280) | 2026-05 | 具身基础模型 | high | 精读 | — |
-| 2605.31286 | [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286) | 2026-05 | 具身基础模型 | high | 精读 | — |
-| 2606.00229 | [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229) | 2026-05 | 大小脑与双系统 | high | 精读 | — |
-| 2606.01027 | [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | 2026-05 | 世界模型 | high | 精读 | — |
-| 2606.01241 | [OneVLA: A Unified Framework for Embodied Tasks](https://arxiv.org/abs/2606.01241) | 2026-05 | 具身基础模型 | high | 精读 | — |
-| 2606.27375 | [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375) | 2026-06 | 通用机器人学习 | high | 精读 | — |
-| 2606.30552 | [Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552) | 2026-06 | 大小脑与双系统 | high | 精读 | — |
-| 2606.31329 | [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329) | 2026-06 | 大小脑与双系统 | high | 精读 | — |
-| 2606.31723 | [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723) | 2026-06 | 灵巧操作 | high | 精读 | — |
-| 2606.31909 | [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909) | 2026-06 | 灵巧操作 | high | 精读 | — |
-| 2606.32009 | [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009) | 2026-06 | 通用机器人学习 | high | 精读 | — |
-| 2606.32028 | [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028) | 2026-06 | 世界模型 | high | 精读 | — |
-| 2607.01212 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) | 2026-07 | 具身基础模型 | high | 精读 | — |
-| 2607.01804 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) | 2026-07 | 大小脑与双系统 | high | 精读 | — |
-| 2607.02604 | [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | 2026-07 | 世界模型 | high | 精读 | — |
-| 2607.03449 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) | 2026-07 | 大小脑与双系统 | high | 精读 | — |
-| 2607.15330 | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | 2026-07 | 具身基础模型 | high | 精读 | — |
-| 2607.16636 | [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | 2026-07 | 大小脑与双系统 | high | 精读 | — |
-| 2607.22530 | [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530) | 2026-07 | 世界模型 | high | 精读 | — |
-| 2607.24485 | [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07 | 灵巧操作 | high | 精读 | — |
-| 2607.24744 | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07 | 通用机器人学习 | high | 精读 | — |
-| 2607.25918 | [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07 | 世界模型 | high | 精读 | — |
-| 2607.27549 | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07 | 通用机器人学习 | high | 精读 | — |
-| 2607.27599 | [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07 | 世界模型 | high | 精读 | — |
-| 2607.27782 | [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07 | 通用机器人学习 | high | 精读 | — |
-| 2607.28391 | [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07 | 灵巧操作 | high | 精读 | — |
-| 2607.28596 | [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07 | 灵巧操作 | high | 精读 | — |
-| 2607.28625 | [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07 | 通用机器人学习 | high | 精读 | — |
-| 2607.29172 | [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07 | 具身基础模型 | high | 精读 | — |
-| 2607.29302 | [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07 | 世界模型 | high | 精读 | — |
-| 2607.29569 | [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07 | 具身基础模型 | high | 精读 | — |
-| 2607.29613 | [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07 | 世界模型 | high | 精读 | — |
-
-<!-- 更新标记：论文证据库 最后更新 2026.07 -->
+| 2507.00416 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) | 2025-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2507.01424 | [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) | 2025-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2507.05198 | [EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling](https://arxiv.org/abs/2507.05198) | 2025-07 | 世界模型与预测控制 | high | 精读 | — |
+| 2507.06224 | [EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow](https://arxiv.org/abs/2507.06224) | 2025-07 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2507.09117 | [Towards Human-level Dexterity via Robot Learning](https://arxiv.org/abs/2507.09117) | 2025-07 | 策略学习与优化 | high | 精读 | — |
+| 2507.15493 | [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) | 2025-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2507.23523 | [H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523) | 2025-07 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2508.00795 | [Video Generators are Robot Policies](https://arxiv.org/abs/2508.00795) | 2025-08 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2508.02062 | [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | 2025-08 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2508.03645 | [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08 | 策略学习与优化 | high | 精读 | — |
+| 2508.08706 | [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706) | 2025-08 | 触觉、力觉与多模态身体感知 | high | 精读 | — |
+| 2508.09976 | [Masquerade: Learning from In-the-wild Human Videos using Data-Editing](https://arxiv.org/abs/2508.09976) | 2025-08 | 数据引擎与人类视频学习 | high | 精读 | — |
+| 2508.17600 | [GWM: Towards Scalable Gaussian World Models for Robotic Manipulation](https://arxiv.org/abs/2508.17600) | 2025-08 | 世界模型与预测控制 | high | 精读 | — |
+| 2508.21112 | [EO-1: An Open Unified Embodied Foundation Model for General Robot Control](https://arxiv.org/abs/2508.21112) | 2025-08 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2509.01819 | [ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training](https://arxiv.org/abs/2509.01819) | 2025-09 | 策略学习与优化 | high | 精读 | — |
+| 2509.05513 | [OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation](https://arxiv.org/abs/2509.05513) | 2025-09 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2509.07445 | [Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions](https://arxiv.org/abs/2509.07445) | 2025-09 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2509.18428 | [Latent Action Pretraining Through World Modeling](https://arxiv.org/abs/2509.18428) | 2025-09 | 世界模型与预测控制 | high | 精读 | — |
+| 2509.20286 | [Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video](https://arxiv.org/abs/2509.20286) | 2025-09 | 数据引擎与人类视频学习 | high | 精读 | — |
+| 2509.22643 | [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | 2025-09 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2509.24661 | [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661) | 2025-09 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2510.00406 | [VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators](https://arxiv.org/abs/2510.00406) | 2025-10 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2510.01623 | [VLA-R1: Enhancing Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2510.01623) | 2025-10 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2510.08475 | [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475) | 2025-10 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2510.10125 | [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | 2025-10 | 世界模型与预测控制 | high | 精读 | — |
+| 2510.10274 | [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274) | 2025-10 | 策略学习与优化 | high | 精读 | — |
+| 2510.18337 | [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337) | 2025-10 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2510.21571 | [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) | 2025-10 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2511.01177 | [Scaling Cross-Embodiment World Models for Dexterous Manipulation](https://arxiv.org/abs/2511.01177) | 2025-11 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2511.02504 | [Dexterous Robotic Piano Playing at Scale](https://arxiv.org/abs/2511.02504) | 2025-11 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2511.03077 | [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077) | 2025-11 | 世界模型与预测控制 | high | 精读 | — |
+| 2511.04671 | [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) | 2025-11 | 策略学习与优化 | high | 精读 | — |
+| 2511.14759 | [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759) | 2025-11 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2511.16651 | [InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](https://arxiv.org/abs/2511.16651) | 2025-11 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2511.22134 | [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134) | 2025-11 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2512.02729 | [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729) | 2025-12 | 策略学习与优化 | high | 精读 | — |
+| 2512.03044 | [Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling](https://arxiv.org/abs/2512.03044) | 2025-12 | 策略学习与优化 | high | 精读 | — |
+| 2512.08186 | [Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation](https://arxiv.org/abs/2512.08186) | 2025-12 | 分层推理、规划与记忆 | high | 精读 | — |
+| 2512.09297 | [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://arxiv.org/abs/2512.09297) | 2025-12 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2512.13030 | [Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) | 2025-12 | 世界模型与预测控制 | high | 精读 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) |
+| 2512.15840 | [Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840) | 2025-12 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2512.18477 | [STORM: Search-Guided Generative World Models for Robotic Manipulation](https://arxiv.org/abs/2512.18477) | 2025-12 | 世界模型与预测控制 | high | 精读 | — |
+| 2601.04629 | [UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation](https://arxiv.org/abs/2601.04629) | 2026-01 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2601.05230 | [Learning Latent Action World Models In The Wild](https://arxiv.org/abs/2601.05230) | 2026-01 | 世界模型与预测控制 | high | 精读 | — |
+| 2601.11404 | [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) | 2026-01 | 具身基础模型与通才策略 | high | 精读 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html) |
+| 2601.12993 | [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993) | 2026-01 | 策略学习与优化 | high | 精读 | — |
+| 2601.14133 | [TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers](https://arxiv.org/abs/2601.14133) | 2026-01 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2601.16163 | [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://arxiv.org/abs/2601.16163) | 2026-01 | 世界模型与预测控制 | high | 精读 | — |
+| 2602.00919 | [Green-VLA: Staged Vision-Language-Action Model for Generalist Robots](https://arxiv.org/abs/2602.00919) | 2026-01 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2602.12684 | [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684) | 2026-02 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2602.13977 | [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977) | 2026-02 | 世界模型与预测控制 | high | 精读 | — |
+| 2602.16710 | [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710) | 2026-02 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2602.21633 | [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633) | 2026-02 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2602.21736 | [Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](https://arxiv.org/abs/2602.21736) | 2026-02 | 世界模型与预测控制 | high | 精读 | — |
+| 2602.23648 | [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648) | 2026-02 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2602.23721 | [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721) | 2026-02 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2603.16860 | [DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models](https://arxiv.org/abs/2603.16860) | 2026-03 | 世界模型与预测控制 | high | 精读 | — |
+| 2603.17808 | [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808) | 2026-03 | 世界模型与预测控制 | high | 精读 | — |
+| 2603.19201 | [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201) | 2026-03 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2603.22263 | [DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming](https://arxiv.org/abs/2603.22263) | 2026-03 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2603.22264 | [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) | 2026-03 | 数据引擎与人类视频学习 | high | 精读 | [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) |
+| 2603.28545 | [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545) | 2026-03 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2603.29844 | [DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA](https://arxiv.org/abs/2603.29844) | 2026-03 | 世界模型与预测控制 | high | 精读 | — |
+| 2604.13015 | [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015) | 2026-04 | 人形、运动与全身控制 | high | 精读 | — |
+| 2604.15483 | [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2604.20689 | [FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689) | 2026-04 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2604.21017 | [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017) | 2026-04 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2604.21924 | [Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924) | 2026-04 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2604.24921 | [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921) | 2026-04 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2604.26848 | [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](https://arxiv.org/abs/2604.26848) | 2026-04 | 世界模型与预测控制 | high | 精读 | — |
+| 2605.27817 | [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817) | 2026-05 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2605.30226 | [BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models](https://arxiv.org/abs/2605.30226) | 2026-05 | 策略学习与优化 | high | 精读 | — |
+| 2605.30280 | [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280) | 2026-05 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2605.31286 | [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286) | 2026-05 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2606.00229 | [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229) | 2026-05 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2606.01027 | [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | 2026-05 | 世界模型与预测控制 | high | 精读 | — |
+| 2606.01241 | [OneVLA: A Unified Framework for Embodied Tasks](https://arxiv.org/abs/2606.01241) | 2026-05 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2606.27375 | [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375) | 2026-06 | 策略学习与优化 | high | 精读 | — |
+| 2606.30552 | [Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552) | 2026-06 | 分层推理、规划与记忆 | high | 精读 | — |
+| 2606.31329 | [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329) | 2026-06 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2606.31723 | [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723) | 2026-06 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2606.31909 | [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909) | 2026-06 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2606.32009 | [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009) | 2026-06 | 数据引擎与人类视频学习 | high | 精读 | — |
+| 2606.32028 | [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028) | 2026-06 | 世界模型与预测控制 | high | 精读 | — |
+| 2607.01212 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.01804 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.02604 | [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.03449 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.15330 | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.16636 | [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.22530 | [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530) | 2026-07 | 世界模型与预测控制 | high | 精读 | — |
+| 2607.24485 | [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.24744 | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | 2026-07 | 策略学习与优化 | high | 精读 | — |
+| 2607.25918 | [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918) | 2026-07 | 世界模型与预测控制 | high | 精读 | — |
+| 2607.27549 | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | 2026-07 | 策略学习与优化 | high | 精读 | — |
+| 2607.27599 | [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | 2026-07 | 世界模型与预测控制 | high | 精读 | — |
+| 2607.27782 | [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) | 2026-07 | 策略学习与优化 | high | 精读 | — |
+| 2607.28391 | [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391) | 2026-07 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2607.28596 | [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596) | 2026-07 | 灵巧、双臂与接触操作 | high | 精读 | — |
+| 2607.28625 | [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625) | 2026-07 | 数据引擎与人类视频学习 | high | 精读 | — |
+| 2607.29172 | [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172) | 2026-07 | 人形、运动与全身控制 | high | 精读 | — |
+| 2607.29302 | [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07 | 策略学习与优化 | high | 精读 | — |
+| 2607.29569 | [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2607.29613 | [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
 
 ---
 
 
 ## 检索、分类与趋势判定方法
 
-> **版本**：v2.2 · **数据截点**：2026 年 8 月 4 日（Asia/Shanghai）<br>
-> 本页描述的是可复算流程；任何依赖人工判断的步骤都会明确标注。
+> **数据截点**：2026 年 8 月 4 日（Asia/Shanghai）<br>
+> 本页描述当前可复算流程；任何依赖人工判断的步骤都会明确标注。
 
-::: tip 两层分析体系
-旧五类数据保留为稳定月度序列，用于连续的环比、同比与精读分析；新版另建 30,766 条 arXiv 母集、12,165 条发表版本和 40,605 个 canonical works 的开放主题层，用来发现旧分类容纳不了的新方向。两层不能混用分母。详见[语料扩充协议](/methods/expansion-protocol)与[覆盖审计](/analysis/corpus-expansion)。
+::: tip 统一方向体系
+月度结构、方向页和首页可视化统一使用 15 个研究方向。精读样本只补充实验与趋势证据，不再形成另一套方向统计。详见[语料扩充协议](/methods/expansion-protocol)与[覆盖审计](/analysis/corpus-expansion)。
 :::
 
 ### 时间口径
@@ -3392,25 +4322,15 @@ flowchart LR
   D --> E["结构化证据库<br/>CSV / JSON 单一来源<br/> "]
 ```
 
-宽召回优先保证“不漏掉使用新命名的工作”。v2 已完整拉取窗口内 `cs.RO` 23,336 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,430 条机器人/具身交叉记录，合并去重后形成 30,766 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,165 条版本记录、窗口内 10,404 条；母集保留窗口前的 ICRA 2024 以支持版本合并。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
+宽召回优先保证“不漏掉使用新命名的工作”。当前语料完整拉取窗口内 `cs.RO` 23,336 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,430 条机器人/具身交叉记录，合并去重后形成 30,766 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,165 条版本记录、窗口内 10,404 条；母集保留窗口前的 ICRA 2024 以支持版本合并。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
 
 104 篇高信号样本继续作为精读层，逐条核对 ID、标题、`published`（v1）、摘要、实验和开放资产。分类规则只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
 
-### 稳定序列与开放主题
+### 当前研究方向
 
-下列五类只服务历史可比的月度深度分析，不再被定义为领域的固定边界。
+当前共有 15 类：具身基础模型、推理与规划、世界模型、灵巧操作、人形与全身控制、导航与移动操作、人机交互、策略学习、数据引擎、仿真与迁移、空间感知、安全与评测、持续/部署学习、多机器人协同、具身多感官。完整边界与代表工作见[研究方向总览](/frontiers/)。
 
-| 代码 | 主方向 | 纳入重点 | 关键边界 |
-|---|---|---|---|
-| D1 | 具身基础模型 | VLA、generalist policy、多任务预训练、语言条件策略 | 必须输出或学习机器人动作 |
-| D2 | 大小脑与双系统 | planner–policy、fast–slow、VLM 与低层控制器协同 | 不要求作者使用“大小脑”名称 |
-| D3 | 灵巧操作 | 灵巧手、双臂、触觉、臂手协同、接触密集操作 | 单一简单抓取通常归 D5 |
-| D4 | 世界模型 | 动作条件预测、latent action、动力学模型、生成式仿真 | 必须服务动作、规划、控制或机器人数据生成 |
-| D5 | 通用机器人学习 | 跨任务/本体、模仿与强化学习、diffusion/flow policy、数据规模化 | 不能仅是特定任务传统控制 |
-
-一篇论文可以拥有多个 `topics`，但只有一个 `primary_topic`。全站的方向数量统计只按主方向计数，防止重复加总；跨方向分析使用多标签。
-
-v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界模型、灵巧操作、人形与全身控制、导航与移动操作、人机交互、策略学习、数据引擎、仿真与迁移、空间感知、安全与评测、持续/部署学习、多机器人协同、具身多感官。方向数可以随回归集与跨月证据调整；分类变化必须与真实趋势变化分开报告。
+一篇论文可以拥有多个关联方向，但只有一个主方向。全站的数量、占比和环比只按主方向计数，防止重复加总；桑基图使用多标签共现，明确不代表论文在方向之间迁移。
 
 ### 同行评审证据
 
@@ -3449,18 +4369,208 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 
 ### 可复算性
 
-- `config/taxonomy.json` 固化旧五类稳定序列；`config/taxonomy-v2.json` 固化开放主题、排除词与回归规则。
-- `config/source-registry.json` 固化 venue、官方容器和发现源边界。
-- `data/papers.json` 是精选月度层的数据源。
-- `data/preprints.json`、`data/publications.json`、`data/official-proceedings.json`、`data/official-programs.json` 与 `data/repositories.json` 是 v2 各证据层的数据源。
+- 分类配置固化 15 个主方向、排除词与回归规则；来源注册表固化 venue、官方容器和发现源边界。
+- `data/papers.json` 保存精选精读与人工趋势证据。
+- `data/preprints.json`、`data/publications.json`、`data/official-proceedings.json`、`data/official-programs.json` 与 `data/repositories.json` 是各证据层的数据源。
 - `data/works.json` 是跨版本去重后的 canonical work graph；发表日期绝不覆盖 arXiv `v1` 的首次公开日期。
 - `data/trends.json` 记录人工趋势判断及其论文 ID。
-- `scripts/generate-site.mjs` 与 `scripts/generate-v2-pages.mjs` 生成月度统计、母库页面、发表索引、主题页和 GitHub 页面。
-- `scripts/audit-data.mjs` 与 `scripts/audit-v2.mjs` 检查重复 ID、日期范围、官方容器对账、趋势证据、公开下载文件哈希与数字一致性。
+- 生成脚本统一派生月度统计、母库页面、发表索引、方向页、首页图表和 GitHub 页面。
+- 审计脚本检查重复 ID、日期范围、官方容器对账、趋势证据、公开下载文件哈希与数字一致性。
 
 生成页面不是数据源，不应手工修改其中的数量。修正应先进入结构化文件，再重新生成。
 
-<!-- 更新标记：检索与分类方法 最后更新 2026.08 -->
+
+---
+
+
+## 语料扩充协议
+
+> 数据截点：2026-08-04。本协议解决的不是“再补几个关键词”，而是让 arXiv、正式发表和开源生态各自拥有完整、可追溯的母集。
+
+### 一、目标与完成定义
+
+语料扩充完成必须同时满足四件事：
+
+1. arXiv 层能够证明每个月的完整页数与唯一 ID 数，而不是只展示检索命中的第一页。
+2. 正式发表层允许没有 arXiv ID 的工作存在，并把发现来源、官方录用、正式 proceedings 和期刊发表分开。
+3. GitHub 层能够回答“是否真的开放、是否持续维护、是否有独立参与”，而不只展示 stars。
+4. 分类层可复现重跑；新增方向不能被固定 schema 阻挡，也不能因改词表而改写历史事实。
+
+### 二、四层漏斗
+
+```mermaid
+flowchart LR
+  A["母集<br/>完整 cs.RO / venue container"] --> B["宽召回<br/>15 方向 + 边界词"]
+  B --> C["语义纳排<br/>included / candidate / review / excluded"]
+  C --> D["canonical work<br/>arXiv + DOI + 标题作者去重"]
+  D --> E["精读与趋势证据<br/>月度 Top / A–D 等级"]
+```
+
+| 层级 | 是否允许自动化 | 能否直接支持趋势结论 |
+|---|---:|---:|
+| 母集 | 是 | 否，只提供分母 |
+| 自动相关候选 | 是 | 否，只提供筛选队列 |
+| canonical work 与官方状态 | 自动合并 + 边界人工复核 | 可支持数量和发表覆盖 |
+| 精读证据 | 必须人工核验 | 是 |
+
+### 三、arXiv 采集
+
+#### 3.1 母集边界
+
+- 核心：2024-07-01 至 2026-08-04 的 `cs.RO` 月度全量。
+- 补充：`cs.AI`、`cs.CV`、`cs.LG` 中包含 robot、robotic、manipulation、locomotion、humanoid、grasping、embodied intelligence、VLA、teleoperation、bimanual 等动作语境的论文。
+- 月份：Atom `<published>`，即 v1 日期；修订和正式发表都不能改变首次公开月。
+
+审计时对每月 count-only 请求复算，`cs.RO` 共 23,336 条；每条母集记录都保留 arXiv categories，确保月份与分类可以复算。
+
+#### 3.2 分页与缓存
+
+- 日期范围固定使用 14 位秒级边界：`YYYYMMDD000000` 至 `YYYYMMDD235959`。
+- 每页 500 条，读取 `opensearch:totalResults` 后遍历全部 offset。
+- 每个“月份 × 查询 × offset”保存独立 XML；历史完整页冻结，当前月按 cutoff 建新快照。
+- 请求串行、间隔至少 3.1 秒；429/503、EOF、timeout 分开重试。
+- 验收要求：每月唯一 ID 数等于 API 总数；页内日期全部落在冻结区间。
+
+#### 3.3 为什么不用 Semantic Scholar 作为母集
+
+Semantic Scholar 用于补摘要、引用和外部 ID，不决定语料边界。旧脚本没有消费 bulk search 的后续 token；现存 2026 foundation 缓存就明确少了至少 206 条。OpenAlex 同样只作机构与落地页补源。
+
+### 四、正式发表采集
+
+#### 4.1 三种状态不能混用
+
+| 状态 | 严格同行评审分子 | 示例 |
+|---|---:|---|
+| `peer_reviewed_official_proceedings` | 是 | RSS/CoRL 官方完整卷 |
+| `official_publisher_page_verified` | 是 | IEEE、SAGE、Science 单篇出版社页面核验 |
+| `official_accepted_pending_proceedings` | 否 | RSS 2026 accepted list |
+| `official_program_only` | 否 | ICRA 2026 PaperCept program |
+| `publisher_url_from_registered_doi` | 否，待核验 | DBLP/Crossref 发现 DOI 后构造的出版社链接 |
+| `discovery_only` | 否 | DBLP、Crossref、OpenAlex、Semantic Scholar |
+
+#### 4.2 采集顺序
+
+1. **静态官方容器**：RSS 2024/2025、CoRL 2024/2025，先验证整卷条目数。
+2. **机器人会议母集**：ICRA、IROS 用 DBLP/DOI 做完整发现；有 IEEE API key 时回到 Xplore 批量核验。
+3. **机器人期刊母集**：RA-L、T-RO、IJRR、Science Robotics 按精确 ISSN 与日期拉取，再回出版社页面核验。
+4. **官方 program / pending**：ICRA 2026、RSS 2026 进入候选队列，但不进入严格覆盖率。
+5. **跨领域 venue**：ICLR、ICML、NeurIPS、CVPR、ICCV、ECCV 只纳入与机器人动作、执行或交互直接相关的工作。
+
+#### 4.3 当前完整容器
+
+| 容器 | 官方条目 | 验收 |
+|---|---:|---|
+| RSS 2024 | 134 | 与官方索引完全一致 |
+| RSS 2025 | 163 | 与官方索引完全一致 |
+| CoRL 2024 / PMLR v270 | 264 | 与官方卷完全一致 |
+| CoRL 2025 / PMLR v305 | 263 | 与官方卷完全一致 |
+
+这 824 条全部保留；标题初筛没有命中的论文也进入 `manual_review`，不会因旧词表缺失而丢失。
+
+### 五、GitHub 证据
+
+#### 5.1 发现入口
+
+- 论文、项目页和 README 中的 GitHub URL。
+- GitHub topic/search：robot-learning、vision-language-action、dexterous-manipulation、robotics-dataset、world model、teleoperation。
+- Awesome 列表与研究机构 organization 页面只负责发现；最终必须由 GitHub repo API 解析 canonical `owner/repo`。
+
+#### 5.2 独立采用代理
+
+IAS-GH（0–100）不使用 stars，分项为：
+
+- 近 12 个月外部 PR 作者；
+- 外部 issue 作者；
+- 贡献者广度与头部贡献集中度；
+- 近 100 个 PR 的合并数；
+- forks；
+- release 新鲜度。
+
+stars 仍展示为传播元数据。GitHub 通用 API 没有稳定的反向依赖总数，因此缺失保持 `null`，绝不用 forks 冒充 dependents。真正的研究采用还要补第三方代码使用、包依赖、独立复现或 benchmark 渗透。
+
+当月新论文发现的仓库先进入 `data/github-watchlist.json`：只刷新 canonical URL、stars/forks、license 和推送时间，状态固定为 `new_repo_pending_adoption_audit`。只有完成与旧仓相同的 issue/PR 外部作者、贡献者和依赖审计后，才能进入 IAS-GH 排名，避免新仓因 stars 或作者自身活跃被误读为独立采用。
+
+### 六、canonical work 与去重
+
+主键优先级：
+
+1. `arxiv:{id}`；
+2. `doi:{normalized-doi}`；
+3. `title:{normalized-title + first-author + year hash}`。
+
+合并优先级：
+
+1. 同 arXiv ID；
+2. 同 DOI / IEEE article number；
+3. 标准化标题完全一致；
+4. 标题相似度与作者重合只生成复核对，不自动合并。
+
+特殊规则：
+
+- RA-L 在 ICRA/IROS 展示只记一个 work；会议只写 `presented_at`。
+- Early Access 与正式卷页按 DOI 合并，保留两个日期。
+- CoRL event year、PMLR publish date 和 BibTeX year分别保存。
+- 会议扩展期刊若有实质新方法/实验，可作为 related work 分开，但不能算独立团队验证。
+
+### 七、15 个方向与多轴标签
+
+当前主方向包括：
+
+1. 具身基础模型与通才策略；
+2. 分层推理、规划与记忆；
+3. 世界模型与预测控制；
+4. 灵巧、双臂与接触操作；
+5. 人形、运动与全身控制；
+6. 导航与移动操作；
+7. 人机协作与交互学习；
+8. 策略学习与优化；
+9. 数据引擎与人类视频学习；
+10. 仿真、合成数据与 Sim-to-Real；
+11. 动作关联的空间感知与表征；
+12. 评测、安全、可靠性与故障恢复；
+13. 持续学习、部署学习与自改进；
+14. 多机器人协同与群体智能；
+15. 触觉、力觉与多模态身体感知。
+
+每篇只有一个主方向，但可以有多个 secondary topics、能力标签、基础设施标签和成熟度标签。新方向正式进入趋势主页前，至少准备 15 条正例、10 条边界例和 10 条反例，并检查跨月连续性与独立团队数。
+
+### 八、数量与质量验收
+
+#### 8.1 arXiv
+
+- 月度 `unique_arxiv_ids == totalResults`。
+- 99% 以上记录保留原始 categories。
+- 随机抽查 100 条未纳入记录，假阴性率低于 5%。
+
+#### 8.2 正式发表
+
+- 目标 venue-year/volume 100% 有 manifest 或明确 pending reason。
+- 静态官方容器条目数与官方索引完全一致。
+- 严格发表标签 100% 有官方页；作者自述 accepted 不计。
+- DOI、OpenReview forum、RA-L 转投展示的残余重复为 0。
+
+#### 8.3 GitHub
+
+- repo URL 100% 经 API 解析；
+- watchers 取 subscribers/watchers，而不是与 stars 同值的 `watchers_count`；
+- code/data/model 三种状态分开，`will release` 不计已开放；
+- 许可证缺失单独作为风险，不默认视为可用。
+
+#### 8.4 趋势
+
+- A/B 级证据门槛不因语料量增加而下降。
+- 所有百分比同时显示绝对分子与分母。
+- taxonomy 变更前后输出混淆矩阵，不能把分类迁移误判为技术升温。
+
+### 九、月度更新协议
+
+1. 冻结当月 cutoff，补齐 arXiv 页面并验证 manifest。
+2. 增量拉 venue、DOI、OpenReview 与 GitHub 快照。
+3. 运行 canonical 合并与分类回归。
+4. 先更新母集漏斗，再选 10–15 篇精读。
+5. 检查弱信号的验证路标与反证，而不是每月重写预测。
+6. 发布结构化数据、生成页面、运行链接与构建审计，最后通过 GitHub 部署。
+
 
 ---
 
@@ -3510,79 +4620,6 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 
 市场规模、公司融资、商业订单、供应链和公司级尽调不在本期范围。本报告只提供研究证据，可作为后续商业模块的技术底座。
 
-<!-- 更新标记：纳排与局限 最后更新 2026.08 -->
-
----
-
-
-## 内容与数据审校报告
-
-> **审校对象**：执行摘要、2026 年 7 月完整月、2026 年 8 月早期快照、弱信号与未来判断、GitHub 证据页<br>
-> **数据截点**：2026-08-04<br>
-> **审校依据**：结构化论文库、arXiv v1 日期、官方 proceedings / OpenReview / 期刊页面、GitHub API 元数据
-
-### 一、已直接修改的问题
-
-| 位置 | 修改前 | 修改后 | 说明 |
-|---|---|---|---|
-| 7 月时间口径 | 7 月 1–29 日临时版 | 7 月 1–31 日完整月 | 已补齐 30–31 日首次提交并重算统计 |
-| 8 月月报 | 无独立页面 | 8 月 1–4 日早期快照 | 截点内三路 arXiv 官方查询尚无 v1；不把零记录解释为降温 |
-| 月度主题结构 | 缺少完整环比列 | 同时展示绝对量、上月量、环比增量和环比百分比 | 避免只看热门主题份额 |
-| 同行评审表述 | official program / pending 可能被误读为严格锚点 | 只有正式 proceedings、期刊正式页或最终录用状态进入严格分子 | 3,161 条 program / pending 与 824 条严格记录分层展示 |
-| 未来判断文字 | “控制叠代”“来至” | “控制迭代”“来自” | 确认的中文用字错误 |
-
-### 二、无需改动的正确项
-
-| 项目 | 核查结果 |
-|---|---|
-| 月度去重 | 同一论文只计一个主方向，多标签不重复计数 |
-| 7 月精读 | 共 20 条，其中 30–31 日新增 10 条；结构化 ID 唯一 |
-| 8 月环比 | 以“—”标记不可比，没有制造 −100% |
-| GitHub | 42 个已评分仓库和 4 个新仓观察项分层；新 stars 未倒推采用分 |
-| 预测分层 | 事实、分析推断和未来判断分开，并给出升级路标与反证条件 |
-
-### 三、待确认的专有名词
-
-无。论文标题和模型名保留来源原文；TACO 标题中的 `forScalable` 是 arXiv 页面原始写法，不擅自改写。
-
-### 四、事实与数据核查
-
-#### 4.1 已验证一致的关键数据
-
-- 轻量分析库共 3,092 条，2,650 条纳入月度统计，104 条精读；其中主分析期 84 条、2026 年 7 月 20 条。
-- 旧五类口径的 7 月候选为 176 条，6 月为 358 条，环比 −182（−50.8%）；2025 年 7 月为 57 条，同比 +119（+208.8%）。
-- 高召回 arXiv 语料共 30,766 条，纳入 8,941 条；7 月纳入 506 条，6 月 735 条，环比 −229（−31.2%）。两套口径分表呈现、不混算。
-- 正式发表母语料 12,165 条，时间窗内 10,404 条、纳入 2,670 条；严格官方会议/期刊容器记录 824 条。
-- 合并后共有 40,605 个 canonical works，其中 838 个具有严格同行评审证据。
-- 7 月旧五类分布为 84 / 4 / 24 / 34 / 30，合计 176。
-
-#### 4.2 有微调但可接受的表述
-
-- “世界模型决策化”“VLA 标准侧车”“部署数据飞轮”等属于分析命名，不冒充论文原始术语。
-- A/B/C/D 表示趋势证据强度，不是论文质量、团队价值或投资优先级评分。
-- “论文报告 100K 小时”“真实机器人实验”“明确开放披露”均按原论文或项目页陈述记录，不等于第三方审计、生产部署或独立复现。
-
-#### 4.3 时效性备注
-
-- 7 月已经是完整月，但与 6 月比较仍可能受会议周期和集中提交影响；负环比不足以单独证明技术降温。
-- 8 月 1–4 日的零记录只代表本次官方 API 查询截点内尚无可归入的 v1，页面不计算环比百分比。
-- GitHub stars、forks、license 和推送时间更新至 8 月 4 日；issue/PR 独立采用分仍保留 7 月 29 日快照。
-
-### 五、人名与身份核查
-
-本轮新增页面不依赖人物身份判断；论文作者与机构字段保留结构化来源，不在趋势正文中扩写未经核验的职位。
-
-### 六、技术名词一致性
-
-- `VLA`、`world model`、`fast–slow`、`verifier`、`critic`、`latent action` 和 `embodiment adapter` 保留英文。
-- “大小脑与双系统”用于中文分类，不要求原论文采用 System 1/System 2 命名。
-- “真实机器人”只表示明确的物理机器人实验，不等于部署级成熟。
-
-### 七、审校结论
-
-未留下确认错误或待确认专名。7 月已按完整月重算，月度主题结构包含环比数据，8 月以早期快照单列；晚 7 月论文、GitHub 新仓观察项和官方发表数据均进入结构化来源。经此次审校，事实、推断和预测的边界保持清晰。
-
-<!-- 更新标记：内容审校报告 最后更新 2026.08 -->
 
 ---
 
@@ -3591,146 +4628,150 @@ v2 开放体系当前有 15 类：具身基础模型、推理与规划、世界�
 
 > 收录月度精读、趋势卡、未来判断与同行评审页实际引用的唯一工作；官方发表版本优先链接正式页面。
 
-### 具身基础模型
+### D1 · 具身基础模型与通才策略
 
-1. Michał Zawalski, William Chen, Karl Pertsch, Oier Mees, Chelsea Finn, Sergey Levine. (2024). [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html). *CoRL 2024*.
+1. Lirui Wang, Xinlei Chen, Jialiang Zhao, Kaiming He. (2024). [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html). *NeurIPS 2024*.
 2. Kevin Black, Noah Brown, Danny Driess, A. Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai, Lachy Groom, et al.. (2024). [π0: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html). *RSS 2025*.
 3. Karl Pertsch, Kyle Stachowicz, Brian Ichter, Danny Driess, Suraj Nair, Quan Vuong, Oier Mees, Chelsea Finn, et al.. (2025). [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html). *RSS 2025*.
 4. Delin Qu, Haoming Song, Qizhi Chen, Yuanqi Yao, Xinyi Ye, Yani Ding, Zhigang Wang, Jiayuan Gu, et al.. (2025). [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model](https://www.roboticsproceedings.org/rss21/p011.html). *RSS 2025*.
 5. Yuhui Chen, Shuai Tian, Shugao Liu, Yingting Zhou, Haoran Li, Dongbin Zhao. (2025). [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html). *RSS 2025*.
-6. Chuning Zhu, Raymond Yu, Siyuan Feng, B. Burchfiel, Paarth Shah, Abhishek Gupta. (2025). [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html). *RSS 2025*.
-7. Physical Intelligence, Kevin Black, Noah Brown, James Darpinian, Karan Dhabalia, Danny Driess, A. Esmail, Michael Equi, et al.. (2025). [π0.5: a Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html). *CoRL 2025*.
-8. Qingwen Bu, Yanting Yang, Jisong Cai, Shenyuan Gao, Guanghui Ren, Maoqing Yao, Ping Luo, Hongyang Li. (2025). [UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html). *RSS 2025*.
-9. Tao Lin, Gen Li, Yilei Zhong, Yanwen Zou, Yuxin Du, Jiting Liu, Encheng Gu, Bo Zhao. (2025). [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416). arXiv:2507.00416.
+6. Physical Intelligence, Kevin Black, Noah Brown, James Darpinian, Karan Dhabalia, Danny Driess, A. Esmail, Michael Equi, et al.. (2025). [π0.5: a Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html). *CoRL 2025*.
+7. Qingwen Bu, Yanting Yang, Jisong Cai, Shenyuan Gao, Guanghui Ren, Maoqing Yao, Ping Luo, Hongyang Li. (2025). [UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html). *RSS 2025*.
+8. Tao Lin, Gen Li, Yilei Zhong, Yanwen Zou, Yuxin Du, Jiting Liu, Encheng Gu, Bo Zhao. (2025). [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416). arXiv:2507.00416.
+9. Zhenyang Liu, Yongchong Gu, Sixiao Zheng, Yanwei Fu, Xiangyang Xue, Yu-Gang Jiang. (2025). [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424). arXiv:2507.01424.
 10. Chilam Cheang, Sijin Chen, Zhongren Cui, Yingdong Hu, Liqun Huang, Tao Kong, Hang Li, Yifeng Li, et al.. (2025). [GR-3 Technical Report](https://arxiv.org/abs/2507.15493). arXiv:2507.15493.
 11. Kaustubh Sridhar, Souradeep Dutta, Dinesh Jayaraman, Insup Lee. (2025). [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062). arXiv:2508.02062.
 12. Yiguo Fan, Pengxiang Ding, Shuanghao Bai, Xinyang Tong, Yuyang Zhu, Hongchao Lu, Fengqi Dai, Wei Zhao, et al.. (2025). [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html). *CoRL 2025*.
 13. Delin Qu, Haoming Song, Qizhi Chen, Zhaoqing Chen, Xianqiang Gao, Dong Wang, Xinyi Ye, Qi Lv, et al.. (2025). [EO-1: An Open Unified Embodied Foundation Model for General Robot Control](https://arxiv.org/abs/2508.21112). arXiv:2508.21112.
 14. Moritz Reuss, Hongyi Zhou, Marcel Rühle, Ömer Erdinç Yagmurlu, Fabian Otto, Rudolf Lioutikov. (2025). [FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies](https://arxiv.org/abs/2509.04996). arXiv:2509.04996.
-15. Jinliang Zheng, Jianxiong Li, Zhihao Wang, Dongxiu Liu, Xirui Kang, Yuchun Feng, Yinan Zheng, Jiayin Zou, et al.. (2025). [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274). arXiv:2510.10274.
-16. Physical Intelligence, Ali Amin, Raichelle Aniceto, Ashwin Balakrishna, Kevin Black, Ken Conley, Grace Connors, James Darpinian, et al.. (2025). [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759). arXiv:2511.14759.
-17. Zhenyang Liu, Yongchong Gu, Yikai Wang, Xiangyang Xue, Yanwei Fu. (2026). [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html). *CVPR 2026*.
-18. Hao Luo, Ye Wang, Wanpeng Zhang, Sipeng Zheng, Ziheng Xi, Chaoyi Xu, Haiweng Xu, Haoqi Yuan, et al.. (2026). [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993). arXiv:2601.12993.
-19. I. Apanasevich, M. Artemyev, R. Babakyan, P. Fedotova, D. Grankin, E. Kupryashin, A. Misailidi, D. Nerus, et al.. (2026). [Green-VLA: Staged Vision-Language-Action Model for Generalist Robots](https://arxiv.org/abs/2602.00919). arXiv:2602.00919.
-20. Tong Chen, Hang Wu, Jiasen Wang, Xiaotao Li, Lu Fang. (2026). [StreamVLA: Breaking the Reason-Act Cycle via Completion-State Gating](https://arxiv.org/abs/2602.01100). arXiv:2602.01100.
-21. Wentao Zhang, Aolan Sun, Wentao Mo, Xiaoyang Qu, Yuxin Zheng, Jianzong Wang. (2026). [From Knowing to Doing Precisely: A General Self-Correction and Termination Framework for VLA models](https://arxiv.org/abs/2602.01811). arXiv:2602.01811.
-22. Rui Cai, Jun Guo, Xinze He, Piaopiao Jin, Jie Li, Bingxuan Lin, Futeng Liu, Wei Liu, et al.. (2026). [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684). arXiv:2602.12684.
-23. Guangqi Jiang, Yutong Liang, Jianglong Ye, Jiayin Huang, Changwei Jing, Rocky Duan, Pieter Abbeel, Xiaolong Wang, et al.. (2026). [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html). *CVPR 2026*.
-24. Physical Intelligence, Bo Ai, Ali Amin, Raichelle Aniceto, Ashwin Balakrishna, Greg Balke, Kevin Black, George Bokinsky, et al.. (2026). [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483). arXiv:2604.15483.
-25. Open-H-Embodiment Consortium, :, Nigel Nelson, Juo-Tung Chen, Jesse Haworth, Xinhao Chen, Lukas Zbinden, Dianye Huang, et al.. (2026). [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017). arXiv:2604.21017.
-26. Qiuyue Wang, Mingsheng Li, Jian Guan, Jinhui Ye, Sicheng Xie, Yitao Liu, Junhao Chen, Zhixuan Liang, et al.. (2026). [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280). arXiv:2605.30280.
-27. Taiyi Su, Jian Zhu, Tianjian Wang, Youzhang He, Zitai Huang, Jianjun Zhang, Chong Ma, Hanyang Wang, et al.. (2026). [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286). arXiv:2605.31286.
-28. Lingfeng Zhang, Xiaoshuai Hao, Yingbo Tang, Lei Zhou, Shuyi Zhang, Jinkun Liu, Hongsheng Li, Chenhao Zhang, et al.. (2026). [OneVLA: A Unified Framework for Embodied Tasks](https://arxiv.org/abs/2606.01241). arXiv:2606.01241.
-29. Chenyang Ma, Yue Yang, Radu Corcodel, Siddarth Jain, Andrew Wu, Chiori Hori, Diego Romeres. (2026). [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212). arXiv:2607.01212.
-30. Shengbang Liu, Yueru Jia, Yuyang Yan, Jiaming Liu, Xinran Y. Zhang, Qiuxuan Feng, Yandong Guo, Shiji Zhou, et al.. (2026). [TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](https://arxiv.org/abs/2607.02840). arXiv:2607.02840.
-31. Xinyi Xie, Zican Hu, Zhanyun Liu, Yicheng Dong, Wenhao Wu, Zhenhong Sun, Haoran Li, Chunlin Chen, et al.. (2026). [Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models](https://arxiv.org/abs/2607.03751). arXiv:2607.03751.
-32. Xiaomi Robotics Team, Jun Guo, Piaopiao Jin, Jason Li, Peiyan Li, Yingyan Li, Futeng Liu, Wanli Peng, et al.. (2026). [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330). arXiv:2607.15330.
-33. Yuxin Chen, Hari Srikanth, Nathan Jew, Menglin Wu, Pengcheng Wang, Junli Ren, Masayoshi Tomizuka, Peng Xu, et al.. (2026). [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172). arXiv:2607.29172.
-34. Kasra Sinaei, Hung-Chieh Wu, Donald Ebeigbe. (2026). [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569). arXiv:2607.29569.
-### 大小脑与双系统
+15. Wenkai Guo, Guanxing Lu, Haoyuan Deng, Zhenyu Wu, Yansong Tang, Ziwei Wang. (2025). [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643). arXiv:2509.22643.
+16. Hengtao Li, Pengxiang Ding, Runze Suo, Yihao Wang, Zirui Ge, Dongyuan Zang, Kexian Yu, Mingyang Sun, et al.. (2025). [VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators](https://arxiv.org/abs/2510.00406). arXiv:2510.00406.
+17. Angen Ye, Zeyu Zhang, Boyuan Wang, Xiaofeng Wang, Dapeng Zhang, Zheng Zhu. (2025). [VLA-R1: Enhancing Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2510.01623). arXiv:2510.01623.
+18. Wenhui Huang, Changhe Chen, Han Qi, Chen Lv, Yilun Du, Heng Yang. (2025). [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337). arXiv:2510.18337.
+19. Qixiu Li, Yu Deng, Yaobo Liang, Lin Luo, Lei Zhou, Chengtang Yao, Lingqi Zeng, Zhiyuan Feng, et al.. (2025). [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571). arXiv:2510.21571.
+20. Physical Intelligence, Ali Amin, Raichelle Aniceto, Ashwin Balakrishna, Kevin Black, Ken Conley, Grace Connors, James Darpinian, et al.. (2025). [$π^{*}_{0.6}$: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759). arXiv:2511.14759.
+21. Yang Tian, Yuyin Yang, Yiman Xie, Zetao Cai, Xu Shi, Ning Gao, Hangxu Liu, Xuekun Jiang, et al.. (2025). [InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](https://arxiv.org/abs/2511.16651). arXiv:2511.16651.
+22. Zhen Fang, Zhuoyang Liu, Jiaming Liu, Hao Chen, Yu Zeng, Shiting Huang, Zehui Chen, Lin Chen, et al.. (2025). [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134). arXiv:2511.22134.
+23. Haowen Liu, Shaoxiong Yao, Haonan Chen, Jiawei Gao, Jiayuan Mao, Jia-Bin Huang, Yilun Du. (2025). [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html). *CVPR 2026*.
+24. Boyuan Chen, Tianyuan Zhang, Haoran Geng, Caiyi Zhang, Peihao Li, Kiwhan Song, William T. Freeman, Jitendra Malik, et al.. (2025). [Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840). arXiv:2512.15840.
+25. Huajie Tan, P. Co, Yijie Xu, Shanyu Rong, Yuheng Ji, Cheng Chi, Xiansheng Chen, Qiongyue Zhang, et al.. (2026). [Action-Sketcher: From Reasoning to Action via Visual Sketches for Long-Horizon Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html). *CVPR 2026*.
+26. Zhenyang Liu, Yongchong Gu, Yikai Wang, Xiangyang Xue, Yanwei Fu. (2026). [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html). *CVPR 2026*.
+27. Linqing Zhong, Yi Liu, Yifei Wei, Ziyu Xiong, Maoqing Yao, Si Liu, Guanghui Ren. (2026). [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html). *CVPR 2026*.
+28. Bin Yu, Shijie Lian, Xiaopeng Lin, Yuliang Wei, Zhaolong Shen, Changti Wu, Yuzhuo Miao, Xinming Wang, et al.. (2026). [TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers](https://arxiv.org/abs/2601.14133). arXiv:2601.14133.
+29. I. Apanasevich, M. Artemyev, R. Babakyan, P. Fedotova, D. Grankin, E. Kupryashin, A. Misailidi, D. Nerus, et al.. (2026). [Green-VLA: Staged Vision-Language-Action Model for Generalist Robots](https://arxiv.org/abs/2602.00919). arXiv:2602.00919.
+30. Wentao Zhang, Aolan Sun, Wentao Mo, Xiaoyang Qu, Yuxin Zheng, Jianzong Wang. (2026). [From Knowing to Doing Precisely: A General Self-Correction and Termination Framework for VLA models](https://arxiv.org/abs/2602.01811). arXiv:2602.01811.
+31. Rui Cai, Jun Guo, Xinze He, Piaopiao Jin, Jie Li, Bingxuan Lin, Futeng Liu, Wei Liu, et al.. (2026). [Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution](https://arxiv.org/abs/2602.12684). arXiv:2602.12684.
+32. Chenyv Liu, Wentao Tan, Lei Zhu, Fengling Li, Jingjing Li, Guoli Yang, Heng Tao Shen. (2026). [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633). arXiv:2602.21633.
+33. Yao Li, Peiyuan Tang, Wuyang Zhang, Chengyang Zhu, Yifan Duan, Weikai Shi, Xiaodong Zhang, Zijiang Yang, et al.. (2026). [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648). arXiv:2602.23648.
+34. Jiasong Xiao, Yutao She, Kai Li, Yuyang Sha, Ziang Cheng. (2026). [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721). arXiv:2602.23721.
+35. Guangqi Jiang, Yutong Liang, Jianglong Ye, Jiayin Huang, Changwei Jing, Rocky Duan, Pieter Abbeel, Xiaolong Wang, et al.. (2026). [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html). *CVPR 2026*.
+36. Yu Sun, Meng Cao, Yang Ping, Kaidong Zhang, Qingxuan Chen, Rongtao Xu, Liangwang Ruan, Xuecheng Chen, et al.. (2026). [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545). arXiv:2603.28545.
+37. Physical Intelligence, Bo Ai, Ali Amin, Raichelle Aniceto, Ashwin Balakrishna, Greg Balke, Kevin Black, George Bokinsky, et al.. (2026). [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483). arXiv:2604.15483.
+38. Open-H-Embodiment Consortium, :, Nigel Nelson, Juo-Tung Chen, Jesse Haworth, Xinhao Chen, Lukas Zbinden, Dianye Huang, et al.. (2026). [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017). arXiv:2604.21017.
+39. Isabella Liu, An-Chieh Cheng, Rui Yan, Geng Chen, Ri-Zhao Qiu, Xueyan Zou, Sha Yi, Hongxu Yin, et al.. (2026). [Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924). arXiv:2604.21924.
+40. Yifei Wei, Linqing Zhong, Yi Liu, Yuxiang Lu, Xindong He, Maoqing Yao, Guanghui Ren. (2026). [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921). arXiv:2604.24921.
+41. Sizhe Lester Li, Evan Kim, Xingjian Bai, Tong Zhao, Tao Pang, Max Simchowitz, Vincent Sitzmann. (2026). [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817). arXiv:2605.27817.
+42. Qiuyue Wang, Mingsheng Li, Jian Guan, Jinhui Ye, Sicheng Xie, Yitao Liu, Junhao Chen, Zhixuan Liang, et al.. (2026). [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280). arXiv:2605.30280.
+43. Taiyi Su, Jian Zhu, Tianjian Wang, Youzhang He, Zitai Huang, Jianjun Zhang, Chong Ma, Hanyang Wang, et al.. (2026). [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286). arXiv:2605.31286.
+44. Yueh-Hua Wu, Tatsuya Matsushima, Kei Ota. (2026). [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229). arXiv:2606.00229.
+45. Lingfeng Zhang, Xiaoshuai Hao, Yingbo Tang, Lei Zhou, Shuyi Zhang, Jinkun Liu, Hongsheng Li, Chenhao Zhang, et al.. (2026). [OneVLA: A Unified Framework for Embodied Tasks](https://arxiv.org/abs/2606.01241). arXiv:2606.01241.
+46. Dongyoon Hwang, Byungkun Lee, Dongjin Kim, Hyojin Jang, Hoiyeong Jin, Jueun Mun, Minho Park, Hojoon Lee, et al.. (2026). [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329). arXiv:2606.31329.
+47. Xidong Zhang, Yichi Zhang, Jiaxin Shi, Fucai Zhu, Siyu Zhu, Michael Yu Wang, Xiaojun Wu, Weihao Yuan. (2026). [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723). arXiv:2606.31723.
+48. Chenyang Ma, Yue Yang, Radu Corcodel, Siddarth Jain, Andrew Wu, Chiori Hori, Diego Romeres. (2026). [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212). arXiv:2607.01212.
+49. Yi Pan, Miao Pan, Qi Lu, Jiaming Huang, Man Zhang, Siteng Huang, Xin Li, Jie Zhang, et al.. (2026). [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804). arXiv:2607.01804.
+50. Chongkei Chang, Zhidong Deng. (2026). [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604). arXiv:2607.02604.
+51. Li Ji, Siyin Wang, Pengfang Qian, Xiaopeng Yu, Yihai Tian, Zhaoye Fei, Jingjing Gong, Xipeng Qiu. (2026). [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449). arXiv:2607.03449.
+52. Xinyi Xie, Zican Hu, Zhanyun Liu, Yicheng Dong, Wenhao Wu, Zhenhong Sun, Haoran Li, Chunlin Chen, et al.. (2026). [Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models](https://arxiv.org/abs/2607.03751). arXiv:2607.03751.
+53. Xiaomi Robotics Team, Jun Guo, Piaopiao Jin, Jason Li, Peiyan Li, Yingyan Li, Futeng Liu, Wanli Peng, et al.. (2026). [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330). arXiv:2607.15330.
+54. Yang Liu, Weixing Chen, Xinshuai Song, Tao Pu, Siwen Mo, Yongjie Bai, Zihao Chen, Qianran Sun, et al.. (2026). [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636). arXiv:2607.16636.
+55. Ning Cheng, Jinan Xu, Wanlin Li, Yangzhi Chen, Jing Gao, Yiqun Wang, Kelan Peng, Wenjuan Han. (2026). [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485). arXiv:2607.24485.
+56. Kasra Sinaei, Hung-Chieh Wu, Donald Ebeigbe. (2026). [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569). arXiv:2607.29569.
+57. Senyu Fei, Xiaopeng Yu, Siyin Wang, Xianzhong Zhao, Jingjing Gong, Xipeng Qiu. (2026). [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613). arXiv:2607.29613.
+### D2 · 分层推理、规划与记忆
 
-1. Zhenyang Liu, Yongchong Gu, Sixiao Zheng, Yanwei Fu, Xiangyang Xue, Yu-Gang Jiang. (2025). [TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424). arXiv:2507.01424.
-2. Wenkai Guo, Guanxing Lu, Haoyuan Deng, Zhenyu Wu, Yansong Tang, Ziwei Wang. (2025). [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643). arXiv:2509.22643.
-3. Angen Ye, Zeyu Zhang, Boyuan Wang, Xiaofeng Wang, Dapeng Zhang, Zheng Zhu. (2025). [VLA-R1: Enhancing Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2510.01623). arXiv:2510.01623.
-4. Wenhui Huang, Changhe Chen, Han Qi, Chen Lv, Yilun Du, Heng Yang. (2025). [MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning](https://arxiv.org/abs/2510.18337). arXiv:2510.18337.
-5. Zhen Fang, Zhuoyang Liu, Jiaming Liu, Hao Chen, Yu Zeng, Shiting Huang, Zehui Chen, Lin Chen, et al.. (2025). [DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action](https://arxiv.org/abs/2511.22134). arXiv:2511.22134.
-6. Yueru Jia, Jiaming Liu, Shengbang Liu, Rui Zhou, Wanhe Yu, Yuyang Yan, Xiaowei Chi, Yandong Guo, et al.. (2025). [Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling](https://arxiv.org/abs/2512.03044). arXiv:2512.03044.
-7. Meng Wei, Chenyang Wan, Jiaqi Peng, Xiqian Yu, Yuqiang Yang, Delin Feng, Wenzhe Cai, Chenming Zhu, et al.. (2025). [Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation](https://arxiv.org/abs/2512.08186). arXiv:2512.08186.
-8. Linqing Zhong, Yi Liu, Yifei Wei, Ziyu Xiong, Maoqing Yao, Si Liu, Guanghui Ren. (2026). [ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html). *CVPR 2026*.
-9. Bin Yu, Shijie Lian, Xiaopeng Lin, Yuliang Wei, Zhaolong Shen, Changti Wu, Yuzhuo Miao, Xinming Wang, et al.. (2026). [TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers](https://arxiv.org/abs/2601.14133). arXiv:2601.14133.
-10. Yao Li, Peiyuan Tang, Wuyang Zhang, Chengyang Zhu, Yifan Duan, Weikai Shi, Xiaodong Zhang, Zijiang Yang, et al.. (2026). [FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2602.23648). arXiv:2602.23648.
-11. Emily Yue-Ting Jia, Weiduo Yuan, Tianheng Shi, Vitor Guizilini, Jiageng Mao, Yue Wang. (2026). [DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models](https://arxiv.org/abs/2603.16860). arXiv:2603.16860.
-12. Yi Chen, Yuying Ge, Hui Zhou, Mingyu Ding, Yixiao Ge, Xihui Liu. (2026). [DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA](https://arxiv.org/abs/2603.29844). arXiv:2603.29844.
-13. Isabella Liu, An-Chieh Cheng, Rui Yan, Geng Chen, Ri-Zhao Qiu, Xueyan Zou, Sha Yi, Hongxu Yin, et al.. (2026). [Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924). arXiv:2604.21924.
-14. Yifei Wei, Linqing Zhong, Yi Liu, Yuxiang Lu, Xindong He, Maoqing Yao, Guanghui Ren. (2026). [Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](https://arxiv.org/abs/2604.24921). arXiv:2604.24921.
-15. Yueh-Hua Wu, Tatsuya Matsushima, Kei Ota. (2026). [Continuous Reasoning for Vision-Language-Action](https://arxiv.org/abs/2606.00229). arXiv:2606.00229.
-16. Haoyang Li, Guanlin Li, Youhe Feng, Chen Zhao, Zhuoran Wang, Yang Li, Qizhe Wei, Shifeng Bao, et al.. (2026). [Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552). arXiv:2606.30552.
-17. Dongyoon Hwang, Byungkun Lee, Dongjin Kim, Hyojin Jang, Hoiyeong Jin, Jueun Mun, Minho Park, Hojoon Lee, et al.. (2026). [3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance](https://arxiv.org/abs/2606.31329). arXiv:2606.31329.
-18. Yi Pan, Miao Pan, Qi Lu, Jiaming Huang, Man Zhang, Siteng Huang, Xin Li, Jie Zhang, et al.. (2026). [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804). arXiv:2607.01804.
-19. Li Ji, Siyin Wang, Pengfang Qian, Xiaopeng Yu, Yihai Tian, Zhaoye Fei, Jingjing Gong, Xipeng Qiu. (2026). [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449). arXiv:2607.03449.
-20. Yang Liu, Weixing Chen, Xinshuai Song, Tao Pu, Siwen Mo, Yongjie Bai, Zihao Chen, Qianran Sun, et al.. (2026). [PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution](https://arxiv.org/abs/2607.16636). arXiv:2607.16636.
-### 灵巧操作
+1. Michał Zawalski, William Chen, Karl Pertsch, Oier Mees, Chelsea Finn, Sergey Levine. (2024). [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html). *CoRL 2024*.
+2. Meng Wei, Chenyang Wan, Jiaqi Peng, Xiqian Yu, Yuqiang Yang, Delin Feng, Wenzhe Cai, Chenming Zhu, et al.. (2025). [Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation](https://arxiv.org/abs/2512.08186). arXiv:2512.08186.
+3. Tong Chen, Hang Wu, Jiasen Wang, Xiaotao Li, Lu Fang. (2026). [StreamVLA: Breaking the Reason-Act Cycle via Completion-State Gating](https://arxiv.org/abs/2602.01100). arXiv:2602.01100.
+4. Haoyang Li, Guanlin Li, Youhe Feng, Chen Zhao, Zhuoran Wang, Yang Li, Qizhe Wei, Shifeng Bao, et al.. (2026). [Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision](https://arxiv.org/abs/2606.30552). arXiv:2606.30552.
+### D3 · 世界模型与预测控制
 
-1. Han Xue, Jieji Ren, Wendi Chen, Gu Zhang, Yuan Fang, Guoying Gu, Huazhe Xu, Cewu Lu. (2025). [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html). *RSS 2025*.
-2. Mengda Xu, H. Zhang, Yifan Hou, Zhenjia Xu, L. Fan, Manuela Veloso, Shuran Song. (2025). [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html). *CoRL 2025*.
-3. Gagan Khandate. (2025). [Towards Human-level Dexterity via Robot Learning](https://arxiv.org/abs/2507.09117). arXiv:2507.09117.
-4. Zhengxue Cheng, Yiqian Zhang, Anni Tang, Keyu Wang, Wenkang Zhang, Haoyu Li, Hengdi Zhang, Li Song. (2025). [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706). arXiv:2508.08706.
-5. Harrison Field, Max Yang, Yijiong Lin, Efi Psomopoulou, David Barton, Nathan F. Lepora. (2025). [Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions](https://arxiv.org/abs/2509.07445). arXiv:2509.07445.
-6. Zhiyuan Wu, Rolandos Alexandros Potamias, Xuyang Zhang, Zhongqun Zhang, Jiankang Deng, Shan Luo. (2025). [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661). arXiv:2509.24661.
-7. Jhen Hsieh, Kuan-Hsun Tu, Kuo-Han Hung, Tsung-Wei Ke. (2025). [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475). arXiv:2510.08475.
-8. Le Chen, Yi Zhao, Jan Schneider, Quankai Gao, Simon Guist, Cheng Qian, Juho Kannala, Bernhard Schölkopf, et al.. (2025). [Dexterous Robotic Piano Playing at Scale](https://arxiv.org/abs/2511.02504). arXiv:2511.02504.
-9. Huayi Zhou, Kui Jia. (2025). [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://arxiv.org/abs/2512.09297). arXiv:2512.09297.
-10. Zhongxuan Li, Zeliang Guo, Jun Hu, David Navarro-Alarcon, Jia Pan, Hongmin Wu, Peng Zhou. (2026). [UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation](https://arxiv.org/abs/2601.04629). arXiv:2601.04629.
-11. Hung-Chieh Fang, Amber Xie, Jennifer Grannen, Kenneth Llontop, Dorsa Sadigh. (2026). [DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming](https://arxiv.org/abs/2603.22263). arXiv:2603.22263.
-12. Gu Zhang, Qicheng Xu, Haozhe Zhang, Jianhan Ma, Long He, Yiming Bao, Zeyu Ping, Zhecheng Yuan, et al.. (2026). [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html). *CVPR 2026*.
-13. Yaru Niu, Zhenlong Fang, Binghong Chen, Shuai Zhou, Revanth Krishna Senthilkumaran, Hao Zhang, Bingqing Chen, Chen Qiu, et al.. (2026). [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015). arXiv:2604.13015.
-14. Zhixuan Xu, Yichen Li, Xuanye Wu, Tianyu Qiu, Lin Shao. (2026). [FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689). arXiv:2604.20689.
-15. Zhongxi Chen, Yifan Han, Yanming Shao, Huanming Liu, Congsheng Xu, Xiaoyu Chen, Yao Mu, Wenzhao Lian. (2026). [BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models](https://arxiv.org/abs/2605.30226). arXiv:2605.30226.
-16. Xidong Zhang, Yichi Zhang, Jiaxin Shi, Fucai Zhu, Siyu Zhu, Michael Yu Wang, Xiaojun Wu, Weihao Yuan. (2026). [UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models](https://arxiv.org/abs/2606.31723). arXiv:2606.31723.
-17. Bowen Jiang, William Painter Reger, Roberto Martin-Martin. (2026). [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909). arXiv:2606.31909.
-18. Ning Cheng, Jinan Xu, Wanlin Li, Yangzhi Chen, Jing Gao, Yiqun Wang, Kelan Peng, Wenjuan Han. (2026). [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](https://arxiv.org/abs/2607.24485). arXiv:2607.24485.
-19. Lei Jin, Yiding Ma, Xin Zhang, Chen Gao, Wei Wu, Yong Li. (2026). [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391). arXiv:2607.28391.
-20. Lifeng Zhuo, Wendi Chen, Han Xue, Shirun Tang, Jun Lv, Cewu Lu, Chuan Wen. (2026). [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596). arXiv:2607.28596.
-### 世界模型
-
-1. Yuhang Huang, Jiazhao Zhang, Shilong Zou, Xinwang Liu, Ruizhen Hu, Kai Xu. (2025). [LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html). *CoRL 2025*.
-2. Suning Huang, Qianzhong Chen, Xiaohan Zhang, Jiankai Sun, Mac Schwager. (2025). [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html). *CoRL 2025*.
-3. Boyuan Wang, Xinpan Meng, Xiaofeng Wang, Zheng Zhu, Angen Ye, Yang Wang, Zhiqin Yang, Chaojun Ni, et al.. (2025). [EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling](https://arxiv.org/abs/2507.05198). arXiv:2507.05198.
-4. Guanxing Lu, Baoxiong Jia, Puhao Li, Yixin Chen, Ziwei Wang, Yansong Tang, Siyuan Huang. (2025). [GWM: Towards Scalable Gaussian World Models for Robotic Manipulation](https://arxiv.org/abs/2508.17600). arXiv:2508.17600.
-5. Bahey Tharwat, Yara Nasser, Ali Abouzeid, Ian Reid. (2025). [Latent Action Pretraining Through World Modeling](https://arxiv.org/abs/2509.18428). arXiv:2509.18428.
-6. Hengtao Li, Pengxiang Ding, Runze Suo, Yihao Wang, Zirui Ge, Dongyuan Zang, Kexian Yu, Mingyang Sun, et al.. (2025). [VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators](https://arxiv.org/abs/2510.00406). arXiv:2510.00406.
+1. Chuning Zhu, Raymond Yu, Siyuan Feng, B. Burchfiel, Paarth Shah, Abhishek Gupta. (2025). [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html). *RSS 2025*.
+2. Yuhang Huang, Jiazhao Zhang, Shilong Zou, Xinwang Liu, Ruizhen Hu, Kai Xu. (2025). [LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html). *CoRL 2025*.
+3. Suning Huang, Qianzhong Chen, Xiaohan Zhang, Jiankai Sun, Mac Schwager. (2025). [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html). *CoRL 2025*.
+4. Boyuan Wang, Xinpan Meng, Xiaofeng Wang, Zheng Zhu, Angen Ye, Yang Wang, Zhiqin Yang, Chaojun Ni, et al.. (2025). [EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling](https://arxiv.org/abs/2507.05198). arXiv:2507.05198.
+5. Guanxing Lu, Baoxiong Jia, Puhao Li, Yixin Chen, Ziwei Wang, Yansong Tang, Siyuan Huang. (2025). [GWM: Towards Scalable Gaussian World Models for Robotic Manipulation](https://arxiv.org/abs/2508.17600). arXiv:2508.17600.
+6. Bahey Tharwat, Yara Nasser, Ali Abouzeid, Ian Reid. (2025). [Latent Action Pretraining Through World Modeling](https://arxiv.org/abs/2509.18428). arXiv:2509.18428.
 7. Yanjiang Guo, Lucy Xiaoyang Shi, Jianyu Chen, Chelsea Finn. (2025). [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125). arXiv:2510.10125.
-8. Zihao He, Bo Ai, Tongzhou Mu, Yulin Liu, Weikang Wan, Jiawei Fu, Yilun Du, Henrik I. Christensen, et al.. (2025). [Scaling Cross-Embodiment World Models for Dexterous Manipulation](https://arxiv.org/abs/2511.01177). arXiv:2511.01177.
-9. R. Khorrambakht, Joaquim Ortiz-Haro, Joseph Amigo, Omar Mostafa, Daniel Dugas, Franziska Meier, Ludovic Righetti. (2025). [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077). arXiv:2511.03077.
-10. Haowen Liu, Shaoxiong Yao, Haonan Chen, Jiawei Gao, Jiayuan Mao, Jia-Bin Huang, Yilun Du. (2025). [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html). *CVPR 2026*.
-11. Hongzhe Bi, Hengkai Tan, Shenghao Xie, Zeyuan Wang, Shuhe Huang, Haitian Liu, Ruowen Zhao, Yao Feng, et al.. (2025). [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html). *CVPR 2026*.
-12. Boyuan Chen, Tianyuan Zhang, Haoran Geng, Caiyi Zhang, Peihao Li, Kiwhan Song, William T. Freeman, Jitendra Malik, et al.. (2025). [Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840). arXiv:2512.15840.
-13. Wenjun Lin, Jensen Zhang, Kaitong Cai, Keze Wang. (2025). [STORM: Search-Guided Generative World Models for Robotic Manipulation](https://arxiv.org/abs/2512.18477). arXiv:2512.18477.
-14. Quentin Garrido, Tushar Nagarajan, Basile Terver, Nicolas Ballas, Yann LeCun, Michael Rabbat. (2026). [Learning Latent Action World Models In The Wild](https://arxiv.org/abs/2601.05230). arXiv:2601.05230.
-15. Moo Jin Kim, Yihuai Gao, Tsung-Yi Lin, Yen-Chen Lin, Yunhao Ge, Grace Lam, Percy Liang, Shuran Song, et al.. (2026). [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://arxiv.org/abs/2601.16163). arXiv:2601.16163.
-16. Zhennan Jiang, Shangqing Zhou, Yutong Jiang, Zefang Huang, Mingjie Wei, Yuhui Chen, Tianxing Zhou, Zhen Guo, et al.. (2026). [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977). arXiv:2602.13977.
-17. Chenyv Liu, Wentao Tan, Lei Zhu, Fengling Li, Jingjing Li, Guoli Yang, Heng Tao Shen. (2026). [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633). arXiv:2602.21633.
-18. Jiasong Xiao, Yutao She, Kai Li, Yuyang Sha, Ziang Cheng. (2026). [StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation](https://arxiv.org/abs/2602.23721). arXiv:2602.23721.
-19. Ruixiang Wang, Qingming Liu, Yueci Deng, Guiliang Liu, Zhen Liu, Kui Jia. (2026). [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808). arXiv:2603.17808.
-20. Yuhang Zheng, Songen Gu, Weize Li, Yupeng Zheng, Yujie Zang, Shuai Tian, Xiang Li, Ce Hao, et al.. (2026). [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201). arXiv:2603.19201.
-21. Yuxuan Tian, Yurun Jin, Bin Yu, Yukun Shi, Hao Wu, Chi Harold Liu, Kai Chen, Cong Huang. (2026). [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](https://arxiv.org/abs/2604.26848). arXiv:2604.26848.
-22. Sizhe Lester Li, Evan Kim, Xingjian Bai, Tong Zhao, Tao Pang, Max Simchowitz, Vincent Sitzmann. (2026). [Turning Video Models into Generalist Robot Policies](https://arxiv.org/abs/2605.27817). arXiv:2605.27817.
-23. Pengfei Zhou, Shengcong Chen, Di Chen, Jiaxu Wang, Rongjun Jin, Bingwen Zhu, Yike Pan, Songen Gu, et al.. (2026). [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027). arXiv:2606.01027.
-24. Ziyu Shan, Zhenyu Wu, Xiaofeng Wang, Zheng Zhu, Ziwei Wang. (2026). [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028). arXiv:2606.32028.
-25. Chongkei Chang, Zhidong Deng. (2026). [DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation](https://arxiv.org/abs/2607.02604). arXiv:2607.02604.
-26. Yunao Huang, Shiyu Sang, Haotao Lu, Suting Ni, Shijie Wu, Ziyang Guo, Ye Shi, Jingya Wang. (2026). [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530). arXiv:2607.22530.
-27. Haoyuan Ji, Lingxiang Fan, Shang Su, Yinqiao Lu, Mengkai Shi, Jun Gao, Shuo Feng. (2026). [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918). arXiv:2607.25918.
-28. Xiangcheng Zhang, Yilun Du. (2026). [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599). arXiv:2607.27599.
-29. BWM Team. (2026). [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302). arXiv:2607.29302.
-30. Senyu Fei, Xiaopeng Yu, Siyin Wang, Xianzhong Zhao, Jingjing Gong, Xipeng Qiu. (2026). [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613). arXiv:2607.29613.
-### 通用机器人学习
+8. R. Khorrambakht, Joaquim Ortiz-Haro, Joseph Amigo, Omar Mostafa, Daniel Dugas, Franziska Meier, Ludovic Righetti. (2025). [WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models](https://arxiv.org/abs/2511.03077). arXiv:2511.03077.
+9. Hongzhe Bi, Hengkai Tan, Shenghao Xie, Zeyuan Wang, Shuhe Huang, Haitian Liu, Ruowen Zhao, Yao Feng, et al.. (2025). [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html). *CVPR 2026*.
+10. Wenjun Lin, Jensen Zhang, Kaitong Cai, Keze Wang. (2025). [STORM: Search-Guided Generative World Models for Robotic Manipulation](https://arxiv.org/abs/2512.18477). arXiv:2512.18477.
+11. Wenlong Huang, Yu-Wei Chao, A. Mousavian, Ming-Yu Liu, Dieter Fox, Kaichun Mo, Fei-Fei Li. (2026). [PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html). *CVPR 2026*.
+12. Quentin Garrido, Tushar Nagarajan, Basile Terver, Nicolas Ballas, Yann LeCun, Michael Rabbat. (2026). [Learning Latent Action World Models In The Wild](https://arxiv.org/abs/2601.05230). arXiv:2601.05230.
+13. Moo Jin Kim, Yihuai Gao, Tsung-Yi Lin, Yen-Chen Lin, Yunhao Ge, Grace Lam, Percy Liang, Shuran Song, et al.. (2026). [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://arxiv.org/abs/2601.16163). arXiv:2601.16163.
+14. Ansh Kumar Sharma, Yixiang Sun, Ning Lu, Yunzhe Zhang, Jiarao Liu, Sherry Yang. (2026). [World-Gymnast: Training Robots with Reinforcement Learning in a World Model](https://arxiv.org/abs/2602.02454). arXiv:2602.02454.
+15. Zhennan Jiang, Shangqing Zhou, Yutong Jiang, Zefang Huang, Mingjie Wei, Yuhui Chen, Tianxing Zhou, Zhen Guo, et al.. (2026). [WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977). arXiv:2602.13977.
+16. Hao Luo, Ye Wang, Wanpeng Zhang, Haoqi Yuan, Yicheng Feng, Haiweng Xu, Sipeng Zheng, Zongqing Lu. (2026). [Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](https://arxiv.org/abs/2602.21736). arXiv:2602.21736.
+17. Emily Yue-Ting Jia, Weiduo Yuan, Tianheng Shi, Vitor Guizilini, Jiageng Mao, Yue Wang. (2026). [DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models](https://arxiv.org/abs/2603.16860). arXiv:2603.16860.
+18. Ruixiang Wang, Qingming Liu, Yueci Deng, Guiliang Liu, Zhen Liu, Kui Jia. (2026). [EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards](https://arxiv.org/abs/2603.17808). arXiv:2603.17808.
+19. Yi Chen, Yuying Ge, Hui Zhou, Mingyu Ding, Yixiao Ge, Xihui Liu. (2026). [DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA](https://arxiv.org/abs/2603.29844). arXiv:2603.29844.
+20. Yuxuan Tian, Yurun Jin, Bin Yu, Yukun Shi, Hao Wu, Chi Harold Liu, Kai Chen, Cong Huang. (2026). [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](https://arxiv.org/abs/2604.26848). arXiv:2604.26848.
+21. Pengfei Zhou, Shengcong Chen, Di Chen, Jiaxu Wang, Rongjun Jin, Bingwen Zhu, Yike Pan, Songen Gu, et al.. (2026). [$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027). arXiv:2606.01027.
+22. Ziyu Shan, Zhenyu Wu, Xiaofeng Wang, Zheng Zhu, Ziwei Wang. (2026). [DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation](https://arxiv.org/abs/2606.32028). arXiv:2606.32028.
+23. Shengbang Liu, Yueru Jia, Yuyang Yan, Jiaming Liu, Xinran Y. Zhang, Qiuxuan Feng, Yandong Guo, Shiji Zhou, et al.. (2026). [TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](https://arxiv.org/abs/2607.02840). arXiv:2607.02840.
+24. Yunao Huang, Shiyu Sang, Haotao Lu, Suting Ni, Shijie Wu, Ziyang Guo, Ye Shi, Jingya Wang. (2026). [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2607.22530). arXiv:2607.22530.
+25. Haoyuan Ji, Lingxiang Fan, Shang Su, Yinqiao Lu, Mengkai Shi, Jun Gao, Shuo Feng. (2026). [DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models](https://arxiv.org/abs/2607.25918). arXiv:2607.25918.
+26. Xiangcheng Zhang, Yilun Du. (2026). [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599). arXiv:2607.27599.
+### D4 · 灵巧、双臂与接触操作
 
-1. Lirui Wang, Xinlei Chen, Jialiang Zhao, Kaiming He. (2024). [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html). *NeurIPS 2024*.
+1. Mengda Xu, H. Zhang, Yifan Hou, Zhenjia Xu, L. Fan, Manuela Veloso, Shuran Song. (2025). [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html). *CoRL 2025*.
 2. Yixiang Chen, Peiyan Li, Yan Huang, Jiabing Yang, Kehan Chen, Liang Wang. (2025). [EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow](https://arxiv.org/abs/2507.06224). arXiv:2507.06224.
 3. Hongzhe Bi, Lingxuan Wu, Tianwei Lin, Hengkai Tan, Zhizhong Su, Hang Su, Jun Zhu. (2025). [H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523). arXiv:2507.23523.
 4. Junbang Liang, Pavel Tokmakov, Ruoshi Liu, Sruthi Sudhakar, Paarth Shah, Rares Ambrus, Carl Vondrick. (2025). [Video Generators are Robot Policies](https://arxiv.org/abs/2508.00795). arXiv:2508.00795.
-5. Akshay L Chandra, Iman Nematollahi, Chenguang Huang, Tim Welschehold, Wolfram Burgard, Abhinav Valada. (2025). [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645). arXiv:2508.03645.
-6. Marion Lepert, Jiaying Fang, Jeannette Bohg. (2025). [Masquerade: Learning from In-the-wild Human Videos using Data-Editing](https://arxiv.org/abs/2508.09976). arXiv:2508.09976.
-7. Ge Yan, Jiyue Zhu, Yuquan Deng, Shiqi Yang, Ri-Zhao Qiu, Xuxin Cheng, Marius Memmel, Ranjay Krishna, et al.. (2025). [ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training](https://arxiv.org/abs/2509.01819). arXiv:2509.01819.
-8. Ahad Jawaid, Yu Xiang. (2025). [OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation](https://arxiv.org/abs/2509.05513). arXiv:2509.05513.
-9. Georgios Tziafas, Jiayun Zhang, Hamidreza Kasaei. (2025). [Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video](https://arxiv.org/abs/2509.20286). arXiv:2509.20286.
-10. Qixiu Li, Yu Deng, Yaobo Liang, Lin Luo, Lei Zhou, Chengtang Yao, Lingqi Zeng, Zhiyuan Feng, et al.. (2025). [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571). arXiv:2510.21571.
-11. Maximus A. Pace, Prithwish Dan, Chuanruo Ning, Atiksh Bhardwaj, Audrey Du, Edward W. Duan, Wei-Chiu Ma, Kushal Kedia. (2025). [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671). arXiv:2511.04671.
-12. Yang Tian, Yuyin Yang, Yiman Xie, Zetao Cai, Xu Shi, Ning Gao, Hangxu Liu, Xuekun Jiang, et al.. (2025). [InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](https://arxiv.org/abs/2511.16651). arXiv:2511.16651.
-13. Yuhong Zhang, Zihan Gao, Shengpeng Li, Ling-Hao Chen, Kaisheng Liu, Runqing Cheng, Xiao Lin, Junjia Liu, et al.. (2025). [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729). arXiv:2512.02729.
-14. Huajie Tan, P. Co, Yijie Xu, Shanyu Rong, Yuheng Ji, Cheng Chi, Xiansheng Chen, Qiongyue Zhang, et al.. (2026). [Action-Sketcher: From Reasoning to Action via Visual Sketches for Long-Horizon Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html). *CVPR 2026*.
-15. Wenlong Huang, Yu-Wei Chao, A. Mousavian, Ming-Yu Liu, Dieter Fox, Kaichun Mo, Fei-Fei Li. (2026). [PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html). *CVPR 2026*.
-16. Ansh Kumar Sharma, Yixiang Sun, Ning Lu, Yunzhe Zhang, Jiarao Liu, Sherry Yang. (2026). [World-Gymnast: Training Robots with Reinforcement Learning in a World Model](https://arxiv.org/abs/2602.02454). arXiv:2602.02454.
-17. Ruijie Zheng, Dantong Niu, Yuqi Xie, Jing Wang, Mengda Xu, Yunfan Jiang, Fernando Castañeda, Fengyuan Hu, et al.. (2026). [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710). arXiv:2602.16710.
-18. Hao Luo, Ye Wang, Wanpeng Zhang, Haoqi Yuan, Yicheng Feng, Haiweng Xu, Sipeng Zheng, Zongqing Lu. (2026). [Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](https://arxiv.org/abs/2602.21736). arXiv:2602.21736.
-19. Yu Sun, Meng Cao, Yang Ping, Kaidong Zhang, Qingxuan Chen, Rongtao Xu, Liangwang Ruan, Xuecheng Chen, et al.. (2026). [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545). arXiv:2603.28545.
-20. Arthur Allshire, Himanshu Gaurav Singh, Ritvik Singh, Adam Rashid, Hongsuk Choi, David McAllister, Justin Yu, Yiyuan Chen, et al.. (2026). [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375). arXiv:2606.27375.
-21. Xiaopeng Lin, Ruoqi Yang, Shijie Lian, Zhaolong Shen, Bin Yu, Changti Wu, Haibao Liu, Yuxiang Zhang, et al.. (2026). [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009). arXiv:2606.32009.
-22. Yifan Ye, Yankai Fu, Yaoxu Lv, Bohan Hou, Jun Cen, Lingdong Kong, Duo Zheng, Tianxing Chen, et al.. (2026). [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744). arXiv:2607.24744.
-23. Ajay Sridhar, Jensen Gao, Jonathan Yang, Jean Mercat, Suneel Belkhale, Dorsa Sadigh. (2026). [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549). arXiv:2607.27549.
-24. Zhengyang Yan, Junhao Li, Fangqi Zhu, Zijun Wang, Quanxin Shou, Yikun Miao, Xiaoyi Pang, Zicong Hong, et al.. (2026). [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782). arXiv:2607.27782.
-25. Yukang Cao, Haozhe Xie, Beichen Wen, Runmao Yao, Yinghao Liu, Yue Huang, Zhichao Liao, Yunxiang Wang, et al.. (2026). [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625). arXiv:2607.28625.
+5. Ahad Jawaid, Yu Xiang. (2025). [OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation](https://arxiv.org/abs/2509.05513). arXiv:2509.05513.
+6. Harrison Field, Max Yang, Yijiong Lin, Efi Psomopoulou, David Barton, Nathan F. Lepora. (2025). [Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions](https://arxiv.org/abs/2509.07445). arXiv:2509.07445.
+7. Zhiyuan Wu, Rolandos Alexandros Potamias, Xuyang Zhang, Zhongqun Zhang, Jiankang Deng, Shan Luo. (2025). [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661). arXiv:2509.24661.
+8. Jhen Hsieh, Kuan-Hsun Tu, Kuo-Han Hung, Tsung-Wei Ke. (2025). [DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos](https://arxiv.org/abs/2510.08475). arXiv:2510.08475.
+9. Zihao He, Bo Ai, Tongzhou Mu, Yulin Liu, Weikang Wan, Jiawei Fu, Yilun Du, Henrik I. Christensen, et al.. (2025). [Scaling Cross-Embodiment World Models for Dexterous Manipulation](https://arxiv.org/abs/2511.01177). arXiv:2511.01177.
+10. Le Chen, Yi Zhao, Jan Schneider, Quankai Gao, Simon Guist, Cheng Qian, Juho Kannala, Bernhard Schölkopf, et al.. (2025). [Dexterous Robotic Piano Playing at Scale](https://arxiv.org/abs/2511.02504). arXiv:2511.02504.
+11. Huayi Zhou, Kui Jia. (2025). [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://arxiv.org/abs/2512.09297). arXiv:2512.09297.
+12. Zhongxuan Li, Zeliang Guo, Jun Hu, David Navarro-Alarcon, Jia Pan, Hongmin Wu, Peng Zhou. (2026). [UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation](https://arxiv.org/abs/2601.04629). arXiv:2601.04629.
+13. Ruijie Zheng, Dantong Niu, Yuqi Xie, Jing Wang, Mengda Xu, Yunfan Jiang, Fernando Castañeda, Fengyuan Hu, et al.. (2026). [EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710). arXiv:2602.16710.
+14. Yuhang Zheng, Songen Gu, Weize Li, Yupeng Zheng, Yujie Zang, Shuai Tian, Xiang Li, Ce Hao, et al.. (2026). [OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2603.19201). arXiv:2603.19201.
+15. Hung-Chieh Fang, Amber Xie, Jennifer Grannen, Kenneth Llontop, Dorsa Sadigh. (2026). [DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming](https://arxiv.org/abs/2603.22263). arXiv:2603.22263.
+16. Zhixuan Xu, Yichen Li, Xuanye Wu, Tianyu Qiu, Lin Shao. (2026). [FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689). arXiv:2604.20689.
+17. Bowen Jiang, William Painter Reger, Roberto Martin-Martin. (2026). [CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations](https://arxiv.org/abs/2606.31909). arXiv:2606.31909.
+18. Lei Jin, Yiding Ma, Xin Zhang, Chen Gao, Wei Wu, Yong Li. (2026). [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](https://arxiv.org/abs/2607.28391). arXiv:2607.28391.
+19. Lifeng Zhuo, Wendi Chen, Han Xue, Shirun Tang, Jun Lv, Cewu Lu, Chuan Wen. (2026). [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2607.28596). arXiv:2607.28596.
+### D5 · 人形、运动与全身控制
 
-<!-- 更新标记：参考文献 最后更新 2026.07 -->
+1. Yaru Niu, Zhenlong Fang, Binghong Chen, Shuai Zhou, Revanth Krishna Senthilkumaran, Hao Zhang, Bingqing Chen, Chen Qiu, et al.. (2026). [Learning Versatile Humanoid Manipulation with Touch Dreaming](https://arxiv.org/abs/2604.13015). arXiv:2604.13015.
+2. Yuxin Chen, Hari Srikanth, Nathan Jew, Menglin Wu, Pengcheng Wang, Junli Ren, Masayoshi Tomizuka, Peng Xu, et al.. (2026). [CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning](https://arxiv.org/abs/2607.29172). arXiv:2607.29172.
+### D8 · 策略学习与优化
+
+1. Han Xue, Jieji Ren, Wendi Chen, Gu Zhang, Yuan Fang, Guoying Gu, Huazhe Xu, Cewu Lu. (2025). [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html). *RSS 2025*.
+2. Gagan Khandate. (2025). [Towards Human-level Dexterity via Robot Learning](https://arxiv.org/abs/2507.09117). arXiv:2507.09117.
+3. Akshay L Chandra, Iman Nematollahi, Chenguang Huang, Tim Welschehold, Wolfram Burgard, Abhinav Valada. (2025). [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645). arXiv:2508.03645.
+4. Ge Yan, Jiyue Zhu, Yuquan Deng, Shiqi Yang, Ri-Zhao Qiu, Xuxin Cheng, Marius Memmel, Ranjay Krishna, et al.. (2025). [ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training](https://arxiv.org/abs/2509.01819). arXiv:2509.01819.
+5. Jinliang Zheng, Jianxiong Li, Zhihao Wang, Dongxiu Liu, Xirui Kang, Yuchun Feng, Yinan Zheng, Jiayin Zou, et al.. (2025). [X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274). arXiv:2510.10274.
+6. Maximus A. Pace, Prithwish Dan, Chuanruo Ning, Atiksh Bhardwaj, Audrey Du, Edward W. Duan, Wei-Chiu Ma, Kushal Kedia. (2025). [X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671). arXiv:2511.04671.
+7. Yuhong Zhang, Zihan Gao, Shengpeng Li, Ling-Hao Chen, Kaisheng Liu, Runqing Cheng, Xiao Lin, Junjia Liu, et al.. (2025). [RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](https://arxiv.org/abs/2512.02729). arXiv:2512.02729.
+8. Yueru Jia, Jiaming Liu, Shengbang Liu, Rui Zhou, Wanhe Yu, Yuyang Yan, Xiaowei Chi, Yandong Guo, et al.. (2025). [Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling](https://arxiv.org/abs/2512.03044). arXiv:2512.03044.
+9. Hao Luo, Ye Wang, Wanpeng Zhang, Sipeng Zheng, Ziheng Xi, Chaoyi Xu, Haiweng Xu, Haoqi Yuan, et al.. (2026). [Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993). arXiv:2601.12993.
+10. Zhongxi Chen, Yifan Han, Yanming Shao, Huanming Liu, Congsheng Xu, Xiaoyu Chen, Yao Mu, Wenzhao Lian. (2026). [BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models](https://arxiv.org/abs/2605.30226). arXiv:2605.30226.
+11. Arthur Allshire, Himanshu Gaurav Singh, Ritvik Singh, Adam Rashid, Hongsuk Choi, David McAllister, Justin Yu, Yiyuan Chen, et al.. (2026). [Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375). arXiv:2606.27375.
+12. Yifan Ye, Yankai Fu, Yaoxu Lv, Bohan Hou, Jun Cen, Lingdong Kong, Duo Zheng, Tianxing Chen, et al.. (2026). [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744). arXiv:2607.24744.
+13. Ajay Sridhar, Jensen Gao, Jonathan Yang, Jean Mercat, Suneel Belkhale, Dorsa Sadigh. (2026). [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549). arXiv:2607.27549.
+14. Zhengyang Yan, Junhao Li, Fangqi Zhu, Zijun Wang, Quanxin Shou, Yikun Miao, Xiaoyi Pang, Zicong Hong, et al.. (2026). [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782). arXiv:2607.27782.
+15. BWM Team. (2026). [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302). arXiv:2607.29302.
+### D9 · 数据引擎与人类视频学习
+
+1. Marion Lepert, Jiaying Fang, Jeannette Bohg. (2025). [Masquerade: Learning from In-the-wild Human Videos using Data-Editing](https://arxiv.org/abs/2508.09976). arXiv:2508.09976.
+2. Georgios Tziafas, Jiayun Zhang, Hamidreza Kasaei. (2025). [Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video](https://arxiv.org/abs/2509.20286). arXiv:2509.20286.
+3. Gu Zhang, Qicheng Xu, Haozhe Zhang, Jianhan Ma, Long He, Yiming Bao, Zeyu Ping, Zhecheng Yuan, et al.. (2026). [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html). *CVPR 2026*.
+4. Xiaopeng Lin, Ruoqi Yang, Shijie Lian, Zhaolong Shen, Bin Yu, Changti Wu, Haibao Liu, Yuxiang Zhang, et al.. (2026). [Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments](https://arxiv.org/abs/2606.32009). arXiv:2606.32009.
+5. Yukang Cao, Haozhe Xie, Beichen Wen, Runmao Yao, Yinghao Liu, Yue Huang, Zhichao Liao, Yunxiang Wang, et al.. (2026). [ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine](https://arxiv.org/abs/2607.28625). arXiv:2607.28625.
+### D15 · 触觉、力觉与多模态身体感知
+
+1. Zhengxue Cheng, Yiqian Zhang, Anni Tang, Keyu Wang, Wenkang Zhang, Haoyu Li, Hengdi Zhang, Li Song. (2025). [OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing](https://arxiv.org/abs/2508.08706). arXiv:2508.08706.
 
 ---

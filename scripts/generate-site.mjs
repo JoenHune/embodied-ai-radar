@@ -7,13 +7,15 @@ const read = (name) => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8')
 const papers = read('data/papers.json')
 const trends = read('data/trends.json')
 const forecasts = read('data/forecasts.json')
-const directions = read('data/directions.json')
 const peerRecords = read('data/peer-review.json').records
 const preprintCoverage = read('data/preprint-coverage.json')
 const publicationCoverage = read('data/publication-coverage.json')
 const officialCoverage = read('data/official-container-coverage.json')
 const repositoryCoverage = read('data/repository-coverage.json')
 const workCoverage = read('data/work-coverage.json')
+const currentTaxonomy = read('config/taxonomy-v2.json')
+const currentPreprints = read('data/preprints.json')
+const currentPreprintById = new Map(currentPreprints.map((paper) => [paper.arxiv_id, paper]))
 
 const topics = {
   foundation: { label: '具身基础模型', slug: 'foundation-models' },
@@ -32,8 +34,11 @@ const included = papers.filter((paper) => paper.included)
 const byId = new Map(papers.map((paper) => [paper.id, paper]))
 
 const ensureDir = (target) => fs.mkdirSync(path.join(docs, target), { recursive: true })
-for (const directory of ['monthly', 'quarterly', 'directions', 'analysis', 'database', 'public']) ensureDir(directory)
-const write = (name, content) => fs.writeFileSync(path.join(docs, name), `${content.trim()}\n`)
+for (const directory of ['monthly', 'quarterly', 'analysis', 'database', 'public']) ensureDir(directory)
+const write = (name, content) => {
+  const latestOnly = content.replace(/\n?<!-- 更新标记：[^\n]*-->\n?/g, '\n')
+  fs.writeFileSync(path.join(docs, name), `${latestOnly.trim()}\n`)
+}
 const frontmatter = `---\noutline: deep\n---`
 const clean = (value = '') => String(value).replaceAll('|', '\\|').replace(/\s+/g, ' ').trim()
 const trimSentence = (value = '') => clean(value).replace(/[。.!！?？]+$/u, '')
@@ -63,7 +68,34 @@ const evidenceBadges = (paper) => [
 ].filter(Boolean).join(' · ') || '摘要未确认'
 const titleLink = (paper) => `[${clean(paper.title)}](${paper.arxiv_url})`
 const officialLink = (review) => `[${review.venue} ${review.year}](${review.official_url})`
-const peerTopic = (label) => Object.entries(topics).find(([, value]) => value.label === label)?.[0] ?? label
+const legacyTopicToCurrent = {
+  foundation: 'foundation_models',
+  dual_system: 'reasoning_planning',
+  dexterous: 'dexterous_manipulation',
+  world_model: 'world_models',
+  general_learning: 'policy_learning',
+}
+const peerLabelToCurrent = {
+  具身基础模型: 'foundation_models',
+  大小脑与双系统: 'reasoning_planning',
+  灵巧操作: 'dexterous_manipulation',
+  世界模型: 'world_models',
+  通用机器人学习: 'policy_learning',
+}
+const inferredCurrentTopic = (title, fallback) => {
+  if (/humanoid|whole[- ]body|loco-manipulation/i.test(title)) return 'humanoid_whole_body'
+  return fallback
+}
+const currentTopicLabel = (paper) => {
+  const mapped = currentPreprintById.get(paper.id)?.primary_topic
+    ?? inferredCurrentTopic(paper.title, legacyTopicToCurrent[paper.primary_topic])
+  return currentTaxonomy.categories[mapped]?.label ?? paper.primary_topic
+}
+const currentPeerTopicLabel = (record) => {
+  const mapped = currentPreprintById.get(record.arxiv_id)?.primary_topic
+    ?? inferredCurrentTopic(record.title, peerLabelToCurrent[record.primary_topic])
+  return currentTaxonomy.categories[mapped]?.label ?? record.primary_topic
+}
 
 function previousYearMonth(month) {
   return `${Number(month.slice(0, 4)) - 1}-${month.slice(5)}`
@@ -121,7 +153,7 @@ function julyDeepDive(current, previous, baseline, counts, previousCounts, basel
 
 ### 数量层：完整月环比回落，但不等于技术降温
 
-**事实。** v2 宽召回在 7 月收录 ${v2July.mother_corpus ?? 0} 条母集、${v2July.included ?? 0} 条直接候选；6 月分别为 ${v2June.mother_corpus ?? 0} 和 ${v2June.included ?? 0}，直接候选环比 ${changeRate(v2July.included ?? 0, v2June.included ?? 0)}。上方旧五类稳定序列收录 ${current.length} 条候选；它用于历史可比，不代表全量论文数。
+**事实。** 7 月宽召回收录 ${v2July.mother_corpus ?? 0} 条母集、${v2July.included ?? 0} 条直接候选；6 月分别为 ${v2June.mother_corpus ?? 0} 和 ${v2June.included ?? 0}，直接候选环比 ${changeRate(v2July.included ?? 0, v2June.included ?? 0)}。
 
 **解释。** 现在的环比已是完整月对完整月，可以确认 7 月总量低于 6 月。但会议周期与集中提交仍可放大单月波动；而 7 月 30–31 日反而集中出现多项高信号工作。所以“数量回落”是事实，“技术降温”仍需跨月和独立实验证据。
 
@@ -183,14 +215,15 @@ function monthlyPage(month) {
   const monthReviews = peerRecords.filter((review) =>
     review.safe_month_anchor?.eligible && review.safe_month_anchor.month === month)
   const monthTrends = trends.months[month] ?? []
+  const currentWideCount = preprintCoverage.months?.[month]?.included ?? current.length
   const conclusion = month === '2026-07'
     ? `7 月完整月总量较 6 月回落，但月末的世界模型决策化、失败纠错、触觉未来监督和行为对齐跨本体迁移组成了比总量更值得跟踪的弱信号。`
     : monthTrends.length
     ? `${monthTrends[0].title}；与此同时，${monthTrends.at(-1).title}。`
     : '样本不足，暂不形成趋势判断。'
   const coverageNote = month === '2026-07'
-    ? `> **7 月完整月。** 旧五类稳定序列已补入 30–31 日 10 篇高信号精读；v2 完整母集覆盖至 31 日。两套 taxonomy 的分母不同，页内分表呈现、不直接相加。\n`
-    : `> **统计口径。** 自动宽召回候选用于数量结构；${curated.length} 篇精读样本用于实验与开放性指标。上月为 ${previousMonthValue}，同比月为 ${baselineMonth}。\n`
+    ? `> **7 月完整月。** arXiv 母集覆盖至 31 日，并补入 30–31 日 10 篇高信号精读；主题结构统一采用当前 15 个研究方向。\n`
+    : `> **统计口径。** 当前 15 个研究方向用于数量结构；${curated.length} 篇精读样本用于实验与开放性指标。上月为 ${previousMonthValue}，同比月为 ${baselineMonth}。\n`
   const topicRows = topicOrder.map((key) => {
     const monthDelta = counts[key] - previousCounts[key]
     const yearDelta = counts[key] - baselineCounts[key]
@@ -199,7 +232,7 @@ function monthlyPage(month) {
     `| **总计** | **${current.length}** | **100.0%** | **${previous.length}** | **${signed(current.length - previous.length)}** | **${changeRate(current.length, previous.length)}** | **${baseline.length}** | **${signed(current.length - baseline.length)}** | **${changeRate(current.length, baseline.length)}** |`,
   ).join('\n')
   const topRows = curated.map((paper) =>
-    `| ${titleLink(paper)} | ${paper.first_submitted} | ${topics[paper.primary_topic]?.label ?? paper.primary_topic} | ${clean(paper.contribution_zh)} | ${evidenceBadges(paper)} |`
+    `| ${titleLink(paper)} | ${paper.first_submitted} | ${currentTopicLabel(paper)} | ${clean(paper.contribution_zh)} | ${evidenceBadges(paper)} |`
   ).join('\n')
   const peerRows = monthReviews.length
     ? monthReviews.map((review) =>
@@ -220,7 +253,7 @@ function monthlyPage(month) {
 ${coverageNote}
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>${current.length}</strong><span>纳入统计候选</span></div>
+  <div class="radar-kpi"><strong>${currentWideCount}</strong><span>纳入统计候选</span></div>
   <div class="radar-kpi"><strong>${curated.length}</strong><span>逐条核验精读</span></div>
   <div class="radar-kpi"><strong>${realCount}/${curated.length}</strong><span>核验确认真机</span></div>
   <div class="radar-kpi"><strong>${monthReviews.length}</strong><span>官方评审锚点</span></div>
@@ -308,79 +341,9 @@ ${rows}
 <!-- 更新标记：月度总览 最后更新 2026.08 -->`
 }
 
-function directionPage(key, direction) {
-  const analysis = periodPapers('analysis')
-  const baseline = periodPapers('baseline')
-  const currentPapers = analysis.filter((paper) => paper.primary_topic === key)
-  const baselinePapers = baseline.filter((paper) => paper.primary_topic === key)
-  const reps = direction.representative_ids.map((id) => byId.get(id)).filter(Boolean)
-  const repRows = reps.map((paper) =>
-    `| ${titleLink(paper)} | ${paper.v1_month} | ${paper.peer_review ? officialLink(paper.peer_review) : 'arXiv'} | ${clean(paper.contribution_zh || paper.abstract.split('. ')[0])} |`
-  ).join('\n')
-  const routes = direction.route_comparison.map((row) => `| ${row.join(' | ')} |`).join('\n')
-  const trendRows = analysisMonths.map((month) => {
-    const count = monthPapers(month).filter((paper) => paper.primary_topic === key).length
-    return `| ${month} | ${count} | ${'█'.repeat(Math.max(1, Math.round(count / Math.max(...analysisMonths.map((item) => monthPapers(item).filter((paper) => paper.primary_topic === key).length)) * 12)))} |`
-  }).join('\n')
-  const peer = peerRecords.filter((record) => peerTopic(record.primary_topic) === key)
-  const peerRows = peer.map((record) =>
-    `| [${clean(record.title)}](${record.official_url}) | ${record.venue} ${record.year} | ${record.arxiv_id ? `[${record.arxiv_id}](https://arxiv.org/abs/${record.arxiv_id})` : '—'} |`
-  ).join('\n')
-  return `${frontmatter}
-
-# ${direction.label}
-
-> ${direction.definition}
-
-<div class="radar-kpis">
-  <div class="radar-kpi"><strong>${currentPapers.length}</strong><span>主分析期候选</span></div>
-  <div class="radar-kpi"><strong>${baselinePapers.length}</strong><span>同比基线候选</span></div>
-  <div class="radar-kpi"><strong>${peer.length}</strong><span>官方评审锚点</span></div>
-  <div class="radar-kpi"><strong>${percent(currentPapers.length, analysis.length)}</strong><span>主分析期占比</span></div>
-</div>
-
-## 跨月演进
-
-${direction.evolution.map((item) => `- ${item}`).join('\n')}
-
-| 月份 | 候选数 | 相对热度 |
-|---|---:|---|
-${trendRows}
-
-## 技术路线对比
-
-| 路线 | 核心表示/机制 | 优势 | 当前局限 |
-|---|---|---|---|
-${routes}
-
-## 代表工作
-
-| 论文 | v1 月份 | 状态 | 一句话贡献 |
-|---|---|---|---|
-${repRows}
-
-## 同行评审锚点
-
-| 工作 | Venue | arXiv |
-|---|---|---|
-${peerRows || '| — | — | — |'}
-
-## 成熟度、瓶颈与战略判断
-
-**成熟度。** ${direction.maturity}
-
-**关键瓶颈。**
-
-${direction.bottlenecks.map((item) => `- ${item}`).join('\n')}
-
-**战略判断。** ${direction.strategic}
-
-<!-- 更新标记：${direction.label} 最后更新 2026.07 -->`
-}
-
 function peerReviewPage() {
   const rows = peerRecords.map((record) =>
-    `| [${clean(record.title)}](${record.official_url}) | ${record.arxiv_id ? `[${record.arxiv_id}](https://arxiv.org/abs/${record.arxiv_id})` : '—'} | ${record.venue} ${record.year} | ${record.primary_topic} | ${record.institutions.slice(0, 3).join('、')} |`
+    `| [${clean(record.title)}](${record.official_url}) | ${record.arxiv_id ? `[${record.arxiv_id}](https://arxiv.org/abs/${record.arxiv_id})` : '—'} | ${record.venue} ${record.year} | ${currentPeerTopicLabel(record)} | ${record.institutions.slice(0, 3).join('、')} |`
   ).join('\n')
   const venues = [...new Set(peerRecords.map((record) => `${record.venue} ${record.year}`))]
   const safeCount = peerRecords.filter((record) => record.safe_month_anchor?.eligible).length
@@ -421,7 +384,7 @@ function institutionPage() {
       const item = map.get(institution)
       item.papers.add(record.arxiv_id || record.title)
       item.peer.add(`${record.venue} ${record.year}`)
-      item.topics.add(record.primary_topic)
+      item.topics.add(currentPeerTopicLabel(record))
       if (item.examples.length < 3) item.examples.push(`[${clean(record.title)}](${record.official_url})`)
     }
   }
@@ -430,7 +393,7 @@ function institutionPage() {
       if (!map.has(institution)) map.set(institution, { papers: new Set(), peer: new Set(), topics: new Set(), examples: [] })
       const item = map.get(institution)
       item.papers.add(paper.id)
-      item.topics.add(topics[paper.primary_topic]?.label ?? paper.primary_topic)
+      item.topics.add(currentTopicLabel(paper))
       if (item.examples.length < 3) item.examples.push(titleLink(paper))
     }
   }
@@ -586,8 +549,12 @@ function quarterlyPage() {
     },
   ]
   const sections = quarters.map((quarter) => {
-    const list = quarter.months.flatMap((month) => monthPapers(month))
-    const counts = topicCounts(list)
+    const list = currentPreprints.filter((paper) =>
+      paper.relevance?.status === 'included' && quarter.months.includes(paper.first_submitted.slice(0, 7)))
+    const directionRows = Object.entries(currentTaxonomy.categories).map(([key, item]) => {
+      const count = list.filter((paper) => paper.primary_topic === key).length
+      return `| ${item.code} · [${item.label}](/frontiers/${key.replaceAll('_', '-')}) | ${count} | ${percent(count, list.length)} |`
+    }).join('\n')
     const keyTrends = quarter.months.flatMap((month) => trends.months[month] ?? [])
       .filter((trend) => trend.grade !== 'D')
       .slice(0, 5)
@@ -595,9 +562,11 @@ function quarterlyPage() {
 
 ${quarter.summary}
 
-| 论文候选 | 基础模型 | 双系统 | 灵巧操作 | 世界模型 | 通用学习 |
-|---:|---:|---:|---:|---:|---:|
-| ${list.length} | ${counts.foundation} | ${counts.dual_system} | ${counts.dexterous} | ${counts.world_model} | ${counts.general_learning} |
+本季度共纳入 ${list.length} 条直接候选。
+
+| 研究方向 | 候选数 | 季度占比 |
+|---|---:|---:|
+${directionRows}
 
 **阶段证据链：**
 
@@ -619,13 +588,16 @@ ${sections}
 }
 
 function annualPage() {
-  const analysis = periodPapers('analysis')
-  const baseline = periodPapers('baseline')
-  const currentCounts = topicCounts(analysis)
-  const baselineCounts = topicCounts(baseline)
-  const rows = topicOrder.map((key) =>
-    `| [${topics[key].label}](/directions/${topics[key].slug}) | ${baselineCounts[key]} | ${currentCounts[key]} | ${signed(currentCounts[key] - baselineCounts[key])} | ${percent(currentCounts[key], analysis.length)} |`
-  ).join('\n')
+  const currentIncluded = currentPreprints.filter((paper) => paper.relevance?.status === 'included')
+  const analysis = currentIncluded.filter((paper) =>
+    paper.first_submitted >= '2025-07-01' && paper.first_submitted <= '2026-06-30')
+  const baseline = currentIncluded.filter((paper) =>
+    paper.first_submitted >= '2024-07-01' && paper.first_submitted <= '2025-06-30')
+  const rows = Object.entries(currentTaxonomy.categories).map(([key, item]) => {
+    const currentCount = analysis.filter((paper) => paper.primary_topic === key).length
+    const baselineCount = baseline.filter((paper) => paper.primary_topic === key).length
+    return `| ${item.code} · [${item.label}](/frontiers/${key.replaceAll('_', '-')}) | ${baselineCount} | ${currentCount} | ${signed(currentCount - baselineCount)} | ${percent(currentCount, analysis.length)} |`
+  }).join('\n')
   const confirmed = [
     {
       title: 'VLA / generalist policy 已从预印本热点变成正式研究主线',
@@ -670,7 +642,7 @@ function annualPage() {
   <div class="radar-kpi"><strong>${peerRecords.length}</strong><span>官方评审锚点</span></div>
 </div>
 
-## 五方向年度结构
+## 15 个方向年度结构
 
 | 方向 | 同比基线 | 主分析期 | 绝对增量 | 主分析期占比 |
 |---|---:|---:|---:|---:|
@@ -712,8 +684,11 @@ ${confirmedRows}
 }
 
 function executiveSummary() {
-  const analysis = periodPapers('analysis')
-  const baseline = periodPapers('baseline')
+  const currentIncluded = currentPreprints.filter((paper) => paper.relevance?.status === 'included')
+  const analysis = currentIncluded.filter((paper) =>
+    paper.first_submitted >= '2025-07-01' && paper.first_submitted <= '2026-06-30')
+  const baseline = currentIncluded.filter((paper) =>
+    paper.first_submitted >= '2024-07-01' && paper.first_submitted <= '2025-06-30')
   const curated = papers.filter((paper) => paper.curated && paper.period === 'analysis')
   const real = curated.filter((paper) => evidenceValue(paper, 'real_robot')).length
   const multi = curated.filter((paper) => evidenceValue(paper, 'multi_task')).length
@@ -725,13 +700,13 @@ function executiveSummary() {
 
 # 执行摘要
 
-> **版本**：v2.2 · **更新日期**：2026 年 8 月 4 日<br>
-> **主分析期**：2025.07–2026.06 · **精读**：${curated.length} 篇 · **官方评审锚点**：${peerRecords.length} 条
+> **数据截至**：2026 年 8 月 4 日 · **主分析期**：2025.07–2026.06<br>
+> **精读**：${curated.length} 篇 · **官方评审锚点**：${peerRecords.length} 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
 
-::: tip v2.2 扩容说明
-旧五类月度序列继续作为可比的精选分析层；它不再代表全部数据量。新版同时维护两年宽召回母库、正式发表母库、严格官方 proceedings 和 GitHub 证据，并将方向体系扩展为 15 类。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
+::: tip 统一分析口径
+全站主题结构统一使用当前 15 个研究方向，并同时维护 arXiv 母库、正式发表母库、严格官方 proceedings 与 GitHub 证据。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
 :::
 
 ::: info 8 月更新
@@ -748,7 +723,7 @@ function executiveSummary() {
 
 ## 六个年度判断
 
-1. **基础模型是最大共识，不再是最早信号。** 主分析期统一查询口径下，具身基础模型候选占比最高；方向已经拥挤，差异转向执行、数据与后训练。
+1. **策略学习构成数量底座，VLA 是最显眼的命名共识。** 真正拉开差异的部分已转向执行、数据、后训练和真实机器人闭环。
 2. **大小脑的真正拐点是实时系统。** fast–slow 名称本身价值有限，completion gating、continuous reasoning、verifier 和 3D trace 才是接口创新。
 3. **world model 的淘汰赛开始。** 能否在同算力下提高闭环规划、RL 样本效率或失败恢复，将把控制模型与普通视频生成分开。
 4. **触觉从“小众传感器”变成领先指标。** 它最可能先在接触失败恢复、材料/滑移预测和灵巧 world model 中兑现。
@@ -792,7 +767,7 @@ function executiveSummary() {
 function databasePage() {
   const curated = included.filter((paper) => paper.curated)
   const rows = curated.map((paper) =>
-    `| ${paper.id} | ${titleLink(paper)} | ${paper.v1_month} | ${topics[paper.primary_topic]?.label ?? paper.primary_topic} | ${paper.confidence} | ${paper.curated ? '精读' : '候选'} | ${paper.peer_review ? officialLink(paper.peer_review) : '—'} |`
+    `| ${paper.id} | ${titleLink(paper)} | ${paper.v1_month} | ${currentTopicLabel(paper)} | ${paper.confidence} | ${paper.curated ? '精读' : '候选'} | ${paper.peer_review ? officialLink(paper.peer_review) : '—'} |`
   ).join('\n')
   return `${frontmatter}
 
@@ -822,7 +797,7 @@ ${rows}
 function databaseYearPage(year) {
   const list = included.filter((paper) => paper.v1_month.startsWith(String(year)))
   const rows = list.map((paper) =>
-    `| ${paper.id} | ${titleLink(paper)} | ${paper.v1_month} | ${topics[paper.primary_topic]?.label ?? paper.primary_topic} | ${paper.confidence} | ${paper.curated ? '精读' : '候选'} |`
+    `| ${paper.id} | ${titleLink(paper)} | ${paper.v1_month} | ${currentTopicLabel(paper)} | ${paper.confidence} | ${paper.curated ? '精读' : '候选'} |`
   ).join('\n')
   return `${frontmatter}
 
@@ -846,12 +821,13 @@ function referencesPage() {
   ])
   const cited = [...citedIds].map((id) => byId.get(id)).filter(Boolean)
     .sort((left, right) => left.id.localeCompare(right.id))
-  const groups = topicOrder.map((key) => {
-    const items = cited.filter((paper) => paper.primary_topic === key)
-    return `## ${topics[key].label}
+  const groups = Object.entries(currentTaxonomy.categories).map(([key, topic]) => {
+    const items = cited.filter((paper) => currentPreprintById.get(paper.id)?.primary_topic === key)
+    if (!items.length) return ''
+    return `## ${topic.code} · ${topic.label}
 
 ${items.map((paper, index) => `${index + 1}. ${paper.authors?.slice(0, 8).join(', ')}${paper.authors?.length > 8 ? ', et al.' : ''}. (${paper.first_submitted.slice(0, 4)}). [${clean(paper.title)}](${paper.peer_review?.official_url ?? paper.arxiv_url}). ${paper.peer_review ? `*${paper.peer_review.venue} ${paper.peer_review.year}*.` : `arXiv:${paper.id}.`}`).join('\n')}`
-  }).join('\n')
+  }).filter(Boolean).join('\n')
   return `${frontmatter}
 
 # 参考文献
@@ -865,7 +841,6 @@ ${groups}
 
 write('monthly/index.md', monthlyIndex())
 for (const month of allMonths) write(`monthly/${month}.md`, monthlyPage(month))
-for (const [key, direction] of Object.entries(directions)) write(`directions/${direction.slug}.md`, directionPage(key, direction))
 write('analysis/executive-summary.md', executiveSummary())
 write('analysis/annual.md', annualPage())
 write('analysis/weak-signals.md', weakSignalsPage())
@@ -880,4 +855,4 @@ write('references.md', referencesPage())
 fs.copyFileSync(path.join(root, 'data/papers.json'), path.join(docs, 'public/papers.json'))
 fs.copyFileSync(path.join(root, 'data/papers.csv'), path.join(docs, 'public/papers.csv'))
 
-console.log(`Generated ${allMonths.length} monthly pages, ${Object.keys(directions).length} direction pages and analysis pages.`)
+console.log(`Generated ${allMonths.length} monthly pages and analysis pages.`)

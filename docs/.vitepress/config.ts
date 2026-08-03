@@ -40,7 +40,7 @@ export default withMermaid(defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '月度雷达', link: '/monthly/' },
-      { text: '方向专题', link: '/directions/foundation-models' },
+      { text: '研究方向', link: '/frontiers/' },
       { text: '年度综合', link: '/analysis/annual' },
       { text: '弱信号', link: '/analysis/weak-signals' },
       { text: '团队机构', link: '/analysis/institutions' },
@@ -81,18 +81,7 @@ export default withMermaid(defineConfig({
         ],
       },
       {
-        text: '旧五类稳定序列',
-        collapsed: false,
-        items: [
-          { text: '具身基础模型', link: '/directions/foundation-models' },
-          { text: '大小脑与双系统', link: '/directions/dual-system' },
-          { text: '灵巧操作', link: '/directions/dexterous-manipulation' },
-          { text: '世界模型', link: '/directions/world-models' },
-          { text: '通用机器人学习', link: '/directions/general-robot-learning' },
-        ],
-      },
-      {
-        text: 'v2 · 15 个研究前沿',
+        text: '15 个研究方向',
         collapsed: true,
         items: [
           { text: '前沿总览', link: '/frontiers/' },
@@ -128,9 +117,8 @@ export default withMermaid(defineConfig({
           { text: '2025 候选', link: '/database/2025' },
           { text: '2026 候选', link: '/database/2026' },
           { text: '检索与分类方法', link: '/methods/' },
-          { text: 'v2 语料扩充协议', link: '/methods/expansion-protocol' },
+          { text: '语料扩充协议', link: '/methods/expansion-protocol' },
           { text: '纳排与局限', link: '/methods/inclusion' },
-          { text: '内容审校报告', link: '/methods/content-audit-report' },
           { text: '参考文献', link: '/references' },
         ],
       },

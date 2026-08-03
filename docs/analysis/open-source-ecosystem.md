@@ -80,5 +80,3 @@ IAS-GH（0–100）由近 12 个月外部 issue/PR 作者、贡献者广度、�
 [下载完整仓库证据 JSON](/embodied-ai-radar/repositories.json)
 
 [下载新仓观察清单 JSON](/embodied-ai-radar/github-watchlist.json)
-
-<!-- 更新标记：GitHub 与开源生态证据 最后更新 2026.08 -->
