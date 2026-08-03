@@ -69,7 +69,7 @@ const renderShareChart = () => {
       right: 0,
       itemWidth: 12,
       itemHeight: 8,
-      textStyle: { color },
+      textStyle: { color: text },
       pageTextStyle: { color: text },
     },
     grid: { left: 48, right: 18, top: 72, bottom: 42 },

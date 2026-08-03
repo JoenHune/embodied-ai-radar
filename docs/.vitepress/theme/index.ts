@@ -148,7 +148,9 @@ export default {
       initSortableTables()
       disposePageEnhancements = initFloatingHeaders()
     }
-    const scheduleInit = () => window.setTimeout(initPageEnhancements, 80)
+    const scheduleInit = () => {
+      window.setTimeout(initPageEnhancements, 80)
+    }
     router.onAfterRouteChanged = scheduleInit
     window.addEventListener('load', scheduleInit, { once: true })
     scheduleInit()

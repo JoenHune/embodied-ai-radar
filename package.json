@@ -19,17 +19,20 @@
     "audit": "node scripts/audit-data.mjs",
     "audit:v2": "node scripts/audit-v2.mjs",
     "merge": "bash scripts/merge.sh",
+    "typecheck": "vue-tsc --noEmit",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "npm run generate && npm run merge && vitepress build docs",
+    "docs:build": "npm run generate && npm run merge && npm run typecheck && vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "test": "npm run generate && npm run merge && npm run audit && npm run audit:v2 && vitepress build docs"
+    "test": "npm run generate && npm run merge && npm run audit && npm run audit:v2 && npm run typecheck && vitepress build docs"
   },
   "devDependencies": {
     "debug": "^4.4.1",
     "echarts": "^6.1.0",
     "markdown-it-mathjax3": "^4.3.2",
     "mermaid": "11.16.0",
+    "typescript": "^5.9.3",
     "vitepress": "1.6.4",
-    "vitepress-plugin-mermaid": "2.0.17"
+    "vitepress-plugin-mermaid": "2.0.17",
+    "vue-tsc": "^3.3.9"
   }
 }
