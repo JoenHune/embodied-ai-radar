@@ -133,4 +133,4 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 
 ## 2026 年 7 月完整月与 8 月早期快照
 
-7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 4 日尚无可归档 arXiv v1，暂不从 0 条样本推断趋势。
+7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 24 日已有 328 条直接候选，但不完整月不与 7 月直接计算环比；新增证据优先进入[研究问题地图](/questions/)验证既有命题。

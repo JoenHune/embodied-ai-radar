@@ -1,0 +1,315 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-24",
+  "source": {
+    "title": "Alphaist 内部灵巧操作与全身操作研究问题整理",
+    "visibility": "private",
+    "note": "问题来自五份内部材料的综合；本站只把它作为研究假设来源，趋势等级仍由公开论文、同行评审与真机证据决定。"
+  },
+  "design": {
+    "role": "cross_topic_problem_layer",
+    "counting_rule": "在已纳入的 arXiv 记录标题与摘要中按公开词表做高召回匹配；同一工作可命中多个问题轴，计数不与 15 个互斥主方向相加。",
+    "status_rule": {
+      "A": "路线已获多团队或同行评审验证，但具体问题仍可能未解",
+      "B": "过去 12 个月出现多个独立研究簇，仍缺统一评测或跨平台复现",
+      "C": "高价值早期假设，证据主要来自少量预印本或系统原型"
+    }
+  },
+  "questions": [
+    {
+      "id": "Q0",
+      "priority": "P0",
+      "title": "人类先验—交互表征—动作—失败回流能否形成闭环",
+      "assessment": "B",
+      "role": "跨方向系统主线",
+      "claim": "领先差异正在从单一 backbone 扩展到感知、可执行动作、运行时验证、失败纠正与再训练的完整闭环；模型结构与系统闭环是共同瓶颈。",
+      "mapped_topics": ["reasoning_planning", "data_engines", "safety_evaluation", "continual_deployment_learning"],
+      "query_terms": ["closed-loop", "closed loop", "learning while deploying", "deployment data", "failure recovery", "online correction", "self-improving robot", "runtime monitoring", "autonomous recovery", "offline-to-online"],
+      "metrics": ["从失败到修复的周期", "单位真机小时能力增量", "自动复位与无接管时长", "跨任务复用和旧技能回归"],
+      "falsifier": "系统组件只在单一任务内有效，闭环成本高于离线重训，或迭代频繁造成能力回归。",
+      "evidence": [
+        {"title": "Continuously Improving Mobile Manipulation with Autonomous Real-World RL", "url": "https://proceedings.mlr.press/v270/mendonca25a.html", "type": "同行评审", "note": "CoRL 2024"},
+        {"title": "Optimal Interactive Learning on the Job via Facility Location Planning", "url": "https://www.roboticsproceedings.org/rss21/p087.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning", "url": "https://arxiv.org/abs/2608.21204", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q1",
+      "priority": "P0",
+      "title": "接触中心的最小充分交互表征",
+      "assessment": "B",
+      "role": "新兴研究方向",
+      "claim": "对接触敏感任务而言，关节角和末端位姿通常不是充分交互状态；值得学习能够预测接触切换、力、滑移与物体状态转移的 interaction latent，但它尚未成为通用接口标准。",
+      "mapped_topics": ["dexterous_manipulation", "spatial_perception", "embodied_multisensory", "world_models"],
+      "query_terms": ["contact representation", "contact-aware", "contact aware", "contact topology", "contact mode", "contact state", "force-aware", "force aware", "slip prediction", "interaction representation", "interaction latent"],
+      "metrics": ["跨材质与跨手型成功率", "滑移/接触切换预测", "峰值力与物体损伤", "接触失败恢复率"],
+      "falsifier": "表征只在单一传感器或单一硬件上有效，或不能改善真实机器人控制与失败预测。",
+      "evidence": [
+        {"title": "Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation", "url": "https://www.roboticsproceedings.org/rss21/p052.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations", "url": "https://arxiv.org/abs/2509.24661", "type": "预印本", "note": "接触表征与跨本体"},
+        {"title": "CoToGrasp: Contact-Topology-Conditioned Dexterous Grasp Synthesis via Canonical Workspace Learning", "url": "https://arxiv.org/abs/2608.19776", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q2",
+      "priority": "P0",
+      "title": "Ego／人类视频到可执行机器人动作",
+      "assessment": "A",
+      "role": "当前主线",
+      "claim": "人类视频适合学习语义、affordance 与运动先验，但必须经过接触 grounding、动作重建、本体适配和少量真机校准才能形成可执行 action。",
+      "mapped_topics": ["data_engines", "policy_learning", "dexterous_manipulation", "foundation_models"],
+      "query_terms": ["egocentric human", "egocentric video", "human video", "action-unlabeled video", "action unlabeled video", "human demonstration", "cross-embodiment", "cross embodiment", "retargeting", "embodiment adapter", "embodiment-specific control"],
+      "metrics": ["目标本体动作可执行率", "固定真机数据下的样本效率", "跨手型/跨本体适配成本", "负迁移与不可行动作率"],
+      "falsifier": "加入人类视频后只改善视觉表征，却不能在固定真机数据预算下提高最终策略。",
+      "evidence": [
+        {"title": "DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation", "url": "https://proceedings.mlr.press/v305/xu25b.html", "type": "同行评审", "note": "CoRL 2025"},
+        {"title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos", "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html", "type": "同行评审", "note": "CVPR 2026"},
+        {"title": "LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models", "url": "https://arxiv.org/abs/2608.05706", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q3",
+      "priority": "P0",
+      "title": "视觉、力觉与触觉的任务条件化消融",
+      "assessment": "B",
+      "role": "评测驱动方向",
+      "claim": "问题不是触觉是否默认必要，而是不同任务的最小充分观测集合，以及额外模态能否稳定改善接触失败检测与恢复。",
+      "mapped_topics": ["embodied_multisensory", "dexterous_manipulation", "safety_evaluation"],
+      "query_terms": ["visuotactile", "vision-tactile", "tactile", "force-torque", "force torque", "force-aware", "multisensory manipulation", "contact sensing", "haptic feedback"],
+      "metrics": ["同硬件同数据预算的模态消融", "跨传感器校准成本", "未知材料滑移检测", "恢复率与控制频率"],
+      "falsifier": "触觉增益可被腕部视觉或六维力稳定替代，且额外传感的维护成本高于收益。",
+      "evidence": [
+        {"title": "Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation", "url": "https://www.roboticsproceedings.org/rss21/p052.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them", "url": "https://arxiv.org/abs/2608.01402", "type": "最新信号", "note": "约 2,500 次真机 rollout"},
+        {"title": "VT-MUSE: Multimodal Unified Sequential Visuotactile Representation Learning for Manipulation", "url": "https://arxiv.org/abs/2608.21290", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q4",
+      "priority": "P1",
+      "title": "真实接触与仿真扩增的最优组合",
+      "assessment": "A",
+      "role": "成熟路线中的未解问题",
+      "claim": "Sim-to-Real 已是主线；在灵巧接触、柔性物体与多材质任务中，当前通常仍需要真实标定或失败数据，但 VIRAL 等工作也证明部分任务可由 sim-only 零样本落地。真正问题是固定总成本下的 sim／real 配方。",
+      "mapped_topics": ["simulation_transfer", "world_models", "dexterous_manipulation"],
+      "query_terms": ["sim-to-real", "sim2real", "simulation-to-reality", "domain randomization", "contact simulation", "tactile simulation", "deformable manipulation", "multi-material", "real-to-sim-to-real"],
+      "metrics": ["固定真实数据量的增益", "未见材质/形变泛化", "仿真资产制作成本", "真机纠正小时与总迭代周期"],
+      "falsifier": "高保真仿真投入无法降低真实数据量或提升未见材质表现。",
+      "evidence": [
+        {"title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation", "url": "https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html", "type": "同行评审", "note": "CVPR 2026"},
+        {"title": "ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation", "url": "https://proceedings.mlr.press/v305/huang25c.html", "type": "同行评审", "note": "CoRL 2025"},
+        {"title": "Tactile Sim2Real without Tactile Simulation via Bottlenecked Latent Reconstruction", "url": "https://arxiv.org/abs/2608.15897", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q5",
+      "priority": "P0",
+      "title": "站位、视角、支撑与操作的联合 loco-manipulation",
+      "assessment": "B",
+      "role": "当前主线中的新兴统一问题",
+      "claim": "移动、相机视角与支撑接触应被视为任务动作，与手部操作共同受平衡、碰撞、可达性和信息增益约束。",
+      "mapped_topics": ["humanoid_whole_body", "navigation_mobile_manipulation", "spatial_perception", "reasoning_planning"],
+      "query_terms": ["loco-manipulation", "loco manipulation", "whole-body manipulation", "whole body manipulation", "active perception", "view selection", "viewpoint selection", "base pose", "active-perceptive"],
+      "metrics": ["完整任务成功与连续时长", "平衡违例和碰撞", "不可行动作率", "重站位/主动视角带来的控制收益"],
+      "falsifier": "联合策略并未优于模块化导航+操作，或无法保持可诊断、安全回滚。",
+      "evidence": [
+        {"title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation", "url": "https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html", "type": "同行评审", "note": "CVPR 2026"},
+        {"title": "ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation", "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html", "type": "同行评审", "note": "CVPR 2026"},
+        {"title": "HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL", "url": "https://arxiv.org/abs/2608.16837", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q6",
+      "priority": "P0",
+      "title": "可跨任务复用的 post-training recipe",
+      "assessment": "B",
+      "role": "快速升温方向",
+      "claim": "BC—DAgger—offline/online RL 的组件并不新，真正问题是同一训练流程能否跨任务复用，并降低接管、奖励工程与旧技能回归成本。",
+      "mapped_topics": ["policy_learning", "continual_deployment_learning", "foundation_models", "human_robot_interaction"],
+      "query_terms": ["post-training", "post training", "reinforced fine-tuning", "reinforcement fine-tuning", "dagger", "offline-to-online", "offline to online", "online robot learning", "online reinforcement learning", "policy adaptation"],
+      "metrics": ["单位接管分钟的成功率增量", "奖励工程人时", "跨任务 recipe 复用率", "旧技能回归与 wall-clock 收敛"],
+      "falsifier": "每个任务仍需专用奖励、专人盯机和重新设计训练流程。",
+      "evidence": [
+        {"title": "ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy", "url": "https://www.roboticsproceedings.org/rss21/p019.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies", "url": "https://arxiv.org/abs/2608.07065", "type": "最新信号", "note": "部署接管与再训练"},
+        {"title": "Efficient Real-World Online Reinforcement Learning for Robot Manipulation via Centralized Training and Critic Decomposition", "url": "https://arxiv.org/abs/2608.09730", "type": "最新信号", "note": "2026-08"}
+      ]
+    },
+    {
+      "id": "Q7",
+      "priority": "P0",
+      "title": "失败边界数据与低人力纠正闭环",
+      "assessment": "B",
+      "role": "新兴系统主线",
+      "claim": "总小时数不能单独反映部署价值；应把失败发现、接管、纠正、重训、回归和重新部署做成可归因的数据飞轮。",
+      "mapped_topics": ["continual_deployment_learning", "safety_evaluation", "data_engines", "policy_learning"],
+      "query_terms": ["failure data", "failure-aware", "failure aware", "failure recovery", "self-correcting", "self correcting", "online correction", "human intervention", "intervention learning", "detect-and-correct", "deployment data"],
+      "metrics": ["单位真机小时的有效纠正轨迹", "失败类型覆盖率", "恢复成功率和接管时间", "从失败到修复的可追溯率"],
+      "falsifier": "失败样本只改善见过的错误，跨任务迁移弱，或回训引发明显旧技能回归。",
+      "evidence": [
+        {"title": "Optimal Interactive Learning on the Job via Facility Location Planning", "url": "https://www.roboticsproceedings.org/rss21/p087.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy", "url": "https://arxiv.org/abs/2607.27782", "type": "预印本", "note": "动作级失败纠正"},
+        {"title": "FACT: Failure-Aware Causal Training for World-Action Models", "url": "https://arxiv.org/abs/2608.10232", "type": "最新信号", "note": "失败 rollout 进入因果预测"}
+      ]
+    },
+    {
+      "id": "Q8",
+      "priority": "P1",
+      "title": "模型、数采设备与机器人硬件共设计",
+      "assessment": "C",
+      "role": "早期 co-design 假设",
+      "claim": "热、背隙、漂移、触觉布局、控制频率、维修周转与采集人因会改变数据分布和可执行动作空间，应进入模型实验的共同设计变量。",
+      "mapped_topics": ["dexterous_manipulation", "data_engines", "embodied_multisensory", "safety_evaluation"],
+      "query_terms": ["co-design", "codesign", "hardware-aware", "hardware aware", "sensor placement", "hardware-software", "hardware software", "backlash", "thermal", "calibration drift", "data-capture device"],
+      "metrics": ["跨设备/硬件版本策略迁移", "连续运行时间与维护小时", "由训练失败驱动的硬件 A/B", "同数据预算下的样本效率"],
+      "falsifier": "硬件修改无法在受控预算下改善学习结果，或历史数据因版本变化不可复用。",
+      "evidence": [
+        {"title": "DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation", "url": "https://proceedings.mlr.press/v305/xu25b.html", "type": "同行评审", "note": "软硬件适配"},
+        {"title": "Koala Gripper: Co-designing Robotic Grippers and Data-Capture Devices for Scaling Dexterous Manipulation Learning", "url": "https://arxiv.org/abs/2608.20546", "type": "最新信号", "note": "机器人与数采设备共设计"}
+      ]
+    },
+    {
+      "id": "Q9",
+      "priority": "P2",
+      "title": "机器人模型、数据与交互的 scaling law",
+      "assessment": "C",
+      "role": "高价值早期假设",
+      "claim": "扩模收益必须与数据多样性、任务熵、真机交互量、推理延迟和控制频率共同扫描，不能把参数量增长直接解释为通用能力。",
+      "mapped_topics": ["foundation_models", "policy_learning", "data_engines"],
+      "query_terms": ["scaling law", "scaling laws", "model scaling", "data scaling", "compute scaling", "super-linear scaling", "superlinear scaling", "parameter scaling"],
+      "metrics": ["等数据/等算力/等交互量曲线", "单位算力和真机小时收益", "推理延迟与控制频率", "扩模后的 post-training 增量"],
+      "falsifier": "收益主要由数据或任务覆盖解释，参数规模在受控条件下没有稳定边际收益。",
+      "evidence": [
+        {"title": "Robot Learning with Super-Linear Scaling", "url": "https://www.roboticsproceedings.org/rss21/p025.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories", "url": "https://arxiv.org/abs/2607.15330", "type": "预印本", "note": "大规模真实轨迹"}
+      ]
+    },
+    {
+      "id": "Q10",
+      "priority": "P2",
+      "title": "决策相关世界模型与自动评测闭环（Physical RSI 观察项）",
+      "assessment": "B",
+      "role": "方向已成形、终局假设仍早期",
+      "claim": "用于闭环决策的世界模型应具备动作条件性、决策相关性和可测控制收益；在线使用还要满足时延预算。Physical RSI 尚不是定义稳定的研究类别，应拆成自动评测、数据回流、策略更新和安全部署四个可验证模块。",
+      "mapped_topics": ["world_models", "safety_evaluation", "continual_deployment_learning", "reasoning_planning"],
+      "query_terms": ["action-conditioned world model", "action conditioned world model", "world-action model", "world action model", "world critic", "causal world model", "failure-aware causal", "planning-relevant", "simulator faithfulness", "automatic evaluator"],
+      "metrics": ["同算力闭环规划增益", "失败/接触事件预测", "model bias 与实时延迟", "自动 evaluator 的准确率和抗 reward hacking"],
+      "falsifier": "生成质量与控制收益长期弱相关，或模型时延、偏差与评价器漏洞抵消样本效率收益。",
+      "evidence": [
+        {"title": "Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets", "url": "https://www.roboticsproceedings.org/rss21/p015.html", "type": "同行评审", "note": "RSS 2025"},
+        {"title": "FACT: Failure-Aware Causal Training for World-Action Models", "url": "https://arxiv.org/abs/2608.10232", "type": "最新信号", "note": "因果、失败感知"},
+        {"title": "GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models", "url": "https://arxiv.org/abs/2608.05948", "type": "最新信号", "note": "物理真实性评测"}
+      ]
+    }
+  ],
+  "omitted_directions": [
+    {
+      "id": "G1",
+      "title": "通才基础模型、推理与长期记忆",
+      "type": "独立主方向",
+      "mapped_topics": ["foundation_models", "reasoning_planning"],
+      "why": "内部文档有意降低 backbone 的优先级，但模型如何形成可组合技能、任务进度记忆与可验证中间表示仍是当前主线，不能从雷达移除。",
+      "radar_action": "保留 D1/D2；问题层只负责检验模型是否真正改善执行闭环。",
+      "evidence": [
+        {"title": "π0: A Vision-Language-Action Flow Model for General Robot Control", "url": "https://www.roboticsproceedings.org/rss21/p010.html"},
+        {"title": "Robotic Control via Embodied Chain-of-Thought Reasoning", "url": "https://proceedings.mlr.press/v270/zawalski25a.html"}
+      ]
+    },
+    {
+      "id": "G2",
+      "title": "开放世界导航、空间记忆与主动探索",
+      "type": "独立主方向",
+      "mapped_topics": ["navigation_mobile_manipulation", "spatial_perception", "reasoning_planning"],
+      "why": "loco-manipulation 只覆盖其中一部分；建筑级移动操作、开放词汇导航、动态地图和长期空间记忆具有独立问题结构与评测。",
+      "radar_action": "继续由 D6/D11 跟踪，并把主动感知作为横向问题与 Q5 连接。",
+      "evidence": [
+        {"title": "MoTo: A Zero-shot Plug-in Interaction-aware Navigation for Generalized Mobile Manipulation", "url": "https://proceedings.mlr.press/v305/wu25c.html"},
+        {"title": "ActLoc: Learning to Localize through Active Viewpoint Selection", "url": "https://proceedings.mlr.press/v305/li25b.html"}
+      ]
+    },
+    {
+      "id": "G3",
+      "title": "人机协作、共享自治与偏好学习",
+      "type": "独立主方向",
+      "mapped_topics": ["human_robot_interaction"],
+      "why": "内部文档主要把人当作数据采集者和接管者，遗漏了协作、信任、意图沟通、辅助机器人与社会导航。",
+      "radar_action": "保留 D7；把人因、操作者建模与 Q6/Q7 的接管效率相连。",
+      "evidence": [
+        {"title": "FlashBack: Consistency Model-Accelerated Shared Autonomy", "url": "https://proceedings.mlr.press/v305/sun25a.html"},
+        {"title": "Safety with Agency: Human-Centered Safety Filter with Application to AI-Assisted Motorsports", "url": "https://www.roboticsproceedings.org/rss21/p093.html"}
+      ]
+    },
+    {
+      "id": "G4",
+      "title": "安全、形式验证、不确定性与物理攻击面",
+      "type": "独立主方向",
+      "mapped_topics": ["safety_evaluation", "reasoning_planning"],
+      "why": "失败回流不等于安全保证；开放世界机器人还需要风险校准、运行时保障、指令/视觉攻击评测和人身安全边界。",
+      "radar_action": "强化 D12，并将安全成本、风险暴露时间和干预触发纳入所有问题轴的共同指标。",
+      "evidence": [
+        {"title": "Geometric Red-Teaming for Robotic Manipulation", "url": "https://proceedings.mlr.press/v305/goel25a.html"},
+        {"title": "Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures", "url": "https://proceedings.mlr.press/v305/seo25a.html"}
+      ]
+    },
+    {
+      "id": "G5",
+      "title": "长期记忆、持续学习与灾难性遗忘",
+      "type": "横向能力轴",
+      "mapped_topics": ["continual_deployment_learning", "reasoning_planning"],
+      "why": "一次 post-training 不能代表长期运行；策略需要在任务、环境和硬件变化后持续吸收经验且不破坏旧技能。",
+      "radar_action": "保留 D13；把回归测试、记忆更新和技能保留加入 Q6/Q7。",
+      "evidence": [
+        {"title": "Continuously Improving Mobile Manipulation with Autonomous Real-World RL", "url": "https://proceedings.mlr.press/v270/mendonca25a.html"},
+        {"title": "Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning", "url": "https://arxiv.org/abs/2608.21204"}
+      ]
+    },
+    {
+      "id": "G6",
+      "title": "多机器人协同、异构编队与 fleet learning",
+      "type": "独立但低密度方向",
+      "mapped_topics": ["multi_robot_coordination", "continual_deployment_learning"],
+      "why": "内部材料集中在单机操作，未覆盖多机通信、协作操作、异构团队与跨设备经验共享。",
+      "radar_action": "保留 D14，但在出现跨月独立团队与真实系统证据前不扩为核心问题轴。",
+      "evidence": [
+        {"title": "Capability-Aware Shared Hypernetworks for Multi-Agent Coordination", "url": "https://proceedings.mlr.press/v305/fu25a.html"},
+        {"title": "Latent Theory of Mind for Cooperative Multi-Agent Reinforcement Learning", "url": "https://proceedings.mlr.press/v305/he25a.html"}
+      ]
+    },
+    {
+      "id": "G7",
+      "title": "实时、边缘部署、能耗与系统资源调度",
+      "type": "横向系统轴",
+      "mapped_topics": ["foundation_models", "reasoning_planning", "safety_evaluation"],
+      "why": "控制频率、云边时延、功耗和状态陈旧会直接决定大模型、verifier 与世界模型能否进入闭环。",
+      "radar_action": "不新增 D16；作为所有模型/系统方向的强制证据字段和月度弱信号。",
+      "evidence": [
+        {"title": "Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference", "url": "https://arxiv.org/abs/2608.04428"},
+        {"title": "EcoVLA: Energy-Efficient Device-Edge Co-Inference for Vision-Language-Action Models under Real-Time Constraints", "url": "https://arxiv.org/abs/2608.15502"}
+      ]
+    },
+    {
+      "id": "G8",
+      "title": "柔性物体、医疗、工业与极端环境等压力测试域",
+      "type": "应用压力测试",
+      "mapped_topics": ["dexterous_manipulation", "foundation_models", "simulation_transfer", "safety_evaluation"],
+      "why": "这些场景不是简单行业标签，而是检验精确接触、合规、安全、数据稀缺和跨域泛化的高约束测试床。",
+      "radar_action": "作为 domain tags 和专题页维护，不拆成互斥主方向。",
+      "evidence": [
+        {"title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation", "url": "https://arxiv.org/abs/2605.31286"},
+        {"title": "Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics", "url": "https://arxiv.org/abs/2604.21017"}
+      ]
+    },
+    {
+      "id": "G9",
+      "title": "本体、软体机器人与学习驱动的形态设计",
+      "type": "候选一级方向",
+      "mapped_topics": ["dexterous_manipulation", "simulation_transfer", "embodied_multisensory"],
+      "why": "内部文档已提出软硬件共设计，但仍主要把硬件视为训练约束；新研究开始把刚度、形态、传感布局和控制器放入同一优化问题。",
+      "radar_action": "先设 D16 观察池；只有达到至少 3 个独立团队、2 个正式 venue 且主贡献确为本体设计与学习联合优化时再升级。",
+      "evidence": [
+        {"title": "KineSoft: A Kinematically Inspired Soft Gripper with Proprioceptive Sensing", "url": "https://proceedings.mlr.press/v305/yoo25a.html"},
+        {"title": "Co-Design of Soft Gripper with Neural Physics", "url": "https://proceedings.mlr.press/v305/yi25a.html"}
+      ]
+    }
+  ]
+}

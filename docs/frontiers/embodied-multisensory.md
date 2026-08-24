@@ -4,7 +4,7 @@ outline: deep
 
 # D15 · 触觉、力觉与多模态身体感知
 
-> 归属层级：学习与基础设施。当前纳入 28 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 29 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -73,4 +73,5 @@ outline: deep
 | [TactX: Learning Shared Tactile Representations Across Diverse Sensors](https://arxiv.org/abs/2606.31236) | 2026-06-30 | 预印本 | 否 | — |
 | [Toward Gripper-Integrated Active Electrosense for Pre-Contact Sensing in Underwater Soft Grippers](https://arxiv.org/abs/2606.03204) | 2026-06-02 | 预印本 | 否 | — |
 | [UniForce: A Unified Latent Force Model for Robot Manipulation with Diverse Tactile Sensors](https://arxiv.org/abs/2602.01153) | 2026-02-01 | 预印本 | 否 | — |
+| [VT-MUSE: Multimodal Unified Sequential Visuotactile Representation Learning for Manipulation](https://arxiv.org/abs/2608.21290) | 2026-08-21 | 预印本 | 否 | — |
 | [VTLA: Vision-Tactile-Language-Action Model with Preference Learning for Insertion Manipulation](https://arxiv.org/abs/2505.09577) | 2025-05-14 | 预印本 | 否 | — |

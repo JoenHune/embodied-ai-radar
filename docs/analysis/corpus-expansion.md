@@ -4,10 +4,10 @@ outline: deep
 
 # 语料扩充与覆盖审计
 
-> 数据截点：2026-08-04。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
+> 数据截点：2026-08-24。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 母集</span></div>
   <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>完整官方容器记录</span></div>
   <div class="radar-kpi"><strong>3,161</strong><span>官方节目/待 proceedings</span></div>

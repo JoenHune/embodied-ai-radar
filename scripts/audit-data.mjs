@@ -12,6 +12,7 @@ const directions = read('data/directions.json')
 const peers = read('data/peer-review.json').records
 const currentPreprints = read('data/preprints.json')
 const currentTaxonomy = read('config/taxonomy-v2.json')
+const sourceRegistry = read('config/source-registry.json')
 const currentIncluded = currentPreprints.filter((paper) => paper.relevance?.status === 'included')
 const validTopics = new Set(['foundation', 'dual_system', 'dexterous', 'world_model', 'general_learning'])
 const errors = []
@@ -161,8 +162,8 @@ const augustPage = path.join(docs, 'monthly', '2026-08.md')
 assert(fs.existsSync(augustPage), 'August early-snapshot page missing')
 if (fs.existsSync(augustPage)) {
   const text = fs.readFileSync(augustPage, 'utf8')
-  assert(text.includes('月初快照，截至 4 日'), 'August snapshot cutoff missing')
-  assert(text.includes('月初空窗，不计算 −100%'), 'August no-false-MoM warning missing')
+  assert(text.includes(`前瞻快照，截至 ${Number(sourceRegistry.window.until.slice(-2))} 日`), 'August snapshot cutoff missing')
+  assert(text.includes('不完整月，不计算环比'), 'August no-false-MoM warning missing')
   assert(text.includes('## 8 月要验证的六条早期命题'), 'August forward-signal section missing')
 }
 

@@ -4,7 +4,7 @@ outline: deep
 
 # D14 · 多机器人协同与群体智能
 
-> 归属层级：物理能力。当前纳入 51 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：物理能力。当前纳入 52 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -79,6 +79,7 @@ outline: deep
 | [Federated Single-Agent Robotics: Multi-Robot Coordination Without Intra-Robot Multi-Agent Fragmentation](https://arxiv.org/abs/2604.11028) | 2026-04-13 | 预印本 | 否 | — |
 | [FLEET: Formal Language-Grounded Scheduling for Heterogeneous Robot Teams](https://arxiv.org/abs/2510.07417) | 2025-10-08 | 预印本 | 否 | — |
 | [GA3T: A Ground-Aerial Terrain Traversability Dataset for Heterogeneous Robot Teams in Unstructured Environments](https://arxiv.org/abs/2605.06478) | 2026-05-07 | 预印本 | 否 | — |
+| [Genetic Fuzzy System-Based Multi-Robot Coordination for Planetary Missions](https://arxiv.org/abs/2608.12755) | 2026-08-13 | 预印本 | 否 | — |
 | [Learning Multi-Robot Coordination through Locality-Based Factorized Multi-Agent Actor-Critic Algorithm](https://arxiv.org/abs/2503.18816) | 2025-03-24 | 预印本 | 否 | — |
 | [Lyapunov Stability-Driven Control Algorithm for Heterogeneous Multi-Robot Coordination (I)](https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_394) | — | ICRA 2026 | 否 | — |
 | [MoRoCo: An Online Topology-Adaptive Framework for Multi-Operator Multi-Robot Coordination under Restricted Communication](https://arxiv.org/abs/2508.07657) | 2025-08-11 | 预印本 | 否 | — |

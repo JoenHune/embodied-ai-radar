@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import time
 from collections import Counter
 
 from radar_common import ROOT
@@ -26,13 +27,24 @@ SNAPSHOT_DATE = json.loads(
 
 
 def github_repo(full_name: str) -> dict:
-    result = subprocess.run(
-        ["gh", "api", f"repos/{full_name}"],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return json.loads(result.stdout)
+    for attempt in range(5):
+        result = subprocess.run(
+            ["gh", "api", f"repos/{full_name}"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode == 0:
+            # GitHub applies secondary burst limits before the hourly quota.
+            # A small delay keeps a full 42-repository refresh reproducible.
+            time.sleep(1.8)
+            return json.loads(result.stdout)
+        if attempt == 4:
+            raise RuntimeError(
+                f"GitHub metadata failed for {full_name}: {result.stderr.strip()}"
+            )
+        time.sleep(10 * (attempt + 1))
+    raise RuntimeError("unreachable")
 
 
 def apply_metadata(record: dict, payload: dict) -> None:

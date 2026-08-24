@@ -4,7 +4,7 @@ outline: deep
 
 # D8 · 策略学习与优化
 
-> 归属层级：学习与基础设施。当前纳入 2768 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 2820 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -82,7 +82,7 @@ outline: deep
 | [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08-05 | CoRL 2025 | 是 | — |
 | [Dreamitate: Real-World Visuomotor Policy Learning via Video Generation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Dynamic Rank Adjustment in Diffusion Policies for Efficient and Flexible Training](https://arxiv.org/abs/2502.03822) | 2025-02-06 | RSS 2025 | 是 | — |
-| [Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation](https://arxiv.org/abs/2608.11870) | 2026-08-12 | CoRL 2024、CoRL 2024 | 是 | — |
 | [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Equivariant Diffusion Policy](https://arxiv.org/abs/2407.01812) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Few-Shot Neuro-Symbolic Imitation Learning for Long-Horizon Planning and Acting](https://arxiv.org/abs/2508.21501) | 2025-08-29 | CoRL 2025 | 是 | — |

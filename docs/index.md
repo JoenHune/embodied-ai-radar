@@ -6,7 +6,7 @@ titleTemplate: 过去 12 个月研究趋势分析
 hero:
   name: 具身智能研究雷达
   text: 从论文热度到技术兑现
-  tagline: 30,766 条 arXiv 母集 · 12,165 条发表版本 · 15 类开放主题 · 2026.08 早期快照
+  tagline: 31,773 条 arXiv 母集 · 12,165 条发表版本 · 15 类主方向 + 11 个问题轴 · 2026.08 前瞻快照
   actions:
     - theme: brand
       text: 阅读执行摘要 →
@@ -17,11 +17,19 @@ hero:
     - theme: alt
       text: 浏览月度雷达
       link: /monthly/
+    - theme: alt
+      text: 查看问题地图
+      link: /questions/
 
 features:
+  - icon: 🧩
+    title: 从论文方向到系统问题
+    details: Q0–Q10 追踪接触表征、Ego-to-Action、失败回流、软硬件共设计与闭环世界模型
+    link: /questions/
+    linkText: 查看问题地图
   - icon: 🛰️
     title: 两年宽召回母库
-    details: 30,766 条 arXiv、12,165 条发表版本与 40,605 个 canonical works 分层呈现
+    details: 31,773 条 arXiv、12,165 条发表版本与 canonical works 分层呈现
     link: /analysis/corpus-expansion
     linkText: 查看覆盖审计
   - icon: 📚
@@ -72,7 +80,7 @@ features:
 ---
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 宽召回母集</span></div>
   <div class="radar-kpi"><strong>12,165</strong><span>正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
   <div class="radar-kpi"><strong>42 + 4</strong><span>GitHub 已审计 + 新仓观察</span></div>
@@ -82,4 +90,4 @@ features:
 
 <ResearchVisuals />
 
-> 数据截至 2026 年 8 月 4 日。月度图只使用最近 12 个完整月，8 月月初快照不与完整月份混算；桑基图展示同一论文的方向共现，不表示方向发生迁移。
+> 数据截至 2026 年 8 月 24 日。月度图只使用最近 12 个完整月，8 月不完整快照不与完整月份混算；桑基图展示同一论文的方向共现，不表示方向发生迁移。

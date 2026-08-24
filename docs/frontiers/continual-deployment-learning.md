@@ -4,7 +4,7 @@ outline: deep
 
 # D13 · 持续学习、部署学习与自改进
 
-> 归属层级：学习与基础设施。当前纳入 8 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 9 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -50,6 +50,7 @@ outline: deep
 | [MAER-Nav: Bidirectional Motion Learning Through Mirror-Augmented Experience Replay for Robot Navigation](https://arxiv.org/abs/2503.23908) | 2025-03-31 | IROS 2025 | 否 | — |
 | [Overparametrization helps offline-to-online generalization of closed-loop control from pixels](https://ieeexplore.ieee.org/document/10610284) | 2024-05-13 | ICRA 2024 | 否 | — |
 | [Safe Offline-to-Online Multi-Agent Decision Transformer: A Safety Conscious Sequence Modeling Approach](https://ieeexplore.ieee.org/document/10801292) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning](https://arxiv.org/abs/2608.21204) | 2026-08-21 | 预印本 | 否 | — |
 | [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980) | 2026-06-18 | 预印本 | 否 | — |
 | [LACY: A Vision-Language Model-based Language-Action Cycle for Self-Improving Robotic Manipulation](https://arxiv.org/abs/2511.02239) | 2025-11-04 | ICRA 2026 | 否 | — |
 | [SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation](https://arxiv.org/abs/2606.10305) | 2026-06-09 | 预印本 | 否 | — |

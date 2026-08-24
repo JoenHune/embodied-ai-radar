@@ -1,14 +1,14 @@
 # 具身智能研究雷达
 
-> **数据截点**：2026 年 8 月 4 日<br>
-> **主分析期**：2025 年 7 月—2026 年 6 月 · **7 月完整月** · **8 月前瞻快照**：1–4 日
+> **数据截点**：2026 年 8 月 24 日<br>
+> **主分析期**：2025 年 7 月—2026 年 6 月 · **7 月完整月** · **8 月前瞻快照**：1–24 日
 
 ---
 
 
 ## 执行摘要
 
-> **数据截至**：2026 年 8 月 4 日 · **主分析期**：2025.07–2026.06<br>
+> **数据截至**：2026-08-24 · **主分析期**：2025.07–2026.06<br>
 > **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
@@ -18,14 +18,14 @@
 :::
 
 ::: info 8 月更新
-7 月已收完整月，新增 30–31 日 10 篇高信号精读；8 月截至 4 日的 arXiv API 仍无新 v1，因此只发布早期路标快照，不把发布空窗写成降温。正式发表、官方 proceedings 与 GitHub 元数据已独立刷新。
+7 月已收完整月；8 月截至 24 日已纳入 328 条直接候选。由于月份尚未关闭，不与完整月计算环比；本轮重点新增[问题地图](/questions/)，把接触表征、Ego-to-Action、失败回流和软硬件 co-design 与公开证据逐项对应。
 :::
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 宽召回母集</span></div>
   <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表记录</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>40,605</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>41,592</strong><span>去重 canonical works</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 
@@ -69,12 +69,14 @@
 
 按当前证据排序：**实时 VLA 执行栈、verifier/自纠错、部署数据飞轮、控制导向 world model、触觉预测通道、跨本体动作接口、3D trace，以及高风险的 Embodied Agent OS。** 详见[未来判断](/analysis/weak-signals)。
 
+飞书材料提出的系统问题及文档之外的研究缺口，见[Q0–Q10 研究问题地图](/questions/)和[遗漏方向](/questions/blind-spots)。
+
 ---
 
 
 ## 月度研究雷达
 
-> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 15 个研究方向。2026 年 8 月仍是月初快照，因此保留 7 月参照数但不计算误导性的百分比。
+> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 15 个研究方向。2026 年 8 月是不完整快照，因此保留 7 月参照数但不计算误导性的百分比。
 
 | 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
@@ -91,7 +93,7 @@
 | [2026 年 5 月](/monthly/2026-05) | 559 | +167 | +42.6% | +140 | +33.4% | D8 · 策略学习（138） | 7 | 6/7 |
 | [2026 年 6 月](/monthly/2026-06) | 735 | +176 | +31.5% | +388 | +111.8% | D8 · 策略学习（141） | 7 | 6/7 |
 | [2026 年 7 月（完整月）](/monthly/2026-07) | 506 | -229 | -31.2% | +241 | +90.9% | D8 · 策略学习（102） | 20 | 13/20 |
-| [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |
+| [2026 年 8 月（截至 24 日）](/monthly/2026-08) | 328 | — | 不可比 | — | 不可比 | D1 · 具身基础模型（57） | 0 | 0/0 |
 
 ### 怎么读月度页
 
@@ -1984,43 +1986,43 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 ---
 
 
-## 2026 年 8 月研究雷达（月初快照，截至 4 日）
+## 2026 年 8 月研究雷达（前瞻快照，截至 24 日）
 
-> **这是早期快照，不是完整月。** 本站按 arXiv 首次提交 v1 日期归档。截至 2026-08-04，三组官方 API 查询在 8 月窗口均返回 0 条；这可能受月初/周末发布节奏与索引时点影响，不构成任何方向降温的证据。
+> **这是前瞻快照，不是完整月。** 本站按 arXiv 首次提交 v1 日期归档。截至 2026-08-24，8 月已形成可观察样本，但不与 7 月完整月直接计算环比或外推整月趋势。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>0</strong><span>8 月 arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>0</strong><span>直接候选</span></div>
+  <div class="radar-kpi"><strong>1,007</strong><span>8 月 arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>328</strong><span>直接候选</span></div>
   <div class="radar-kpi"><strong>10,404</strong><span>窗口内发表版本</span></div>
   <div class="radar-kpi"><strong>42 + 4</strong><span>已审计 + 新仓观察</span></div>
 </div>
 
 ### 一句话结论
 
-8 月目前还没有可按 v1 日期归档的 arXiv 新论文，所以本页不制造“月度趋势”；现阶段最有价值的更新是用 7 月末的小众信号设置 8 月验证路标，同时跟踪正式发表和 GitHub 独立采用是否跟上。
+8 月截至 24 日已有 328 条直接候选；数量领先的是具身基础模型与通才策略（57）、策略学习与优化（55）、人形、运动与全身控制（45）、世界模型与预测控制（41）、灵巧、双臂与接触操作（38）。不完整月的数量不用于判断升降，更有价值的变化是：接触失败诊断、自动干预、失败感知 world-action model 和学习驱动硬件 co-design 正开始直接回应[问题地图](/questions/)中的 P0/P1 命题。
 
 ### 主题结构与环比
 
-| 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
+| 主方向 | 8 月截至 24 日 | 7 月完整月 | 环比 | 判读 |
 |---|---:|---:|---:|---|
-| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 0 | 74 | — | 尚无 8 月 v1，不做方向推断 |
-| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 0 | 32 | — | 尚无 8 月 v1，不做方向推断 |
-| D3 · [世界模型与预测控制](/frontiers/world-models) | 0 | 57 | — | 尚无 8 月 v1，不做方向推断 |
-| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 0 | 50 | — | 尚无 8 月 v1，不做方向推断 |
-| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 0 | 70 | — | 尚无 8 月 v1，不做方向推断 |
-| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 0 | 26 | — | 尚无 8 月 v1，不做方向推断 |
-| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 0 | 37 | — | 尚无 8 月 v1，不做方向推断 |
-| D8 · [策略学习与优化](/frontiers/policy-learning) | 0 | 102 | — | 尚无 8 月 v1，不做方向推断 |
-| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 0 | 16 | — | 尚无 8 月 v1，不做方向推断 |
-| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 0 | 14 | — | 尚无 8 月 v1，不做方向推断 |
-| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 0 | 18 | — | 尚无 8 月 v1，不做方向推断 |
-| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 0 | 6 | — | 尚无 8 月 v1，不做方向推断 |
-| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 0 | 0 | — | 尚无 8 月 v1，不做方向推断 |
-| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 0 | 1 | — | 尚无 8 月 v1，不做方向推断 |
-| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 0 | 3 | — | 尚无 8 月 v1，不做方向推断 |
-| **总计** | **0** | **506** | **—** | **月初空窗，不计算 −100%** |
+| D1 · [具身基础模型与通才策略](/frontiers/foundation-models) | 57 | 74 | — | 截至 24 日，不完整月，不做环比 |
+| D2 · [分层推理、规划与记忆](/frontiers/reasoning-planning) | 20 | 32 | — | 截至 24 日，不完整月，不做环比 |
+| D3 · [世界模型与预测控制](/frontiers/world-models) | 41 | 57 | — | 截至 24 日，不完整月，不做环比 |
+| D4 · [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 38 | 50 | — | 截至 24 日，不完整月，不做环比 |
+| D5 · [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 45 | 70 | — | 截至 24 日，不完整月，不做环比 |
+| D6 · [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 18 | 26 | — | 截至 24 日，不完整月，不做环比 |
+| D7 · [人机协作与交互学习](/frontiers/human-robot-interaction) | 12 | 37 | — | 截至 24 日，不完整月，不做环比 |
+| D8 · [策略学习与优化](/frontiers/policy-learning) | 55 | 102 | — | 截至 24 日，不完整月，不做环比 |
+| D9 · [数据引擎与人类视频学习](/frontiers/data-engines) | 14 | 16 | — | 截至 24 日，不完整月，不做环比 |
+| D10 · [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 7 | 14 | — | 截至 24 日，不完整月，不做环比 |
+| D11 · [动作关联的空间感知与表征](/frontiers/spatial-perception) | 11 | 18 | — | 截至 24 日，不完整月，不做环比 |
+| D12 · [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 7 | 6 | — | 截至 24 日，不完整月，不做环比 |
+| D13 · [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 1 | 0 | — | 截至 24 日，不完整月，不做环比 |
+| D14 · [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 1 | 1 | — | 截至 24 日，不完整月，不做环比 |
+| D15 · [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 1 | 3 | — | 截至 24 日，不完整月，不做环比 |
+| **总计** | **328** | **506** | **—** | **不完整月，不计算环比** |
 
-这里仍然展示 7 月绝对数，满足环比追踪的可追溯性；但由于本月分子还是“尚无发布样本”，任何百分比都会误导，因此显式标记为不可比。
+这里仍然展示 7 月绝对数，满足追踪的可追溯性；但由于 8 月只覆盖到 24 日，任何环比百分比都会把截点差异误写成研究变化，因此显式标记为不可比。
 
 ### 8 月要验证的六条早期命题
 
@@ -2063,7 +2065,7 @@ world model 的新门槛是“动作可执行”；与此同时，论文量激�
 
 ### 下次更新触发条件
 
-一旦 arXiv API 出现 8 月首批 v1，本页将补入全量主题结构、绝对数和环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
+月末关闭 8 月窗口后再计算完整环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
 
 ---
 
@@ -2199,7 +2201,7 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 
 ### 2026 年 7 月完整月与 8 月早期快照
 
-7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 4 日尚无可归档 arXiv v1，暂不从 0 条样本推断趋势。
+7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 24 日已有 328 条直接候选，但不完整月不与 7 月直接计算环比；新增证据优先进入[研究问题地图](/questions/)验证既有命题。
 
 ---
 
@@ -2450,34 +2452,319 @@ flowchart LR
 ---
 
 
+## 问题地图：哪些瓶颈正在接近解决
+
+> 本页把 Alphaist 内部研究材料转为雷达的正交“问题层”；公开站点不暴露私有飞书地址。D1–D15 回答论文主要研究什么；Q0–Q10 回答关键系统瓶颈是否正在被解决。两层不能相加，P0/P1/P2 也不等于 A/B/C 证据等级。
+
+::: warning 证据边界
+问题来自五份内部材料的综合；本站只把它作为研究假设来源，趋势等级仍由公开论文、同行评审与真机证据决定。 自动计数只是标题/摘要词表命中的相关工作密度，不自动升级趋势；每项判断仍需结合独立团队、真机、正式发表和反证。
+:::
+
+### 总判断
+
+飞书文档抓住了一个真实变化：具身智能的领先差异正在从单一模型扩展到**接触表征—可执行动作—运行时验证—失败回流—软硬件迭代**。但其中既有当前主线，也有开放科学问题和工程门槛，不能全部写成“已确认趋势”。
+
+| ID | 战略优先级 | 研究问题 | 证据 | 性质 | D 类映射 | 最近 12 个完整月词表命中 | 2026-08 截至 24 日 | 严格评审锚点 |
+|---|---|---|---|---|---|---:|---:|---:|
+| Q0 | P0 | [人类先验—交互表征—动作—失败回流能否形成闭环](#q0) | <span class="signal signal-b">B</span> | 跨方向系统主线 | [D2](/frontiers/reasoning-planning) / [D9](/frontiers/data-engines) / [D12](/frontiers/safety-evaluation) / [D13](/frontiers/continual-deployment-learning) | 403 | 47 | 2 |
+| Q1 | P0 | [接触中心的最小充分交互表征](#q1) | <span class="signal signal-b">B</span> | 新兴研究方向 | [D4](/frontiers/dexterous-manipulation) / [D11](/frontiers/spatial-perception) / [D15](/frontiers/embodied-multisensory) / [D3](/frontiers/world-models) | 127 | 13 | 1 |
+| Q2 | P0 | [Ego／人类视频到可执行机器人动作](#q2) | <span class="signal signal-a">A</span> | 当前主线 | [D9](/frontiers/data-engines) / [D8](/frontiers/policy-learning) / [D4](/frontiers/dexterous-manipulation) / [D1](/frontiers/foundation-models) | 523 | 36 | 2 |
+| Q3 | P0 | [视觉、力觉与触觉的任务条件化消融](#q3) | <span class="signal signal-b">B</span> | 评测驱动方向 | [D15](/frontiers/embodied-multisensory) / [D4](/frontiers/dexterous-manipulation) / [D12](/frontiers/safety-evaluation) | 269 | 25 | 1 |
+| Q4 | P1 | [真实接触与仿真扩增的最优组合](#q4) | <span class="signal signal-a">A</span> | 成熟路线中的未解问题 | [D10](/frontiers/simulation-transfer) / [D3](/frontiers/world-models) / [D4](/frontiers/dexterous-manipulation) | 504 | 21 | 2 |
+| Q5 | P0 | [站位、视角、支撑与操作的联合 loco-manipulation](#q5) | <span class="signal signal-b">B</span> | 当前主线中的新兴统一问题 | [D5](/frontiers/humanoid-whole-body) / [D6](/frontiers/navigation-mobile-manipulation) / [D11](/frontiers/spatial-perception) / [D2](/frontiers/reasoning-planning) | 172 | 10 | 2 |
+| Q6 | P0 | [可跨任务复用的 post-training recipe](#q6) | <span class="signal signal-b">B</span> | 快速升温方向 | [D8](/frontiers/policy-learning) / [D13](/frontiers/continual-deployment-learning) / [D1](/frontiers/foundation-models) / [D7](/frontiers/human-robot-interaction) | 251 | 21 | 1 |
+| Q7 | P0 | [失败边界数据与低人力纠正闭环](#q7) | <span class="signal signal-b">B</span> | 新兴系统主线 | [D13](/frontiers/continual-deployment-learning) / [D12](/frontiers/safety-evaluation) / [D9](/frontiers/data-engines) / [D8](/frontiers/policy-learning) | 113 | 10 | 1 |
+| Q8 | P1 | [模型、数采设备与机器人硬件共设计](#q8) | <span class="signal signal-c">C</span> | 早期 co-design 假设 | [D4](/frontiers/dexterous-manipulation) / [D9](/frontiers/data-engines) / [D15](/frontiers/embodied-multisensory) / [D12](/frontiers/safety-evaluation) | 80 | 3 | 1 |
+| Q9 | P2 | [机器人模型、数据与交互的 scaling law](#q9) | <span class="signal signal-c">C</span> | 高价值早期假设 | [D1](/frontiers/foundation-models) / [D8](/frontiers/policy-learning) / [D9](/frontiers/data-engines) | 33 | 2 | 1 |
+| Q10 | P2 | [决策相关世界模型与自动评测闭环（Physical RSI 观察项）](#q10) | <span class="signal signal-b">B</span> | 方向已成形、终局假设仍早期 | [D3](/frontiers/world-models) / [D12](/frontiers/safety-evaluation) / [D13](/frontiers/continual-deployment-learning) / [D2](/frontiers/reasoning-planning) | 84 | 24 | 1 |
+
+### 最近 12 个完整月问题密度
+
+> 时间窗：2025-08—2026-07。这是多标签高召回代理；同一论文可进入多个 Q，不能用行列合计替代主方向统计。
+
+| 问题轴 | 2025-08 | 2025-09 | 2025-10 | 2025-11 | 2025-12 | 2026-01 | 2026-02 | 2026-03 | 2026-04 | 2026-05 | 2026-06 | 2026-07 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环 | 10 | 28 | 24 | 16 | 13 | 20 | 31 | 45 | 34 | 58 | 71 | 53 |
+| Q1 · 接触中心的最小充分交互表征 | 4 | 8 | 8 | 9 | 2 | 7 | 15 | 18 | 10 | 10 | 22 | 14 |
+| Q2 · Ego／人类视频到可执行机器人动作 | 17 | 43 | 37 | 34 | 38 | 29 | 52 | 61 | 31 | 40 | 88 | 53 |
+| Q3 · 视觉、力觉与触觉的任务条件化消融 | 9 | 22 | 17 | 11 | 12 | 14 | 30 | 37 | 22 | 22 | 40 | 33 |
+| Q4 · 真实接触与仿真扩增的最优组合 | 23 | 50 | 39 | 31 | 23 | 30 | 49 | 55 | 36 | 44 | 77 | 47 |
+| Q5 · 站位、视角、支撑与操作的联合 loco-manipulation | 10 | 16 | 10 | 9 | 6 | 6 | 18 | 16 | 13 | 17 | 40 | 11 |
+| Q6 · 可跨任务复用的 post-training recipe | 12 | 16 | 18 | 12 | 14 | 13 | 30 | 34 | 13 | 28 | 28 | 33 |
+| Q7 · 失败边界数据与低人力纠正闭环 | 6 | 8 | 11 | 3 | 5 | 11 | 6 | 6 | 7 | 11 | 24 | 15 |
+| Q8 · 模型、数采设备与机器人硬件共设计 | 2 | 15 | 3 | 5 | 3 | 5 | 2 | 8 | 8 | 4 | 17 | 8 |
+| Q9 · 机器人模型、数据与交互的 scaling law | 1 | 1 | 2 | 1 | 0 | 1 | 6 | 4 | 3 | 3 | 6 | 5 |
+| Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项） | 1 | 0 | 1 | 1 | 2 | 1 | 1 | 5 | 4 | 10 | 31 | 27 |
+
+### Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 跨方向系统主线
+
+**当前判断。** 领先差异正在从单一 backbone 扩展到感知、可执行动作、运行时验证、失败纠正与再训练的完整闭环；模型结构与系统闭环是共同瓶颈。
+
+**对应主方向。** [D2](/frontiers/reasoning-planning)、[D9](/frontiers/data-engines)、[D12](/frontiers/safety-evaluation)、[D13](/frontiers/continual-deployment-learning)
+
+**公开证据：**
+
+- [Continuously Improving Mobile Manipulation with Autonomous Real-World RL](https://proceedings.mlr.press/v270/mendonca25a.html) — 同行评审 · CoRL 2024
+- [Optimal Interactive Learning on the Job via Facility Location Planning](https://www.roboticsproceedings.org/rss21/p087.html) — 同行评审 · RSS 2025
+- [Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning](https://arxiv.org/abs/2608.21204) — 最新信号 · 2026-08
+
+**决定性指标。** 从失败到修复的周期；单位真机小时能力增量；自动复位与无接管时长；跨任务复用和旧技能回归。
+
+**反证条件。** 系统组件只在单一任务内有效，闭环成本高于离线重训，或迭代频繁造成能力回归。
+
+### Q1 · 接触中心的最小充分交互表征
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 新兴研究方向
+
+**当前判断。** 对接触敏感任务而言，关节角和末端位姿通常不是充分交互状态；值得学习能够预测接触切换、力、滑移与物体状态转移的 interaction latent，但它尚未成为通用接口标准。
+
+**对应主方向。** [D4](/frontiers/dexterous-manipulation)、[D11](/frontiers/spatial-perception)、[D15](/frontiers/embodied-multisensory)、[D3](/frontiers/world-models)
+
+**公开证据：**
+
+- [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) — 同行评审 · RSS 2025
+- [CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations](https://arxiv.org/abs/2509.24661) — 预印本 · 接触表征与跨本体
+- [CoToGrasp: Contact-Topology-Conditioned Dexterous Grasp Synthesis via Canonical Workspace Learning](https://arxiv.org/abs/2608.19776) — 最新信号 · 2026-08
+
+**决定性指标。** 跨材质与跨手型成功率；滑移/接触切换预测；峰值力与物体损伤；接触失败恢复率。
+
+**反证条件。** 表征只在单一传感器或单一硬件上有效，或不能改善真实机器人控制与失败预测。
+
+### Q2 · Ego／人类视频到可执行机器人动作
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-a">A</span> · **性质：** 当前主线
+
+**当前判断。** 人类视频适合学习语义、affordance 与运动先验，但必须经过接触 grounding、动作重建、本体适配和少量真机校准才能形成可执行 action。
+
+**对应主方向。** [D9](/frontiers/data-engines)、[D8](/frontiers/policy-learning)、[D4](/frontiers/dexterous-manipulation)、[D1](/frontiers/foundation-models)
+
+**公开证据：**
+
+- [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) — 同行评审 · CoRL 2025
+- [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) — 同行评审 · CVPR 2026
+- [LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models](https://arxiv.org/abs/2608.05706) — 最新信号 · 2026-08
+
+**决定性指标。** 目标本体动作可执行率；固定真机数据下的样本效率；跨手型/跨本体适配成本；负迁移与不可行动作率。
+
+**反证条件。** 加入人类视频后只改善视觉表征，却不能在固定真机数据预算下提高最终策略。
+
+### Q3 · 视觉、力觉与触觉的任务条件化消融
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 评测驱动方向
+
+**当前判断。** 问题不是触觉是否默认必要，而是不同任务的最小充分观测集合，以及额外模态能否稳定改善接触失败检测与恢复。
+
+**对应主方向。** [D15](/frontiers/embodied-multisensory)、[D4](/frontiers/dexterous-manipulation)、[D12](/frontiers/safety-evaluation)
+
+**公开证据：**
+
+- [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) — 同行评审 · RSS 2025
+- [Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them](https://arxiv.org/abs/2608.01402) — 最新信号 · 约 2,500 次真机 rollout
+- [VT-MUSE: Multimodal Unified Sequential Visuotactile Representation Learning for Manipulation](https://arxiv.org/abs/2608.21290) — 最新信号 · 2026-08
+
+**决定性指标。** 同硬件同数据预算的模态消融；跨传感器校准成本；未知材料滑移检测；恢复率与控制频率。
+
+**反证条件。** 触觉增益可被腕部视觉或六维力稳定替代，且额外传感的维护成本高于收益。
+
+### Q4 · 真实接触与仿真扩增的最优组合
+
+**战略优先级：** P1 · **外部证据等级：** <span class="signal signal-a">A</span> · **性质：** 成熟路线中的未解问题
+
+**当前判断。** Sim-to-Real 已是主线；在灵巧接触、柔性物体与多材质任务中，当前通常仍需要真实标定或失败数据，但 VIRAL 等工作也证明部分任务可由 sim-only 零样本落地。真正问题是固定总成本下的 sim／real 配方。
+
+**对应主方向。** [D10](/frontiers/simulation-transfer)、[D3](/frontiers/world-models)、[D4](/frontiers/dexterous-manipulation)
+
+**公开证据：**
+
+- [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) — 同行评审 · CVPR 2026
+- [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) — 同行评审 · CoRL 2025
+- [Tactile Sim2Real without Tactile Simulation via Bottlenecked Latent Reconstruction](https://arxiv.org/abs/2608.15897) — 最新信号 · 2026-08
+
+**决定性指标。** 固定真实数据量的增益；未见材质/形变泛化；仿真资产制作成本；真机纠正小时与总迭代周期。
+
+**反证条件。** 高保真仿真投入无法降低真实数据量或提升未见材质表现。
+
+### Q5 · 站位、视角、支撑与操作的联合 loco-manipulation
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 当前主线中的新兴统一问题
+
+**当前判断。** 移动、相机视角与支撑接触应被视为任务动作，与手部操作共同受平衡、碰撞、可达性和信息增益约束。
+
+**对应主方向。** [D5](/frontiers/humanoid-whole-body)、[D6](/frontiers/navigation-mobile-manipulation)、[D11](/frontiers/spatial-perception)、[D2](/frontiers/reasoning-planning)
+
+**公开证据：**
+
+- [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) — 同行评审 · CVPR 2026
+- [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) — 同行评审 · CVPR 2026
+- [HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL](https://arxiv.org/abs/2608.16837) — 最新信号 · 2026-08
+
+**决定性指标。** 完整任务成功与连续时长；平衡违例和碰撞；不可行动作率；重站位/主动视角带来的控制收益。
+
+**反证条件。** 联合策略并未优于模块化导航+操作，或无法保持可诊断、安全回滚。
+
+### Q6 · 可跨任务复用的 post-training recipe
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 快速升温方向
+
+**当前判断。** BC—DAgger—offline/online RL 的组件并不新，真正问题是同一训练流程能否跨任务复用，并降低接管、奖励工程与旧技能回归成本。
+
+**对应主方向。** [D8](/frontiers/policy-learning)、[D13](/frontiers/continual-deployment-learning)、[D1](/frontiers/foundation-models)、[D7](/frontiers/human-robot-interaction)
+
+**公开证据：**
+
+- [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) — 同行评审 · RSS 2025
+- [AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies](https://arxiv.org/abs/2608.07065) — 最新信号 · 部署接管与再训练
+- [Efficient Real-World Online Reinforcement Learning for Robot Manipulation via Centralized Training and Critic Decomposition](https://arxiv.org/abs/2608.09730) — 最新信号 · 2026-08
+
+**决定性指标。** 单位接管分钟的成功率增量；奖励工程人时；跨任务 recipe 复用率；旧技能回归与 wall-clock 收敛。
+
+**反证条件。** 每个任务仍需专用奖励、专人盯机和重新设计训练流程。
+
+### Q7 · 失败边界数据与低人力纠正闭环
+
+**战略优先级：** P0 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 新兴系统主线
+
+**当前判断。** 总小时数不能单独反映部署价值；应把失败发现、接管、纠正、重训、回归和重新部署做成可归因的数据飞轮。
+
+**对应主方向。** [D13](/frontiers/continual-deployment-learning)、[D12](/frontiers/safety-evaluation)、[D9](/frontiers/data-engines)、[D8](/frontiers/policy-learning)
+
+**公开证据：**
+
+- [Optimal Interactive Learning on the Job via Facility Location Planning](https://www.roboticsproceedings.org/rss21/p087.html) — 同行评审 · RSS 2025
+- [RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy](https://arxiv.org/abs/2607.27782) — 预印本 · 动作级失败纠正
+- [FACT: Failure-Aware Causal Training for World-Action Models](https://arxiv.org/abs/2608.10232) — 最新信号 · 失败 rollout 进入因果预测
+
+**决定性指标。** 单位真机小时的有效纠正轨迹；失败类型覆盖率；恢复成功率和接管时间；从失败到修复的可追溯率。
+
+**反证条件。** 失败样本只改善见过的错误，跨任务迁移弱，或回训引发明显旧技能回归。
+
+### Q8 · 模型、数采设备与机器人硬件共设计
+
+**战略优先级：** P1 · **外部证据等级：** <span class="signal signal-c">C</span> · **性质：** 早期 co-design 假设
+
+**当前判断。** 热、背隙、漂移、触觉布局、控制频率、维修周转与采集人因会改变数据分布和可执行动作空间，应进入模型实验的共同设计变量。
+
+**对应主方向。** [D4](/frontiers/dexterous-manipulation)、[D9](/frontiers/data-engines)、[D15](/frontiers/embodied-multisensory)、[D12](/frontiers/safety-evaluation)
+
+**公开证据：**
+
+- [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) — 同行评审 · 软硬件适配
+- [Koala Gripper: Co-designing Robotic Grippers and Data-Capture Devices for Scaling Dexterous Manipulation Learning](https://arxiv.org/abs/2608.20546) — 最新信号 · 机器人与数采设备共设计
+
+**决定性指标。** 跨设备/硬件版本策略迁移；连续运行时间与维护小时；由训练失败驱动的硬件 A/B；同数据预算下的样本效率。
+
+**反证条件。** 硬件修改无法在受控预算下改善学习结果，或历史数据因版本变化不可复用。
+
+### Q9 · 机器人模型、数据与交互的 scaling law
+
+**战略优先级：** P2 · **外部证据等级：** <span class="signal signal-c">C</span> · **性质：** 高价值早期假设
+
+**当前判断。** 扩模收益必须与数据多样性、任务熵、真机交互量、推理延迟和控制频率共同扫描，不能把参数量增长直接解释为通用能力。
+
+**对应主方向。** [D1](/frontiers/foundation-models)、[D8](/frontiers/policy-learning)、[D9](/frontiers/data-engines)
+
+**公开证据：**
+
+- [Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) — 同行评审 · RSS 2025
+- [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) — 预印本 · 大规模真实轨迹
+
+**决定性指标。** 等数据/等算力/等交互量曲线；单位算力和真机小时收益；推理延迟与控制频率；扩模后的 post-training 增量。
+
+**反证条件。** 收益主要由数据或任务覆盖解释，参数规模在受控条件下没有稳定边际收益。
+
+### Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）
+
+**战略优先级：** P2 · **外部证据等级：** <span class="signal signal-b">B</span> · **性质：** 方向已成形、终局假设仍早期
+
+**当前判断。** 用于闭环决策的世界模型应具备动作条件性、决策相关性和可测控制收益；在线使用还要满足时延预算。Physical RSI 尚不是定义稳定的研究类别，应拆成自动评测、数据回流、策略更新和安全部署四个可验证模块。
+
+**对应主方向。** [D3](/frontiers/world-models)、[D12](/frontiers/safety-evaluation)、[D13](/frontiers/continual-deployment-learning)、[D2](/frontiers/reasoning-planning)
+
+**公开证据：**
+
+- [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) — 同行评审 · RSS 2025
+- [FACT: Failure-Aware Causal Training for World-Action Models](https://arxiv.org/abs/2608.10232) — 最新信号 · 因果、失败感知
+- [GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models](https://arxiv.org/abs/2608.05948) — 最新信号 · 物理真实性评测
+
+**决定性指标。** 同算力闭环规划增益；失败/接触事件预测；model bias 与实时延迟；自动 evaluator 的准确率和抗 reward hacking。
+
+**反证条件。** 生成质量与控制收益长期弱相关，或模型时延、偏差与评价器漏洞抵消样本效率收益。
+
+### 如何进入月度雷达
+
+1. 月度页继续先报告 D1–D15 的互斥主方向数量。
+2. 问题层只报告工作密度、证据升级和反证，不制造第二套互斥 taxonomy。
+3. A/B/C 由人工证据判断；自动词表只负责发现候选。
+4. 每次更新优先检查决定性指标，而不是论文是否使用同一个热门名称。
+
+[下载问题证据 sidecar](/embodied-ai-radar/research-question-evidence.json)
+
+---
+
+
+## 文档之外：具身研究雷达还必须看什么
+
+> 原文是一份很强的“单机器人灵巧操作迭代纲领”，但不是完整的具身智能地图。以下缺口大多已经由 D1–D15 覆盖，因此重点是补充研究叙事与横向证据，而不是继续增加互斥主方向。
+
+| ID | 文档遗漏/弱覆盖方向 | 类型 | 已有 D 类 | 为什么重要 | 公开锚点 | 雷达处理 |
+|---|---|---|---|---|---|---|
+| G1 | 通才基础模型、推理与长期记忆 | 独立主方向 | [D1](/frontiers/foundation-models) / [D2](/frontiers/reasoning-planning) | 内部文档有意降低 backbone 的优先级，但模型如何形成可组合技能、任务进度记忆与可验证中间表示仍是当前主线，不能从雷达移除。 | [π0: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) | 保留 D1/D2；问题层只负责检验模型是否真正改善执行闭环。 |
+| G2 | 开放世界导航、空间记忆与主动探索 | 独立主方向 | [D6](/frontiers/navigation-mobile-manipulation) / [D11](/frontiers/spatial-perception) / [D2](/frontiers/reasoning-planning) | loco-manipulation 只覆盖其中一部分；建筑级移动操作、开放词汇导航、动态地图和长期空间记忆具有独立问题结构与评测。 | [MoTo: A Zero-shot Plug-in Interaction-aware Navigation for Generalized Mobile Manipulation](https://proceedings.mlr.press/v305/wu25c.html)；[ActLoc: Learning to Localize through Active Viewpoint Selection](https://proceedings.mlr.press/v305/li25b.html) | 继续由 D6/D11 跟踪，并把主动感知作为横向问题与 Q5 连接。 |
+| G3 | 人机协作、共享自治与偏好学习 | 独立主方向 | [D7](/frontiers/human-robot-interaction) | 内部文档主要把人当作数据采集者和接管者，遗漏了协作、信任、意图沟通、辅助机器人与社会导航。 | [FlashBack: Consistency Model-Accelerated Shared Autonomy](https://proceedings.mlr.press/v305/sun25a.html)；[Safety with Agency: Human-Centered Safety Filter with Application to AI-Assisted Motorsports](https://www.roboticsproceedings.org/rss21/p093.html) | 保留 D7；把人因、操作者建模与 Q6/Q7 的接管效率相连。 |
+| G4 | 安全、形式验证、不确定性与物理攻击面 | 独立主方向 | [D12](/frontiers/safety-evaluation) / [D2](/frontiers/reasoning-planning) | 失败回流不等于安全保证；开放世界机器人还需要风险校准、运行时保障、指令/视觉攻击评测和人身安全边界。 | [Geometric Red-Teaming for Robotic Manipulation](https://proceedings.mlr.press/v305/goel25a.html)；[Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures](https://proceedings.mlr.press/v305/seo25a.html) | 强化 D12，并将安全成本、风险暴露时间和干预触发纳入所有问题轴的共同指标。 |
+| G5 | 长期记忆、持续学习与灾难性遗忘 | 横向能力轴 | [D13](/frontiers/continual-deployment-learning) / [D2](/frontiers/reasoning-planning) | 一次 post-training 不能代表长期运行；策略需要在任务、环境和硬件变化后持续吸收经验且不破坏旧技能。 | [Continuously Improving Mobile Manipulation with Autonomous Real-World RL](https://proceedings.mlr.press/v270/mendonca25a.html)；[Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning](https://arxiv.org/abs/2608.21204) | 保留 D13；把回归测试、记忆更新和技能保留加入 Q6/Q7。 |
+| G6 | 多机器人协同、异构编队与 fleet learning | 独立但低密度方向 | [D14](/frontiers/multi-robot-coordination) / [D13](/frontiers/continual-deployment-learning) | 内部材料集中在单机操作，未覆盖多机通信、协作操作、异构团队与跨设备经验共享。 | [Capability-Aware Shared Hypernetworks for Multi-Agent Coordination](https://proceedings.mlr.press/v305/fu25a.html)；[Latent Theory of Mind for Cooperative Multi-Agent Reinforcement Learning](https://proceedings.mlr.press/v305/he25a.html) | 保留 D14，但在出现跨月独立团队与真实系统证据前不扩为核心问题轴。 |
+| G7 | 实时、边缘部署、能耗与系统资源调度 | 横向系统轴 | [D1](/frontiers/foundation-models) / [D2](/frontiers/reasoning-planning) / [D12](/frontiers/safety-evaluation) | 控制频率、云边时延、功耗和状态陈旧会直接决定大模型、verifier 与世界模型能否进入闭环。 | [Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference](https://arxiv.org/abs/2608.04428)；[EcoVLA: Energy-Efficient Device-Edge Co-Inference for Vision-Language-Action Models under Real-Time Constraints](https://arxiv.org/abs/2608.15502) | 不新增 D16；作为所有模型/系统方向的强制证据字段和月度弱信号。 |
+| G8 | 柔性物体、医疗、工业与极端环境等压力测试域 | 应用压力测试 | [D4](/frontiers/dexterous-manipulation) / [D1](/frontiers/foundation-models) / [D10](/frontiers/simulation-transfer) / [D12](/frontiers/safety-evaluation) | 这些场景不是简单行业标签，而是检验精确接触、合规、安全、数据稀缺和跨域泛化的高约束测试床。 | [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](https://arxiv.org/abs/2605.31286)；[Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](https://arxiv.org/abs/2604.21017) | 作为 domain tags 和专题页维护，不拆成互斥主方向。 |
+| G9 | 本体、软体机器人与学习驱动的形态设计 | 候选一级方向 | [D4](/frontiers/dexterous-manipulation) / [D10](/frontiers/simulation-transfer) / [D15](/frontiers/embodied-multisensory) | 内部文档已提出软硬件共设计，但仍主要把硬件视为训练约束；新研究开始把刚度、形态、传感布局和控制器放入同一优化问题。 | [KineSoft: A Kinematically Inspired Soft Gripper with Proprioceptive Sensing](https://proceedings.mlr.press/v305/yoo25a.html)；[Co-Design of Soft Gripper with Neural Physics](https://proceedings.mlr.press/v305/yi25a.html) | 先设 D16 观察池；只有达到至少 3 个独立团队、2 个正式 venue 且主贡献确为本体设计与学习联合优化时再升级。 |
+
+### 是否需要新增 D16
+
+当前不正式新增。**本体、软体机器人与学习驱动形态设计**值得建立观察池，但升级前应同时满足：至少 3 个独立团队、2 个正式 venue，并且论文主贡献确实是“本体设计与学习联合优化”，而不是纯机械、材料或没有自主学习闭环的硬件论文。
+
+### 最重要的补充判断
+
+- 失败恢复不等于安全保证；风险校准、运行时保障、形式约束和物理攻防需要独立观察。
+- Loco-manipulation 不等于开放世界导航；建筑级移动操作、动态语义地图和长期空间记忆仍有独立问题结构。
+- 人不只是示范者或接管者，也是协作者、被服务者和共同决策者。
+- 单机数据飞轮不等于 fleet learning；异构多机器人协作、策略分发与集体回归测试仍被低估。
+- 端侧算力、能耗、网络依赖、标定、维护和数据权利属于战略看板变量，不应伪装成论文主方向。
+
+---
+
+
 ## 15 个研究方向
 
 > 本站当前统一使用以下 15 个主方向。每项工作只计一个主方向，可同时拥有多个关联方向与证据标签。
 
+主方向回答“论文主要研究什么”；[Q0–Q10 问题地图](/questions/)进一步回答接触表征、可执行动作、失败回流和软硬件共设计等跨方向瓶颈是否正在接近解决。
+
 | 编号 | 方向 | 层级 | 纳入工作 |
 |---|---|---|---:|
-| D1 | [具身基础模型与通才策略](/frontiers/foundation-models) | 模型与系统 | 924 |
-| D2 | [分层推理、规划与记忆](/frontiers/reasoning-planning) | 模型与系统 | 819 |
-| D3 | [世界模型与预测控制](/frontiers/world-models) | 模型与系统 | 616 |
-| D4 | [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 物理能力 | 1234 |
-| D5 | [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 物理能力 | 1987 |
-| D6 | [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 物理能力 | 530 |
-| D7 | [人机协作与交互学习](/frontiers/human-robot-interaction) | 物理能力 | 789 |
-| D8 | [策略学习与优化](/frontiers/policy-learning) | 学习与基础设施 | 2768 |
-| D9 | [数据引擎与人类视频学习](/frontiers/data-engines) | 学习与基础设施 | 343 |
-| D10 | [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 学习与基础设施 | 401 |
-| D11 | [动作关联的空间感知与表征](/frontiers/spatial-perception) | 学习与基础设施 | 518 |
-| D12 | [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 学习与基础设施 | 161 |
-| D13 | [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 学习与基础设施 | 8 |
-| D14 | [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 物理能力 | 51 |
-| D15 | [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 学习与基础设施 | 28 |
+| D1 | [具身基础模型与通才策略](/frontiers/foundation-models) | 模型与系统 | 981 |
+| D2 | [分层推理、规划与记忆](/frontiers/reasoning-planning) | 模型与系统 | 839 |
+| D3 | [世界模型与预测控制](/frontiers/world-models) | 模型与系统 | 657 |
+| D4 | [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 物理能力 | 1271 |
+| D5 | [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 物理能力 | 2031 |
+| D6 | [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 物理能力 | 548 |
+| D7 | [人机协作与交互学习](/frontiers/human-robot-interaction) | 物理能力 | 801 |
+| D8 | [策略学习与优化](/frontiers/policy-learning) | 学习与基础设施 | 2820 |
+| D9 | [数据引擎与人类视频学习](/frontiers/data-engines) | 学习与基础设施 | 357 |
+| D10 | [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 学习与基础设施 | 408 |
+| D11 | [动作关联的空间感知与表征](/frontiers/spatial-perception) | 学习与基础设施 | 529 |
+| D12 | [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 学习与基础设施 | 168 |
+| D13 | [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 学习与基础设施 | 9 |
+| D14 | [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 物理能力 | 52 |
+| D15 | [触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 学习与基础设施 | 29 |
 
 ---
 
 
 ## D1 · 具身基础模型与通才策略
 
-> 归属层级：模型与系统。当前纳入 924 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：模型与系统。当前纳入 981 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -2585,7 +2872,7 @@ flowchart LR
 
 ## D2 · 分层推理、规划与记忆
 
-> 归属层级：模型与系统。当前纳入 819 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：模型与系统。当前纳入 839 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -2693,7 +2980,7 @@ flowchart LR
 
 ## D3 · 世界模型与预测控制
 
-> 归属层级：模型与系统。当前纳入 616 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：模型与系统。当前纳入 657 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -2801,7 +3088,7 @@ flowchart LR
 
 ## D4 · 灵巧、双臂与接触操作
 
-> 归属层级：物理能力。当前纳入 1234 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：物理能力。当前纳入 1271 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -2909,7 +3196,7 @@ flowchart LR
 
 ## D5 · 人形、运动与全身控制
 
-> 归属层级：物理能力。当前纳入 1987 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：物理能力。当前纳入 2031 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3017,7 +3304,7 @@ flowchart LR
 
 ## D6 · 导航与移动操作
 
-> 归属层级：物理能力。当前纳入 530 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：物理能力。当前纳入 548 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3125,7 +3412,7 @@ flowchart LR
 
 ## D7 · 人机协作与交互学习
 
-> 归属层级：物理能力。当前纳入 789 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：物理能力。当前纳入 801 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3233,7 +3520,7 @@ flowchart LR
 
 ## D8 · 策略学习与优化
 
-> 归属层级：学习与基础设施。当前纳入 2768 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 2820 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3311,7 +3598,7 @@ flowchart LR
 | [DiWA: Diffusion Policy Adaptation with World Models](https://arxiv.org/abs/2508.03645) | 2025-08-05 | CoRL 2025 | 是 | — |
 | [Dreamitate: Real-World Visuomotor Policy Learning via Video Generation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Dynamic Rank Adjustment in Diffusion Policies for Efficient and Flexible Training](https://arxiv.org/abs/2502.03822) | 2025-02-06 | RSS 2025 | 是 | — |
-| [Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation](https://proceedings.mlr.press/) | 2024-01-01 | CoRL 2024、CoRL 2024 | 是 | — |
+| [Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation](https://arxiv.org/abs/2608.11870) | 2026-08-12 | CoRL 2024、CoRL 2024 | 是 | — |
 | [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Equivariant Diffusion Policy](https://arxiv.org/abs/2407.01812) | 2024-07-01 | CoRL 2024、CoRL 2024 | 是 | — |
 | [Few-Shot Neuro-Symbolic Imitation Learning for Long-Horizon Planning and Acting](https://arxiv.org/abs/2508.21501) | 2025-08-29 | CoRL 2025 | 是 | — |
@@ -3341,7 +3628,7 @@ flowchart LR
 
 ## D9 · 数据引擎与人类视频学习
 
-> 归属层级：学习与基础设施。当前纳入 343 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 357 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3449,7 +3736,7 @@ flowchart LR
 
 ## D10 · 仿真、合成数据与 Sim-to-Real
 
-> 归属层级：学习与基础设施。当前纳入 401 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 408 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3557,7 +3844,7 @@ flowchart LR
 
 ## D11 · 动作关联的空间感知与表征
 
-> 归属层级：学习与基础设施。当前纳入 518 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 529 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3665,7 +3952,7 @@ flowchart LR
 
 ## D12 · 评测、安全、可靠性与故障恢复
 
-> 归属层级：学习与基础设施。当前纳入 161 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 168 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3773,7 +4060,7 @@ flowchart LR
 
 ## D13 · 持续学习、部署学习与自改进
 
-> 归属层级：学习与基础设施。当前纳入 8 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 9 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3819,6 +4106,7 @@ flowchart LR
 | [MAER-Nav: Bidirectional Motion Learning Through Mirror-Augmented Experience Replay for Robot Navigation](https://arxiv.org/abs/2503.23908) | 2025-03-31 | IROS 2025 | 否 | — |
 | [Overparametrization helps offline-to-online generalization of closed-loop control from pixels](https://ieeexplore.ieee.org/document/10610284) | 2024-05-13 | ICRA 2024 | 否 | — |
 | [Safe Offline-to-Online Multi-Agent Decision Transformer: A Safety Conscious Sequence Modeling Approach](https://ieeexplore.ieee.org/document/10801292) | 2024-01-01 | IROS 2024 | 否 | — |
+| [Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning](https://arxiv.org/abs/2608.21204) | 2026-08-21 | 预印本 | 否 | — |
 | [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980) | 2026-06-18 | 预印本 | 否 | — |
 | [LACY: A Vision-Language Model-based Language-Action Cycle for Self-Improving Robotic Manipulation](https://arxiv.org/abs/2511.02239) | 2025-11-04 | ICRA 2026 | 否 | — |
 | [SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation](https://arxiv.org/abs/2606.10305) | 2026-06-09 | 预印本 | 否 | — |
@@ -3829,7 +4117,7 @@ flowchart LR
 
 ## D14 · 多机器人协同与群体智能
 
-> 归属层级：物理能力。当前纳入 51 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：物理能力。当前纳入 52 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3904,6 +4192,7 @@ flowchart LR
 | [Federated Single-Agent Robotics: Multi-Robot Coordination Without Intra-Robot Multi-Agent Fragmentation](https://arxiv.org/abs/2604.11028) | 2026-04-13 | 预印本 | 否 | — |
 | [FLEET: Formal Language-Grounded Scheduling for Heterogeneous Robot Teams](https://arxiv.org/abs/2510.07417) | 2025-10-08 | 预印本 | 否 | — |
 | [GA3T: A Ground-Aerial Terrain Traversability Dataset for Heterogeneous Robot Teams in Unstructured Environments](https://arxiv.org/abs/2605.06478) | 2026-05-07 | 预印本 | 否 | — |
+| [Genetic Fuzzy System-Based Multi-Robot Coordination for Planetary Missions](https://arxiv.org/abs/2608.12755) | 2026-08-13 | 预印本 | 否 | — |
 | [Learning Multi-Robot Coordination through Locality-Based Factorized Multi-Agent Actor-Critic Algorithm](https://arxiv.org/abs/2503.18816) | 2025-03-24 | 预印本 | 否 | — |
 | [Lyapunov Stability-Driven Control Algorithm for Heterogeneous Multi-Robot Coordination (I)](https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_394) | — | ICRA 2026 | 否 | — |
 | [MoRoCo: An Online Topology-Adaptive Framework for Multi-Operator Multi-Robot Coordination under Restricted Communication](https://arxiv.org/abs/2508.07657) | 2025-08-11 | 预印本 | 否 | — |
@@ -3928,7 +4217,7 @@ flowchart LR
 
 ## D15 · 触觉、力觉与多模态身体感知
 
-> 归属层级：学习与基础设施。当前纳入 28 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：学习与基础设施。当前纳入 29 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ### 纳入边界
 
@@ -3997,6 +4286,7 @@ flowchart LR
 | [TactX: Learning Shared Tactile Representations Across Diverse Sensors](https://arxiv.org/abs/2606.31236) | 2026-06-30 | 预印本 | 否 | — |
 | [Toward Gripper-Integrated Active Electrosense for Pre-Contact Sensing in Underwater Soft Grippers](https://arxiv.org/abs/2606.03204) | 2026-06-02 | 预印本 | 否 | — |
 | [UniForce: A Unified Latent Force Model for Robot Manipulation with Diverse Tactile Sensors](https://arxiv.org/abs/2602.01153) | 2026-02-01 | 预印本 | 否 | — |
+| [VT-MUSE: Multimodal Unified Sequential Visuotactile Representation Learning for Manipulation](https://arxiv.org/abs/2608.21290) | 2026-08-21 | 预印本 | 否 | — |
 | [VTLA: Vision-Tactile-Language-Action Model with Preference Learning for Insertion Manipulation](https://arxiv.org/abs/2505.09577) | 2025-05-14 | 预印本 | 否 | — |
 
 ---
@@ -4293,7 +4583,7 @@ JSON/CSV 包含全部 2650 条纳入统计记录；网页按年份拆分，避�
 
 ## 检索、分类与趋势判定方法
 
-> **数据截点**：2026 年 8 月 4 日（Asia/Shanghai）<br>
+> **数据截点**：2026 年 8 月 24 日（Asia/Shanghai）<br>
 > 本页描述当前可复算流程；任何依赖人工判断的步骤都会明确标注。
 
 ::: tip 统一方向体系
@@ -4322,7 +4612,7 @@ flowchart LR
   D --> E["结构化证据库<br/>CSV / JSON 单一来源<br/> "]
 ```
 
-宽召回优先保证“不漏掉使用新命名的工作”。当前语料完整拉取窗口内 `cs.RO` 23,336 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,430 条机器人/具身交叉记录，合并去重后形成 30,766 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,165 条版本记录、窗口内 10,404 条；母集保留窗口前的 ICRA 2024 以支持版本合并。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
+宽召回优先保证“不漏掉使用新命名的工作”。当前语料完整拉取窗口内 `cs.RO` 24,119 条，并补充 `cs.AI`、`cs.CV`、`cs.LG` 中 7,654 条机器人/具身交叉记录，合并去重后形成 31,773 条 arXiv 母集。正式发表管线独立采集 ICRA、IROS、RSS、CoRL、RA-L、T-RO、IJRR 与 Science Robotics，共 12,165 条版本记录、窗口内 10,404 条；母集保留窗口前的 ICRA 2024 以支持版本合并。Semantic Scholar 只用于摘要、arXiv 映射和引用快照补全，不覆盖会议年份或出版社日期，也不再作为唯一发现入口。
 
 104 篇高信号样本继续作为精读层，逐条核对 ID、标题、`published`（v1）、摘要、实验和开放资产。分类规则只负责生成候选和初步分数；是否纳入高信号论文、是否构成趋势，以及跨方向归类均需结合摘要和方法描述复核。
 
@@ -4617,6 +4907,41 @@ stars 仍展示为传播元数据。GitHub 通用 API 没有稳定的反向依�
 ### 不在本期范围
 
 市场规模、公司融资、商业订单、供应链和公司级尽调不在本期范围。本报告只提供研究证据，可作为后续商业模块的技术底座。
+
+---
+
+
+## 研究问题层方法
+
+### 为什么不改 D1–D15
+
+D1–D15 是每篇工作唯一主分类，用于稳定月度曲线。问题层是多标签镜头：触觉、失败数据、软硬件共设计和主动感知天然跨越多个主方向。如果直接改主分类或分类顺序，会把历史曲线变化与真实研究变化混在一起。
+
+### 自动层
+
+- 数据源：已纳入的 arXiv 母库记录。
+- 日期：首次提交 v1。
+- 匹配：标题与摘要对公开词表做不区分大小写的子串匹配。
+- 输出：`data/research-question-evidence.json`，记录论文命中的 Q 与具体词项。
+- 限制：高召回计数只能表示相关工作密度，不能证明研究命题成立。
+
+### 人工判断层
+
+| 等级 | 使用条件 |
+|---|---|
+| A | 多团队或严格同行评审已确认路线，但不代表具体科学问题完全解决 |
+| B | 过去 12 个月出现多个独立研究簇，仍缺统一评测、跨平台复现或成本对照 |
+| C | 高价值早期假设，证据主要来自少量预印本、系统原型或内部经验 |
+| D | 反证增加、缺少独立跟进，或结果只剩命名和单一 demo |
+
+P0/P1/P2 只表示战略依赖顺序，与 A/B/C/D 外部证据等级相互独立。
+
+### 升级与降级
+
+- 升级优先看真机、独立团队、正式发表、跨硬件复现和决定性指标。
+- 只有关键词数量增加而没有新能力，不升级。
+- 反证条件被触发、连续两个季度没有独立跟进或成本不可接受时降级。
+- 安全、评测和软硬件变量可以成为关键门槛，但不会仅因“论文少”被误写成弱方向。
 
 ---
 

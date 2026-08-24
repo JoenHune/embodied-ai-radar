@@ -206,9 +206,9 @@ for (const month of [
   }
 }
 const augustPage = fs.readFileSync(path.join(root, 'docs', 'monthly', '2026-08.md'), 'utf8')
-assert(augustPage.includes('月初快照，截至 4 日'),
-  'August early snapshot missing')
-assert(augustPage.includes('月初空窗，不计算 −100%'),
+assert(augustPage.includes(`前瞻快照，截至 ${Number(cutoff.slice(-2))} 日`),
+  'August snapshot cutoff missing')
+assert(augustPage.includes('不完整月，不计算环比'),
   'August false month-over-month warning missing')
 const corpusPage = fs.readFileSync(path.join(root, 'docs', 'analysis', 'corpus-expansion.md'), 'utf8')
 assert(corpusPage.includes(preprints.length.toLocaleString('zh-CN')),

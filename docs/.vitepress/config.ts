@@ -41,6 +41,7 @@ export default withMermaid(defineConfig({
       { text: '首页', link: '/' },
       { text: '月度雷达', link: '/monthly/' },
       { text: '研究方向', link: '/frontiers/' },
+      { text: '问题地图', link: '/questions/' },
       { text: '年度综合', link: '/analysis/annual' },
       { text: '弱信号', link: '/analysis/weak-signals' },
       { text: '团队机构', link: '/analysis/institutions' },
@@ -77,7 +78,16 @@ export default withMermaid(defineConfig({
           { text: '2026 年 5 月', link: '/monthly/2026-05' },
           { text: '2026 年 6 月', link: '/monthly/2026-06' },
           { text: '2026 年 7 月（完整月）', link: '/monthly/2026-07' },
-          { text: '2026 年 8 月（截至 4 日）', link: '/monthly/2026-08' },
+          { text: '2026 年 8 月（截至 24 日）', link: '/monthly/2026-08' },
+        ],
+      },
+      {
+        text: '研究问题地图',
+        collapsed: false,
+        items: [
+          { text: 'Q0–Q10 问题追踪器', link: '/questions/' },
+          { text: '文档之外的遗漏方向', link: '/questions/blind-spots' },
+          { text: '问题层方法', link: '/methods/research-question-layer' },
         ],
       },
       {

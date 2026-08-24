@@ -4,7 +4,7 @@ outline: deep
 
 # 执行摘要
 
-> **数据截至**：2026 年 8 月 4 日 · **主分析期**：2025.07–2026.06<br>
+> **数据截至**：2026-08-24 · **主分析期**：2025.07–2026.06<br>
 > **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
@@ -14,14 +14,14 @@ outline: deep
 :::
 
 ::: info 8 月更新
-7 月已收完整月，新增 30–31 日 10 篇高信号精读；8 月截至 4 日的 arXiv API 仍无新 v1，因此只发布早期路标快照，不把发布空窗写成降温。正式发表、官方 proceedings 与 GitHub 元数据已独立刷新。
+7 月已收完整月；8 月截至 24 日已纳入 328 条直接候选。由于月份尚未关闭，不与完整月计算环比；本轮重点新增[问题地图](/questions/)，把接触表征、Ego-to-Action、失败回流和软硬件 co-design 与公开证据逐项对应。
 :::
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>30,766</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 宽召回母集</span></div>
   <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表记录</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>40,605</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>41,592</strong><span>去重 canonical works</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 
@@ -64,3 +64,5 @@ outline: deep
 ## 最重要的非共识机会
 
 按当前证据排序：**实时 VLA 执行栈、verifier/自纠错、部署数据飞轮、控制导向 world model、触觉预测通道、跨本体动作接口、3D trace，以及高风险的 Embodied Agent OS。** 详见[未来判断](/analysis/weak-signals)。
+
+飞书材料提出的系统问题及文档之外的研究缺口，见[Q0–Q10 研究问题地图](/questions/)和[遗漏方向](/questions/blind-spots)。

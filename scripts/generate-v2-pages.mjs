@@ -438,10 +438,15 @@ const augustAll = preprints.filter((row) => row.first_submitted?.startsWith(augu
 const augustIncluded = includedPreprints.filter((row) => row.first_submitted?.startsWith(augustMonth))
 const julyIncluded = includedPreprints.filter((row) => row.first_submitted?.startsWith('2026-07'))
 const augustCandidate = augustAll.filter((row) => row.relevance?.status === 'candidate').length
+const snapshotDay = Number(snapshotDate.slice(-2))
+const augustLeaders = topicEntries
+  .map(([key, item]) => ({ key, item, count: augustIncluded.filter((row) => row.primary_topic === key).length }))
+  .sort((left, right) => right.count - left.count)
+  .slice(0, 5)
 const augustTopicRows = topicEntries.map(([key, item]) => {
   const current = augustIncluded.filter((row) => row.primary_topic === key).length
   const previous = julyIncluded.filter((row) => row.primary_topic === key).length
-  return `| ${item.code} · [${item.label}](/frontiers/${topicSlug(key)}) | ${current} | ${previous} | — | 尚无 8 月 v1，不做方向推断 |`
+  return `| ${item.code} · [${item.label}](/frontiers/${topicSlug(key)}) | ${current} | ${previous} | — | 截至 ${snapshotDay} 日，不完整月，不做环比 |`
 }).join('\n')
 const lateJulyIds = new Set([
   '2607.27549', '2607.27599', '2607.27782', '2607.28391', '2607.28596',
@@ -463,9 +468,9 @@ const lateJulyRows = legacyPapers
 
 write('monthly/2026-08.md', `${frontmatter}
 
-# 2026 年 8 月研究雷达（月初快照，截至 4 日）
+# 2026 年 8 月研究雷达（前瞻快照，截至 ${snapshotDay} 日）
 
-> **这是早期快照，不是完整月。** 本站按 arXiv 首次提交 v1 日期归档。截至 ${snapshotDate}，三组官方 API 查询在 8 月窗口均返回 0 条；这可能受月初/周末发布节奏与索引时点影响，不构成任何方向降温的证据。
+> **这是前瞻快照，不是完整月。** 本站按 arXiv 首次提交 v1 日期归档。截至 ${snapshotDate}，8 月已形成可观察样本，但不与 7 月完整月直接计算环比或外推整月趋势。
 
 <div class="radar-kpis">
   <div class="radar-kpi"><strong>${fmt(augustAll.length)}</strong><span>8 月 arXiv 母集</span></div>
@@ -476,16 +481,16 @@ write('monthly/2026-08.md', `${frontmatter}
 
 ## 一句话结论
 
-8 月目前还没有可按 v1 日期归档的 arXiv 新论文，所以本页不制造“月度趋势”；现阶段最有价值的更新是用 7 月末的小众信号设置 8 月验证路标，同时跟踪正式发表和 GitHub 独立采用是否跟上。
+8 月截至 ${snapshotDay} 日已有 ${fmt(augustIncluded.length)} 条直接候选；数量领先的是${augustLeaders.map(({ item, count }) => `${item.label}（${count}）`).join('、')}。不完整月的数量不用于判断升降，更有价值的变化是：接触失败诊断、自动干预、失败感知 world-action model 和学习驱动硬件 co-design 正开始直接回应[问题地图](/questions/)中的 P0/P1 命题。
 
 ## 主题结构与环比
 
-| 主方向 | 8 月截至 4 日 | 7 月完整月 | 环比 | 判读 |
+| 主方向 | 8 月截至 ${snapshotDay} 日 | 7 月完整月 | 环比 | 判读 |
 |---|---:|---:|---:|---|
 ${augustTopicRows}
-| **总计** | **${augustIncluded.length}** | **${julyIncluded.length}** | **—** | **月初空窗，不计算 −100%** |
+| **总计** | **${augustIncluded.length}** | **${julyIncluded.length}** | **—** | **不完整月，不计算环比** |
 
-这里仍然展示 7 月绝对数，满足环比追踪的可追溯性；但由于本月分子还是“尚无发布样本”，任何百分比都会误导，因此显式标记为不可比。
+这里仍然展示 7 月绝对数，满足追踪的可追溯性；但由于 8 月只覆盖到 ${snapshotDay} 日，任何环比百分比都会把截点差异误写成研究变化，因此显式标记为不可比。
 
 ## 8 月要验证的六条早期命题
 
@@ -519,7 +524,7 @@ ${lateJulyRows}
 
 ## 下次更新触发条件
 
-一旦 arXiv API 出现 8 月首批 v1，本页将补入全量主题结构、绝对数和环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
+月末关闭 8 月窗口后再计算完整环比；只有当至少 3 项工作、来自 2 个以上独立团队指向同一瓶颈时，才升级为 B 级新兴趋势。
 
 <!-- 更新标记：2026-08 月度雷达 最后更新 2026.08 -->
 `)
@@ -548,12 +553,12 @@ write('monthly/index.md', `${frontmatter}
 
 # 月度研究雷达
 
-> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 ${topicEntries.length} 个研究方向。2026 年 8 月仍是月初快照，因此保留 7 月参照数但不计算误导性的百分比。
+> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 ${topicEntries.length} 个研究方向。2026 年 8 月是不完整快照，因此保留 7 月参照数但不计算误导性的百分比。
 
 | 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
 ${radarMonthRows}
-| [2026 年 8 月（截至 4 日）](/monthly/2026-08) | 0 | — | 不可比 | — | 不可比 | 尚无 arXiv v1 | 0 | 0/0 |
+| [2026 年 8 月（截至 ${snapshotDay} 日）](/monthly/2026-08) | ${augustIncluded.length} | — | 不可比 | — | 不可比 | ${taxonomy.categories[augustLeaders[0].key].code} · ${compactTopicLabel[augustLeaders[0].key]}（${augustLeaders[0].count}） | 0 | 0/0 |
 
 ## 怎么读月度页
 
@@ -621,6 +626,8 @@ write('frontiers/index.md', `${frontmatter}
 # ${topicEntries.length} 个研究方向
 
 > 本站当前统一使用以下 ${topicEntries.length} 个主方向。每项工作只计一个主方向，可同时拥有多个关联方向与证据标签。
+
+主方向回答“论文主要研究什么”；[Q0–Q10 问题地图](/questions/)进一步回答接触表征、可执行动作、失败回流和软硬件共设计等跨方向瓶颈是否正在接近解决。
 
 | 编号 | 方向 | 层级 | 纳入工作 |
 |---|---|---|---:|

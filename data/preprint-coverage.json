@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-08-04",
+  "generated_at": "2026-08-24",
   "window": {
     "from": "2024-07-01",
-    "until": "2026-08-04"
+    "until": "2026-08-24"
   },
-  "mother_corpus": 30766,
-  "included": 8941,
-  "candidate": 5679,
-  "manual_review": 9752,
-  "with_doi": 2821,
+  "mother_corpus": 31773,
+  "included": 9269,
+  "candidate": 5896,
+  "manual_review": 10044,
+  "with_doi": 2869,
   "by_query": {
-    "robot_crosslist": 13006,
-    "cs_ro": 23336,
-    "embodied_crosslist": 2308
+    "robot_crosslist": 13386,
+    "cs_ro": 24119,
+    "embodied_crosslist": 2448
   },
   "by_primary_topic": {
-    "dexterous_manipulation": 922,
-    "policy_learning": 2232,
-    "humanoid_whole_body": 1508,
-    "human_robot_interaction": 585,
-    "world_models": 578,
-    "data_engines": 257,
-    "spatial_perception": 428,
-    "reasoning_planning": 596,
-    "navigation_mobile_manipulation": 435,
-    "simulation_transfer": 314,
-    "foundation_models": 898,
-    "safety_evaluation": 122,
-    "embodied_multisensory": 23,
-    "multi_robot_coordination": 37,
-    "continual_deployment_learning": 6
+    "dexterous_manipulation": 960,
+    "policy_learning": 2287,
+    "humanoid_whole_body": 1553,
+    "human_robot_interaction": 597,
+    "world_models": 619,
+    "data_engines": 271,
+    "spatial_perception": 439,
+    "reasoning_planning": 616,
+    "navigation_mobile_manipulation": 453,
+    "simulation_transfer": 321,
+    "foundation_models": 955,
+    "safety_evaluation": 129,
+    "embodied_multisensory": 24,
+    "multi_robot_coordination": 38,
+    "continual_deployment_learning": 7
   },
   "months": {
     "2024-07": {
@@ -233,12 +233,12 @@
       "supplement_only": 301
     },
     "2026-08": {
-      "mother_corpus": 0,
-      "included": 0,
-      "candidate": 0,
-      "manual_review": 0,
-      "cs_ro": 0,
-      "supplement_only": 0
+      "mother_corpus": 1007,
+      "included": 328,
+      "candidate": 217,
+      "manual_review": 292,
+      "cs_ro": 783,
+      "supplement_only": 224
     }
   },
   "method_note": "Mother corpus is the deduplicated union of complete cs.RO monthly pulls and targeted cs.AI/cs.CV/cs.LG supplementary queries. Included is an automated v2 relevance state, not the hand-curated top-paper set."

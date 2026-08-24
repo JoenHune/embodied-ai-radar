@@ -526,6 +526,8 @@ function benchmarkPage() {
 }
 
 function quarterlyPage() {
+  const augustSnapshot = currentPreprints.filter((paper) =>
+    paper.relevance?.status === 'included' && paper.first_submitted?.startsWith('2026-08')).length
   const quarters = [
     {
       title: '2025 Q3 · 数据入口重构',
@@ -582,7 +584,7 @@ ${sections}
 
 ## 2026 年 7 月完整月与 8 月早期快照
 
-7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 4 日尚无可归档 arXiv v1，暂不从 0 条样本推断趋势。
+7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 ${Number(preprintCoverage.window.until.slice(-2))} 日已有 ${augustSnapshot} 条直接候选，但不完整月不与 7 月直接计算环比；新增证据优先进入[研究问题地图](/questions/)验证既有命题。
 
 <!-- 更新标记：季度演进 最后更新 2026.08 -->`
 }
@@ -700,7 +702,7 @@ function executiveSummary() {
 
 # 执行摘要
 
-> **数据截至**：2026 年 8 月 4 日 · **主分析期**：2025.07–2026.06<br>
+> **数据截至**：${preprintCoverage.window.until} · **主分析期**：2025.07–2026.06<br>
 > **精读**：${curated.length} 篇 · **官方评审锚点**：${peerRecords.length} 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
@@ -710,7 +712,7 @@ function executiveSummary() {
 :::
 
 ::: info 8 月更新
-7 月已收完整月，新增 30–31 日 10 篇高信号精读；8 月截至 4 日的 arXiv API 仍无新 v1，因此只发布早期路标快照，不把发布空窗写成降温。正式发表、官方 proceedings 与 GitHub 元数据已独立刷新。
+7 月已收完整月；8 月截至 ${Number(preprintCoverage.window.until.slice(-2))} 日已纳入 ${currentPreprints.filter((paper) => paper.relevance?.status === 'included' && paper.first_submitted?.startsWith('2026-08')).length} 条直接候选。由于月份尚未关闭，不与完整月计算环比；本轮重点新增[问题地图](/questions/)，把接触表征、Ego-to-Action、失败回流和软硬件 co-design 与公开证据逐项对应。
 :::
 
 <div class="radar-kpis">
@@ -760,6 +762,8 @@ function executiveSummary() {
 ## 最重要的非共识机会
 
 按当前证据排序：**实时 VLA 执行栈、verifier/自纠错、部署数据飞轮、控制导向 world model、触觉预测通道、跨本体动作接口、3D trace，以及高风险的 Embodied Agent OS。** 详见[未来判断](/analysis/weak-signals)。
+
+飞书材料提出的系统问题及文档之外的研究缺口，见[Q0–Q10 研究问题地图](/questions/)和[遗漏方向](/questions/blind-spots)。
 
 <!-- 更新标记：执行摘要 最后更新 2026.08 -->`
 }
