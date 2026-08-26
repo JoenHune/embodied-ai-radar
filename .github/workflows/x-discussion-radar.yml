@@ -1,0 +1,110 @@
+name: X discussion radar
+
+on:
+  schedule:
+    # Four overlapping polls per day.  Recent Search only covers seven days.
+    - cron: '18 */6 * * *'
+    # Monday 04:30 Asia/Shanghai: finalize the previous Monday-Sunday week.
+    - cron: '30 20 * * 0'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Run an incremental poll, weekly publication, or both
+        required: true
+        type: choice
+        options: [poll, weekly, both]
+        default: both
+
+permissions:
+  contents: write
+
+concurrency:
+  group: x-discussion-radar
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate query plan
+        run: python3 scripts/collect_x_discussions.py --dry-run
+      - name: Collect recent discussions
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          if [[ -z "$X_BEARER_TOKEN" ]]; then
+            echo "X_BEARER_TOKEN is not configured; collection remains in dry-run mode."
+            exit 0
+          fi
+          python3 scripts/collect_x_discussions.py
+      - name: Persist deduplicated Post metadata
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          if [[ -z "$X_BEARER_TOKEN" ]]; then exit 0; fi
+          git config user.name "embodied-ai-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/x-discussion-posts.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: collect X discussion metadata [skip ci]"
+            git push origin HEAD:main
+          fi
+
+  weekly:
+    needs: poll
+    if: >-
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'weekly' || inputs.mode == 'both') ||
+      github.event_name == 'schedule' && github.event.schedule == '30 20 * * 0'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Generate weekly discussion radar
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          if [[ -n "$X_BEARER_TOKEN" ]]; then
+            python3 scripts/generate_x_weekly.py --verify-live
+          else
+            echo "X_BEARER_TOKEN is not configured; generating an explicit empty-state report."
+            python3 scripts/generate_x_weekly.py
+          fi
+      - run: npm test
+      - name: Publish X weekly digest to Feishu or validate dry-run
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_FOLDER_TOKEN: ${{ secrets.FEISHU_FOLDER_TOKEN }}
+          FEISHU_X_INDEX_DOC_TOKEN: ${{ secrets.FEISHU_X_INDEX_DOC_TOKEN }}
+        run: |
+          if [[ -n "$FEISHU_APP_ID" && -n "$FEISHU_APP_SECRET" && -n "$FEISHU_FOLDER_TOKEN" && -n "$FEISHU_X_INDEX_DOC_TOKEN" ]]; then
+            python3 scripts/publish_x_weekly_to_feishu.py
+          else
+            echo "Feishu X-radar secrets are not configured; running a non-publishing dry-run."
+            python3 scripts/publish_x_weekly_to_feishu.py --dry-run
+          fi
+      - name: Persist and deploy through the main Pages workflow
+        run: |
+          git config user.name "embodied-ai-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/x-discussion-posts.json data/x-weekly-discussions.json data/feishu-x-weekly-deliveries.json docs/social docs/public/x-weekly-discussions.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: X discussion radar $(TZ=Asia/Shanghai date +%G-W%V)"
+            git push origin HEAD:main
+          fi

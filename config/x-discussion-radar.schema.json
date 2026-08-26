@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI X Discussion Radar Configuration",
+  "type": "object",
+  "required": ["version", "updated", "timezone", "source", "publication", "query_packs", "topics", "entity_terms", "quality_rules", "score_weights"],
+  "properties": {
+    "version": {"type": "string"},
+    "updated": {"type": "string", "format": "date"},
+    "timezone": {"const": "Asia/Shanghai"},
+    "query_packs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label_zh", "category", "query", "topic_codes", "direction_codes"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "category": {"enum": ["research", "startup", "topic"]},
+          "query": {"type": "string", "minLength": 3, "maxLength": 512},
+          "topic_codes": {"type": "array", "items": {"type": "string", "pattern": "^T[1-9]$"}},
+          "direction_codes": {"type": "array", "items": {"type": "string", "pattern": "^D(?:[1-9]|1[0-5])$"}}
+        }
+      }
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "label_zh", "keywords", "direction_codes"],
+        "properties": {"code": {"type": "string", "pattern": "^T[1-9]$"}}
+      }
+    }
+  }
+}

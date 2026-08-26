@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI X Discussion Post Store",
+  "type": "object",
+  "required": ["version", "updated_at", "source", "posts"],
+  "properties": {
+    "version": {"type": "string"},
+    "updated_at": {"type": ["string", "null"]},
+    "last_compliance_check_at": {"type": ["string", "null"]},
+    "source": {"const": "x_api_v2"},
+    "collection_runs": {"type": "array"},
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["post_id", "author_id", "created_at", "lang", "metrics", "query_tags", "topic_codes", "direction_codes", "entity_ids", "canonical_urls", "content_kind", "text_fingerprint", "collected_at", "last_seen_at", "compliance_status"],
+        "properties": {
+          "post_id": {"type": "string", "pattern": "^[0-9]+$"},
+          "author_id": {"type": "string", "pattern": "^[0-9]+$"},
+          "content_kind": {"enum": ["research", "startup", "artifact", "discussion"]},
+          "compliance_status": {"enum": ["live", "unverified", "deleted", "protected", "suspended"]},
+          "metrics": {
+            "type": "object",
+            "required": ["like_count", "retweet_count", "reply_count", "quote_count", "bookmark_count", "impression_count"]
+          }
+        }
+      }
+    }
+  }
+}

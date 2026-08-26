@@ -43,6 +43,7 @@ export default withMermaid(defineConfig({
       { text: '研究方向', link: '/frontiers/' },
       { text: '问题地图', link: '/questions/' },
       { text: '关键研究组', link: '/groups/' },
+      { text: 'X 热点', link: '/social/' },
       { text: '年度综合', link: '/analysis/annual' },
       { text: '弱信号', link: '/analysis/weak-signals' },
       { text: '团队机构', link: '/analysis/institutions' },
@@ -101,6 +102,15 @@ export default withMermaid(defineConfig({
           { text: '组织层级图', link: '/groups/organizations' },
           { text: '合作网络', link: '/groups/collaboration' },
           { text: '归属与更新方法', link: '/methods/research-groups' },
+        ],
+      },
+      {
+        text: 'X 讨论雷达',
+        collapsed: false,
+        items: [
+          { text: '本周讨论总览', link: '/social/' },
+          { text: '历史周报', link: '/social/weekly/' },
+          { text: '检索与热度方法', link: '/social/method' },
         ],
       },
       {

@@ -1,0 +1,137 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-27",
+  "timezone": "Asia/Shanghai",
+  "week_starts_on": "monday",
+  "source": {
+    "provider": "x_api_v2",
+    "endpoint": "https://api.x.com/2/tweets/search/recent",
+    "poll_interval_hours": 6,
+    "lookback_hours": 12,
+    "max_pages_per_query": 3,
+    "max_results_per_page": 100,
+    "request_timeout_seconds": 45,
+    "raw_text_persisted": false,
+    "compliance_recheck_before_publish": true
+  },
+  "publication": {
+    "top_topics": 12,
+    "representative_posts_per_topic": 3,
+    "minimum_posts": 2,
+    "minimum_unique_authors": 2,
+    "metric_snapshot_delay_hours": 6,
+    "retention_weeks": 13
+  },
+  "query_packs": [
+    {
+      "id": "embodied-core-en",
+      "label_zh": "具身智能核心讨论（英文）",
+      "category": "topic",
+      "query": "(\"embodied AI\" OR \"embodied intelligence\" OR \"physical AI\" OR \"robot foundation model\" OR \"vision language action\" OR VLA) (robot OR robotics OR humanoid) lang:en -is:retweet",
+      "topic_codes": ["T1", "T8"],
+      "direction_codes": ["D1", "D2"]
+    },
+    {
+      "id": "embodied-core-zh",
+      "label_zh": "具身智能核心讨论（中文）",
+      "category": "topic",
+      "query": "(具身智能 OR 物理智能 OR 机器人基础模型 OR 视觉语言动作 OR 人形机器人 OR 通用机器人) lang:zh -is:retweet",
+      "topic_codes": ["T1", "T8"],
+      "direction_codes": ["D1", "D2", "D5"]
+    },
+    {
+      "id": "research-artifacts",
+      "label_zh": "论文、模型与代码链接",
+      "category": "research",
+      "query": "(url:arxiv.org OR url:openreview.net OR url:github.com OR url:huggingface.co) (robotics OR robot OR humanoid OR manipulation OR \"embodied AI\" OR VLA) -is:retweet",
+      "topic_codes": ["T1", "T2", "T3", "T4", "T5", "T6"],
+      "direction_codes": ["D1", "D3", "D4", "D5", "D8", "D9", "D10"]
+    },
+    {
+      "id": "startup-frontier",
+      "label_zh": "领先初创与新产品",
+      "category": "startup",
+      "query": "(\"Physical Intelligence\" OR \"Skild AI\" OR \"Figure AI\" OR \"Genesis AI\" OR \"Generalist AI\" OR \"Sunday Robotics\" OR \"DYNA Robotics\" OR \"1X AI\" OR AgiBot) (robot OR robotics OR humanoid OR embodied) -is:retweet",
+      "topic_codes": ["T8", "T9"],
+      "direction_codes": ["D1", "D4", "D5", "D9", "D13"]
+    },
+    {
+      "id": "world-models",
+      "label_zh": "世界模型与预测控制",
+      "category": "research",
+      "query": "(\"world model\" OR \"action model\" OR \"world-action model\" OR \"video world model\" OR \"predictive control\") (robot OR robotics OR embodied) -is:retweet",
+      "topic_codes": ["T2"],
+      "direction_codes": ["D3"]
+    },
+    {
+      "id": "dexterous-manipulation",
+      "label_zh": "灵巧、双臂与触觉",
+      "category": "research",
+      "query": "(\"dexterous manipulation\" OR \"dexterous hand\" OR bimanual OR tactile OR \"contact-rich\") (robot OR robotics OR humanoid) -is:retweet",
+      "topic_codes": ["T3"],
+      "direction_codes": ["D4", "D15"]
+    },
+    {
+      "id": "humanoid-whole-body",
+      "label_zh": "人形与全身移动操作",
+      "category": "research",
+      "query": "(humanoid OR \"whole-body control\" OR \"whole body control\" OR \"loco-manipulation\" OR \"mobile manipulation\") (robot OR robotics) -is:retweet",
+      "topic_codes": ["T4"],
+      "direction_codes": ["D5", "D6"]
+    },
+    {
+      "id": "data-simulation-learning",
+      "label_zh": "数据、仿真与部署学习",
+      "category": "research",
+      "query": "(\"robot data\" OR teleoperation OR \"human video\" OR sim2real OR \"sim-to-real\" OR \"synthetic data\" OR \"deployment learning\") (robot OR robotics OR embodied) -is:retweet",
+      "topic_codes": ["T5", "T6", "T9"],
+      "direction_codes": ["D8", "D9", "D10", "D13"]
+    }
+  ],
+  "topics": [
+    {"code": "T1", "label_zh": "具身基础模型与通才策略", "keywords": ["foundation model", "vision language action", "vision-language-action", "vla", "generalist policy", "基础模型", "通才策略"], "direction_codes": ["D1", "D2"]},
+    {"code": "T2", "label_zh": "世界模型与预测控制", "keywords": ["world model", "action model", "world-action", "predictive control", "世界模型"], "direction_codes": ["D3"]},
+    {"code": "T3", "label_zh": "灵巧、双臂与接触操作", "keywords": ["dexterous", "bimanual", "tactile", "contact-rich", "灵巧", "双臂", "触觉"], "direction_codes": ["D4", "D15"]},
+    {"code": "T4", "label_zh": "人形、全身与移动操作", "keywords": ["humanoid", "whole-body", "whole body", "loco-manipulation", "mobile manipulation", "人形机器人", "全身控制"], "direction_codes": ["D5", "D6"]},
+    {"code": "T5", "label_zh": "数据引擎、人类视频与仿真", "keywords": ["robot data", "human video", "teleoperation", "sim2real", "sim-to-real", "synthetic data", "机器人数据", "人类视频", "仿真"], "direction_codes": ["D9", "D10"]},
+    {"code": "T6", "label_zh": "策略学习、Post-training 与自改进", "keywords": ["post-training", "reinforcement learning", "policy learning", "self-improvement", "deployment learning", "策略学习", "强化学习"], "direction_codes": ["D8", "D13"]},
+    {"code": "T7", "label_zh": "评测、安全与可靠性", "keywords": ["benchmark", "evaluation", "safety", "reliability", "failure recovery", "评测", "安全", "可靠性"], "direction_codes": ["D12"]},
+    {"code": "T8", "label_zh": "初创、融资与产品发布", "keywords": ["startup", "funding", "launch", "preview", "technical report", "初创", "融资", "发布"], "direction_codes": []},
+    {"code": "T9", "label_zh": "真机部署与规模化", "keywords": ["deployment", "production", "fleet", "factory", "warehouse", "real-world", "部署", "产线", "工厂"], "direction_codes": ["D13"]}
+  ],
+  "entity_terms": [
+    {"organization_id": "org:physical-intelligence", "terms": ["Physical Intelligence", "pi.website"], "domains": ["pi.website"]},
+    {"organization_id": "org:skild-ai", "terms": ["Skild AI", "Skild Brain"], "domains": ["skild.ai"]},
+    {"organization_id": "org:figure-ai", "terms": ["Figure AI", "Helix 02", "Project Go-Big"], "domains": ["figure.ai"]},
+    {"organization_id": "org:genesis-ai", "terms": ["Genesis AI", "GENE-26.5", "Genesis World"], "domains": ["genesis.ai"]},
+    {"organization_id": "org:generalist-ai", "terms": ["Generalist AI", "GEN-1.5", "GEN-1"], "domains": ["generalistai.com"]},
+    {"organization_id": "org:sunday-robotics", "terms": ["Sunday Robotics", "Sunday AI", "ACT-2"], "domains": ["sunday.ai"]},
+    {"organization_id": "org:dyna-robotics", "terms": ["DYNA Robotics", "Dyna-2", "DYNA-1"], "domains": ["dyna.co"]},
+    {"organization_id": "org:1x-ai", "terms": ["1X AI", "1X NEO"], "domains": ["1x.tech"]},
+    {"organization_id": "org:agibot-research", "terms": ["AgiBot", "AgiBot Research"], "domains": ["agibot.com"]},
+    {"organization_id": "org:nvidia-gear", "terms": ["NVIDIA GEAR", "GEAR Lab"], "domains": ["research.nvidia.com"]},
+    {"organization_id": "org:google-deepmind-robotics", "terms": ["Google DeepMind Robotics", "Gemini Robotics"], "domains": ["deepmind.google"]},
+    {"organization_id": "org:tri-robotics", "terms": ["Toyota Research Institute Robotics", "TRI Robotics"], "domains": ["tri.global"]},
+    {"organization_id": "org:rai-institute", "terms": ["RAI Institute", "Robotics and AI Institute"], "domains": ["rai-inst.com"]}
+  ],
+  "quality_rules": {
+    "exclude_retweets": true,
+    "keep_replies": true,
+    "exclude_sensitive": true,
+    "maximum_single_author_share": 0.5,
+    "minimum_topic_relevance_terms": 1,
+    "spam_terms": ["airdrop", "giveaway", "token sale", "crypto presale", "follow for follow"]
+  },
+  "score_weights": {
+    "likes": 1.0,
+    "reposts": 2.0,
+    "quotes": 2.5,
+    "replies": 1.5,
+    "bookmarks": 0.25,
+    "post_volume": 0.25,
+    "author_breadth": 0.2,
+    "engagement": 0.35,
+    "audience_normalization": 0.3,
+    "momentum": 0.2
+  }
+}
