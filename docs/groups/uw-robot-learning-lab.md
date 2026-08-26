@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-02-11 | 同行评审论文 | [Wheeled Lab: Modern Sim2Real for Low-cost, Open-source Wheeled Robotics](https://robotlearning.cs.washington.edu/publications/) | G1 直接证据 | [D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 构建低成本、开源的轮式机器人 Sim2Real 研究栈，以统一硬件和训练流程降低真实部署与复现实验门槛。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-02-11 | 同行评审论文 | [Wheeled Lab: Modern Sim2Real for Low-cost, Open-source Wheeled Robotics](https://robotlearning.cs.washington.edu/publications/) | 已同行评审 | G1 直接证据 | [D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 构建低成本、开源的轮式机器人 Sim2Real 研究栈，以统一硬件和训练流程降低真实部署与复现实验门槛。 |
 
 ## Canonical works 与归属证据
 

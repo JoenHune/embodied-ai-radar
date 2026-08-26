@@ -48,3 +48,6 @@ outline: deep
 | [Dexterity AI](/groups/dexterity-ai) | 部署与早期观察 | Deployment watch for production-scale dexterous manipulation, interpretable world models, tactile/force-guided recovery, and multi-arm logistics workflows. |
 | [Sanctuary AI](/groups/sanctuary-ai) | 部署与早期观察 | Closed-source and deployment watch for tactile dexterity, multi-embodiment policies, industrial task reliability, and Phoenix data collection. |
 | [Unitree Robotics](/groups/unitree-robotics) | 部署与早期观察 | Hardware-and-deployment watch for accessible humanoid and quadruped platforms, whole-body control, dexterous end effectors, datasets, and ecosystem adoption. |
+| [Generalist AI](/groups/generalist-ai) | 初创前沿观察 | 以大规模跨任务机器人数据训练通才策略的初创公司，研究重点从 GEN-0/GEN-1 的规模化预训练推进到 GEN-1.5 的少样本快速适配。 |
+| [Genesis AI](/groups/genesis-ai) | 初创前沿观察 | 全栈机器人基础模型初创公司，围绕跨模态数据、仿真、模型与灵巧手硬件协同开发；公司成立前的 Genesis 开源仿真项目不反向计作公司历史成果。 |
+| [Sunday Robotics](/groups/sunday-robotics) | 初创前沿观察 | 家庭机器人初创公司，以无机器人数据预训练与家庭任务适配为核心，ACT 系列报告重点展示衣物折叠等真实双臂操作。 |

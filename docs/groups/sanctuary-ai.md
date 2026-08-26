@@ -35,9 +35,9 @@ Closed-source and deployment watch for tactile dexterity, multi-embodiment polic
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 日期待核 | 部署 | [Phoenix generation 8 designed for robot data capture and manufacturing](https://sanctuary.ai/news/sanctuary-ai-releases-new-generation-of-ai-robots-for-high-quality-data-capture/) | G1 直接证据 | — | Product and data-capture announcement; reported capabilities are not an official peer-reviewed evaluation. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 日期待核 | 部署 | [Phoenix generation 8 designed for robot data capture and manufacturing](https://sanctuary.ai/news/sanctuary-ai-releases-new-generation-of-ai-robots-for-high-quality-data-capture/) | 未严格同行评审 | G1 直接证据 | — | Product and data-capture announcement; reported capabilities are not an official peer-reviewed evaluation. |
 
 ## Canonical works 与归属证据
 

@@ -35,9 +35,9 @@ ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、�
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-12-02 | 预印本 | [GR-RL: A Breakthrough in Dexterous Manipulation](https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | GR-RL 通过离线数据过滤、形态对称增强与真机在线强化学习，把鞋带穿孔任务成功率从 45.7% 提升至 83.3%。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-12-02 | 预印本 | [GR-RL: A Breakthrough in Dexterous Manipulation](https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | GR-RL 通过离线数据过滤、形态对称增强与真机在线强化学习，把鞋带穿孔任务成功率从 45.7% 提升至 83.3%。 |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
+| blog | [https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time](https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time) | healthy | 2026-08-26 | 0 |
 | home | [https://seed.bytedance.com/en/direction/robotics](https://seed.bytedance.com/en/direction/robotics) | healthy | 2026-08-26 | 0 |
 | publications | [https://seed.bytedance.com/en/research](https://seed.bytedance.com/en/research) | healthy | 2026-08-26 | 0 |
-| blog | [https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time](https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

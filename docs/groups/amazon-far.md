@@ -35,9 +35,9 @@ Amazon 新设的前沿机器人研究组；公开证据主要来自官方招聘�
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-01 | 同行评审论文 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning) | CVPR 2026 论文 PDF 直接列出 Amazon FAR affiliation，并提出跨灵巧手的统一 latent action 表征。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-01 | 同行评审论文 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | 已同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning) | CVPR 2026 论文 PDF 直接列出 Amazon FAR affiliation，并提出跨灵巧手的统一 latent action 表征。 |
 
 ## Canonical works 与归属证据
 

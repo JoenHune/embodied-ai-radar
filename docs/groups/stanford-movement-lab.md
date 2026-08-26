@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-08-05 | 模型 | [Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching](https://github.com/Stanford-TML/HEAD_release) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning) | Movement Lab 官方仓库发布 HEAD，将人形机器人的导航、行走与伸手操作联合为手眼协调的长程送达系统。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-08-05 | 模型 | [Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching](https://github.com/Stanford-TML/HEAD_release) | 已同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning) | Movement Lab 官方仓库发布 HEAD，将人形机器人的导航、行走与伸手操作联合为手眼协调的长程送达系统。 |
 
 ## Canonical works 与归属证据
 

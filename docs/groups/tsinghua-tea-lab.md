@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-04-28 | 项目 | [DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove](https://github.com/TEA-Lab/DOGlove/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | TEA Lab 官方仓库开源低成本力反馈手套、固件和机械设计，用自然遥操作采集接触丰富的灵巧操作示范。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-04-28 | 项目 | [DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove](https://github.com/TEA-Lab/DOGlove/) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | TEA Lab 官方仓库开源低成本力反馈手套、固件和机械设计，用自然遥操作采集接触丰富的灵巧操作示范。 |
 
 ## Canonical works 与归属证据
 

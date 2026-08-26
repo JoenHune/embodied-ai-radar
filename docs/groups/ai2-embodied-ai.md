@@ -35,9 +35,9 @@ Open infrastructure and model ecosystem spanning simulation, 3D assets, navigati
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-02-11 | 项目 | [MolmoSpaces: an open ecosystem for embodied AI](https://allenai.org/blog/molmospaces) | G1 直接证据 | — | Ai2 officially launched a simulation-first embodied-learning platform combining indoor scenes, object assets, and physics-grounded grasp annotations for navigation, manipulation, controlled evaluation, and zero-shot real transfer research. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-02-11 | 项目 | [MolmoSpaces: an open ecosystem for embodied AI](https://allenai.org/blog/molmospaces) | 未严格同行评审 | G1 直接证据 | — | Ai2 officially launched a simulation-first embodied-learning platform combining indoor scenes, object assets, and physics-grounded grasp annotations for navigation, manipulation, controlled evaluation, and zero-shot real transfer research. |
 
 ## Canonical works 与归属证据
 
@@ -55,9 +55,9 @@ Open infrastructure and model ecosystem spanning simulation, 3D assets, navigati
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| source_1 | [https://allenai.org/embodied-ai](https://allenai.org/embodied-ai) | healthy | 2026-08-26 | 0 |
 | blog | [https://allenai.org/blog](https://allenai.org/blog) | healthy | 2026-08-26 | 0 |
-| source_3 | [https://ai2thor.allenai.org/publications/](https://ai2thor.allenai.org/publications/) | healthy | 2026-08-26 | 0 |
 | models | [https://docs.allenai.org/models/molmoact](https://docs.allenai.org/models/molmoact) | healthy | 2026-08-26 | 0 |
+| source_1 | [https://allenai.org/embodied-ai](https://allenai.org/embodied-ai) | healthy | 2026-08-26 | 0 |
+| source_3 | [https://ai2thor.allenai.org/publications/](https://ai2thor.allenai.org/publications/) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

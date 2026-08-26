@@ -35,12 +35,12 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-08 | 预印本 | [Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](https://www.tri.global/research/generalized-cvo-fast-and-correspondence-free-local-point-cloud-registration-second-order) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-03-05 | 预印本 | [On the Strengths and Weaknesses of Data for Open-set Embodied Assistance](https://www.tri.global/research/strengths-and-weaknesses-data-open-set-embodied-assistance) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-12-18 | 预印本 | [Learning to Plan, Planning to Learn: Adaptive Hierarchical RL-MPC for Sample-Efficient Decision Making](https://www.tri.global/research/learning-plan-planning-learn-adaptive-hierarchical-rl-mpc-sample-efficient-decision-making) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-07-07 | 预印本 | [A Careful Examination of Large Behavior Models for Multitask Dexterous Manipulation](https://www.tri.global/research/careful-examination-large-behavior-models-multitask-dexterous-manipulation) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 基于约 1,700 小时训练数据、1,800 次真实 rollout 和超过 47,000 次仿真 rollout，检验 LBM 预训练、微调与数据规模效应。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-08 | 预印本 | [Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](https://www.tri.global/research/generalized-cvo-fast-and-correspondence-free-local-point-cloud-registration-second-order) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-03-05 | 预印本 | [On the Strengths and Weaknesses of Data for Open-set Embodied Assistance](https://www.tri.global/research/strengths-and-weaknesses-data-open-set-embodied-assistance) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-12-18 | 预印本 | [Learning to Plan, Planning to Learn: Adaptive Hierarchical RL-MPC for Sample-Efficient Decision Making](https://www.tri.global/research/learning-plan-planning-learn-adaptive-hierarchical-rl-mpc-sample-efficient-decision-making) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-07-07 | 预印本 | [A Careful Examination of Large Behavior Models for Multitask Dexterous Manipulation](https://www.tri.global/research/careful-examination-large-behavior-models-multitask-dexterous-manipulation) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 基于约 1,700 小时训练数据、1,800 次真实 rollout 和超过 47,000 次仿真 rollout，检验 LBM 预训练、微调与数据规模效应。 |
 
 ## Canonical works 与归属证据
 

@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-06-03 | Benchmark | [OGBench: Benchmarking Offline Goal-Conditioned RL](https://rail.eecs.berkeley.edu/datasets/ogbench/) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | RAIL 发布 OGBench 的多类环境、离线数据集与参考实现，用统一任务检验 stitching、长时序推理及像素控制能力。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-06-03 | Benchmark | [OGBench: Benchmarking Offline Goal-Conditioned RL](https://rail.eecs.berkeley.edu/datasets/ogbench/) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | RAIL 发布 OGBench 的多类环境、离线数据集与参考实现，用统一任务检验 stitching、长时序推理及像素控制能力。 |
 
 ## Canonical works 与归属证据
 

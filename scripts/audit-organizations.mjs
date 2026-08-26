@@ -25,8 +25,8 @@ const unique = (values) => new Set(values).size === values.length
 const hash = (file) => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
 
 assert(registry.tracking_target === 60, 'tracking target must remain 60')
-assert(tracked.length === 60, `expected 60 tracking groups, got ${tracked.length}`)
-const categoryExpected = { corporate: 18, academic: 30, platform: 6, deployment_watch: 6 }
+assert(tracked.length === 63, `expected 60 core groups + 3 startup frontier groups, got ${tracked.length}`)
+const categoryExpected = { corporate: 18, academic: 30, platform: 6, deployment_watch: 6, startup_frontier: 3 }
 for (const [category, count] of Object.entries(categoryExpected)) {
   assert(tracked.filter((org) => org.tracking_category === category).length === count,
     `${category}: expected ${count} tracking groups`)
@@ -83,6 +83,14 @@ for (const item of updates.updates) {
     if (org?.active_from && item.published_at) assert(item.published_at >= org.active_from, `${item.update_id}: predates group membership window`)
     if (org?.active_to && item.published_at) assert(item.published_at <= org.active_to, `${item.update_id}: postdates group membership window`)
   }
+  if (item.source_type === 'official_company_report') {
+    assert(item.update_type === 'technical_report', `${item.update_id}: company report must use technical_report`)
+    assert(item.publication_status === 'first_party_technical_report', `${item.update_id}: publication status missing`)
+    assert(item.peer_reviewed === false && item.strict_peer_reviewed === false, `${item.update_id}: company report mislabeled peer reviewed`)
+    assert(item.independent_validation === false, `${item.update_id}: independent validation must be explicit`)
+    assert(item.metric_owner === 'company' && item.claim_status === 'company_self_report', `${item.update_id}: company claim boundary missing`)
+    assert(Array.isArray(item.technical_stack_tags), `${item.update_id}: technical stack tags missing`)
+  }
 }
 for (const item of review.candidates ?? []) {
   assert(['G3', 'G0'].includes(item.evidence_grade), `${item.update_id}: accepted-grade item left in review queue`)
@@ -120,18 +128,22 @@ for (const [workId, rows] of linksByWork.entries()) {
 const mustExist = [
   'org:nvidia-gear', 'org:physical-intelligence', 'org:cmu-robotics-institute',
   'org:amazon-far', 'org:amazon-robotics', 'org:rai-institute', 'org:boston-dynamics',
+  'org:genesis-ai', 'org:generalist-ai', 'org:sunday-robotics', 'org:figure-ai', 'org:dyna-robotics',
 ]
 for (const id of mustExist) assert(byId.has(id), `required regression organization missing: ${id}`)
 assert(byId.get('org:nvidia-gear')?.parent_relations.some((item) => item.parent_id === 'org:nvidia'), 'GEAR must be child of NVIDIA')
 assert(byId.get('org:amazon-far')?.organization_id !== byId.get('org:amazon-robotics')?.organization_id, 'Amazon FAR/Robotics merged')
 assert(byId.get('org:rai-institute')?.organization_id !== byId.get('org:boston-dynamics')?.organization_id, 'RAI/Boston Dynamics merged')
 
-assert(radar.tracking_group_count === 60, 'radar count mismatch')
-assert(radar.groups.length === 60, 'radar group list mismatch')
+assert(tracked.filter((org) => org.startup_frontier).length === 5, 'startup frontier cohort must contain Genesis, Generalist, Figure, DYNA and Sunday')
+assert(radar.tracking_group_count === 63, 'radar count mismatch')
+assert(radar.groups.length === 63, 'radar group list mismatch')
+assert(radar.visualizations?.startup_reports?.length >= 16, 'startup technical report visualization data incomplete')
+assert(radar.visualizations?.startup_stack_cells?.every((cell) => cell.level === 0 || cell.sources.length > 0), 'startup stack cell lacks source')
 const groupsWithoutUpdates = radar.groups.filter((group) => group.update_count === 0).map((group) => group.organization_id)
 assert(groupsWithoutUpdates.every((id) => id === 'org:tesla-optimus'), `unexpected groups without updates: ${groupsWithoutUpdates.join(', ')}`)
 for (const org of tracked) assert(fs.existsSync(path.join(root, 'docs', 'groups', `${org.slug}.md`)), `profile missing: ${org.slug}`)
-for (const page of ['index.md', 'organizations.md', 'collaboration.md', 'weekly/index.md']) {
+for (const page of ['index.md', 'startups.md', 'organizations.md', 'collaboration.md', 'weekly/index.md']) {
   assert(fs.existsSync(path.join(root, 'docs', 'groups', page)), `group page missing: ${page}`)
 }
 for (const file of ['organizations.json', 'work-organization-links.json', 'group-updates.json', 'research-group-radar.json']) {

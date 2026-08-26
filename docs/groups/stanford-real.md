@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-05-28 | 同行评审论文 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://real.stanford.edu/research.html) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 把人手改造为可穿戴通用操作接口，采集视觉、姿态与接触数据并迁移到灵巧机器人手；CoRL 2025 Oral。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-05-28 | 同行评审论文 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://real.stanford.edu/research.html) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 把人手改造为可穿戴通用操作接口，采集视觉、姿态与接触数据并迁移到灵巧机器人手；CoRL 2025 Oral。 |
 
 ## Canonical works 与归属证据
 

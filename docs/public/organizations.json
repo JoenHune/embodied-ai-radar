@@ -1,7 +1,8 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-08-26",
   "tracking_target": 60,
+  "startup_frontier_count": 3,
   "organizations": [
     {
       "organization_id": "org:cmu-iam",
@@ -11,6 +12,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -95,6 +97,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -176,6 +179,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -258,6 +262,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -343,6 +348,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -421,6 +427,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -503,6 +510,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Europe",
       "country": "Switzerland",
       "aliases": [
@@ -588,6 +596,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Europe",
       "country": "Switzerland",
       "aliases": [
@@ -674,6 +683,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -755,6 +765,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -839,6 +850,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -923,6 +935,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -1006,6 +1019,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -1089,6 +1103,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -1176,6 +1191,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -1258,6 +1274,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -1350,6 +1367,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -1432,6 +1450,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -1517,6 +1536,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -1608,6 +1628,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -1695,6 +1716,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -1777,6 +1799,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -1863,6 +1886,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -1950,6 +1974,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2030,6 +2055,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2112,6 +2138,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2199,6 +2226,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2281,6 +2309,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2365,6 +2394,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2449,6 +2479,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "academic",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2538,6 +2569,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2630,6 +2662,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -2718,6 +2751,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2803,6 +2837,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2893,6 +2928,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -2983,6 +3019,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [
@@ -3071,6 +3108,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": true,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -3148,6 +3186,149 @@
             "Q8"
           ],
           "summary_zh": "Helix 02 用统一神经系统从像素控制全身，整合 S0 全身先验、S1 传感到执行与 S2 语义推理，展示四分钟房间尺度 loco-manipulation。"
+        },
+        {
+          "update_id": "upd-figure-helix-20250220",
+          "title": "Helix: A Vision-Language-Action Model for Generalist Humanoid Control",
+          "url": "https://www.figure.ai/news/helix",
+          "published_at": "2025-02-20",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D2",
+            "D4",
+            "D5",
+            "D8",
+            "D9"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q5",
+            "Q8",
+            "Q9"
+          ],
+          "summary_zh": "Figure 首份 Helix 公司技术报告描述 7B S2 语义层与 80M S1 动作层的分层控制；训练与性能数字均为第一方披露。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "teleoperation",
+            "generalist_policy",
+            "hierarchical_control",
+            "dexterous_bimanual",
+            "whole_body",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "training data",
+              "value": "~500",
+              "unit": "hours",
+              "scope": "company demonstrations",
+              "note": "Company self-report."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-figure-gobig-20250918",
+          "title": "Project Go-Big",
+          "url": "https://www.figure.ai/news/project-go-big",
+          "published_at": "2025-09-18",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D3",
+            "D9"
+          ],
+          "question_codes": [
+            "Q2",
+            "Q9",
+            "Q10"
+          ],
+          "summary_zh": "公司报告提出利用互联网人类视频扩展机器人视觉与行为知识；尚无开放数据或独立 benchmark 支持。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "generalist_policy",
+            "world_action_model",
+            "cross_embodiment"
+          ],
+          "validation_tags": [
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": []
+        },
+        {
+          "update_id": "upd-figure-index-20260825",
+          "title": "Introducing Index",
+          "url": "https://www.figure.ai/news/introducing-index",
+          "published_at": "2026-08-25",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D3",
+            "D9",
+            "D13"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q2",
+            "Q7",
+            "Q9",
+            "Q10"
+          ],
+          "summary_zh": "公司报告将 Index 描述为人类视频数据引擎，并披露 1,600 万视频等规模指标；数据集与评测未开放。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "deployment_feedback",
+            "generalist_policy",
+            "world_action_model"
+          ],
+          "validation_tags": [
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "video corpus",
+              "value": "16M",
+              "unit": "videos",
+              "scope": "company proprietary dataset",
+              "note": "Collection scale is company-reported."
+            }
+          ]
         }
       ]
     },
@@ -3159,6 +3340,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "Global",
       "country": "United Kingdom / United States",
       "aliases": [
@@ -3246,6 +3428,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "Global",
       "country": "United States / Germany / Singapore",
       "aliases": [
@@ -3347,6 +3530,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -3425,6 +3609,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -3507,6 +3692,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -3606,6 +3792,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -3692,6 +3879,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -3765,6 +3953,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "Global",
       "country": "United States / Switzerland",
       "aliases": [
@@ -3857,6 +4046,7 @@
       "entity_type": "research_company",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "Global",
       "country": "United States",
       "aliases": [
@@ -3947,6 +4137,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4026,6 +4217,7 @@
       "entity_type": "laboratory",
       "tracking_unit": true,
       "tracking_category": "corporate",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4122,6 +4314,7 @@
       "entity_type": "deployment_team",
       "tracking_unit": true,
       "tracking_category": "deployment_watch",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4202,6 +4395,7 @@
       "entity_type": "deployment_team",
       "tracking_unit": true,
       "tracking_category": "deployment_watch",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -4281,6 +4475,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "deployment_watch",
+      "startup_frontier": true,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4354,6 +4549,243 @@
           "direction_codes": [],
           "question_codes": [],
           "summary_zh": "Official technical-release index; any future official proceedings record must be linked separately by canonical work."
+        },
+        {
+          "update_id": "upd-dyna-1-20250624",
+          "title": "DYNA-1",
+          "url": "https://www.dyna.co/research/dyna-1",
+          "published_at": "2025-06-24",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D4",
+            "D8",
+            "D13"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q6",
+            "Q7",
+            "Q9"
+          ],
+          "summary_zh": "公司报告在 24 小时餐巾整理运行中报告 850+ 件与 99.4% 成功率；属于内部生产式评测。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "teleoperation",
+            "generalist_policy",
+            "dexterous_bimanual",
+            "real_robot",
+            "long_horizon",
+            "production"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "long_horizon",
+            "production",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "24-hour run",
+              "value": ">850",
+              "unit": "napkins",
+              "scope": "company production-like run",
+              "note": "99.4% success is company-reported."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-dyna-open-world-20251015",
+          "title": "Open-World Dexterity",
+          "url": "https://www.dyna.co/research/open-world-dexterity",
+          "published_at": "2025-10-15",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D3",
+            "D4",
+            "D15"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q1",
+            "Q3",
+            "Q10"
+          ],
+          "summary_zh": "公司研究索引日期为 2025-10-15，但正文称 2025 年 12 月；雷达保留该日期冲突，不把它当作精确月度趋势证据。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "world_action_model",
+            "generalist_policy",
+            "dexterous_bimanual",
+            "tactile_force",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation",
+            "date_conflict"
+          ],
+          "open_assets": [],
+          "report_metrics": []
+        },
+        {
+          "update_id": "upd-dyna-pretraining-20251120",
+          "title": "Pre-training Robot Foundation Models on Human Videos",
+          "url": "https://www.dyna.co/research/pre-training",
+          "published_at": "2025-11-20",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D3",
+            "D9"
+          ],
+          "question_codes": [
+            "Q2",
+            "Q9",
+            "Q10"
+          ],
+          "summary_zh": "公司报告研究用人类视频预训练机器人基础模型；公开页面不足以支持独立复算。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "generalist_policy",
+            "world_action_model",
+            "cross_embodiment"
+          ],
+          "validation_tags": [
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": []
+        },
+        {
+          "update_id": "upd-dyna-2-20260815",
+          "title": "Dyna-2",
+          "url": "https://www.dyna.co/dyna-2",
+          "published_at": "2026-08-15",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q2",
+            "Q6",
+            "Q9",
+            "Q10"
+          ],
+          "summary_zh": "公司报告以超过 100 万小时第一视角人类视频预训练 Dyna-2，并披露 39 个离线零样本任务及 14 个真机后训练任务；均为内部评测。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "generalist_policy",
+            "world_action_model",
+            "rl_post_training",
+            "dexterous_bimanual",
+            "cross_embodiment",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "first-person human video",
+              "value": ">1M",
+              "unit": "hours",
+              "scope": "company-described corpus",
+              "note": "Company self-report."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-dyna-2-infra-20260817",
+          "title": "Dyna-2 Infrastructure",
+          "url": "https://www.dyna.co/research/dyna-2-infrastructure",
+          "published_at": "2026-08-17",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D9",
+            "D13"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q7",
+            "Q9"
+          ],
+          "summary_zh": "公司基础设施报告披露存储、吞吐与 GPU 利用率改进；这些工程指标来自公司内部，未独立审计。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "deployment_feedback",
+            "generalist_policy"
+          ],
+          "validation_tags": [
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "weekly ingestion",
+              "value": "440k",
+              "unit": "episode-hours/week",
+              "scope": "company data infrastructure",
+              "note": "Company self-report; up from 14k."
+            }
+          ]
         }
       ]
     },
@@ -4365,6 +4797,7 @@
       "entity_type": "deployment_team",
       "tracking_unit": true,
       "tracking_category": "deployment_watch",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4454,6 +4887,7 @@
       "entity_type": "deployment_team",
       "tracking_unit": true,
       "tracking_category": "deployment_watch",
+      "startup_frontier": false,
       "region": "North America",
       "country": "Canada",
       "aliases": [
@@ -4539,6 +4973,7 @@
       "entity_type": "deployment_team",
       "tracking_unit": true,
       "tracking_category": "deployment_watch",
+      "startup_frontier": false,
       "region": "Asia",
       "country": "China",
       "aliases": [
@@ -4613,6 +5048,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "platform",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4699,6 +5135,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "platform",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4792,6 +5229,7 @@
       "entity_type": "research_institute",
       "tracking_unit": true,
       "tracking_category": "platform",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4887,6 +5325,7 @@
       "entity_type": "research_institute",
       "tracking_unit": true,
       "tracking_category": "platform",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -4977,6 +5416,7 @@
       "entity_type": "research_institute",
       "tracking_unit": true,
       "tracking_category": "platform",
+      "startup_frontier": false,
       "region": "Asia",
       "country": "China",
       "aliases": [
@@ -5070,6 +5510,7 @@
       "entity_type": "research_group",
       "tracking_unit": true,
       "tracking_category": "platform",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [
@@ -5153,6 +5594,596 @@
       ]
     },
     {
+      "organization_id": "org:generalist-ai",
+      "display_name": "Generalist AI",
+      "short_name": "Generalist",
+      "slug": "generalist-ai",
+      "entity_type": "research_company",
+      "tracking_unit": true,
+      "tracking_category": "startup_frontier",
+      "startup_frontier": true,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [
+        "Generalist AI Ltd"
+      ],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://generalistai.com/",
+        "research": "https://generalistai.com/blog/research",
+        "people": "https://generalistai.com/about"
+      },
+      "leaders": [],
+      "active_from": "2024-01-01",
+      "active_to": null,
+      "pi_lineage_id": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D8",
+        "D9",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-08-26",
+      "last_changed": null,
+      "source_health": "healthy",
+      "summary_zh": "以大规模跨任务机器人数据训练通才策略的初创公司，研究重点从 GEN-0/GEN-1 的规模化预训练推进到 GEN-1.5 的少样本快速适配。",
+      "information_gaps": [],
+      "representative_updates": [
+        {
+          "update_id": "upd-generalist-gen0-20251104",
+          "title": "GEN-0",
+          "url": "https://generalistai.com/blog/gen-0",
+          "published_at": "2025-11-04",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D8",
+            "D9"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q6",
+            "Q9"
+          ],
+          "summary_zh": "公司报告披露 10B+ 参数通才机器人策略和超过 27 万小时数据的内部扩展结果；未提供同行评审或独立复现。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "teleoperation",
+            "generalist_policy",
+            "cross_embodiment",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "training data",
+              "value": ">270k",
+              "unit": "hours",
+              "scope": "company-described corpus",
+              "note": "Company self-report."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-generalist-gen1-20260402",
+          "title": "GEN-1",
+          "url": "https://generalistai.com/blog/gen-1",
+          "published_at": "2026-04-02",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D8",
+            "D9",
+            "D13"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q6",
+            "Q7",
+            "Q9"
+          ],
+          "summary_zh": "公司报告将数据规模扩展到超过 50 万小时，并报告约一小时任务数据的内部适配实验；性能比例只适用于其自定义任务集。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "teleoperation",
+            "generalist_policy",
+            "rl_post_training",
+            "cross_embodiment",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "training data",
+              "value": ">500k",
+              "unit": "hours",
+              "scope": "company-described corpus",
+              "note": "Company self-report."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-generalist-thousand-hands-20260723",
+          "title": "Towards Machines with a Thousand Hands",
+          "url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+          "published_at": "2026-07-23",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D9",
+            "D10"
+          ],
+          "question_codes": [
+            "Q8",
+            "Q9"
+          ],
+          "summary_zh": "公司报告研究约 9,000 种生成式末端执行器变化下的跨形态学习；该数字不是 9,000 款实体商业机械手。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "generalist_policy",
+            "cross_embodiment",
+            "simulation_synthetic"
+          ],
+          "validation_tags": [
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "end-effector variations",
+              "value": "~9,000",
+              "unit": "variations",
+              "scope": "generated morphology variations",
+              "note": "Not 9,000 commercial robot hands."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-generalist-gen15-20260819",
+          "title": "GEN-1.5",
+          "url": "https://generalistai.com/blog/gen-1.5",
+          "published_at": "2026-08-19",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D2",
+            "D8",
+            "D13"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q6",
+            "Q7",
+            "Q9"
+          ],
+          "summary_zh": "公司报告展示 3–12 秒单次示教与少量梯度更新的快速适配；59%/83% 为内部短任务平均成功率，并非独立 benchmark。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "generalist_policy",
+            "hierarchical_control",
+            "rl_post_training",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "one-shot average success",
+              "value": "59",
+              "unit": "%",
+              "scope": "company short-task benchmark",
+              "note": "Company self-report."
+            },
+            {
+              "label": "10-step adaptation average success",
+              "value": "83",
+              "unit": "%",
+              "scope": "company short-task benchmark",
+              "note": "Five minutes of task data; not independently replicated."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "organization_id": "org:genesis-ai",
+      "display_name": "Genesis AI",
+      "short_name": "Genesis AI",
+      "slug": "genesis-ai",
+      "entity_type": "research_company",
+      "tracking_unit": true,
+      "tracking_category": "startup_frontier",
+      "startup_frontier": true,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Genesis AI Corp."
+      ],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.genesis.ai/",
+        "research": "https://www.genesis.ai/blog",
+        "github": "https://github.com/Genesis-Embodied-AI/Genesis"
+      },
+      "leaders": [
+        {
+          "name": "Zhou Xian",
+          "role": "Co-founder & CEO",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.genesis.ai/press/genesis-ai-emerges-from-stealth-with-dollar105m-to-build-universal-robotics-found"
+        },
+        {
+          "name": "Theophile Gervet",
+          "role": "Co-founder & President",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.genesis.ai/press/genesis-ai-emerges-from-stealth-with-dollar105m-to-build-universal-robotics-found"
+        }
+      ],
+      "active_from": "2025-07-02",
+      "active_to": null,
+      "pi_lineage_id": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D8",
+        "D9",
+        "D10",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q6",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-08-26",
+      "last_changed": null,
+      "source_health": "healthy",
+      "summary_zh": "全栈机器人基础模型初创公司，围绕跨模态数据、仿真、模型与灵巧手硬件协同开发；公司成立前的 Genesis 开源仿真项目不反向计作公司历史成果。",
+      "information_gaps": [],
+      "representative_updates": [
+        {
+          "update_id": "upd-genesis-gene-26-5-20260507",
+          "title": "GENE-26.5: Advancing Robotic Manipulation to Human Level",
+          "url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+          "published_at": "2026-05-07",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D2",
+            "D4",
+            "D8",
+            "D9",
+            "D15"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q6",
+            "Q8",
+            "Q9"
+          ],
+          "summary_zh": "公司技术报告披露跨模态数据、分层策略与 20 自由度 Genesis Hand 的系统共设计，并展示长时烹饪任务；所有指标均为公司自报，未经过同行评审或独立复现。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "teleoperation",
+            "generalist_policy",
+            "hierarchical_control",
+            "dexterous_bimanual",
+            "tactile_force",
+            "real_robot",
+            "long_horizon",
+            "cross_embodiment"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "long_horizon",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "cross-modal training data",
+              "value": ">200k",
+              "unit": "hours",
+              "scope": "company-described corpus",
+              "note": "Company self-report; raw evaluation data not open."
+            },
+            {
+              "label": "control frequency",
+              "value": "500",
+              "unit": "Hz",
+              "scope": "Genesis Hand experiments",
+              "note": "First-party measurement."
+            }
+          ]
+        },
+        {
+          "update_id": "upd-genesis-world-1-20260527",
+          "title": "Genesis World 1.0 and the Path Forward",
+          "url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+          "published_at": "2026-05-27",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D3",
+            "D8",
+            "D10"
+          ],
+          "question_codes": [
+            "Q4",
+            "Q8",
+            "Q9",
+            "Q10"
+          ],
+          "summary_zh": "公司报告发布 Genesis World 1.0 的仿真与 sim-real 相关性结果；代码开放不代表报告中的模型、数据或评测已全部开放，性能数字属于内部评测。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "simulation_synthetic",
+            "world_action_model",
+            "rl_post_training",
+            "cross_embodiment",
+            "open_assets"
+          ],
+          "validation_tags": [
+            "simulation",
+            "internal_evaluation"
+          ],
+          "open_assets": [
+            "code"
+          ],
+          "report_metrics": []
+        }
+      ]
+    },
+    {
+      "organization_id": "org:sunday-robotics",
+      "display_name": "Sunday Robotics",
+      "short_name": "Sunday",
+      "slug": "sunday-robotics",
+      "entity_type": "research_company",
+      "tracking_unit": true,
+      "tracking_category": "startup_frontier",
+      "startup_frontier": true,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Sunday AI"
+      ],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.sunday.ai/",
+        "research": "https://www.sunday.ai/technology",
+        "blog": "https://www.sunday.ai/blog"
+      },
+      "leaders": [],
+      "active_from": "2024-01-01",
+      "active_to": null,
+      "pi_lineage_id": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D8",
+        "D9",
+        "D10",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-08-26",
+      "last_changed": null,
+      "source_health": "healthy",
+      "summary_zh": "家庭机器人初创公司，以无机器人数据预训练与家庭任务适配为核心，ACT 系列报告重点展示衣物折叠等真实双臂操作。",
+      "information_gaps": [],
+      "representative_updates": [
+        {
+          "update_id": "upd-sunday-act1-20251119",
+          "title": "ACT-1: Learning Robot Skills with No Robot Data",
+          "url": "https://www.sunday.ai/blog/no-robot-data",
+          "published_at": "2025-11-19",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D4",
+            "D8",
+            "D9",
+            "D10"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q2",
+            "Q4",
+            "Q6",
+            "Q9"
+          ],
+          "summary_zh": "公司技术报告提出不依赖机器人采集数据的技能预训练路径，并展示真实双臂任务；公开材料不足以支持独立复现。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "simulation_synthetic",
+            "generalist_policy",
+            "dexterous_bimanual",
+            "real_robot"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": []
+        },
+        {
+          "update_id": "upd-sunday-act2-20260717",
+          "title": "ACT-2 Preview",
+          "url": "https://www.sunday.ai/blog/act-2-preview",
+          "published_at": "2026-07-17",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": [
+            "D1",
+            "D2",
+            "D4",
+            "D8",
+            "D13"
+          ],
+          "question_codes": [
+            "Q0",
+            "Q6",
+            "Q7",
+            "Q9"
+          ],
+          "summary_zh": "公司预览报告在 9 类衣物、785 次内部试验中报告 99.1±0.3% 成功率；范围排除若干衣物类型，标注由公司完成，未独立复现。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "internal_evaluation",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": [
+            "human_video",
+            "generalist_policy",
+            "rl_post_training",
+            "dexterous_bimanual",
+            "real_robot",
+            "long_horizon"
+          ],
+          "validation_tags": [
+            "real_robot",
+            "long_horizon",
+            "internal_evaluation"
+          ],
+          "open_assets": [],
+          "report_metrics": [
+            {
+              "label": "autonomous attempts",
+              "value": "785",
+              "unit": "attempts",
+              "scope": "company garment-folding distribution",
+              "note": "Internal annotations and constrained garment scope."
+            },
+            {
+              "label": "reported success",
+              "value": "99.1±0.3",
+              "unit": "%",
+              "scope": "9 garment types",
+              "note": "Excludes several garment categories; company self-report."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "organization_id": "org:1x-technologies",
       "display_name": "1X Technologies",
       "short_name": "1X Technologies",
@@ -5160,6 +6191,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5189,6 +6221,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [],
@@ -5218,6 +6251,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5247,6 +6281,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5276,6 +6311,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [],
@@ -5305,6 +6341,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5334,6 +6371,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Europe",
       "country": "Switzerland",
       "aliases": [],
@@ -5363,6 +6401,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Europe",
       "country": "Switzerland",
       "aliases": [],
@@ -5392,6 +6431,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Global",
       "country": "United States / Germany / Singapore",
       "aliases": [],
@@ -5421,6 +6461,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Global",
       "country": "United Kingdom / United States",
       "aliases": [],
@@ -5450,6 +6491,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5479,6 +6521,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5508,6 +6551,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5537,6 +6581,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5566,6 +6611,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5595,6 +6641,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5624,6 +6671,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Asia",
       "country": "China",
       "aliases": [],
@@ -5653,6 +6701,7 @@
       "entity_type": "company",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5682,6 +6731,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [],
@@ -5711,6 +6761,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [],
@@ -5740,6 +6791,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "Asia-Pacific",
       "country": "China",
       "aliases": [],
@@ -5769,6 +6821,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],
@@ -5798,6 +6851,7 @@
       "entity_type": "university",
       "tracking_unit": false,
       "tracking_category": "parent",
+      "startup_frontier": false,
       "region": "North America",
       "country": "United States",
       "aliases": [],

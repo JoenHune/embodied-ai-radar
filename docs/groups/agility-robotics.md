@@ -35,9 +35,9 @@ Deployment watch centered on Digit's commercial workflows, cooperative safety, u
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-11-20 | 部署 | [Digit Moves Over 100,000 Totes in Commercial Deployment](https://www.agilityrobotics.com/content/digit-moves-over-100k-totes) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | Agility 官方披露 Digit 在 GXO 生产环境搬运超过 10 万个 tote；这是第一方部署证据，不等同同行评审。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-11-20 | 部署 | [Digit Moves Over 100,000 Totes in Commercial Deployment](https://www.agilityrobotics.com/content/digit-moves-over-100k-totes) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | Agility 官方披露 Digit 在 GXO 生产环境搬运超过 10 万个 tote；这是第一方部署证据，不等同同行评审。 |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ Deployment watch centered on Digit's commercial workflows, cooperative safety, u
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
+| home | [https://www.agilityrobotics.com/company](https://www.agilityrobotics.com/company) | healthy | 2026-08-26 | 0 |
 | source_1 | [https://www.agilityrobotics.com/press-releases](https://www.agilityrobotics.com/press-releases) | healthy | 2026-08-26 | 0 |
 | source_2 | [https://www.agilityrobotics.com/solutions](https://www.agilityrobotics.com/solutions) | healthy | 2026-08-26 | 0 |
-| home | [https://www.agilityrobotics.com/company](https://www.agilityrobotics.com/company) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

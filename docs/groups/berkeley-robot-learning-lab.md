@@ -35,10 +35,10 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-02-06 | 预印本 | [DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://research.nvidia.com/labs/gear/publications/) | G2 时间对齐重建 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。 |
-| 2025-05-06 | 同行评审论文 | [Visual Imitation Enables Contextual Humanoid Control](https://people.eecs.berkeley.edu/~pabbeel/publications.html) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | VideoMimic 从人类视频构建可交互场景与动作监督，训练情境化人形控制策略；获 CoRL 2025 最佳学生论文。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-02-06 | 预印本 | [DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://research.nvidia.com/labs/gear/publications/) | 未严格同行评审 | G2 时间对齐重建 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。 |
+| 2025-05-06 | 同行评审论文 | [Visual Imitation Enables Contextual Humanoid Control](https://people.eecs.berkeley.edu/~pabbeel/publications.html) | 已同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | VideoMimic 从人类视频构建可交互场景与动作监督，训练情境化人形控制策略；获 CoRL 2025 最佳学生论文。 |
 
 ## Canonical works 与归属证据
 

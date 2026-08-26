@@ -95,7 +95,8 @@ export default withMermaid(defineConfig({
         text: '全球关键研究组',
         collapsed: false,
         items: [
-          { text: '60 组动态总览', link: '/groups/' },
+          { text: '60 核心组 + 初创前沿', link: '/groups/' },
+          { text: '领先初创技术报告', link: '/groups/startups' },
           { text: '本周研究组周报', link: '/groups/weekly/' },
           { text: '组织层级图', link: '/groups/organizations' },
           { text: '合作网络', link: '/groups/collaboration' },

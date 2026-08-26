@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-04-16 | 模型 | [π0.7: a Steerable Model with Emergent Capabilities](https://www.pi.website/blog/pi07) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | π0.7 将示范、失败与自主数据纳入 steerable 基础模型，强调组合泛化和从部署经验中学习。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-04-16 | 模型 | [π0.7: a Steerable Model with Emergent Capabilities](https://www.pi.website/blog/pi07) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | π0.7 将示范、失败与自主数据纳入 steerable 基础模型，强调组合泛化和从部署经验中学习。 |
 
 ## Canonical works 与归属证据
 

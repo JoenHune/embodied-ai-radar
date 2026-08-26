@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-09-23 | 同行评审论文 | [Imitation-Guided Bimanual Planning for Stable Manipulation under Changing External Forces](https://www.epfl.ch/labs/lasa/home-2/publications/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 以模仿引导双臂规划，在变化外力下维持稳定操作，连接人类示范、接触鲁棒性与协作控制；发表于 IROS 2025。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-09-23 | 同行评审论文 | [Imitation-Guided Bimanual Planning for Stable Manipulation under Changing External Forces](https://www.epfl.ch/labs/lasa/home-2/publications/) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 以模仿引导双臂规划，在变化外力下维持稳定操作，连接人类示范、接触鲁棒性与协作控制；发表于 IROS 2025。 |
 
 ## Canonical works 与归属证据
 

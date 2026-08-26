@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-05-28 | 项目 | [NVIDIA Research Advances Robotics From Simulation to the Real World](https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 以八项 ICRA 工作展示从仿真训练到真实机器人的技术链，覆盖操作、规划、控制与 Sim-to-Real。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-05-28 | 项目 | [NVIDIA Research Advances Robotics From Simulation to the Real World](https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 以八项 ICRA 工作展示从仿真训练到真实机器人的技术链，覆盖操作、规划、控制与 Sim-to-Real。 |
 
 ## Canonical works 与归属证据
 

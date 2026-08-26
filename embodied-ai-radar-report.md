@@ -2737,18 +2737,24 @@ flowchart LR
 
 ## 全球关键研究组雷达
 
-> 这里追踪 60 个研究执行单元，不做跨组排行榜。母机构、研究院、实验室、独立研究公司和部署观察团队分层保存；默认按最近发生实质变化排序。
+> 这里追踪 60 个核心研究执行单元，并增设 3 个初创前沿观察位，不做跨组排行榜。Figure 与 DYNA 保留原有类别并标记为初创前沿，因此初创默认 cohort 共 5 组。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>60</strong><span>持续跟踪研究组</span></div>
+  <div class="radar-kpi"><strong>60 + 3</strong><span>核心组 + 新增初创位</span></div>
   <div class="radar-kpi"><strong>18</strong><span>企业/独立组织</span></div>
   <div class="radar-kpi"><strong>30</strong><span>学术实验室</span></div>
-  <div class="radar-kpi"><strong>12</strong><span>平台 + 部署观察</span></div>
+  <div class="radar-kpi"><strong>5</strong><span>初创前沿 cohort</span></div>
 </div>
 
 ::: warning 归属边界
 Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA 不等于 GEAR，CMU 不等于 RI 或某个实验室，当前员工也不能反向改写历史论文归属。正式动态只使用 G1/G2，G3/G0 保留在复核队列。
 :::
+
+::: warning 评审边界
+Genesis、Generalist、Figure、DYNA 与 Sunday 的官方技术报告会进入雷达，但统一标记为“未同行评审·公司自报”；它们不会增加严格评审 work 数。
+:::
+
+<ResearchGroupLandscape />
 
 <ResearchGroupExplorer />
 
@@ -2757,6 +2763,7 @@ Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA �
 - [2026-W34 周报](/groups/weekly/2026-w34)
 - [组织层级图](/groups/organizations)
 - [研究组合作网络](/groups/collaboration)
+- [领先初创技术报告](/groups/startups)
 - [组织归属与每周更新方法](/methods/research-groups)
 - [旧机构页兼容入口](/analysis/institutions)
 
@@ -2767,7 +2774,7 @@ Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA �
 
 | 周次 | 覆盖窗口 | G1/G2 更新 | 变化研究组 | 链接 |
 |---|---|---:|---:|---|
-| 2026-W34 | 2026-08-17—2026-08-23 | 3 | 3 | [阅读](/groups/weekly/2026-w34) |
+| 2026-W34 | 2026-08-17—2026-08-23 | 5 | 4 | [阅读](/groups/weekly/2026-w34) |
 
 ---
 
@@ -2818,6 +2825,9 @@ Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA �
 | [Dexterity AI](/groups/dexterity-ai) | 部署与早期观察 | Deployment watch for production-scale dexterous manipulation, interpretable world models, tactile/force-guided recovery, and multi-arm logistics workflows. |
 | [Sanctuary AI](/groups/sanctuary-ai) | 部署与早期观察 | Closed-source and deployment watch for tactile dexterity, multi-embodiment policies, industrial task reliability, and Phoenix data collection. |
 | [Unitree Robotics](/groups/unitree-robotics) | 部署与早期观察 | Hardware-and-deployment watch for accessible humanoid and quadruped platforms, whole-body control, dexterous end effectors, datasets, and ecosystem adoption. |
+| [Generalist AI](/groups/generalist-ai) | 初创前沿观察 | 以大规模跨任务机器人数据训练通才策略的初创公司，研究重点从 GEN-0/GEN-1 的规模化预训练推进到 GEN-1.5 的少样本快速适配。 |
+| [Genesis AI](/groups/genesis-ai) | 初创前沿观察 | 全栈机器人基础模型初创公司，围绕跨模态数据、仿真、模型与灵巧手硬件协同开发；公司成立前的 Genesis 开源仿真项目不反向计作公司历史成果。 |
+| [Sunday Robotics](/groups/sunday-robotics) | 初创前沿观察 | 家庭机器人初创公司，以无机器人数据预训练与家庭任务适配为核心，ACT 系列报告重点展示衣物折叠等真实双臂操作。 |
 
 ---
 
@@ -4460,8 +4470,8 @@ Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA �
 |---|---:|
 | Canonical works | 41592 |
 | 带 organization 归属边的 work | 100 |
-| 持续跟踪研究组 | 60 |
-| 待复核 G3/G0 候选 | 2 |
+| 持续跟踪研究组 | 63 |
+| 待复核 G3/G0 候选 | 176 |
 
 ### 必须保留的区别
 

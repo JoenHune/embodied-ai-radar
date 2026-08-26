@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-03-28 | 预印本 | [Empirical Analysis of Sim-and-Real Cotraining of Diffusion Policies for Planar Pushing from Pixels](https://locomotion.csail.mit.edu/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 以四十余个真机策略和数百个仿真策略系统分析 sim-and-real 共训练，揭示物理差距、视觉差距和数据规模的作用。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-03-28 | 预印本 | [Empirical Analysis of Sim-and-Real Cotraining of Diffusion Policies for Planar Pushing from Pixels](https://locomotion.csail.mit.edu/) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 以四十余个真机策略和数百个仿真策略系统分析 sim-and-real 共训练，揭示物理差距、视觉差距和数据规模的作用。 |
 
 ## Canonical works 与归属证据
 

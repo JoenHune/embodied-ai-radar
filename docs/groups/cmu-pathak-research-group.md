@@ -35,25 +35,25 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-04-13 | 预印本 | [Solving Physics Olympiad via Reinforcement Learning on Physics Simulators](https://arxiv.org/abs/2604.11805) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-01-21 | 预印本 | [Iterative Refinement Improves Compositional Image Generation](https://arxiv.org/abs/2601.15286) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-11-11 | 预印本 | [ViPRA: Video Prediction for Robot Actions](https://arxiv.org/abs/2511.07732) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-09-28 | 预印本 | [LocoFormer: Generalist Locomotion via Long-context Adaptation](https://arxiv.org/abs/2509.23745) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-09-08 | 预印本 | [Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments](https://arxiv.org/abs/2509.06953) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-09-03 | 预印本 | [Can LLMs Lie? Investigation beyond Hallucination](https://arxiv.org/abs/2509.03518) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-07-21 | 预印本 | [Diffusion Beats Autoregressive in Data-Constrained Settings](https://arxiv.org/abs/2507.15857) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-05-12 | 预印本 | [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-03-26 | 预印本 | [Unified Multimodal Discrete Diffusion](https://arxiv.org/abs/2503.20853) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-02-24 | 预印本 | [FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-10-29 | 同行评审论文 | [Local Policies Enable Zero-shot Long-horizon Manipulation](https://www.cs.cmu.edu/~dpathak/) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 利用局部策略与基础模型组合，将仿真训练迁移到未见过的多阶段真实操作任务，并发表于 ICRA 2025。 |
-| 2024-10-29 | 预印本 | [Local Policies Enable Zero-shot Long-horizon Manipulation](https://arxiv.org/abs/2410.22332) | G1 直接证据 | [D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-09 | 预印本 | [Neural MP: A Generalist Neural Motion Planner](https://arxiv.org/abs/2409.05864) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-07-29 | 预印本 | [SAPG: Split and Aggregate Policy Gradients](https://sapg-rl.github.io) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-07-29 | 预印本 | [SAPG: Split and Aggregate Policy Gradients](https://www.arxiv.org/abs/2407.20230) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-07-11 | 预印本 | [Video Diffusion Alignment via Reward Gradients](https://arxiv.org/abs/2407.08737) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 日期待核 | 预印本 | [Extreme Parkour with Legged Robots](https://arxiv.org/abs/2309.14341) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-04-13 | 预印本 | [Solving Physics Olympiad via Reinforcement Learning on Physics Simulators](https://arxiv.org/abs/2604.11805) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-01-21 | 预印本 | [Iterative Refinement Improves Compositional Image Generation](https://arxiv.org/abs/2601.15286) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-11-11 | 预印本 | [ViPRA: Video Prediction for Robot Actions](https://arxiv.org/abs/2511.07732) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-09-28 | 预印本 | [LocoFormer: Generalist Locomotion via Long-context Adaptation](https://arxiv.org/abs/2509.23745) | 已同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-09-08 | 预印本 | [Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments](https://arxiv.org/abs/2509.06953) | 已同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-09-03 | 预印本 | [Can LLMs Lie? Investigation beyond Hallucination](https://arxiv.org/abs/2509.03518) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-07-21 | 预印本 | [Diffusion Beats Autoregressive in Data-Constrained Settings](https://arxiv.org/abs/2507.15857) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-05-12 | 预印本 | [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-03-26 | 预印本 | [Unified Multimodal Discrete Diffusion](https://arxiv.org/abs/2503.20853) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-02-24 | 预印本 | [FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-10-29 | 同行评审论文 | [Local Policies Enable Zero-shot Long-horizon Manipulation](https://www.cs.cmu.edu/~dpathak/) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 利用局部策略与基础模型组合，将仿真训练迁移到未见过的多阶段真实操作任务，并发表于 ICRA 2025。 |
+| 2024-10-29 | 预印本 | [Local Policies Enable Zero-shot Long-horizon Manipulation](https://arxiv.org/abs/2410.22332) | 未严格同行评审 | G1 直接证据 | [D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-09 | 预印本 | [Neural MP: A Generalist Neural Motion Planner](https://arxiv.org/abs/2409.05864) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-07-29 | 预印本 | [SAPG: Split and Aggregate Policy Gradients](https://sapg-rl.github.io) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-07-29 | 预印本 | [SAPG: Split and Aggregate Policy Gradients](https://www.arxiv.org/abs/2407.20230) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-07-11 | 预印本 | [Video Diffusion Alignment via Reward Gradients](https://arxiv.org/abs/2407.08737) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期待核 | 预印本 | [Extreme Parkour with Legged Robots](https://arxiv.org/abs/2309.14341) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 

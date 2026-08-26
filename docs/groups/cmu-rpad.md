@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-03-04 | 同行评审论文 | [ArticuBot: Learning Universal Articulated Object Manipulation Policy via Large Scale Simulation](https://www.ri.cmu.edu/opening-new-doors-for-household-robotics/) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 通过大规模仿真训练分层策略，使机器人在真实校园环境中打开未见过的门、抽屉与家电，并发表于 RSS 2025。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-03-04 | 同行评审论文 | [ArticuBot: Learning Universal Articulated Object Manipulation Policy via Large Scale Simulation](https://www.ri.cmu.edu/opening-new-doors-for-household-robotics/) | 已同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 通过大规模仿真训练分层策略，使机器人在真实校园环境中打开未见过的门、抽屉与家电，并发表于 RSS 2025。 |
 
 ## Canonical works 与归属证据
 

@@ -35,16 +35,16 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-30 | 预印本 | [ASPIRE: Agentic /Skills Discovery for Robotics](https://research.nvidia.com/labs/gear/aspire/) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。 |
-| 2026-06-18 | 预印本 | [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://research.nvidia.com/labs/gear/enpire/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。 |
-| 2026-03-23 | 预印本 | [CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation](https://arxiv.org/abs/2603.22435) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-10-29 | 预印本 | [STITCH 2.0: Extending Augmented Suturing with EKF Needle Estimation and Thread Management](https://arxiv.org/pdf/2510.25768) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-10-30 | 预印本 | [Augmented dexterity: How robots can enhance human surgical skills](https://autolab.berkeley.edu/assets/publications/media/Augmented-Dexterity-Science-Robotics-Oct-2024.pdf) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-26 | 同行评审论文 | [Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction](https://autolab.berkeley.edu/publications.shtml) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 利用单目 4D 重建从观察到的机器人视频中恢复铰接物体操作轨迹，并将其转化为真机策略；CoRL 2024 Oral。 |
-| 2024-09-26 | 预印本 | [Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction](https://arxiv.org/abs/2409.18121) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 日期待核 | 预印本 | [Conformal Policy Learning for Sensorimotor Control under Distribution Shifts](https://arxiv.org/pdf/2311.01457.pdf) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-30 | 预印本 | [ASPIRE: Agentic /Skills Discovery for Robotics](https://research.nvidia.com/labs/gear/aspire/) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。 |
+| 2026-06-18 | 预印本 | [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://research.nvidia.com/labs/gear/enpire/) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。 |
+| 2026-03-23 | 预印本 | [CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation](https://arxiv.org/abs/2603.22435) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-10-29 | 预印本 | [STITCH 2.0: Extending Augmented Suturing with EKF Needle Estimation and Thread Management](https://arxiv.org/pdf/2510.25768) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-10-30 | 预印本 | [Augmented dexterity: How robots can enhance human surgical skills](https://autolab.berkeley.edu/assets/publications/media/Augmented-Dexterity-Science-Robotics-Oct-2024.pdf) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-26 | 同行评审论文 | [Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction](https://autolab.berkeley.edu/publications.shtml) | 已同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 利用单目 4D 重建从观察到的机器人视频中恢复铰接物体操作轨迹，并将其转化为真机策略；CoRL 2024 Oral。 |
+| 2024-09-26 | 预印本 | [Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction](https://arxiv.org/abs/2409.18121) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期待核 | 预印本 | [Conformal Policy Learning for Sensorimotor Control under Distribution Shifts](https://arxiv.org/pdf/2311.01457.pdf) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 

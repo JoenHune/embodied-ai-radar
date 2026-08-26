@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-06-20 | 同行评审论文 | [Dex1B: Learning with 1B Demonstrations for Dexterous Manipulation](https://collegeai.tsinghua.edu.cn/en/Research/Research_Groups/E__Interactive_Embodied_Intelligence__Lab.htm) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 以十亿级仿真示范扩展灵巧操作训练，检验大规模接触数据与真实部署的连接；发表于 RSS 2025。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-06-20 | 同行评审论文 | [Dex1B: Learning with 1B Demonstrations for Dexterous Manipulation](https://collegeai.tsinghua.edu.cn/en/Research/Research_Groups/E__Interactive_Embodied_Intelligence__Lab.htm) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 以十亿级仿真示范扩展灵巧操作训练，检验大规模接触数据与真实部署的连接；发表于 RSS 2025。 |
 
 ## Canonical works 与归属证据
 

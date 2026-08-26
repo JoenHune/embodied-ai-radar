@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2024-11-04 | 同行评审论文 | [Learning to Assist Humans without Inferring Rewards](https://interact.berkeley.edu/publications.html) | G1 直接证据 | [D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 研究无需显式推断人类奖励也能学习辅助策略的路径，降低错误人类模型导致的对齐风险；发表于 NeurIPS 2024。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2024-11-04 | 同行评审论文 | [Learning to Assist Humans without Inferring Rewards](https://interact.berkeley.edu/publications.html) | 未严格同行评审 | G1 直接证据 | [D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 研究无需显式推断人类奖励也能学习辅助策略的路径，降低错误人类模型导致的对齐风险；发表于 NeurIPS 2024。 |
 
 ## Canonical works 与归属证据
 

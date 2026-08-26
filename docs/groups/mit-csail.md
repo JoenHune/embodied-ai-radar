@@ -35,9 +35,9 @@ Broad AI institute with a dense robotics ecosystem, open facilities, and multipl
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-10-23 | 项目 | [Five-year physically intelligent robots initiative](https://www.csail.mit.edu/news/mit-csail-and-pegatron-launch-five-year-initiative-pioneer-physically-intelligent-robots) | G1 直接证据 | — | MIT CSAIL officially announced a 2026-2031 program spanning dexterous manipulation, tactile sensing, multimodal perception, AI control, and real-world demonstrations. This is an umbrella-level program update and does not assign resulting work to any single CSAIL child lab. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-10-23 | 项目 | [Five-year physically intelligent robots initiative](https://www.csail.mit.edu/news/mit-csail-and-pegatron-launch-five-year-initiative-pioneer-physically-intelligent-robots) | 未严格同行评审 | G1 直接证据 | — | MIT CSAIL officially announced a 2026-2031 program spanning dexterous manipulation, tactile sensing, multimodal perception, AI control, and real-world demonstrations. This is an umbrella-level program update and does not assign resulting work to any single CSAIL child lab. |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ Broad AI institute with a dense robotics ecosystem, open facilities, and multipl
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
+| projects | [https://www.csail.mit.edu/research](https://www.csail.mit.edu/research) | healthy | 2026-08-26 | 0 |
 | source_1 | [https://www.csail.mit.edu/research](https://www.csail.mit.edu/research) | healthy | 2026-08-26 | 0 |
 | source_2 | [https://www.csail.mit.edu/news](https://www.csail.mit.edu/news) | healthy | 2026-08-26 | 0 |
-| projects | [https://www.csail.mit.edu/research](https://www.csail.mit.edu/research) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

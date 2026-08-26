@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-03-02 | 同行评审论文 | [Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons](https://weirdlab.cs.washington.edu/) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 通过轨迹比较扩展通用机器人奖励模型，使评测与策略改进形成可规模化的反馈环；发表于 RSS 2026。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-03-02 | 同行评审论文 | [Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons](https://weirdlab.cs.washington.edu/) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 通过轨迹比较扩展通用机器人奖励模型，使评测与策略改进形成可规模化的反馈环；发表于 RSS 2026。 |
 
 ## Canonical works 与归属证据
 

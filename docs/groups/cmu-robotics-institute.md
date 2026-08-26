@@ -35,9 +35,9 @@ Umbrella institute spanning the complete embodied-intelligence stack; lab-level 
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-08 | 项目 | [Learning Generalizable Robot Skills for Dynamic and Interactive Tasks](https://publications.ri.cmu.edu/learning-generalizable-robot-skills-for-dynamic-and-interactive-tasks) | G1 直接证据 | — | The official RI publication page records a CMU-RI technical report on multimodal foundation models, closed-loop policies, embodied memory, and safety-aware robot learning. This is an institute repository attribution to a specific RI work, not a blanket attribution to every RI child lab. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-08 | 项目 | [Learning Generalizable Robot Skills for Dynamic and Interactive Tasks](https://publications.ri.cmu.edu/learning-generalizable-robot-skills-for-dynamic-and-interactive-tasks) | 未严格同行评审 | G1 直接证据 | — | The official RI publication page records a CMU-RI technical report on multimodal foundation models, closed-loop policies, embodied memory, and safety-aware robot learning. This is an institute repository attribution to a specific RI work, not a blanket attribution to every RI child lab. |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ Umbrella institute spanning the complete embodied-intelligence stack; lab-level 
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| publications | [https://www.ri.cmu.edu/publications/](https://www.ri.cmu.edu/publications/) | healthy | 2026-08-26 | 0 |
-| projects | [https://www.ri.cmu.edu/research/projects/](https://www.ri.cmu.edu/research/projects/) | healthy | 2026-08-26 | 0 |
 | people | [https://www.ri.cmu.edu/research/labs-groups/](https://www.ri.cmu.edu/research/labs-groups/) | healthy | 2026-08-26 | 0 |
+| projects | [https://www.ri.cmu.edu/research/projects/](https://www.ri.cmu.edu/research/projects/) | healthy | 2026-08-26 | 0 |
+| publications | [https://www.ri.cmu.edu/publications/](https://www.ri.cmu.edu/publications/) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

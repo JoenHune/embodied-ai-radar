@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-06-16 | 模型 | [1X World Model: Evaluating Bits, not Atoms](https://www.1x.tech/discover/redwood-ai-world-model) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 1XWM 从真实机器人数据预测动作条件未来与任务价值，用学习式仿真加速 Redwood/NEO 策略的安全和可靠性评估。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-06-16 | 模型 | [1X World Model: Evaluating Bits, not Atoms](https://www.1x.tech/discover/redwood-ai-world-model) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 1XWM 从真实机器人数据预测动作条件未来与任务价值，用学习式仿真加速 Redwood/NEO 策略的安全和可靠性评估。 |
 
 ## Canonical works 与归属证据
 

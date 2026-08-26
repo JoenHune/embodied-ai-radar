@@ -35,9 +35,9 @@ Cross-disciplinary facility and program layer for large-scale real-world robotic
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-09-30 | 项目 | [Optimizing robot teamwork for manufacturing](https://src.stanford.edu/press/sim-to-scale-je3e7-cd5sm-eaf76-x3jec-yktg9) | G1 直接证据 | — | The SRC official news page highlights an algorithm for jointly planning product subassemblies, individual and team robot work, and collision-aware factory layout, and directly identifies co-author Mac Schwager as SRC faculty. Attribution is limited to the named participating faculty and center-curated work. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-09-30 | 项目 | [Optimizing robot teamwork for manufacturing](https://src.stanford.edu/press/sim-to-scale-je3e7-cd5sm-eaf76-x3jec-yktg9) | 未严格同行评审 | G1 直接证据 | — | The SRC official news page highlights an algorithm for jointly planning product subassemblies, individual and team robot work, and collision-aware factory layout, and directly identifies co-author Mac Schwager as SRC faculty. Attribution is limited to the named participating faculty and center-curated work. |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ Cross-disciplinary facility and program layer for large-scale real-world robotic
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| source_1 | [https://src.stanford.edu/news](https://src.stanford.edu/news) | healthy | 2026-08-26 | 0 |
-| projects | [https://src.stanford.edu/home](https://src.stanford.edu/home) | healthy | 2026-08-26 | 0 |
 | people | [https://src.stanford.edu/about-people](https://src.stanford.edu/about-people) | healthy | 2026-08-26 | 0 |
+| projects | [https://src.stanford.edu/home](https://src.stanford.edu/home) | healthy | 2026-08-26 | 0 |
+| source_1 | [https://src.stanford.edu/news](https://src.stanford.edu/news) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-01 | 模型 | [Cosmos 3: Omnimodal World Models for Physical AI](https://research.nvidia.com/labs/cosmos-lab/cosmos3/) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D3 · 世界模型与预测控制](/frontiers/world-models)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | Cosmos 3 将语言、图像、视频、音频与动作统一进 omnimodal 世界模型，并覆盖机器人策略、前向动力学和逆动力学。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-01 | 模型 | [Cosmos 3: Omnimodal World Models for Physical AI](https://research.nvidia.com/labs/cosmos-lab/cosmos3/) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D3 · 世界模型与预测控制](/frontiers/world-models)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | Cosmos 3 将语言、图像、视频、音频与动作统一进 omnimodal 世界模型，并覆盖机器人策略、前向动力学和逆动力学。 |
 
 ## Canonical works 与归属证据
 

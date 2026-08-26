@@ -35,13 +35,13 @@ NVIDIA 面向通用具身智能的核心研究组，覆盖多模态基础模型�
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-30 | 预印本 | [ASPIRE: Agentic /Skills Discovery for Robotics](https://research.nvidia.com/labs/gear/aspire/) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。 |
-| 2026-06-18 | 预印本 | [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://research.nvidia.com/labs/gear/enpire/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。 |
-| 2026-02-19 | 预印本 | [EgoScale: Scaling Human Video to Unlock Dexterous Robot Intelligence](https://research.nvidia.com/labs/gear/egoscale/) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | 以超过 2 万小时第一视角人类视频预训练灵巧 VLA，并报告人类视频规模与验证损失之间的近似对数线性关系。 |
-| 2026-02-06 | 预印本 | [DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://research.nvidia.com/labs/gear/publications/) | G2 时间对齐重建 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。 |
-| 2025-11-19 | 同行评审论文 | [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://research.nvidia.com/labs/gear/publications/) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | VIRAL 将 GEAR 的大规模仿真/人形平台与 LeCAR 的学习控制路线结合，用于真实人形 loco-manipulation。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-30 | 预印本 | [ASPIRE: Agentic /Skills Discovery for Robotics](https://research.nvidia.com/labs/gear/aspire/) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。 |
+| 2026-06-18 | 预印本 | [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://research.nvidia.com/labs/gear/enpire/) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。 |
+| 2026-02-19 | 预印本 | [EgoScale: Scaling Human Video to Unlock Dexterous Robot Intelligence](https://research.nvidia.com/labs/gear/egoscale/) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | 以超过 2 万小时第一视角人类视频预训练灵巧 VLA，并报告人类视频规模与验证损失之间的近似对数线性关系。 |
+| 2026-02-06 | 预印本 | [DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://research.nvidia.com/labs/gear/publications/) | 未严格同行评审 | G2 时间对齐重建 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。 |
+| 2025-11-19 | 同行评审论文 | [VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://research.nvidia.com/labs/gear/publications/) | 已同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | VIRAL 将 GEAR 的大规模仿真/人形平台与 LeCAR 的学习控制路线结合，用于真实人形 loco-manipulation。 |
 
 ## Canonical works 与归属证据
 
@@ -66,7 +66,7 @@ NVIDIA 面向通用具身智能的核心研究组，覆盖多模态基础模型�
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
 | home | [https://research.nvidia.com/labs/gear/](https://research.nvidia.com/labs/gear/) | healthy | 2026-08-26 | 0 |
-| publications | [https://research.nvidia.com/labs/gear/publications/](https://research.nvidia.com/labs/gear/publications/) | healthy | 2026-08-26 | 0 |
 | projects | [https://research.nvidia.com/labs/gear/projects/](https://research.nvidia.com/labs/gear/projects/) | healthy | 2026-08-26 | 0 |
+| publications | [https://research.nvidia.com/labs/gear/publications/](https://research.nvidia.com/labs/gear/publications/) | healthy | 2026-08-26 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

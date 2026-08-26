@@ -35,9 +35,9 @@ Deployment watch for Apollo hardware, Robot Park data infrastructure, customer p
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-30 | 部署 | [Robot Park fleet data collection and customer-site training](https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work) | G1 直接证据 | — | Official company announcement of fleet data collection and partner sites; not a peer-reviewed evaluation. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-30 | 部署 | [Robot Park fleet data collection and customer-site training](https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work) | 未严格同行评审 | G1 直接证据 | — | Official company announcement of fleet data collection and partner sites; not a peer-reviewed evaluation. |
 
 ## Canonical works 与归属证据
 

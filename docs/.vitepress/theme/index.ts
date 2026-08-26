@@ -12,6 +12,9 @@ export default {
     app.component('ResearchGroupExplorer', defineAsyncComponent(
       () => import('./components/ResearchGroupExplorer.vue'),
     ))
+    app.component('ResearchGroupLandscape', defineAsyncComponent(
+      () => import('./components/ResearchGroupLandscape.vue'),
+    ))
     if (typeof window === 'undefined') return
     let disposePageEnhancements = () => {}
 

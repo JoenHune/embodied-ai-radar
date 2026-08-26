@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-05-17 | 同行评审论文 | [OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/publications.html) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning) | 在统一 VLA 中按任务难度自适应切换直接动作与显式推理，使快慢决策共享模型和训练流程；发表于 ICLR 2026。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-05-17 | 同行评审论文 | [OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/publications.html) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning) | 在统一 VLA 中按任务难度自适应切换直接动作与显式推理，使快慢决策共享模型和训练流程；发表于 ICLR 2026。 |
 
 ## Canonical works 与归属证据
 

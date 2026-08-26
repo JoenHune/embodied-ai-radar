@@ -3,6 +3,61 @@
   "generated_at": "2026-08-26",
   "updates": [
     {
+      "update_id": "upd-figure-index-20260825",
+      "organization_id": "org:figure-ai",
+      "title": "Introducing Index",
+      "url": "https://www.figure.ai/news/introducing-index",
+      "published_at": "2026-08-25",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D9",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "公司报告将 Index 描述为人类视频数据引擎，并披露 1,600 万视频等规模指标；数据集与评测未开放。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "deployment_feedback",
+        "generalist_policy",
+        "world_action_model"
+      ],
+      "validation_tags": [
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "video corpus",
+          "value": "16M",
+          "unit": "videos",
+          "scope": "company proprietary dataset",
+          "note": "Collection scale is company-reported."
+        }
+      ]
+    },
+    {
       "update_id": "upd-rai-table-tennis-20260819",
       "organization_id": "org:rai-institute",
       "title": "Whole-Body Model Predictive Control for Spin-Aware Quadrupedal Table Tennis",
@@ -26,6 +81,68 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-generalist-gen15-20260819",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-1.5",
+      "url": "https://generalistai.com/blog/gen-1.5",
+      "published_at": "2026-08-19",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "公司报告展示 3–12 秒单次示教与少量梯度更新的快速适配；59%/83% 为内部短任务平均成功率，并非独立 benchmark。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "generalist_policy",
+        "hierarchical_control",
+        "rl_post_training",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "one-shot average success",
+          "value": "59",
+          "unit": "%",
+          "scope": "company short-task benchmark",
+          "note": "Company self-report."
+        },
+        {
+          "label": "10-step adaptation average success",
+          "value": "83",
+          "unit": "%",
+          "scope": "company short-task benchmark",
+          "note": "Five minutes of task data; not independently replicated."
+        }
+      ]
     },
     {
       "update_id": "upd-skild-s1-20260818",
@@ -55,6 +172,56 @@
       "curated": true
     },
     {
+      "update_id": "upd-dyna-2-infra-20260817",
+      "organization_id": "org:dyna-robotics",
+      "title": "Dyna-2 Infrastructure",
+      "url": "https://www.dyna.co/research/dyna-2-infrastructure",
+      "published_at": "2026-08-17",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D9",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "公司基础设施报告披露存储、吞吐与 GPU 利用率改进；这些工程指标来自公司内部，未独立审计。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "deployment_feedback",
+        "generalist_policy"
+      ],
+      "validation_tags": [
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "weekly ingestion",
+          "value": "440k",
+          "unit": "episode-hours/week",
+          "scope": "company data infrastructure",
+          "note": "Company self-report; up from 14k."
+        }
+      ]
+    },
+    {
       "update_id": "update:org-dyna-robotics:2",
       "organization_id": "org:dyna-robotics",
       "title": "DYNA-2 research release index",
@@ -71,6 +238,66 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-dyna-2-20260815",
+      "organization_id": "org:dyna-robotics",
+      "title": "Dyna-2",
+      "url": "https://www.dyna.co/dyna-2",
+      "published_at": "2026-08-15",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q6",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "公司报告以超过 100 万小时第一视角人类视频预训练 Dyna-2，并披露 39 个离线零样本任务及 14 个真机后训练任务；均为内部评测。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "generalist_policy",
+        "world_action_model",
+        "rl_post_training",
+        "dexterous_bimanual",
+        "cross_embodiment",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "first-person human video",
+          "value": ">1M",
+          "unit": "hours",
+          "scope": "company-described corpus",
+          "note": "Company self-report."
+        }
+      ]
     },
     {
       "update_id": "group-update:0baedf4c8abd82cb",
@@ -164,6 +391,122 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-generalist-thousand-hands-20260723",
+      "organization_id": "org:generalist-ai",
+      "title": "Towards Machines with a Thousand Hands",
+      "url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+      "published_at": "2026-07-23",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q8",
+        "Q9"
+      ],
+      "summary_zh": "公司报告研究约 9,000 种生成式末端执行器变化下的跨形态学习；该数字不是 9,000 款实体商业机械手。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "generalist_policy",
+        "cross_embodiment",
+        "simulation_synthetic"
+      ],
+      "validation_tags": [
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "end-effector variations",
+          "value": "~9,000",
+          "unit": "variations",
+          "scope": "generated morphology variations",
+          "note": "Not 9,000 commercial robot hands."
+        }
+      ]
+    },
+    {
+      "update_id": "upd-sunday-act2-20260717",
+      "organization_id": "org:sunday-robotics",
+      "title": "ACT-2 Preview",
+      "url": "https://www.sunday.ai/blog/act-2-preview",
+      "published_at": "2026-07-17",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "公司预览报告在 9 类衣物、785 次内部试验中报告 99.1±0.3% 成功率；范围排除若干衣物类型，标注由公司完成，未独立复现。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "generalist_policy",
+        "rl_post_training",
+        "dexterous_bimanual",
+        "real_robot",
+        "long_horizon"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "long_horizon",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "autonomous attempts",
+          "value": "785",
+          "unit": "attempts",
+          "scope": "company garment-folding distribution",
+          "note": "Internal annotations and constrained garment scope."
+        },
+        {
+          "label": "reported success",
+          "value": "99.1±0.3",
+          "unit": "%",
+          "scope": "9 garment types",
+          "note": "Excludes several garment categories; company self-report."
+        }
+      ]
     },
     {
       "update_id": "opendrivelab:2026-07-13:rise",
@@ -587,6 +930,55 @@
       "curated": true
     },
     {
+      "update_id": "upd-genesis-world-1-20260527",
+      "organization_id": "org:genesis-ai",
+      "title": "Genesis World 1.0 and the Path Forward",
+      "url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+      "published_at": "2026-05-27",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D3",
+        "D8",
+        "D10"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "公司报告发布 Genesis World 1.0 的仿真与 sim-real 相关性结果；代码开放不代表报告中的模型、数据或评测已全部开放，性能数字属于内部评测。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "simulation_synthetic",
+        "world_action_model",
+        "rl_post_training",
+        "cross_embodiment",
+        "open_assets"
+      ],
+      "validation_tags": [
+        "simulation",
+        "internal_evaluation"
+      ],
+      "open_assets": [
+        "code"
+      ],
+      "report_metrics": []
+    },
+    {
       "update_id": "group-update:109d96c94475004d",
       "organization_id": "org:cmu-intent-robotics",
       "title": "Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations",
@@ -605,6 +997,79 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": false
+    },
+    {
+      "update_id": "upd-genesis-gene-26-5-20260507",
+      "organization_id": "org:genesis-ai",
+      "title": "GENE-26.5: Advancing Robotic Manipulation to Human Level",
+      "url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+      "published_at": "2026-05-07",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D8",
+        "D9",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q6",
+        "Q8",
+        "Q9"
+      ],
+      "summary_zh": "公司技术报告披露跨模态数据、分层策略与 20 自由度 Genesis Hand 的系统共设计，并展示长时烹饪任务；所有指标均为公司自报，未经过同行评审或独立复现。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "teleoperation",
+        "generalist_policy",
+        "hierarchical_control",
+        "dexterous_bimanual",
+        "tactile_force",
+        "real_robot",
+        "long_horizon",
+        "cross_embodiment"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "long_horizon",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "cross-modal training data",
+          "value": ">200k",
+          "unit": "hours",
+          "scope": "company-described corpus",
+          "note": "Company self-report; raw evaluation data not open."
+        },
+        {
+          "label": "control frequency",
+          "value": "500",
+          "unit": "Hz",
+          "scope": "Genesis Hand experiments",
+          "note": "First-party measurement."
+        }
+      ]
     },
     {
       "update_id": "group-update:29e8cb7c50d2237b",
@@ -716,6 +1181,62 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": false
+    },
+    {
+      "update_id": "upd-generalist-gen1-20260402",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-1",
+      "url": "https://generalistai.com/blog/gen-1",
+      "published_at": "2026-04-02",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D8",
+        "D9",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "公司报告将数据规模扩展到超过 50 万小时，并报告约一小时任务数据的内部适配实验；性能比例只适用于其自定义任务集。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "teleoperation",
+        "generalist_policy",
+        "rl_post_training",
+        "cross_embodiment",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "training data",
+          "value": ">500k",
+          "unit": "hours",
+          "scope": "company-described corpus",
+          "note": "Company self-report."
+        }
+      ]
     },
     {
       "update_id": "group-update:ba271d880a3c581d",
@@ -1272,6 +1793,50 @@
       "curated": false
     },
     {
+      "update_id": "upd-dyna-pretraining-20251120",
+      "organization_id": "org:dyna-robotics",
+      "title": "Pre-training Robot Foundation Models on Human Videos",
+      "url": "https://www.dyna.co/research/pre-training",
+      "published_at": "2025-11-20",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D9"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "公司报告研究用人类视频预训练机器人基础模型；公开页面不足以支持独立复算。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "generalist_policy",
+        "world_action_model",
+        "cross_embodiment"
+      ],
+      "validation_tags": [
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": []
+    },
+    {
       "update_id": "group-update:agility-digit-100k-totes",
       "organization_id": "org:agility-robotics",
       "title": "Digit Moves Over 100,000 Totes in Commercial Deployment",
@@ -1298,6 +1863,56 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-sunday-act1-20251119",
+      "organization_id": "org:sunday-robotics",
+      "title": "ACT-1: Learning Robot Skills with No Robot Data",
+      "url": "https://www.sunday.ai/blog/no-robot-data",
+      "published_at": "2025-11-19",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D8",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q4",
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "公司技术报告提出不依赖机器人采集数据的技能预训练路径，并展示真实双臂任务；公开材料不足以支持独立复现。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "simulation_synthetic",
+        "generalist_policy",
+        "dexterous_bimanual",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": []
     },
     {
       "update_id": "group-update:de2ebadcb1fb8a0e",
@@ -1370,6 +1985,59 @@
       "curated": false
     },
     {
+      "update_id": "upd-generalist-gen0-20251104",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-0",
+      "url": "https://generalistai.com/blog/gen-0",
+      "published_at": "2025-11-04",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "公司报告披露 10B+ 参数通才机器人策略和超过 27 万小时数据的内部扩展结果；未提供同行评审或独立复现。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "teleoperation",
+        "generalist_policy",
+        "cross_embodiment",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "training data",
+          "value": ">270k",
+          "unit": "hours",
+          "scope": "company-described corpus",
+          "note": "Company self-report."
+        }
+      ]
+    },
+    {
       "update_id": "group-update:675e4bee74b14e07",
       "organization_id": "org:berkeley-autolab",
       "title": "STITCH 2.0: Extending Augmented Suturing with EKF Needle Estimation and Thread Management",
@@ -1404,6 +2072,55 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-dyna-open-world-20251015",
+      "organization_id": "org:dyna-robotics",
+      "title": "Open-World Dexterity",
+      "url": "https://www.dyna.co/research/open-world-dexterity",
+      "published_at": "2025-10-15",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q10"
+      ],
+      "summary_zh": "公司研究索引日期为 2025-10-15，但正文称 2025 年 12 月；雷达保留该日期冲突，不把它当作精确月度趋势证据。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "world_action_model",
+        "generalist_policy",
+        "dexterous_bimanual",
+        "tactile_force",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation",
+        "date_conflict"
+      ],
+      "open_assets": [],
+      "report_metrics": []
     },
     {
       "update_id": "upd-academic-tsinghua-air-dream-xvla",
@@ -1515,6 +2232,50 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-figure-gobig-20250918",
+      "organization_id": "org:figure-ai",
+      "title": "Project Go-Big",
+      "url": "https://www.figure.ai/news/project-go-big",
+      "published_at": "2025-09-18",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D9"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "公司报告提出利用互联网人类视频扩展机器人视觉与行为知识；尚无开放数据或独立 benchmark 支持。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "human_video",
+        "generalist_policy",
+        "world_action_model",
+        "cross_embodiment"
+      ],
+      "validation_tags": [
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": []
     },
     {
       "update_id": "group-update:595bf5bd9bb65dba",
@@ -1863,6 +2624,65 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "upd-dyna-1-20250624",
+      "organization_id": "org:dyna-robotics",
+      "title": "DYNA-1",
+      "url": "https://www.dyna.co/research/dyna-1",
+      "published_at": "2025-06-24",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "公司报告在 24 小时餐巾整理运行中报告 850+ 件与 99.4% 成功率；属于内部生产式评测。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "teleoperation",
+        "generalist_policy",
+        "dexterous_bimanual",
+        "real_robot",
+        "long_horizon",
+        "production"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "long_horizon",
+        "production",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "24-hour run",
+          "value": ">850",
+          "unit": "napkins",
+          "scope": "company production-like run",
+          "note": "99.4% success is company-reported."
+        }
+      ]
     },
     {
       "update_id": "upd-academic-tsinghua-e-dex1b",
@@ -2448,6 +3268,65 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": true,
       "curated": false
+    },
+    {
+      "update_id": "upd-figure-helix-20250220",
+      "organization_id": "org:figure-ai",
+      "title": "Helix: A Vision-Language-Action Model for Generalist Humanoid Control",
+      "url": "https://www.figure.ai/news/helix",
+      "published_at": "2025-02-20",
+      "date_precision": "day",
+      "update_type": "technical_report",
+      "evidence_grade": "G1",
+      "source_type": "official_company_report",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q5",
+        "Q8",
+        "Q9"
+      ],
+      "summary_zh": "Figure 首份 Helix 公司技术报告描述 7B S2 语义层与 80M S1 动作层的分层控制；训练与性能数字均为第一方披露。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "artifact_class": "technical_report",
+      "evidence_lane": "internal_evaluation",
+      "publication_status": "first_party_technical_report",
+      "peer_reviewed": false,
+      "independent_validation": false,
+      "metric_owner": "company",
+      "claim_status": "company_self_report",
+      "technical_stack_tags": [
+        "teleoperation",
+        "generalist_policy",
+        "hierarchical_control",
+        "dexterous_bimanual",
+        "whole_body",
+        "real_robot"
+      ],
+      "validation_tags": [
+        "real_robot",
+        "internal_evaluation"
+      ],
+      "open_assets": [],
+      "report_metrics": [
+        {
+          "label": "training data",
+          "value": "~500",
+          "unit": "hours",
+          "scope": "company demonstrations",
+          "note": "Company self-report."
+        }
+      ]
     },
     {
       "update_id": "upd-academic-uw-rll-wheeled-lab",
@@ -3120,6 +3999,24 @@
       "curated": true
     },
     {
+      "update_id": "group-update:730d65e1e9a97399",
+      "organization_id": "org:sunday-robotics",
+      "title": "Skills Memo, the fastest learning robot",
+      "url": "https://www.sunday.ai/technology",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
       "update_id": "group-update:5f3fe56ad7c2d175",
       "organization_id": "org:stanford-iprl",
       "title": "Tactile-Informed Action Primitives Mitigate Jamming in Dense Clutter",
@@ -3154,6 +4051,168 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "group-update:421cc48992759e72",
+      "organization_id": "org:genesis-ai",
+      "title": "The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward May 27, 2026 Research",
+      "url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:4a251150828ece01",
+      "organization_id": "org:genesis-ai",
+      "title": "GENE-26.5: Advancing Robotic Manipulation to Human Level May 7, 2026 Research",
+      "url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:2b947614e42126ca",
+      "organization_id": "org:generalist-ai",
+      "title": "Towards Machines with a Thousand Hands Robots aren't locked into the hands they're born with. GEN-1 now supports a broad range of end effectors, showing how a single model can transfer across radically different ways of interacting with the physical world. 5 min read July 23, 2026",
+      "url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:2e65285dd99d27d5",
+      "organization_id": "org:generalist-ai",
+      "title": "The Robots Build Now, Too One-shot assembly is one of our new internal evaluation tasks: you build a small Lego structure, place it in front of the robot, and the robot builds copies of it. 3 min read September 24, 2025",
+      "url": "https://generalistai.com/blog/the-robots-build-now-too",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:2398b50682cd51c6",
+      "organization_id": "org:generalist-ai",
+      "title": "Research Preview A glimpse of what we're building at Generalist — end-to-end neural networks for dexterous sensorimotor policies across different embodiments, environments, and physical interactions. 3 min read June 17, 2025",
+      "url": "https://generalistai.com/blog/research-preview",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:198d445139e826f8",
+      "organization_id": "org:generalist-ai",
+      "title": "Research",
+      "url": "https://generalistai.com/blog/research",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:6d1c111d53af2b25",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-1.5 / Embodied Foundation Models are One-Shot Learners GEN-1.5 can in-context learn a new task from as little as 12 seconds of demonstration data — or adapt with 1 to 10 gradient steps on minutes of data. These capabilities emerge from pretraining on large-scale physical experience. 17 min read August 19, 2026 GEN- 1.5",
+      "url": "https://generalistai.com/blog/gen-1.5",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:bca5cfc287baaac7",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-1 / Scaling Embodied Foundation Models to Mastery We've created GEN-1 , our latest milestone in scaling robot learning — the first general-purpose AI model that crosses a new performance threshold: mastery of simple physical tasks. 14 min read April 2, 2026",
+      "url": "https://generalistai.com/blog/gen-1",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:c5b8fcc563f3feff",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-0 / Embodied Foundation Models That Scale with Physical Interaction We're introducing GEN-0 , a new class of embodied foundation models built for multimodal training directly on high-fidelity raw physical interaction. 12 min read November 4, 2025",
+      "url": "https://generalistai.com/blog/gen-0",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_research",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
     },
     {
       "update_id": "update:org-dyna-robotics:1",

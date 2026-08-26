@@ -35,9 +35,9 @@ Academic AI umbrella connecting robot learning, control, perception, human inter
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-07-01 | 项目 | [Whole-Body Conditioned Egocentric Video Prediction](https://bair.berkeley.edu/blog/2025/07/01/peva/) | G1 直接证据 | [D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | The official BAIR blog presents PEVA, an action-conditioned egocentric video model using full-body pose trajectories to predict how physical actions change the environment, while explicitly describing closed-loop embodied planning as future work. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-07-01 | 项目 | [Whole-Body Conditioned Egocentric Video Prediction](https://bair.berkeley.edu/blog/2025/07/01/peva/) | 未严格同行评审 | G1 直接证据 | [D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | The official BAIR blog presents PEVA, an action-conditioned egocentric video model using full-body pose trajectories to predict how physical actions change the environment, while explicitly describing closed-loop embodied planning as future work. |
 
 ## Canonical works 与归属证据
 

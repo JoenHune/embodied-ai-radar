@@ -111,6 +111,11 @@ def main() -> None:
         if not title or not url:
             continue
         grade = raw.get("evidence_grade") or "G3"
+        # HTML links found inside a GitHub page are not themselves verified
+        # releases.  Keep them in the review queue even if an older collector
+        # snapshot assigned the source a permissive grade.
+        if raw.get("source_type") == "official_github" and not raw.get("curated"):
+            grade = "G3"
         update_id = raw.get("update_id") or stable_update_id(org_id, title, url)
         arxiv_id = raw.get("arxiv_id") or extract_arxiv_id(url)
         work = by_arxiv.get(arxiv_id) if arxiv_id else None
@@ -141,6 +146,13 @@ def main() -> None:
             "strict_peer_reviewed": bool((work or {}).get("strict_peer_reviewed")),
             "curated": bool(raw.get("curated")),
         }
+        for field in (
+            "artifact_class", "evidence_lane", "publication_status", "peer_reviewed",
+            "independent_validation", "metric_owner", "claim_status",
+            "technical_stack_tags", "validation_tags", "open_assets", "report_metrics",
+        ):
+            if field in raw:
+                item[field] = raw[field]
         if published_at and published_at < "2024-07-01":
             continue
         if grade in {"G1", "G2"}:

@@ -17,6 +17,7 @@ const categoryLabels: Record<string, string> = {
   academic: '学术实验室/PI 组',
   platform: '研究院/开放平台',
   deployment_watch: '部署与早期观察',
+  startup_frontier: '初创前沿观察',
 }
 
 const values = (key: 'region' | 'direction_codes' | 'question_codes') => {

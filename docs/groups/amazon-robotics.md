@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-08-11 | 模型 | [Amazon builds first foundation model for multirobot coordination](https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D14 · 多机器人协同与群体智能](/frontiers/multi-robot-coordination) | DeepFleet 使用履约中心的海量真实导航数据预训练多机器人交通预测模型，并已用于任务分配与拥堵规避。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-08-11 | 模型 | [Amazon builds first foundation model for multirobot coordination](https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D14 · 多机器人协同与群体智能](/frontiers/multi-robot-coordination) | DeepFleet 使用履约中心的海量真实导航数据预训练多机器人交通预测模型，并已用于任务分配与拥堵规避。 |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
+| blog | [https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination](https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination) | healthy | 2026-08-26 | 0 |
 | home | [https://www.amazon.science/research-areas/robotics](https://www.amazon.science/research-areas/robotics) | healthy | 2026-08-26 | 0 |
 | people | [https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center](https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center) | healthy | 2026-08-26 | 0 |
-| blog | [https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination](https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

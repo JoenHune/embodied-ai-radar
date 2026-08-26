@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-01-05 | 部署 | [Boston Dynamics Unveils New Atlas Robot to Revolutionize Industry](https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 发布生产版 Atlas，强调工业自主任务、快速技能复制、感知安全与电池自换，并宣布与 Google DeepMind 结合 foundation models。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-01-05 | 部署 | [Boston Dynamics Unveils New Atlas Robot to Revolutionize Industry](https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 发布生产版 Atlas，强调工业自主任务、快速技能复制、感知安全与电池自换，并宣布与 Google DeepMind 结合 foundation models。 |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
+| blog | [https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/](https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/) | healthy | 2026-08-26 | 0 |
 | home | [https://bostondynamics.com/about/](https://bostondynamics.com/about/) | healthy | 2026-08-26 | 0 |
 | publications | [https://bostondynamics.com/atlas/](https://bostondynamics.com/atlas/) | healthy | 2026-08-26 | 0 |
-| blog | [https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/](https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

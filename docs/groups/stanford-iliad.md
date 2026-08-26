@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-11-24 | 预印本 | [Robot-Powered Data Flywheels: Deploying Robots in the Wild for Continual Data Collection and Foundation Model Adaptation](https://iliad.stanford.edu/publications/) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 把机器人部署、持续采数和基础模型适配组织成数据飞轮，研究真实场景中的长期迭代闭环。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-11-24 | 预印本 | [Robot-Powered Data Flywheels: Deploying Robots in the Wild for Continual Data Collection and Foundation Model Adaptation](https://iliad.stanford.edu/publications/) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 把机器人部署、持续采数和基础模型适配组织成数据飞轮，研究真实场景中的长期迭代闭环。 |
 
 ## Canonical works 与归属证据
 

@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2024-07-23 | 同行评审论文 | [From Imitation to Refinement -- Residual RL for Precise Assembly](https://improbableai.com/papers.html) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 在冻结的行为克隆扩散策略上训练闭环残差强化学习策略，提高精密对齐和装配可靠性；发表于 ICRA 2025。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2024-07-23 | 同行评审论文 | [From Imitation to Refinement -- Residual RL for Precise Assembly](https://improbableai.com/papers.html) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 在冻结的行为克隆扩散策略上训练闭环残差强化学习策略，提高精密对齐和装配可靠性；发表于 ICRA 2025。 |
 
 ## Canonical works 与归属证据
 

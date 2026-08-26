@@ -7,6 +7,7 @@
     "version": {"type": "string"},
     "updated": {"type": "string", "format": "date"},
     "tracking_target": {"const": 60},
+    "startup_frontier_count": {"type": "integer", "minimum": 0},
     "organizations": {
       "type": "array",
       "items": {
@@ -32,8 +33,9 @@
           },
           "tracking_unit": {"type": "boolean"},
           "tracking_category": {
-            "enum": ["corporate", "academic", "platform", "deployment_watch", "parent"]
+            "enum": ["corporate", "academic", "platform", "deployment_watch", "startup_frontier", "parent"]
           },
+          "startup_frontier": {"type": "boolean"},
           "status": {"enum": ["active", "historical", "transitioning", "observation"]},
           "disclosure_level": {"enum": ["high", "medium", "low"]},
           "source_health": {"enum": ["healthy", "partial", "stale", "unverified"]},

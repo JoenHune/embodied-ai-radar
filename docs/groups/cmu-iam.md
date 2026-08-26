@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2024-08-01 | 预印本 | [Plan to Learn: Active Robot Learning by Planning](https://www.ri.cmu.edu/robotics-groups/intelligent-autonomous-manipulation-lab/) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 把主动学习、持续学习与规划合并为 Plan-to-Learn 框架，让机器人决定应学习哪些技能及何时请求人类帮助。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2024-08-01 | 预印本 | [Plan to Learn: Active Robot Learning by Planning](https://www.ri.cmu.edu/robotics-groups/intelligent-autonomous-manipulation-lab/) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 把主动学习、持续学习与规划合并为 Plan-to-Learn 框架，让机器人决定应学习哪些技能及何时请求人类帮助。 |
 
 ## Canonical works 与归属证据
 

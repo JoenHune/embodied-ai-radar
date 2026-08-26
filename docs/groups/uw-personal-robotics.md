@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-06-16 | 同行评审论文 | [ATK: Automatic Task-driven Keypoint Selection for Robust Policy Learning](https://personalrobotics.cs.washington.edu/publications/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 自动选择与任务有关的关键点作为策略表征，提高视觉操作策略在遮挡、布局变化和背景变化下的鲁棒性；发表于 CoRL 2025。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-06-16 | 同行评审论文 | [ATK: Automatic Task-driven Keypoint Selection for Robust Policy Learning](https://personalrobotics.cs.washington.edu/publications/) | 已同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 自动选择与任务有关的关键点作为策略表征，提高视觉操作策略在遮挡、布局变化和背景变化下的鲁棒性；发表于 CoRL 2025。 |
 
 ## Canonical works 与归属证据
 

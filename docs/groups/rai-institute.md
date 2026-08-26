@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-08-19 | 预印本 | [Whole-Body Model Predictive Control for Spin-Aware Quadrupedal Table Tennis](https://rai-inst.com/resources/papers/whole-body-model-predictive-control-for-spin-aware-quadrupedal-table-tennis/) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 在 Spot 四足加机械臂平台上结合连续时间全身 MPC、球旋转估计与击球规划，实现面向人类对打的真机协调控制。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-08-19 | 预印本 | [Whole-Body Model Predictive Control for Spin-Aware Quadrupedal Table Tennis](https://rai-inst.com/resources/papers/whole-body-model-predictive-control-for-spin-aware-quadrupedal-table-tennis/) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 在 Spot 四足加机械臂平台上结合连续时间全身 MPC、球旋转估计与击球规划，实现面向人类对打的真机协调控制。 |
 
 ## Canonical works 与归属证据
 

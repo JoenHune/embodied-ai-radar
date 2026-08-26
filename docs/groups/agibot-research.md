@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-07-28 | 模型 | [AGIBOT’s WITA-Omni Preview Tops Daily-Omni Audio-Visual Reasoning Benchmark](https://www.agibot.com/article/231/detail/86.html) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | WITA-Omni 以 Thinker–Talker–Actor 架构统一音视频理解、决策、语音、运动和表情生成，作为交互智能模块与操作和运动智能并行演进。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-07-28 | 模型 | [AGIBOT’s WITA-Omni Preview Tops Daily-Omni Audio-Visual Reasoning Benchmark](https://www.agibot.com/article/231/detail/86.html) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | WITA-Omni 以 Thinker–Talker–Actor 架构统一音视频理解、决策、语音、运动和表情生成，作为交互智能模块与操作和运动智能并行演进。 |
 
 ## Canonical works 与归属证据
 
@@ -56,7 +56,7 @@ outline: deep
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
 | home | [https://www.agibot.com/research/](https://www.agibot.com/research/) | healthy | 2026-08-26 | 0 |
-| publications | [https://www.agibot.com/](https://www.agibot.com/) | healthy | 2026-08-26 | 0 |
 | people | [https://www.agibot.com/about_Zhiyuan](https://www.agibot.com/about_Zhiyuan) | healthy | 2026-08-26 | 0 |
+| publications | [https://www.agibot.com/](https://www.agibot.com/) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

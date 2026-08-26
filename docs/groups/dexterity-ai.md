@@ -35,10 +35,10 @@ Deployment watch for production-scale dexterous manipulation, interpretable worl
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-07-30 | 部署 | [Expanded FedEx autonomous trailer-loading deployment](https://dexterity.ai/blog/fedex-hagerstown-physical-ai-deployment) | G1 直接证据 | — | Joint company announcement of an expanded operating-site deployment; keep separate from peer-reviewed evaluation. |
-| 2026-04-14 | 部署 | [Production tactile intelligence evaluation](https://dexterity.ai/blog/instinct) | G1 直接证据 | — | Company-published production sample and confidence intervals; methodology and claims are not an official peer-reviewed record. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-07-30 | 部署 | [Expanded FedEx autonomous trailer-loading deployment](https://dexterity.ai/blog/fedex-hagerstown-physical-ai-deployment) | 未严格同行评审 | G1 直接证据 | — | Joint company announcement of an expanded operating-site deployment; keep separate from peer-reviewed evaluation. |
+| 2026-04-14 | 部署 | [Production tactile intelligence evaluation](https://dexterity.ai/blog/instinct) | 未严格同行评审 | G1 直接证据 | — | Company-published production sample and confidence intervals; methodology and claims are not an official peer-reviewed record. |
 
 ## Canonical works 与归属证据
 

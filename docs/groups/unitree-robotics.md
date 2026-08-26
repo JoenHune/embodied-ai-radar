@@ -35,9 +35,9 @@ Hardware-and-deployment watch for accessible humanoid and quadruped platforms, w
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 日期待核 | 部署 | [G1 and H1 platform milestones and real-world humanoid dataset release](https://www.unitree.com/about/) | G1 直接证据 | — | Company-maintained milestone page; product demonstrations, competitions, and dataset announcements remain separate from peer-reviewed evidence. |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 日期待核 | 部署 | [G1 and H1 platform milestones and real-world humanoid dataset release](https://www.unitree.com/about/) | 未严格同行评审 | G1 直接证据 | — | Company-maintained milestone page; product demonstrations, competitions, and dataset announcements remain separate from peer-reviewed evidence. |
 
 ## Canonical works 与归属证据
 

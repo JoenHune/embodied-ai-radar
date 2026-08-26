@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2024-07-02 | 模型 | [Commonsense Reasoning for Legged Robot Adaptation with Vision-Language Models](https://github.com/stanford-iris-lab/vlm-pc) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | IRIS 官方代码库发布 VLM-PC，以交互历史和前瞻技能规划让四足机器人在未见障碍中在线选择与重规划行为。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2024-07-02 | 模型 | [Commonsense Reasoning for Legged Robot Adaptation with Vision-Language Models](https://github.com/stanford-iris-lab/vlm-pc) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | IRIS 官方代码库发布 VLM-PC，以交互历史和前瞻技能规划让四足机器人在未见障碍中在线选择与重规划行为。 |
 
 ## Canonical works 与归属证据
 

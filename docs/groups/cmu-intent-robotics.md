@@ -35,22 +35,22 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-05-12 | 预印本 | [Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations](https://arxiv.org/abs/2605.11485) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-02-25 | 预印本 | [When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering](https://arxiv.org/abs/2602.22474) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-11-23 | 预印本 | [How to Train Your Latent Control Barrier Function: Smooth Safety Filtering Under Hard-to-Model Constraints](https://arxiv.org/abs/2511.18606) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-06-15 | 预印本 | [Adapting by Analogy: OOD Generalization of Visuomotor Policies via Functional Correspondence](https://arxiv.org/abs/2506.12678) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-05-01 | 预印本 | [Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures](http://arxiv.org/abs/2505.00779) | G1 直接证据 | [D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-02-03 | 同行评审论文 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://cmu-intentlab.github.io/publications.html) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D3 · 世界模型与预测控制](/frontiers/world-models)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 通过世界模型预测候选动作结果并让 VLM 验证其与任务意图的对齐，在真机上实现运行时策略 steering；发表于 RSS 2025。 |
-| 2025-02-03 | 预印本 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://arxiv.org/abs/2502.01828) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-02-02 | 预印本 | [Generalizing Safety Beyond Collision-Avoidance via Latent-Space Reachability Analysis](https://arxiv.org/abs/2502.00935) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-01-26 | 预印本 | [Your Learned Constraint is Secretly a Backward Reachable Tube](https://arxiv.org/abs/2501.15618) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-10-11 | 预印本 | [Conformalized Interactive Imitation Learning: Handling Expert Shift and Intermittent Feedback](http://arxiv.org/abs/2410.08852) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-22 | 预印本 | [Updating Robot Safety Representations Online from Natural Language Feedback](https://arxiv.org/abs/2409.14580) | G1 直接证据 | [D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-18 | 预印本 | [Robots that Learn to Safely Influence via Prediction-Informed Reach-Avoid Dynamic Games](https://arxiv.org/abs/2409.12153) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-15 | 预印本 | [Robots that Suggest Safe Alternatives](https://arxiv.org/abs/2409.09883) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-15 | 预印本 | [Robots that Suggest Safe Alternatives](https://arxiv.org/abs/2409.09883v2) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-05-12 | 预印本 | [Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations](https://arxiv.org/abs/2605.11485) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-02-25 | 预印本 | [When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering](https://arxiv.org/abs/2602.22474) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-11-23 | 预印本 | [How to Train Your Latent Control Barrier Function: Smooth Safety Filtering Under Hard-to-Model Constraints](https://arxiv.org/abs/2511.18606) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-06-15 | 预印本 | [Adapting by Analogy: OOD Generalization of Visuomotor Policies via Functional Correspondence](https://arxiv.org/abs/2506.12678) | 已同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-05-01 | 预印本 | [Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures](http://arxiv.org/abs/2505.00779) | 已同行评审 | G1 直接证据 | [D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-02-03 | 同行评审论文 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://cmu-intentlab.github.io/publications.html) | 已同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D3 · 世界模型与预测控制](/frontiers/world-models)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 通过世界模型预测候选动作结果并让 VLM 验证其与任务意图的对齐，在真机上实现运行时策略 steering；发表于 RSS 2025。 |
+| 2025-02-03 | 预印本 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://arxiv.org/abs/2502.01828) | 已同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-02-02 | 预印本 | [Generalizing Safety Beyond Collision-Avoidance via Latent-Space Reachability Analysis](https://arxiv.org/abs/2502.00935) | 已同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-01-26 | 预印本 | [Your Learned Constraint is Secretly a Backward Reachable Tube](https://arxiv.org/abs/2501.15618) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-10-11 | 预印本 | [Conformalized Interactive Imitation Learning: Handling Expert Shift and Intermittent Feedback](http://arxiv.org/abs/2410.08852) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-22 | 预印本 | [Updating Robot Safety Representations Online from Natural Language Feedback](https://arxiv.org/abs/2409.14580) | 未严格同行评审 | G1 直接证据 | [D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-18 | 预印本 | [Robots that Learn to Safely Influence via Prediction-Informed Reach-Avoid Dynamic Games](https://arxiv.org/abs/2409.12153) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-15 | 预印本 | [Robots that Suggest Safe Alternatives](https://arxiv.org/abs/2409.09883) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-15 | 预印本 | [Robots that Suggest Safe Alternatives](https://arxiv.org/abs/2409.09883v2) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 

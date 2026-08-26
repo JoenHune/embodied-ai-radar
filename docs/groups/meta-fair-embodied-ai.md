@@ -35,10 +35,10 @@ Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模�
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-06-11 | 预印本 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://ai.meta.com/research/publications/v-jepa-2-self-supervised-video-models-enable-understanding-prediction-and-planning/) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 先在超过百万小时互联网视频上自监督学习，再用少量 DROID 机器人视频后训练 latent action 世界模型，并在两地 Franka 机械臂零样本规划。 |
-| 2025-06-11 | 预印本 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-06-11 | 预印本 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://ai.meta.com/research/publications/v-jepa-2-self-supervised-video-models-enable-understanding-prediction-and-planning/) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | 先在超过百万小时互联网视频上自监督学习，再用少量 DROID 机器人视频后训练 latent action 世界模型，并在两地 Franka 机械臂零样本规划。 |
+| 2025-06-11 | 预印本 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 
@@ -56,8 +56,8 @@ Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics](https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics) | healthy | 2026-08-26 | 0 |
 | blog | [https://ai.meta.com/blog/fair-robotics-open-source/](https://ai.meta.com/blog/fair-robotics-open-source/) | healthy | 2026-08-26 | 0 |
+| home | [https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics](https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics) | healthy | 2026-08-26 | 0 |
 | publications | [https://ai.meta.com/research/vjepa/](https://ai.meta.com/research/vjepa/) | healthy | 2026-08-26 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

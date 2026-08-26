@@ -50,6 +50,7 @@ const categoryLabel = {
   academic: '学术实验室/PI 组',
   platform: '研究院/开放平台',
   deployment_watch: '部署与早期观察',
+  startup_frontier: '初创前沿观察',
   parent: '母机构',
 }
 const evidenceLabel = { G1: 'G1 直接证据', G2: 'G2 时间对齐重建', G3: 'G3 推测归属', G0: 'G0 未解析' }
@@ -114,6 +115,9 @@ const lastChanged = (org) => {
   return dates.at(-1) ?? org.last_changed ?? org.last_checked
 }
 const updateLink = (item) => `[${clean(item.title)}](${item.url})`
+const reviewStatus = (item) => item.strict_peer_reviewed || item.peer_reviewed
+  ? '已同行评审'
+  : item.claim_status === 'company_self_report' ? '未同行评审·公司自报' : '未严格同行评审'
 
 const workGroups = new Map()
 for (const link of linksStore.links ?? []) {
@@ -152,6 +156,7 @@ const summaries = tracked.map((org) => {
     short_name: org.short_name,
     slug: org.slug,
     tracking_category: org.tracking_category,
+    startup_frontier: Boolean(org.startup_frontier),
     entity_type: org.entity_type,
     region: org.region,
     country: org.country,
@@ -175,14 +180,150 @@ const summaries = tracked.map((org) => {
   }
 })
 
+const directionList = Object.values(directionByCode)
+  .sort((left, right) => Number(left.code.slice(1)) - Number(right.code.slice(1)))
+  .map(({ code, label }) => ({ code, label }))
+const visualStart = new Date(Date.UTC(snapshotDate.getUTCFullYear(), snapshotDate.getUTCMonth() - 11, 1))
+const visualEnd = snapshotDate
+const visualMonths = Array.from({ length: 12 }, (_, index) => {
+  const value = new Date(Date.UTC(visualStart.getUTCFullYear(), visualStart.getUTCMonth() + index, 1))
+  return value.toISOString().slice(0, 7)
+})
+const visualUpdates = (updatesStore.updates ?? []).filter((item) => item.published_at
+  && !(item.validation_tags ?? []).includes('date_conflict')
+  && dateValue(item.published_at) >= visualStart && dateValue(item.published_at) <= visualEnd)
+const artifactClass = (item) => {
+  if (item.strict_peer_reviewed || item.peer_reviewed) return 'peer_reviewed'
+  if (item.artifact_class) return item.artifact_class
+  if (item.update_type === 'preprint') return 'preprint'
+  if (item.update_type === 'technical_report') return 'technical_report'
+  if (['model_release', 'dataset_release', 'code_release', 'benchmark'].includes(item.update_type)) return 'model_data_code'
+  if (['deployment'].includes(item.update_type)) return 'demo_deployment'
+  return 'project_system'
+}
+const artifactLabels = {
+  peer_reviewed: '严格同行评审',
+  preprint: '预印本',
+  technical_report: '公司/实验室技术报告',
+  model_data_code: '模型·数据·代码·Benchmark',
+  project_system: '项目与实验系统',
+  demo_deployment: '部署或官方 Demo',
+}
+const startupGroups = tracked.filter((org) => org.startup_frontier)
+const anchorIds = new Set([
+  'org:nvidia-gear', 'org:physical-intelligence', 'org:google-deepmind-robotics',
+  'org:tri-robotics', 'org:rai-institute', 'org:cmu-lecar', 'org:pathak-research-group',
+])
+const directionCells = []
+for (const org of tracked) {
+  for (const direction of directionList) {
+    const matching = visualUpdates.filter((item) => item.organization_id === org.organization_id && (item.direction_codes ?? []).includes(direction.code))
+    directionCells.push({
+      organization_id: org.organization_id,
+      direction_code: direction.code,
+      recent_count: matching.length,
+      declared: (org.declared_direction_codes ?? []).includes(direction.code),
+      update_ids: matching.map((item) => item.update_id),
+    })
+  }
+}
+const activityEvents = visualUpdates.map((item) => ({
+  update_id: item.update_id,
+  organization_id: item.organization_id,
+  title: item.title,
+  url: item.url,
+  published_at: item.published_at,
+  date_precision: item.date_precision,
+  artifact_class: artifactClass(item),
+  artifact_label: artifactLabels[artifactClass(item)],
+  evidence_grade: item.evidence_grade,
+  claim_status: item.claim_status ?? (item.strict_peer_reviewed ? 'peer_reviewed' : 'author_report'),
+  direction_codes: item.direction_codes ?? [],
+  question_codes: item.question_codes ?? [],
+  summary_zh: item.summary_zh,
+}))
+const stackColumns = [
+  { key: 'human_video', group: '数据', label: '人类视频' },
+  { key: 'teleoperation', group: '数据', label: '遥操数据' },
+  { key: 'simulation_synthetic', group: '数据', label: '仿真/合成' },
+  { key: 'deployment_feedback', group: '数据', label: '部署回流' },
+  { key: 'generalist_policy', group: '模型', label: '通才策略' },
+  { key: 'world_action_model', group: '模型', label: '世界/动作模型' },
+  { key: 'hierarchical_control', group: '模型', label: '大小脑分层' },
+  { key: 'rl_post_training', group: '模型', label: 'RL/Post-training' },
+  { key: 'dexterous_bimanual', group: '执行', label: '灵巧/双臂' },
+  { key: 'tactile_force', group: '执行', label: '触觉/力觉' },
+  { key: 'whole_body', group: '执行', label: '全身操作' },
+  { key: 'cross_embodiment', group: '执行', label: '跨本体' },
+  { key: 'real_robot', group: '验证', label: '真机' },
+  { key: 'long_horizon', group: '验证', label: '长时序' },
+  { key: 'production', group: '验证', label: '生产部署' },
+  { key: 'open_assets', group: '验证', label: '开放资产' },
+]
+const stackCells = []
+for (const org of startupGroups) {
+  const rows = (updatesByOrg.get(org.organization_id) ?? []).filter((item) => item.evidence_grade === 'G1' || item.evidence_grade === 'G2')
+  for (const column of stackColumns) {
+    const matches = rows.filter((item) => (item.technical_stack_tags ?? []).includes(column.key))
+    const level = matches.reduce((best, item) => Math.max(best,
+      artifactClass(item) === 'technical_report' || artifactClass(item) === 'peer_reviewed' ? 3
+        : artifactClass(item) === 'model_data_code' || artifactClass(item) === 'project_system' ? 2 : 1), 0)
+    stackCells.push({
+      organization_id: org.organization_id,
+      stack_key: column.key,
+      level,
+      update_ids: matches.map((item) => item.update_id),
+      sources: matches.map((item) => ({ title: item.title, url: item.url, published_at: item.published_at, claim_status: item.claim_status ?? 'author_report' })),
+    })
+  }
+}
+const evidenceOrder = Object.keys(artifactLabels)
+const evidenceMix = tracked.map((org) => {
+  const rows = visualUpdates.filter((item) => item.organization_id === org.organization_id)
+  return {
+    organization_id: org.organization_id,
+    total: rows.length,
+    counts: Object.fromEntries(evidenceOrder.map((key) => [key, rows.filter((item) => artifactClass(item) === key).length])),
+  }
+})
+const collaborationNodes = [...new Set([...collaborationEdges.values()].flatMap((edge) => [edge.source, edge.target]))]
+  .map((id) => {
+    const org = byOrg.get(id)
+    return { id, name: org?.short_name ?? org?.display_name ?? id, category: org?.tracking_category, slug: org?.slug }
+  })
+const startupReports = (updatesStore.updates ?? []).filter((item) => startupGroups.some((org) => org.organization_id === item.organization_id)
+  && item.update_type === 'technical_report').map((item) => ({
+    ...item,
+    organization_name: byOrg.get(item.organization_id)?.display_name ?? item.organization_id,
+  }))
+const visualizations = {
+  period: { from: isoDate(visualStart), until: generatedAt, months: visualMonths },
+  directions: directionList,
+  cohorts: {
+    startup: startupGroups.map((org) => org.organization_id),
+    anchors: tracked.filter((org) => anchorIds.has(org.organization_id)).map((org) => org.organization_id),
+    all: tracked.map((org) => org.organization_id),
+  },
+  group_direction_cells: directionCells,
+  activity_events: activityEvents,
+  artifact_classes: evidenceOrder.map((key) => ({ key, label: artifactLabels[key] })),
+  startup_stack_columns: stackColumns,
+  startup_stack_cells: stackCells,
+  evidence_mix: evidenceMix,
+  collaboration_nodes: collaborationNodes,
+  collaboration_edges: [...collaborationEdges.values()].map((edge) => ({ ...edge, relation_type: 'canonical_work', value: edge.work_ids.length })),
+  startup_reports: startupReports,
+}
+
 const radar = {
-  version: '1.0',
+  version: '1.1',
   generated_at: generatedAt,
   tracking_group_count: tracked.length,
   organization_node_count: organizations.length,
   latest_completed_week: { id: latestWeek, from: isoDate(completedWeekStart), until: isoDate(completedWeekEnd) },
   groups: summaries,
   collaborations: [...collaborationEdges.values()],
+  visualizations,
   review_queue_count: reviewQueue.candidates?.length ?? 0,
 }
 writeJson(path.join(root, 'data', 'research-group-radar.json'), radar)
@@ -203,7 +344,7 @@ for (const org of tracked) {
   const links = linksByOrg.get(org.organization_id) ?? []
   const linkedWorks = links.map((link) => ({ link, work: byWork.get(link.work_id) })).filter((item) => item.work)
   const collaborations = [...collaborationEdges.values()].filter((edge) => edge.source === org.organization_id || edge.target === org.organization_id)
-  const updateRows = updates.slice(0, 30).map((item) => `| ${item.published_at ?? '日期待核'} | ${updateTypeLabel[item.update_type] ?? item.update_type} | ${updateLink(item)} | ${evidenceLabel[item.evidence_grade]} | ${directionLinks(item.direction_codes ?? [])} | ${clean(item.summary_zh)} |`).join('\n') || '| — | — | 暂无已核验更新 | — | — | — |'
+  const updateRows = updates.slice(0, 30).map((item) => `| ${item.published_at ?? '日期待核'} | ${updateTypeLabel[item.update_type] ?? item.update_type} | ${updateLink(item)} | ${reviewStatus(item)} | ${evidenceLabel[item.evidence_grade]} | ${directionLinks(item.direction_codes ?? [])} | ${clean(item.summary_zh)} |`).join('\n') || '| — | — | 暂无已核验更新 | — | — | — | — |'
   const weekRows = week.map((item) => `| ${item.published_at ?? '日期待核'} | ${updateLink(item)} | ${updateTypeLabel[item.update_type] ?? item.update_type} | ${clean(item.summary_zh)} |`).join('\n') || '| — | 本周无可升级信号 | — | 官方来源未发现新的 G1/G2 更新。 |'
   const workRows = linkedWorks.slice(0, 25).map(({ link, work }) => {
     const version = work.versions?.find((item) => ['conference', 'journal', 'preprint'].includes(item.kind))
@@ -257,8 +398,8 @@ ${weekRows}
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
 ${updateRows}
 
 ## Canonical works 与归属证据
@@ -283,23 +424,29 @@ ${gaps.length ? gaps.map((item) => `- ${item}`).join('\n') : '- 当前没有影�
 `)
 }
 
-const categoryCounts = Object.fromEntries(['corporate', 'academic', 'platform', 'deployment_watch'].map((category) => [category, tracked.filter((org) => org.tracking_category === category).length]))
+const categoryCounts = Object.fromEntries(['corporate', 'academic', 'platform', 'deployment_watch', 'startup_frontier'].map((category) => [category, tracked.filter((org) => org.tracking_category === category).length]))
 write('groups/index.md', `${frontmatter}
 
 # 全球关键研究组雷达
 
-> 这里追踪 60 个研究执行单元，不做跨组排行榜。母机构、研究院、实验室、独立研究公司和部署观察团队分层保存；默认按最近发生实质变化排序。
+> 这里追踪 60 个核心研究执行单元，并增设 3 个初创前沿观察位，不做跨组排行榜。Figure 与 DYNA 保留原有类别并标记为初创前沿，因此初创默认 cohort 共 5 组。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>${tracked.length}</strong><span>持续跟踪研究组</span></div>
+  <div class="radar-kpi"><strong>60 + ${categoryCounts.startup_frontier}</strong><span>核心组 + 新增初创位</span></div>
   <div class="radar-kpi"><strong>${categoryCounts.corporate}</strong><span>企业/独立组织</span></div>
   <div class="radar-kpi"><strong>${categoryCounts.academic}</strong><span>学术实验室</span></div>
-  <div class="radar-kpi"><strong>${categoryCounts.platform + categoryCounts.deployment_watch}</strong><span>平台 + 部署观察</span></div>
+  <div class="radar-kpi"><strong>${startupGroups.length}</strong><span>初创前沿 cohort</span></div>
 </div>
 
 ::: warning 归属边界
 Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA 不等于 GEAR，CMU 不等于 RI 或某个实验室，当前员工也不能反向改写历史论文归属。正式动态只使用 G1/G2，G3/G0 保留在复核队列。
 :::
+
+::: warning 评审边界
+Genesis、Generalist、Figure、DYNA 与 Sunday 的官方技术报告会进入雷达，但统一标记为“未同行评审·公司自报”；它们不会增加严格评审 work 数。
+:::
+
+<ResearchGroupLandscape />
 
 <ResearchGroupExplorer />
 
@@ -308,8 +455,34 @@ Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA �
 - [${latestWeek} 周报](/groups/weekly/${latestWeek.toLowerCase()})
 - [组织层级图](/groups/organizations)
 - [研究组合作网络](/groups/collaboration)
+- [领先初创技术报告](/groups/startups)
 - [组织归属与每周更新方法](/methods/research-groups)
 - [旧机构页兼容入口](/analysis/institutions)
+`)
+
+const startupReportRows = visualizations.startup_reports
+  .sort((left, right) => String(right.published_at).localeCompare(String(left.published_at)))
+  .map((item) => `| ${item.published_at ?? '日期待核'} | [${clean(item.organization_name)}](/groups/${byOrg.get(item.organization_id)?.slug}) | [${clean(item.title)}](${item.url}) | ${directionLinks(item.direction_codes ?? [])} | ${reviewStatus(item)} | ${clean(item.summary_zh)} |`)
+  .join('\n') || '| — | — | 暂无技术报告 | — | — | — |'
+write('groups/startups.md', `${frontmatter}
+
+# 领先初创技术报告
+
+> 默认跟踪 Genesis AI、Generalist AI、Figure AI、DYNA Robotics 与 Sunday Robotics。本页收录官方技术报告，不把公司自报指标当作同行评审或独立验证。
+
+<ResearchGroupLandscape />
+
+## 可追溯技术报告
+
+| 日期 | 研究组 | 报告 | 方向 | 评审状态 | 解读边界 |
+|---|---|---|---|---|---|
+${startupReportRows}
+
+## 证据口径
+
+- G1/G2 只说明“这项工作归属谁”，不代表结果已被独立验证。
+- 技术栈矩阵的 3/2/1 表示支撑材料类型，不是能力或投资评分。
+- 空白表示未发现公开证据，不表示该公司不具备相关能力。
 `)
 
 const parentRows = organizations.filter((org) => !org.tracking_unit).map((parent) => {
@@ -357,7 +530,7 @@ const changedGroups = [...new Set(weekUpdates.map((item) => item.organization_id
 const weeklyRows = weekUpdates.slice(0, 12).map((item) => {
   const org = byOrg.get(item.organization_id)
   return `| ${item.published_at} | [${clean(org?.display_name ?? item.organization_id)}](/groups/${org?.slug}) | ${updateLink(item)} | ${updateTypeLabel[item.update_type] ?? item.update_type} | ${directionLinks(item.direction_codes ?? [])} | ${clean(item.summary_zh)} |`
-}).join('\n') || '| — | — | 本周无可升级信号 | — | — | 60 个组的官方来源未出现新的 G1/G2 动态。 |'
+}).join('\n') || '| — | — | 本周无可升级信号 | — | — | 全部跟踪组的官方来源未出现新的 G1/G2 动态。 |'
 const weeklyTitle = `具身智能关键研究组周报 · ${latestWeek}`
 write(`groups/weekly/${latestWeek.toLowerCase()}.md`, `${frontmatter}
 

@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-05-06 | 同行评审论文 | [Visual Imitation Enables Contextual Humanoid Control](https://people.eecs.berkeley.edu/~kanazawa/index.html) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | KAIR 通过 4D 场景重建与人类视频模仿，把视觉理解转成可在上下文环境执行的人形控制；CoRL 2025 最佳学生论文。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-05-06 | 同行评审论文 | [Visual Imitation Enables Contextual Humanoid Control](https://people.eecs.berkeley.edu/~kanazawa/index.html) | 已同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | KAIR 通过 4D 场景重建与人类视频模仿，把视觉理解转成可在上下文环境执行的人形控制；CoRL 2025 最佳学生论文。 |
 
 ## Canonical works 与归属证据
 

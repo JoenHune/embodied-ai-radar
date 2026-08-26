@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2024-08-17 | 数据集 | [CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object REarrangement](https://iiis.tsinghua.edu.cn/rydw1/qzjs/yili.htm) | G1 直接证据 | [D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | CORE4D V2 发布真实人—物—人协作重排的四维运动数据，为协作动作预测、合成及机器人交互提供规模化基准。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2024-08-17 | 数据集 | [CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object REarrangement](https://iiis.tsinghua.edu.cn/rydw1/qzjs/yili.htm) | 未严格同行评审 | G1 直接证据 | [D7 · 人机协作与交互学习](/frontiers/human-robot-interaction)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception) | CORE4D V2 发布真实人—物—人协作重排的四维运动数据，为协作动作预测、合成及机器人交互提供规模化基准。 |
 
 ## Canonical works 与归属证据
 

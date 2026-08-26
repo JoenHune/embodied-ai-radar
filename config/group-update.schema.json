@@ -26,6 +26,34 @@
               "dataset_release", "code_release", "benchmark", "project", "deployment",
               "organization_change", "personnel_change", "hiring_signal"
             ]
+          },
+          "artifact_class": {
+            "enum": ["peer_reviewed", "preprint", "technical_report", "model_data_code", "project_system", "demo_deployment"]
+          },
+          "evidence_lane": {
+            "enum": ["peer_review", "preprint", "technical_report", "internal_evaluation", "official_demo", "deployment", "future_plan"]
+          },
+          "publication_status": {"type": "string"},
+          "peer_reviewed": {"type": "boolean"},
+          "independent_validation": {"type": "boolean"},
+          "metric_owner": {"enum": ["company", "authors", "independent", "unknown"]},
+          "claim_status": {"enum": ["company_self_report", "author_report", "peer_reviewed", "independently_verified"]},
+          "technical_stack_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "validation_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "open_assets": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "report_metrics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "value", "scope", "note"],
+              "properties": {
+                "label": {"type": "string"},
+                "value": {"type": "string"},
+                "unit": {"type": "string"},
+                "scope": {"type": "string"},
+                "note": {"type": "string"}
+              }
+            }
           }
         }
       }

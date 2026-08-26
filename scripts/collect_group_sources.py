@@ -42,7 +42,10 @@ SOURCE_META = {
     "models": ("official_group_models", "G1", "model_release"),
     "datasets": ("official_group_datasets", "G1", "dataset_release"),
     "code": ("official_group_code", "G1", "code_release"),
-    "github": ("official_github", "G1", "code_release"),
+    # A registered GitHub organization is first-party, but links discovered in
+    # its HTML can be repository files, dependencies, navigation, or mirrors.
+    # They require review before becoming public code-release facts.
+    "github": ("official_github", "G3", "code_release"),
     "people": ("official_people", "G3", "personnel_change"),
     "hiring": ("official_hiring", "G3", "hiring_signal"),
     "home": ("official_home", "G3", "project"),
@@ -273,6 +276,10 @@ def main() -> None:
     if args.dry_run:
         print(json.dumps({"sources": len(status_rows), "candidates": len(candidate_rows)}, ensure_ascii=False))
         return
+    if selected_kinds or args.max_sources:
+        processed_ids = {row["source_id"] for row in status_rows}
+        status_rows.extend(row for row in previous.get("sources", []) if row.get("source_id") not in processed_ids)
+        status_rows.sort(key=lambda row: (row.get("organization_id", ""), row.get("kind", ""), row.get("url", "")))
     STATE.write_text(json.dumps({"version": "1.0", "generated_at": args.as_of, "sources": status_rows}, ensure_ascii=False, indent=2) + "\n")
     existing = json.loads(CANDIDATES.read_text()) if CANDIDATES.exists() else {"candidates": []}
     merged = {f"{item['organization_id']}|{canonical_url(item['url'])}": item for item in existing.get("candidates", [])}

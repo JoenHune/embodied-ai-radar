@@ -35,9 +35,9 @@ Google DeepMind 的机器人研究团队以 Gemini Robotics VLA 与 Embodied Rea
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-07-30 | 模型 | [Gemini Robotics 2 brings whole body intelligence to robots](https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D14 · 多机器人协同与群体智能](/frontiers/multi-robot-coordination) | Gemini Robotics 2 同时推进全身 VLA、具身推理高层脑、端侧模型、多机器人协作与 agentic safety。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-07-30 | 模型 | [Gemini Robotics 2 brings whole body intelligence to robots](https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D14 · 多机器人协同与群体智能](/frontiers/multi-robot-coordination) | Gemini Robotics 2 同时推进全身 VLA、具身推理高层脑、端侧模型、多机器人协作与 agentic safety。 |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +55,8 @@ Google DeepMind 的机器人研究团队以 Gemini Robotics VLA 与 Embodied Rea
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://deepmind.google/models/gemini-robotics/](https://deepmind.google/models/gemini-robotics/) | healthy | 2026-08-26 | 0 |
 | blog | [https://deepmind.google/blog/shaping-the-future-of-advanced-robotics/](https://deepmind.google/blog/shaping-the-future-of-advanced-robotics/) | healthy | 2026-08-26 | 0 |
+| home | [https://deepmind.google/models/gemini-robotics/](https://deepmind.google/models/gemini-robotics/) | healthy | 2026-08-26 | 0 |
 | publications | [https://deepmind.google/models/model-cards/](https://deepmind.google/models/model-cards/) | healthy | 2026-08-26 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

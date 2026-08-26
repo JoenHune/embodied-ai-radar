@@ -35,32 +35,32 @@ Open research platform connecting embodied AI and planning-oriented autonomous d
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-07-13 | 项目 | [RISE: Self-Improving Robot Policy with Compositional World Model](https://opendrivelab.com/RISE/) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | OpenDriveLab's official RSS 2026 program page features RISE as a compositional-world-model environment for policy self-improvement in dexterous real-world manipulation. This is a platform-curated project update; individual affiliation remains governed by the author list and dated work evidence rather than the OpenDriveLab domain alone. |
-| 2026-07-07 | 预印本 | [NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation](https://arxiv.org/abs/2607.06678) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-06-18 | 预印本 | [World Engine: Towards the Era of Post-Training for Autonomous Driving](https://arxiv.org/abs/2606.19836) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-06-09 | 预印本 | [RoboNaldo: Accurate, Stable and Powerful Humanoid Soccer Shooting via Motion-Guided Curriculum Reinforcement Learning](https://arxiv.org/abs/2606.11092) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-04-19 | 预印本 | [MM-Hand: A 21-DOF Multi-modal Modular Dexterous Robotic Hand with Remote Actuation](https://arxiv.org/abs/2604.17245) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-04-08 | 预印本 | [TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks](https://arxiv.org/abs/2604.07335) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-04-01 | 预印本 | [SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision](https://arxiv.org/abs/2604.01158) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-02-11 | 预印本 | [RISE: Self-Improving Robot Policy with Compositional World Model](https://arxiv.org/abs/2602.11075) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-02-10 | 预印本 | [EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration](https://arxiv.org/abs/2602.10106) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-02-09 | 预印本 | [$χ_{0}$: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies](https://arxiv.org/abs/2602.09021) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-02-05 | 预印本 | [Sparse Video Generation Propels Real-World Beyond-the-View Vision-Language Navigation](https://arxiv.org/abs/2602.05827) | G1 直接证据 | [D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2026-01-19 | 预印本 | [PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning](https://arxiv.org/pdf/2601.12901) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-12-11 | 预印本 | [WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](https://arxiv.org/abs/2512.11047) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-11-28 | 预印本 | [SimScale: Learning to Drive via Real-World Simulation at Scale](https://arxiv.org/abs/2511.23369) | G1 直接证据 | [D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-11-21 | 预印本 | [Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data](https://arxiv.org/abs/2511.17373) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-07-08 | 预印本 | [Is Diversity All You Need for Scalable Robotic Manipulation?](https://arxiv.org/abs/2507.06219) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-06-11 | 预印本 | [ReSim: Reliable World Simulation for Autonomous Driving](https://arxiv.org/abs/2506.09981) | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-06-02 | 预印本 | [FreeTacMan: Robot-free Visuo-Tactile Data Collection System for Contact-rich Manipulation](http://arxiv.org/abs/2506.01941) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-05-09 | 预印本 | [UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-03-14 | 预印本 | [Centaur: Robust End-to-End Autonomous Driving with Test-Time Training](https://arxiv.org/abs/2503.11650) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-03-09 | 预印本 | [AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-10-10 | 预印本 | [Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation](https://arxiv.org/abs/2410.08001) | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-26 | 预印本 | [Reasoning Multi-Agent Behavioral Topology for Interactive Autonomous Driving](https://arxiv.org/abs/2409.18031) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-13 | 预印本 | [Closed-Loop Visuomotor Control with Generative Expectation for Robotic Manipulation](https://proceedings.neurips.cc/paper_files/paper/2024/hash/fad8962279154544ed69bb63eb14d677-Abstract-Conference.html) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-07-13 | 项目 | [RISE: Self-Improving Robot Policy with Compositional World Model](https://opendrivelab.com/RISE/) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | OpenDriveLab's official RSS 2026 program page features RISE as a compositional-world-model environment for policy self-improvement in dexterous real-world manipulation. This is a platform-curated project update; individual affiliation remains governed by the author list and dated work evidence rather than the OpenDriveLab domain alone. |
+| 2026-07-07 | 预印本 | [NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation](https://arxiv.org/abs/2607.06678) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-06-18 | 预印本 | [World Engine: Towards the Era of Post-Training for Autonomous Driving](https://arxiv.org/abs/2606.19836) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-06-09 | 预印本 | [RoboNaldo: Accurate, Stable and Powerful Humanoid Soccer Shooting via Motion-Guided Curriculum Reinforcement Learning](https://arxiv.org/abs/2606.11092) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-04-19 | 预印本 | [MM-Hand: A 21-DOF Multi-modal Modular Dexterous Robotic Hand with Remote Actuation](https://arxiv.org/abs/2604.17245) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-04-08 | 预印本 | [TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks](https://arxiv.org/abs/2604.07335) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-04-01 | 预印本 | [SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision](https://arxiv.org/abs/2604.01158) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-02-11 | 预印本 | [RISE: Self-Improving Robot Policy with Compositional World Model](https://arxiv.org/abs/2602.11075) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-02-10 | 预印本 | [EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration](https://arxiv.org/abs/2602.10106) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-02-09 | 预印本 | [$χ_{0}$: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies](https://arxiv.org/abs/2602.09021) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-02-05 | 预印本 | [Sparse Video Generation Propels Real-World Beyond-the-View Vision-Language Navigation](https://arxiv.org/abs/2602.05827) | 未严格同行评审 | G1 直接证据 | [D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2026-01-19 | 预印本 | [PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning](https://arxiv.org/pdf/2601.12901) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-12-11 | 预印本 | [WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](https://arxiv.org/abs/2512.11047) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-11-28 | 预印本 | [SimScale: Learning to Drive via Real-World Simulation at Scale](https://arxiv.org/abs/2511.23369) | 未严格同行评审 | G1 直接证据 | [D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-11-21 | 预印本 | [Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data](https://arxiv.org/abs/2511.17373) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-07-08 | 预印本 | [Is Diversity All You Need for Scalable Robotic Manipulation?](https://arxiv.org/abs/2507.06219) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-06-11 | 预印本 | [ReSim: Reliable World Simulation for Autonomous Driving](https://arxiv.org/abs/2506.09981) | 未严格同行评审 | G1 直接证据 | [D3 · 世界模型与预测控制](/frontiers/world-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-06-02 | 预印本 | [FreeTacMan: Robot-free Visuo-Tactile Data Collection System for Contact-rich Manipulation](http://arxiv.org/abs/2506.01941) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-05-09 | 预印本 | [UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111) | 已同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-03-14 | 预印本 | [Centaur: Robust End-to-End Autonomous Driving with Test-Time Training](https://arxiv.org/abs/2503.11650) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-03-09 | 预印本 | [AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-10-10 | 预印本 | [Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation](https://arxiv.org/abs/2410.08001) | 未严格同行评审 | G1 直接证据 | [D1 · 具身基础模型与通才策略](/frontiers/foundation-models) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-26 | 预印本 | [Reasoning Multi-Agent Behavioral Topology for Interactive Autonomous Driving](https://arxiv.org/abs/2409.18031) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-13 | 预印本 | [Closed-Loop Visuomotor Control with Generative Expectation for Robotic Manipulation](https://proceedings.neurips.cc/paper_files/paper/2024/hash/fad8962279154544ed69bb63eb14d677-Abstract-Conference.html) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 
@@ -100,9 +100,9 @@ Open research platform connecting embodied AI and planning-oriented autonomous d
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
+| people | [https://opendrivelab.com/team](https://opendrivelab.com/team) | healthy | 2026-08-26 | 0 |
 | publications | [https://opendrivelab.com/publications](https://opendrivelab.com/publications) | healthy | 2026-08-26 | 0 |
 | source_2 | [https://opendrivelab.com/](https://opendrivelab.com/) | healthy | 2026-08-26 | 0 |
 | source_3 | [https://github.com/OpenDriveLab](https://github.com/OpenDriveLab) | healthy | 2026-08-26 | 0 |
-| people | [https://opendrivelab.com/team](https://opendrivelab.com/team) | healthy | 2026-08-26 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

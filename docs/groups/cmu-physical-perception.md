@@ -35,15 +35,15 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-06-08 | 预印本 | [GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation](https://arxiv.org/pdf/2606.10025) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-12-16 | 预印本 | [CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives](https://arxiv.org/pdf/2512.14696) | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-10-01 | 预印本 | [Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models](https://arxiv.org/pdf/2510.01184) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-06-25 | 预印本 | [DemoDiffusion: One-Shot Human Imitation using pre-trained Diffusion Policy](https://arxiv.org/pdf/2506.20668) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-06-25 | 同行评审论文 | [DemoDiffusion: One-Shot Human Imitation using Pre-trained Diffusion Policy](https://shubhtuls.github.io/) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | 从一次人类示范中适配预训练扩散策略，实现跨本体的低样本机器人模仿，并发表于 ICRA 2026。 |
-| 2024-12-02 | 预印本 | [SceneFactor: Factored Latent 3D Diffusion for Controllable 3D Scene Generation](https://arxiv.org/pdf/2412.01801) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2024-09-24 | 预印本 | [Gen2Act: Human Video Generation in Novel Scenarios enables Generalizable Robot Manipulation](https://arxiv.org/pdf/2409.16283) | G1 直接证据 | [D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-06-08 | 预印本 | [GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation](https://arxiv.org/pdf/2606.10025) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-12-16 | 预印本 | [CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives](https://arxiv.org/pdf/2512.14696) | 未严格同行评审 | G1 直接证据 | [D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-10-01 | 预印本 | [Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models](https://arxiv.org/pdf/2510.01184) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-06-25 | 预印本 | [DemoDiffusion: One-Shot Human Imitation using pre-trained Diffusion Policy](https://arxiv.org/pdf/2506.20668) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-06-25 | 同行评审论文 | [DemoDiffusion: One-Shot Human Imitation using Pre-trained Diffusion Policy](https://shubhtuls.github.io/) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | 从一次人类示范中适配预训练扩散策略，实现跨本体的低样本机器人模仿，并发表于 ICRA 2026。 |
+| 2024-12-02 | 预印本 | [SceneFactor: Factored Latent 3D Diffusion for Controllable 3D Scene Generation](https://arxiv.org/pdf/2412.01801) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2024-09-24 | 预印本 | [Gen2Act: Human Video Generation in Novel Scenarios enables Generalizable Robot Manipulation](https://arxiv.org/pdf/2409.16283) | 已同行评审 | G1 直接证据 | [D9 · 数据引擎与人类视频学习](/frontiers/data-engines) | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 

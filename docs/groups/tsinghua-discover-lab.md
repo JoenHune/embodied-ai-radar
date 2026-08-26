@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-07-29 | 同行评审论文 | [DISCOVERSE: Efficient Robot Simulation in Complex High-Fidelity Environments](https://air.tsinghua.edu.cn/en/info/1046/1196.htm) | G1 直接证据 | [D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 发布面向复杂高保真环境的高效机器人仿真平台，支撑标准化 Sim2Real 评测、数据生成和移动操作；发表于 IROS 2025。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-07-29 | 同行评审论文 | [DISCOVERSE: Efficient Robot Simulation in Complex High-Fidelity Environments](https://air.tsinghua.edu.cn/en/info/1046/1196.htm) | 未严格同行评审 | G1 直接证据 | [D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 发布面向复杂高保真环境的高效机器人仿真平台，支撑标准化 Sim2Real 评测、数据生成和移动操作；发表于 IROS 2025。 |
 
 ## Canonical works 与归属证据
 

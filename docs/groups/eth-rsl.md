@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2025-07-22 | 同行评审论文 | [A Pragmatist Robot: Learning to Plan Tasks by Experiencing the Real World](https://rsl.ethz.ch/publications-sources/publications.html) | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | PragmaBot 让 VLM 从真机行动结果自我反思并写入长短期记忆，使任务规划逐步适配机器人能力；发表于 RA-L 2026。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2025-07-22 | 同行评审论文 | [A Pragmatist Robot: Learning to Plan Tasks by Experiencing the Real World](https://rsl.ethz.ch/publications-sources/publications.html) | 未严格同行评审 | G1 直接证据 | [D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | PragmaBot 让 VLM 从真机行动结果自我反思并写入长短期记忆，使任务规划逐步适配机器人能力；发表于 RA-L 2026。 |
 
 ## Canonical works 与归属证据
 

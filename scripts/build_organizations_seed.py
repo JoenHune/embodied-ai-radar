@@ -24,6 +24,7 @@ RESEARCH_FILES = [
     ROOT / ".research" / "groups-academic.json",
     ROOT / ".research" / "groups-platform-watch.json",
 ]
+STARTUP_FRONTIER = ROOT / "config" / "startup-frontier-seeds.json"
 OUTPUT = ROOT / "config" / "organizations.json"
 
 PARENT_URLS = {
@@ -110,7 +111,7 @@ def normalize_update(item: dict, organization_id: str, index: int) -> dict:
     evidence_grade = item.get("evidence_grade") or item.get("attribution_grade") or "G1"
     if update_type in {"hiring_signal", "organization_change"}:
         evidence_grade = "G3"
-    return {
+    normalized = {
         "update_id": update_id,
         "title": title,
         "url": item.get("url") or "",
@@ -123,6 +124,14 @@ def normalize_update(item: dict, organization_id: str, index: int) -> dict:
         "question_codes": list(dict.fromkeys(item.get("question_codes") or [])),
         "summary_zh": item.get("summary_zh") or item.get("summary") or "官方研究组页面列出的代表工作。",
     }
+    for field in (
+        "artifact_class", "evidence_lane", "publication_status", "peer_reviewed",
+        "independent_validation", "metric_owner", "claim_status",
+        "technical_stack_tags", "validation_tags", "open_assets", "report_metrics",
+    ):
+        if field in item:
+            normalized[field] = item[field]
+    return normalized
 
 
 def normalize_group(row: dict) -> dict:
@@ -221,6 +230,7 @@ def normalize_group(row: dict) -> dict:
         "entity_type": entity_type,
         "tracking_unit": True,
         "tracking_category": row.get("tracking_category") or "academic",
+        "startup_frontier": bool(row.get("startup_frontier") or row.get("tracking_category") == "startup_frontier"),
         "region": region or "Global",
         "country": country or "Unknown",
         "aliases": list(dict.fromkeys(row.get("aliases") or [])),
@@ -250,9 +260,10 @@ def parent_node(parent_name: str, child: dict) -> dict:
         "display_name": parent_name,
         "short_name": parent_name,
         "slug": parent_id.removeprefix("org:"),
-        "entity_type": "company" if child["tracking_category"] in {"corporate", "deployment_watch"} else "university",
+        "entity_type": "company" if child["tracking_category"] in {"corporate", "deployment_watch", "startup_frontier"} else "university",
         "tracking_unit": False,
         "tracking_category": "parent",
+        "startup_frontier": False,
         "region": child["region"],
         "country": child["country"],
         "aliases": [],
@@ -280,7 +291,22 @@ def main() -> None:
         raise SystemExit(f"missing research files: {missing}")
     groups = [normalize_group(row) for path in RESEARCH_FILES for row in read_rows(path)]
     if len(groups) != 60:
-        raise SystemExit(f"expected exactly 60 tracking groups, got {len(groups)}")
+        raise SystemExit(f"expected exactly 60 core tracking groups, got {len(groups)}")
+    startup_payload = json.loads(STARTUP_FRONTIER.read_text())
+    by_id = {row["organization_id"]: row for row in groups}
+    for augmentation in startup_payload.get("augmentations", []):
+        organization_id = augmentation["organization_id"]
+        if organization_id not in by_id:
+            raise SystemExit(f"startup augmentation target missing: {organization_id}")
+        target = by_id[organization_id]
+        target["startup_frontier"] = True
+        merged_updates = {row["update_id"]: row for row in target["representative_updates"]}
+        for index, raw in enumerate(augmentation.get("representative_updates", []), start=len(merged_updates)):
+            update = normalize_update(raw, organization_id, index)
+            merged_updates[update["update_id"]] = update
+        target["representative_updates"] = list(merged_updates.values())
+    frontier_groups = [normalize_group(row) for row in startup_payload.get("organizations", [])]
+    groups.extend(frontier_groups)
     ids = [row["organization_id"] for row in groups]
     if len(ids) != len(set(ids)):
         raise SystemExit("duplicate organization_id in research files")
@@ -296,9 +322,10 @@ def main() -> None:
                         break
                 parents[parent_id] = parent_node(display_name, group)
     payload = {
-        "version": "1.0",
+        "version": "1.1",
         "updated": date.today().isoformat(),
         "tracking_target": 60,
+        "startup_frontier_count": len(frontier_groups),
         "organizations": sorted([*parents.values(), *groups], key=lambda row: (not row["tracking_unit"], row["tracking_category"], row["display_name"])),
     }
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")

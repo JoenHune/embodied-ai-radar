@@ -35,9 +35,9 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-07-09 | 项目 | [Tiny robot boats that build floating structures](https://www.csail.mit.edu/research/distributed-robotics-laboratory) | G1 直接证据 | [D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D14 · 多机器人协同与群体智能](/frontiers/multi-robot-coordination) | Distributed Robotics Lab 官方组页发布 FloatForm 动态：微型水面机器人以分布式控制协同自组装为可重构浮动结构。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-07-09 | 项目 | [Tiny robot boats that build floating structures](https://www.csail.mit.edu/research/distributed-robotics-laboratory) | 未严格同行评审 | G1 直接证据 | [D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)、[D14 · 多机器人协同与群体智能](/frontiers/multi-robot-coordination) | Distributed Robotics Lab 官方组页发布 FloatForm 动态：微型水面机器人以分布式控制协同自组装为可重构浮动结构。 |
 
 ## Canonical works 与归属证据
 

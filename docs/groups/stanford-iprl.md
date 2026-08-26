@@ -35,14 +35,14 @@ outline: deep
 
 ## 研究与发布动态
 
-| 日期 | 类型 | 工作/项目 | 证据 | 方向 | 摘要 |
-|---|---|---|---|---|---|
-| 2026-08-02 | 预印本 | [Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them](https://arxiv.org/abs/2608.01402) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-08-26 | 同行评审论文 | [Gentle Object Retraction in Dense Clutter Using Multimodal Force Sensing and Imitation Learning](https://iprl.stanford.edu/publications.html) | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 融合多模态力传感与模仿学习，在密集杂乱场景中完成温和物体牵拉，突出接触安全与力觉反馈。 |
-| 2025-08-26 | 预印本 | [Gentle Object Retraction in Dense Clutter Using Multimodal Force Sensing and Imitation Learning](https://arxiv.org/abs/2508.19476) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-05-02 | 预印本 | [Deformable Cargo Transport in Microgravity with Astrobee](https://www.arxiv.org/abs/2505.01630) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
-| 2025-01-20 | 预印本 | [Force-Aware Autonomous Robotic Surgery](https://arxiv.org/abs/2501.11742) | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
-| 日期待核 | 预印本 | [Tactile-Informed Action Primitives Mitigate Jamming in Dense Clutter](https://arxiv.org/abs/2402.09564) | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
+|---|---|---|---|---|---|---|
+| 2026-08-02 | 预印本 | [Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them](https://arxiv.org/abs/2608.01402) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-08-26 | 同行评审论文 | [Gentle Object Retraction in Dense Clutter Using Multimodal Force Sensing and Imitation Learning](https://iprl.stanford.edu/publications.html) | 未严格同行评审 | G1 直接证据 | [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory) | 融合多模态力传感与模仿学习，在密集杂乱场景中完成温和物体牵拉，突出接触安全与力觉反馈。 |
+| 2025-08-26 | 预印本 | [Gentle Object Retraction in Dense Clutter Using Multimodal Force Sensing and Imitation Learning](https://arxiv.org/abs/2508.19476) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-05-02 | 预印本 | [Deformable Cargo Transport in Microgravity with Astrobee](https://www.arxiv.org/abs/2505.01630) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
+| 2025-01-20 | 预印本 | [Force-Aware Autonomous Robotic Surgery](https://arxiv.org/abs/2501.11742) | 未严格同行评审 | G1 直接证据 | [D8 · 策略学习与优化](/frontiers/policy-learning) | 官方来源页面新发现的链接，等待结构化归类。 |
+| 日期待核 | 预印本 | [Tactile-Informed Action Primitives Mitigate Jamming in Dense Clutter](https://arxiv.org/abs/2402.09564) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 
