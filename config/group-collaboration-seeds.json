@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-26",
+  "links": [
+    {
+      "work_id": "arxiv:2606.19980",
+      "organization_ids": ["org:nvidia-gear", "org:cmu-lecar", "org:berkeley-autolab"],
+      "evidence_grade": "G1",
+      "evidence_url": "https://research.nvidia.com/labs/gear/enpire/",
+      "summary_zh": "ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。",
+      "direction_codes": ["D4", "D8", "D13"],
+      "question_codes": ["Q0", "Q6", "Q7"]
+    },
+    {
+      "work_id": "arxiv:2607.00272",
+      "organization_ids": ["org:nvidia-gear", "org:cmu-lecar", "org:berkeley-autolab"],
+      "evidence_grade": "G1",
+      "evidence_url": "https://research.nvidia.com/labs/gear/aspire/",
+      "summary_zh": "ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。",
+      "direction_codes": ["D2", "D8", "D13"],
+      "question_codes": ["Q0", "Q6", "Q7"]
+    },
+    {
+      "work_id": "arxiv:2511.15200",
+      "organization_ids": ["org:nvidia-gear", "org:cmu-lecar"],
+      "evidence_grade": "G1",
+      "evidence_url": "https://research.nvidia.com/labs/gear/publications/",
+      "summary_zh": "VIRAL 将 GEAR 的大规模仿真/人形平台与 LeCAR 的学习控制路线结合，用于真实人形 loco-manipulation。",
+      "direction_codes": ["D5", "D10"],
+      "question_codes": ["Q4", "Q5"]
+    },
+    {
+      "work_id": "arxiv:2602.06949",
+      "organization_ids": ["org:nvidia-gear", "org:berkeley-robot-learning-lab"],
+      "evidence_grade": "G2",
+      "evidence_url": "https://research.nvidia.com/labs/gear/publications/",
+      "summary_zh": "DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。",
+      "direction_codes": ["D3", "D9", "D10"],
+      "question_codes": ["Q2", "Q9", "Q10"]
+    }
+  ]
+}

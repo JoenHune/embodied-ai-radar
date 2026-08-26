@@ -232,3 +232,39 @@
   .radar-share-chart { height: 430px; }
   .radar-sankey-chart { height: 760px; }
 }
+
+/* Research group explorer */
+.group-explorer { margin-top: 24px; }
+.group-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+.group-filter { display: flex; flex-direction: column; gap: 5px; font-size: 12px; color: var(--vp-c-text-2); }
+.group-filter input,
+.group-filter select { width: 100%; min-height: 38px; padding: 7px 9px; border: 1px solid var(--vp-c-divider); border-radius: 7px; color: var(--vp-c-text-1); background: var(--vp-c-bg); }
+.group-search { grid-column: span 2; }
+.group-reset { align-self: end; min-height: 38px; border: 1px solid var(--vp-c-brand-1); border-radius: 7px; color: var(--vp-c-brand-1); background: transparent; cursor: pointer; }
+.group-result-count { margin: 18px 0 10px; color: var(--vp-c-text-2); font-size: 13px; }
+.group-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.group-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 1px solid var(--vp-c-divider); border-radius: 12px; background: var(--vp-c-bg-soft); }
+.group-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.group-card header a { font-weight: 700; color: var(--vp-c-brand-1); }
+.group-card p { margin: 0; font-size: 13px; line-height: 1.65; }
+.group-card .group-meta { color: var(--vp-c-text-2); font-size: 12px; }
+.group-health { padding: 2px 7px; border-radius: 999px; font-size: 10px; background: var(--vp-c-default-soft); }
+.group-health[data-health="healthy"] { color: var(--vp-c-green-1); background: var(--vp-c-green-soft); }
+.group-health[data-health="stale"] { color: var(--vp-c-red-1); background: var(--vp-c-red-soft); }
+.group-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.group-tags span { padding: 2px 6px; border-radius: 5px; font-size: 11px; color: var(--vp-c-brand-1); background: var(--vp-c-brand-soft); }
+.group-tags .question-tag { color: var(--vp-c-purple-1); background: var(--vp-c-purple-soft); }
+.group-card footer { display: flex; gap: 12px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--vp-c-divider); color: var(--vp-c-text-2); font-size: 11px; }
+@media (max-width: 768px) {
+  .group-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .group-search { grid-column: span 2; }
+  .group-grid { grid-template-columns: 1fr; }
+}

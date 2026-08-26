@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-08-26",
+  "candidates": [
+    {
+      "update_id": "upd-amazon-far-hiring-20260518",
+      "organization_id": "org:amazon-far",
+      "title": "Member of Technical Staff - Science, Frontier AI & Robotics",
+      "url": "https://www.amazon.jobs/en/jobs/10422560/member-of-technical-staff-science-frontier-ai-robotics-far",
+      "published_at": "2026-05-18",
+      "date_precision": "day",
+      "update_type": "hiring_signal",
+      "evidence_grade": "G3",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q4",
+        "Q8",
+        "Q9"
+      ],
+      "summary_zh": "官方岗位明确列出机器人软硬件共设计、灵巧操作、感知、sim-to-real、端到端 VLA 与大模型推理部署；仅作为组织方向证据。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
+    },
+    {
+      "update_id": "upd-tesla-digital-optimus-20260422",
+      "organization_id": "org:tesla-optimus",
+      "title": "Digital Optimus",
+      "url": "https://ir.tesla.com/_flysystem/s3/sec/000162828026026551/tsla-20260422-gen.pdf",
+      "published_at": "2026-04-22",
+      "date_precision": "day",
+      "update_type": "organization_change",
+      "evidence_grade": "G3",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D5",
+        "D8",
+        "D10"
+      ],
+      "question_codes": [
+        "Q5",
+        "Q8",
+        "Q9"
+      ],
+      "summary_zh": "Tesla 官方投资者材料将 Digital Optimus 描述为 AI 开发的下一阶段；该条只证明公司路线与组织投入，不作为同行评审研究成果。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true,
+      "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
+    }
+  ]
+}

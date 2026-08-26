@@ -47,6 +47,10 @@ PAGES=(
   "docs/analysis/weak-signals.md"
   "docs/questions/index.md"
   "docs/questions/blind-spots.md"
+  "docs/groups/index.md"
+  "docs/groups/weekly/index.md"
+  "docs/groups/organizations.md"
+  "docs/groups/collaboration.md"
   "docs/frontiers/index.md"
   "docs/frontiers/foundation-models.md"
   "docs/frontiers/reasoning-planning.md"
@@ -71,6 +75,7 @@ PAGES=(
   "docs/methods/expansion-protocol.md"
   "docs/methods/inclusion.md"
   "docs/methods/research-question-layer.md"
+  "docs/methods/research-groups.md"
   "docs/references.md"
 )
 

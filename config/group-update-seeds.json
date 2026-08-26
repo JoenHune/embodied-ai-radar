@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-26",
+  "updates": [
+    {
+      "update_id": "group-update:amazon-far-xl-vla-cvpr26",
+      "organization_id": "org:amazon-far",
+      "title": "Cross-Hand Latent Representation for Vision-Language-Action Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html",
+      "published_at": "2026-06-01",
+      "date_precision": "month",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_proceedings_affiliation",
+      "work_id": "arxiv:2603.10158",
+      "direction_codes": ["D1", "D4", "D8"],
+      "question_codes": ["Q1", "Q2", "Q8"],
+      "summary_zh": "CVPR 2026 论文 PDF 直接列出 Amazon FAR affiliation，并提出跨灵巧手的统一 latent action 表征。",
+      "first_seen_at": "2026-08-26"
+    },
+    {
+      "update_id": "group-update:agility-digit-100k-totes",
+      "organization_id": "org:agility-robotics",
+      "title": "Digit Moves Over 100,000 Totes in Commercial Deployment",
+      "url": "https://www.agilityrobotics.com/content/digit-moves-over-100k-totes",
+      "published_at": "2025-11-20",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_company_deployment",
+      "work_id": null,
+      "direction_codes": ["D5", "D7", "D12", "D13"],
+      "question_codes": ["Q0", "Q5", "Q7", "Q8"],
+      "summary_zh": "Agility 官方披露 Digit 在 GXO 生产环境搬运超过 10 万个 tote；这是第一方部署证据，不等同同行评审。",
+      "first_seen_at": "2026-08-26"
+    }
+  ]
+}

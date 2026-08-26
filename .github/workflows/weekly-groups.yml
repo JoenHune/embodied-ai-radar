@@ -1,0 +1,116 @@
+name: Weekly research group radar
+
+on:
+  schedule:
+    # Monday 04:00 Asia/Shanghai = Sunday 20:00 UTC.
+    - cron: '0 20 * * 0'
+  workflow_dispatch:
+    inputs:
+      bootstrap:
+        description: Record current official links without emitting new candidates
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: weekly-research-groups
+  cancel-in-progress: false
+
+jobs:
+  update-build:
+    runs-on: ubuntu-latest
+    outputs:
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Monitor official group sources
+        env:
+          BOOTSTRAP: ${{ inputs.bootstrap }}
+        run: |
+          as_of=$(TZ=Asia/Shanghai date +%F)
+          if [[ "$BOOTSTRAP" == "true" ]]; then
+            python3 scripts/collect_group_sources.py --bootstrap --as-of "$as_of"
+          else
+            python3 scripts/collect_group_sources.py --as-of "$as_of"
+          fi
+      - run: npm run resolve:groups
+      - run: npm test
+      - name: Persist verified weekly snapshot
+        id: commit
+        run: |
+          git config user.name "embodied-ai-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data config docs embodied-ai-radar-report.md
+          if git diff --cached --quiet; then
+            echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore: weekly research group radar $(TZ=Asia/Shanghai date +%G-W%V)"
+            git push origin HEAD:main
+            echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: update-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  feishu-weekly:
+    needs: [update-build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Publish Feishu weekly digest or validate dry-run
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_FOLDER_TOKEN: ${{ secrets.FEISHU_FOLDER_TOKEN }}
+          FEISHU_INDEX_DOC_TOKEN: ${{ secrets.FEISHU_INDEX_DOC_TOKEN }}
+        run: |
+          if [[ -n "$FEISHU_APP_ID" && -n "$FEISHU_APP_SECRET" && -n "$FEISHU_FOLDER_TOKEN" && -n "$FEISHU_INDEX_DOC_TOKEN" ]]; then
+            python3 scripts/publish_group_weekly_to_feishu.py
+          else
+            echo "Feishu secrets are not configured; running a non-publishing dry-run."
+            python3 scripts/publish_group_weekly_to_feishu.py --dry-run
+          fi
+      - name: Persist Feishu idempotency record
+        run: |
+          if [[ -f data/feishu-weekly-deliveries.json ]]; then
+            git config user.name "embodied-ai-radar-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add data/feishu-weekly-deliveries.json
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: record Feishu weekly delivery [skip ci]"
+              git push origin HEAD:main
+            fi
+          fi

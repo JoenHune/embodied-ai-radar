@@ -1,0 +1,3217 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-08-26",
+  "updates": [
+    {
+      "update_id": "upd-rai-table-tennis-20260819",
+      "organization_id": "org:rai-institute",
+      "title": "Whole-Body Model Predictive Control for Spin-Aware Quadrupedal Table Tennis",
+      "url": "https://rai-inst.com/resources/papers/whole-body-model-predictive-control-for-spin-aware-quadrupedal-table-tennis/",
+      "published_at": "2026-08-19",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2510.08754",
+      "direction_codes": [
+        "D5",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [
+        "Q5",
+        "Q8"
+      ],
+      "summary_zh": "在 Spot 四足加机械臂平台上结合连续时间全身 MPC、球旋转估计与击球规划，实现面向人类对打的真机协调控制。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-skild-s1-20260818",
+      "organization_id": "org:skild-ai",
+      "title": "Introducing S1: In-Context Learning for Robotics",
+      "url": "https://www.skild.ai/blogs/s1",
+      "published_at": "2026-08-18",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "S1 将机器人基础模型构造成 in-context learner，以单段任务视频作为 prompt 执行已见或未见、短时或长时任务，无需额外后训练。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "update:org-dyna-robotics:2",
+      "organization_id": "org:dyna-robotics",
+      "title": "DYNA-2 research release index",
+      "url": "https://www.dyna.co/research",
+      "published_at": "2026-08-17",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Official technical-release index; any future official proceedings record must be linked separately by canonical work.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:0baedf4c8abd82cb",
+      "organization_id": "org:stanford-iprl",
+      "title": "Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them",
+      "url": "https://arxiv.org/abs/2608.01402",
+      "published_at": "2026-08-02",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2608.01402",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-gdm-gemini-robotics2-20260730",
+      "organization_id": "org:google-deepmind-robotics",
+      "title": "Gemini Robotics 2 brings whole body intelligence to robots",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+      "published_at": "2026-07-30",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D12",
+        "D14"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q5",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "Gemini Robotics 2 同时推进全身 VLA、具身推理高层脑、端侧模型、多机器人协作与 agentic safety。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "update:org-dexterity-ai:1",
+      "organization_id": "org:dexterity-ai",
+      "title": "Expanded FedEx autonomous trailer-loading deployment",
+      "url": "https://dexterity.ai/blog/fedex-hagerstown-physical-ai-deployment",
+      "published_at": "2026-07-30",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Joint company announcement of an expanded operating-site deployment; keep separate from peer-reviewed evaluation.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-agibot-wita-omni-20260728",
+      "organization_id": "org:agibot-research",
+      "title": "AGIBOT’s WITA-Omni Preview Tops Daily-Omni Audio-Visual Reasoning Benchmark",
+      "url": "https://www.agibot.com/article/231/detail/86.html",
+      "published_at": "2026-07-28",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D2",
+        "D7",
+        "D11"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q8"
+      ],
+      "summary_zh": "WITA-Omni 以 Thinker–Talker–Actor 架构统一音视频理解、决策、语音、运动和表情生成，作为交互智能模块与操作和运动智能并行演进。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "opendrivelab:2026-07-13:rise",
+      "organization_id": "org:opendrivelab",
+      "title": "RISE: Self-Improving Robot Policy with Compositional World Model",
+      "url": "https://opendrivelab.com/RISE/",
+      "published_at": "2026-07-13",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2602.11075",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [
+        "Q0"
+      ],
+      "summary_zh": "OpenDriveLab's official RSS 2026 program page features RISE as a compositional-world-model environment for policy self-improvement in dexterous real-world manipulation. This is a platform-curated project update; individual affiliation remains governed by the author list and dated work evidence rather than the OpenDriveLab domain alone.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-mit-distributed-floatform",
+      "organization_id": "org:mit-distributed-robotics",
+      "title": "Tiny robot boats that build floating structures",
+      "url": "https://www.csail.mit.edu/research/distributed-robotics-laboratory",
+      "published_at": "2026-07-09",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D10",
+        "D12",
+        "D14"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q8"
+      ],
+      "summary_zh": "Distributed Robotics Lab 官方组页发布 FloatForm 动态：微型水面机器人以分布式控制协同自组装为可重构浮动结构。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:9497af661df14544",
+      "organization_id": "org:opendrivelab",
+      "title": "NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation",
+      "url": "https://arxiv.org/abs/2607.06678",
+      "published_at": "2026-07-07",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2607.06678",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:c6a1323a2f03b131",
+      "organization_id": "org:nvidia-gear",
+      "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
+      "url": "https://research.nvidia.com/labs/gear/aspire/",
+      "published_at": "2026-06-30",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2607.00272",
+      "direction_codes": [
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:71f811a2c9459295",
+      "organization_id": "org:cmu-lecar",
+      "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
+      "url": "https://research.nvidia.com/labs/gear/aspire/",
+      "published_at": "2026-06-30",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2607.00272",
+      "direction_codes": [
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:71860a071333093d",
+      "organization_id": "org:berkeley-autolab",
+      "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
+      "url": "https://research.nvidia.com/labs/gear/aspire/",
+      "published_at": "2026-06-30",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2607.00272",
+      "direction_codes": [
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "ASPIRE 官方项目页明确感谢 GEAR、LeCAR 与 AUTOLAB 的支持，体现 agentic skill discovery 的跨组协作。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "update:org-apptronik:1",
+      "organization_id": "org:apptronik",
+      "title": "Robot Park fleet data collection and customer-site training",
+      "url": "https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work",
+      "published_at": "2026-06-30",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Official company announcement of fleet data collection and partner sites; not a peer-reviewed evaluation.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-intrinsic-intelligence-cell-20260622",
+      "organization_id": "org:intrinsic",
+      "title": "Unlocking the value of Physical AI for manufacturing",
+      "url": "https://www.intrinsic.ai/blog/posts/unlocking-the-value-of-physical-ai-for-manufacturing",
+      "published_at": "2026-06-22",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D4",
+        "D10",
+        "D11",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q8"
+      ],
+      "summary_zh": "展示 Intrinsic Intelligence Cell：以模块化工作单元、IntrinsicOS、感知、运动规划和抓取技能把 AI 机器人带入电子装配与机床场景。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:31283adbcbc55352",
+      "organization_id": "org:opendrivelab",
+      "title": "World Engine: Towards the Era of Post-Training for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2606.19836",
+      "published_at": "2026-06-18",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.19836",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:b5353ef764ae9e06",
+      "organization_id": "org:nvidia-gear",
+      "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+      "url": "https://research.nvidia.com/labs/gear/enpire/",
+      "published_at": "2026-06-18",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2606.19980",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:6f15af09605ea85b",
+      "organization_id": "org:cmu-lecar",
+      "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+      "url": "https://research.nvidia.com/labs/gear/enpire/",
+      "published_at": "2026-06-18",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2606.19980",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:d1023e9e0526da6b",
+      "organization_id": "org:berkeley-autolab",
+      "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+      "url": "https://research.nvidia.com/labs/gear/enpire/",
+      "published_at": "2026-06-18",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2606.19980",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "ENPIRE 由 NVIDIA GEAR、CMU LeCAR 与 UC Berkeley 团队共同完成，建立真机策略自改进闭环。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:b292fc0a7a8981f8",
+      "organization_id": "org:opendrivelab",
+      "title": "RoboNaldo: Accurate, Stable and Powerful Humanoid Soccer Shooting via Motion-Guided Curriculum Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2606.11092",
+      "published_at": "2026-06-09",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.11092",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:33ed4cacb7eb32c0",
+      "organization_id": "org:tri-robotics",
+      "title": "Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization",
+      "url": "https://www.tri.global/research/generalized-cvo-fast-and-correspondence-free-local-point-cloud-registration-second-order",
+      "published_at": "2026-06-08",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.10019",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:ff0c072766bb5dd1",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation",
+      "url": "https://arxiv.org/pdf/2606.10025",
+      "published_at": "2026-06-08",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.10025",
+      "direction_codes": [
+        "D2"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-nvidia-cosmos3-20260601",
+      "organization_id": "org:nvidia-cosmos-lab",
+      "title": "Cosmos 3: Omnimodal World Models for Physical AI",
+      "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/",
+      "published_at": "2026-06-01",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2606.02800",
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D10",
+        "D11"
+      ],
+      "question_codes": [
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "Cosmos 3 将语言、图像、视频、音频与动作统一进 omnimodal 世界模型，并覆盖机器人策略、前向动力学和逆动力学。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:amazon-far-xl-vla-cvpr26",
+      "organization_id": "org:amazon-far",
+      "title": "Cross-Hand Latent Representation for Vision-Language-Action Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html",
+      "published_at": "2026-06-01",
+      "date_precision": "month",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_proceedings_affiliation",
+      "work_id": "arxiv:2603.10158",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q2",
+        "Q8"
+      ],
+      "summary_zh": "CVPR 2026 论文 PDF 直接列出 Amazon FAR affiliation，并提出跨灵巧手的统一 latent action 表征。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-nvidia-srl-icra-20260528",
+      "organization_id": "org:nvidia-seattle-robotics-lab",
+      "title": "NVIDIA Research Advances Robotics From Simulation to the Real World",
+      "url": "https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/",
+      "published_at": "2026-05-28",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D10"
+      ],
+      "question_codes": [
+        "Q3",
+        "Q4"
+      ],
+      "summary_zh": "以八项 ICRA 工作展示从仿真训练到真实机器人的技术链，覆盖操作、规划、控制与 Sim-to-Real。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:109d96c94475004d",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations",
+      "url": "https://arxiv.org/abs/2605.11485",
+      "published_at": "2026-05-12",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2605.11485",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:29e8cb7c50d2237b",
+      "organization_id": "org:opendrivelab",
+      "title": "MM-Hand: A 21-DOF Multi-modal Modular Dexterous Robotic Hand with Remote Actuation",
+      "url": "https://arxiv.org/abs/2604.17245",
+      "published_at": "2026-04-19",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2604.17245",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q3",
+        "Q8"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-pi-pi07-20260416",
+      "organization_id": "org:physical-intelligence",
+      "title": "π0.7: a Steerable Model with Emergent Capabilities",
+      "url": "https://www.pi.website/blog/pi07",
+      "published_at": "2026-04-16",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "π0.7 将示范、失败与自主数据纳入 steerable 基础模型，强调组合泛化和从部署经验中学习。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "update:org-dexterity-ai:2",
+      "organization_id": "org:dexterity-ai",
+      "title": "Production tactile intelligence evaluation",
+      "url": "https://dexterity.ai/blog/instinct",
+      "published_at": "2026-04-14",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Company-published production sample and confidence intervals; methodology and claims are not an official peer-reviewed record.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:9e9b0397a7568961",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Solving Physics Olympiad via Reinforcement Learning on Physics Simulators",
+      "url": "https://arxiv.org/abs/2604.11805",
+      "published_at": "2026-04-13",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2604.11805",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:54815e23b35e3d7b",
+      "organization_id": "org:opendrivelab",
+      "title": "TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks",
+      "url": "https://arxiv.org/abs/2604.07335",
+      "published_at": "2026-04-08",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2604.07335",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q3"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:ba271d880a3c581d",
+      "organization_id": "org:opendrivelab",
+      "title": "SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision",
+      "url": "https://arxiv.org/abs/2604.01158",
+      "published_at": "2026-04-01",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2604.01158",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:ac18b275b4a6c663",
+      "organization_id": "org:berkeley-autolab",
+      "title": "CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation",
+      "url": "https://arxiv.org/abs/2603.22435",
+      "published_at": "2026-03-23",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2603.22435",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:8be100e6127d693d",
+      "organization_id": "org:tri-robotics",
+      "title": "On the Strengths and Weaknesses of Data for Open-set Embodied Assistance",
+      "url": "https://www.tri.global/research/strengths-and-weaknesses-data-open-set-embodied-assistance",
+      "published_at": "2026-03-05",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2603.04819",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-uw-weird-robometer",
+      "organization_id": "org:uw-weird",
+      "title": "Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons",
+      "url": "https://weirdlab.cs.washington.edu/",
+      "published_at": "2026-03-02",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2603.02115",
+      "direction_codes": [
+        "D1",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "通过轨迹比较扩展通用机器人奖励模型，使评测与策略改进形成可规模化的反馈环；发表于 RSS 2026。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:2109671e723b5d3c",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering",
+      "url": "https://arxiv.org/abs/2602.22474",
+      "published_at": "2026-02-25",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2602.22474",
+      "direction_codes": [
+        "D2"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-nvidia-gear-egoscale-20260219",
+      "organization_id": "org:nvidia-gear",
+      "title": "EgoScale: Scaling Human Video to Unlock Dexterous Robot Intelligence",
+      "url": "https://research.nvidia.com/labs/gear/egoscale/",
+      "published_at": "2026-02-19",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2602.16710",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D9"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q9"
+      ],
+      "summary_zh": "以超过 2 万小时第一视角人类视频预训练灵巧 VLA，并报告人类视频规模与验证损失之间的近似对数线性关系。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:5df53ed3e449c1f0",
+      "organization_id": "org:opendrivelab",
+      "title": "RISE: Self-Improving Robot Policy with Compositional World Model",
+      "url": "https://arxiv.org/abs/2602.11075",
+      "published_at": "2026-02-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2602.11075",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [
+        "Q0"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "ai2:2026-02-11:molmospaces",
+      "organization_id": "org:ai2-embodied-ai",
+      "title": "MolmoSpaces: an open ecosystem for embodied AI",
+      "url": "https://allenai.org/blog/molmospaces",
+      "published_at": "2026-02-11",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Ai2 officially launched a simulation-first embodied-learning platform combining indoor scenes, object assets, and physics-grounded grasp annotations for navigation, manipulation, controlled evaluation, and zero-shot real transfer research.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:50d970a3597ba25f",
+      "organization_id": "org:opendrivelab",
+      "title": "EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration",
+      "url": "https://arxiv.org/abs/2602.10106",
+      "published_at": "2026-02-10",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2602.10106",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q5"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:25f93515347c761b",
+      "organization_id": "org:opendrivelab",
+      "title": "$χ_{0}$: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies",
+      "url": "https://arxiv.org/abs/2602.09021",
+      "published_at": "2026-02-09",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2602.09021",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:d8b4cf0c447a4f42",
+      "organization_id": "org:nvidia-gear",
+      "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+      "url": "https://research.nvidia.com/labs/gear/publications/",
+      "published_at": "2026-02-06",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G2",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2602.06949",
+      "direction_codes": [
+        "D3",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:fafb6a31bd628e39",
+      "organization_id": "org:berkeley-robot-learning-lab",
+      "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+      "url": "https://research.nvidia.com/labs/gear/publications/",
+      "published_at": "2026-02-06",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G2",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2602.06949",
+      "direction_codes": [
+        "D3",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "DreamDojo 的官方 GEAR 页面与作者/PI 关系共同支持 GEAR—Berkeley Robot Learning 的时间对齐合作归属。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:985f874607b025fe",
+      "organization_id": "org:opendrivelab",
+      "title": "Sparse Video Generation Propels Real-World Beyond-the-View Vision-Language Navigation",
+      "url": "https://arxiv.org/abs/2602.05827",
+      "published_at": "2026-02-05",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2602.05827",
+      "direction_codes": [
+        "D6"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-figure-helix02-20260127",
+      "organization_id": "org:figure-ai",
+      "title": "Introducing Helix 02: Full-Body Autonomy",
+      "url": "https://www.figure.ai/news/helix-02",
+      "published_at": "2026-01-27",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D15"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q5",
+        "Q8"
+      ],
+      "summary_zh": "Helix 02 用统一神经系统从像素控制全身，整合 S0 全身先验、S1 传感到执行与 S2 语义推理，展示四分钟房间尺度 loco-manipulation。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:3dd9e0b9505f7269",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Iterative Refinement Improves Compositional Image Generation",
+      "url": "https://arxiv.org/abs/2601.15286",
+      "published_at": "2026-01-21",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2601.15286",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:c9c459121eb3636a",
+      "organization_id": "org:opendrivelab",
+      "title": "PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning",
+      "url": "https://arxiv.org/pdf/2601.12901",
+      "published_at": "2026-01-19",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2601.12901",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-bd-atlas-20260105",
+      "organization_id": "org:boston-dynamics",
+      "title": "Boston Dynamics Unveils New Atlas Robot to Revolutionize Industry",
+      "url": "https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/",
+      "published_at": "2026-01-05",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D12"
+      ],
+      "question_codes": [
+        "Q5",
+        "Q8"
+      ],
+      "summary_zh": "发布生产版 Atlas，强调工业自主任务、快速技能复制、感知安全与电池自换，并宣布与 Google DeepMind 结合 foundation models。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:964f973101e285a4",
+      "organization_id": "org:tri-robotics",
+      "title": "Learning to Plan, Planning to Learn: Adaptive Hierarchical RL-MPC for Sample-Efficient Decision Making",
+      "url": "https://www.tri.global/research/learning-plan-planning-learn-adaptive-hierarchical-rl-mpc-sample-efficient-decision-making",
+      "published_at": "2025-12-18",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2512.17091",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:9d54c48ccfca7e0a",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives",
+      "url": "https://arxiv.org/pdf/2512.14696",
+      "published_at": "2025-12-16",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2512.14696",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:79ac6e8a9991e4ba",
+      "organization_id": "org:opendrivelab",
+      "title": "WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control",
+      "url": "https://arxiv.org/abs/2512.11047",
+      "published_at": "2025-12-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2512.11047",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q5"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-seed-grrl-20251202",
+      "organization_id": "org:bytedance-seed-robotics",
+      "title": "GR-RL: A Breakthrough in Dexterous Manipulation",
+      "url": "https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time",
+      "published_at": "2025-12-02",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "GR-RL 通过离线数据过滤、形态对称增强与真机在线强化学习，把鞋带穿孔任务成功率从 45.7% 提升至 83.3%。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:9ca5b8169d4067f4",
+      "organization_id": "org:opendrivelab",
+      "title": "SimScale: Learning to Drive via Real-World Simulation at Scale",
+      "url": "https://arxiv.org/abs/2511.23369",
+      "published_at": "2025-11-28",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2511.23369",
+      "direction_codes": [
+        "D10"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-stanford-iliad-data-flywheels",
+      "organization_id": "org:stanford-iliad",
+      "title": "Robot-Powered Data Flywheels: Deploying Robots in the Wild for Continual Data Collection and Foundation Model Adaptation",
+      "url": "https://iliad.stanford.edu/publications/",
+      "published_at": "2025-11-24",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2511.19647",
+      "direction_codes": [
+        "D1",
+        "D9",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "summary_zh": "把机器人部署、持续采数和基础模型适配组织成数据飞轮，研究真实场景中的长期迭代闭环。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:94c6dbf996326f9f",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "How to Train Your Latent Control Barrier Function: Smooth Safety Filtering Under Hard-to-Model Constraints",
+      "url": "https://arxiv.org/abs/2511.18606",
+      "published_at": "2025-11-23",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2511.18606",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:c086210019851f9e",
+      "organization_id": "org:opendrivelab",
+      "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+      "url": "https://arxiv.org/abs/2511.17373",
+      "published_at": "2025-11-21",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2511.17373",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:agility-digit-100k-totes",
+      "organization_id": "org:agility-robotics",
+      "title": "Digit Moves Over 100,000 Totes in Commercial Deployment",
+      "url": "https://www.agilityrobotics.com/content/digit-moves-over-100k-totes",
+      "published_at": "2025-11-20",
+      "date_precision": "day",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_company_deployment",
+      "work_id": null,
+      "direction_codes": [
+        "D5",
+        "D7",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q5",
+        "Q7",
+        "Q8"
+      ],
+      "summary_zh": "Agility 官方披露 Digit 在 GXO 生产环境搬运超过 10 万个 tote；这是第一方部署证据，不等同同行评审。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:de2ebadcb1fb8a0e",
+      "organization_id": "org:nvidia-gear",
+      "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "url": "https://research.nvidia.com/labs/gear/publications/",
+      "published_at": "2025-11-19",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2511.15200",
+      "direction_codes": [
+        "D5",
+        "D10"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5"
+      ],
+      "summary_zh": "VIRAL 将 GEAR 的大规模仿真/人形平台与 LeCAR 的学习控制路线结合，用于真实人形 loco-manipulation。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:8e9e3d73d7f130b4",
+      "organization_id": "org:cmu-lecar",
+      "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "url": "https://research.nvidia.com/labs/gear/publications/",
+      "published_at": "2025-11-19",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "curated_collaboration_evidence",
+      "work_id": "arxiv:2511.15200",
+      "direction_codes": [
+        "D5",
+        "D10"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5"
+      ],
+      "summary_zh": "VIRAL 将 GEAR 的大规模仿真/人形平台与 LeCAR 的学习控制路线结合，用于真实人形 loco-manipulation。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:22adcf37b5fdcfad",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "ViPRA: Video Prediction for Robot Actions",
+      "url": "https://arxiv.org/abs/2511.07732",
+      "published_at": "2025-11-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2511.07732",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [
+        "Q2"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:675e4bee74b14e07",
+      "organization_id": "org:berkeley-autolab",
+      "title": "STITCH 2.0: Extending Augmented Suturing with EKF Needle Estimation and Thread Management",
+      "url": "https://arxiv.org/pdf/2510.25768",
+      "published_at": "2025-10-29",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2510.25768",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "mit-csail:2025-10-23:physical-intelligence-initiative",
+      "organization_id": "org:mit-csail",
+      "title": "Five-year physically intelligent robots initiative",
+      "url": "https://www.csail.mit.edu/news/mit-csail-and-pegatron-launch-five-year-initiative-pioneer-physically-intelligent-robots",
+      "published_at": "2025-10-23",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "MIT CSAIL officially announced a 2026-2031 program spanning dexterous manipulation, tactile sensing, multimodal perception, AI control, and real-world demonstrations. This is an umbrella-level program update and does not assign resulting work to any single CSAIL child lab.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-tsinghua-air-dream-xvla",
+      "organization_id": "org:tsinghua-air-dream",
+      "title": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+      "url": "https://air-dream.netlify.app/",
+      "published_at": "2025-10-11",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2510.10274",
+      "direction_codes": [
+        "D1",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "AIR-DREAM 发布轻量跨本体 VLA，以 soft prompt 处理异构机器人数据并开放模型与训练方案。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:0774f0c4b8a82025",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models",
+      "url": "https://arxiv.org/pdf/2510.01184",
+      "published_at": "2025-10-01",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2510.01184",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "stanford-src:2025-09-30:robot-teamwork-manufacturing",
+      "organization_id": "org:stanford-robotics-center",
+      "title": "Optimizing robot teamwork for manufacturing",
+      "url": "https://src.stanford.edu/press/sim-to-scale-je3e7-cd5sm-eaf76-x3jec-yktg9",
+      "published_at": "2025-09-30",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "The SRC official news page highlights an algorithm for jointly planning product subassemblies, individual and team robot work, and collision-aware factory layout, and directly identifies co-author Mac Schwager as SRC faculty. Attribution is limited to the named participating faculty and center-curated work.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:eb49c9f5c356e1e9",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "LocoFormer: Generalist Locomotion via Long-context Adaptation",
+      "url": "https://arxiv.org/abs/2509.23745",
+      "published_at": "2025-09-28",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2509.23745",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [
+        "Q4"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-epfl-lasa-bimanual-planning",
+      "organization_id": "org:epfl-lasa",
+      "title": "Imitation-Guided Bimanual Planning for Stable Manipulation under Changing External Forces",
+      "url": "https://www.epfl.ch/labs/lasa/home-2/publications/",
+      "published_at": "2025-09-23",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2509.19261",
+      "direction_codes": [
+        "D4",
+        "D7",
+        "D12"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q3",
+        "Q7"
+      ],
+      "summary_zh": "以模仿引导双臂规划，在变化外力下维持稳定操作，连接人类示范、接触鲁棒性与协作控制；发表于 IROS 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:595bf5bd9bb65dba",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments",
+      "url": "https://arxiv.org/abs/2509.06953",
+      "published_at": "2025-09-08",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2509.06953",
+      "direction_codes": [
+        "D2"
+      ],
+      "question_codes": [
+        "Q0"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:3ec88b567e022dfb",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Can LLMs Lie? Investigation beyond Hallucination",
+      "url": "https://arxiv.org/abs/2509.03518",
+      "published_at": "2025-09-03",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2509.03518",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-stanford-iprl-gentle-retraction",
+      "organization_id": "org:stanford-iprl",
+      "title": "Gentle Object Retraction in Dense Clutter Using Multimodal Force Sensing and Imitation Learning",
+      "url": "https://iprl.stanford.edu/publications.html",
+      "published_at": "2025-08-26",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2508.19476",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D15"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q7"
+      ],
+      "summary_zh": "融合多模态力传感与模仿学习，在密集杂乱场景中完成温和物体牵拉，突出接触安全与力觉反馈。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:2f6a5ac0acffa0c5",
+      "organization_id": "org:stanford-iprl",
+      "title": "Gentle Object Retraction in Dense Clutter Using Multimodal Force Sensing and Imitation Learning",
+      "url": "https://arxiv.org/abs/2508.19476",
+      "published_at": "2025-08-26",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2508.19476",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [
+        "Q3"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-amazon-deepfleet-20250811",
+      "organization_id": "org:amazon-robotics",
+      "title": "Amazon builds first foundation model for multirobot coordination",
+      "url": "https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination",
+      "published_at": "2025-08-11",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D3",
+        "D6",
+        "D14"
+      ],
+      "question_codes": [
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "DeepFleet 使用履约中心的海量真实导航数据预训练多机器人交通预测模型，并已用于任务分配与拥堵规避。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-stanford-movement-head",
+      "organization_id": "org:stanford-movement-lab",
+      "title": "Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching",
+      "url": "https://github.com/Stanford-TML/HEAD_release",
+      "published_at": "2025-08-05",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2508.03068",
+      "direction_codes": [
+        "D2",
+        "D5",
+        "D6",
+        "D8"
+      ],
+      "question_codes": [
+        "Q5",
+        "Q6"
+      ],
+      "summary_zh": "Movement Lab 官方仓库发布 HEAD，将人形机器人的导航、行走与伸手操作联合为手眼协调的长程送达系统。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "cmu-ri:2025-08:generalizable-robot-skills",
+      "organization_id": "org:cmu-robotics-institute",
+      "title": "Learning Generalizable Robot Skills for Dynamic and Interactive Tasks",
+      "url": "https://publications.ri.cmu.edu/learning-generalizable-robot-skills-for-dynamic-and-interactive-tasks",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "The official RI publication page records a CMU-RI technical report on multimodal foundation models, closed-loop policies, embodied memory, and safety-aware robot learning. This is an institute repository attribution to a specific RI work, not a blanket attribution to every RI child lab.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-tsinghua-discover-discoverse",
+      "organization_id": "org:tsinghua-discover-lab",
+      "title": "DISCOVERSE: Efficient Robot Simulation in Complex High-Fidelity Environments",
+      "url": "https://air.tsinghua.edu.cn/en/info/1046/1196.htm",
+      "published_at": "2025-07-29",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2507.21981",
+      "direction_codes": [
+        "D9",
+        "D10",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q8",
+        "Q9"
+      ],
+      "summary_zh": "发布面向复杂高保真环境的高效机器人仿真平台，支撑标准化 Sim2Real 评测、数据生成和移动操作；发表于 IROS 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-eth-rsl-pragmabot",
+      "organization_id": "org:eth-rsl",
+      "title": "A Pragmatist Robot: Learning to Plan Tasks by Experiencing the Real World",
+      "url": "https://rsl.ethz.ch/publications-sources/publications.html",
+      "published_at": "2025-07-22",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2507.16713",
+      "direction_codes": [
+        "D2",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q10"
+      ],
+      "summary_zh": "PragmaBot 让 VLM 从真机行动结果自我反思并写入长短期记忆，使任务规划逐步适配机器人能力；发表于 RA-L 2026。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:cbc57f2086862a8c",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Diffusion Beats Autoregressive in Data-Constrained Settings",
+      "url": "https://arxiv.org/abs/2507.15857",
+      "published_at": "2025-07-21",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2507.15857",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:a2c22587b9e455f1",
+      "organization_id": "org:opendrivelab",
+      "title": "Is Diversity All You Need for Scalable Robotic Manipulation?",
+      "url": "https://arxiv.org/abs/2507.06219",
+      "published_at": "2025-07-08",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2507.06219",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q9"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-tri-lbm-20250707",
+      "organization_id": "org:tri-robotics",
+      "title": "A Careful Examination of Large Behavior Models for Multitask Dexterous Manipulation",
+      "url": "https://www.tri.global/research/careful-examination-large-behavior-models-multitask-dexterous-manipulation",
+      "published_at": "2025-07-07",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2507.05331",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D8",
+        "D9",
+        "D12"
+      ],
+      "question_codes": [
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "基于约 1,700 小时训练数据、1,800 次真实 rollout 和超过 47,000 次仿真 rollout，检验 LBM 预训练、微调与数据规模效应。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "bair:2025-07-01:peva",
+      "organization_id": "org:berkeley-bair",
+      "title": "Whole-Body Conditioned Egocentric Video Prediction",
+      "url": "https://bair.berkeley.edu/blog/2025/07/01/peva/",
+      "published_at": "2025-07-01",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2506.21552",
+      "direction_codes": [
+        "D9"
+      ],
+      "question_codes": [
+        "Q2"
+      ],
+      "summary_zh": "The official BAIR blog presents PEVA, an action-conditioned egocentric video model using full-body pose trajectories to predict how physical actions change the environment, while explicitly describing closed-loop embodied planning as future work.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:27ea61dd0c97c4a7",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "DemoDiffusion: One-Shot Human Imitation using pre-trained Diffusion Policy",
+      "url": "https://arxiv.org/pdf/2506.20668",
+      "published_at": "2025-06-25",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2506.20668",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q6"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-cmu-physical-demodiffusion",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "DemoDiffusion: One-Shot Human Imitation using Pre-trained Diffusion Policy",
+      "url": "https://shubhtuls.github.io/",
+      "published_at": "2025-06-25",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2506.20668",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q6"
+      ],
+      "summary_zh": "从一次人类示范中适配预训练扩散策略，实现跨本体的低样本机器人模仿，并发表于 ICRA 2026。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-tsinghua-e-dex1b",
+      "organization_id": "org:tsinghua-interactive-embodied-intelligence",
+      "title": "Dex1B: Learning with 1B Demonstrations for Dexterous Manipulation",
+      "url": "https://collegeai.tsinghua.edu.cn/en/Research/Research_Groups/E__Interactive_Embodied_Intelligence__Lab.htm",
+      "published_at": "2025-06-20",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2506.17198",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q4",
+        "Q9"
+      ],
+      "summary_zh": "以十亿级仿真示范扩展灵巧操作训练，检验大规模接触数据与真实部署的连接；发表于 RSS 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-uw-prl-atk",
+      "organization_id": "org:uw-personal-robotics",
+      "title": "ATK: Automatic Task-driven Keypoint Selection for Robust Policy Learning",
+      "url": "https://personalrobotics.cs.washington.edu/publications/",
+      "published_at": "2025-06-16",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2506.13867",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6"
+      ],
+      "summary_zh": "自动选择与任务有关的关键点作为策略表征，提高视觉操作策略在遮挡、布局变化和背景变化下的鲁棒性；发表于 CoRL 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-1x-world-model-20250616",
+      "organization_id": "org:1x-ai",
+      "title": "1X World Model: Evaluating Bits, not Atoms",
+      "url": "https://www.1x.tech/discover/redwood-ai-world-model",
+      "published_at": "2025-06-16",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D3",
+        "D10",
+        "D12"
+      ],
+      "question_codes": [
+        "Q7",
+        "Q10"
+      ],
+      "summary_zh": "1XWM 从真实机器人数据预测动作条件未来与任务价值，用学习式仿真加速 Redwood/NEO 策略的安全和可靠性评估。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:0b5d074579b02a96",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Adapting by Analogy: OOD Generalization of Visuomotor Policies via Functional Correspondence",
+      "url": "https://arxiv.org/abs/2506.12678",
+      "published_at": "2025-06-15",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2506.12678",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:e752104c1af9ea5c",
+      "organization_id": "org:opendrivelab",
+      "title": "ReSim: Reliable World Simulation for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2506.09981",
+      "published_at": "2025-06-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2506.09981",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-meta-vjepa2-20250611",
+      "organization_id": "org:meta-fair-embodied-ai",
+      "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+      "url": "https://ai.meta.com/research/publications/v-jepa-2-self-supervised-video-models-enable-understanding-prediction-and-planning/",
+      "published_at": "2025-06-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2506.09985",
+      "direction_codes": [
+        "D3",
+        "D9",
+        "D11"
+      ],
+      "question_codes": [
+        "Q9",
+        "Q10"
+      ],
+      "summary_zh": "先在超过百万小时互联网视频上自监督学习，再用少量 DROID 机器人视频后训练 latent action 世界模型，并在两地 Franka 机械臂零样本规划。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:aa1119a8b9f74638",
+      "organization_id": "org:meta-fair-embodied-ai",
+      "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+      "url": "https://arxiv.org/abs/2506.09985",
+      "published_at": "2025-06-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2506.09985",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [
+        "Q6",
+        "Q10"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-berkeley-rail-ogbench",
+      "organization_id": "org:berkeley-rail",
+      "title": "OGBench: Benchmarking Offline Goal-Conditioned RL",
+      "url": "https://rail.eecs.berkeley.edu/datasets/ogbench/",
+      "published_at": "2025-06-03",
+      "date_precision": "day",
+      "update_type": "benchmark",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D8",
+        "D12"
+      ],
+      "question_codes": [
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "RAIL 发布 OGBench 的多类环境、离线数据集与参考实现，用统一任务检验 stitching、长时序推理及像素控制能力。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:bce50ce8da733254",
+      "organization_id": "org:opendrivelab",
+      "title": "FreeTacMan: Robot-free Visuo-Tactile Data Collection System for Contact-rich Manipulation",
+      "url": "http://arxiv.org/abs/2506.01941",
+      "published_at": "2025-06-02",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2506.01941",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [
+        "Q3"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-stanford-real-dexumi",
+      "organization_id": "org:stanford-real",
+      "title": "DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation",
+      "url": "https://real.stanford.edu/research.html",
+      "published_at": "2025-05-28",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2505.21864",
+      "direction_codes": [
+        "D4",
+        "D9",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q8"
+      ],
+      "summary_zh": "把人手改造为可穿戴通用操作接口，采集视觉、姿态与接触数据并迁移到灵巧机器人手；CoRL 2025 Oral。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-tsinghua-var-onetwovla",
+      "organization_id": "org:tsinghua-vision-robotics",
+      "title": "OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning",
+      "url": "https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/publications.html",
+      "published_at": "2025-05-17",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2505.11917",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D8"
+      ],
+      "question_codes": [
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "在统一 VLA 中按任务难度自适应切换直接动作与显式推理，使快慢决策共享模型和训练流程；发表于 ICLR 2026。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:979f9ba95063e72d",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies",
+      "url": "https://arxiv.org/abs/2505.07813",
+      "published_at": "2025-05-12",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2505.07813",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [
+        "Q2"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:82ef1633c137751b",
+      "organization_id": "org:opendrivelab",
+      "title": "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions",
+      "url": "https://arxiv.org/abs/2505.06111",
+      "published_at": "2025-05-09",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2505.06111",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [
+        "Q2"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-berkeley-rll-videomimic",
+      "organization_id": "org:berkeley-robot-learning-lab",
+      "title": "Visual Imitation Enables Contextual Humanoid Control",
+      "url": "https://people.eecs.berkeley.edu/~pabbeel/publications.html",
+      "published_at": "2025-05-06",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2505.03729",
+      "direction_codes": [
+        "D5",
+        "D8",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q9"
+      ],
+      "summary_zh": "VideoMimic 从人类视频构建可交互场景与动作监督，训练情境化人形控制策略；获 CoRL 2025 最佳学生论文。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-berkeley-kair-videomimic",
+      "organization_id": "org:berkeley-kair",
+      "title": "Visual Imitation Enables Contextual Humanoid Control",
+      "url": "https://people.eecs.berkeley.edu/~kanazawa/index.html",
+      "published_at": "2025-05-06",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2505.03729",
+      "direction_codes": [
+        "D5",
+        "D8",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q9"
+      ],
+      "summary_zh": "KAIR 通过 4D 场景重建与人类视频模仿，把视觉理解转成可在上下文环境执行的人形控制；CoRL 2025 最佳学生论文。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:3ce64b63d072bacd",
+      "organization_id": "org:stanford-iprl",
+      "title": "Deformable Cargo Transport in Microgravity with Astrobee",
+      "url": "https://www.arxiv.org/abs/2505.01630",
+      "published_at": "2025-05-02",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2505.01630",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:9028dbe590f69b79",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures",
+      "url": "http://arxiv.org/abs/2505.00779",
+      "published_at": "2025-05-01",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2505.00779",
+      "direction_codes": [
+        "D12"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-tsinghua-tea-doglove",
+      "organization_id": "org:tsinghua-tea-lab",
+      "title": "DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove",
+      "url": "https://github.com/TEA-Lab/DOGlove/",
+      "published_at": "2025-04-28",
+      "date_precision": "day",
+      "update_type": "project",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2502.07730",
+      "direction_codes": [
+        "D4",
+        "D9",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q8"
+      ],
+      "summary_zh": "TEA Lab 官方仓库开源低成本力反馈手套、固件和机械设计，用自然遥操作采集接触丰富的灵巧操作示范。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-cmu-lecar-flying-hand",
+      "organization_id": "org:cmu-lecar",
+      "title": "Flying Hand: End-Effector-Centric Framework for Versatile Aerial Manipulation Teleoperation and Policy Learning",
+      "url": "https://lecar-lab.github.io/flying_hand/",
+      "published_at": "2025-04-14",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2504.10334",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5",
+        "Q6"
+      ],
+      "summary_zh": "以末端执行器为中心统一空中操作的遥操作、全身控制与策略学习，并在 RSS 2025 通过同行评审。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-mit-locomotion-sim-real-cotraining",
+      "organization_id": "org:mit-robot-locomotion",
+      "title": "Empirical Analysis of Sim-and-Real Cotraining of Diffusion Policies for Planar Pushing from Pixels",
+      "url": "https://locomotion.csail.mit.edu/",
+      "published_at": "2025-03-28",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2503.22634",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D10"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q9"
+      ],
+      "summary_zh": "以四十余个真机策略和数百个仿真策略系统分析 sim-and-real 共训练，揭示物理差距、视觉差距和数据规模的作用。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:a966230ccf253075",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Unified Multimodal Discrete Diffusion",
+      "url": "https://arxiv.org/abs/2503.20853",
+      "published_at": "2025-03-26",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2503.20853",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:3a3869cf5a308460",
+      "organization_id": "org:opendrivelab",
+      "title": "Centaur: Robust End-to-End Autonomous Driving with Test-Time Training",
+      "url": "https://arxiv.org/abs/2503.11650",
+      "published_at": "2025-03-14",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2503.11650",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:d0e6ccd2f3800dcc",
+      "organization_id": "org:opendrivelab",
+      "title": "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
+      "url": "https://arxiv.org/abs/2503.06669",
+      "published_at": "2025-03-09",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2503.06669",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-cmu-rpad-articubot",
+      "organization_id": "org:cmu-rpad",
+      "title": "ArticuBot: Learning Universal Articulated Object Manipulation Policy via Large Scale Simulation",
+      "url": "https://www.ri.cmu.edu/opening-new-doors-for-household-robotics/",
+      "published_at": "2025-03-04",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2503.03045",
+      "direction_codes": [
+        "D2",
+        "D4",
+        "D8",
+        "D10",
+        "D11"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q4",
+        "Q6"
+      ],
+      "summary_zh": "通过大规模仿真训练分层策略，使机器人在真实校园环境中打开未见过的门、抽屉与家电，并发表于 RSS 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:c17f0d6aa6e40610",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning",
+      "url": "https://arxiv.org/abs/2502.17432",
+      "published_at": "2025-02-24",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2502.17432",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-uw-rll-wheeled-lab",
+      "organization_id": "org:uw-robot-learning-lab",
+      "title": "Wheeled Lab: Modern Sim2Real for Low-cost, Open-source Wheeled Robotics",
+      "url": "https://robotlearning.cs.washington.edu/publications/",
+      "published_at": "2025-02-11",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2502.07380",
+      "direction_codes": [
+        "D6",
+        "D8",
+        "D10",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q8"
+      ],
+      "summary_zh": "构建低成本、开源的轮式机器人 Sim2Real 研究栈，以统一硬件和训练流程降低真实部署与复现实验门槛。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-cmu-intent-forethought",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment",
+      "url": "https://cmu-intentlab.github.io/publications.html",
+      "published_at": "2025-02-03",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2502.01828",
+      "direction_codes": [
+        "D2",
+        "D3",
+        "D12"
+      ],
+      "question_codes": [
+        "Q7",
+        "Q10"
+      ],
+      "summary_zh": "通过世界模型预测候选动作结果并让 VLM 验证其与任务意图的对齐，在真机上实现运行时策略 steering；发表于 RSS 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:aec18c68fcfea34a",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment",
+      "url": "https://arxiv.org/abs/2502.01828",
+      "published_at": "2025-02-03",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2502.01828",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:378fef75e96e1d3f",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Generalizing Safety Beyond Collision-Avoidance via Latent-Space Reachability Analysis",
+      "url": "https://arxiv.org/abs/2502.00935",
+      "published_at": "2025-02-02",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2502.00935",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:c469307760668375",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Your Learned Constraint is Secretly a Backward Reachable Tube",
+      "url": "https://arxiv.org/abs/2501.15618",
+      "published_at": "2025-01-26",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2501.15618",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:56e44740d6b96f8c",
+      "organization_id": "org:stanford-iprl",
+      "title": "Force-Aware Autonomous Robotic Surgery",
+      "url": "https://arxiv.org/abs/2501.11742",
+      "published_at": "2025-01-20",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2501.11742",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:ca7a448d048c7c17",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "SceneFactor: Factored Latent 3D Diffusion for Controllable 3D Scene Generation",
+      "url": "https://arxiv.org/pdf/2412.01801",
+      "published_at": "2024-12-02",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2412.01801",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-berkeley-interact-assist-without-rewards",
+      "organization_id": "org:berkeley-interact",
+      "title": "Learning to Assist Humans without Inferring Rewards",
+      "url": "https://interact.berkeley.edu/publications.html",
+      "published_at": "2024-11-04",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2411.02623",
+      "direction_codes": [
+        "D7",
+        "D8",
+        "D12"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "研究无需显式推断人类奖励也能学习辅助策略的路径，降低错误人类模型导致的对齐风险；发表于 NeurIPS 2024。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:cf36981fbbbf482e",
+      "organization_id": "org:berkeley-autolab",
+      "title": "Augmented dexterity: How robots can enhance human surgical skills",
+      "url": "https://autolab.berkeley.edu/assets/publications/media/Augmented-Dexterity-Science-Robotics-Oct-2024.pdf",
+      "published_at": "2024-10-30",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "doi:10.1126/scirobotics.adr5247",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-cmu-pathak-local-policies",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Local Policies Enable Zero-shot Long-horizon Manipulation",
+      "url": "https://www.cs.cmu.edu/~dpathak/",
+      "published_at": "2024-10-29",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2410.22332",
+      "direction_codes": [
+        "D2",
+        "D4",
+        "D10",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "利用局部策略与基础模型组合，将仿真训练迁移到未见过的多阶段真实操作任务，并发表于 ICRA 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:94ae6d6604160cde",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Local Policies Enable Zero-shot Long-horizon Manipulation",
+      "url": "https://arxiv.org/abs/2410.22332",
+      "published_at": "2024-10-29",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2410.22332",
+      "direction_codes": [
+        "D10"
+      ],
+      "question_codes": [
+        "Q4"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:a7aa78c5c3db64bd",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Conformalized Interactive Imitation Learning: Handling Expert Shift and Intermittent Feedback",
+      "url": "http://arxiv.org/abs/2410.08852",
+      "published_at": "2024-10-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2410.08852",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [
+        "Q6"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:af96e6417db29d60",
+      "organization_id": "org:opendrivelab",
+      "title": "Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation",
+      "url": "https://arxiv.org/abs/2410.08001",
+      "published_at": "2024-10-10",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2410.08001",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [
+        "Q2"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:423145c55e643290",
+      "organization_id": "org:opendrivelab",
+      "title": "Reasoning Multi-Agent Behavioral Topology for Interactive Autonomous Driving",
+      "url": "https://arxiv.org/abs/2409.18031",
+      "published_at": "2024-09-26",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.18031",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-berkeley-autolab-robot-see-do",
+      "organization_id": "org:berkeley-autolab",
+      "title": "Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction",
+      "url": "https://autolab.berkeley.edu/publications.shtml",
+      "published_at": "2024-09-26",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2409.18121",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q4",
+        "Q10"
+      ],
+      "summary_zh": "利用单目 4D 重建从观察到的机器人视频中恢复铰接物体操作轨迹，并将其转化为真机策略；CoRL 2024 Oral。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:9e14fc925663ce69",
+      "organization_id": "org:berkeley-autolab",
+      "title": "Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction",
+      "url": "https://arxiv.org/abs/2409.18121",
+      "published_at": "2024-09-26",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.18121",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:17fbfef8efac1173",
+      "organization_id": "org:cmu-physical-perception",
+      "title": "Gen2Act: Human Video Generation in Novel Scenarios enables Generalizable Robot Manipulation",
+      "url": "https://arxiv.org/pdf/2409.16283",
+      "published_at": "2024-09-24",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.16283",
+      "direction_codes": [
+        "D9"
+      ],
+      "question_codes": [
+        "Q2"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": true,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:c70d1d84fc8bb054",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Updating Robot Safety Representations Online from Natural Language Feedback",
+      "url": "https://arxiv.org/abs/2409.14580",
+      "published_at": "2024-09-22",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.14580",
+      "direction_codes": [
+        "D12"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:18b9215a851b3e6f",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Robots that Learn to Safely Influence via Prediction-Informed Reach-Avoid Dynamic Games",
+      "url": "https://arxiv.org/abs/2409.12153",
+      "published_at": "2024-09-18",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.12153",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:5017a89a396b29d7",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Robots that Suggest Safe Alternatives",
+      "url": "https://arxiv.org/abs/2409.09883",
+      "published_at": "2024-09-15",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.09883",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:41123443ad409182",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Robots that Suggest Safe Alternatives",
+      "url": "https://arxiv.org/abs/2409.09883v2",
+      "published_at": "2024-09-15",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.09883",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:a7e1f4573adf5091",
+      "organization_id": "org:opendrivelab",
+      "title": "Closed-Loop Visuomotor Control with Generative Expectation for Robotic Manipulation",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/fad8962279154544ed69bb63eb14d677-Abstract-Conference.html",
+      "published_at": "2024-09-13",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.09016",
+      "direction_codes": [
+        "D4"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:a1921a52f86149a6",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Neural MP: A Generalist Neural Motion Planner",
+      "url": "https://arxiv.org/abs/2409.05864",
+      "published_at": "2024-09-09",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2409.05864",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-tsinghua-liyi-core4d-v2",
+      "organization_id": "org:tsinghua-li-yi-3d-vision",
+      "title": "CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object REarrangement",
+      "url": "https://iiis.tsinghua.edu.cn/rydw1/qzjs/yili.htm",
+      "published_at": "2024-08-17",
+      "date_precision": "day",
+      "update_type": "dataset_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D7",
+        "D9",
+        "D11"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q9"
+      ],
+      "summary_zh": "CORE4D V2 发布真实人—物—人协作重排的四维运动数据，为协作动作预测、合成及机器人交互提供规模化基准。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "upd-academic-cmu-iam-plan-to-learn",
+      "organization_id": "org:cmu-iam",
+      "title": "Plan to Learn: Active Robot Learning by Planning",
+      "url": "https://www.ri.cmu.edu/robotics-groups/intelligent-autonomous-manipulation-lab/",
+      "published_at": "2024-08-01",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "把主动学习、持续学习与规划合并为 Plan-to-Learn 框架，让机器人决定应学习哪些技能及何时请求人类帮助。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:ae42b3ab92d966a1",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "SAPG: Split and Aggregate Policy Gradients",
+      "url": "https://sapg-rl.github.io",
+      "published_at": "2024-07-29",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2407.20230",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:41d014f118885241",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "SAPG: Split and Aggregate Policy Gradients",
+      "url": "https://www.arxiv.org/abs/2407.20230",
+      "published_at": "2024-07-29",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2407.20230",
+      "direction_codes": [
+        "D8"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-mit-improbable-residual-rl",
+      "organization_id": "org:mit-improbable-ai",
+      "title": "From Imitation to Refinement -- Residual RL for Precise Assembly",
+      "url": "https://improbableai.com/papers.html",
+      "published_at": "2024-07-23",
+      "date_precision": "day",
+      "update_type": "peer_reviewed_paper",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2407.16677",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [
+        "Q6",
+        "Q7"
+      ],
+      "summary_zh": "在冻结的行为克隆扩散策略上训练闭环残差强化学习策略，提高精密对齐和装配可靠性；发表于 ICRA 2025。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:201c65a8bf62dda6",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Video Diffusion Alignment via Reward Gradients",
+      "url": "https://arxiv.org/abs/2407.08737",
+      "published_at": "2024-07-11",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2407.08737",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "upd-academic-stanford-iris-vlm-pc",
+      "organization_id": "org:stanford-iris",
+      "title": "Commonsense Reasoning for Legged Robot Adaptation with Vision-Language Models",
+      "url": "https://github.com/stanford-iris-lab/vlm-pc",
+      "published_at": "2024-07-02",
+      "date_precision": "day",
+      "update_type": "model_release",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": "arxiv:2407.02666",
+      "direction_codes": [
+        "D2",
+        "D5",
+        "D12"
+      ],
+      "question_codes": [
+        "Q5",
+        "Q7"
+      ],
+      "summary_zh": "IRIS 官方代码库发布 VLM-PC，以交互历史和前瞻技能规划让四足机器人在未见障碍中在线选择与重规划行为。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "update:org-unitree-robotics:1",
+      "organization_id": "org:unitree-robotics",
+      "title": "G1 and H1 platform milestones and real-world humanoid dataset release",
+      "url": "https://www.unitree.com/about/",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Company-maintained milestone page; product demonstrations, competitions, and dataset announcements remain separate from peer-reviewed evidence.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:5f3fe56ad7c2d175",
+      "organization_id": "org:stanford-iprl",
+      "title": "Tactile-Informed Action Primitives Mitigate Jamming in Dense Clutter",
+      "url": "https://arxiv.org/abs/2402.09564",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2402.09564",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "update:org-sanctuary-ai:1",
+      "organization_id": "org:sanctuary-ai",
+      "title": "Phoenix generation 8 designed for robot data capture and manufacturing",
+      "url": "https://sanctuary.ai/news/sanctuary-ai-releases-new-generation-of-ai-robots-for-high-quality-data-capture/",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Product and data-capture announcement; reported capabilities are not an official peer-reviewed evaluation.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "update:org-dyna-robotics:1",
+      "organization_id": "org:dyna-robotics",
+      "title": "Production workflows and fleet-learning claims",
+      "url": "https://www.dyna.co/",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "deployment",
+      "evidence_grade": "G1",
+      "source_type": "official_group_page",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "Company-authored throughput, autonomy, recovery, and deployment claims; do not treat as independently evaluated results.",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": true
+    },
+    {
+      "update_id": "group-update:c3e747cd5fc2ddc0",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Extreme Parkour with Legged Robots",
+      "url": "https://arxiv.org/abs/2309.14341",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2309.14341",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:6410a197e442acb9",
+      "organization_id": "org:berkeley-autolab",
+      "title": "Conformal Policy Learning for Sensorimotor Control under Distribution Shifts",
+      "url": "https://arxiv.org/pdf/2311.01457.pdf",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2311.01457",
+      "direction_codes": [
+        "D5"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    }
+  ]
+}

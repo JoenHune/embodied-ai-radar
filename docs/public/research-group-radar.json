@@ -1,0 +1,3272 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-08-26",
+  "tracking_group_count": 60,
+  "organization_node_count": 83,
+  "latest_completed_week": {
+    "id": "2026-W34",
+    "from": "2026-08-17",
+    "until": "2026-08-23"
+  },
+  "groups": [
+    {
+      "organization_id": "org:cmu-iam",
+      "display_name": "CMU Intelligent Autonomous Manipulation Lab",
+      "short_name": "CMU Intelligent Autonomous Manipulation Lab",
+      "slug": "cmu-iam",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "CMU Robotics Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2024-08-01",
+      "summary_zh": "研究开放世界中的通用操作机器人，强调任务建模、样本高效技能习得、适应与鲁棒执行。",
+      "direction_codes": [
+        "D2",
+        "D4",
+        "D8",
+        "D11",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q6",
+        "Q7"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.cmu.edu/robotics-institute/iamlab/",
+        "publications": "https://www.ri.cmu.edu/research/labs-groups/"
+      }
+    },
+    {
+      "organization_id": "org:cmu-intent-robotics",
+      "display_name": "CMU Interactive and Trustworthy Robotics Lab",
+      "short_name": "CMU Interactive and Trustworthy Robotics Lab",
+      "slug": "cmu-intent-robotics",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "CMU Robotics Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-05-12",
+      "summary_zh": "研究开放世界中可靠交互的具身智能，覆盖不确定性、安全策略、价值对齐与世界建模。",
+      "direction_codes": [
+        "D2",
+        "D7",
+        "D12",
+        "D13",
+        "D8",
+        "D3"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q10"
+      ],
+      "update_count": 14,
+      "current_12m_count": 3,
+      "previous_12m_count": 11,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 4,
+      "linked_work_count": 12,
+      "evidence_counts": {
+        "G1": 14,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.ri.cmu.edu/ri-faculty/andrea-bajcsy/",
+        "publications": "https://cmu-intentlab.github.io/"
+      }
+    },
+    {
+      "organization_id": "org:cmu-lecar",
+      "display_name": "CMU Learning and Control for Agile Robotics Lab",
+      "short_name": "CMU Learning and Control for Agile Robotics Lab",
+      "slug": "cmu-lecar",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "CMU Robotics Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-30",
+      "summary_zh": "研究学习与控制交叉，重点关注具身智能的敏捷性、可靠性、自适应性与真实系统部署。",
+      "direction_codes": [
+        "D5",
+        "D8",
+        "D10",
+        "D12",
+        "D2",
+        "D13",
+        "D4",
+        "D9"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q0"
+      ],
+      "update_count": 4,
+      "current_12m_count": 3,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 2,
+      "linked_work_count": 4,
+      "evidence_counts": {
+        "G1": 4,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.ri.cmu.edu/robotics-groups/lecar-lab/",
+        "publications": "https://lecar-lab.github.io/"
+      }
+    },
+    {
+      "organization_id": "org:cmu-pathak-research-group",
+      "display_name": "CMU Pathak Research Group",
+      "short_name": "CMU Pathak Research Group",
+      "slug": "cmu-pathak-research-group",
+      "tracking_category": "academic",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "CMU Robotics Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-04-13",
+      "summary_zh": "研究计算机视觉、机器学习与机器人交叉，目标是让智能体从原始感知中持续获得知识并在真实多样环境中泛化。",
+      "direction_codes": [
+        "D1",
+        "D6",
+        "D8",
+        "D9",
+        "D13",
+        "D3",
+        "D5",
+        "D2",
+        "D4",
+        "D10",
+        "D12"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q4"
+      ],
+      "update_count": 17,
+      "current_12m_count": 6,
+      "previous_12m_count": 7,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 4,
+      "linked_work_count": 15,
+      "evidence_counts": {
+        "G1": 17,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.ri.cmu.edu/robotics-groups/pathak-research-group/",
+        "publications": "https://www.cs.cmu.edu/~dpathak/"
+      }
+    },
+    {
+      "organization_id": "org:cmu-physical-perception",
+      "display_name": "CMU Physical Perception Lab",
+      "short_name": "CMU Physical Perception Lab",
+      "slug": "cmu-physical-perception",
+      "tracking_category": "academic",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "CMU Robotics Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-08",
+      "summary_zh": "从视觉输入学习物理与空间表征，并把物理世界的结构与规律用于视觉理解和机器人操作。",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D11",
+        "D2",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q10",
+        "Q2",
+        "Q6"
+      ],
+      "update_count": 7,
+      "current_12m_count": 3,
+      "previous_12m_count": 4,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 6,
+      "evidence_counts": {
+        "G1": 7,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.ri.cmu.edu/robotics-groups/physical-perception-lab/",
+        "publications": "https://shubhtuls.github.io/"
+      }
+    },
+    {
+      "organization_id": "org:cmu-rpad",
+      "display_name": "CMU Robots Perceiving and Doing Lab",
+      "short_name": "CMU Robots Perceiving and Doing Lab",
+      "slug": "cmu-rpad",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "CMU Robotics Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-03-04",
+      "summary_zh": "研究机器人感知与控制，使机器人能够在日常杂乱环境中理解变化并完成操作任务。",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D11",
+        "D2",
+        "D10"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q4",
+        "Q7",
+        "Q6"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.ri.cmu.edu/robotics-groups/robots-perceiving-and-doing/",
+        "publications": "https://davheld.github.io/"
+      }
+    },
+    {
+      "organization_id": "org:epfl-lasa",
+      "display_name": "EPFL Learning Algorithms and Systems Laboratory",
+      "short_name": "EPFL Learning Algorithms and Systems Laboratory",
+      "slug": "epfl-lasa",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Europe",
+      "country": "Switzerland",
+      "parent_names": [
+        "Ecole Polytechnique Federale De Lausanne"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-09-23",
+      "summary_zh": "研究人类示教、灵巧技能、适应性与反应式控制、人机协作及安全，使机器人获得接近人类的操作能力。",
+      "direction_codes": [
+        "D4",
+        "D7",
+        "D8",
+        "D12",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q6",
+        "Q7",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.epfl.ch/labs/lasa/",
+        "publications": "https://www.epfl.ch/research/domains/robotics/robotics-labs/"
+      }
+    },
+    {
+      "organization_id": "org:eth-rsl",
+      "display_name": "ETH Zurich Robotic Systems Lab",
+      "short_name": "ETH Zurich Robotic Systems Lab",
+      "slug": "eth-rsl",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Europe",
+      "country": "Switzerland",
+      "parent_names": [
+        "ETH Zurich"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-07-22",
+      "summary_zh": "研究腿足与移动机器人、感知、控制和自主系统，以复杂地形真机部署和鲁棒野外能力见长。",
+      "direction_codes": [
+        "D2",
+        "D5",
+        "D6",
+        "D8",
+        "D10",
+        "D11",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5",
+        "Q7",
+        "Q8",
+        "Q0",
+        "Q6",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://rsl.ethz.ch/",
+        "people": "https://rsl.ethz.ch/the-lab/people.html"
+      }
+    },
+    {
+      "organization_id": "org:mit-distributed-robotics",
+      "display_name": "MIT Distributed Robotics Laboratory",
+      "short_name": "MIT Distributed Robotics Laboratory",
+      "slug": "mit-distributed-robotics",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "MIT CSAIL"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-07-09",
+      "summary_zh": "研究网络化、分布式和协作机器人，同时覆盖机器人计算设计、感知规划控制、可审计学习及人与机器协作。",
+      "direction_codes": [
+        "D4",
+        "D6",
+        "D7",
+        "D10",
+        "D12",
+        "D14"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q7",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.csail.mit.edu/research/distributed-robotics-laboratory"
+      }
+    },
+    {
+      "organization_id": "org:mit-improbable-ai",
+      "display_name": "MIT Improbable AI Lab",
+      "short_name": "MIT Improbable AI Lab",
+      "slug": "mit-improbable-ai",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "MIT CSAIL"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2024-07-23",
+      "summary_zh": "研究强化学习、视觉与机器人，强调从物理交互中学习运动、操作和可泛化表征。",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D5",
+        "D8",
+        "D10",
+        "D11",
+        "D13"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://improbableai.com/",
+        "publications": "https://professional.mit.edu/programs/faculty-profiles/pulkit-agrawal"
+      }
+    },
+    {
+      "organization_id": "org:mit-robot-locomotion",
+      "display_name": "MIT Robot Locomotion Group",
+      "short_name": "MIT Robot Locomotion Group",
+      "slug": "mit-robot-locomotion",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "MIT CSAIL"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-03-28",
+      "summary_zh": "以动力学、控制理论和机器学习研究敏捷、高效、鲁棒机器人，当前重点转向操作、感知—控制融合与物理推理。",
+      "direction_codes": [
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D10",
+        "D12",
+        "D8"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5",
+        "Q8",
+        "Q10",
+        "Q6",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://locomotion.csail.mit.edu/",
+        "publications": "https://drake.mit.edu/"
+      }
+    },
+    {
+      "organization_id": "org:stanford-iris",
+      "display_name": "Stanford Intelligence through Robotic Interaction at Scale Lab",
+      "short_name": "Stanford Intelligence through Robotic Interaction at Scale Lab",
+      "slug": "stanford-iris",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Stanford University"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2024-07-02",
+      "summary_zh": "研究机器人和智能体如何通过大规模学习与交互形成广泛智能行为，覆盖元学习、策略学习与持续适应。",
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D8",
+        "D9",
+        "D13",
+        "D2",
+        "D5",
+        "D12"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10",
+        "Q5"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://irislab.stanford.edu/",
+        "people": "https://irislab.stanford.edu/people.html"
+      }
+    },
+    {
+      "organization_id": "org:stanford-iliad",
+      "display_name": "Stanford Intelligent and Interactive Autonomous Systems Group",
+      "short_name": "Stanford Intelligent and Interactive Autonomous Systems Group",
+      "slug": "stanford-iliad",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Stanford University"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-11-24",
+      "summary_zh": "研究安全可靠的人机与人—AI交互，关注交互式机器人学习、控制、协调和人类对齐。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D7",
+        "D12",
+        "D13",
+        "D9",
+        "D6"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://iliad.stanford.edu/",
+        "publications": "https://iliad.stanford.edu/research/"
+      }
+    },
+    {
+      "organization_id": "org:stanford-iprl",
+      "display_name": "Stanford Interactive Perception and Robot Learning Lab",
+      "short_name": "Stanford Interactive Perception and Robot Learning Lab",
+      "slug": "stanford-iprl",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Stanford University"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-02",
+      "summary_zh": "研究稳健感觉运动协调、交互感知、抓取与操作，连接机器人学习、计算机视觉和多模态接触。",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q6",
+        "Q7"
+      ],
+      "update_count": 6,
+      "current_12m_count": 3,
+      "previous_12m_count": 2,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 5,
+      "evidence_counts": {
+        "G1": 6,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://iprl.stanford.edu/",
+        "publications": "https://iprl.stanford.edu/publications.html"
+      }
+    },
+    {
+      "organization_id": "org:stanford-movement-lab",
+      "display_name": "Stanford Movement Lab",
+      "short_name": "Stanford Movement Lab",
+      "slug": "stanford-movement-lab",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Stanford University"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-08-05",
+      "summary_zh": "连接计算机动画、机器人、强化学习、物理仿真、最优控制与生物力学，研究动物和机器人协调运动。",
+      "direction_codes": [
+        "D3",
+        "D5",
+        "D8",
+        "D10",
+        "D2",
+        "D6"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q5",
+        "Q8",
+        "Q10",
+        "Q6"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://cs.stanford.edu/people/karenliu/Home.html",
+        "publications": "https://news.stanford.edu/stories/2026/03/research-matters-karen-liu"
+      }
+    },
+    {
+      "organization_id": "org:stanford-real",
+      "display_name": "Stanford Robotics and Embodied Artificial Intelligence Lab",
+      "short_name": "Stanford Robotics and Embodied Artificial Intelligence Lab",
+      "slug": "stanford-real",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Stanford University"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-05-28",
+      "summary_zh": "通过真实交互、人类示范、仿真和互联网数据研究通用操作、灵巧与全身移动操作。",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q7",
+        "Q8",
+        "Q10",
+        "Q1"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://real.stanford.edu/",
+        "publications": "https://real.stanford.edu/research.html"
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-discover-lab",
+      "display_name": "Tsinghua AIR DISCOVER Lab",
+      "short_name": "Tsinghua AIR DISCOVER Lab",
+      "slug": "tsinghua-discover-lab",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Tsinghua University Institute For Ai Industry Research"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-07-29",
+      "summary_zh": "研究协同视觉与机器人、Sim-to-Real、柔性制造和人在环多智能体系统，并强调产业场景验证。",
+      "direction_codes": [
+        "D4",
+        "D6",
+        "D7",
+        "D10",
+        "D14",
+        "D9",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.discover-lab.com/robotics/",
+        "publications": "https://air.tsinghua.edu.cn/info/1046/1199.htm"
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-air-dream",
+      "display_name": "Tsinghua AIR-DREAM Lab",
+      "short_name": "Tsinghua AIR-DREAM Lab",
+      "slug": "tsinghua-air-dream",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Tsinghua University Institute For Ai Industry Research"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-10-11",
+      "summary_zh": "研究稳健、可泛化、可部署的数据驱动决策，覆盖强化学习、机器人控制、VLA与真实AIoT系统优化。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D8",
+        "D10",
+        "D12",
+        "D13",
+        "D9"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://air-dream.netlify.app/",
+        "publications": "https://air.tsinghua.edu.cn/en/info/1046/1198.htm"
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-tea-lab",
+      "display_name": "Tsinghua Embodied AI Lab",
+      "short_name": "Tsinghua Embodied AI Lab",
+      "slug": "tsinghua-tea-lab",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Tsinghua University Institute For Interdisciplinary Information Sciences"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-04-28",
+      "summary_zh": "研究深度强化学习、机器人、计算机视觉和触觉，聚焦世界动力学、人类先验、样本效率及真实机器人泛化。",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://iiis.tsinghua.edu.cn/en/Research/Research_Groups/Tsinghua_Embodied_AI_Lab.htm",
+        "publications": "https://tea-lab.github.io/"
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-interactive-embodied-intelligence",
+      "display_name": "Tsinghua Interactive Embodied Intelligence Lab",
+      "short_name": "Tsinghua Interactive Embodied Intelligence Lab",
+      "slug": "tsinghua-interactive-embodied-intelligence",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Tsinghua University College Of Ai"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-06-20",
+      "summary_zh": "以交互世界模型、灵巧控制与感知、具身基础模型为三条主线，连接高层意图与低层物理动作。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D11",
+        "D15",
+        "D8",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q5",
+        "Q8",
+        "Q10",
+        "Q4",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://collegeai.tsinghua.edu.cn/en/Research/Research_Groups/E__Interactive_Embodied_Intelligence__Lab.htm",
+        "publications": "https://maureenzou.github.io/lab.html"
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-li-yi-3d-vision",
+      "display_name": "Tsinghua Laboratory of 3D Vision Computing and Machine Intelligence",
+      "short_name": "Tsinghua Laboratory of 3D Vision Computing and Machine Intelligence",
+      "slug": "tsinghua-li-yi-3d-vision",
+      "tracking_category": "academic",
+      "entity_type": "research_group",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Tsinghua University Institute For Interdisciplinary Information Sciences"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2024-08-17",
+      "summary_zh": "研究三维视觉计算与机器智能，重点覆盖动态三维理解、人形机器人学习和人类视频表征。",
+      "direction_codes": [
+        "D3",
+        "D5",
+        "D9",
+        "D10",
+        "D11",
+        "D7"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q5",
+        "Q10",
+        "Q0",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://iiis.tsinghua.edu.cn/en/Research/Research_Groups.htm",
+        "publications": "https://iiis.tsinghua.edu.cn/en/info/1215/2729_1.htm"
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-vision-robotics",
+      "display_name": "Tsinghua Vision and Robotics Lab",
+      "short_name": "Tsinghua Vision and Robotics Lab",
+      "slug": "tsinghua-vision-robotics",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Tsinghua University Institute For Interdisciplinary Information Sciences"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-05-17",
+      "summary_zh": "面向通用具身智能，研究把视觉、触觉和力觉等多模态输入映射为操作、人形控制和VLA策略。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D15",
+        "D2"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://iiis.tsinghua.edu.cn/kxyj/ktzjs/sjyjqrsys_VAR_.htm",
+        "people": "https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-autolab",
+      "display_name": "UC Berkeley AUTOLAB",
+      "short_name": "UC Berkeley AUTOLAB",
+      "slug": "berkeley-autolab",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University of California, Berkeley"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-30",
+      "summary_zh": "研究机器人与自动化中的几何算法、学习、抓取、云机器人和医疗机器人，强调可复现实验与系统。",
+      "direction_codes": [
+        "D4",
+        "D8",
+        "D9",
+        "D10",
+        "D12",
+        "D15",
+        "D2",
+        "D13",
+        "D1",
+        "D3",
+        "D11",
+        "D5"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q4",
+        "Q7",
+        "Q8",
+        "Q6",
+        "Q2",
+        "Q10"
+      ],
+      "update_count": 8,
+      "current_12m_count": 4,
+      "previous_12m_count": 3,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 7,
+      "evidence_counts": {
+        "G1": 8,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://autolab.berkeley.edu/",
+        "publications": "https://autolab.berkeley.edu/publications.shtml"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-interact",
+      "display_name": "UC Berkeley Interactive Agents and Collaborative Technologies Lab",
+      "short_name": "UC Berkeley Interactive Agents and Collaborative Technologies Lab",
+      "slug": "berkeley-interact",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University of California, Berkeley"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2024-11-04",
+      "summary_zh": "研究人机与人—AI交互、从人类反馈学习目标、协作决策和对齐，使智能体围绕人的需求行动。",
+      "direction_codes": [
+        "D2",
+        "D7",
+        "D12",
+        "D8"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q6",
+        "Q7"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://interact.berkeley.edu/",
+        "publications": "https://interact.berkeley.edu/research.html"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-kair",
+      "display_name": "UC Berkeley Kanazawa AI Research Lab",
+      "short_name": "UC Berkeley Kanazawa AI Research Lab",
+      "slug": "berkeley-kair",
+      "tracking_category": "academic",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University of California, Berkeley"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-05-06",
+      "summary_zh": "研究从日常图像与视频捕获、感知和理解动态三维世界，并持续学习世界模型。",
+      "direction_codes": [
+        "D3",
+        "D5",
+        "D9",
+        "D11",
+        "D8",
+        "D10"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q5",
+        "Q10",
+        "Q4",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://people.eecs.berkeley.edu/~kanazawa/index.html"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-robot-learning-lab",
+      "display_name": "UC Berkeley Robot Learning Lab",
+      "short_name": "UC Berkeley Robot Learning Lab",
+      "slug": "berkeley-robot-learning-lab",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University of California, Berkeley"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-02-06",
+      "summary_zh": "研究机器人与机器学习，长期覆盖强化、模仿、无监督、迁移与元学习，并重视真实机器人验证。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D3"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 2,
+      "current_12m_count": 1,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 2,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 1,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://rll.berkeley.edu/",
+        "publications": "https://people.eecs.berkeley.edu/~pabbeel/publications.html"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-rail",
+      "display_name": "UC Berkeley Robotic AI and Learning Lab",
+      "short_name": "UC Berkeley Robotic AI and Learning Lab",
+      "slug": "berkeley-rail",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University of California, Berkeley"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-06-03",
+      "summary_zh": "研究可自主学习的灵活与适应性行为，覆盖强化学习、机器人学习、视觉和真实世界策略训练。",
+      "direction_codes": [
+        "D3",
+        "D8",
+        "D9",
+        "D10",
+        "D13",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://rail.eecs.berkeley.edu/",
+        "publications": "https://rail.eecs.berkeley.edu/publications.html"
+      }
+    },
+    {
+      "organization_id": "org:uw-personal-robotics",
+      "display_name": "University of Washington Personal Robotics Lab",
+      "short_name": "University of Washington Personal Robotics Lab",
+      "slug": "uw-personal-robotics",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University Of Washington Paul G Allen School"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-06-16",
+      "summary_zh": "研究杂乱和不确定环境中与人共处的复杂物理操作，覆盖感知、规划、学习、辅助机器人和交互。",
+      "direction_codes": [
+        "D2",
+        "D4",
+        "D6",
+        "D7",
+        "D12",
+        "D15",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q7",
+        "Q8",
+        "Q6"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://personalrobotics.cs.washington.edu/",
+        "publications": "https://robotics.cs.washington.edu/"
+      }
+    },
+    {
+      "organization_id": "org:uw-robot-learning-lab",
+      "display_name": "University of Washington Robot Learning Laboratory",
+      "short_name": "University of Washington Robot Learning Laboratory",
+      "slug": "uw-robot-learning-lab",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University Of Washington Paul G Allen School"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-02-11",
+      "summary_zh": "研究机器学习、AI与机器人基础方法，目标是在复杂环境中紧密结合感知、规划、行动与经验改进。",
+      "direction_codes": [
+        "D3",
+        "D6",
+        "D8",
+        "D12",
+        "D13",
+        "D10"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q10",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://robotlearning.cs.washington.edu/",
+        "publications": "https://robotics.cs.washington.edu/"
+      }
+    },
+    {
+      "organization_id": "org:uw-weird",
+      "display_name": "University of Washington WEIRD Lab",
+      "short_name": "University of Washington WEIRD Lab",
+      "slug": "uw-weird",
+      "tracking_category": "academic",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University Of Washington Paul G Allen School"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-03-02",
+      "summary_zh": "研究家庭真实环境中的机器人操作，并延伸到视觉、语言、人机交互、世界模型、鲁棒性和可靠性。",
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D6",
+        "D8",
+        "D10",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://weirdlab.cs.washington.edu/",
+        "publications": "https://robotics.cs.washington.edu/"
+      }
+    },
+    {
+      "organization_id": "org:1x-ai",
+      "display_name": "1X AI",
+      "short_name": "1X AI",
+      "slug": "1x-ai",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "1X Technologies"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-06-16",
+      "summary_zh": "以家庭人形机器人 NEO、通用策略与机器人世界模型为核心的 AI 机器人公司；其 World Model Lab 公开研究以真实视频学习仿真和策略评测，目标是缩短实体测试周期。",
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D8",
+        "D9",
+        "D10",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.1x.tech/about",
+        "publications": "https://www.1x.tech/careers"
+      }
+    },
+    {
+      "organization_id": "org:agibot-research",
+      "display_name": "AgiBot Research",
+      "short_name": "AgiBot Research",
+      "slug": "agibot-research",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Agibot Innovation Shanghai Technology Co Ltd"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-07-28",
+      "summary_zh": "智元面向通用具身智能的研究组织，公开使命强调从多样真实经验学习、跨机器人任务环境适配，以及感知—推理—动作闭环；产品、数据平台和规模化部署为研究提供真实场景。官方研究页未公开负责人。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.agibot.com/research/",
+        "publications": "https://www.agibot.com/",
+        "people": "https://www.agibot.com/about_Zhiyuan"
+      }
+    },
+    {
+      "organization_id": "org:amazon-far",
+      "display_name": "Amazon Frontier AI & Robotics",
+      "short_name": "Amazon Frontier AI & Robotics",
+      "slug": "amazon-far",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Amazon"
+      ],
+      "status": "active",
+      "disclosure_level": "low",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-01",
+      "summary_zh": "Amazon 新设的前沿机器人研究组；公开证据主要来自官方招聘，显示其正在建设从机器人软硬件共设计、real2sim2real、灵巧操作和多模态感知到大规模 VLA 的全栈体系。招聘方向属于战略观察，不等同于已发表成果。",
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D15"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.amazon.jobs/en/jobs/10422560/member-of-technical-staff-science-frontier-ai-robotics-far",
+        "publications": "https://www.amazon.jobs/en/jobs/10418413/member-of-technical-staff-robot-manipulation-learning-frontier-ai-robotics"
+      }
+    },
+    {
+      "organization_id": "org:amazon-robotics",
+      "display_name": "Amazon Robotics",
+      "short_name": "Amazon Robotics",
+      "slug": "amazon-robotics",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Amazon"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-08-11",
+      "summary_zh": "以全球超大规模履约机器人集群为真实部署场，研究多机器人协调、移动机器人、触觉操作、人机协作和生产系统中的持续数据闭环；必须与 Amazon FAR 分开跟踪。",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D6",
+        "D7",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.amazon.science/research-areas/robotics",
+        "people": "https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center",
+        "blog": "https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination"
+      }
+    },
+    {
+      "organization_id": "org:boston-dynamics",
+      "display_name": "Boston Dynamics",
+      "short_name": "Boston Dynamics",
+      "slug": "boston-dynamics",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Hyundai Motor Group"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-01-05",
+      "summary_zh": "从高动态控制走向生产级智能机器人的研发和产品组织，Atlas 路线将强化学习、仿真、人类示范、感知、灵巧硬件与大行为模型汇合，并与 RAI Institute 和 Google DeepMind 建立合作；与 RAI 保持独立节点。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D6",
+        "D8",
+        "D9",
+        "D10",
+        "D12",
+        "D15"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://bostondynamics.com/about/",
+        "publications": "https://bostondynamics.com/atlas/",
+        "blog": "https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/"
+      }
+    },
+    {
+      "organization_id": "org:bytedance-seed-robotics",
+      "display_name": "ByteDance Seed Robotics",
+      "short_name": "ByteDance Seed Robotics",
+      "slug": "bytedance-seed-robotics",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "Asia-Pacific",
+      "country": "China",
+      "parent_names": [
+        "Bytedance Seed"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-12-02",
+      "summary_zh": "ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、感知、灵巧操作、交互和系统孵化，代表性资产包括 GR-3、GR-RL 与 ByteDexter。官方方向页未设置负责人字段。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://seed.bytedance.com/en/direction/robotics",
+        "publications": "https://seed.bytedance.com/en/research",
+        "blog": "https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time"
+      }
+    },
+    {
+      "organization_id": "org:figure-ai",
+      "display_name": "Figure AI",
+      "short_name": "Figure AI",
+      "slug": "figure-ai",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-01-27",
+      "summary_zh": "围绕 Figure 人形本体与 Helix 分层 VLA 联合开发的闭源研究和产品团队，重点追踪全身像素到动作控制、触觉灵巧操作、人类视频迁移、长时家庭任务与工业部署。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D6",
+        "D8",
+        "D9",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.figure.ai/",
+        "publications": "https://www.figure.ai/news"
+      }
+    },
+    {
+      "organization_id": "org:google-deepmind-robotics",
+      "display_name": "Google DeepMind Robotics",
+      "short_name": "Google DeepMind Robotics",
+      "slug": "google-deepmind-robotics",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "Global",
+      "country": "United Kingdom / United States",
+      "parent_names": [
+        "Google DeepMind"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-07-30",
+      "summary_zh": "Google DeepMind 的机器人研究团队以 Gemini Robotics VLA 与 Embodied Reasoning 模型为核心，覆盖跨本体迁移、大小脑协同、全身控制、灵巧操作、多机器人协作和安全评测。官方页面未公开单一团队负责人，避免以博客署名替代组织领导关系。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D11",
+        "D12",
+        "D14"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://deepmind.google/models/gemini-robotics/",
+        "blog": "https://deepmind.google/blog/shaping-the-future-of-advanced-robotics/",
+        "publications": "https://deepmind.google/models/model-cards/"
+      }
+    },
+    {
+      "organization_id": "org:intrinsic",
+      "display_name": "Intrinsic",
+      "short_name": "Intrinsic",
+      "slug": "intrinsic",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "Global",
+      "country": "United States / Germany / Singapore",
+      "parent_names": [
+        "Google"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-22",
+      "summary_zh": "Google 体系内面向工业机器人的 Physical AI 平台与研究团队，围绕 Flowstate、Intrinsic Vision Model、开放 ROS/Gazebo 生态、多机器人编排和可重构智能工作单元推进从开发到生产部署。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D6",
+        "D10",
+        "D11",
+        "D12",
+        "D14"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q6",
+        "Q8",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.intrinsic.ai/mission",
+        "blog": "https://www.intrinsic.ai/blog",
+        "publications": "https://www.intrinsic.ai/careers"
+      }
+    },
+    {
+      "organization_id": "org:meta-fair-embodied-ai",
+      "display_name": "Meta FAIR Embodied AI",
+      "short_name": "Meta FAIR Embodied AI",
+      "slug": "meta-fair-embodied-ai",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Meta Fair"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-06-11",
+      "summary_zh": "Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模型、触觉表征与传感硬件、灵巧操作、人机协作、Habitat 导航与开放机器人研究资产。该节点不把所有 Meta affiliation 自动归入同一持久实验室。",
+      "direction_codes": [
+        "D3",
+        "D4",
+        "D6",
+        "D7",
+        "D10",
+        "D11",
+        "D15",
+        "D9"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q4",
+        "Q8",
+        "Q10",
+        "Q9",
+        "Q6"
+      ],
+      "update_count": 2,
+      "current_12m_count": 0,
+      "previous_12m_count": 2,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 2,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics",
+        "blog": "https://ai.meta.com/blog/fair-robotics-open-source/",
+        "publications": "https://ai.meta.com/research/vjepa/"
+      }
+    },
+    {
+      "organization_id": "org:nvidia-cosmos-lab",
+      "display_name": "NVIDIA Cosmos Lab",
+      "short_name": "NVIDIA Cosmos Lab",
+      "slug": "nvidia-cosmos-lab",
+      "tracking_category": "corporate",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "NVIDIA"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-01",
+      "summary_zh": "面向 Physical AI 的世界基础模型实验室，研究生成式世界仿真、物理推理、具身策略和评测，并持续开放模型、代码与 benchmark。",
+      "direction_codes": [
+        "D1",
+        "D3",
+        "D10",
+        "D11",
+        "D12"
+      ],
+      "question_codes": [
+        "Q4",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://research.nvidia.com/labs/cosmos-lab/",
+        "publications": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/"
+      }
+    },
+    {
+      "organization_id": "org:nvidia-gear",
+      "display_name": "NVIDIA GEAR",
+      "short_name": "NVIDIA GEAR",
+      "slug": "nvidia-gear",
+      "tracking_category": "corporate",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "NVIDIA"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-30",
+      "summary_zh": "NVIDIA 面向通用具身智能的核心研究组，覆盖多模态基础模型、通用机器人、foundation agents、仿真与合成数据，并以 GR00T、EgoScale 等项目连接人类视频、世界模型与真实机器人策略。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 5,
+      "current_12m_count": 5,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 5,
+      "evidence_counts": {
+        "G1": 4,
+        "G2": 1,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://research.nvidia.com/labs/gear/",
+        "publications": "https://research.nvidia.com/labs/gear/publications/",
+        "projects": "https://research.nvidia.com/labs/gear/projects/"
+      }
+    },
+    {
+      "organization_id": "org:nvidia-seattle-robotics-lab",
+      "display_name": "NVIDIA Seattle Robotics Lab",
+      "short_name": "NVIDIA Seattle Robotics Lab",
+      "slug": "nvidia-seattle-robotics-lab",
+      "tracking_category": "corporate",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "NVIDIA"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-05-28",
+      "summary_zh": "覆盖感知、任务与运动规划、控制、强化学习、模仿学习、仿真和 VLA 的全栈机器人实验室，重点连接 GPU 加速规划、多模态接触感知与真实机器人部署。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D8",
+        "D10",
+        "D11",
+        "D15"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://research.nvidia.com/labs/srl/",
+        "publications": "https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/"
+      }
+    },
+    {
+      "organization_id": "org:physical-intelligence",
+      "display_name": "Physical Intelligence",
+      "short_name": "Physical Intelligence",
+      "slug": "physical-intelligence",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-04-16",
+      "summary_zh": "专注通用机器人基础模型的独立研究公司，以 π 系列 VLA 连接多机器人多任务预训练、开放世界泛化、记忆、实时控制与基于经验的强化学习。官方站未设置可核验的领导岗位页面，因此不从论文作者反推负责人。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D6",
+        "D8",
+        "D9",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.pi.website/",
+        "publications": "https://www.pi.website/research"
+      }
+    },
+    {
+      "organization_id": "org:rai-institute",
+      "display_name": "RAI Institute",
+      "short_name": "RAI Institute",
+      "slug": "rai-institute",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "Global",
+      "country": "United States / Switzerland",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-19",
+      "summary_zh": "独立机器人研究院，研究灵巧操作、先进学习控制、机器人交互基础模型、挑战环境导航与机器人社会伦理；与 Boston Dynamics 是合作关系而非同一组织。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 1,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://rai-inst.com/",
+        "publications": "https://rai-inst.com/research/"
+      }
+    },
+    {
+      "organization_id": "org:skild-ai",
+      "display_name": "Skild AI",
+      "short_name": "Skild AI",
+      "slug": "skild-ai",
+      "tracking_category": "corporate",
+      "entity_type": "research_company",
+      "region": "Global",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-18",
+      "summary_zh": "以 omni-bodied intelligence 为核心的机器人基础模型公司，利用大规模仿真、互联网人类视频、遥操作与真实部署形成数据飞轮，目标是一套模型控制多种机器人和任务。",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D6",
+        "D8",
+        "D9",
+        "D10",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 1,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.skild.ai/",
+        "blog": "https://www.skild.ai/blogs"
+      }
+    },
+    {
+      "organization_id": "org:tesla-optimus",
+      "display_name": "Tesla Optimus",
+      "short_name": "Tesla Optimus",
+      "slug": "tesla-optimus",
+      "tracking_category": "corporate",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Tesla"
+      ],
+      "status": "active",
+      "disclosure_level": "low",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-26",
+      "summary_zh": "Tesla 的通用双足人形机器人项目，公开方向覆盖平衡、导航、视觉感知、规划、控制、端侧推理硬件与规模化制造。由于论文和正式实验披露有限，Demo、招聘和投资者材料只能进入部署战略观察层。",
+      "direction_codes": [
+        "D5",
+        "D6",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q4",
+        "Q5",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 0,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 0,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.tesla.com/AI",
+        "publications": "https://ir.tesla.com/"
+      }
+    },
+    {
+      "organization_id": "org:tri-robotics",
+      "display_name": "Toyota Research Institute Robotics",
+      "short_name": "Toyota Research Institute Robotics",
+      "slug": "tri-robotics",
+      "tracking_category": "corporate",
+      "entity_type": "laboratory",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Toyota Research Institute"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-08",
+      "summary_zh": "围绕老龄社会的人类能力增强开展移动操作、机器人用户体验、原型与研究运营，并以大规模真实 rollouts 严格研究 Large Behavior Models 的数据规模和迁移规律。",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D6",
+        "D7",
+        "D8",
+        "D9",
+        "D10",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "update_count": 4,
+      "current_12m_count": 3,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 4,
+      "evidence_counts": {
+        "G1": 4,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "home": "https://www.tri.global/our-work/robotics",
+        "publications": "https://www.tri.global/publications"
+      }
+    },
+    {
+      "organization_id": "org:agility-robotics",
+      "display_name": "Agility Robotics",
+      "short_name": "Agility Robotics",
+      "slug": "agility-robotics",
+      "tracking_category": "deployment_watch",
+      "entity_type": "deployment_team",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-11-20",
+      "summary_zh": "Deployment watch centered on Digit's commercial workflows, cooperative safety, uptime, fleet orchestration, and learning from operational data.",
+      "direction_codes": [
+        "D1",
+        "D5",
+        "D6",
+        "D8",
+        "D10",
+        "D12",
+        "D13",
+        "D7"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://www.agilityrobotics.com/press-releases",
+        "source_2": "https://www.agilityrobotics.com/solutions",
+        "home": "https://www.agilityrobotics.com/company"
+      }
+    },
+    {
+      "organization_id": "org:apptronik",
+      "display_name": "Apptronik",
+      "short_name": "Apptronik",
+      "slug": "apptronik",
+      "tracking_category": "deployment_watch",
+      "entity_type": "deployment_team",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-06-30",
+      "summary_zh": "Deployment watch for Apollo hardware, Robot Park data infrastructure, customer pilots, manufacturing readiness, and Google DeepMind model integration.",
+      "direction_codes": [
+        "D1",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://apptronik.com/company/press-releases",
+        "source_2": "https://apptronik.com/",
+        "source_3": "https://apptronik.com/company/leadership"
+      }
+    },
+    {
+      "organization_id": "org:dyna-robotics",
+      "display_name": "DYNA Robotics",
+      "short_name": "DYNA Robotics",
+      "slug": "dyna-robotics",
+      "tracking_category": "deployment_watch",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "low",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-17",
+      "summary_zh": "Early strategic deployment watch connecting world-action models, human-video scaling, dexterous dual-arm workflows, real-time recovery, and production data flywheels.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D8",
+        "D9",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 2,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 1,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 2,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "research": "https://www.dyna.co/research",
+        "source_2": "https://www.dyna.co/news",
+        "source_3": "https://www.dyna.co/",
+        "home": "https://www.dyna.co/company"
+      }
+    },
+    {
+      "organization_id": "org:dexterity-ai",
+      "display_name": "Dexterity AI",
+      "short_name": "Dexterity AI",
+      "slug": "dexterity-ai",
+      "tracking_category": "deployment_watch",
+      "entity_type": "deployment_team",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-07-30",
+      "summary_zh": "Deployment watch for production-scale dexterous manipulation, interpretable world models, tactile/force-guided recovery, and multi-arm logistics workflows.",
+      "direction_codes": [
+        "D2",
+        "D3",
+        "D4",
+        "D8",
+        "D11",
+        "D12",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q10"
+      ],
+      "update_count": 2,
+      "current_12m_count": 2,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 2,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "blog": "https://dexterity.ai/blog",
+        "home": "https://dexterity.ai/about",
+        "projects": "https://dexterity.ai/blog/case-studies/fedex"
+      }
+    },
+    {
+      "organization_id": "org:sanctuary-ai",
+      "display_name": "Sanctuary AI",
+      "short_name": "Sanctuary AI",
+      "slug": "sanctuary-ai",
+      "tracking_category": "deployment_watch",
+      "entity_type": "deployment_team",
+      "region": "North America",
+      "country": "Canada",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "low",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-26",
+      "summary_zh": "Closed-source and deployment watch for tactile dexterity, multi-embodiment policies, industrial task reliability, and Phoenix data collection.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D8",
+        "D9",
+        "D10",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://sanctuary.ai/news/",
+        "source_2": "https://sanctuary.ai/",
+        "source_3": "https://sanctuary.ai/team-members/"
+      }
+    },
+    {
+      "organization_id": "org:unitree-robotics",
+      "display_name": "Unitree Robotics",
+      "short_name": "Unitree Robotics",
+      "slug": "unitree-robotics",
+      "tracking_category": "deployment_watch",
+      "entity_type": "deployment_team",
+      "region": "Asia",
+      "country": "China",
+      "parent_names": [],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-08-26",
+      "summary_zh": "Hardware-and-deployment watch for accessible humanoid and quadruped platforms, whole-body control, dexterous end effectors, datasets, and ecosystem adoption.",
+      "direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D13"
+      ],
+      "question_codes": [
+        "Q2",
+        "Q4",
+        "Q5",
+        "Q8",
+        "Q9"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://www.unitree.com/about/",
+        "source_2": "https://www.unitree.com/",
+        "source_3": "https://github.com/unitreerobotics/unitree_sdk2"
+      }
+    },
+    {
+      "organization_id": "org:ai2-embodied-ai",
+      "display_name": "Ai2 Embodied AI",
+      "short_name": "Ai2 Embodied AI",
+      "slug": "ai2-embodied-ai",
+      "tracking_category": "platform",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Allen Institute for AI"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-02-11",
+      "summary_zh": "Open infrastructure and model ecosystem spanning simulation, 3D assets, navigation, grasping, VLA-style action models, and zero-shot real transfer.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D6",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://allenai.org/embodied-ai",
+        "blog": "https://allenai.org/blog",
+        "source_3": "https://ai2thor.allenai.org/publications/",
+        "models": "https://docs.allenai.org/models/molmoact"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-bair",
+      "display_name": "Berkeley AI Research (BAIR)",
+      "short_name": "Berkeley AI Research (BAIR)",
+      "slug": "berkeley-bair",
+      "tracking_category": "platform",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "University of California, Berkeley"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "partial",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-07-01",
+      "summary_zh": "Academic AI umbrella connecting robot learning, control, perception, human interaction, and open humanoid work across several independently tracked Berkeley groups.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D7",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 1,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://bair.berkeley.edu/",
+        "source_2": "https://eecs.berkeley.edu/research_area/artificial-intelligence-ai/",
+        "source_3": "https://ai.berkeley.edu/research"
+      }
+    },
+    {
+      "organization_id": "org:cmu-robotics-institute",
+      "display_name": "CMU Robotics Institute",
+      "short_name": "CMU Robotics Institute",
+      "slug": "cmu-robotics-institute",
+      "tracking_category": "platform",
+      "entity_type": "research_institute",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Carnegie Mellon University"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-08",
+      "summary_zh": "Umbrella institute spanning the complete embodied-intelligence stack; lab-level attribution must remain separate.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 0,
+      "previous_12m_count": 1,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "publications": "https://www.ri.cmu.edu/publications/",
+        "projects": "https://www.ri.cmu.edu/research/projects/",
+        "people": "https://www.ri.cmu.edu/research/labs-groups/"
+      }
+    },
+    {
+      "organization_id": "org:mit-csail",
+      "display_name": "MIT CSAIL",
+      "short_name": "MIT CSAIL",
+      "slug": "mit-csail",
+      "tracking_category": "platform",
+      "entity_type": "research_institute",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Massachusetts Institute of Technology"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-10-23",
+      "summary_zh": "Broad AI institute with a dense robotics ecosystem, open facilities, and multiple distinct PI groups; child-lab work requires separate attribution.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D10",
+        "D11",
+        "D12",
+        "D14",
+        "D15"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q8",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://www.csail.mit.edu/research",
+        "source_2": "https://www.csail.mit.edu/news",
+        "projects": "https://www.csail.mit.edu/research"
+      }
+    },
+    {
+      "organization_id": "org:opendrivelab",
+      "display_name": "OpenDriveLab",
+      "short_name": "OpenDriveLab",
+      "slug": "opendrivelab",
+      "tracking_category": "platform",
+      "entity_type": "research_institute",
+      "region": "Asia",
+      "country": "China",
+      "parent_names": [
+        "The University of Hong Kong"
+      ],
+      "status": "active",
+      "disclosure_level": "high",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2026-07-13",
+      "summary_zh": "Open research platform connecting embodied AI and planning-oriented autonomous driving through models, datasets, benchmarks, challenges, and real-robot collaborations.",
+      "direction_codes": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D15",
+        "D6"
+      ],
+      "question_codes": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10"
+      ],
+      "update_count": 24,
+      "current_12m_count": 15,
+      "previous_12m_count": 9,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 1,
+      "linked_work_count": 23,
+      "evidence_counts": {
+        "G1": 24,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "publications": "https://opendrivelab.com/publications",
+        "source_2": "https://opendrivelab.com/",
+        "source_3": "https://github.com/OpenDriveLab",
+        "people": "https://opendrivelab.com/team"
+      }
+    },
+    {
+      "organization_id": "org:stanford-robotics-center",
+      "display_name": "Stanford Robotics Center",
+      "short_name": "Stanford Robotics Center",
+      "slug": "stanford-robotics-center",
+      "tracking_category": "platform",
+      "entity_type": "research_group",
+      "region": "North America",
+      "country": "United States",
+      "parent_names": [
+        "Stanford University"
+      ],
+      "status": "active",
+      "disclosure_level": "medium",
+      "source_health": "healthy",
+      "last_checked": "2026-08-26",
+      "last_changed": "2025-09-30",
+      "summary_zh": "Cross-disciplinary facility and program layer for large-scale real-world robotics projects, not a replacement for Stanford PI-lab attribution.",
+      "direction_codes": [
+        "D2",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D11",
+        "D12",
+        "D14",
+        "D15"
+      ],
+      "question_codes": [
+        "Q1",
+        "Q3",
+        "Q5",
+        "Q8",
+        "Q10"
+      ],
+      "update_count": 1,
+      "current_12m_count": 1,
+      "previous_12m_count": 0,
+      "latest_week_count": 0,
+      "strict_peer_work_count": 0,
+      "linked_work_count": 0,
+      "evidence_counts": {
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G0": 0
+      },
+      "official_urls": {
+        "source_1": "https://src.stanford.edu/news",
+        "projects": "https://src.stanford.edu/home",
+        "people": "https://src.stanford.edu/about-people"
+      }
+    }
+  ],
+  "collaborations": [
+    {
+      "source": "org:berkeley-autolab",
+      "target": "org:cmu-lecar",
+      "work_ids": [
+        "arxiv:2607.00272",
+        "arxiv:2606.19980"
+      ]
+    },
+    {
+      "source": "org:berkeley-autolab",
+      "target": "org:nvidia-gear",
+      "work_ids": [
+        "arxiv:2607.00272",
+        "arxiv:2606.19980"
+      ]
+    },
+    {
+      "source": "org:cmu-lecar",
+      "target": "org:nvidia-gear",
+      "work_ids": [
+        "arxiv:2607.00272",
+        "arxiv:2606.19980",
+        "arxiv:2511.15200"
+      ]
+    },
+    {
+      "source": "org:berkeley-robot-learning-lab",
+      "target": "org:nvidia-gear",
+      "work_ids": [
+        "arxiv:2602.06949"
+      ]
+    },
+    {
+      "source": "org:berkeley-kair",
+      "target": "org:berkeley-robot-learning-lab",
+      "work_ids": [
+        "arxiv:2505.03729"
+      ]
+    }
+  ],
+  "review_queue_count": 2
+}

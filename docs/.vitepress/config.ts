@@ -42,6 +42,7 @@ export default withMermaid(defineConfig({
       { text: '月度雷达', link: '/monthly/' },
       { text: '研究方向', link: '/frontiers/' },
       { text: '问题地图', link: '/questions/' },
+      { text: '关键研究组', link: '/groups/' },
       { text: '年度综合', link: '/analysis/annual' },
       { text: '弱信号', link: '/analysis/weak-signals' },
       { text: '团队机构', link: '/analysis/institutions' },
@@ -88,6 +89,17 @@ export default withMermaid(defineConfig({
           { text: 'Q0–Q10 问题追踪器', link: '/questions/' },
           { text: '文档之外的遗漏方向', link: '/questions/blind-spots' },
           { text: '问题层方法', link: '/methods/research-question-layer' },
+        ],
+      },
+      {
+        text: '全球关键研究组',
+        collapsed: false,
+        items: [
+          { text: '60 组动态总览', link: '/groups/' },
+          { text: '本周研究组周报', link: '/groups/weekly/' },
+          { text: '组织层级图', link: '/groups/organizations' },
+          { text: '合作网络', link: '/groups/collaboration' },
+          { text: '归属与更新方法', link: '/methods/research-groups' },
         ],
       },
       {

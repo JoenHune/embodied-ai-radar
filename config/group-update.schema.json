@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI Radar Group Update Store",
+  "type": "object",
+  "required": ["version", "generated_at", "updates"],
+  "properties": {
+    "version": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date"},
+    "updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "update_id", "organization_id", "title", "url", "published_at",
+          "date_precision", "update_type", "evidence_grade", "source_type",
+          "direction_codes", "question_codes", "summary_zh", "first_seen_at"
+        ],
+        "properties": {
+          "update_id": {"type": "string"},
+          "organization_id": {"type": "string", "pattern": "^org:[a-z0-9-]+$"},
+          "work_id": {"type": ["string", "null"]},
+          "evidence_grade": {"enum": ["G0", "G1", "G2", "G3"]},
+          "update_type": {
+            "enum": [
+              "peer_reviewed_paper", "preprint", "technical_report", "model_release",
+              "dataset_release", "code_release", "benchmark", "project", "deployment",
+              "organization_change", "personnel_change", "hiring_signal"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

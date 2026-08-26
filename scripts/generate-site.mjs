@@ -377,49 +377,24 @@ ${rows}
 }
 
 function institutionPage() {
-  const map = new Map()
-  for (const record of peerRecords) {
-    for (const institution of record.institutions) {
-      if (!map.has(institution)) map.set(institution, { papers: new Set(), peer: new Set(), topics: new Set(), examples: [] })
-      const item = map.get(institution)
-      item.papers.add(record.arxiv_id || record.title)
-      item.peer.add(`${record.venue} ${record.year}`)
-      item.topics.add(currentPeerTopicLabel(record))
-      if (item.examples.length < 3) item.examples.push(`[${clean(record.title)}](${record.official_url})`)
-    }
-  }
-  for (const paper of papers.filter((item) => item.curated)) {
-    for (const institution of paper.institutions ?? []) {
-      if (!map.has(institution)) map.set(institution, { papers: new Set(), peer: new Set(), topics: new Set(), examples: [] })
-      const item = map.get(institution)
-      item.papers.add(paper.id)
-      item.topics.add(currentTopicLabel(paper))
-      if (item.examples.length < 3) item.examples.push(titleLink(paper))
-    }
-  }
-  const ranking = [...map.entries()]
-    .map(([name, item]) => ({ name, ...item }))
-    .sort((left, right) => right.peer.size - left.peer.size || right.papers.size - left.papers.size || left.name.localeCompare(right.name))
-  const rows = ranking.map((item, index) =>
-    `| ${index + 1} | ${clean(item.name)} | ${item.papers.size} | ${item.peer.size} | ${[...item.topics].join('、')} | ${item.examples.join('；')} |`
-  ).join('\n')
   return `${frontmatter}
 
-# 团队与机构雷达
+# 机构 Affiliation 覆盖与兼容入口
 
-> 全球统一口径。排名先看官方同行评审工作覆盖，再看经核验的精读论文数；多机构合著会同时计入各机构，因此本页不能与论文总数直接相加。
+> 旧版曾把母机构、研究院、实验室和企业研究组织混在同一排名，并将不同 \`venue + year\` 数误写成“官方评审工作数”。该排名已停用。
 
-| 排名 | 机构 | 相关工作 | 官方评审工作 | 方向布局 | 代表工作 |
-|---:|---|---:|---:|---|---|
-${rows}
+新的[全球关键研究组雷达](/groups/)使用分层组织图以及 G1–G0 归属证据。原始 affiliation 仍用于发现母机构，但不会自动归入某个实验室。
 
-## 读表原则
+| 数据层 | 数量 |
+|---|---:|
+| 官方评审锚点 | ${peerRecords.length} |
+| 精读论文 | ${papers.filter((item) => item.curated).length} |
 
-- 产量不是唯一质量指标；持续跨月、跨方向和独立评审证据更重要。
-- arXiv 通常不含 affiliation，本页只使用官方 proceedings 和已核验作者/项目页。
-- “团队”按论文作者组合与独立项目线判断，不将同一系列版本重复视为独立验证。
+- NVIDIA affiliation 不等于 NVIDIA GEAR。
+- CMU affiliation 不等于 CMU Robotics Institute 或某个 RI 实验室。
+- 当前人员关系不能反向改写历史论文归属。
 
-<!-- 更新标记：团队与机构雷达 最后更新 2026.07 -->`
+<!-- 更新标记：机构兼容入口 最后更新 2026.08 -->`
 }
 
 function weakSignalsPage() {

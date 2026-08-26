@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied AI Radar Organization Registry",
+  "type": "object",
+  "required": ["version", "updated", "tracking_target", "organizations"],
+  "properties": {
+    "version": {"type": "string"},
+    "updated": {"type": "string", "format": "date"},
+    "tracking_target": {"const": 60},
+    "organizations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "organization_id", "display_name", "slug", "entity_type",
+          "tracking_unit", "tracking_category", "region", "country",
+          "aliases", "parent_relations", "official_urls", "leaders",
+          "declared_direction_codes", "question_codes", "disclosure_level",
+          "status", "last_checked", "source_health", "summary_zh",
+          "representative_updates"
+        ],
+        "properties": {
+          "organization_id": {"type": "string", "pattern": "^org:[a-z0-9-]+$"},
+          "display_name": {"type": "string", "minLength": 1},
+          "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "entity_type": {
+            "enum": [
+              "university", "company", "research_company", "research_institute",
+              "research_division", "laboratory", "research_group", "nonprofit",
+              "government_institute", "consortium", "deployment_team"
+            ]
+          },
+          "tracking_unit": {"type": "boolean"},
+          "tracking_category": {
+            "enum": ["corporate", "academic", "platform", "deployment_watch", "parent"]
+          },
+          "status": {"enum": ["active", "historical", "transitioning", "observation"]},
+          "disclosure_level": {"enum": ["high", "medium", "low"]},
+          "source_health": {"enum": ["healthy", "partial", "stale", "unverified"]},
+          "parent_relations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["parent_id", "relation", "evidence_url"],
+              "properties": {
+                "parent_id": {"type": "string", "pattern": "^org:[a-z0-9-]+$"},
+                "relation": {"enum": ["part_of", "funded_by", "historical_part_of", "collaborates_with"]},
+                "valid_from": {"type": ["string", "null"]},
+                "valid_to": {"type": ["string", "null"]},
+                "evidence_url": {"type": "string", "format": "uri"}
+              }
+            }
+          },
+          "leaders": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "role", "source_url"],
+              "properties": {
+                "name": {"type": "string"},
+                "role": {"type": "string"},
+                "valid_from": {"type": ["string", "null"]},
+                "valid_to": {"type": ["string", "null"]},
+                "source_url": {"type": "string", "format": "uri"}
+              }
+            }
+          },
+          "declared_direction_codes": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^D(?:[1-9]|1[0-5])$"}
+          },
+          "question_codes": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^Q(?:[0-9]|10)$"}
+          },
+          "representative_updates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "update_id", "title", "url", "published_at", "update_type",
+                "evidence_grade", "direction_codes", "question_codes", "summary_zh"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2735,6 +2735,108 @@ flowchart LR
 ---
 
 
+## 全球关键研究组雷达
+
+> 这里追踪 60 个研究执行单元，不做跨组排行榜。母机构、研究院、实验室、独立研究公司和部署观察团队分层保存；默认按最近发生实质变化排序。
+
+<div class="radar-kpis">
+  <div class="radar-kpi"><strong>60</strong><span>持续跟踪研究组</span></div>
+  <div class="radar-kpi"><strong>18</strong><span>企业/独立组织</span></div>
+  <div class="radar-kpi"><strong>30</strong><span>学术实验室</span></div>
+  <div class="radar-kpi"><strong>12</strong><span>平台 + 部署观察</span></div>
+</div>
+
+::: warning 归属边界
+Affiliation 只能证明母机构，不能自动证明具体研究组：NVIDIA 不等于 GEAR，CMU 不等于 RI 或某个实验室，当前员工也不能反向改写历史论文归属。正式动态只使用 G1/G2，G3/G0 保留在复核队列。
+:::
+
+<ResearchGroupExplorer />
+
+### 周报与方法
+
+- [2026-W34 周报](/groups/weekly/2026-w34)
+- [组织层级图](/groups/organizations)
+- [研究组合作网络](/groups/collaboration)
+- [组织归属与每周更新方法](/methods/research-groups)
+- [旧机构页兼容入口](/analysis/institutions)
+
+---
+
+
+## 关键研究组周报
+
+| 周次 | 覆盖窗口 | G1/G2 更新 | 变化研究组 | 链接 |
+|---|---|---:|---:|---|
+| 2026-W34 | 2026-08-17—2026-08-23 | 3 | 3 | [阅读](/groups/weekly/2026-w34) |
+
+---
+
+
+## 研究组织层级图
+
+> 母机构节点不占 60 个跟踪名额。子研究组的 work 可以向母机构汇总，但母机构不会额外获得第二份 work credit。
+
+### 母机构与直接子组
+
+| 母机构 | 跟踪子组 | 子研究组 |
+|---|---:|---|
+| [1X Technologies](https://www.1x.tech/about) | 1 | [1X AI](/groups/1x-ai) |
+| [Agibot Innovation Shanghai Technology Co Ltd](https://www.agibot.com/research/) | 1 | [AgiBot Research](/groups/agibot-research) |
+| [Allen Institute for AI](https://allenai.org/) | 1 | [Ai2 Embodied AI](/groups/ai2-embodied-ai) |
+| [Amazon](https://www.amazon.science/) | 2 | [Amazon Frontier AI & Robotics](/groups/amazon-far)、[Amazon Robotics](/groups/amazon-robotics) |
+| [Bytedance Seed](https://seed.bytedance.com/en/direction/robotics) | 1 | [ByteDance Seed Robotics](/groups/bytedance-seed-robotics) |
+| [Carnegie Mellon University](https://www.cmu.edu/) | 1 | [CMU Robotics Institute](/groups/cmu-robotics-institute) |
+| [ETH Zurich](https://ethz.ch/en.html) | 1 | [ETH Zurich Robotic Systems Lab](/groups/eth-rsl) |
+| [Ecole Polytechnique Federale De Lausanne](https://www.epfl.ch/labs/lasa/) | 1 | [EPFL Learning Algorithms and Systems Laboratory](/groups/epfl-lasa) |
+| [Google](https://www.intrinsic.ai/mission) | 1 | [Intrinsic](/groups/intrinsic) |
+| [Google DeepMind](https://deepmind.google/) | 1 | [Google DeepMind Robotics](/groups/google-deepmind-robotics) |
+| [Hyundai Motor Group](https://bostondynamics.com/about/) | 1 | [Boston Dynamics](/groups/boston-dynamics) |
+| [Massachusetts Institute of Technology](https://www.mit.edu/) | 1 | [MIT CSAIL](/groups/mit-csail) |
+| [Meta Fair](https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics) | 1 | [Meta FAIR Embodied AI](/groups/meta-fair-embodied-ai) |
+| [NVIDIA](https://www.nvidia.com/) | 3 | [NVIDIA Cosmos Lab](/groups/nvidia-cosmos-lab)、[NVIDIA GEAR](/groups/nvidia-gear)、[NVIDIA Seattle Robotics Lab](/groups/nvidia-seattle-robotics-lab) |
+| [Stanford University](https://www.stanford.edu/) | 6 | [Stanford Intelligence through Robotic Interaction at Scale Lab](/groups/stanford-iris)、[Stanford Intelligent and Interactive Autonomous Systems Group](/groups/stanford-iliad)、[Stanford Interactive Perception and Robot Learning Lab](/groups/stanford-iprl)、[Stanford Movement Lab](/groups/stanford-movement-lab)、[Stanford Robotics and Embodied Artificial Intelligence Lab](/groups/stanford-real)、[Stanford Robotics Center](/groups/stanford-robotics-center) |
+| [Tesla](https://www.tesla.com/AI) | 1 | [Tesla Optimus](/groups/tesla-optimus) |
+| [The University of Hong Kong](https://www.hku.hk/) | 1 | [OpenDriveLab](/groups/opendrivelab) |
+| [Toyota Research Institute](https://www.tri.global/) | 1 | [Toyota Research Institute Robotics](/groups/tri-robotics) |
+| [Tsinghua University College Of Ai](https://collegeai.tsinghua.edu.cn/en/Research/Research_Groups/E__Interactive_Embodied_Intelligence__Lab.htm) | 1 | [Tsinghua Interactive Embodied Intelligence Lab](/groups/tsinghua-interactive-embodied-intelligence) |
+| [Tsinghua University Institute For Ai Industry Research](https://air-dream.netlify.app/) | 2 | [Tsinghua AIR DISCOVER Lab](/groups/tsinghua-discover-lab)、[Tsinghua AIR-DREAM Lab](/groups/tsinghua-air-dream) |
+| [Tsinghua University Institute For Interdisciplinary Information Sciences](https://iiis.tsinghua.edu.cn/en/Research/Research_Groups/Tsinghua_Embodied_AI_Lab.htm) | 3 | [Tsinghua Embodied AI Lab](/groups/tsinghua-tea-lab)、[Tsinghua Laboratory of 3D Vision Computing and Machine Intelligence](/groups/tsinghua-li-yi-3d-vision)、[Tsinghua Vision and Robotics Lab](/groups/tsinghua-vision-robotics) |
+| [University Of Washington Paul G Allen School](https://weirdlab.cs.washington.edu/) | 3 | [University of Washington Personal Robotics Lab](/groups/uw-personal-robotics)、[University of Washington Robot Learning Laboratory](/groups/uw-robot-learning-lab)、[University of Washington WEIRD Lab](/groups/uw-weird) |
+| [University of California, Berkeley](https://www.berkeley.edu/) | 6 | [UC Berkeley AUTOLAB](/groups/berkeley-autolab)、[UC Berkeley Interactive Agents and Collaborative Technologies Lab](/groups/berkeley-interact)、[UC Berkeley Kanazawa AI Research Lab](/groups/berkeley-kair)、[UC Berkeley Robot Learning Lab](/groups/berkeley-robot-learning-lab)、[UC Berkeley Robotic AI and Learning Lab](/groups/berkeley-rail)、[Berkeley AI Research (BAIR)](/groups/berkeley-bair) |
+
+### 独立研究执行单元
+
+| 研究组 | 类型 | 定位 |
+|---|---|---|
+| [Figure AI](/groups/figure-ai) | 企业/独立研究组织 | 围绕 Figure 人形本体与 Helix 分层 VLA 联合开发的闭源研究和产品团队，重点追踪全身像素到动作控制、触觉灵巧操作、人类视频迁移、长时家庭任务与工业部署。 |
+| [Physical Intelligence](/groups/physical-intelligence) | 企业/独立研究组织 | 专注通用机器人基础模型的独立研究公司，以 π 系列 VLA 连接多机器人多任务预训练、开放世界泛化、记忆、实时控制与基于经验的强化学习。官方站未设置可核验的领导岗位页面，因此不从论文作者反推负责人。 |
+| [RAI Institute](/groups/rai-institute) | 企业/独立研究组织 | 独立机器人研究院，研究灵巧操作、先进学习控制、机器人交互基础模型、挑战环境导航与机器人社会伦理；与 Boston Dynamics 是合作关系而非同一组织。 |
+| [Skild AI](/groups/skild-ai) | 企业/独立研究组织 | 以 omni-bodied intelligence 为核心的机器人基础模型公司，利用大规模仿真、互联网人类视频、遥操作与真实部署形成数据飞轮，目标是一套模型控制多种机器人和任务。 |
+| [Agility Robotics](/groups/agility-robotics) | 部署与早期观察 | Deployment watch centered on Digit's commercial workflows, cooperative safety, uptime, fleet orchestration, and learning from operational data. |
+| [Apptronik](/groups/apptronik) | 部署与早期观察 | Deployment watch for Apollo hardware, Robot Park data infrastructure, customer pilots, manufacturing readiness, and Google DeepMind model integration. |
+| [DYNA Robotics](/groups/dyna-robotics) | 部署与早期观察 | Early strategic deployment watch connecting world-action models, human-video scaling, dexterous dual-arm workflows, real-time recovery, and production data flywheels. |
+| [Dexterity AI](/groups/dexterity-ai) | 部署与早期观察 | Deployment watch for production-scale dexterous manipulation, interpretable world models, tactile/force-guided recovery, and multi-arm logistics workflows. |
+| [Sanctuary AI](/groups/sanctuary-ai) | 部署与早期观察 | Closed-source and deployment watch for tactile dexterity, multi-embodiment policies, industrial task reliability, and Phoenix data collection. |
+| [Unitree Robotics](/groups/unitree-robotics) | 部署与早期观察 | Hardware-and-deployment watch for accessible humanoid and quadruped platforms, whole-body control, dexterous end effectors, datasets, and ecosystem adoption. |
+
+---
+
+
+## 研究组合作网络
+
+> 合作边只来自同一 canonical work 上的多个 G1/G2 研究组归属。母机构共同出现、作者相识或当前人员关系都不会自动创建合作边。
+
+| 研究组 A | 研究组 B | 共同 work | 代表合作 |
+|---|---|---:|---|
+| [CMU Learning and Control for Agile Robotics Lab](/groups/cmu-lecar) | [NVIDIA GEAR](/groups/nvidia-gear) | 3 | ASPIRE: Agentic /Skills Discovery for Robotics；ENPIRE: Agentic Robot Policy Self-Improvement in the Real World；VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation |
+| [UC Berkeley AUTOLAB](/groups/berkeley-autolab) | [CMU Learning and Control for Agile Robotics Lab](/groups/cmu-lecar) | 2 | ASPIRE: Agentic /Skills Discovery for Robotics；ENPIRE: Agentic Robot Policy Self-Improvement in the Real World |
+| [UC Berkeley AUTOLAB](/groups/berkeley-autolab) | [NVIDIA GEAR](/groups/nvidia-gear) | 2 | ASPIRE: Agentic /Skills Discovery for Robotics；ENPIRE: Agentic Robot Policy Self-Improvement in the Real World |
+| [UC Berkeley Robot Learning Lab](/groups/berkeley-robot-learning-lab) | [NVIDIA GEAR](/groups/nvidia-gear) | 1 | DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos |
+| [UC Berkeley Kanazawa AI Research Lab](/groups/berkeley-kair) | [UC Berkeley Robot Learning Lab](/groups/berkeley-robot-learning-lab) | 1 | Visual Imitation Enables Contextual Humanoid Control |
+
+---
+
+
 ## 15 个研究方向
 
 > 本站当前统一使用以下 15 个主方向。每项工作只计一个主方向，可同时拥有多个关联方向与证据标签。
@@ -4348,81 +4450,26 @@ flowchart LR
 ---
 
 
-## 团队与机构雷达
+## 机构 Affiliation 覆盖与兼容入口
 
-> 全球统一口径。排名先看官方同行评审工作覆盖，再看经核验的精读论文数；多机构合著会同时计入各机构，因此本页不能与论文总数直接相加。
+> 旧页面曾把母机构字符串、研究院、实验室和企业研究组织混在同一排行榜里，并把不同 venue-year 数误写成“官方评审工作数”。该排名已停用。
 
-| 排名 | 机构 | 相关工作 | 官方评审工作 | 方向布局 | 代表工作 |
-|---:|---|---:|---:|---|---|
-| 1 | Stanford University | 10 | 4 | 具身基础模型与通才策略、分层推理、规划与记忆、灵巧、双臂与接触操作、人形、运动与全身控制、策略学习与优化、世界模型与预测控制 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html)；[ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html) |
-| 2 | UC Berkeley | 7 | 4 | 具身基础模型与通才策略、分层推理、规划与记忆、灵巧、双臂与接触操作、人形、运动与全身控制 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html)；[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) |
-| 3 | Physical Intelligence | 5 | 3 | 具身基础模型与通才策略 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[π₀: A Vision-Language-Action Flow Model for General Robot Control](https://www.roboticsproceedings.org/rss21/p010.html)；[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://www.roboticsproceedings.org/rss21/p012.html) |
-| 4 | Carnegie Mellon University | 3 | 3 | 人形、运动与全身控制、灵巧、双臂与接触操作 | [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html)；[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) |
-| 5 | Tsinghua University | 5 | 2 | 策略学习与优化、世界模型与预测控制、数据引擎与人类视频学习、灵巧、双臂与接触操作、具身基础模型与通才策略 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html) |
-| 6 | Fudan University | 4 | 2 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html)；[TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) |
-| 7 | Shanghai Innovation Institute | 4 | 2 | 策略学习与优化、具身基础模型与通才策略 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html)；[TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control](https://arxiv.org/abs/2507.01424) |
-| 8 | Shanghai Jiao Tong University | 4 | 2 | 人形、运动与全身控制、具身基础模型与通才策略、策略学习与优化 | [OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning](https://proceedings.mlr.press/v270/he25b.html)；[SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) |
-| 9 | NVIDIA | 3 | 2 | 灵巧、双臂与接触操作、人形、运动与全身控制、世界模型与预测控制 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html)；[PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html) |
-| 10 | Peking University | 3 | 2 | 世界模型与预测控制、具身基础模型与通才策略 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html)；[Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html)；[Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html) |
-| 11 | Zhejiang University | 3 | 2 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html)；[VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) |
-| 12 | AgiBot | 2 | 2 | 具身基础模型与通才策略 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) |
-| 13 | Beihang University | 2 | 2 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](https://arxiv.org/abs/2601.11404) |
-| 14 | Columbia University | 2 | 2 | 灵巧、双臂与接触操作 | [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html)；[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) |
-| 15 | Institute of Automation, Chinese Academy of Sciences | 2 | 2 | 具身基础模型与通才策略 | [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html)；[Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
-| 16 | MIT | 2 | 2 | 具身基础模型与通才策略、策略学习与优化 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) |
-| 17 | Shanghai Qizhi Institute | 2 | 2 | 策略学习与优化、数据引擎与人类视频学习 | [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) |
-| 18 | The Chinese University of Hong Kong | 2 | 2 | 灵巧、双臂与接触操作、人形、运动与全身控制 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html)；[VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html) |
-| 19 | Toyota Research Institute | 2 | 2 | 具身基础模型与通才策略、世界模型与预测控制 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html)；[Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html) |
-| 20 | Amazon FAR | 2 | 1 | 具身基础模型与通才策略 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html)；[SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 21 | Cornell University | 2 | 1 | 灵巧、双臂与接触操作、策略学习与优化 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html)；[X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations](https://arxiv.org/abs/2511.04671) |
-| 22 | Horizon Robotics | 2 | 1 | 世界模型与预测控制、灵巧、双臂与接触操作 | [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523)；[Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) |
-| 23 | Shanghai AI Laboratory | 2 | 1 | 具身基础模型与通才策略、策略学习与优化 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html)；[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://www.roboticsproceedings.org/rss21/p052.html) |
-| 24 | Sun Yat-sen University | 2 | 1 | 策略学习与优化、数据引擎与人类视频学习 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264) |
-| 25 | University of North Carolina at Chapel Hill | 2 | 1 | 数据引擎与人类视频学习、具身基础模型与通才策略 | [UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html)；[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](https://arxiv.org/abs/2603.22264)；[FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
-| 26 | University of Washington | 2 | 1 | 世界模型与预测控制、策略学习与优化 | [Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets](https://www.roboticsproceedings.org/rss21/p015.html)；[Robot Learning with Super-Linear Scaling](https://www.roboticsproceedings.org/rss21/p025.html) |
-| 27 | Beijing Academy of Artificial Intelligence | 1 | 1 | 具身基础模型与通才策略 | [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
-| 28 | Google DeepMind | 1 | 1 | 具身基础模型与通才策略 | [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html) |
-| 29 | Harvard University | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 30 | J.P. Morgan AI Research | 1 | 1 | 灵巧、双臂与接触操作 | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://proceedings.mlr.press/v305/xu25b.html) |
-| 31 | Meta FAIR | 1 | 1 | 具身基础模型与通才策略 | [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) |
-| 32 | MIT CSAIL | 1 | 1 | 具身基础模型与通才策略 | [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://papers.nips.cc/paper_files/paper/2024/hash/e0f393e7980a24fd12fa6f15adfa25fb-Abstract-Conference.html) |
-| 33 | Nanyang Technological University | 1 | 1 | 具身基础模型与通才策略 | [ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html) |
-| 34 | National University of Defense Technology | 1 | 1 | 世界模型与预测控制 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) |
-| 35 | Northwestern Polytechnical University | 1 | 1 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) |
-| 36 | OpenDriveLab | 1 | 1 | 具身基础模型与通才策略 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) |
-| 37 | Peng Cheng Laboratory | 1 | 1 | 策略学习与优化 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) |
-| 38 | ShanghaiTech University | 1 | 1 | 具身基础模型与通才策略 | [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models](https://www.roboticsproceedings.org/rss21/p011.html) |
-| 39 | ShengShu | 1 | 1 | 世界模型与预测控制 | [Motus: A Unified Latent Action World Model](https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html)；[Motus: A Unified Latent Action World Model](https://arxiv.org/abs/2512.13030) |
-| 40 | Shenzhen University | 1 | 1 | 世界模型与预测控制 | [LaDi-WM: A Latent Diffusion-Based World Model for Predictive Manipulation](https://proceedings.mlr.press/v305/huang25a.html) |
-| 41 | The RAI Institute | 1 | 1 | 世界模型与预测控制 | [ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation](https://proceedings.mlr.press/v305/huang25c.html) |
-| 42 | The University of Hong Kong | 1 | 1 | 具身基础模型与通才策略 | [Learning to Act Anywhere with Task-centric Latent Actions](https://www.roboticsproceedings.org/rss21/p014.html) |
-| 43 | UC San Diego | 1 | 1 | 具身基础模型与通才策略 | [Cross-Hand Latent Representation for Vision-Language-Action Models](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html) |
-| 44 | University of Chinese Academy of Sciences | 1 | 1 | 具身基础模型与通才策略 | [ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy](https://www.roboticsproceedings.org/rss21/p019.html) |
-| 45 | University of Electronic Science and Technology of China | 1 | 1 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
-| 46 | University of Illinois Urbana-Champaign | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 47 | University of Maryland | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 48 | University of Pennsylvania | 1 | 1 | 具身基础模型与通才策略 | [SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SIMPACT_Simulation-Enabled_Action_Planning_using_Vision-Language_Models_CVPR_2026_paper.html) |
-| 49 | University of Sydney | 1 | 1 | 具身基础模型与通才策略 | [Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Action-Sketcher_From_Reasoning_to_Action_via_Visual_Sketches_for_Robotic_CVPR_2026_paper.html) |
-| 50 | University of Warsaw | 1 | 1 | 分层推理、规划与记忆 | [Robotic Control via Embodied Chain-of-Thought Reasoning](https://proceedings.mlr.press/v270/zawalski25a.html) |
-| 51 | Westlake University | 1 | 1 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
-| 52 | Xi'an Jiaotong University | 1 | 1 | 具身基础模型与通才策略 | [Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation](https://proceedings.mlr.press/v305/fan25a.html) |
-| 53 | Yale University | 1 | 1 | 灵巧、双臂与接触操作 | [Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation](https://proceedings.mlr.press/v305/feng25b.html) |
-| 54 | Yinwang Intelligent Technology | 1 | 1 | 策略学习与优化 | [AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_AtomicVLA_Unlocking_the_Potential_of_Atomic_Skill_Learning_in_Robots_CVPR_2026_paper.html) |
-| 55 | Alibaba DAMO Academy | 1 | 0 | 具身基础模型与通才策略 | [VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon](https://arxiv.org/abs/2607.01804) |
-| 56 | ByteDance Seed | 1 | 0 | 具身基础模型与通才策略 | [GR-3 Technical Report](https://arxiv.org/abs/2507.15493) |
-| 57 | East China Normal University | 1 | 0 | 具身基础模型与通才策略 | [HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control](https://arxiv.org/abs/2607.03449) |
-| 58 | EvoMind Tech | 1 | 0 | 具身基础模型与通才策略 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
-| 59 | IAAR-Shanghai | 1 | 0 | 具身基础模型与通才策略 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
-| 60 | Microsoft Research | 1 | 0 | 具身基础模型与通才策略 | [Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571) |
-| 61 | Mitsubishi Electric Research Laboratories | 1 | 0 | 具身基础模型与通才策略 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
-| 62 | University of Cambridge | 1 | 0 | 具身基础模型与通才策略 | [Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding](https://arxiv.org/abs/2507.00416) |
-| 63 | University of Oxford | 1 | 0 | 具身基础模型与通才策略 | [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](https://arxiv.org/abs/2607.01212) |
+新的[全球关键研究组雷达](/groups/)使用分层组织图和 G1–G0 归属证据。原始 affiliation 仍保留用于母机构发现，但不能自动证明具体实验室归属。
 
-### 读表原则
+| 数据层 | 数量 |
+|---|---:|
+| Canonical works | 41592 |
+| 带 organization 归属边的 work | 100 |
+| 持续跟踪研究组 | 60 |
+| 待复核 G3/G0 候选 | 2 |
 
-- 产量不是唯一质量指标；持续跨月、跨方向和独立评审证据更重要。
-- arXiv 通常不含 affiliation，本页只使用官方 proceedings 和已核验作者/项目页。
-- “团队”按论文作者组合与独立项目线判断，不将同一系列版本重复视为独立验证。
+### 必须保留的区别
+
+- NVIDIA 与 NVIDIA GEAR/Cosmos/Seattle Robotics Lab 分开。
+- CMU 与 CMU Robotics Institute 及其各实验室分开。
+- Physical Intelligence 公司与 MPI-IS 同名部门分开。
+- Amazon FAR 与 Amazon Robotics 分开。
+- RAI Institute 与 Boston Dynamics 分开。
 
 ---
 
@@ -4942,6 +4989,30 @@ P0/P1/P2 只表示战略依赖顺序，与 A/B/C/D 外部证据等级相互独�
 - 只有关键词数量增加而没有新能力，不升级。
 - 反证条件被触发、连续两个季度没有独立跟进或成本不可接受时降级。
 - 安全、评测和软硬件变量可以成为关键门槛，但不会仅因“论文少”被误写成弱方向。
+
+---
+
+
+## 研究组归属与周度监测方法
+
+### 四层实体与证据
+
+- 母机构只做向上聚合，不代表具体研究路线。
+- 研究院/事业部、实验室/PI 组和独立研究公司可以成为跟踪单元。
+- 论文合作组不是持久 organization。
+- G1 为官方研究组/论文直接证据；G2 为带时间的成员关系重建；G3/G0 不进入正式动态。
+
+### 每周窗口
+
+周一北京时间 04:00 运行，冻结上周一 00:00 至周日 23:59。原始时间保存为 UTC，页面以 Asia/Shanghai 展示。不完整当周不进入周报。
+
+### 不做跨组排名
+
+页面只展示每组的时间线、方向变化、证据类型、开放资产、真机与合作关系。论文数量、Demo 和部署规模不压缩为一个不可比较的总分。
+
+### 自动化边界
+
+官方 publications/projects 页面可生成 G1 候选；当前 roster、GitHub owner、招聘页和域名只能生成 G3 观察。来源失败不会删除既有记录；连续两周失败显示 stale warning。
 
 ---
 

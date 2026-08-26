@@ -6,7 +6,7 @@ titleTemplate: 过去 12 个月研究趋势分析
 hero:
   name: 具身智能研究雷达
   text: 从论文热度到技术兑现
-  tagline: 31,773 条 arXiv 母集 · 12,165 条发表版本 · 15 类主方向 + 11 个问题轴 · 2026.08 前瞻快照
+  tagline: 31,773 条 arXiv 母集 · 15 类主方向 · 11 个问题轴 · 60 个关键研究组 · 2026.08 前瞻快照
   actions:
     - theme: brand
       text: 阅读执行摘要 →
@@ -20,8 +20,16 @@ hero:
     - theme: alt
       text: 查看问题地图
       link: /questions/
+    - theme: alt
+      text: 跟踪关键研究组
+      link: /groups/
 
 features:
+  - icon: 🌍
+    title: 全球关键研究组
+    details: 持续跟踪 NVIDIA GEAR、Physical Intelligence、CMU RI 等 60 个研究执行单元
+    link: /groups/
+    linkText: 查看研究组雷达
   - icon: 🧩
     title: 从论文方向到系统问题
     details: Q0–Q10 追踪接触表征、Ego-to-Action、失败回流、软硬件共设计与闭环世界模型
@@ -83,6 +91,7 @@ features:
   <div class="radar-kpi"><strong>31,773</strong><span>arXiv 宽召回母集</span></div>
   <div class="radar-kpi"><strong>12,165</strong><span>正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
+  <div class="radar-kpi"><strong>60</strong><span>全球关键研究组</span></div>
   <div class="radar-kpi"><strong>42 + 4</strong><span>GitHub 已审计 + 新仓观察</span></div>
 </div>
 
