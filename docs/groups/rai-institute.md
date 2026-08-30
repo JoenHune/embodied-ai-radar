@@ -17,11 +17,11 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
-| 2026-08-19 | [Whole-Body Model Predictive Control for Spin-Aware Quadrupedal Table Tennis](https://rai-inst.com/resources/papers/whole-body-model-predictive-control-for-spin-aware-quadrupedal-table-tennis/) | 预印本 | 在 Spot 四足加机械臂平台上结合连续时间全身 MPC、球旋转估计与击球规划，实现面向人类对打的真机协调控制。 |
+| — | 本周无可升级信号 | — | 官方来源未发现新的 G1/G2 更新。 |
 
 ## 最近 12 个月与前一窗口
 
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://rai-inst.com/](https://rai-inst.com/) | healthy | 2026-08-26 | 0 |
-| publications | [https://rai-inst.com/research/](https://rai-inst.com/research/) | healthy | 2026-08-26 | 0 |
+| home | [https://rai-inst.com/](https://rai-inst.com/) | healthy | 2026-08-30 | 0 |
+| publications | [https://rai-inst.com/research/](https://rai-inst.com/research/) | healthy | 2026-08-30 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

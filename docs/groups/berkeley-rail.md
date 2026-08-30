@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Robotic AI and Learning Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：partial** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
 
 研究可自主学习的灵活与适应性行为，覆盖强化学习、机器人学习、视觉和真实世界策略训练。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://rail.eecs.berkeley.edu/](https://rail.eecs.berkeley.edu/) | healthy | 2026-08-26 | 0 |
-| publications | [https://rail.eecs.berkeley.edu/publications.html](https://rail.eecs.berkeley.edu/publications.html) | partial | — | 1 |
+| home | [https://rail.eecs.berkeley.edu/](https://rail.eecs.berkeley.edu/) | partial | 2026-08-26 | 1 |
+| publications | [https://rail.eecs.berkeley.edu/publications.html](https://rail.eecs.berkeley.edu/publications.html) | stale | — | 2 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。
-- 来源健康状态为 partial，请谨慎解读最近更新。
+- 来源健康状态为 stale，请谨慎解读最近更新。

@@ -17,11 +17,11 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
-| 2026-08-19 | [GEN-1.5](https://generalistai.com/blog/gen-1.5) | 技术报告 | 公司报告展示 3–12 秒单次示教与少量梯度更新的快速适配；59%/83% 为内部短任务平均成功率，并非独立 benchmark。 |
+| — | 本周无可升级信号 | — | 官方来源未发现新的 G1/G2 更新。 |
 
 ## 最近 12 个月与前一窗口
 
@@ -65,8 +65,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://generalistai.com/](https://generalistai.com/) | healthy | 2026-08-26 | 0 |
-| people | [https://generalistai.com/about](https://generalistai.com/about) | healthy | 2026-08-26 | 0 |
-| research | [https://generalistai.com/blog/research](https://generalistai.com/blog/research) | healthy | 2026-08-26 | 0 |
+| home | [https://generalistai.com/](https://generalistai.com/) | healthy | 2026-08-30 | 0 |
+| research | [https://generalistai.com/blog/research](https://generalistai.com/blog/research) | healthy | 2026-08-30 | 0 |
+| people | [https://generalistai.com/about](https://generalistai.com/about) | healthy | 2026-08-30 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

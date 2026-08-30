@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -27,7 +27,7 @@ outline: deep
 
 | 当前 12 个月更新 | 前一 12 个月更新 | 已关联 work | 严格评审 work | 最新实质变化 |
 |---:|---:|---:|---:|---|
-| 3 | 2 | 5 | 0 | 2026-08-02 |
+| 1 | 4 | 5 | 0 | 2026-08-02 |
 
 **观察到的方向：** [D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D11 · 动作关联的空间感知与表征](/frontiers/spatial-perception)、[D15 · 触觉、力觉与多模态身体感知](/frontiers/embodied-multisensory)
 
@@ -64,7 +64,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://iprl.stanford.edu/](https://iprl.stanford.edu/) | healthy | 2026-08-26 | 0 |
-| publications | [https://iprl.stanford.edu/publications.html](https://iprl.stanford.edu/publications.html) | healthy | 2026-08-26 | 0 |
+| home | [https://iprl.stanford.edu/](https://iprl.stanford.edu/) | healthy | 2026-08-30 | 0 |
+| publications | [https://iprl.stanford.edu/publications.html](https://iprl.stanford.edu/publications.html) | healthy | 2026-08-30 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

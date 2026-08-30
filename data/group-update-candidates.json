@@ -1,7 +1,37 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-26",
+  "generated_at": "2026-08-31",
   "candidates": [
+    {
+      "organization_id": "org:agility-robotics",
+      "title": "Agility Robotics to Attend Upcoming Investor Conferences Press Release August 27, 2026",
+      "url": "https://www.agilityrobotics.com/content/agility-robotics-to-attend-upcoming-investor-conferences",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_home",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
+      "work_id": null
+    },
+    {
+      "organization_id": "org:amazon-robotics",
+      "title": "Applied Scientist, MOP (Modeling and Optimization Planning)",
+      "url": "https://www.amazon.jobs/jobs/10519788/applied-scientist-mop-modeling-and-optimization-planning",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_blog",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
+      "work_id": null
+    },
     {
       "organization_id": "org:berkeley-autolab",
       "title": "Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction",
@@ -76,6 +106,21 @@
       "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
       "first_seen_at": "2026-08-26",
       "work_id": "doi:10.1126/scirobotics.adr5247"
+    },
+    {
+      "organization_id": "org:boston-dynamics",
+      "title": "Ask a Roboticist: Meet Mark",
+      "url": "https://bostondynamics.com/blog/ask-a-roboticist-meet-mark",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_blog",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
+      "work_id": null
     },
     {
       "organization_id": "org:cmu-intent-robotics",
@@ -601,6 +646,21 @@
       "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
       "first_seen_at": "2026-08-26",
       "work_id": "arxiv:2606.10025"
+    },
+    {
+      "organization_id": "org:dyna-robotics",
+      "title": "01 Not Just a Model, But a Product 08.27.26",
+      "url": "https://www.dyna.co/research/scaling-customer-deployments",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_home",
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
+      "work_id": null
     },
     {
       "organization_id": "org:generalist-ai",

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-26",
+  "generated_at": "2026-08-31",
   "candidates": [
     {
       "update_id": "group-update:00a6b30408113ef8",
@@ -36,6 +36,25 @@
       "question_codes": [],
       "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
       "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false,
+      "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
+    },
+    {
+      "update_id": "group-update:04df82d8349e7f65",
+      "organization_id": "org:boston-dynamics",
+      "title": "Ask a Roboticist: Meet Mark",
+      "url": "https://bostondynamics.com/blog/ask-a-roboticist-meet-mark",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_blog",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
       "strict_peer_reviewed": false,
       "curated": false,
       "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
@@ -1905,6 +1924,25 @@
       "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
     },
     {
+      "update_id": "group-update:983d005550363623",
+      "organization_id": "org:amazon-robotics",
+      "title": "Applied Scientist, MOP (Modeling and Optimization Planning)",
+      "url": "https://www.amazon.jobs/jobs/10519788/applied-scientist-mop-modeling-and-optimization-planning",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_blog",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
+      "strict_peer_reviewed": false,
+      "curated": false,
+      "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
+    },
+    {
       "update_id": "group-update:99518e9156b220d4",
       "organization_id": "org:genesis-ai",
       "title": "GitHub Stars",
@@ -2874,6 +2912,25 @@
       "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
     },
     {
+      "update_id": "group-update:d73aeabc8258a019",
+      "organization_id": "org:dyna-robotics",
+      "title": "01 Not Just a Model, But a Product 08.27.26",
+      "url": "https://www.dyna.co/research/scaling-customer-deployments",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_home",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
+      "strict_peer_reviewed": false,
+      "curated": false,
+      "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
+    },
+    {
       "update_id": "group-update:dacc393bc6ad2625",
       "organization_id": "org:genesis-ai",
       "title": "SAP: Franka grasp rigid cube",
@@ -3173,6 +3230,25 @@
       "question_codes": [],
       "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
       "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false,
+      "review_reason": "G3/G0 evidence cannot enter public research claims automatically."
+    },
+    {
+      "update_id": "group-update:eef872d591adf1a0",
+      "organization_id": "org:agility-robotics",
+      "title": "Agility Robotics to Attend Upcoming Investor Conferences Press Release August 27, 2026",
+      "url": "https://www.agilityrobotics.com/content/agility-robotics-to-attend-upcoming-investor-conferences",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "project",
+      "evidence_grade": "G3",
+      "source_type": "official_home",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-08-31",
       "strict_peer_reviewed": false,
       "curated": false,
       "review_reason": "G3/G0 evidence cannot enter public research claims automatically."

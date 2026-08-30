@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -79,7 +79,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.ri.cmu.edu/ri-faculty/andrea-bajcsy/](https://www.ri.cmu.edu/ri-faculty/andrea-bajcsy/) | healthy | 2026-08-26 | 0 |
-| publications | [https://cmu-intentlab.github.io/](https://cmu-intentlab.github.io/) | healthy | 2026-08-26 | 0 |
+| home | [https://www.ri.cmu.edu/ri-faculty/andrea-bajcsy/](https://www.ri.cmu.edu/ri-faculty/andrea-bajcsy/) | healthy | 2026-08-30 | 0 |
+| publications | [https://cmu-intentlab.github.io/](https://cmu-intentlab.github.io/) | healthy | 2026-08-30 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

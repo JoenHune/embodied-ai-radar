@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://air-dream.netlify.app/](https://air-dream.netlify.app/) | healthy | 2026-08-26 | 0 |
-| publications | [https://air.tsinghua.edu.cn/en/info/1046/1198.htm](https://air.tsinghua.edu.cn/en/info/1046/1198.htm) | healthy | 2026-08-26 | 0 |
+| home | [https://air-dream.netlify.app/](https://air-dream.netlify.app/) | healthy | 2026-08-30 | 0 |
+| publications | [https://air.tsinghua.edu.cn/en/info/1046/1198.htm](https://air.tsinghua.edu.cn/en/info/1046/1198.htm) | healthy | 2026-08-30 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

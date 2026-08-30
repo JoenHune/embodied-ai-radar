@@ -17,7 +17,7 @@ Hardware-and-deployment watch for accessible humanoid and quadruped platforms, w
 | 雷达问题映射 | [Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ Hardware-and-deployment watch for accessible humanoid and quadruped platforms, w
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| source_1 | [https://www.unitree.com/about/](https://www.unitree.com/about/) | healthy | 2026-08-26 | 0 |
-| source_2 | [https://www.unitree.com/](https://www.unitree.com/) | healthy | 2026-08-26 | 0 |
-| source_3 | [https://github.com/unitreerobotics/unitree_sdk2](https://github.com/unitreerobotics/unitree_sdk2) | healthy | 2026-08-26 | 0 |
+| source_1 | [https://www.unitree.com/about/](https://www.unitree.com/about/) | healthy | 2026-08-30 | 0 |
+| source_2 | [https://www.unitree.com/](https://www.unitree.com/) | healthy | 2026-08-30 | 0 |
+| source_3 | [https://github.com/unitreerobotics/unitree_sdk2](https://github.com/unitreerobotics/unitree_sdk2) | healthy | 2026-08-30 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

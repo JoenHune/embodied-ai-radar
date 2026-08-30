@@ -1,9 +1,29 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-27",
+  "generated_at": "2026-08-31",
   "status": "awaiting_first_poll",
-  "latest_week": "2026-W34",
+  "latest_week": "2026-W35",
   "weeks": [
+    {
+      "week_id": "2026-W35",
+      "from": "2026-08-24",
+      "until": "2026-08-30",
+      "timezone": "Asia/Shanghai",
+      "status": "awaiting_first_poll",
+      "metrics_verified_before_publish": false,
+      "post_count": 0,
+      "unique_authors": 0,
+      "ranked_topic_count": 0,
+      "top_topics": [],
+      "top_by_lane": {
+        "research": [],
+        "startup": [],
+        "discussion": []
+      },
+      "controversial_topics": [],
+      "emerging_signals": [],
+      "unavailable_post_count": 0
+    },
     {
       "week_id": "2026-W34",
       "from": "2026-08-17",

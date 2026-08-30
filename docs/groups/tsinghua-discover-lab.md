@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua AIR DISCOVER Lab
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：partial** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：stale** · 最后核验 2026-08-26
 
 研究协同视觉与机器人、Sim-to-Real、柔性制造和人在环多智能体系统，并强调产业场景验证。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.discover-lab.com/robotics/](https://www.discover-lab.com/robotics/) | partial | — | 1 |
-| publications | [https://air.tsinghua.edu.cn/info/1046/1199.htm](https://air.tsinghua.edu.cn/info/1046/1199.htm) | healthy | 2026-08-26 | 0 |
+| home | [https://www.discover-lab.com/robotics/](https://www.discover-lab.com/robotics/) | stale | — | 2 |
+| publications | [https://air.tsinghua.edu.cn/info/1046/1199.htm](https://air.tsinghua.edu.cn/info/1046/1199.htm) | healthy | 2026-08-30 | 0 |
 
-- 来源健康状态为 partial，请谨慎解读最近更新。
+- 来源健康状态为 stale，请谨慎解读最近更新。

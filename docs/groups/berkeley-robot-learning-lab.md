@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Robot Learning Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：partial** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
 
 研究机器人与机器学习，长期覆盖强化、模仿、无监督、迁移与元学习，并重视真实机器人验证。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -58,7 +58,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://rll.berkeley.edu/](https://rll.berkeley.edu/) | healthy | 2026-08-26 | 0 |
-| publications | [https://people.eecs.berkeley.edu/~pabbeel/publications.html](https://people.eecs.berkeley.edu/~pabbeel/publications.html) | partial | — | 1 |
+| home | [https://rll.berkeley.edu/](https://rll.berkeley.edu/) | partial | 2026-08-26 | 1 |
+| publications | [https://people.eecs.berkeley.edu/~pabbeel/publications.html](https://people.eecs.berkeley.edu/~pabbeel/publications.html) | stale | — | 2 |
 
-- 来源健康状态为 partial，请谨慎解读最近更新。
+- 来源健康状态为 stale，请谨慎解读最近更新。

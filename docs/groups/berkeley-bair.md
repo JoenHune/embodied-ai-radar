@@ -4,7 +4,7 @@ outline: deep
 
 # Berkeley AI Research (BAIR)
 
-> 研究院/开放平台 · North America / United States · **来源状态：partial** · 最后核验 2026-08-26
+> 研究院/开放平台 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
 
 Academic AI umbrella connecting robot learning, control, perception, human interaction, and open humanoid work across several independently tracked Berkeley groups.
 
@@ -17,7 +17,7 @@ Academic AI umbrella connecting robot learning, control, perception, human inter
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ Academic AI umbrella connecting robot learning, control, perception, human inter
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| source_1 | [https://bair.berkeley.edu/](https://bair.berkeley.edu/) | partial | — | 1 |
-| source_2 | [https://eecs.berkeley.edu/research_area/artificial-intelligence-ai/](https://eecs.berkeley.edu/research_area/artificial-intelligence-ai/) | healthy | 2026-08-26 | 0 |
-| source_3 | [https://ai.berkeley.edu/research](https://ai.berkeley.edu/research) | healthy | 2026-08-26 | 0 |
+| source_1 | [https://bair.berkeley.edu/](https://bair.berkeley.edu/) | stale | — | 2 |
+| source_2 | [https://eecs.berkeley.edu/research_area/artificial-intelligence-ai/](https://eecs.berkeley.edu/research_area/artificial-intelligence-ai/) | healthy | 2026-08-30 | 0 |
+| source_3 | [https://ai.berkeley.edu/research](https://ai.berkeley.edu/research) | healthy | 2026-08-30 | 0 |
 
-- 来源健康状态为 partial，请谨慎解读最近更新。
+- 来源健康状态为 stale，请谨慎解读最近更新。

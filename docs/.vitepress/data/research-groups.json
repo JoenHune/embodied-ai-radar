@@ -1,12 +1,12 @@
 {
   "version": "1.1",
-  "generated_at": "2026-08-26",
+  "generated_at": "2026-08-31",
   "tracking_group_count": 63,
   "organization_node_count": 86,
   "latest_completed_week": {
-    "id": "2026-W34",
-    "from": "2026-08-17",
-    "until": "2026-08-23"
+    "id": "2026-W35",
+    "from": "2026-08-24",
+    "until": "2026-08-30"
   },
   "groups": [
     {
@@ -721,8 +721,8 @@
         "Q7"
       ],
       "update_count": 6,
-      "current_12m_count": 3,
-      "previous_12m_count": 2,
+      "current_12m_count": 1,
+      "previous_12m_count": 4,
       "latest_week_count": 0,
       "strict_peer_work_count": 0,
       "linked_work_count": 5,
@@ -752,7 +752,7 @@
       ],
       "status": "active",
       "disclosure_level": "medium",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2025-08-05",
       "summary_zh": "连接计算机动画、机器人、强化学习、物理仿真、最优控制与生物力学，研究动物和机器人协调运动。",
@@ -860,7 +860,7 @@
       ],
       "status": "active",
       "disclosure_level": "medium",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2025-07-29",
       "summary_zh": "研究协同视觉与机器人、Sim-to-Real、柔性制造和人在环多智能体系统，并强调产业场景验证。",
@@ -1243,7 +1243,7 @@
       ],
       "status": "active",
       "disclosure_level": "medium",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2024-11-04",
       "summary_zh": "研究人机与人—AI交互、从人类反馈学习目标、协作决策和对齐，使智能体围绕人的需求行动。",
@@ -1290,7 +1290,7 @@
       ],
       "status": "active",
       "disclosure_level": "medium",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2025-05-06",
       "summary_zh": "研究从日常图像与视频捕获、感知和理解动态三维世界，并持续学习世界模型。",
@@ -1340,7 +1340,7 @@
       ],
       "status": "active",
       "disclosure_level": "high",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2026-02-06",
       "summary_zh": "研究机器人与机器学习，长期覆盖强化、模仿、无监督、迁移与元学习，并重视真实机器人验证。",
@@ -1393,7 +1393,7 @@
       ],
       "status": "active",
       "disclosure_level": "high",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2025-06-03",
       "summary_zh": "研究可自主学习的灵活与适应性行为，覆盖强化学习、机器人学习、视觉和真实世界策略训练。",
@@ -1979,9 +1979,9 @@
         "Q10"
       ],
       "update_count": 4,
-      "current_12m_count": 2,
+      "current_12m_count": 3,
       "previous_12m_count": 1,
-      "latest_week_count": 0,
+      "latest_week_count": 1,
       "strict_peer_work_count": 0,
       "linked_work_count": 0,
       "evidence_counts": {
@@ -2415,7 +2415,7 @@
       "update_count": 1,
       "current_12m_count": 1,
       "previous_12m_count": 0,
-      "latest_week_count": 1,
+      "latest_week_count": 0,
       "strict_peer_work_count": 0,
       "linked_work_count": 1,
       "evidence_counts": {
@@ -2469,7 +2469,7 @@
       "update_count": 1,
       "current_12m_count": 1,
       "previous_12m_count": 0,
-      "latest_week_count": 1,
+      "latest_week_count": 0,
       "strict_peer_work_count": 0,
       "linked_work_count": 0,
       "evidence_counts": {
@@ -2498,7 +2498,7 @@
       ],
       "status": "active",
       "disclosure_level": "low",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2026-08-26",
       "summary_zh": "Tesla 的通用双足人形机器人项目，公开方向覆盖平衡、导航、视觉感知、规划、控制、端侧推理硬件与规模化制造。由于论文和正式实验披露有限，Demo、招聘和投资者材料只能进入部署战略观察层。",
@@ -2551,7 +2551,7 @@
       ],
       "status": "active",
       "disclosure_level": "high",
-      "source_health": "healthy",
+      "source_health": "partial",
       "last_checked": "2026-08-26",
       "last_changed": "2026-06-08",
       "summary_zh": "围绕老龄社会的人类能力增强开展移动操作、机器人用户体验、原型与研究运营，并以大规模真实 rollouts 严格研究 Large Behavior Models 的数据规模和迁移规律。",
@@ -2736,7 +2736,7 @@
       "update_count": 7,
       "current_12m_count": 5,
       "previous_12m_count": 1,
-      "latest_week_count": 2,
+      "latest_week_count": 0,
       "strict_peer_work_count": 0,
       "linked_work_count": 0,
       "evidence_counts": {
@@ -2987,7 +2987,7 @@
       ],
       "status": "active",
       "disclosure_level": "medium",
-      "source_health": "partial",
+      "source_health": "stale",
       "last_checked": "2026-08-26",
       "last_changed": "2025-07-01",
       "summary_zh": "Academic AI umbrella connecting robot learning, control, perception, human interaction, and open humanoid work across several independently tracked Berkeley groups.",
@@ -3325,7 +3325,7 @@
       "update_count": 11,
       "current_12m_count": 4,
       "previous_12m_count": 0,
-      "latest_week_count": 1,
+      "latest_week_count": 0,
       "strict_peer_work_count": 0,
       "linked_work_count": 0,
       "evidence_counts": {
@@ -3494,7 +3494,7 @@
   "visualizations": {
     "period": {
       "from": "2025-09-01",
-      "until": "2026-08-26",
+      "until": "2026-08-31",
       "months": [
         "2025-09",
         "2025-10",
@@ -15317,5 +15317,5 @@
       }
     ]
   },
-  "review_queue_count": 176
+  "review_queue_count": 180
 }

@@ -17,7 +17,7 @@ NVIDIA 面向通用具身智能的核心研究组，覆盖多模态基础模型�
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -65,8 +65,8 @@ NVIDIA 面向通用具身智能的核心研究组，覆盖多模态基础模型�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://research.nvidia.com/labs/gear/](https://research.nvidia.com/labs/gear/) | healthy | 2026-08-26 | 0 |
-| projects | [https://research.nvidia.com/labs/gear/projects/](https://research.nvidia.com/labs/gear/projects/) | healthy | 2026-08-26 | 0 |
-| publications | [https://research.nvidia.com/labs/gear/publications/](https://research.nvidia.com/labs/gear/publications/) | healthy | 2026-08-26 | 0 |
+| home | [https://research.nvidia.com/labs/gear/](https://research.nvidia.com/labs/gear/) | healthy | 2026-08-30 | 0 |
+| publications | [https://research.nvidia.com/labs/gear/publications/](https://research.nvidia.com/labs/gear/publications/) | healthy | 2026-08-30 | 0 |
+| projects | [https://research.nvidia.com/labs/gear/projects/](https://research.nvidia.com/labs/gear/projects/) | healthy | 2026-08-30 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

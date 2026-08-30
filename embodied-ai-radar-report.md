@@ -2760,7 +2760,7 @@ Genesis、Generalist、Figure、DYNA 与 Sunday 的官方技术报告会进入�
 
 ### 周报与方法
 
-- [2026-W34 周报](/groups/weekly/2026-w34)
+- [2026-W35 周报](/groups/weekly/2026-w35)
 - [组织层级图](/groups/organizations)
 - [研究组合作网络](/groups/collaboration)
 - [领先初创技术报告](/groups/startups)
@@ -2774,7 +2774,7 @@ Genesis、Generalist、Figure、DYNA 与 Sunday 的官方技术报告会进入�
 
 | 周次 | 覆盖窗口 | G1/G2 更新 | 变化研究组 | 链接 |
 |---|---|---:|---:|---|
-| 2026-W34 | 2026-08-17—2026-08-23 | 5 | 4 | [阅读](/groups/weekly/2026-w34) |
+| 2026-W35 | 2026-08-24—2026-08-30 | 1 | 1 | [阅读](/groups/weekly/2026-w35) |
 
 ---
 
@@ -4471,7 +4471,7 @@ Genesis、Generalist、Figure、DYNA 与 Sunday 的官方技术报告会进入�
 | Canonical works | 41592 |
 | 带 organization 归属边的 work | 100 |
 | 持续跟踪研究组 | 63 |
-| 待复核 G3/G0 候选 | 176 |
+| 待复核 G3/G0 候选 | 180 |
 
 ### 必须保留的区别
 

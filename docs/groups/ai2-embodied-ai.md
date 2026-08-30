@@ -17,7 +17,7 @@ Open infrastructure and model ecosystem spanning simulation, 3D assets, navigati
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,9 +55,9 @@ Open infrastructure and model ecosystem spanning simulation, 3D assets, navigati
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| blog | [https://allenai.org/blog](https://allenai.org/blog) | healthy | 2026-08-26 | 0 |
-| models | [https://docs.allenai.org/models/molmoact](https://docs.allenai.org/models/molmoact) | healthy | 2026-08-26 | 0 |
-| source_1 | [https://allenai.org/embodied-ai](https://allenai.org/embodied-ai) | healthy | 2026-08-26 | 0 |
-| source_3 | [https://ai2thor.allenai.org/publications/](https://ai2thor.allenai.org/publications/) | healthy | 2026-08-26 | 0 |
+| source_1 | [https://allenai.org/embodied-ai](https://allenai.org/embodied-ai) | healthy | 2026-08-30 | 0 |
+| blog | [https://allenai.org/blog](https://allenai.org/blog) | healthy | 2026-08-30 | 0 |
+| source_3 | [https://ai2thor.allenai.org/publications/](https://ai2thor.allenai.org/publications/) | healthy | 2026-08-30 | 0 |
+| models | [https://docs.allenai.org/models/molmoact](https://docs.allenai.org/models/molmoact) | healthy | 2026-08-30 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

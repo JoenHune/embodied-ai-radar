@@ -17,7 +17,7 @@ Amazon 新设的前沿机器人研究组；公开证据主要来自官方招聘�
 | 雷达问题映射 | [Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | low |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ Amazon 新设的前沿机器人研究组；公开证据主要来自官方招聘�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.amazon.jobs/en/jobs/10422560/member-of-technical-staff-science-frontier-ai-robotics-far](https://www.amazon.jobs/en/jobs/10422560/member-of-technical-staff-science-frontier-ai-robotics-far) | healthy | 2026-08-26 | 0 |
-| publications | [https://www.amazon.jobs/en/jobs/10418413/member-of-technical-staff-robot-manipulation-learning-frontier-ai-robotics](https://www.amazon.jobs/en/jobs/10418413/member-of-technical-staff-robot-manipulation-learning-frontier-ai-robotics) | healthy | 2026-08-26 | 0 |
+| home | [https://www.amazon.jobs/en/jobs/10422560/member-of-technical-staff-science-frontier-ai-robotics-far](https://www.amazon.jobs/en/jobs/10422560/member-of-technical-staff-science-frontier-ai-robotics-far) | healthy | 2026-08-30 | 0 |
+| publications | [https://www.amazon.jobs/en/jobs/10418413/member-of-technical-staff-robot-manipulation-learning-frontier-ai-robotics](https://www.amazon.jobs/en/jobs/10418413/member-of-technical-staff-robot-manipulation-learning-frontier-ai-robotics) | healthy | 2026-08-30 | 0 |
 
 - 该组织公开披露较少，公司 Demo、招聘和实际研究成果必须分开理解。

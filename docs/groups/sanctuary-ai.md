@@ -17,7 +17,7 @@ Closed-source and deployment watch for tactile dexterity, multi-embodiment polic
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | low |
 
-## 本周新增（2026-W34）
+## 本周新增（2026-W35）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,9 +55,9 @@ Closed-source and deployment watch for tactile dexterity, multi-embodiment polic
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| source_1 | [https://sanctuary.ai/news/](https://sanctuary.ai/news/) | healthy | 2026-08-26 | 0 |
-| source_2 | [https://sanctuary.ai/](https://sanctuary.ai/) | healthy | 2026-08-26 | 0 |
-| source_3 | [https://sanctuary.ai/team-members/](https://sanctuary.ai/team-members/) | healthy | 2026-08-26 | 0 |
+| source_1 | [https://sanctuary.ai/news/](https://sanctuary.ai/news/) | healthy | 2026-08-30 | 0 |
+| source_2 | [https://sanctuary.ai/](https://sanctuary.ai/) | healthy | 2026-08-30 | 0 |
+| source_3 | [https://sanctuary.ai/team-members/](https://sanctuary.ai/team-members/) | healthy | 2026-08-30 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。
 - 该组织公开披露较少，公司 Demo、招聘和实际研究成果必须分开理解。
