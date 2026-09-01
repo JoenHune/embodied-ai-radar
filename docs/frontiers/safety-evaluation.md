@@ -41,6 +41,7 @@ outline: deep
 | 2026-05 | 9 | 2026-04 | 4 | +5 | +125.0% |
 | 2026-06 | 10 | 2026-05 | 9 | +1 | +11.1% |
 | 2026-07 | 6 | 2026-06 | 10 | -4 | -40.0% |
+| 2026-08 | 7 | 2026-07 | 6 | +1 | +16.7% |
 
 ## 代表工作与证据
 
@@ -104,5 +105,5 @@ outline: deep
 | [ActProbe: Action-Space Probe for Early Failure Detection of Generative Robot Policies](https://arxiv.org/abs/2606.08508) | 2026-06-07 | 预印本 | 否 | — |
 | [An Open-Source Software Toolkit & Benchmark Suite for the Evaluation and Adaptation of Multimodal Action Models](https://arxiv.org/abs/2506.09172) | 2025-06-10 | 预印本 | 否 | — |
 | [Analysis of Deep-Learning Methods in an ISO/TS 15066-Compliant Human-Robot Safety Framework](https://arxiv.org/abs/2511.19094) | 2025-11-24 | 预印本 | 否 | — |
-| [ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation](https://arxiv.org/abs/2510.02298) | 2025-10-02 | RA-L 2026 | 否 | — |
+| [ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation](https://arxiv.org/abs/2510.02298) | 2025-10-02 | 预印本 | 否 | — |
 | [ATOM-CBF: Adaptive Safe Perception-Based Control under Out-of-Distribution Measurements](https://arxiv.org/abs/2511.08741) | 2025-11-11 | 预印本 | 否 | — |

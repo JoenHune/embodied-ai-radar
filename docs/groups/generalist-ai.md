@@ -4,7 +4,7 @@ outline: deep
 
 # Generalist AI
 
-> 初创前沿观察 · Europe / United Kingdom · **来源状态：healthy** · 最后核验 2026-08-26
+> 初创前沿观察 · Europe / United Kingdom · **来源状态：healthy** · 最后核验 2026-08-30
 
 以大规模跨任务机器人数据训练通才策略的初创公司，研究重点从 GEN-0/GEN-1 的规模化预训练推进到 GEN-1.5 的少样本快速适配。
 

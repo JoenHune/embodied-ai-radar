@@ -4,7 +4,7 @@ outline: deep
 
 # ETH Zurich Robotic Systems Lab
 
-> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究腿足与移动机器人、感知、控制和自主系统，以复杂地形真机部署和鲁棒野外能力见长。
 

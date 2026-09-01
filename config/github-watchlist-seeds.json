@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04",
+  "updated_at": "2026-08-31",
   "repositories": [
     {
       "repo_full_name": "XiangchengZhang/world-action-planner",
@@ -20,6 +20,21 @@
       "repo_full_name": "SunnyYWD/ActFovea",
       "paper_id": "2607.29169",
       "signal_zh": "新近论文直接公布的代码仓，先纳入早期观察，待独立采用审计。"
+    },
+    {
+      "repo_full_name": "omni-CLAP/clap",
+      "paper_id": "2608.27406",
+      "signal_zh": "跨本体 action-conditioned video world model 同时公开代码和模型，待核验无作者重叠的真机采用。"
+    },
+    {
+      "repo_full_name": "starVLA/VLAct",
+      "paper_id": "2608.27550",
+      "signal_zh": "representation-centric VLA continued pre-training 公开训练管线与多组 checkpoint，待独立复现和跨本体采用审计。"
+    },
+    {
+      "repo_full_name": "neoteai/N0-Foundation",
+      "paper_id": "2608.29601",
+      "signal_zh": "触觉基础设施仓库与 5K 小时开放数据子集，待跨传感器采用与第三方硬件复现。"
     }
   ]
 }

@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Intelligent Autonomous Manipulation Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究开放世界中的通用操作机器人，强调任务建模、样本高效技能习得、适应与鲁棒执行。
 

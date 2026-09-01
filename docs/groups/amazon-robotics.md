@@ -4,7 +4,7 @@ outline: deep
 
 # Amazon Robotics
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 以全球超大规模履约机器人集群为真实部署场，研究多机器人协调、移动机器人、触觉操作、人机协作和生产系统中的持续数据闭环；必须与 Amazon FAR 分开跟踪。
 

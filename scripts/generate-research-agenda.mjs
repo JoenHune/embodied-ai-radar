@@ -36,13 +36,16 @@ const questionMatch = (paper, question) => {
 
 const cutoff = new Date(`${snapshotDate}T00:00:00Z`)
 const previousMonthEnd = new Date(Date.UTC(cutoff.getUTCFullYear(), cutoff.getUTCMonth(), 0))
+const cutoffMonthEndDay = new Date(Date.UTC(cutoff.getUTCFullYear(), cutoff.getUTCMonth() + 1, 0)).getUTCDate()
+const snapshotStatus = cutoff.getUTCDate() === cutoffMonthEndDay ? 'complete' : 'partial'
+const latestCompleteDate = snapshotStatus === 'complete' ? cutoff : previousMonthEnd
 const monthKey = (date) => `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}`
-const latestCompleteMonth = monthKey(previousMonthEnd)
+const latestCompleteMonth = monthKey(latestCompleteDate)
 const rollingMonths = []
 for (let offset = 11; offset >= 0; offset -= 1) {
   rollingMonths.push(monthKey(new Date(Date.UTC(
-    previousMonthEnd.getUTCFullYear(),
-    previousMonthEnd.getUTCMonth() - offset,
+    latestCompleteDate.getUTCFullYear(),
+    latestCompleteDate.getUTCMonth() - offset,
     1,
   ))))
 }
@@ -87,8 +90,8 @@ evidenceRecords.sort((left, right) => left.first_submitted.localeCompare(right.f
 const sidecar = {
   version: agenda.version,
   generated_at: snapshotDate,
-  rolling_window: { from: `${rollingMonths[0]}-01`, until: previousMonthEnd.toISOString().slice(0, 10), months: rollingMonths },
-  snapshot: { month: snapshotMonth, until: snapshotDate },
+  rolling_window: { from: `${rollingMonths[0]}-01`, until: latestCompleteDate.toISOString().slice(0, 10), months: rollingMonths },
+  snapshot: { month: snapshotMonth, until: snapshotDate, status: snapshotStatus },
   counting_rule: agenda.design.counting_rule,
   question_summaries: summaries,
   records: evidenceRecords,
@@ -143,7 +146,7 @@ ${agenda.source.note} 自动计数只是标题/摘要词表命中的相关工作
 
 飞书文档抓住了一个真实变化：具身智能的领先差异正在从单一模型扩展到**接触表征—可执行动作—运行时验证—失败回流—软硬件迭代**。但其中既有当前主线，也有开放科学问题和工程门槛，不能全部写成“已确认趋势”。
 
-| ID | 战略优先级 | 研究问题 | 证据 | 性质 | D 类映射 | 最近 12 个完整月词表命中 | ${snapshotMonth} 截至 ${Number(snapshotDate.slice(-2))} 日 | 严格评审锚点 |
+| ID | 战略优先级 | 研究问题 | 证据 | 性质 | D 类映射 | 最近 12 个完整月词表命中 | ${snapshotMonth} ${snapshotStatus === 'complete' ? '完整月（已含在 12 月窗口）' : `截至 ${Number(snapshotDate.slice(-2))} 日`} | 严格评审锚点 |
 |---|---|---|---|---|---|---:|---:|---:|
 ${summaryRows}
 

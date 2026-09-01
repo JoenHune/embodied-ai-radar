@@ -4,7 +4,7 @@ outline: deep
 
 # University of Washington WEIRD Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究家庭真实环境中的机器人操作，并延伸到视觉、语言、人机交互、世界模型、鲁棒性和可靠性。
 

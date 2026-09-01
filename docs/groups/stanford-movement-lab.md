@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Movement Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 连接计算机动画、机器人、强化学习、物理仿真、最优控制与生物力学，研究动物和机器人协调运动。
 

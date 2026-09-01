@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua AIR DISCOVER Lab
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：stale** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：stale** · 最后核验 2026-08-30
 
 研究协同视觉与机器人、Sim-to-Real、柔性制造和人在环多智能体系统，并强调产业场景验证。
 

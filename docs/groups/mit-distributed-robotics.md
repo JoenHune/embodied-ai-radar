@@ -4,7 +4,7 @@ outline: deep
 
 # MIT Distributed Robotics Laboratory
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究网络化、分布式和协作机器人，同时覆盖机器人计算设计、感知规划控制、可审计学习及人与机器协作。
 

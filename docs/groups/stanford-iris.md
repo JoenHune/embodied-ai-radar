@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Intelligence through Robotic Interaction at Scale Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究机器人和智能体如何通过大规模学习与交互形成广泛智能行为，覆盖元学习、策略学习与持续适应。
 

@@ -4,7 +4,7 @@ outline: deep
 
 # Intrinsic
 
-> 企业/独立研究组织 · Global / United States / Germany / Singapore · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · Global / United States / Germany / Singapore · **来源状态：healthy** · 最后核验 2026-08-30
 
 Google 体系内面向工业机器人的 Physical AI 平台与研究团队，围绕 Flowstate、Intrinsic Vision Model、开放 ROS/Gazebo 生态、多机器人编排和可重构智能工作单元推进从开发到生产部署。
 

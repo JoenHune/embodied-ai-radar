@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua AIR-DREAM Lab
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究稳健、可泛化、可部署的数据驱动决策，覆盖强化学习、机器人控制、VLA与真实AIoT系统优化。
 

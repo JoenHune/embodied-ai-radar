@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-08-24",
+  "generated_at": "2026-08-31",
   "window": {
     "from": "2024-07-01",
-    "until": "2026-08-24"
+    "until": "2026-08-31"
   },
-  "mother_corpus": 31773,
-  "included": 9269,
-  "candidate": 5896,
-  "manual_review": 10044,
-  "with_doi": 2869,
+  "mother_corpus": 32218,
+  "included": 9410,
+  "candidate": 5986,
+  "manual_review": 10178,
+  "with_doi": 2891,
   "by_query": {
-    "robot_crosslist": 13386,
-    "cs_ro": 24119,
-    "embodied_crosslist": 2448
+    "robot_crosslist": 13558,
+    "cs_ro": 24461,
+    "embodied_crosslist": 2500
   },
   "by_primary_topic": {
-    "dexterous_manipulation": 960,
-    "policy_learning": 2287,
-    "humanoid_whole_body": 1553,
-    "human_robot_interaction": 597,
-    "world_models": 619,
-    "data_engines": 271,
-    "spatial_perception": 439,
-    "reasoning_planning": 616,
-    "navigation_mobile_manipulation": 453,
-    "simulation_transfer": 321,
-    "foundation_models": 955,
+    "dexterous_manipulation": 972,
+    "policy_learning": 2314,
+    "humanoid_whole_body": 1572,
+    "human_robot_interaction": 602,
+    "world_models": 635,
+    "data_engines": 278,
+    "spatial_perception": 444,
+    "reasoning_planning": 625,
+    "navigation_mobile_manipulation": 462,
+    "simulation_transfer": 326,
+    "foundation_models": 982,
     "safety_evaluation": 129,
     "embodied_multisensory": 24,
     "multi_robot_coordination": 38,
@@ -233,12 +233,12 @@
       "supplement_only": 301
     },
     "2026-08": {
-      "mother_corpus": 1007,
-      "included": 328,
-      "candidate": 217,
-      "manual_review": 292,
-      "cs_ro": 783,
-      "supplement_only": 224
+      "mother_corpus": 1452,
+      "included": 469,
+      "candidate": 307,
+      "manual_review": 426,
+      "cs_ro": 1125,
+      "supplement_only": 327
     }
   },
   "method_note": "Mother corpus is the deduplicated union of complete cs.RO monthly pulls and targeted cs.AI/cs.CV/cs.LG supplementary queries. Included is an automated v2 relevance state, not the hand-curated top-paper set."

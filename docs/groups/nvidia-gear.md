@@ -4,7 +4,7 @@ outline: deep
 
 # NVIDIA GEAR
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 NVIDIA 面向通用具身智能的核心研究组，覆盖多模态基础模型、通用机器人、foundation agents、仿真与合成数据，并以 GR00T、EgoScale 等项目连接人类视频、世界模型与真实机器人策略。
 

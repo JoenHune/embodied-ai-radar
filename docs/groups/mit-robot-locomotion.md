@@ -4,7 +4,7 @@ outline: deep
 
 # MIT Robot Locomotion Group
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 以动力学、控制理论和机器学习研究敏捷、高效、鲁棒机器人，当前重点转向操作、感知—控制融合与物理推理。
 

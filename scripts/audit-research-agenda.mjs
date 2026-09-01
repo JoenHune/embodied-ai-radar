@@ -9,6 +9,15 @@ const evidence = read('data/research-question-evidence.json')
 const preprints = read('data/preprints.json')
 const errors = []
 
+if (evidence.generated_at !== '2026-08-31') errors.push('question evidence cutoff must be 2026-08-31')
+if (evidence.rolling_window?.from !== '2025-09-01' || evidence.rolling_window?.until !== '2026-08-31') {
+  errors.push('question evidence rolling window must cover 2025-09 through 2026-08')
+}
+if (evidence.rolling_window?.months?.length !== 12 || evidence.rolling_window?.months?.at(-1) !== '2026-08') {
+  errors.push('question evidence must contain 12 complete months ending 2026-08')
+}
+if (evidence.snapshot?.status !== 'complete') errors.push('August question snapshot must be complete')
+
 const expected = ['Q0', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10']
 const ids = agenda.questions.map((item) => item.id)
 if (new Set(ids).size !== ids.length) errors.push('question IDs are not unique')

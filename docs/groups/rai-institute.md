@@ -4,7 +4,7 @@ outline: deep
 
 # RAI Institute
 
-> 企业/独立研究组织 · Global / United States / Switzerland · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · Global / United States / Switzerland · **来源状态：healthy** · 最后核验 2026-08-30
 
 独立机器人研究院，研究灵巧操作、先进学习控制、机器人交互基础模型、挑战环境导航与机器人社会伦理；与 Boston Dynamics 是合作关系而非同一组织。
 

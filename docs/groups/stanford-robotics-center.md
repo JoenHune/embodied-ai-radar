@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Robotics Center
 
-> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Cross-disciplinary facility and program layer for large-scale real-world robotics projects, not a replacement for Stanford PI-lab attribution.
 

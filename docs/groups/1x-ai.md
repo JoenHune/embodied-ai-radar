@@ -4,7 +4,7 @@ outline: deep
 
 # 1X AI
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 以家庭人形机器人 NEO、通用策略与机器人世界模型为核心的 AI 机器人公司；其 World Model Lab 公开研究以真实视频学习仿真和策略评测，目标是缩短实体测试周期。
 

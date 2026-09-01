@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24",
+  "generated_at": "2026-08-31",
   "repository_count": 42,
   "url_verified": 42,
   "paper_mapped": 34,
@@ -32,8 +32,8 @@
   "warning": "Stars, forks and repository metadata were refreshed on the generated date. Independent-adoption scores retain their earlier observation date; newly discovered repositories remain a separate watchlist until the same issue/PR and dependency audit is completed.",
   "metadata_refreshed": 42,
   "adoption_score_snapshot": "2026-07-29",
-  "new_watchlist_count": 4,
+  "new_watchlist_count": 7,
   "new_watchlist_status": {
-    "new_repo_pending_adoption_audit": 4
+    "new_repo_pending_adoption_audit": 7
   }
 }

@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Pathak Research Group
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究计算机视觉、机器学习与机器人交叉，目标是让智能体从原始感知中持续获得知识并在真实多样环境中泛化。
 

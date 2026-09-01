@@ -4,7 +4,7 @@ outline: deep
 
 # EPFL Learning Algorithms and Systems Laboratory
 
-> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究人类示教、灵巧技能、适应性与反应式控制、人机协作及安全，使机器人获得接近人类的操作能力。
 

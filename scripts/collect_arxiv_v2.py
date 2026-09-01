@@ -233,7 +233,7 @@ def summarize(records: list[dict]) -> dict:
             "supplement_only": sum("cs.RO" not in row["categories"] for row in subset),
         }
     return {
-        "generated_at": date.today().isoformat(),
+        "generated_at": REGISTRY["window"]["until"],
         "window": REGISTRY["window"],
         "mother_corpus": len(records),
         "included": sum(row["included"] for row in records),

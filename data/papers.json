@@ -52093,6 +52093,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -52508,7 +52509,7 @@
       "long_horizon": true,
       "open_code": true,
       "open_data": true,
-      "open_model": true
+      "open_model": false
     },
     "official_url": null,
     "code_url": null,
@@ -52522,6 +52523,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -53684,6 +53686,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -54177,6 +54180,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -54531,6 +54535,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -55632,6 +55637,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -56644,6 +56650,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -56992,6 +56999,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -57184,7 +57192,7 @@
       "cross_embodiment": false,
       "long_horizon": false,
       "open_code": true,
-      "open_data": true,
+      "open_data": false,
       "open_model": true
     },
     "official_url": null,
@@ -57199,6 +57207,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -57674,8 +57683,8 @@
       "cross_embodiment": false,
       "long_horizon": false,
       "open_code": true,
-      "open_data": true,
-      "open_model": true
+      "open_data": false,
+      "open_model": false
     },
     "official_url": null,
     "code_url": null,
@@ -57689,6 +57698,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -58825,9 +58835,9 @@
       "multi_task": false,
       "cross_embodiment": false,
       "long_horizon": false,
-      "open_code": true,
+      "open_code": false,
       "open_data": true,
-      "open_model": true
+      "open_model": false
     },
     "official_url": null,
     "code_url": null,
@@ -58841,6 +58851,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -59440,6 +59451,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -61410,6 +61422,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -62465,6 +62478,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -62885,6 +62899,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -63688,9 +63703,9 @@
       "multi_task": false,
       "cross_embodiment": false,
       "long_horizon": false,
-      "open_code": true,
+      "open_code": false,
       "open_data": true,
-      "open_model": true
+      "open_model": false
     },
     "official_url": null,
     "code_url": null,
@@ -63704,6 +63719,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -64050,6 +64066,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -68314,6 +68331,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -69945,7 +69963,6 @@
     "confidence_score": 0.68
   },
   {
-    "id": "2509.20286",
     "title": "Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video",
     "authors": [
       "Georgios Tziafas",
@@ -69959,7 +69976,9 @@
     "categories": [
       "cs.RO"
     ],
+    "id": "2509.20286",
     "primary_topic": "general_learning",
+    "current_primary_topic": null,
     "topics": [
       "general_learning"
     ],
@@ -71646,6 +71665,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -72716,6 +72736,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -74191,6 +74212,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -74883,6 +74905,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -77890,6 +77913,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -78646,6 +78670,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -78870,6 +78895,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -81891,6 +81917,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -82923,6 +82950,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -85769,6 +85797,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -86393,7 +86422,6 @@
     "confidence_score": 0.68
   },
   {
-    "id": "2511.02504",
     "title": "Dexterous Robotic Piano Playing at Scale",
     "authors": [
       "Le Chen",
@@ -86414,7 +86442,9 @@
     "categories": [
       "cs.RO"
     ],
+    "id": "2511.02504",
     "primary_topic": "dexterous",
+    "current_primary_topic": null,
     "topics": [
       "dexterous"
     ],
@@ -86683,6 +86713,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -87035,6 +87066,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -90055,6 +90087,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -91060,9 +91093,9 @@
       "multi_task": true,
       "cross_embodiment": true,
       "long_horizon": true,
-      "open_code": true,
+      "open_code": false,
       "open_data": true,
-      "open_model": true
+      "open_model": false
     },
     "official_url": null,
     "code_url": null,
@@ -91076,6 +91109,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -93775,6 +93809,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -95634,6 +95669,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -95919,6 +95955,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -97831,7 +97868,6 @@
     "confidence_score": 0.82
   },
   {
-    "id": "2512.08186",
     "title": "Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation",
     "authors": [
       "Meng Wei",
@@ -97853,7 +97889,9 @@
     "categories": [
       "cs.RO"
     ],
+    "id": "2512.08186",
     "primary_topic": "dual_system",
+    "current_primary_topic": null,
     "topics": [
       "dual_system"
     ],
@@ -98423,6 +98461,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -100073,6 +100112,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -100822,7 +100862,7 @@
       "multi_task": true,
       "cross_embodiment": false,
       "long_horizon": false,
-      "open_code": true,
+      "open_code": false,
       "open_data": true,
       "open_model": true
     },
@@ -100838,6 +100878,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.88,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -101883,6 +101924,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.95,
+    "current_primary_topic": null,
     "verification": {
       "status": "verified",
       "source": "arXiv API Atom entry from category/date wide recall",
@@ -106011,6 +106053,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -106156,6 +106199,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -107566,6 +107610,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -108208,6 +108253,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -108369,6 +108415,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -108991,6 +109038,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -111862,6 +111910,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -119182,6 +119231,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -120222,6 +120272,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -121074,6 +121125,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -122997,6 +123049,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -123148,6 +123201,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -123893,6 +123947,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -123974,6 +124029,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -136604,6 +136660,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -137099,6 +137156,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -138130,6 +138188,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -139088,6 +139147,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -139197,6 +139257,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -142132,6 +142193,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -142483,6 +142545,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -147651,6 +147714,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -148569,6 +148633,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -150646,6 +150711,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -151085,6 +151151,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -151442,6 +151509,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -152536,6 +152604,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -152904,6 +152973,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -166708,6 +166778,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -168544,6 +168615,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -168663,6 +168735,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -169285,7 +169358,6 @@
     "confidence_score": 0.82
   },
   {
-    "id": "2605.31286",
     "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
     "authors": [
       "Taiyi Su",
@@ -169309,7 +169381,9 @@
       "cs.RO",
       "cs.AI"
     ],
+    "id": "2605.31286",
     "primary_topic": "foundation",
+    "current_primary_topic": null,
     "topics": [
       "foundation"
     ],
@@ -170049,6 +170123,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -170812,6 +170887,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -171227,6 +171303,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -194382,7 +194459,6 @@
     "confidence_score": 0.82
   },
   {
-    "id": "2606.27375",
     "title": "Scalable Behavior Cloning with Open Data, Training, and Evaluation",
     "authors": [
       "Arthur Allshire",
@@ -194411,7 +194487,9 @@
     "categories": [
       "cs.RO"
     ],
+    "id": "2606.27375",
     "primary_topic": "general_learning",
+    "current_primary_topic": null,
     "topics": [
       "general_learning"
     ],
@@ -196289,6 +196367,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -197035,6 +197114,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -197184,6 +197264,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -197330,7 +197411,6 @@
     "confidence_score": 0.82
   },
   {
-    "id": "2606.31909",
     "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
     "authors": [
       "Bowen Jiang",
@@ -197344,7 +197424,9 @@
     "categories": [
       "cs.RO"
     ],
+    "id": "2606.31909",
     "primary_topic": "dexterous",
+    "current_primary_topic": null,
     "topics": [
       "dexterous"
     ],
@@ -197547,6 +197629,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -197626,6 +197709,7 @@
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -197696,7 +197780,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -197778,7 +197862,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -197844,7 +197928,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -197909,7 +197993,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -197990,7 +198074,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198049,7 +198133,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198116,7 +198200,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -198185,7 +198269,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198248,7 +198332,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -198330,10 +198414,11 @@
     "limitation_zh": "真实实验仍集中于单一双臂平台和三类家具，跨硬件迁移、错误恢复与长期重复部署尚无独立验证。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "id_title_match": true,
       "v1_date_source": "arXiv abstract and submission history",
@@ -198400,7 +198485,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198466,7 +198551,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198535,7 +198620,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198619,10 +198704,11 @@
     "limitation_zh": "40M 纠错器仍需按 benchmark 示范训练；视觉 latent 偏差并不等于接触或语义失败，跨环境误报率和部署成本仍待验证。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "id_title_match": true,
       "v1_date_source": "arXiv abstract and submission history",
@@ -198690,7 +198776,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198753,7 +198839,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198820,7 +198906,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -198885,7 +198971,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -198953,7 +199039,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -199026,7 +199112,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -199094,7 +199180,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199162,7 +199248,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -199236,7 +199322,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -199310,10 +199396,11 @@
     "limitation_zh": "当前证据来自自建仿真 benchmark，尚未证明动态预测在真实机器人、遮挡和时延条件下仍能稳定改善闭环成功率。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "id_title_match": true,
       "v1_date_source": "arXiv abstract and submission history",
@@ -199403,7 +199490,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -199476,7 +199563,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199540,7 +199627,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199617,7 +199704,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -199698,10 +199785,11 @@
     "limitation_zh": "任务主要由简单 pick-and-place 原语构成，Planner 仍依赖强 VLM；论文也承认缺少匹配的标准仿真 benchmark 和更长时间部署验证。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "id_title_match": true,
       "v1_date_source": "arXiv abstract and submission history",
@@ -199772,7 +199860,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199836,7 +199924,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199903,7 +199991,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -199973,7 +200061,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200044,7 +200132,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200111,7 +200199,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200185,7 +200273,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200260,7 +200348,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200329,7 +200417,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200395,7 +200483,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200497,7 +200585,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200561,7 +200649,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200629,7 +200717,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200693,7 +200781,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200756,7 +200844,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200823,7 +200911,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -200889,7 +200977,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -200957,7 +201045,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201025,7 +201113,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -201100,7 +201188,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201190,7 +201278,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201264,7 +201352,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201342,7 +201430,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201409,7 +201497,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201476,7 +201564,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201544,7 +201632,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201614,7 +201702,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201682,7 +201770,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -201754,7 +201842,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201840,7 +201928,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -201906,7 +201994,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -201978,7 +202066,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202046,7 +202134,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202118,7 +202206,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -202186,7 +202274,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202253,7 +202341,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202318,7 +202406,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202381,7 +202469,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202456,7 +202544,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202522,7 +202610,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -202589,7 +202677,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202663,7 +202751,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -202744,7 +202832,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -202816,7 +202904,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202876,7 +202964,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -202940,7 +203028,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -203010,7 +203098,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203078,7 +203166,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203140,7 +203228,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203201,7 +203289,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203267,7 +203355,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203333,7 +203421,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -203392,7 +203480,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203459,7 +203547,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203537,7 +203625,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203605,7 +203693,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203673,7 +203761,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203744,7 +203832,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -203809,7 +203897,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203880,7 +203968,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -203948,7 +204036,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204012,7 +204100,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204091,7 +204179,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -204159,7 +204247,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204222,7 +204310,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204284,7 +204372,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204356,7 +204444,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204422,7 +204510,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204509,7 +204597,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204582,7 +204670,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204651,7 +204739,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204719,7 +204807,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -204787,7 +204875,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204850,7 +204938,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -204922,7 +205010,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -204995,7 +205083,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -205071,7 +205159,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205155,7 +205243,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205219,7 +205307,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205287,7 +205375,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205353,7 +205441,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -205423,7 +205511,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205492,7 +205580,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205560,7 +205648,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205629,7 +205717,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -205698,7 +205786,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205761,7 +205849,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205827,7 +205915,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -205900,7 +205988,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -205966,7 +206054,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -206038,7 +206126,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206103,7 +206191,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -206169,7 +206257,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206238,7 +206326,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206304,7 +206392,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206390,7 +206478,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206465,7 +206553,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206556,7 +206644,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206644,7 +206732,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -206715,7 +206803,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206779,7 +206867,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -206842,7 +206930,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206910,7 +206998,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -206976,7 +207064,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207038,7 +207126,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207101,7 +207189,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207172,7 +207260,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207238,7 +207326,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207309,7 +207397,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -207380,7 +207468,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -207444,7 +207532,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207516,7 +207604,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207587,7 +207675,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -207692,10 +207780,11 @@
     "limitation_zh": "代码与 checkpoint 截至摘要仍是“将发布”，100K 小时数据的去重、质量和可外部审计性尚未说明。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -207763,7 +207852,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -207832,7 +207921,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207905,7 +207994,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -207967,7 +208056,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208035,7 +208124,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208116,7 +208205,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208186,7 +208275,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208254,7 +208343,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -208315,7 +208404,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -208379,7 +208468,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208462,10 +208551,11 @@
     "limitation_zh": "系统级编排把能力依赖分散到多模型和运行时组件，端到端可比性、故障归因与开放复现仍不清楚。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -208533,7 +208623,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208595,7 +208685,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208666,7 +208756,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -208756,7 +208846,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -208823,7 +208913,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208894,7 +208984,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -208960,7 +209050,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209027,7 +209117,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209096,7 +209186,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209172,7 +209262,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209255,7 +209345,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209325,7 +209415,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209388,7 +209478,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209452,7 +209542,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -209517,7 +209607,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209580,7 +209670,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209642,7 +209732,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -209713,7 +209803,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209777,7 +209867,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -209841,7 +209931,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209906,7 +209996,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -209982,7 +210072,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210045,7 +210135,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -210109,7 +210199,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210176,7 +210266,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210238,7 +210328,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210315,10 +210405,11 @@
     "limitation_zh": "截至快照日摘要仅称结果提升，未披露真实硬件范围、绝对成功率和开放资产状态。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -210384,7 +210475,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210450,7 +210541,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210521,7 +210612,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210582,7 +210673,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -210648,7 +210739,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -210709,7 +210800,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210776,7 +210867,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210843,7 +210934,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210905,7 +210996,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -210967,7 +211058,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211038,7 +211129,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211104,7 +211195,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -211169,7 +211260,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211238,7 +211329,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211301,7 +211392,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211367,7 +211458,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211445,10 +211536,11 @@
     "limitation_zh": "截至快照日仅覆盖 TacAura 四类任务，摘要没有跨触觉传感器或更大规模真实机器人结果。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -211552,10 +211644,11 @@
     "limitation_zh": "这是分析框架而非新模型或实体实验，不能单独作为某条技术路线成熟度上升的证据。",
     "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
     "source": "curated + arXiv API verified",
-    "period": "provisional",
+    "period": "extension",
     "curated": true,
     "included": true,
     "confidence_score": 0.9,
+    "current_primary_topic": null,
     "verification": {
       "first_pass": "按日期、类别和主题词宽召回时由 arXiv API 返回 ID 与标题",
       "second_pass": "以该 arXiv ID 进入 id_list 精确查询并匹配预期标题",
@@ -211630,7 +211723,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -211699,7 +211792,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
@@ -211762,7 +211855,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": false,
     "confidence_score": 0.45
@@ -211840,7 +211933,7 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.68
@@ -211914,13 +212007,12 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
   },
   {
-    "id": "2607.25918",
     "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
     "authors": [
       "Haoyuan Ji",
@@ -211938,7 +212030,9 @@
     "categories": [
       "cs.RO"
     ],
+    "id": "2607.25918",
     "primary_topic": "world_model",
+    "current_primary_topic": null,
     "topics": [
       "world_model"
     ],
@@ -211981,7 +212075,7 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
     "id": "2607.26047",
@@ -212040,13 +212134,12 @@
     "limitation_zh": "",
     "selection_reason_zh": "",
     "source": "Semantic Scholar discovery + arXiv external ID",
-    "period": "provisional",
+    "period": "extension",
     "curated": false,
     "included": true,
     "confidence_score": 0.82
   },
   {
-    "id": "2607.27549",
     "title": "Cross-Embodiment Transfer via Behavior-Aligned Representations",
     "authors": [
       "Ajay Sridhar",
@@ -212059,14 +212152,16 @@
     "institutions": [],
     "first_submitted": "2026-07-30",
     "updated": "2026-07-30",
-    "abstract": "",
+    "abstract": "Recent progress in large-scale imitation learning for robot manipulation has been driven by leveraging datasets across a wide range of robot embodiments. However, achieving significant cross-embodiment transfer is often still challenging. In this work, we study the role of using behavior-aligned representations (e.g., object bounding boxes, language motions, end-effector traces of robot motion) in vision-language-action (VLA) models to promote cross-embodiment transfer. We hypothesize that by possessing invariances across embodiments while being predictive of robot actions, these representations can help unify large-scale cross-embodiment data to enhance transfer. To assess our hypothesis, we develop a simulation-based benchmark designed to assess transfer with diverse cross-embodiment data to new embodiments. Using this benchmark, we compare different representations and ways of incorporating them. We identify that end-effector traces can be particularly beneficial for transfer, representations are generally more useful with larger prior datasets, and can be used to benefit from action-free data. We also demonstrate that they can enhance sim-to-real cross-embodiment transfer, improving task completion progress of real robot policies pre-trained on simulation data by 28%. We provide videos of our evaluations at our website: https://ajaysridhar.com/barx/.",
     "categories": [
       "cs.RO",
       "cs.AI",
       "cs.CV",
       "cs.LG"
     ],
+    "id": "2607.27549",
     "primary_topic": "general_learning",
+    "current_primary_topic": null,
     "topics": [
       "general_learning"
     ],
@@ -212107,10 +212202,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.27599",
     "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
     "authors": [
       "Xiangcheng Zhang",
@@ -212119,12 +212213,14 @@
     "institutions": [],
     "first_submitted": "2026-07-30",
     "updated": "2026-07-30",
-    "abstract": "",
+    "abstract": "Building generalizable agents for diverse applications remains a fundamental challenge. While imitation learning-based policies succeed in specific training environments, they often fail to generalize to novel scenes and tasks. In this work, we propose World Action Planner, a robot planning system that leverages the reasoning capabilities of Vision-Language Models (VLMs) and the physical grounding of a multi-task pose-image conditioned world model. Our system enables an agent to propose initial action plans and iteratively refine them via optimization and search, reasoning over imagined world model rollouts. We demonstrate that our approach achieves superior performance across compositional tasks, new layouts, and zero-shot generalization scenarios, significantly outperforming state-of-the-art end-to-end policy models such as VLAs and WAMs. Project website at worldactionplanner.github.io",
     "categories": [
       "cs.AI",
       "cs.RO"
     ],
+    "id": "2607.27599",
     "primary_topic": "world_model",
+    "current_primary_topic": null,
     "topics": [
       "world_model"
     ],
@@ -212165,10 +212261,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.27782",
     "title": "RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy",
     "authors": [
       "Zhengyang Yan",
@@ -212184,12 +212279,14 @@
     "institutions": [],
     "first_submitted": "2026-07-30",
     "updated": "2026-07-30",
-    "abstract": "",
+    "abstract": "Flow-matching Vision-Language-Action (VLA) policies have shown strong potential for robotic manipulation but often suffer from compounding errors caused by distribution shifts during deployment. While offline reinforcement learning (RL) provides a practical way to improve deployed policies using rollout data, existing methods either ignore failure data or exploit it only at the trajectory level, resulting in low learning efficiency and persistent errors. We propose **RedFlow**, a fine-grained offline RL framework that redirects failure experiences into action-level corrective supervision for flow-matching VLA policies. RedFlow consists of two key components: (1) a **Context-Aware Corrective Matching** mechanism that identifies failure-inducing actions and retrieves successful alternatives from similar contexts as corrective targets, and (2) an **Adaptive Redirection Objective** that jointly reinforces successful actions, suppresses undesirable ones, and redirects recoverable failures toward corrective targets. By converting both successful and failed experiences into dense supervision, RedFlow enables robust recovery learning from mixed-quality data. Experiments on the LIBERO benchmark and three real-world manipulation tasks show that RedFlow consistently outperforms state-of-the-art offline RL baselines, improving the real-world success rate from 56.7% to 74.7%. It also matches strong on-policy methods (PPO, GRPO, and DDPO) while requiring roughly an order of magnitude fewer training samples.",
     "categories": [
       "cs.RO",
       "cs.AI"
     ],
+    "id": "2607.27782",
     "primary_topic": "general_learning",
+    "current_primary_topic": null,
     "topics": [
       "general_learning"
     ],
@@ -212230,10 +212327,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.28391",
     "title": "TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction",
     "authors": [
       "Lei Jin",
@@ -212246,11 +212342,13 @@
     "institutions": [],
     "first_submitted": "2026-07-30",
     "updated": "2026-07-30",
-    "abstract": "",
+    "abstract": "World Action Models (WAMs) combine future-state prediction with robot action generation, but existing approaches largely rely on visual futures. Visual prediction captures scene structure and object motion, yet provides limited supervision for force, deformation, shear, and slip during contact-rich manipulation. This creates two design requirements: tactile futures should carry meaningful physical information, and they should not become privileged cues for action generation. We present TacWAM, a mechanics-aware tactile WAM that addresses this challenge in three steps. First, a Spatially Aligned Fusion (SAF) Tactile Encoder maps tactile appearance, dense force fields, and deformation flow into a shared latent prediction space, with bilateral force and torque reconstruction preserving global contact information. Second, a tactile history encoder provides temporal context so future tactile prediction reflects how force and deformation change beyond the current tactile observation. Third, Anchor-Guided Tri-Modal (AGT) Attention separates current visual and tactile anchors, future prediction tokens, and action tokens, allowing future tactile states to supervise training without being directly read by the action branch. We evaluate TacWAM on four real-world contact-rich manipulation tasks covering fragile grasping, sustained surface contact, and dynamic in-hand manipulation. TacWAM achieves an average success rate of 75.0%, exceeding the strongest evaluated baseline by 37.5 percentage points. Staged ablations show consistent degradation when tactile history is removed and access to future prediction targets is relaxed. These results indicate that future tactile supervision can improve contact-aware action learning when combined with informative tactile representations and deployment-consistent information constraints.",
     "categories": [
       "cs.RO"
     ],
+    "id": "2607.28391",
     "primary_topic": "dexterous",
+    "current_primary_topic": null,
     "topics": [
       "dexterous"
     ],
@@ -212291,10 +212389,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.28596",
     "title": "FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation",
     "authors": [
       "Lifeng Zhuo",
@@ -212308,11 +212405,13 @@
     "institutions": [],
     "first_submitted": "2026-07-30",
     "updated": "2026-07-30",
-    "abstract": "",
+    "abstract": "In contact-rich manipulation, action multimodality and reactivity dominate different stages of a single episode. Before contact, multiple trajectories might be equally valid, making it important to preserve diverse action modes. After contact, geometric constraints and force limits narrow the solution space, while successful execution demands rapid responses to force feedback. However, standard diffusion policies use a fixed inference frequency and sampling steps throughout the episode, forcing a fundamental compromise: low-frequency, multi-step sampling better preserves pre-contact multimodality but responds slowly to force feedback, whereas high-frequency sampling improves reactivity but tends to collapse distinct pre-contact modes. To resolve this tradeoff, we present FA-RDP, a frequency-adaptive reactive diffusion policy. A shared multi-frequency visual-force Transformer predicts action chunks at both low and high frequencies, while a learned multimodality indicator dynamically selects multi-step low-frequency sampling before contact and one-step high-frequency sampling as action ambiguity decreases. We further introduce Manifold Consistency Distillation (MCD), which reparameterizes the diffusion network to predict actions on the robot action manifold while retaining DDPM-based residual supervision. Experiments on three contact-rich manipulation tasks show that FA-RDP achieves the highest success rate while preserving diverse pre-contact trajectory modes. Code and videos are available at https://fa-rdp.github.io.",
     "categories": [
       "cs.RO"
     ],
+    "id": "2607.28596",
     "primary_topic": "dexterous",
+    "current_primary_topic": null,
     "topics": [
       "dexterous"
     ],
@@ -212353,10 +212452,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.28625",
     "title": "ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine",
     "authors": [
       "Yukang Cao",
@@ -212379,11 +212477,13 @@
     "institutions": [],
     "first_submitted": "2026-07-30",
     "updated": "2026-07-30",
-    "abstract": "",
+    "abstract": "Embodied intelligence faces a fundamental data bottleneck. Models must capture how first-person perception, whole-body motion, dexterous manipulation, object state, sound, and touch evolve together as humans pursue goals over time. Existing datasets fragment this experience across viewpoints, modalities, or spatial scales, leaving the full perception-action loop only partially observed. We introduce the Ambient Capture Engine (ACE), a human-centric data engine that transforms real home environments into spatially calibrated, temporally synchronized recording studios. ACE operates at two complementary scales: a table-scale configuration resolves hand-object manipulation, while a room-scale configuration captures whole-body motion, locomotion, and interactions across a furnished home. ACE records egocentric and multi-view exocentric video, full-body and articulated hand motion, object geometry and 6-DoF trajectories, audio, and tactile signals as a unified multisensory stream. Using ACE, we build ACE-Data-0, comprising 150 hours and 17M video frames across 200 task categories, performed by 50 participants in 2 environments, for a total of 75,000 interaction episodes. The dataset spans atomic manipulation, long-horizon chains of household activities, and human-scene interaction, while preserving natural behavioral variation through goal-level rather than step-by-step instructions. We further introduce a hierarchical benchmark that progresses from signals to scene components and then to interactions. Evaluations of state-of-the-art methods expose substantial gaps under contact, occlusion, egomotion, and long temporal horizons. ACE-Data-0 provides synchronized human demonstrations with aligned perceptual, kinematic, and contact supervision, offering a scalable foundation for imitation learning, world models, vision-language-action systems, and embodied AI.",
     "categories": [
       "cs.CV"
     ],
+    "id": "2607.28625",
     "primary_topic": "general_learning",
+    "current_primary_topic": null,
     "topics": [
       "general_learning"
     ],
@@ -212425,10 +212525,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.29172",
     "title": "CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning",
     "authors": [
       "Yuxin Chen",
@@ -212445,12 +212544,14 @@
     "institutions": [],
     "first_submitted": "2026-07-31",
     "updated": "2026-07-31",
-    "abstract": "",
+    "abstract": "While robot foundation models are growing increasingly capable, the strongest models are typically trained on proprietary data and remain closed-source, limiting downstream users' ability to adapt them to new tasks, embodiments, and deployment settings. Following the LLM community, an emerging access paradigm for closed-weight robot foundation models is the managed supervised fine-tuning (SFT) API, where users submit training data and receive a tuned policy without access to model weights, gradients, or training internals. While such APIs let downstream users leverage powerful proprietary foundation models, they restrict policy improvement to pure imitation, ruling out reinforcement learning and other closed-loop methods that rely on internal training signals. This limitation is particularly acute for agile, contact-rich humanoid manipulation, where the gap between policy outputs and deployed behavior is large due to novel states, action tracking dynamics, latency, and controller-specific failure modes. We study how effective this managed-API regime is for humanoid adaptation, and how closed-loop improvement can be realized within it to push policies toward task mastery. We conduct one of the first empirical studies of managed-API adaptation on a real humanoid, instantiated on Gemini Robotics On-Device (GROD). We find that direct SFT through the API substantially outperforms a leading open-weight VLA trained on the same demonstrations, yet still falls short of deployment-level mastery on agile, contact-rich tasks. To close this gap, we introduce CLIFT: Closed-Loop Iterative Fine-Tuning, which turns deployment-time reward feedback into API-compatible supervised data and enables closed-loop policy improvement without accessing weights, gradients, likelihoods, or losses-pushing GROD to near-perfect success after two flywheel cycles, all without \"opening the model box.\"",
     "categories": [
       "cs.RO",
       "cs.AI"
     ],
+    "id": "2607.29172",
     "primary_topic": "foundation",
+    "current_primary_topic": null,
     "topics": [
       "foundation"
     ],
@@ -212491,10 +212592,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.29302",
     "title": "BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning",
     "authors": [
       "BWM Team"
@@ -212502,12 +212602,14 @@
     "institutions": [],
     "first_submitted": "2026-07-31",
     "updated": "2026-07-31",
-    "abstract": "",
+    "abstract": "Reliable robot learning requires a world simulator that can predict action consequences before execution on physical hardware, including risky and failure-prone outcomes. Existing physics simulators require substantial asset construction and calibration and still face a sim-to-real gap, while video generators often lack precise control over their responses to fine-grained robot actions. In this paper, we present the Boundless World Model (BWM), an open-source, low-cost, high-fidelity world simulator for robot manipulation. BWM is an action-conditioned world model that combines initial-environment guidance, dynamic visual history, and temporally aligned robot-action conditioning for stateful autoregressive prediction of future observations. We construct action-aligned training clips through trajectory replay, overlapping clip sampling, and initial-observation enhancement. BWM serves as a data engine that augments imitation-learning data with action-aligned rollouts, and as a policy evaluator for closed-loop assessment, risk anticipation, and policy ranking. Experiments on the WorldArena benchmark and physical robots demonstrate improved simulator fidelity and functional utility across the data-engine and policy-evaluator settings. BWM ranks first overall in the WorldArena Challenge across Track 1 and its two Track 2 applications. We release the BWM open-source ecosystem, including model checkpoints, training and inference code, and interfaces for data generation and policy evaluation.",
     "categories": [
       "cs.RO",
       "cs.CV"
     ],
+    "id": "2607.29302",
     "primary_topic": "world_model",
+    "current_primary_topic": null,
     "topics": [
       "world_model"
     ],
@@ -212548,10 +212650,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.29569",
     "title": "Safe Vision Language Action Models via Barrier Enhanced Flow Matching",
     "authors": [
       "Kasra Sinaei",
@@ -212561,12 +212662,14 @@
     "institutions": [],
     "first_submitted": "2026-07-31",
     "updated": "2026-07-31",
-    "abstract": "",
+    "abstract": "This article presents a modular inference framework that integrates Flow Matching generative models with formal Control Barrier Function (CBF) safety guarantees. Unlike existing methods that apply external safety filters to a model's final output, our approach modifies the Flow Matching denoising process within the model to inherently generate safe trajectories. By employing a smooth Log-Sum-Exponential aggregate barrier, we enforce safety over entire action chunks. This aggregate barrier ensures a minimal increase in computational overhead and does not alter the semantic intent of the model. We show that, within the proposed framework, the 2-Wasserstein distance between the generated distribution and the target distribution remains bounded. Our method eliminates the need for safety-specific datasets or costly model retraining, providing a versatile solution for safe inference. We validate the approach on two robotic manipulation platforms and a 2D navigation benchmark, verifying that our framework achieves reliable safety without degrading the success rate of the model.",
     "categories": [
       "cs.RO",
       "eess.SY"
     ],
+    "id": "2607.29569",
     "primary_topic": "foundation",
+    "current_primary_topic": null,
     "topics": [
       "foundation"
     ],
@@ -212607,10 +212710,9 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
   },
   {
-    "id": "2607.29613",
     "title": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
     "authors": [
       "Senyu Fei",
@@ -212623,13 +212725,15 @@
     "institutions": [],
     "first_submitted": "2026-07-31",
     "updated": "2026-07-31",
-    "abstract": "",
+    "abstract": "Reinforcement learning (RL) post-training of Vision-Language-Action (VLA) models has shown strong promise for robotic manipulation. Among RL methods, critic-based approaches rely on a value estimator that predominantly operates on single-frame observations or single-frame VLM backbone latents, which is a fundamental mismatch with the partially observable nature of robot control. A naive approach to incorporate observation history into the critic incurs exponential complexity with high-dimensional visual space, and still fails because pure scalar-return regression provides insufficient supervision for learning cross-temporal dynamics. We identify the root cause as a state approximation problem: without an explicit world modeling objective, the critic's representation cannot capture the temporal structure needed for accurate value estimation. To address this, we propose the World Critic Model (WCM), built on a lightweight LeJEPA architecture; WCM jointly predicts future latent state and estimates values, such that the critic's representation is explicitly trained to capture temporal dynamics rather than merely regress scalar returns. WCM integrates seamlessly into both on-policy and off-policy training pipelines and is compatible with state-of-the-art VLA backbones including Pi0, Pi0.5, and OpenVLA-OFT. Extensive experiments on 149 tasks across four benchmarks demonstrate that WCM consistently achieves state-of-the-art performance in both in-distribution and out-of-distribution settings, with particularly strong generalization gains. We further validate WCM on seven real-world manipulation tasks using OpenVLA-OFT and Pi0.5 with off-policy RL, confirming stable deployment across diverse settings.",
     "categories": [
       "cs.RO",
       "cs.CL",
       "cs.CV"
     ],
+    "id": "2607.29613",
     "primary_topic": "world_model",
+    "current_primary_topic": null,
     "topics": [
       "world_model"
     ],
@@ -212670,6 +212774,1165 @@
     "date_precision": "day",
     "source": "curated + arXiv API verified",
     "v1_month": "2026-07",
-    "period": "provisional"
+    "period": "extension"
+  },
+  {
+    "title": "Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning",
+    "authors": [
+      "Sixiang Chen",
+      "Jiaming Liu",
+      "Jixian Wu",
+      "Yichen Guo",
+      "Tinghao Wang",
+      "Siyuan Qian",
+      "Hao Chen",
+      "Jiajun Cao",
+      "Jian Tang",
+      "Shanghang Zhang"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-25",
+    "updated": "2026-08-25",
+    "abstract": "Action-conditioned world models are increasingly used as learned simulators for policy evaluation and improvement, yet their effectiveness rests on an unverified assumption: generated futures faithfully reflect arbitrary valid actions. Existing benchmarks are typically confined to expert demonstrations, leaving off-expert action following inadequately evaluated. To address this gap, we introduce WorldEcho, which probes action following over a broader action distribution using visual integrity and SE(3) trajectory alignment. Our diagnosis shows that current world models reasonably execute expert actions but struggle with diverse off-expert trajectories, either ignoring the commanded actions or producing visually invalid rollouts. We further propose WorldSync, which strengthens action following along three complementary axes: distributional coverage, representational grounding, and intervention-effect alignment. It broadens the training distribution over action consequences, grounds intermediate video representations in action-induced robot dynamics through an Action-Forcing Expert, and aligns predicted changes under action interventions with the corresponding changes in ground-truth futures. Experiments on RoboTwin benchmarks and real-robot tasks show that WorldSync improves WorldEcho metrics and serves as a more reliable simulator for iterative policy improvement, enabling policies to achieve higher success rates.",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "id": "2608.24885",
+    "primary_topic": "world_model",
+    "current_primary_topic": "world_models",
+    "topics": [
+      "world_model"
+    ],
+    "tags": [
+      "world model",
+      "action following",
+      "off-expert action",
+      "真机"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.24885",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": false,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "系统诊断机器人 world model 对分布外动作并未真正跟随，并以干预式对齐把 action following 变成可测、可修正的能力。",
+    "limitation_zh": "改进仍在作者自建模型与任务内验证，尚缺跨模型、跨实验室复现。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation",
+    "authors": [
+      "Xiaomi Embodied Intelligence Team",
+      "University of Macau",
+      ":",
+      "Shaoqing Xu",
+      "Fang Li",
+      "Guozhi Zhan",
+      "Zhixiang Duan",
+      "Yuhan Wang",
+      "Yuechen Luo",
+      "Shengyin Jiang",
+      "Hanbing Li",
+      "Zhiying Du",
+      "Longlong Wang",
+      "Longmei Jiang",
+      "Weixiang Liang",
+      "Ying Gong",
+      "Yong Pan",
+      "Ziping Zhao",
+      "Zhiyuan Chen",
+      "Yangwei You",
+      "Kun Ma",
+      "Qinyuan Liu",
+      "Hangjun Ye",
+      "Zhi-xin Yang"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-26",
+    "updated": "2026-08-26",
+    "abstract": "Scaling generalist vision-language-action (VLA) policies is severely bottlenecked by the inherent heterogeneity of embodied data, which spans diverse robot morphologies, camera configurations, and low-level action spaces. Existing paradigms typically address this mismatch through explicit action retargeting, human-to-robot video synthesis, or dataset-specific adaptation branches, fundamentally hindering the joint learning of a unified policy. We introduce UCAG-P, a camera-centric unified action formulation that structurally aligns heterogeneous embodied datasets into a shared geometric action space. Rather than treating robot-specific commands as the shared policy target, UCAG-P represents manipulation through camera-observable anchor motion in image and camera-frame coordinates, treating robot arms, humanoids, and human hands as different embodiments of a common action schema. A geometry-conditioned action translator combines predicted motion with target-embodiment kinematics to produce executable controls. The resulting decoupled architecture allows a shared VLA policy to learn transferable manipulation geometry while retaining embodiment-specific controllability. UCAG-P is trained on 4.03K hours of robot and simulation data and 2.34K hours of human demonstrations. A single checkpoint reaches 98.3% on LIBERO, 88.7% and 89.2% on RoboTwin Easy and Hard, 82.0% zero-shot on LIBERO-Plus, and 62.0% on RoboCasa GR-1, without benchmark-specific fine-tuning.",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.26058",
+    "primary_topic": "foundation",
+    "current_primary_topic": "foundation_models",
+    "topics": [
+      "foundation"
+    ],
+    "tags": [
+      "跨本体",
+      "动作几何",
+      "相机中心表征",
+      "人手到机器人"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.26058",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": false,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": false,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "用相机中心动作几何统一机械臂、人形和人手的异构动作空间，把跨本体预训练从关节对齐推进到可共享的视觉几何接口。",
+    "limitation_zh": "摘要没有给出充分真机闭环与负迁移分析，跨本体收益仍需统一评测复核。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",
+    "authors": [
+      "Jiaming Zhou",
+      "Qihang Zhang",
+      "Gangwei Xu",
+      "Cunxin Fan",
+      "Yujie Zhao",
+      "Ruilin Wang",
+      "Yiming Luo",
+      "Shuai Yang",
+      "Xing Zhu",
+      "Yujun Shen",
+      "Junwei Liang",
+      "Yinghao Xu"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-26",
+    "updated": "2026-08-26",
+    "abstract": "Zero-shot cross-task generalization, where a policy must execute manipulation tasks never seen during training, remains a central challenge in robot learning. In large language models, a novel task can be performed simply by specifying it in the context, without any parameter update. This form of in-context learning (ICL) turns generalization into a problem of task specification. To achieve cross-task generalization, we bring this paradigm to robotic manipulation, and argue that the natural task specification for manipulation is a human video: unlike language, it provides rich visual cues about the intended task evolution. We present Zero-WAM, a causal video-action model that executes unseen tasks by following in-context human video guidance. To address the scarcity of task-rich paired human-robot data, we propose an automatic pipeline that converts task-sampled robot trajectories into semantically matched human videos, yielding HumanGen, a dataset of 74.2K human-robot ICL pairs across 8.6K tasks. For model training, we further introduce an in-context future chunk prediction (IFP) objective that suppresses shortcuts learned from seen tasks and forces the policy to draw task information from the video prompt. On seven unseen tasks in RoboTwin 2.0 simulation, Zero-WAM achieves a 47.0% average success rate, an absolute improvement of 29.5 percentage points over the strongest video-action baseline. In real-world evaluations, it follows human video guidance to generalize to unseen task configurations involving multi-object scenes, long-horizon manipulation, and fine-grained insertion.",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "id": "2608.26103",
+    "primary_topic": "world_model",
+    "current_primary_topic": "world_models",
+    "topics": [
+      "world_model"
+    ],
+    "tags": [
+      "人类视频",
+      "in-context task specification",
+      "world-action model",
+      "长时序"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.26103",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "构造 74.2K 人机 ICL 对与 8.6K 任务，让人类视频直接充当未见机器人任务的 in-context specification。",
+    "limitation_zh": "数据与模型未开放，开放式任务泛化主要由作者自建分布验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression",
+    "authors": [
+      "Maeve Zhang",
+      "Rain Sun",
+      "Xiang Wang",
+      "Cyril Zhang",
+      "Shalfun Li",
+      "Meng Cao",
+      "Howard Lu",
+      "Ethan Chen",
+      "Harry Jhou",
+      "KZ Zheng",
+      "Lights Shi",
+      "Regis Cheng",
+      "Lorenzin",
+      "Robert Wang",
+      "Victor Yao",
+      "Gody Li",
+      "Elise Mon",
+      "Yohann Tang",
+      "Ryan Yu",
+      "PS Zhang",
+      "Vincent Chen",
+      "Hang Su",
+      "Roy Gan",
+      "Hao Wang",
+      "Qian Wang"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-26",
+    "updated": "2026-08-26",
+    "abstract": "Generative world models provide robots with predictive models of how the world evolves under interaction, with growing potential for simulation, planning, policy evaluation, and robot learning. Beyond clip-level future prediction, a unified generative formulation should relate actions to consequences, support flexible horizons and continuous interaction, and enable reward-driven optimization. We introduce WALL-SS, a world model that generates visual futures through Scale-wise autoregressive Scaling, enabling action-controllable and long-horizon robotic simulation. WALL-SS represents embodied trajectories as causal sequences of temporally interleaved observations and actions, making action-dependent state transitions explicit while naturally supporting variable-length generation, streaming extension through reusable causal states, and direct optimization through sequence probabilities. To make this formulation effective over long horizons, we generate each future observation in a coarse-to-fine manner and develop three complementary components within the same hierarchy. Action-conditioned next-scale prediction injects scale-aligned action representations to improve action-future coupling and model both successful and failed behaviors. Scale-compressed long-horizon memory retains recent interactions at fine resolution while compressing distant observations and actions, with scale-wise dream forcing enhancing robustness to self-generated context. Finally, on-policy alignment optimizes autoregressive visual dynamics with action-following and long-term consistency rewards while preserving the pretrained visual distribution. Experiments show that WALL-SS improves action following and trajectory accuracy, supports coherent minute-long streaming rollout under bounded memory, and consistently benefits from on-policy alignment in reducing action drift and long-horizon inconsistency.",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.26239",
+    "primary_topic": "world_model",
+    "current_primary_topic": "world_models",
+    "topics": [
+      "world_model"
+    ],
+    "tags": [
+      "长时序",
+      "next-scale autoregression",
+      "压缩记忆",
+      "on-policy alignment"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.26239",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": false,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "以 next-scale 自回归、压缩长记忆和 on-policy alignment 支持分钟级流式 world-model rollout。",
+    "limitation_zh": "尚未看到与同算力策略的充分真机控制收益对照。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Memory Anchors for Continual Robot Learning",
+    "authors": [
+      "Maximilian Du",
+      "Zhanyi Sun",
+      "Chen Xu",
+      "Paarth Shah",
+      "Masha Itkina",
+      "Shuran Song"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-27",
+    "updated": "2026-08-27",
+    "abstract": "Robot policies deployed in the wild should have the capability to continually learn new tasks without forgetting existing behaviors. A common approach to combat such catastrophic forgetting is to train on new task data with a replay buffer of previously learned task data. Although this buffer is commonly sampled randomly from all prior experiences, we show that a small set of these experiences contributes greatly in anchoring past performance. We call these experiences Memory Anchors. We identify Memory Anchors in regions where representations of new-task observations collapse onto those of old-task observations even though the tasks require conflicting actions, like when a familiar object must be manipulated in a new way. Rehearsing old data in this region plays a key role in preventing destructive overwriting of past task knowledge, serving as this critical Memory Anchor role. Excluding only 10% Memory Anchors before sampling the buffer leads to more than a 4.5x increase in catastrophic forgetting on the LIBERO benchmark suites. Conversely, enriching the replay buffer with Memory Anchors can decrease high-conflict task forgetting by 63% and enables successful continual learning of two task sequences on a real robot. Videos and additional visualizations can be found at https://robot-adaptation.github.io/MemoryAnchors",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.26545",
+    "primary_topic": "general_learning",
+    "current_primary_topic": "continual_deployment_learning",
+    "topics": [
+      "general_learning"
+    ],
+    "tags": [
+      "持续学习",
+      "replay",
+      "抗遗忘",
+      "真机"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.26545",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "从 replay buffer 中识别少量关键 memory anchors，在真实机器人连续任务序列上减少灾难性遗忘。",
+    "limitation_zh": "关键样本选择在更长部署周期、更多本体和开放任务流中的成本尚未验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "TrapVLA: Trapping Vision-Language-Action Models in Configured Failure Modes",
+    "authors": [
+      "Jun-Hui Liu",
+      "Kun-Yu Lin",
+      "Yi-Lin Wei",
+      "Xu-Han Chen",
+      "Yinghao Li",
+      "Zhuohao Li",
+      "Yuan-Ming Li",
+      "Qing Zhang",
+      "Xiaoyi Fan",
+      "Dongmei Jiang",
+      "Yan Li",
+      "Wei-Shi Zheng"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-27",
+    "updated": "2026-08-27",
+    "abstract": "This work introduces Configured Failure Trapping, a novel backdoor attack task against Vision-Language-Action (VLA) models, which aims to activate attacks through stealthy textual triggers and induce configured failure modes. Unlike prior backdoor attacks that treat any task failure as a successful attack, Configured Failure Trapping requires the attacker to control how the robot fails (e.g., causing the robot to grasp with a specified positional offset), making it substantially more challenging and hard to detect. To support the new task, we propose an effective data engine for synthesizing high-quality target trajectories and an automated suite for measuring configured-failure fidelity. Then, based on this foundation, we construct two new benchmarks, namely Trap-LIBERO and Trap-RoboTwin, that instantiate Configured Failure Trapping across four representative failure modes. To address this task, we identify sparse action deviation as a critical challenge and accordingly propose a novel method named TrapVLA, which explicitly learns trigger-induced action residuals to steer the policy toward the configured failure behavior. Extensive experiments across simulation benchmarks and real-world robotic settings show that TrapVLA effectively injects configured failure modes into VLA models while largely preserving performance on clean data. Project page: https://john-liua.github.io/TrapVLA/",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "id": "2608.26578",
+    "primary_topic": "general_learning",
+    "current_primary_topic": "safety_evaluation",
+    "topics": [
+      "general_learning"
+    ],
+    "tags": [
+      "VLA 安全",
+      "后门攻击",
+      "失败模式",
+      "benchmark"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.26578",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": false,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "构造可配置 VLA 后门，使机器人在指定条件下按指定方式失败，并用 Trap-LIBERO 与 Trap-RoboTwin 系统化评测攻击面。",
+    "limitation_zh": "项目页不等于开放 benchmark，攻击与防御在更多真实部署栈上的外推仍不明确。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation",
+    "authors": [
+      "Jiarui Yang",
+      "Yehao Lu",
+      "Yuning Su",
+      "Yu Zhong",
+      "Yufeng Xie",
+      "Yazhou Zhang",
+      "Haiyu Lan",
+      "Kaixiang Lu",
+      "Peiwen Lin",
+      "Chuang Wang",
+      "Junwei Liang",
+      "Enyu Li"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-27",
+    "updated": "2026-08-27",
+    "abstract": "Vision-language-action (VLA) models leverage pretrained vision-language representations for robot control, yet simply adding historical frames does not reliably capture recent physical change. This is especially problematic in multi-stage manipulation, where visually similar states may require different actions depending on prior execution. To address this challenge, we present TemporalFlow-VLA, which learns compact execution history through physically grounded temporal supervision. Using recorded robot states, robot geometry, and calibrated cameras, we construct robot-surface temporal flow as a training-only target and supervise two execution-aligned temporal queries that provide structured history to the action expert. The geometric supervision path is not evaluated at deployment. TemporalFlow-VLA achieves 97.63 +/- 0.26% average success on LIBERO, including 96.60 +/- 0.87% on LIBERO Long, and 85.5%/84.2% Clean/Randomized success across 12 RoboTwin tasks. It shows its clearest advantage over prior methods on longer-horizon, multi-stage manipulation. Controlled history interventions show that action prediction depends on both historical content and temporal order. With asynchronous feature caching, temporal conditioning maintains single-frame-level server-side sampling latency without additional historical-encoding overhead. Overall, TemporalFlow-VLA provides a compact, physically grounded interface for exploiting ordered execution history without explicit motion estimation or geometric processing at deployment.",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.26821",
+    "primary_topic": "dual_system",
+    "current_primary_topic": "reasoning_planning",
+    "topics": [
+      "dual_system"
+    ],
+    "tags": [
+      "长时序",
+      "执行历史",
+      "temporal flow",
+      "多阶段操作"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.26821",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": false,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "用训练期机器人表面 temporal flow 监督执行历史，使 VLA 的记忆显式落到物理运动而非纯文本上下文。",
+    "limitation_zh": "摘要未明确报告真机长期重复和失败恢复成本。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Riemann-1.0: An Embodied World Action Model for Physical AI",
+    "authors": [
+      "Haofeng Sun",
+      "Jiangbo Pei",
+      "Fei Kang",
+      "Zexiang Liu",
+      "Yaokun Li",
+      "Boyi Jiang",
+      "Hua Xue",
+      "Cindy Zhou",
+      "Wei Li",
+      "Yichen Wei",
+      "Mengyin An",
+      "Fanliang Zhao",
+      "Biao Jiang",
+      "Zile Wang",
+      "Yang Liu",
+      "Yangguang Li"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-27",
+    "updated": "2026-08-27",
+    "abstract": "We introduce Riemann-1.0, a fully causal autoregressive World Action Model for embodied intelligence. Riemann-1.0 jointly models multi-view visual observations, robot states, and embodiment-specific actions within a unified causal autoregressive sequence, representing robot actions and world evolution as causal state transitions. Unlike existing WAMs based on joint generation, video-first prediction, or decoupled modeling paradigms, Riemann-1.0 unifies online robot policy execution and action-conditioned world simulation within a single model, enabling it to function as both an executable robot policy and a multi-embodiment visual world simulator. To scale embodied experience across heterogeneous data sources, we further develop a progressive embodied pretraining framework that unifies learning from egocentric human videos, handheld-gripper demonstrations, and heterogeneous robot trajectories under a shared World Action Modeling objective. Built upon 200K+ hours of interaction data, Riemann-1.0 progressively transfers large-scale embodied experience into executable robot manipulation capabilities. Riemann-1.0 achieves state-of-the-art performance across both simulation benchmarks and real-world manipulation tasks. It achieves success rates of 94.3% on RoboTwin2.0, 99.0% on LIBERO, and 62.6% on the long-horizon compositional benchmark RoboCasa-365, outperforming the previous best method by 8.4% On long-horizon real-world manipulation tasks, Riemann-1.0 achieves a Success Rate (SR) of 85.0% and a Progress Success Rate (PSR) of 94.4%, exceeding the strongest open-source baseline by 15% in SR. These results demonstrate that unified World Action Modeling together with progressive embodied pretraining effectively transforms large-scale embodied experience into generalizable robot manipulation capabilities.",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.27033",
+    "primary_topic": "world_model",
+    "current_primary_topic": "world_models",
+    "topics": [
+      "world_model"
+    ],
+    "tags": [
+      "world-action model",
+      "policy-simulator unified",
+      "跨本体",
+      "200K+ 小时"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.27033",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "以同一 causal autoregressive 模型同时承担策略与多本体 simulator，并在 200K+ 小时规模上统一动作与未来预测。",
+    "limitation_zh": "大规模语料、训练计算与部署失败分布未完整开放，policy 与 simulator 的相互增益仍属作者报告。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
+    "authors": [
+      "Kechen Liu",
+      "Ola Shorinwa"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-27",
+    "updated": "2026-08-27",
+    "abstract": "State-of-the-art action-conditioned video models are typically restricted to a single robot embodiment, preventing them from leveraging the vast corpus of heterogeneous video data that contains rich signals for learning generalizable physics. To bridge this gap, we introduce CLAP, a framework for cross-embodiment action-conditioned video generation capable of being trained on diverse, internet-scale videos across human and robotic agents. CLAP is grounded in the insight that universal physical laws govern spatiotemporal dynamics regardless of the actor. However, cross-embodiment learning is non-trivial because action representations vary sharply across robot platforms and are typically absent in human videos. CLAP addresses this fundamental challenge through the following core contributions. First, CLAP reconciles disparate action spaces using end-effector poses, language instructions, and latent actions. Second, to resolve their individual limitations, CLAP introduces a curriculum-based cross-embodiment learning recipe that first learns foundational physical priors across unlabeled video data using latent actions and subsequently grounds them in end-effector action spaces for zero-shot deployment to real-world tasks. Crucially, CLAP approaches or surpasses state-of-the-art single-embodiment video models in challenging environments like DROID. These performance advantages compound via few-shot adaptation to establish a novel paradigm for training single-embodiment video world models. Ultimately, CLAP delivers the most comprehensive suite of action-conditioned video world models to date - spanning diverse action-conditioning spaces (end-effector, language, and latent) and robot morphologies (including cross-embodiment, DROID, Bridge, bimanual YAM robots, and G1 humanoids). We open-source all code and models. Project Website at https://omni-clap.github.io .",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "id": "2608.27406",
+    "primary_topic": "world_model",
+    "current_primary_topic": "world_models",
+    "topics": [
+      "world_model"
+    ],
+    "tags": [
+      "跨本体",
+      "video world model",
+      "latent action",
+      "开放代码与模型"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.27406",
+    "doi": null,
+    "official_url": null,
+    "code_url": "https://github.com/omni-CLAP/clap",
+    "project_url": "https://omni-clap.github.io",
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": false,
+      "open_code": true,
+      "open_data": false,
+      "open_model": true
+    },
+    "contribution_zh": "用 latent-action 预训练到末端执行器动作 grounding 的课程，把人类与多机器人视频统一进跨本体 action-conditioned world model。",
+    "limitation_zh": "完整 OXE 训练数据不随仓库提供，零样本物理模拟收益仍需独立真机复现。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
+    "authors": [
+      "Senqiao Yang",
+      "Chengyao Wang",
+      "Yuxin Chen",
+      "Zixuan Wang",
+      "Longxiang Tang",
+      "Haokun Gui",
+      "Jinhui Ye",
+      "Changsheng Lu",
+      "Xiaoyang Wu",
+      "Mingkang Zhu",
+      "Pengguang Chen",
+      "Shu Liu",
+      "Zhuotao Tian",
+      "Hengshuang Zhao",
+      "Bei Yu",
+      "Jiaya Jia"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-27",
+    "updated": "2026-08-27",
+    "abstract": "Scaling robot data is crucial for building generalist Vision-Language-Action (VLA) models, yet robot trajectories are harder to scale than web-scale image-text data because embodied collection is costly and sparsely covers the physical world. This makes representation quality a central bottleneck: under a fixed robot-data budget, continued pre-training must turn limited trajectories into transferable visual-action knowledge rather than merely fit actions. We propose VLAct, a VLA-oriented VLM backbone trained on broad, heterogeneous, multi-embodiment robot data before task-specific fine-tuning. VLAct preserves the broad VLM prior and encourages shared action semantics across embodiments through VLM-prior preservation, multi-head continuous action co-supervision, and a partially unified cross-embodiment action layout, while allowing task-specific action heads during fine-tuning. Across simulation, real-world, and unseen-embodiment transfer, VLAct consistently improves downstream performance under fixed fine-tuning protocols. On LIBERO-Plus and RoboTwin 2.0, VLAct surpasses industrial VLA systems including ABot-M0 and LingBot-VLA, achieving success rates of 82.6% and 92.5%. On RoboDojo, VLAct ranks sixth among all policies by success rate and outperforms all explicitly designated world-action model (WAM) entries on both metrics. Most notably, on RoboCasa-GR1, an unseen humanoid embodiment, VLAct using only 20% of downstream trajectories outperforms the full-data GR00T-N1.6 baseline. These results are obtained using fully open-source data and only a 16-GPU training setup, showing that representation-centric continued pre-training can deliver highly competitive performance under a modest compute budget and is an important independent axis of VLA progress beyond data scaling.",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "id": "2608.27550",
+    "primary_topic": "foundation",
+    "current_primary_topic": "foundation_models",
+    "topics": [
+      "foundation"
+    ],
+    "tags": [
+      "representation-centric",
+      "continued pre-training",
+      "跨本体",
+      "开放模型"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.27550",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": "https://starvla.github.io/VLAct/",
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": true,
+      "open_code": true,
+      "open_data": false,
+      "open_model": true
+    },
+    "contribution_zh": "在固定机器人数据预算下，把 continued pre-training 目标从动作拟合改为可迁移表征，并验证对未见人形本体的少数据适配。",
+    "limitation_zh": "不同 benchmark 的 action head 与 checkpoint 并不完全相同，不能把全部结果归因于单一统一模型。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract, project page and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "RoboPhys-3D: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction",
+    "authors": [
+      "Tianyi Wang",
+      "Jiazhou Chen",
+      "Yiming Xu",
+      "Xiangyu Li",
+      "Tianyi Zeng",
+      "Chih-Hsien Chou",
+      "Ning Lu",
+      "Liang Peng",
+      "Junfeng Jiao",
+      "Christian Claudel"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-28",
+    "updated": "2026-08-28",
+    "abstract": "Video world models increasingly serve as data engines, action planners, and simulators for embodied AI, but conventional embodied world model (EWM) benchmarks lack a unified 3D-grounded protocol for establishing whether generated rollouts preserve the underlying 3D scene state or translate into executable actions. We introduce RoboPhys-3D, a 3D-grounded EWM benchmark built on RoboTwin 2.0, covering 50 manipulation tasks across four regimes, with 5,000 episodes and 25,000 multi-view ground-truth videos. A defining feature of RoboPhys-3D is that generated and ground-truth videos are processed through the same 3D reconstruction pipeline, enabling reconstruction-induced error to be distinguished from generation-induced error. The RoboPhys-3D benchmark organizes 50 complementary metrics into 18 sub-dimensions across four levels: pixel-level fidelity, 3D geometry consistency, state-level understanding, and task-level completeness. We further introduce Average Full Score, a hierarchical score averaging all 50 metrics for comprehensive evaluation, and RoboPhyscore, a compact task-aligned score averaging the metrics most strongly correlated with task success. Among the four representative video world models, Cosmos 3 achieves the highest RoboPhyscore (0.6330, 92.7% of ground truth), while state- and execution-grounded metrics reveal substantial failures that perceptual and vision-language model-based judgments fail to capture. RoboPhyscore further exhibits strong agreement with human evaluation (Pearson r = 0.9761 and Spearman \\r{ho} = 0.8962), demonstrating the importance of grounded, execution-aware evaluation for EWM capability.",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV",
+      "cs.ET",
+      "eess.SY"
+    ],
+    "id": "2608.28718",
+    "primary_topic": "general_learning",
+    "current_primary_topic": "safety_evaluation",
+    "topics": [
+      "general_learning"
+    ],
+    "tags": [
+      "world model evaluation",
+      "3D reconstruction",
+      "执行指标",
+      "benchmark"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.28718",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": false,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": false,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "用 50 任务、5K episodes、25K 多视角视频和 50 个指标，从 3D 重建与执行效用揭示画质和 VLM judge 的漏检。",
+    "limitation_zh": "当前评测以仿真数据为主，指标与真实机器人控制收益的相关性仍待建立。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "$\\mathcal{N}_0$-Foundation: Towards the Age of Tactile Intelligence",
+    "authors": [
+      "NeoteAI Team",
+      "Fudan TEAI Team"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-30",
+    "updated": "2026-08-30",
+    "abstract": "We present $\\mathcal{N}_0$-Foundation, a paradigm for tactile-enabled embodied manipulation, which integrates tactile sensing hardware, large-scale multimodal data, tactile representation learning, and standardized evaluation. First, we engineer the infrastructure for scalable data collection, including a vision-based tactile sensor, a tactile Universal Manipulation Interface (UMI), and a synchronized visuo-tactile data collection system supporting both robot embodiments and UMI-based demonstrations. Leveraging this infrastructure, we construct NeoData, which contains more than 30000 hours of synchronized visual and tactile demonstrations, spanning six embodiments, 450 tasks, and billions of paired RGB and tactile frames collected through a mixture of real-robot teleoperation and UMI-based demonstrations. To facilitate open research, we further release OpenNeoData, a 5000-hour open-source subset of NeoData. The dataset addresses a central limitation of existing manipulation corpora, critical for deformable-object manipulation, precise assembly, delicate force control, and sustained surface interaction. Capitalizing on the large-scale, heterogeneous tactile measurements, we propose NeoForce, a visuo-tactile representation model that learn transferable tactile representations across different sensor designs. To enable systematic evaluation of tactile embodied models built upon our infrastructure, datasets and tactile representations, we further propose a comprehensive benchmark, which combines the real-world NeoReal suite and the simulated NeoSim suite for standardized evaluation. Experiments across both suites show that policies benefit from the physical contact state rather than from the device-specific appearance of the tactile signal. We release the dataset, the representation, and the benchmark, aiming at supporting future work on tactile-enabled embodied manipulation.",
+    "categories": [
+      "cs.RO",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "id": "2608.29601",
+    "primary_topic": "dexterous",
+    "current_primary_topic": "embodied_multisensory",
+    "topics": [
+      "dexterous"
+    ],
+    "tags": [
+      "触觉基础模型",
+      "30K 小时",
+      "六本体",
+      "开放数据"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.29601",
+    "doi": null,
+    "official_url": null,
+    "code_url": "https://github.com/neoteai/N0-Foundation",
+    "project_url": "https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData",
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": false,
+      "open_code": true,
+      "open_data": true,
+      "open_model": false
+    },
+    "contribution_zh": "以 30K+ 小时同步视触觉数据、六种本体和 450 个任务构建触觉基础设施，并开放 5K 小时子集、统一三轴力场表征与评测套件。",
+    "limitation_zh": "完整 30K 小时语料未开放，硬件无关表征在第三方触觉传感器上的迁移仍待复现。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv, official GitHub and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Motus2: A Self-Evolving General World Model for Dexterous Manipulation",
+    "authors": [
+      "Hongzhe Bi",
+      "Zihao Zhou",
+      "Yihang Tang",
+      "Jingrui Pang",
+      "Shuhe Huang",
+      "Haitian Liu",
+      "Runqing Wang",
+      "Shuai Huang",
+      "Yichen Wang",
+      "Yiming Cheng",
+      "Ruowen Zhao",
+      "Zhenghua Li",
+      "Hengkai Tan",
+      "Xiaolong Liu",
+      "Jinhui Wan",
+      "Jiabao Liu",
+      "Min Zhao",
+      "Fan Bao",
+      "Jun Zhu"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-31",
+    "updated": "2026-08-31",
+    "abstract": "General embodied agents should perceive, predict, act, evaluate, and improve within a unified system. World models have shown great promise in building such agents, yet existing models typically append an action output head to a world simulator, without coupling them into a closed decision-and-learning loop for policy improvement. We present Motus2, a self-evolving general world model for dexterous manipulation. Motus2 advances world modeling through model scaling and data scaling. For model scaling, a single model with shared weights exposes three control interfaces: a policy (world-action model), a simulator (action-conditioned world model), and an evaluator (value model). The policy proposes candidate action chunks, the simulator predicts their visual consequences, and the evaluator assesses the predicted outcomes. Their coupling forms a closed decision-and-learning loop for policy improvement. This formulation uses curated expert demonstrations for action learning, while failed and suboptimal interactions provide valuable evidence for dynamics modeling and value learning. For data scaling, Motus2 progresses from large-scale monocular egocentric data to synchronized stereo egocentric data, followed by robot-domain adaptation with robot trajectories and supplementary human-robot alignment data. Motus2 further studies global-autoregressive and hybrid-memory extensions of its sliding-window context, adds tactile feedback for contact-aware control, and is instantiated on a fully biomimetic platform with stereo vision, dual arms, dual dexterous hands, and tactile sensing. Together, egocentric data scaling and closed-loop general world model scaling provide a general path toward self-evolving dexterous manipulation.",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "id": "2608.30237",
+    "primary_topic": "general_learning",
+    "current_primary_topic": "continual_deployment_learning",
+    "topics": [
+      "general_learning"
+    ],
+    "tags": [
+      "self-evolving",
+      "policy-simulator-value",
+      "失败交互",
+      "触觉"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.30237",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": false,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "把 policy、simulator 与 value 合入共享权重闭环，用失败和次优交互持续改进灵巧操作并引入触觉反馈。",
+    "limitation_zh": "自进化循环、实体仿生平台范围和长期稳定性主要由作者自报，未见独立部署复现。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Scaffolding Foundation Models into Physical-World Agents Pushes the Frontier of Long-Horizon Navigation",
+    "authors": [
+      "Zixing Lei",
+      "Gengze Zhou",
+      "Xiong-Hui Chen",
+      "Jiazhao Zhang",
+      "Yiyang Huang",
+      "Hang Yin",
+      "Haoqi Yuan",
+      "Qi Wu",
+      "Weixin Li",
+      "Siheng Chen"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-31",
+    "updated": "2026-08-31",
+    "abstract": "Long-horizon physical-world agents must reason over distant goals while grounding decisions in reliable closed-loop behavior. Today's foundation models split these capabilities: vision-language models (VLMs) infer missing information and adapt high-level plans but remain brittle and inefficient at repeated navigation grounding, while navigation foundation models (NFMs) robustly execute semantic goals but operate as bounded episodes without persistent task-level reasoning. We introduce NavMCP, an agentic scaffolding framework that couples a VLM reasoning agent with an NFM executor for long-horizon exploration. The VLM decides what evidence to seek, where to search, and when to stop, while the NFM grounds each semantic sub-goal into closed-loop navigation. Three channels structure their collaboration: intent translates evidence needs into navigation calls, observation converts rollouts into source-grounded trajectory evidence, and memory accumulates findings, negative evidence, and unresolved goals across calls. This design turns isolated navigation rollouts into persistent embodied interaction without retraining either model. On Embodied Question Answering, NavMCP achieves state-of-the-art results on HM-EQA, MT-HM3D, and EXPRESS-Bench. Under matched agent and executor backbones, it outperforms an episodic interface by 14.9 percentage points on HM-EQA. On a Unitree Go2, NavMCP reaches 78.3% success, with its margin over the strongest baseline growing from 10 to 45 points as the task horizon increases. These results demonstrate the potential of scaffolding complementary foundation models into long-horizon physical-world agents.",
+    "categories": [
+      "cs.AI",
+      "cs.RO"
+    ],
+    "id": "2608.30396",
+    "primary_topic": "dual_system",
+    "current_primary_topic": "reasoning_planning",
+    "topics": [
+      "dual_system"
+    ],
+    "tags": [
+      "长时导航",
+      "VLM agent",
+      "foundation-model executor",
+      "持久记忆"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.30396",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "以 VLM agent、导航基础模型 executor 和持久 memory 组成 NavMCP，在 Unitree Go2 上随任务 horizon 增长保持优势。",
+    "limitation_zh": "78.3% 成功率来自作者任务集，跨场景、跨机器人及长期记忆污染尚未独立验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Behavior-Skill: A Fine-Grained Benchmark for Evaluating Vision-Language-Action Policies in Long-Horizon Tasks",
+    "authors": [
+      "Chunyun Ma",
+      "Lun Luo",
+      "Xingjian Luo",
+      "Xiexing Feng",
+      "Hang Zhang",
+      "Wei Liu",
+      "Feng Qiao",
+      "Yaonan Wang",
+      "Huimin Lu",
+      "Xieyuanli Chen"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-31",
+    "updated": "2026-08-31",
+    "abstract": "Reliable execution of long-horizon mobile manipulation tasks remains challenging because overall task success depends on the successful completion of multiple constituent skills. Existing benchmarks, however, still rely primarily on full-task rollouts and aggregate task-level metrics, making intermediate failures difficult to observe and analyze. We present Behavior-Skill, a benchmark that reformulates the learning and evaluation of long-horizon tasks around executable constituent skills. It contains 235,492 skill instances from 10,000 demonstrations across 50 household tasks and 34 semantic skill categories. Each instance pairs a skill instruction with an aligned observation-action segment, and is further associated with a restorable intermediate state and a skill success condition to enable independent evaluation under valid preconditions. We further introduce trajectory-level and skill-level metrics to characterize policy capability beyond aggregate task success. Extensive experiments across representative VLA policies including pi0.5 and GR00T on the complete 50-task benchmark show that failures are highly non-uniform across skills, with contact-rich manipulation skills forming persistent bottlenecks. These results demonstrate that Behavior-Skill complements full-task evaluation by exposing intermediate capability profiles for analyzing and improving long-horizon VLA policies. Behavior-Skill is publicly available at https://github.com/nubot-nudt/Behavior-Skill.",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.30536",
+    "primary_topic": "general_learning",
+    "current_primary_topic": "safety_evaluation",
+    "topics": [
+      "general_learning"
+    ],
+    "tags": [
+      "长时序评测",
+      "skill decomposition",
+      "接触技能",
+      "VLA benchmark"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.30536",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": false,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "把 50 个长时家务任务拆成 235,492 个可执行 skill instances，使评测能定位接触技能而非只给整条任务成败。",
+    "limitation_zh": "当前为仿真 benchmark，公开仓库链接尚未稳定核验，不能据此推断真实家庭可靠性。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+    "authors": [
+      "Fu Chen",
+      "Xin Ding",
+      "Bingjia Huang",
+      "Xiangyu Li",
+      "Mingju Wang",
+      "Jiawei He",
+      "Kun Li",
+      "Wei Sun",
+      "Yunxin Liu",
+      "Hao Wu",
+      "Ting Cao"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-31",
+    "updated": "2026-08-31",
+    "abstract": "Generalizable embodied manipulation remains difficult to achieve through pretraining alone, due to unseen physical conditions in the real world. We argue that robots need to learn from their own physical interactions on the fly during real-world deployment and use this knowledge to inform subsequent actions. We present Zeva, the first framework that enables in-context learning from a robot's own physical interaction experience while keeping the policy model frozen. Zeva employs a Causal Interaction Extractor to encode an executed action and its induced state change into a causal interaction signal, which is stored in a dual-timescale causal memory. For subsequent actions, relevant causal interaction signals are retrieved from memory and injected into the frozen policy model as context. Experiments in simulation and real-world manipulation demonstrate that Zeva achieves the best performance among the compared frontier VLAs and WAMs and, more importantly, enables self-evolution during deployment without gradient updates. Its success rate continues to improve as the robot accumulates interaction experience. Furthermore, the acquired interaction experience can generalize across tasks.",
+    "categories": [
+      "cs.RO"
+    ],
+    "id": "2608.30880",
+    "primary_topic": "general_learning",
+    "current_primary_topic": "continual_deployment_learning",
+    "topics": [
+      "general_learning"
+    ],
+    "tags": [
+      "因果记忆",
+      "in-context learning",
+      "部署学习",
+      "无梯度适应"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.30880",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": false,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "冻结主策略，用机器人自身物理交互写入双时间尺度因果记忆，在部署中无需梯度更新即可持续适应。",
+    "limitation_zh": "记忆安全、错误写入和更长部署周期中的稳定性尚未充分披露。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
+  },
+  {
+    "title": "SUN: Persistent Programs For Language-Grounded Control-to-Learning-to-Real Policies",
+    "authors": [
+      "Weiqi Wang",
+      "Zhi Li",
+      "Yudong Lei",
+      "David Martinez",
+      "Xiaofeng Gao",
+      "Yuxin Jiang",
+      "Chenfanfu Jiang",
+      "Yingnian Wu",
+      "Demetri Terzopoulos",
+      "Ran Gong"
+    ],
+    "institutions": [],
+    "first_submitted": "2026-08-31",
+    "updated": "2026-08-31",
+    "abstract": "Bridging model-based control and learned policies in long-horizon manipulation has harbored a silent disagreement: control executes specified objectives, learning amortizes that behavior into a reactive policy, yet existing protocols discard task semantics, leaving rewards hand-crafted and behavior drifting from what control verified.We introduce Semantically UNified (SUN) Programs, typed executables where geometric and contact relations are defined once and compiled into aligned Model Predictive Control (MPC) costs, satisfaction predicates, RL rewards, transition guards, and diagnostics. Our system, Kuafu, driven by large vision language systems, automatically synthesizes SUN Programs from language and scene semantics, screens feasibility via MPC, and retains semantics while training stage-conditioned policies. Across nine tasks, Kuafu achieves 82.03% macro-success, outperforming sparse-reward (35.67%) and Stage-BC (24.75%) baselines. At 8192-way scale, it generates 10.57x the successful trajectory time per hour of human teleoperation. With 500 trajectories per task, Kuafu data trains DP3 policies to 46.0% simulation success (vs. 22.4% for alternatives) and 34.7% on physical Franka and Kinova robots. These results establish that simulation-screened task semantics can effectively amortize control into robust policies, without demonstrations or manual dense rewards, unifying symbolic planning and data-driven execution.",
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "id": "2608.31167",
+    "primary_topic": "dual_system",
+    "current_primary_topic": "reasoning_planning",
+    "topics": [
+      "dual_system"
+    ],
+    "tags": [
+      "typed semantics",
+      "MPC",
+      "RL reward",
+      "control-to-learning"
+    ],
+    "confidence": "high",
+    "confidence_score": 0.9,
+    "arxiv_url": "https://arxiv.org/abs/2608.31167",
+    "doi": null,
+    "official_url": null,
+    "code_url": null,
+    "project_url": null,
+    "peer_review": null,
+    "evidence": {
+      "real_robot": true,
+      "multi_task": true,
+      "cross_embodiment": true,
+      "long_horizon": true,
+      "open_code": false,
+      "open_data": false,
+      "open_model": false
+    },
+    "contribution_zh": "以 typed semantics 一次定义任务，并编译为 MPC cost、predicate、RL reward 与安全 guard，贯通规划、学习和真机执行。",
+    "limitation_zh": "Franka 与 Kinova 真机成功率仍有限，语义编译对开放语言和感知误差的鲁棒性待验证。",
+    "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+    "curated": true,
+    "included": true,
+    "verification": {
+      "id_title_match": true,
+      "v1_date_source": "arXiv abstract and submission history",
+      "checked_at": "2026-09-01"
+    },
+    "date_precision": "day",
+    "source": "curated + arXiv API verified",
+    "v1_month": "2026-08",
+    "period": "extension"
   }
 ]

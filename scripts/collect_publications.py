@@ -420,8 +420,13 @@ def enrich_semantic_scholar(
                 continue
     for work in cached_works.values():
         apply_semantic_scholar_work(work, by_doi)
+    # DBLP occasionally exposes placeholder RSS DOI strings such as
+    # `10.15607/rss.2024.xx.068`.  They are not resolvable identifiers and
+    # recursively splitting them against Semantic Scholar causes avoidable
+    # 400/429 storms during a month-end refresh.
     identifiers = sorted(
-        doi for doi in by_doi if force or doi not in cached_works
+        doi for doi in by_doi
+        if ".xx." not in doi.lower() and (force or doi not in cached_works)
     )
     print(
         f"Semantic Scholar cache: {len(by_doi) - len(identifiers)}/{len(by_doi)} DOI records",

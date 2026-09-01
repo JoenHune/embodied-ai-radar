@@ -14,37 +14,37 @@ outline: deep
 
 飞书文档抓住了一个真实变化：具身智能的领先差异正在从单一模型扩展到**接触表征—可执行动作—运行时验证—失败回流—软硬件迭代**。但其中既有当前主线，也有开放科学问题和工程门槛，不能全部写成“已确认趋势”。
 
-| ID | 战略优先级 | 研究问题 | 证据 | 性质 | D 类映射 | 最近 12 个完整月词表命中 | 2026-08 截至 24 日 | 严格评审锚点 |
+| ID | 战略优先级 | 研究问题 | 证据 | 性质 | D 类映射 | 最近 12 个完整月词表命中 | 2026-08 完整月（已含在 12 月窗口） | 严格评审锚点 |
 |---|---|---|---|---|---|---:|---:|---:|
-| Q0 | P0 | [人类先验—交互表征—动作—失败回流能否形成闭环](#q0) | <span class="signal signal-b">B</span> | 跨方向系统主线 | [D2](/frontiers/reasoning-planning) / [D9](/frontiers/data-engines) / [D12](/frontiers/safety-evaluation) / [D13](/frontiers/continual-deployment-learning) | 403 | 47 | 2 |
-| Q1 | P0 | [接触中心的最小充分交互表征](#q1) | <span class="signal signal-b">B</span> | 新兴研究方向 | [D4](/frontiers/dexterous-manipulation) / [D11](/frontiers/spatial-perception) / [D15](/frontiers/embodied-multisensory) / [D3](/frontiers/world-models) | 127 | 13 | 1 |
-| Q2 | P0 | [Ego／人类视频到可执行机器人动作](#q2) | <span class="signal signal-a">A</span> | 当前主线 | [D9](/frontiers/data-engines) / [D8](/frontiers/policy-learning) / [D4](/frontiers/dexterous-manipulation) / [D1](/frontiers/foundation-models) | 523 | 36 | 2 |
-| Q3 | P0 | [视觉、力觉与触觉的任务条件化消融](#q3) | <span class="signal signal-b">B</span> | 评测驱动方向 | [D15](/frontiers/embodied-multisensory) / [D4](/frontiers/dexterous-manipulation) / [D12](/frontiers/safety-evaluation) | 269 | 25 | 1 |
-| Q4 | P1 | [真实接触与仿真扩增的最优组合](#q4) | <span class="signal signal-a">A</span> | 成熟路线中的未解问题 | [D10](/frontiers/simulation-transfer) / [D3](/frontiers/world-models) / [D4](/frontiers/dexterous-manipulation) | 504 | 21 | 2 |
-| Q5 | P0 | [站位、视角、支撑与操作的联合 loco-manipulation](#q5) | <span class="signal signal-b">B</span> | 当前主线中的新兴统一问题 | [D5](/frontiers/humanoid-whole-body) / [D6](/frontiers/navigation-mobile-manipulation) / [D11](/frontiers/spatial-perception) / [D2](/frontiers/reasoning-planning) | 172 | 10 | 2 |
-| Q6 | P0 | [可跨任务复用的 post-training recipe](#q6) | <span class="signal signal-b">B</span> | 快速升温方向 | [D8](/frontiers/policy-learning) / [D13](/frontiers/continual-deployment-learning) / [D1](/frontiers/foundation-models) / [D7](/frontiers/human-robot-interaction) | 251 | 21 | 1 |
-| Q7 | P0 | [失败边界数据与低人力纠正闭环](#q7) | <span class="signal signal-b">B</span> | 新兴系统主线 | [D13](/frontiers/continual-deployment-learning) / [D12](/frontiers/safety-evaluation) / [D9](/frontiers/data-engines) / [D8](/frontiers/policy-learning) | 113 | 10 | 1 |
-| Q8 | P1 | [模型、数采设备与机器人硬件共设计](#q8) | <span class="signal signal-c">C</span> | 早期 co-design 假设 | [D4](/frontiers/dexterous-manipulation) / [D9](/frontiers/data-engines) / [D15](/frontiers/embodied-multisensory) / [D12](/frontiers/safety-evaluation) | 80 | 3 | 1 |
-| Q9 | P2 | [机器人模型、数据与交互的 scaling law](#q9) | <span class="signal signal-c">C</span> | 高价值早期假设 | [D1](/frontiers/foundation-models) / [D8](/frontiers/policy-learning) / [D9](/frontiers/data-engines) | 33 | 2 | 1 |
-| Q10 | P2 | [决策相关世界模型与自动评测闭环（Physical RSI 观察项）](#q10) | <span class="signal signal-b">B</span> | 方向已成形、终局假设仍早期 | [D3](/frontiers/world-models) / [D12](/frontiers/safety-evaluation) / [D13](/frontiers/continual-deployment-learning) / [D2](/frontiers/reasoning-planning) | 84 | 24 | 1 |
+| Q0 | P0 | [人类先验—交互表征—动作—失败回流能否形成闭环](#q0) | <span class="signal signal-b">B</span> | 跨方向系统主线 | [D2](/frontiers/reasoning-planning) / [D9](/frontiers/data-engines) / [D12](/frontiers/safety-evaluation) / [D13](/frontiers/continual-deployment-learning) | 451 | 58 | 2 |
+| Q1 | P0 | [接触中心的最小充分交互表征](#q1) | <span class="signal signal-b">B</span> | 新兴研究方向 | [D4](/frontiers/dexterous-manipulation) / [D11](/frontiers/spatial-perception) / [D15](/frontiers/embodied-multisensory) / [D3](/frontiers/world-models) | 141 | 18 | 1 |
+| Q2 | P0 | [Ego／人类视频到可执行机器人动作](#q2) | <span class="signal signal-a">A</span> | 当前主线 | [D9](/frontiers/data-engines) / [D8](/frontiers/policy-learning) / [D4](/frontiers/dexterous-manipulation) / [D1](/frontiers/foundation-models) | 551 | 45 | 2 |
+| Q3 | P0 | [视觉、力觉与触觉的任务条件化消融](#q3) | <span class="signal signal-b">B</span> | 评测驱动方向 | [D15](/frontiers/embodied-multisensory) / [D4](/frontiers/dexterous-manipulation) / [D12](/frontiers/safety-evaluation) | 293 | 33 | 1 |
+| Q4 | P1 | [真实接触与仿真扩增的最优组合](#q4) | <span class="signal signal-a">A</span> | 成熟路线中的未解问题 | [D10](/frontiers/simulation-transfer) / [D3](/frontiers/world-models) / [D4](/frontiers/dexterous-manipulation) | 513 | 32 | 2 |
+| Q5 | P0 | [站位、视角、支撑与操作的联合 loco-manipulation](#q5) | <span class="signal signal-b">B</span> | 当前主线中的新兴统一问题 | [D5](/frontiers/humanoid-whole-body) / [D6](/frontiers/navigation-mobile-manipulation) / [D11](/frontiers/spatial-perception) / [D2](/frontiers/reasoning-planning) | 180 | 18 | 2 |
+| Q6 | P0 | [可跨任务复用的 post-training recipe](#q6) | <span class="signal signal-b">B</span> | 快速升温方向 | [D8](/frontiers/policy-learning) / [D13](/frontiers/continual-deployment-learning) / [D1](/frontiers/foundation-models) / [D7](/frontiers/human-robot-interaction) | 268 | 29 | 1 |
+| Q7 | P0 | [失败边界数据与低人力纠正闭环](#q7) | <span class="signal signal-b">B</span> | 新兴系统主线 | [D13](/frontiers/continual-deployment-learning) / [D12](/frontiers/safety-evaluation) / [D9](/frontiers/data-engines) / [D8](/frontiers/policy-learning) | 117 | 10 | 1 |
+| Q8 | P1 | [模型、数采设备与机器人硬件共设计](#q8) | <span class="signal signal-c">C</span> | 早期 co-design 假设 | [D4](/frontiers/dexterous-manipulation) / [D9](/frontiers/data-engines) / [D15](/frontiers/embodied-multisensory) / [D12](/frontiers/safety-evaluation) | 83 | 5 | 1 |
+| Q9 | P2 | [机器人模型、数据与交互的 scaling law](#q9) | <span class="signal signal-c">C</span> | 高价值早期假设 | [D1](/frontiers/foundation-models) / [D8](/frontiers/policy-learning) / [D9](/frontiers/data-engines) | 37 | 5 | 1 |
+| Q10 | P2 | [决策相关世界模型与自动评测闭环（Physical RSI 观察项）](#q10) | <span class="signal signal-b">B</span> | 方向已成形、终局假设仍早期 | [D3](/frontiers/world-models) / [D12](/frontiers/safety-evaluation) / [D13](/frontiers/continual-deployment-learning) / [D2](/frontiers/reasoning-planning) | 116 | 33 | 1 |
 
 ## 最近 12 个完整月问题密度
 
-> 时间窗：2025-08—2026-07。这是多标签高召回代理；同一论文可进入多个 Q，不能用行列合计替代主方向统计。
+> 时间窗：2025-09—2026-08。这是多标签高召回代理；同一论文可进入多个 Q，不能用行列合计替代主方向统计。
 
-| 问题轴 | 2025-08 | 2025-09 | 2025-10 | 2025-11 | 2025-12 | 2026-01 | 2026-02 | 2026-03 | 2026-04 | 2026-05 | 2026-06 | 2026-07 |
+| 问题轴 | 2025-09 | 2025-10 | 2025-11 | 2025-12 | 2026-01 | 2026-02 | 2026-03 | 2026-04 | 2026-05 | 2026-06 | 2026-07 | 2026-08 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环 | 10 | 28 | 24 | 16 | 13 | 20 | 31 | 45 | 34 | 58 | 71 | 53 |
-| Q1 · 接触中心的最小充分交互表征 | 4 | 8 | 8 | 9 | 2 | 7 | 15 | 18 | 10 | 10 | 22 | 14 |
-| Q2 · Ego／人类视频到可执行机器人动作 | 17 | 43 | 37 | 34 | 38 | 29 | 52 | 61 | 31 | 40 | 88 | 53 |
-| Q3 · 视觉、力觉与触觉的任务条件化消融 | 9 | 22 | 17 | 11 | 12 | 14 | 30 | 37 | 22 | 22 | 40 | 33 |
-| Q4 · 真实接触与仿真扩增的最优组合 | 23 | 50 | 39 | 31 | 23 | 30 | 49 | 55 | 36 | 44 | 77 | 47 |
-| Q5 · 站位、视角、支撑与操作的联合 loco-manipulation | 10 | 16 | 10 | 9 | 6 | 6 | 18 | 16 | 13 | 17 | 40 | 11 |
-| Q6 · 可跨任务复用的 post-training recipe | 12 | 16 | 18 | 12 | 14 | 13 | 30 | 34 | 13 | 28 | 28 | 33 |
-| Q7 · 失败边界数据与低人力纠正闭环 | 6 | 8 | 11 | 3 | 5 | 11 | 6 | 6 | 7 | 11 | 24 | 15 |
-| Q8 · 模型、数采设备与机器人硬件共设计 | 2 | 15 | 3 | 5 | 3 | 5 | 2 | 8 | 8 | 4 | 17 | 8 |
-| Q9 · 机器人模型、数据与交互的 scaling law | 1 | 1 | 2 | 1 | 0 | 1 | 6 | 4 | 3 | 3 | 6 | 5 |
-| Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项） | 1 | 0 | 1 | 1 | 2 | 1 | 1 | 5 | 4 | 10 | 31 | 27 |
+| Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环 | 28 | 24 | 16 | 13 | 20 | 31 | 45 | 34 | 58 | 71 | 53 | 58 |
+| Q1 · 接触中心的最小充分交互表征 | 8 | 8 | 9 | 2 | 7 | 15 | 18 | 10 | 10 | 22 | 14 | 18 |
+| Q2 · Ego／人类视频到可执行机器人动作 | 43 | 37 | 34 | 38 | 29 | 52 | 61 | 31 | 40 | 88 | 53 | 45 |
+| Q3 · 视觉、力觉与触觉的任务条件化消融 | 22 | 17 | 11 | 12 | 14 | 30 | 37 | 22 | 22 | 40 | 33 | 33 |
+| Q4 · 真实接触与仿真扩增的最优组合 | 50 | 39 | 31 | 23 | 30 | 49 | 55 | 36 | 44 | 77 | 47 | 32 |
+| Q5 · 站位、视角、支撑与操作的联合 loco-manipulation | 16 | 10 | 9 | 6 | 6 | 18 | 16 | 13 | 17 | 40 | 11 | 18 |
+| Q6 · 可跨任务复用的 post-training recipe | 16 | 18 | 12 | 14 | 13 | 30 | 34 | 13 | 28 | 28 | 33 | 29 |
+| Q7 · 失败边界数据与低人力纠正闭环 | 8 | 11 | 3 | 5 | 11 | 6 | 6 | 7 | 11 | 24 | 15 | 10 |
+| Q8 · 模型、数采设备与机器人硬件共设计 | 15 | 3 | 5 | 3 | 5 | 2 | 8 | 8 | 4 | 17 | 8 | 5 |
+| Q9 · 机器人模型、数据与交互的 scaling law | 1 | 2 | 1 | 0 | 1 | 6 | 4 | 3 | 3 | 6 | 5 | 5 |
+| Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项） | 0 | 1 | 1 | 2 | 1 | 1 | 5 | 4 | 10 | 31 | 27 | 33 |
 
 ## Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环
 

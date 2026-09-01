@@ -4,7 +4,7 @@ outline: deep
 
 # University of Washington Robot Learning Laboratory
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究机器学习、AI与机器人基础方法，目标是在复杂环境中紧密结合感知、规划、行动与经验改进。
 

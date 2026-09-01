@@ -4,7 +4,7 @@ outline: deep
 
 # Physical Intelligence
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 专注通用机器人基础模型的独立研究公司，以 π 系列 VLA 连接多机器人多任务预训练、开放世界泛化、记忆、实时控制与基于经验的强化学习。官方站未设置可核验的领导岗位页面，因此不从论文作者反推负责人。
 

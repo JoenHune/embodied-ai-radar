@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Interactive and Trustworthy Robotics Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究开放世界中可靠交互的具身智能，覆盖不确定性、安全策略、价值对齐与世界建模。
 

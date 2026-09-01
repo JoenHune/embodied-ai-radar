@@ -4,7 +4,7 @@ outline: deep
 
 # Apptronik
 
-> 部署与早期观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 部署与早期观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Deployment watch for Apollo hardware, Robot Park data infrastructure, customer pilots, manufacturing readiness, and Google DeepMind model integration.
 

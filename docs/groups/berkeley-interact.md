@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Interactive Agents and Collaborative Technologies Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 研究人机与人—AI交互、从人类反馈学习目标、协作决策和对齐，使智能体围绕人的需求行动。
 

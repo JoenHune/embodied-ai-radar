@@ -3291,16 +3291,11 @@
           "source_type": "official_company_report",
           "direction_codes": [
             "D1",
-            "D3",
-            "D9",
-            "D13"
+            "D9"
           ],
           "question_codes": [
-            "Q0",
             "Q2",
-            "Q7",
-            "Q9",
-            "Q10"
+            "Q9"
           ],
           "summary_zh": "公司报告将 Index 描述为人类视频数据引擎，并披露 1,600 万视频等规模指标；数据集与评测未开放。",
           "artifact_class": "technical_report",
@@ -3311,10 +3306,7 @@
           "metric_owner": "company",
           "claim_status": "company_self_report",
           "technical_stack_tags": [
-            "human_video",
-            "deployment_feedback",
-            "generalist_policy",
-            "world_action_model"
+            "human_video"
           ],
           "validation_tags": [
             "internal_evaluation"
@@ -4785,6 +4777,33 @@
               "scope": "company data infrastructure",
               "note": "Company self-report; up from 14k."
             }
+          ]
+        },
+        {
+          "update_id": "upd-dyna-customer-deployments-20260827",
+          "title": "Not Just a Model, But a Product",
+          "url": "https://www.dyna.co/research/scaling-customer-deployments",
+          "published_at": "2026-08-27",
+          "date_precision": "day",
+          "update_type": "technical_report",
+          "evidence_grade": "G1",
+          "source_type": "official_company_report",
+          "direction_codes": ["D1", "D4", "D9", "D12", "D13"],
+          "question_codes": ["Q0", "Q7"],
+          "summary_zh": "公司报告 Din Tai Fung 餐厅场景的机器人展开、产能和部署数据回流；吞吐、质量、ROI 与未来机队规模均为公司自报，未同行评审或独立审计。",
+          "artifact_class": "technical_report",
+          "evidence_lane": "deployment",
+          "publication_status": "first_party_technical_report",
+          "peer_reviewed": false,
+          "independent_validation": false,
+          "metric_owner": "company",
+          "claim_status": "company_self_report",
+          "technical_stack_tags": ["deployment_feedback", "generalist_policy", "dexterous_bimanual", "real_robot", "production"],
+          "validation_tags": ["real_robot", "production", "internal_evaluation"],
+          "open_assets": [],
+          "report_metrics": [
+            {"label": "reported throughput", "value": "95", "unit": "napkins/hour", "scope": "company deployment report", "note": "Company self-report; quality threshold not independently audited."},
+            {"label": "reported daily output", "value": "1,590", "unit": "table-ready napkins/day", "scope": "company deployment report", "note": "Customer-rollout scope and uptime distribution are not independently disclosed."}
           ]
         }
       ]

@@ -4,7 +4,7 @@ outline: deep
 
 # ByteDance Seed Robotics
 
-> 企业/独立研究组织 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、感知、灵巧操作、交互和系统孵化，代表性资产包括 GR-3、GR-RL 与 ByteDexter。官方方向页未设置负责人字段。
 

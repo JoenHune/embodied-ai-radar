@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Physical Perception Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 从视觉输入学习物理与空间表征，并把物理世界的结构与规律用于视觉理解和机器人操作。
 

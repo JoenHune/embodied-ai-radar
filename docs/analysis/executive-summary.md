@@ -4,7 +4,7 @@ outline: deep
 
 # 执行摘要
 
-> **数据截至**：2026-08-24 · **主分析期**：2025.07–2026.06<br>
+> **数据截至**：2026-08-31 · **主分析期**：2025.07–2026.06<br>
 > **精读**：84 篇 · **官方评审锚点**：30 条
 
 过去 12 个月最显眼的共识是 VLA / generalist policy 的论文数量急升；更有战略价值的变化却发生在“模型之外”：实时调度、动作验证与恢复、部署数据飞轮、可执行 world model、视触觉闭环和跨本体接口。**综合判断（推断）：**具身智能正在从“能输出动作”进入“能在物理世界持续运行、发现错误并学习”的阶段。
@@ -13,15 +13,15 @@ outline: deep
 全站主题结构统一使用当前 15 个研究方向，并同时维护 arXiv 母库、正式发表母库、严格官方 proceedings 与 GitHub 证据。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
 :::
 
-::: info 8 月更新
-7 月已收完整月；8 月截至 24 日已纳入 328 条直接候选。由于月份尚未关闭，不与完整月计算环比；本轮重点新增[问题地图](/questions/)，把接触表征、Ego-to-Action、失败回流和软硬件 co-design 与公开证据逐项对应。
+::: info 8 月完整月更新
+8 月已覆盖 1–31 日，纳入 469 条直接候选，现可与 7 月完整月计算环比。月末新增证据将 world model 执行效用、跨本体表征、触觉基础设施和持续部署学习推进到更可验证的层级。
 :::
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 宽召回母集</span></div>
-  <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表记录</span></div>
+  <div class="radar-kpi"><strong>32,218</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>10,488</strong><span>窗口内正式发表记录</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>41,592</strong><span>去重 canonical works</span></div>
+  <div class="radar-kpi"><strong>42,083</strong><span>去重 canonical works</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
 </div>
 

@@ -4,7 +4,7 @@ outline: deep
 
 # Unitree Robotics
 
-> 部署与早期观察 · Asia / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 部署与早期观察 · Asia / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 Hardware-and-deployment watch for accessible humanoid and quadruped platforms, whole-body control, dexterous end effectors, datasets, and ecosystem adoption.
 

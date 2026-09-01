@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua Laboratory of 3D Vision Computing and Machine Intelligence
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究三维视觉计算与机器智能，重点覆盖动态三维理解、人形机器人学习和人类视频表征。
 

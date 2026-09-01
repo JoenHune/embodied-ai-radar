@@ -131,6 +131,6 @@ latent action world model 进入 in-the-wild 与 RL simulator，Action CoT/异�
 - **视频模型正在被改造成 generalist policy，而非外置 world model（B）**：Turning Video Models into Generalist Robot Policies、τ0-WM 与 Cosmos Policy 把视频预测和动作生成压进同一训练栈。
 - **连续推理开始取代离散 reason–act 循环（B）**：Continuous Reasoning、Libra-VLA 与 StreamVLA 都试图让思考与控制异步或连续发生。
 
-## 2026 年 7 月完整月与 8 月早期快照
+## 2026 Q3 截至 8 月完整月
 
-7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 24 日已有 328 条直接候选，但不完整月不与 7 月直接计算环比；新增证据优先进入[研究问题地图](/questions/)验证既有命题。
+7 月的主线是 verifier/critic/corrector、触觉 world model 和世界模型的规划/评价用途；8 月 469 条直接候选进一步把世界模型推向动作跟随与执行级评测，并出现跨本体共同表征、持久记忆和部署自改进的高密度证据簇。两个月均已关闭窗口，可直接比较数量与方向结构。

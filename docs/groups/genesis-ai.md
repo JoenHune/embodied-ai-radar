@@ -4,7 +4,7 @@ outline: deep
 
 # Genesis AI
 
-> 初创前沿观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 初创前沿观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 全栈机器人基础模型初创公司，围绕跨模态数据、仿真、模型与灵巧手硬件协同开发；公司成立前的 Genesis 开源仿真项目不反向计作公司历史成果。
 

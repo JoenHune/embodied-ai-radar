@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Robotic AI and Learning Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 研究可自主学习的灵活与适应性行为，覆盖强化学习、机器人学习、视觉和真实世界策略训练。
 

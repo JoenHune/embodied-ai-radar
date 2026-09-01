@@ -4,7 +4,7 @@ outline: deep
 
 # Meta FAIR Embodied AI
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模型、触觉表征与传感硬件、灵巧操作、人机协作、Habitat 导航与开放机器人研究资产。该节点不把所有 Meta affiliation 自动归入同一持久实验室。
 

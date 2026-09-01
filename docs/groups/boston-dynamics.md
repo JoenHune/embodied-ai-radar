@@ -4,7 +4,7 @@ outline: deep
 
 # Boston Dynamics
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 从高动态控制走向生产级智能机器人的研发和产品组织，Atlas 路线将强化学习、仿真、人类示范、感知、灵巧硬件与大行为模型汇合，并与 RAI Institute 和 Google DeepMind 建立合作；与 RAI 保持独立节点。
 

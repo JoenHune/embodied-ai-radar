@@ -80,7 +80,7 @@ export default withMermaid(defineConfig({
           { text: '2026 年 5 月', link: '/monthly/2026-05' },
           { text: '2026 年 6 月', link: '/monthly/2026-06' },
           { text: '2026 年 7 月（完整月）', link: '/monthly/2026-07' },
-          { text: '2026 年 8 月（截至 24 日）', link: '/monthly/2026-08' },
+          { text: '2026 年 8 月（完整月）', link: '/monthly/2026-08' },
         ],
       },
       {

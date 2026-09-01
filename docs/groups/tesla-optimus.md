@@ -4,7 +4,7 @@ outline: deep
 
 # Tesla Optimus
 
-> 企业/独立研究组织 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 Tesla 的通用双足人形机器人项目，公开方向覆盖平衡、导航、视觉感知、规划、控制、端侧推理硬件与规模化制造。由于论文和正式实验披露有限，Demo、招聘和投资者材料只能进入部署战略观察层。
 

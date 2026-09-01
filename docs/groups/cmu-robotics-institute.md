@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Robotics Institute
 
-> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Umbrella institute spanning the complete embodied-intelligence stack; lab-level attribution must remain separate.
 

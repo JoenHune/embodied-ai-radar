@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua Vision and Robotics Lab
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 面向通用具身智能，研究把视觉、触觉和力觉等多模态输入映射为操作、人形控制和VLA策略。
 

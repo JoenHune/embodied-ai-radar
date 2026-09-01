@@ -4,7 +4,7 @@ outline: deep
 
 # D1 · 具身基础模型与通才策略
 
-> 归属层级：模型与系统。当前纳入 981 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
+> 归属层级：模型与系统。当前纳入 1009 个 canonical works；数量、环比和代表工作均按本站当前分类规则生成。
 
 ## 纳入边界
 
@@ -41,6 +41,7 @@ outline: deep
 | 2026-05 | 94 | 2026-04 | 49 | +45 | +91.8% |
 | 2026-06 | 112 | 2026-05 | 94 | +18 | +19.1% |
 | 2026-07 | 74 | 2026-06 | 112 | -38 | -33.9% |
+| 2026-08 | 84 | 2026-07 | 74 | +10 | +13.5% |
 
 ## 代表工作与证据
 
@@ -95,14 +96,14 @@ outline: deep
 | [Effective Tuning Strategies for Generalist Robot Manipulation Policies](https://arxiv.org/abs/2410.01220) | 2024-10-02 | ICRA 2025 | 否 | — |
 | [CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion](https://arxiv.org/abs/2601.09512) | 2026-01-14 | RA-L 2026 | 否 | — |
 | [REALM: A Real-to-Sim Validated Benchmark for Generalization in Robotic Manipulation](https://arxiv.org/abs/2512.19562) | 2025-12-22 | RA-L 2026 | 否 | — |
+| [PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation](https://arxiv.org/abs/2601.17885) | 2026-01-25 | RA-L 2026 | 否 | — |
+| [Token Expand-Merge: Training-Free Token Compression for Vision-Language-Action Models](https://arxiv.org/abs/2512.09927) | 2025-12-10 | RA-L 2026 | 否 | — |
 | [PointVLA: Injecting the 3D World into Vision-Language-Action Models](https://arxiv.org/abs/2503.07511) | 2025-03-10 | RA-L 2026 | 否 | — |
 | [Beyond alignment: Why robotic foundation models need context-aware safety](https://www.science.org/doi/10.1126/scirobotics.aef2191) | 2026-04-29 | Science Robotics 2026 | 否 | — |
+| [Partially Observable Adversarial Patch Attacks on Vision-Language-Action Models in Robotics](https://arxiv.org/abs/2606.03556) | 2026-06-02 | RA-L 2026 | 否 | — |
 | [BFA++: Hierarchical Best-Feature-Aware Token Prune for Multi-View Vision Language Action Model](https://arxiv.org/abs/2602.20566) | 2026-02-24 | RA-L 2026 | 否 | — |
 | [CapsDT: Diffusion-Transformer for Capsule Robot Manipulation](https://arxiv.org/abs/2506.16263) | 2025-06-19 | IROS 2025 | 否 | — |
 | [CLAP: A Closed-Loop Diffusion Transformer Action Foundation Model for Robotic Manipulation](https://ieeexplore.ieee.org/document/11246478) | 2025-01-01 | IROS 2025 | 否 | — |
 | [ThermoAct:Thermal-Aware Vision-Language-Action Models for Robotic Perception and Decision-Making](https://arxiv.org/abs/2603.25044) | 2026-03-26 | RA-L 2026 | 否 | — |
 | [Dynamic Maclaurin-Series-Based Vision-Language-Action Model](https://ieeexplore.ieee.org/document/3683324) | 2026-07-01 | RA-L 2026 | 否 | — |
 | [From autonomy to alliance: Robotic foundation models must learn with us, not just for us](https://www.science.org/doi/10.1126/scirobotics.aea1822) | 2026-04-22 | Science Robotics 2026 | 否 | — |
-| [$Δ$VLA: Prior-Guided Vision-Language-Action Models via World Knowledge Variation](https://arxiv.org/abs/2603.08361) | 2026-03-09 | 预印本 | 否 | — |
-| [$μ$VLA: On Recurrent Memory for Partially Observable Manipulation in VLA Models](https://arxiv.org/abs/2606.12497) | 2026-06-10 | 预印本 | 否 | — |
-| [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483) | 2026-04-16 | 预印本 | 否 | — |

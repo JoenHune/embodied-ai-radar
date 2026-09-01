@@ -110,6 +110,13 @@ const sourceHealth = (org) => {
   if (rows.some((row) => row.status === 'partial')) return 'partial'
   return rows.every((row) => row.status === 'healthy') ? 'healthy' : org.source_health
 }
+const sourceLastChecked = (org) => {
+  const values = (sourcesByOrg.get(org.organization_id) ?? [])
+    .map((row) => row.last_checked?.slice(0, 10))
+    .filter(Boolean)
+    .sort()
+  return values.at(-1) ?? org.last_checked
+}
 const lastChanged = (org) => {
   const dates = (updatesByOrg.get(org.organization_id) ?? []).map((row) => row.published_at).filter(Boolean).sort()
   return dates.at(-1) ?? org.last_changed ?? org.last_checked
@@ -164,7 +171,7 @@ const summaries = tracked.map((org) => {
     status: org.status,
     disclosure_level: org.disclosure_level,
     source_health: sourceHealth(org),
-    last_checked: org.last_checked,
+    last_checked: sourceLastChecked(org),
     last_changed: lastChanged(org),
     summary_zh: org.summary_zh,
     direction_codes: observedDirectionCodes,
@@ -367,7 +374,7 @@ for (const org of tracked) {
 
 # ${org.display_name}
 
-> ${categoryLabel[org.tracking_category]} · ${org.region} / ${org.country} · **来源状态：${summary.source_health}** · 最后核验 ${org.last_checked}
+> ${categoryLabel[org.tracking_category]} · ${org.region} / ${org.country} · **来源状态：${summary.source_health}** · 最后核验 ${summary.last_checked}
 
 ${org.summary_zh}
 

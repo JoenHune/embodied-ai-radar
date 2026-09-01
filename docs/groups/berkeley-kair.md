@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Kanazawa AI Research Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 研究从日常图像与视频捕获、感知和理解动态三维世界，并持续学习世界模型。
 

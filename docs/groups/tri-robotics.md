@@ -4,7 +4,7 @@ outline: deep
 
 # Toyota Research Institute Robotics
 
-> 企业/独立研究组织 · North America / United States · **来源状态：partial** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：partial** · 最后核验 2026-08-30
 
 围绕老龄社会的人类能力增强开展移动操作、机器人用户体验、原型与研究运营，并以大规模真实 rollouts 严格研究 Large Behavior Models 的数据规模和迁移规律。
 

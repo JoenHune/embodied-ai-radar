@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04",
+  "generated_at": "2026-08-31",
   "strict_official_records": 824,
   "containers_complete": 4,
   "containers_expected": 4,
@@ -25,8 +25,8 @@
       "expected_count": 134,
       "observed_count": 134,
       "complete": true,
-      "content_sha256": "bfe31ffcbdfa82f76596ae05d5cff3042a6360c5eb6c41375de1231c69dd06b6",
-      "fetched_at": "2026-08-04"
+      "content_sha256": "3cdbe134023fbc8b9b6ee0755afbf670f17052c56ba57e8394539258b911a954",
+      "fetched_at": "2026-08-31"
     },
     {
       "container_id": "rss21",
@@ -39,8 +39,8 @@
       "expected_count": 163,
       "observed_count": 163,
       "complete": true,
-      "content_sha256": "9514d1526929f1b05724202499f0487279436688b72749d3dcb65d9d15a39944",
-      "fetched_at": "2026-08-04"
+      "content_sha256": "5d8e530b5ce7184795c14a7dca615f9c1a8b0b189661e0e6e795167b68b8516d",
+      "fetched_at": "2026-08-31"
     },
     {
       "container_id": "pmlr-v270",
@@ -54,7 +54,7 @@
       "observed_count": 264,
       "complete": true,
       "content_sha256": "c35b8a187d14776eb2050245832cd6c6f9d60c6688caa718b3aed3dbac9ad745",
-      "fetched_at": "2026-08-04"
+      "fetched_at": "2026-08-31"
     },
     {
       "container_id": "pmlr-v305",
@@ -68,7 +68,7 @@
       "observed_count": 263,
       "complete": true,
       "content_sha256": "d916177de628bdc806cf1b0385a67994589479936bbe74751acbba88a47d0b04",
-      "fetched_at": "2026-08-04"
+      "fetched_at": "2026-08-31"
     }
   ],
   "method_note": "Every record is present in a complete official proceedings container. Relevance is a title-level automated screen until abstract enrichment."

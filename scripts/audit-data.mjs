@@ -77,9 +77,9 @@ for (const paper of papers) {
 const included = papers.filter((paper) => paper.included)
 const curated = papers.filter((paper) => paper.curated)
 assert(included.length >= 2000, `included corpus unexpectedly small: ${included.length}`)
-assert(curated.length === 104, `expected 104 curated papers, got ${curated.length}`)
+assert(curated.length === 121, `expected 121 curated papers, got ${curated.length}`)
 assert(curated.filter((paper) => paper.period === 'analysis').length === 84, 'expected 84 main-period curated papers')
-assert(curated.filter((paper) => paper.period === 'provisional').length === 20, 'expected 20 complete-July curated papers')
+assert(curated.filter((paper) => paper.period === 'extension').length === 37, 'expected 37 July-August extension curated papers')
 
 const normalizedTitles = new Map()
 for (const paper of included) {
@@ -118,7 +118,7 @@ for (const peer of peers) {
 
 const expectedMonths = [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12',
-  '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07',
+  '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08',
 ]
 assert(JSON.stringify(Object.keys(trends.months)) === JSON.stringify(expectedMonths), 'trend months missing or out of order')
 for (const [month, items] of Object.entries(trends.months)) {
@@ -155,16 +155,20 @@ for (const [month, items] of Object.entries(trends.months)) {
       assert(text.includes('## 7 月完整月研判'), 'July deep-dive section missing')
       assert(items.length === 5, 'July must contain 5 full trend cards')
     }
+    if (month === '2026-08') {
+      assert(text.includes('**8 月完整月。**'), 'August complete-month coverage note missing')
+      assert(!text.includes('不完整月') && !text.includes('前瞻快照'), 'August retained partial-month language')
+      assert(items.length === 5, 'August must contain 5 full trend cards')
+    }
   }
 }
 
 const augustPage = path.join(docs, 'monthly', '2026-08.md')
-assert(fs.existsSync(augustPage), 'August early-snapshot page missing')
+assert(fs.existsSync(augustPage), 'August complete-month page missing')
 if (fs.existsSync(augustPage)) {
   const text = fs.readFileSync(augustPage, 'utf8')
-  assert(text.includes(`前瞻快照，截至 ${Number(sourceRegistry.window.until.slice(-2))} 日`), 'August snapshot cutoff missing')
-  assert(text.includes('不完整月，不计算环比'), 'August no-false-MoM warning missing')
-  assert(text.includes('## 8 月要验证的六条早期命题'), 'August forward-signal section missing')
+  assert(text.includes('2026 年 8 月研究雷达（完整月）'), 'August complete-month title missing')
+  assert(text.includes('## 趋势证据卡'), 'August trend-card section missing')
 }
 
 assert(forecasts.signals.length >= 6, 'future signals unexpectedly sparse')

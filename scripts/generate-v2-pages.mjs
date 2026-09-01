@@ -38,6 +38,9 @@ const repositoryCoverage = read('data/repository-coverage.json', {})
 const githubWatchlist = read('data/github-watchlist.json', [])
 const works = read('data/works.json', [])
 const workCoverage = read('data/work-coverage.json', {})
+const groupUpdates = read('data/group-updates.json', { updates: [] }).updates ?? []
+const organizationRegistry = read('config/organizations.json', { organizations: [] })
+const organizationById = new Map(organizationRegistry.organizations.map((row) => [row.organization_id, row]))
 const legacyPapers = read('data/papers.json', [])
 const includedPreprints = preprints.filter((row) => row.relevance?.status === 'included')
 const snapshotDate = sourceRegistry.window?.until ?? preprintCoverage.generated_at ?? '2026-08-04'
@@ -90,6 +93,7 @@ const latestCompleteDate = cutoffDate.getUTCDate() === cutoffMonthEnd
   ? cutoffDate
   : new Date(Date.UTC(cutoffDate.getUTCFullYear(), cutoffDate.getUTCMonth(), 0))
 const latestCompleteMonth = `${latestCompleteDate.getUTCFullYear()}-${String(latestCompleteDate.getUTCMonth() + 1).padStart(2, '0')}`
+const isAugustComplete = latestCompleteMonth >= '2026-08'
 const visualizationMonths = [...new Set(includedPreprints
   .map((row) => row.first_submitted?.slice(0, 7))
   .filter((month) => month && month <= latestCompleteMonth))]
@@ -387,6 +391,7 @@ const previousCalendarMonth = (month) => {
 for (const month of [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12',
   '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07',
+  ...(isAugustComplete ? ['2026-08'] : []),
 ]) {
   const target = path.join(docs, 'monthly', `${month}.md`)
   if (!fs.existsSync(target)) continue
@@ -430,7 +435,27 @@ ${expandedRows}
   if (topicStart < 0 || nextSection < 0) {
     throw new Error(`cannot replace topic-structure section in ${target}`)
   }
-  fs.writeFileSync(target, `${content.slice(0, topicStart)}${expandedSection.trim()}\n${content.slice(nextSection + 1)}`)
+  let updatedContent = `${content.slice(0, topicStart)}${expandedSection.trim()}\n${content.slice(nextSection + 1)}`
+  if (month === '2026-08') {
+    const officialCompanyRows = groupUpdates
+      .filter((row) => row.published_at?.startsWith(month) && row.source_type === 'official_company_report')
+      .sort((left, right) => right.published_at.localeCompare(left.published_at))
+      .map((row) => {
+        const org = organizationById.get(row.organization_id)
+        return `| ${row.published_at} | [${clean(org?.display_name ?? row.organization_id)}](/groups/${org?.slug}) | [${clean(row.title)}](${row.url}) | ${(row.direction_codes ?? []).join(' / ') || '—'} | 未同行评审 · 公司自报 |`
+      }).join('\n') || '| — | — | 本月无已核验公司技术报告 | — | — |'
+    const companySection = `## 官方研究组与初创发布
+
+> 下表只证明组织归属和官方披露；技术报告、内部评测与客户部署不会增加严格同行评审计数。
+
+| 日期 | 研究组 | 发布 | 方向 | 证据边界 |
+|---|---|---|---|---|
+${officialCompanyRows}
+
+`
+    updatedContent = updatedContent.replace('\n## 反证与信号质量检查', `\n${companySection}## 反证与信号质量检查`)
+  }
+  fs.writeFileSync(target, updatedContent)
 }
 
 const augustMonth = '2026-08'
@@ -466,7 +491,7 @@ const lateJulyRows = legacyPapers
     return `| [${clean(paper.title)}](${paper.arxiv_url}) | ${paper.first_submitted} | ${clean(paper.contribution_zh)} | ${evidence} |`
   }).join('\n') || '| — | — | — | — |'
 
-write('monthly/2026-08.md', `${frontmatter}
+if (!isAugustComplete) write('monthly/2026-08.md', `${frontmatter}
 
 # 2026 年 8 月研究雷达（前瞻快照，截至 ${snapshotDay} 日）
 
@@ -532,6 +557,7 @@ ${lateJulyRows}
 const radarMonths = [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12',
   '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07',
+  ...(isAugustComplete ? ['2026-08'] : []),
 ]
 const radarMonthRows = radarMonths.map((month) => {
   const current = includedPreprints.filter((row) => row.first_submitted.startsWith(month))
@@ -546,19 +572,19 @@ const radarMonthRows = radarMonths.map((month) => {
   const dominantCount = current.filter((row) => row.primary_topic === dominant).length
   const curated = legacyPapers.filter((paper) => paper.v1_month === month && paper.curated)
   const real = curated.filter((paper) => paper.evidence?.real_robot).length
-  const label = month === '2026-07' ? '2026 年 7 月（完整月）' : `${month.slice(0, 4)} 年 ${Number(month.slice(5))} 月`
+  const label = ['2026-07', '2026-08'].includes(month) ? `${month.slice(0, 4)} 年 ${Number(month.slice(5))} 月（完整月）` : `${month.slice(0, 4)} 年 ${Number(month.slice(5))} 月`
   return `| [${label}](/monthly/${month}) | ${current.length} | ${signed(current.length - previous.length)} | ${change(current.length, previous.length)} | ${signed(current.length - baseline.length)} | ${change(current.length, baseline.length)} | ${taxonomy.categories[dominant].code} · ${compactTopicLabel[dominant]}（${dominantCount}） | ${curated.length} | ${real}/${curated.length} |`
 }).join('\n')
 write('monthly/index.md', `${frontmatter}
 
 # 月度研究雷达
 
-> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 ${topicEntries.length} 个研究方向。2026 年 8 月是不完整快照，因此保留 7 月参照数但不计算误导性的百分比。
+> 月份按 arXiv 首次提交日期归档；主题数量统一使用当前 ${topicEntries.length} 个研究方向。2026 年 8 月已关闭完整月窗口，现与 7 月直接计算环比，并与 2025 年 8 月计算同比。
 
 | 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
 ${radarMonthRows}
-| [2026 年 8 月（截至 ${snapshotDay} 日）](/monthly/2026-08) | ${augustIncluded.length} | — | 不可比 | — | 不可比 | ${taxonomy.categories[augustLeaders[0].key].code} · ${compactTopicLabel[augustLeaders[0].key]}（${augustLeaders[0].count}） | 0 | 0/0 |
+${isAugustComplete ? '' : `| [2026 年 8 月（截至 ${snapshotDay} 日）](/monthly/2026-08) | ${augustIncluded.length} | — | 不可比 | — | 不可比 | ${taxonomy.categories[augustLeaders[0].key].code} · ${compactTopicLabel[augustLeaders[0].key]}（${augustLeaders[0].count}） | 0 | 0/0 |`}
 
 ## 怎么读月度页
 

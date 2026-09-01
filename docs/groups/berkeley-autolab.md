@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley AUTOLAB
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究机器人与自动化中的几何算法、学习、抓取、云机器人和医疗机器人，强调可复现实验与系统。
 

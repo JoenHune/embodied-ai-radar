@@ -1,11 +1,10 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-24",
+  "generated_at": "2026-08-31",
   "rolling_window": {
-    "from": "2025-08-01",
-    "until": "2026-07-31",
+    "from": "2025-09-01",
+    "until": "2026-08-31",
     "months": [
-      "2025-08",
       "2025-09",
       "2025-10",
       "2025-11",
@@ -16,20 +15,21 @@
       "2026-04",
       "2026-05",
       "2026-06",
-      "2026-07"
+      "2026-07",
+      "2026-08"
     ]
   },
   "snapshot": {
     "month": "2026-08",
-    "until": "2026-08-24"
+    "until": "2026-08-31",
+    "status": "complete"
   },
   "counting_rule": "在已纳入的 arXiv 记录标题与摘要中按公开词表做高召回匹配；同一工作可命中多个问题轴，计数不与 15 个互斥主方向相加。",
   "question_summaries": {
     "Q0": {
-      "rolling_12_complete_months": 403,
-      "current_snapshot": 47,
+      "rolling_12_complete_months": 451,
+      "current_snapshot": 58,
       "monthly": {
-        "2025-08": 10,
         "2025-09": 28,
         "2025-10": 24,
         "2025-11": 16,
@@ -40,15 +40,15 @@
         "2026-04": 34,
         "2026-05": 58,
         "2026-06": 71,
-        "2026-07": 53
+        "2026-07": 53,
+        "2026-08": 58
       },
       "strict_peer_anchors": 2
     },
     "Q1": {
-      "rolling_12_complete_months": 127,
-      "current_snapshot": 13,
+      "rolling_12_complete_months": 141,
+      "current_snapshot": 18,
       "monthly": {
-        "2025-08": 4,
         "2025-09": 8,
         "2025-10": 8,
         "2025-11": 9,
@@ -59,15 +59,15 @@
         "2026-04": 10,
         "2026-05": 10,
         "2026-06": 22,
-        "2026-07": 14
+        "2026-07": 14,
+        "2026-08": 18
       },
       "strict_peer_anchors": 1
     },
     "Q2": {
-      "rolling_12_complete_months": 523,
-      "current_snapshot": 36,
+      "rolling_12_complete_months": 551,
+      "current_snapshot": 45,
       "monthly": {
-        "2025-08": 17,
         "2025-09": 43,
         "2025-10": 37,
         "2025-11": 34,
@@ -78,15 +78,15 @@
         "2026-04": 31,
         "2026-05": 40,
         "2026-06": 88,
-        "2026-07": 53
+        "2026-07": 53,
+        "2026-08": 45
       },
       "strict_peer_anchors": 2
     },
     "Q3": {
-      "rolling_12_complete_months": 269,
-      "current_snapshot": 25,
+      "rolling_12_complete_months": 293,
+      "current_snapshot": 33,
       "monthly": {
-        "2025-08": 9,
         "2025-09": 22,
         "2025-10": 17,
         "2025-11": 11,
@@ -97,15 +97,15 @@
         "2026-04": 22,
         "2026-05": 22,
         "2026-06": 40,
-        "2026-07": 33
+        "2026-07": 33,
+        "2026-08": 33
       },
       "strict_peer_anchors": 1
     },
     "Q4": {
-      "rolling_12_complete_months": 504,
-      "current_snapshot": 21,
+      "rolling_12_complete_months": 513,
+      "current_snapshot": 32,
       "monthly": {
-        "2025-08": 23,
         "2025-09": 50,
         "2025-10": 39,
         "2025-11": 31,
@@ -116,15 +116,15 @@
         "2026-04": 36,
         "2026-05": 44,
         "2026-06": 77,
-        "2026-07": 47
+        "2026-07": 47,
+        "2026-08": 32
       },
       "strict_peer_anchors": 2
     },
     "Q5": {
-      "rolling_12_complete_months": 172,
-      "current_snapshot": 10,
+      "rolling_12_complete_months": 180,
+      "current_snapshot": 18,
       "monthly": {
-        "2025-08": 10,
         "2025-09": 16,
         "2025-10": 10,
         "2025-11": 9,
@@ -135,15 +135,15 @@
         "2026-04": 13,
         "2026-05": 17,
         "2026-06": 40,
-        "2026-07": 11
+        "2026-07": 11,
+        "2026-08": 18
       },
       "strict_peer_anchors": 2
     },
     "Q6": {
-      "rolling_12_complete_months": 251,
-      "current_snapshot": 21,
+      "rolling_12_complete_months": 268,
+      "current_snapshot": 29,
       "monthly": {
-        "2025-08": 12,
         "2025-09": 16,
         "2025-10": 18,
         "2025-11": 12,
@@ -154,15 +154,15 @@
         "2026-04": 13,
         "2026-05": 28,
         "2026-06": 28,
-        "2026-07": 33
+        "2026-07": 33,
+        "2026-08": 29
       },
       "strict_peer_anchors": 1
     },
     "Q7": {
-      "rolling_12_complete_months": 113,
+      "rolling_12_complete_months": 117,
       "current_snapshot": 10,
       "monthly": {
-        "2025-08": 6,
         "2025-09": 8,
         "2025-10": 11,
         "2025-11": 3,
@@ -173,15 +173,15 @@
         "2026-04": 7,
         "2026-05": 11,
         "2026-06": 24,
-        "2026-07": 15
+        "2026-07": 15,
+        "2026-08": 10
       },
       "strict_peer_anchors": 1
     },
     "Q8": {
-      "rolling_12_complete_months": 80,
-      "current_snapshot": 3,
+      "rolling_12_complete_months": 83,
+      "current_snapshot": 5,
       "monthly": {
-        "2025-08": 2,
         "2025-09": 15,
         "2025-10": 3,
         "2025-11": 5,
@@ -192,15 +192,15 @@
         "2026-04": 8,
         "2026-05": 4,
         "2026-06": 17,
-        "2026-07": 8
+        "2026-07": 8,
+        "2026-08": 5
       },
       "strict_peer_anchors": 1
     },
     "Q9": {
-      "rolling_12_complete_months": 33,
-      "current_snapshot": 2,
+      "rolling_12_complete_months": 37,
+      "current_snapshot": 5,
       "monthly": {
-        "2025-08": 1,
         "2025-09": 1,
         "2025-10": 2,
         "2025-11": 1,
@@ -211,15 +211,15 @@
         "2026-04": 3,
         "2026-05": 3,
         "2026-06": 6,
-        "2026-07": 5
+        "2026-07": 5,
+        "2026-08": 5
       },
       "strict_peer_anchors": 1
     },
     "Q10": {
-      "rolling_12_complete_months": 84,
-      "current_snapshot": 24,
+      "rolling_12_complete_months": 116,
+      "current_snapshot": 33,
       "monthly": {
-        "2025-08": 1,
         "2025-09": 0,
         "2025-10": 1,
         "2025-11": 1,
@@ -230,7 +230,8 @@
         "2026-04": 4,
         "2026-05": 10,
         "2026-06": 31,
-        "2026-07": 27
+        "2026-07": 27,
+        "2026-08": 33
       },
       "strict_peer_anchors": 1
     }
@@ -45289,6 +45290,24 @@
       }
     },
     {
+      "preprint_id": "arxiv:2608.21416",
+      "work_id": "arxiv:2608.21416",
+      "arxiv_id": "2608.21416",
+      "first_submitted": "2026-08-12",
+      "question_ids": [
+        "Q0",
+        "Q1"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ],
+        "Q1": [
+          "contact-aware"
+        ]
+      }
+    },
+    {
       "preprint_id": "arxiv:2608.12707",
       "work_id": "arxiv:2608.12707",
       "arxiv_id": "2608.12707",
@@ -45913,6 +45932,20 @@
       }
     },
     {
+      "preprint_id": "arxiv:2608.21440",
+      "work_id": "arxiv:2608.21440",
+      "arxiv_id": "2608.21440",
+      "first_submitted": "2026-08-18",
+      "question_ids": [
+        "Q10"
+      ],
+      "hits": {
+        "Q10": [
+          "planning-relevant"
+        ]
+      }
+    },
+    {
       "preprint_id": "arxiv:2608.18433",
       "work_id": "arxiv:2608.18433",
       "arxiv_id": "2608.18433",
@@ -46323,6 +46356,782 @@
         "Q3": [
           "visuotactile",
           "tactile"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.21572",
+      "work_id": "arxiv:2608.21572",
+      "arxiv_id": "2608.21572",
+      "first_submitted": "2026-08-21",
+      "question_ids": [
+        "Q4"
+      ],
+      "hits": {
+        "Q4": [
+          "sim-to-real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.21592",
+      "work_id": "arxiv:2608.21592",
+      "arxiv_id": "2608.21592",
+      "first_submitted": "2026-08-21",
+      "question_ids": [
+        "Q1"
+      ],
+      "hits": {
+        "Q1": [
+          "contact mode"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.21735",
+      "work_id": "arxiv:2608.21735",
+      "arxiv_id": "2608.21735",
+      "first_submitted": "2026-08-22",
+      "question_ids": [
+        "Q3"
+      ],
+      "hits": {
+        "Q3": [
+          "haptic feedback"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22033",
+      "work_id": "arxiv:2608.22033",
+      "arxiv_id": "2608.22033",
+      "first_submitted": "2026-08-22",
+      "question_ids": [
+        "Q4"
+      ],
+      "hits": {
+        "Q4": [
+          "sim-to-real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22100",
+      "work_id": "arxiv:2608.22100",
+      "arxiv_id": "2608.22100",
+      "first_submitted": "2026-08-22",
+      "question_ids": [
+        "Q1",
+        "Q3",
+        "Q4"
+      ],
+      "hits": {
+        "Q1": [
+          "force-aware"
+        ],
+        "Q3": [
+          "force-aware"
+        ],
+        "Q4": [
+          "sim-to-real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22278",
+      "work_id": "arxiv:2608.22278",
+      "arxiv_id": "2608.22278",
+      "first_submitted": "2026-08-23",
+      "question_ids": [
+        "Q5"
+      ],
+      "hits": {
+        "Q5": [
+          "loco-manipulation"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22301",
+      "work_id": "arxiv:2608.22301",
+      "arxiv_id": "2608.22301",
+      "first_submitted": "2026-08-23",
+      "question_ids": [
+        "Q2"
+      ],
+      "hits": {
+        "Q2": [
+          "human video",
+          "human demonstration"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22364",
+      "work_id": "arxiv:2608.22364",
+      "arxiv_id": "2608.22364",
+      "first_submitted": "2026-08-23",
+      "question_ids": [
+        "Q6",
+        "Q10"
+      ],
+      "hits": {
+        "Q6": [
+          "post-training"
+        ],
+        "Q10": [
+          "world action model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22403",
+      "work_id": "arxiv:2608.22403",
+      "arxiv_id": "2608.22403",
+      "first_submitted": "2026-08-23",
+      "question_ids": [
+        "Q2",
+        "Q10"
+      ],
+      "hits": {
+        "Q2": [
+          "human video",
+          "cross embodiment",
+          "retargeting"
+        ],
+        "Q10": [
+          "world action model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22591",
+      "work_id": "arxiv:2608.22591",
+      "arxiv_id": "2608.22591",
+      "first_submitted": "2026-08-23",
+      "question_ids": [
+        "Q0"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22629",
+      "work_id": "arxiv:2608.22629",
+      "arxiv_id": "2608.22629",
+      "first_submitted": "2026-08-23",
+      "question_ids": [
+        "Q4"
+      ],
+      "hits": {
+        "Q4": [
+          "sim2real",
+          "domain randomization"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22701",
+      "work_id": "arxiv:2608.22701",
+      "arxiv_id": "2608.22701",
+      "first_submitted": "2026-08-24",
+      "question_ids": [
+        "Q9"
+      ],
+      "hits": {
+        "Q9": [
+          "data scaling"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22800",
+      "work_id": "arxiv:2608.22800",
+      "arxiv_id": "2608.22800",
+      "first_submitted": "2026-08-24",
+      "question_ids": [
+        "Q0",
+        "Q2"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ],
+        "Q2": [
+          "human video"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.22971",
+      "work_id": "arxiv:2608.22971",
+      "arxiv_id": "2608.22971",
+      "first_submitted": "2026-08-24",
+      "question_ids": [
+        "Q5"
+      ],
+      "hits": {
+        "Q5": [
+          "active perception"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.23924",
+      "work_id": "arxiv:2608.23924",
+      "arxiv_id": "2608.23924",
+      "first_submitted": "2026-08-25",
+      "question_ids": [
+        "Q2"
+      ],
+      "hits": {
+        "Q2": [
+          "human demonstration"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.23939",
+      "work_id": "arxiv:2608.23939",
+      "arxiv_id": "2608.23939",
+      "first_submitted": "2026-08-25",
+      "question_ids": [
+        "Q0",
+        "Q6"
+      ],
+      "hits": {
+        "Q0": [
+          "offline-to-online"
+        ],
+        "Q6": [
+          "offline-to-online"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.24199",
+      "work_id": "arxiv:2608.24199",
+      "arxiv_id": "2608.24199",
+      "first_submitted": "2026-08-25",
+      "question_ids": [
+        "Q0"
+      ],
+      "hits": {
+        "Q0": [
+          "closed loop"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.24217",
+      "work_id": "arxiv:2608.24217",
+      "arxiv_id": "2608.24217",
+      "first_submitted": "2026-08-25",
+      "question_ids": [
+        "Q4",
+        "Q6"
+      ],
+      "hits": {
+        "Q4": [
+          "sim-to-real"
+        ],
+        "Q6": [
+          "policy adaptation"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.24882",
+      "work_id": "arxiv:2608.24882",
+      "arxiv_id": "2608.24882",
+      "first_submitted": "2026-08-25",
+      "question_ids": [
+        "Q10"
+      ],
+      "hits": {
+        "Q10": [
+          "world action model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.24885",
+      "work_id": "arxiv:2608.24885",
+      "arxiv_id": "2608.24885",
+      "first_submitted": "2026-08-25",
+      "question_ids": [
+        "Q10"
+      ],
+      "hits": {
+        "Q10": [
+          "action-conditioned world model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25405",
+      "work_id": "arxiv:2608.25405",
+      "arxiv_id": "2608.25405",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q5"
+      ],
+      "hits": {
+        "Q5": [
+          "loco-manipulation"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25547",
+      "work_id": "arxiv:2608.25547",
+      "arxiv_id": "2608.25547",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q3"
+      ],
+      "hits": {
+        "Q3": [
+          "tactile"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25572",
+      "work_id": "arxiv:2608.25572",
+      "arxiv_id": "2608.25572",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q6",
+        "Q10"
+      ],
+      "hits": {
+        "Q6": [
+          "post-training"
+        ],
+        "Q10": [
+          "action-conditioned world model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25610",
+      "work_id": "arxiv:2608.25610",
+      "arxiv_id": "2608.25610",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q4"
+      ],
+      "hits": {
+        "Q4": [
+          "sim-to-real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25659",
+      "work_id": "arxiv:2608.25659",
+      "arxiv_id": "2608.25659",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q0"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25666",
+      "work_id": "arxiv:2608.25666",
+      "arxiv_id": "2608.25666",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q4"
+      ],
+      "hits": {
+        "Q4": [
+          "sim-to-real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.25872",
+      "work_id": "arxiv:2608.25872",
+      "arxiv_id": "2608.25872",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q0",
+        "Q1",
+        "Q3"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ],
+        "Q1": [
+          "contact state"
+        ],
+        "Q3": [
+          "tactile"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.26053",
+      "work_id": "arxiv:2608.26053",
+      "arxiv_id": "2608.26053",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q6"
+      ],
+      "hits": {
+        "Q6": [
+          "post-training"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.26103",
+      "work_id": "arxiv:2608.26103",
+      "arxiv_id": "2608.26103",
+      "first_submitted": "2026-08-26",
+      "question_ids": [
+        "Q2",
+        "Q10"
+      ],
+      "hits": {
+        "Q2": [
+          "human video"
+        ],
+        "Q10": [
+          "world-action model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.26505",
+      "work_id": "arxiv:2608.26505",
+      "arxiv_id": "2608.26505",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q0"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.26800",
+      "work_id": "arxiv:2608.26800",
+      "arxiv_id": "2608.26800",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q4"
+      ],
+      "hits": {
+        "Q4": [
+          "sim2real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.27158",
+      "work_id": "arxiv:2608.27158",
+      "arxiv_id": "2608.27158",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q0",
+        "Q6"
+      ],
+      "hits": {
+        "Q0": [
+          "offline-to-online"
+        ],
+        "Q6": [
+          "offline-to-online"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.27221",
+      "work_id": "arxiv:2608.27221",
+      "arxiv_id": "2608.27221",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q5"
+      ],
+      "hits": {
+        "Q5": [
+          "loco-manipulation"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.27406",
+      "work_id": "arxiv:2608.27406",
+      "arxiv_id": "2608.27406",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q2"
+      ],
+      "hits": {
+        "Q2": [
+          "human video",
+          "cross-embodiment"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.27550",
+      "work_id": "arxiv:2608.27550",
+      "arxiv_id": "2608.27550",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q2",
+        "Q9",
+        "Q10"
+      ],
+      "hits": {
+        "Q2": [
+          "cross-embodiment",
+          "cross embodiment"
+        ],
+        "Q9": [
+          "data scaling"
+        ],
+        "Q10": [
+          "world-action model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.28693",
+      "work_id": "arxiv:2608.28693",
+      "arxiv_id": "2608.28693",
+      "first_submitted": "2026-08-27",
+      "question_ids": [
+        "Q4",
+        "Q8"
+      ],
+      "hits": {
+        "Q4": [
+          "sim-to-real"
+        ],
+        "Q8": [
+          "co-design"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.28090",
+      "work_id": "arxiv:2608.28090",
+      "arxiv_id": "2608.28090",
+      "first_submitted": "2026-08-28",
+      "question_ids": [
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "hits": {
+        "Q3": [
+          "contact sensing"
+        ],
+        "Q4": [
+          "sim-to-real"
+        ],
+        "Q5": [
+          "loco-manipulation"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29242",
+      "work_id": "arxiv:2608.29242",
+      "arxiv_id": "2608.29242",
+      "first_submitted": "2026-08-29",
+      "question_ids": [
+        "Q2"
+      ],
+      "hits": {
+        "Q2": [
+          "egocentric video",
+          "cross-embodiment",
+          "cross embodiment"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29396",
+      "work_id": "arxiv:2608.29396",
+      "arxiv_id": "2608.29396",
+      "first_submitted": "2026-08-29",
+      "question_ids": [
+        "Q3"
+      ],
+      "hits": {
+        "Q3": [
+          "tactile"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29487",
+      "work_id": "arxiv:2608.29487",
+      "arxiv_id": "2608.29487",
+      "first_submitted": "2026-08-30",
+      "question_ids": [
+        "Q3",
+        "Q5"
+      ],
+      "hits": {
+        "Q3": [
+          "tactile",
+          "force-torque"
+        ],
+        "Q5": [
+          "whole-body manipulation",
+          "active perception"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29516",
+      "work_id": "arxiv:2608.29516",
+      "arxiv_id": "2608.29516",
+      "first_submitted": "2026-08-30",
+      "question_ids": [
+        "Q0",
+        "Q4"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ],
+        "Q4": [
+          "sim-to-real"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29768",
+      "work_id": "arxiv:2608.29768",
+      "arxiv_id": "2608.29768",
+      "first_submitted": "2026-08-30",
+      "question_ids": [
+        "Q6"
+      ],
+      "hits": {
+        "Q6": [
+          "online reinforcement learning"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29769",
+      "work_id": "arxiv:2608.29769",
+      "arxiv_id": "2608.29769",
+      "first_submitted": "2026-08-30",
+      "question_ids": [
+        "Q8"
+      ],
+      "hits": {
+        "Q8": [
+          "thermal"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.29772",
+      "work_id": "arxiv:2608.29772",
+      "arxiv_id": "2608.29772",
+      "first_submitted": "2026-08-30",
+      "question_ids": [
+        "Q6"
+      ],
+      "hits": {
+        "Q6": [
+          "post-training"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.30237",
+      "work_id": "arxiv:2608.30237",
+      "arxiv_id": "2608.30237",
+      "first_submitted": "2026-08-31",
+      "question_ids": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q9",
+        "Q10"
+      ],
+      "hits": {
+        "Q0": [
+          "closed-loop"
+        ],
+        "Q1": [
+          "contact-aware"
+        ],
+        "Q3": [
+          "tactile"
+        ],
+        "Q9": [
+          "model scaling",
+          "data scaling"
+        ],
+        "Q10": [
+          "action-conditioned world model",
+          "world-action model"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.30289",
+      "work_id": "arxiv:2608.30289",
+      "arxiv_id": "2608.30289",
+      "first_submitted": "2026-08-31",
+      "question_ids": [
+        "Q2"
+      ],
+      "hits": {
+        "Q2": [
+          "egocentric video"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.30673",
+      "work_id": "arxiv:2608.30673",
+      "arxiv_id": "2608.30673",
+      "first_submitted": "2026-08-31",
+      "question_ids": [
+        "Q5"
+      ],
+      "hits": {
+        "Q5": [
+          "active perception"
+        ]
+      }
+    },
+    {
+      "preprint_id": "arxiv:2608.31002",
+      "work_id": "arxiv:2608.31002",
+      "arxiv_id": "2608.31002",
+      "first_submitted": "2026-08-31",
+      "question_ids": [
+        "Q5"
+      ],
+      "hits": {
+        "Q5": [
+          "active perception"
         ]
       }
     }

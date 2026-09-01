@@ -4,7 +4,7 @@ outline: deep
 
 # MIT Improbable AI Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究强化学习、视觉与机器人，强调从物理交互中学习运动、操作和可泛化表征。
 

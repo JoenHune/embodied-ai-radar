@@ -4,7 +4,7 @@ outline: deep
 
 # 语料扩充协议
 
-> 数据截点：2026-08-04。本协议解决的不是“再补几个关键词”，而是让 arXiv、正式发表和开源生态各自拥有完整、可追溯的母集。
+> 数据截点：2026-08-31。本协议解决的不是“再补几个关键词”，而是让 arXiv、正式发表和开源生态各自拥有完整、可追溯的母集。
 
 ## 一、目标与完成定义
 
@@ -36,11 +36,11 @@ flowchart LR
 
 ### 3.1 母集边界
 
-- 核心：2024-07-01 至 2026-08-04 的 `cs.RO` 月度全量。
+- 核心：2024-07-01 至 2026-08-31 的 `cs.RO` 月度全量。
 - 补充：`cs.AI`、`cs.CV`、`cs.LG` 中包含 robot、robotic、manipulation、locomotion、humanoid、grasping、embodied intelligence、VLA、teleoperation、bimanual 等动作语境的论文。
 - 月份：Atom `<published>`，即 v1 日期；修订和正式发表都不能改变首次公开月。
 
-审计时对每月 count-only 请求复算，`cs.RO` 共 23,336 条；每条母集记录都保留 arXiv categories，确保月份与分类可以复算。
+审计时对每月 count-only 请求复算，`cs.RO` 共 24,461 条；每条母集记录都保留 arXiv categories，确保月份与分类可以复算。
 
 ### 3.2 分页与缓存
 

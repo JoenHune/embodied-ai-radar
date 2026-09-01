@@ -477,6 +477,63 @@
         "bottleneck": "接口标准、实时性、安全隔离和跨硬件兼容。",
         "implication": "若未来出现跨模型/跨机器人的第三方采用，系统层可能形成独立平台价值。"
       }
+    ],
+    "2026-08": [
+      {
+        "title": "world model 的评价中心转向动作跟随与执行效用",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "WorldEcho/WorldSync、WALL-SS、Riemann-1.0、CLAP、RoboPhys-3D 与 Motus2 分别覆盖动作跟随诊断、长时 rollout、跨本体、策略—模拟器统一和执行级评测。",
+        "comparison": "7 月的 World Action Planner、BWM 与 WCM 已把 world model 接到规划、策略评价和 critic；8 月进一步出现对 off-expert action 的系统诊断与 3D/执行指标。",
+        "evidence_ids": ["2608.24885", "2608.26239", "2608.27033", "2608.27406", "2608.28718", "2608.30237"],
+        "maturity": "多个独立团队、真机与开放模型共同支持的 B 级方向簇；仍以预印本为主。",
+        "bottleneck": "同算力控制收益、长 rollout 漂移、动作跟随与画质指标之间的统一校准。",
+        "implication": "世界模型项目应优先报告策略排序、失败预测、规划增益和 model bias，而非只优化生成画质。"
+      },
+      {
+        "title": "跨本体接口正从关节适配器迁移到行为与几何共同表征",
+        "grade": "B",
+        "kind": "weak",
+        "change": "UCAG-P、Riemann-1.0、CLAP、VLAct 与 N0-Foundation 分别用相机中心动作几何、统一 world-action 模型、latent action 课程、representation-centric 预训练和统一触觉力场连接异构本体。",
+        "comparison": "此前跨本体常把共享权重与 embodiment adapter 当作终点；本月多个团队转而寻找身体差异之上的可执行中间表示。",
+        "evidence_ids": ["2608.26058", "2608.27033", "2608.27406", "2608.27550", "2608.29601"],
+        "maturity": "至少五个独立作者簇提供跨机械臂、人形、人手或触觉设备的证据，但负迁移报告不足。",
+        "bottleneck": "哪些坐标能共享、哪些维度必须保留本体特异性，以及新硬件上的少样本成本。",
+        "implication": "优先布局可跨数据源复用的 action/interaction representation，而不是为每个本体重复训练完整模型。"
+      },
+      {
+        "title": "部署学习从单次后训练转向持久记忆与无梯度自适应",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Memory Anchors、Motus2 与 Zeva 分别以关键 replay、policy-simulator-value 闭环和双时间尺度因果记忆处理抗遗忘、失败回流与部署中自提升。",
+        "comparison": "7 月部署飞轮主要把奖励与失败重新转换为监督数据；8 月开始把长期记忆和持续更新本身做成模型能力。",
+        "evidence_ids": ["2608.26545", "2608.30237", "2608.30880"],
+        "maturity": "三个独立团队成簇，其中至少两项明确报告真机结果；跨月稳定性、回归测试与安全边界仍未建立。",
+        "bottleneck": "错误记忆写入、旧技能回归、自动数据筛选和长期运行中的安全审计。",
+        "implication": "D13 虽然自动主类数量低，却是 8 月信息密度最高的新系统主线之一。"
+      },
+      {
+        "title": "长时序从延长 context 转向执行历史、技能边界与持久程序",
+        "grade": "B",
+        "kind": "weak",
+        "change": "TemporalFlow-VLA、NavMCP、Behavior-Skill、Zeva 与 SUN 分别显式建模物理执行历史、agent-executor memory、技能级失败、因果记忆和可编译持久程序。",
+        "comparison": "相比单纯增加语言上下文，本月方法更强调任务进度、物理状态、技能分解和可恢复执行。",
+        "evidence_ids": ["2608.26821", "2608.30396", "2608.30536", "2608.30880", "2608.31167"],
+        "maturity": "方法已跨操作、导航和控制—学习系统，但接口尚未标准化。",
+        "bottleneck": "记忆污染、技能边界定义、跨模块错误归因及真实长时 benchmark。",
+        "implication": "下一代长时评测应同时报告记忆、恢复、技能级失败和运行时状态，而非只给最终成功率。"
+      },
+      {
+        "title": "触觉数据规模首次成为基础设施级变量，但独立复现仍不足",
+        "grade": "C",
+        "kind": "weak",
+        "change": "N0-Foundation 报告 30K+ 小时同步视触觉数据、六本体与 450 任务，并开放 5K 小时子集；Motus2 又把触觉接入自进化 world-policy-value 闭环。",
+        "comparison": "7 月触觉 work 主要集中于未来预测与反应式控制，8 月开始出现数据、硬件、表征和 benchmark 的全栈基础设施叙事。",
+        "evidence_ids": ["2608.29601", "2608.30237"],
+        "maturity": "高规模但仍由少数团队定义口径，保持 C 级高新颖信号。",
+        "bottleneck": "跨传感器迁移、数据许可、第三方硬件复现和触觉对下游成功率的边际收益。",
+        "implication": "应把触觉开放子集和统一力场接口的第三方采用作为下一次升级条件。"
+      }
     ]
   }
 }

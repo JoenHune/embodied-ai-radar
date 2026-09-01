@@ -4,7 +4,7 @@ outline: deep
 
 # Amazon Frontier AI & Robotics
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Amazon 新设的前沿机器人研究组；公开证据主要来自官方招聘，显示其正在建设从机器人软硬件共设计、real2sim2real、灵巧操作和多模态感知到大规模 VLA 的全栈体系。招聘方向属于战略观察，不等同于已发表成果。
 

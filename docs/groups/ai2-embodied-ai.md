@@ -4,7 +4,7 @@ outline: deep
 
 # Ai2 Embodied AI
 
-> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Open infrastructure and model ecosystem spanning simulation, 3D assets, navigation, grasping, VLA-style action models, and zero-shot real transfer.
 

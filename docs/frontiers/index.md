@@ -10,17 +10,17 @@ outline: deep
 
 | 编号 | 方向 | 层级 | 纳入工作 |
 |---|---|---|---:|
-| D1 | [具身基础模型与通才策略](/frontiers/foundation-models) | 模型与系统 | 981 |
-| D2 | [分层推理、规划与记忆](/frontiers/reasoning-planning) | 模型与系统 | 839 |
-| D3 | [世界模型与预测控制](/frontiers/world-models) | 模型与系统 | 657 |
-| D4 | [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 物理能力 | 1271 |
-| D5 | [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 物理能力 | 2031 |
-| D6 | [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 物理能力 | 548 |
-| D7 | [人机协作与交互学习](/frontiers/human-robot-interaction) | 物理能力 | 801 |
-| D8 | [策略学习与优化](/frontiers/policy-learning) | 学习与基础设施 | 2820 |
-| D9 | [数据引擎与人类视频学习](/frontiers/data-engines) | 学习与基础设施 | 357 |
-| D10 | [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 学习与基础设施 | 408 |
-| D11 | [动作关联的空间感知与表征](/frontiers/spatial-perception) | 学习与基础设施 | 529 |
+| D1 | [具身基础模型与通才策略](/frontiers/foundation-models) | 模型与系统 | 1009 |
+| D2 | [分层推理、规划与记忆](/frontiers/reasoning-planning) | 模型与系统 | 848 |
+| D3 | [世界模型与预测控制](/frontiers/world-models) | 模型与系统 | 673 |
+| D4 | [灵巧、双臂与接触操作](/frontiers/dexterous-manipulation) | 物理能力 | 1284 |
+| D5 | [人形、运动与全身控制](/frontiers/humanoid-whole-body) | 物理能力 | 2061 |
+| D6 | [导航与移动操作](/frontiers/navigation-mobile-manipulation) | 物理能力 | 560 |
+| D7 | [人机协作与交互学习](/frontiers/human-robot-interaction) | 物理能力 | 806 |
+| D8 | [策略学习与优化](/frontiers/policy-learning) | 学习与基础设施 | 2851 |
+| D9 | [数据引擎与人类视频学习](/frontiers/data-engines) | 学习与基础设施 | 366 |
+| D10 | [仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer) | 学习与基础设施 | 413 |
+| D11 | [动作关联的空间感知与表征](/frontiers/spatial-perception) | 学习与基础设施 | 534 |
 | D12 | [评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation) | 学习与基础设施 | 168 |
 | D13 | [持续学习、部署学习与自改进](/frontiers/continual-deployment-learning) | 学习与基础设施 | 9 |
 | D14 | [多机器人协同与群体智能](/frontiers/multi-robot-coordination) | 物理能力 | 52 |

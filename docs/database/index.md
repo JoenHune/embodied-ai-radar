@@ -14,7 +14,7 @@ outline: deep
 - [2025 年候选](/database/2025)
 - [2026 年候选](/database/2026)
 
-JSON/CSV 包含全部 2650 条纳入统计记录；网页按年份拆分，避免单页过大。
+JSON/CSV 包含全部 2667 条纳入统计记录；网页按年份拆分，避免单页过大。
 
 ## 精读与核验记录
 
@@ -124,3 +124,20 @@ JSON/CSV 包含全部 2650 条纳入统计记录；网页按年份拆分，避�
 | 2607.29302 | [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](https://arxiv.org/abs/2607.29302) | 2026-07 | 策略学习与优化 | high | 精读 | — |
 | 2607.29569 | [Safe Vision Language Action Models via Barrier Enhanced Flow Matching](https://arxiv.org/abs/2607.29569) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
 | 2607.29613 | [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](https://arxiv.org/abs/2607.29613) | 2026-07 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2608.24885 | [Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning](https://arxiv.org/abs/2608.24885) | 2026-08 | 世界模型与预测控制 | high | 精读 | — |
+| 2608.26058 | [One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation](https://arxiv.org/abs/2608.26058) | 2026-08 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2608.26103 | [Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization](https://arxiv.org/abs/2608.26103) | 2026-08 | 世界模型与预测控制 | high | 精读 | — |
+| 2608.26239 | [WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression](https://arxiv.org/abs/2608.26239) | 2026-08 | 世界模型与预测控制 | high | 精读 | — |
+| 2608.26545 | [Memory Anchors for Continual Robot Learning](https://arxiv.org/abs/2608.26545) | 2026-08 | 持续学习、部署学习与自改进 | high | 精读 | — |
+| 2608.26578 | [TrapVLA: Trapping Vision-Language-Action Models in Configured Failure Modes](https://arxiv.org/abs/2608.26578) | 2026-08 | 评测、安全、可靠性与故障恢复 | high | 精读 | — |
+| 2608.26821 | [TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2608.26821) | 2026-08 | 分层推理、规划与记忆 | high | 精读 | — |
+| 2608.27033 | [Riemann-1.0: An Embodied World Action Model for Physical AI](https://arxiv.org/abs/2608.27033) | 2026-08 | 世界模型与预测控制 | high | 精读 | — |
+| 2608.27406 | [CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators](https://arxiv.org/abs/2608.27406) | 2026-08 | 世界模型与预测控制 | high | 精读 | — |
+| 2608.27550 | [Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models](https://arxiv.org/abs/2608.27550) | 2026-08 | 具身基础模型与通才策略 | high | 精读 | — |
+| 2608.28718 | [RoboPhys-3D: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction](https://arxiv.org/abs/2608.28718) | 2026-08 | 评测、安全、可靠性与故障恢复 | high | 精读 | — |
+| 2608.29601 | [$\mathcal{N}_0$-Foundation: Towards the Age of Tactile Intelligence](https://arxiv.org/abs/2608.29601) | 2026-08 | 触觉、力觉与多模态身体感知 | high | 精读 | — |
+| 2608.30237 | [Motus2: A Self-Evolving General World Model for Dexterous Manipulation](https://arxiv.org/abs/2608.30237) | 2026-08 | 持续学习、部署学习与自改进 | high | 精读 | — |
+| 2608.30396 | [Scaffolding Foundation Models into Physical-World Agents Pushes the Frontier of Long-Horizon Navigation](https://arxiv.org/abs/2608.30396) | 2026-08 | 分层推理、规划与记忆 | high | 精读 | — |
+| 2608.30536 | [Behavior-Skill: A Fine-Grained Benchmark for Evaluating Vision-Language-Action Policies in Long-Horizon Tasks](https://arxiv.org/abs/2608.30536) | 2026-08 | 评测、安全、可靠性与故障恢复 | high | 精读 | — |
+| 2608.30880 | [Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation](https://arxiv.org/abs/2608.30880) | 2026-08 | 持续学习、部署学习与自改进 | high | 精读 | — |
+| 2608.31167 | [SUN: Persistent Programs For Language-Grounded Control-to-Learning-to-Real Policies](https://arxiv.org/abs/2608.31167) | 2026-08 | 分层推理、规划与记忆 | high | 精读 | — |

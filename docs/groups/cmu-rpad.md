@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Robots Perceiving and Doing Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究机器人感知与控制，使机器人能够在日常杂乱环境中理解变化并完成操作任务。
 

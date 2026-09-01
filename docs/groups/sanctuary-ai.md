@@ -4,7 +4,7 @@ outline: deep
 
 # Sanctuary AI
 
-> 部署与早期观察 · North America / Canada · **来源状态：healthy** · 最后核验 2026-08-26
+> 部署与早期观察 · North America / Canada · **来源状态：healthy** · 最后核验 2026-08-30
 
 Closed-source and deployment watch for tactile dexterity, multi-embodiment policies, industrial task reliability, and Phoenix data collection.
 

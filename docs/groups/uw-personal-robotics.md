@@ -4,7 +4,7 @@ outline: deep
 
 # University of Washington Personal Robotics Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究杂乱和不确定环境中与人共处的复杂物理操作，覆盖感知、规划、学习、辅助机器人和交互。
 

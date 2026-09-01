@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Learning and Control for Agile Robotics Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究学习与控制交叉，重点关注具身智能的敏捷性、可靠性、自适应性与真实系统部署。
 

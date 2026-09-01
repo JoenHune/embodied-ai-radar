@@ -6,7 +6,7 @@ titleTemplate: 过去 12 个月研究趋势分析
 hero:
   name: 具身智能研究雷达
   text: 从论文热度到技术兑现
-  tagline: 31,773 条 arXiv 母集 · 15 类主方向 · 11 个问题轴 · 60 个关键研究组 · 2026.08 前瞻快照
+  tagline: 32,218 条 arXiv 母集 · 15 类主方向 · 11 个问题轴 · 60 核心组 + 3 初创位 · 2026.08 完整月
   actions:
     - theme: brand
       text: 阅读执行摘要 →
@@ -27,7 +27,7 @@ hero:
 features:
   - icon: 🌍
     title: 全球关键研究组
-    details: 持续跟踪 NVIDIA GEAR、Physical Intelligence、CMU RI 等 60 个研究执行单元
+    details: 持续跟踪 NVIDIA GEAR、Physical Intelligence、CMU RI 等 60 个核心单元与 3 个新增初创观察位
     link: /groups/
     linkText: 查看研究组雷达
   - icon: 🧩
@@ -37,7 +37,7 @@ features:
     linkText: 查看问题地图
   - icon: 🛰️
     title: 两年宽召回母库
-    details: 31,773 条 arXiv、12,165 条发表版本与 canonical works 分层呈现
+    details: 32,218 条 arXiv、12,249 条发表版本与 canonical works 分层呈现
     link: /analysis/corpus-expansion
     linkText: 查看覆盖审计
   - icon: 📚
@@ -52,7 +52,7 @@ features:
     linkText: 查看前沿方向
   - icon: 💻
     title: GitHub 采用证据
-    details: 42 个已审计仓库 + 4 个新仓观察；stars 只作传播旁证
+    details: 42 个已审计仓库 + 7 个新仓观察；stars 只作传播旁证
     link: /analysis/open-source-ecosystem
     linkText: 查看开源雷达
   - icon: 🧠
@@ -88,15 +88,15 @@ features:
 ---
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 宽召回母集</span></div>
-  <div class="radar-kpi"><strong>12,165</strong><span>正式发表母集</span></div>
+  <div class="radar-kpi"><strong>32,218</strong><span>arXiv 宽召回母集</span></div>
+  <div class="radar-kpi"><strong>12,249</strong><span>正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>严格官方 proceedings</span></div>
-  <div class="radar-kpi"><strong>60</strong><span>全球关键研究组</span></div>
-  <div class="radar-kpi"><strong>42 + 4</strong><span>GitHub 已审计 + 新仓观察</span></div>
+  <div class="radar-kpi"><strong>60 + 3</strong><span>核心组 + 新增初创位</span></div>
+  <div class="radar-kpi"><strong>42 + 7</strong><span>GitHub 已审计 + 新仓观察</span></div>
 </div>
 
 本站直接呈现当前研究全景：15 个方向使用统一主分类，每篇论文可附带多个关联方向。下面的占比趋势和共现关系均由结构化数据生成；流量变化是研究注意力线索，不单独等同于技术成熟度。
 
 <ResearchVisuals />
 
-> 数据截至 2026 年 8 月 24 日。月度图只使用最近 12 个完整月，8 月不完整快照不与完整月份混算；桑基图展示同一论文的方向共现，不表示方向发生迁移。
+> 数据截至 2026 年 8 月 31 日。月度图使用 2025 年 9 月—2026 年 8 月的最近 12 个完整月；桑基图展示同一论文的方向共现，不表示方向发生迁移。

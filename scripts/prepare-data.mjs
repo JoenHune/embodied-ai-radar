@@ -14,6 +14,23 @@ const topicByLabel = {
   世界模型: 'world_model',
   通用机器人学习: 'general_learning',
 }
+const currentToLegacyTopic = {
+  foundation_models: 'foundation',
+  reasoning_planning: 'dual_system',
+  world_models: 'world_model',
+  dexterous_manipulation: 'dexterous',
+  humanoid_whole_body: 'general_learning',
+  navigation_mobile_manipulation: 'general_learning',
+  human_robot_interaction: 'general_learning',
+  policy_learning: 'general_learning',
+  data_engines: 'general_learning',
+  simulation_transfer: 'general_learning',
+  spatial_perception: 'general_learning',
+  safety_evaluation: 'general_learning',
+  continual_deployment_learning: 'general_learning',
+  multi_robot_coordination: 'general_learning',
+  embodied_multisensory: 'dexterous',
+}
 
 const normalizeStatus = (value) => {
   if (typeof value === 'boolean') return value
@@ -30,10 +47,14 @@ const normalizeInstitutions = (institutions = []) =>
 const curatedRecord = (record, existing = {}) => {
   const signals = record.signals ?? {}
   const openAssets = signals.open_assets ?? signals.open_code_data_model ?? {}
-  const openStatus = normalizeStatus(openAssets)
-    || openAssets.code === true || openAssets.data === true || openAssets.model === true
+  const hasTypedOpenAssets = ['code', 'data', 'model'].some((key) => key in openAssets)
+  const legacyOpenStatus = !hasTypedOpenAssets && normalizeStatus(openAssets)
   const urls = record.project_or_code_urls ?? []
-  const primaryTopic = topicByLabel[record.primary_direction] ?? record.primary_topic
+  const currentPrimaryTopic = record.current_primary_topic
+    ?? (record.primary_topic in currentToLegacyTopic ? record.primary_topic : null)
+  const primaryTopic = topicByLabel[record.primary_direction]
+    ?? currentToLegacyTopic[record.primary_topic]
+    ?? record.primary_topic
   const confidenceValue = Number(record.classification_confidence ?? 0.9)
   return {
     id: record.arxiv_id,
@@ -45,6 +66,7 @@ const curatedRecord = (record, existing = {}) => {
     abstract: record.abstract ?? existing.abstract ?? '',
     categories: record.categories ?? existing.categories ?? [],
     primary_topic: primaryTopic,
+    current_primary_topic: currentPrimaryTopic ?? existing.current_primary_topic ?? null,
     topics: [primaryTopic],
     tags: record.horizontal_tags ?? record.cross_tags ?? [],
     confidence: confidenceValue >= 0.84 ? 'high' : confidenceValue >= 0.68 ? 'medium' : 'low',
@@ -60,9 +82,9 @@ const curatedRecord = (record, existing = {}) => {
       multi_task: normalizeStatus(signals.multi_task),
       cross_embodiment: normalizeStatus(signals.cross_embodiment),
       long_horizon: normalizeStatus(signals.long_horizon),
-      open_code: openStatus,
-      open_data: openAssets.data === true || openStatus,
-      open_model: openAssets.model === true || openStatus,
+      open_code: openAssets.code === true || legacyOpenStatus,
+      open_data: openAssets.data === true || legacyOpenStatus,
+      open_model: openAssets.model === true || legacyOpenStatus,
     },
     contribution_zh: record.contribution_zh ?? record.one_sentence_contribution_zh ?? '',
     limitation_zh: record.limitation_zh ?? record.one_sentence_limitation_zh ?? '',
@@ -76,6 +98,8 @@ const curatedRecord = (record, existing = {}) => {
 }
 
 const candidates = read('data/processed/semantic-scholar-candidates.json', [])
+const currentPreprints = read('data/preprints.json', [])
+const currentPreprintById = new Map(currentPreprints.map((paper) => [paper.arxiv_id, paper]))
 const papers = new Map(
   candidates.map((paper) => [
     paper.id,
@@ -94,10 +118,20 @@ for (const file of [
   'data/curated-2026h1.json',
   'data/curated-2026-07-extra.json',
   'data/curated-2026-07-late.json',
+  'data/curated-2026-08.json',
 ]) {
   const dataset = read(file, { records: [] })
   for (const record of dataset.records ?? []) {
-    const existing = papers.get(record.arxiv_id) ?? {}
+    const preprint = currentPreprintById.get(record.arxiv_id) ?? {}
+    const existing = papers.get(record.arxiv_id) ?? {
+      title: preprint.title,
+      authors: preprint.authors,
+      institutions: preprint.institutions,
+      first_submitted: preprint.first_submitted,
+      updated: preprint.updated,
+      abstract: preprint.abstract,
+      categories: preprint.categories,
+    }
     const normalized = curatedRecord(record, existing)
     papers.set(normalized.id, {
       ...existing,
@@ -142,8 +176,8 @@ const output = [...papers.values()]
       ? 'baseline'
       : v1Month >= '2025-07' && v1Month <= '2026-06'
         ? 'analysis'
-        : v1Month === '2026-07'
-          ? 'provisional'
+        : v1Month >= '2026-07' && v1Month <= '2026-08'
+          ? 'extension'
           : 'outside'
     return { ...paper, v1_month: v1Month, period }
   })

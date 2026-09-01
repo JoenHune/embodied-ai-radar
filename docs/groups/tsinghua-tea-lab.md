@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua Embodied AI Lab
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究深度强化学习、机器人、计算机视觉和触觉，聚焦世界动力学、人类先验、样本效率及真实机器人泛化。
 

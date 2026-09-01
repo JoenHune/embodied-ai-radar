@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Robotics and Embodied Artificial Intelligence Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 通过真实交互、人类示范、仿真和互联网数据研究通用操作、灵巧与全身移动操作。
 

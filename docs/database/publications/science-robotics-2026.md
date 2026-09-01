@@ -4,12 +4,15 @@ outline: deep
 
 # Science Robotics 2026 正式发表母集
 
-> 本页共 70 条；直接候选 17，边界候选 10。DOI/发现记录不自动等于严格官方核验。
+> 本页共 80 条；直接候选 24，边界候选 11。DOI/发现记录不自动等于严格官方核验。
 
 | 工作 | 主方向 | 相关性状态 | 发表证据状态 | arXiv | DOI | 引用快照 |
 |---|---|---|---|---|---|---:|
+| [SONIC: Supersizing motion tracking for natural humanoid whole-body control](https://www.science.org/doi/10.1126/scirobotics.aed4592) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | [2511.07820](https://arxiv.org/abs/2511.07820) | [DOI](https://doi.org/10.1126/scirobotics.aed4592) | 142 |
 | [Visual-tactile pretraining and online multitask learning for humanlike manipulation dexterity](https://www.science.org/doi/10.1126/scirobotics.ady2869) | 灵巧、双臂与接触操作 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.ady2869) | 14 |
+| [Learning vision-driven reactive soccer skills for humanoid robots](https://www.science.org/doi/10.1126/scirobotics.aed1152) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | [2511.03996](https://arxiv.org/abs/2511.03996) | [DOI](https://doi.org/10.1126/scirobotics.aed1152) | 13 |
 | [Learning realistic lip motions for humanoid face robots](https://www.science.org/doi/10.1126/scirobotics.adx3017) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adx3017) | 8 |
+| [Evolution of humanoid locomotion control](https://www.science.org/doi/10.1126/scirobotics.aed3973) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aed3973) | 7 |
 | [Precise aggressive aerial maneuvers with sensorimotor policies](https://www.science.org/doi/10.1126/scirobotics.aeb0180) | 策略学习与优化 | 直接候选 | DOI 已登记，待逐页核验 | [2604.05828](https://arxiv.org/abs/2604.05828) | [DOI](https://doi.org/10.1126/scirobotics.aeb0180) | 6 |
 | [Beyond alignment: Why robotic foundation models need context-aware safety](https://www.science.org/doi/10.1126/scirobotics.aef2191) | 具身基础模型与通才策略 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aef2191) | 3 |
 | [“Humanoids will soon replace most human workers”: A debate](https://www.science.org/doi/10.1126/scirobotics.aeh6422) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeh6422) | 1 |
@@ -17,13 +20,17 @@ outline: deep
 | [Agile perceptive multiskill locomotion for quadrupedal robots in the wild](https://www.science.org/doi/10.1126/scirobotics.adz7397) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | [2607.13579](https://arxiv.org/abs/2607.13579) | [DOI](https://doi.org/10.1126/scirobotics.adz7397) | 1 |
 | [Cross-robot behavior adaptation through intention alignment](https://www.science.org/doi/10.1126/scirobotics.adv2250) | 策略学习与优化 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adv2250) | 1 |
 | [Acceptance of humanoid robots: A psychological perspective](https://www.science.org/doi/10.1126/scirobotics.aei1219) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aei1219) | 0 |
+| [Advances, challenges, and opportunities for legged robots](https://www.science.org/doi/10.1126/scirobotics.aee0787) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | [2607.28952](https://arxiv.org/abs/2607.28952) | [DOI](https://doi.org/10.1126/scirobotics.aee0787) | 0 |
 | [Allocentric teleoperation for variable perspective multirobot coordination](https://www.science.org/doi/10.1126/scirobotics.adz7130) | 数据引擎与人类视频学习 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adz7130) | 0 |
+| [Are humanoid robots in 2035 more fiction than science?](https://www.science.org/doi/10.1126/scirobotics.aek6923) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aek6923) | 0 |
+| [Convergent binocular stereo: Depth perception for humanoid robot vision](https://www.science.org/doi/10.1126/scirobotics.aec7205) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aec7205) | 0 |
 | [Demonstrate once, execute on many: Kinematic intelligence for cross-robot skill transfer](https://www.science.org/doi/10.1126/scirobotics.aea1995) | 策略学习与优化 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aea1995) | 0 |
 | [Dexterous grasping with an active palm](https://www.science.org/doi/10.1126/scirobotics.aei2046) | 灵巧、双臂与接触操作 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aei2046) | 0 |
 | [Embodied or virtually represented: Navigating the embodiment debate in human-robot interaction](https://www.science.org/doi/10.1126/scirobotics.aed4569) | 人机协作与交互学习 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aed4569) | 0 |
+| [From acrobatics to generality: Humanoid robots at an inflection point](https://www.science.org/doi/10.1126/scirobotics.aek7970) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aek7970) | 0 |
 | [From autonomy to alliance: Robotic foundation models must learn with us, not just for us](https://www.science.org/doi/10.1126/scirobotics.aea1822) | 具身基础模型与通才策略 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aea1822) | 0 |
-| [Advances, challenges, and opportunities for legged robots](https://www.science.org/doi/10.1126/scirobotics.aee0787) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aee0787) | — |
-| [Multilevel dynamics of the brain, hormones, mind, and behavior in social human-robot interaction](https://www.science.org/doi/10.1126/scirobotics.aec1762) | 人机协作与交互学习 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aec1762) | — |
+| [Multilevel dynamics of the brain, hormones, mind, and behavior in social human-robot interaction](https://www.science.org/doi/10.1126/scirobotics.aec1762) | 人机协作与交互学习 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aec1762) | 0 |
+| [BeyondMimic: From motion tracking to versatile humanoid control via guided diffusion](https://www.science.org/doi/10.1126/scirobotics.adx8924) | 人形、运动与全身控制 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adx8924) | — |
 | [Performant robotic manipulation with real-world reinforcement learning](https://www.science.org/doi/10.1126/scirobotics.aed6267) | 策略学习与优化 | 直接候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aed6267) | — |
 | [Low-voltage and high-output dielectric elastomer actuators for untethered soft machines working at 200 volts](https://www.science.org/doi/10.1126/scirobotics.ady9635) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.ady9635) | 7 |
 | [A retrieval-augmented framework enabling VLM spatial awareness for object-centric robot manipulation](https://www.science.org/doi/10.1126/scirobotics.aea2092) | 灵巧、双臂与接触操作 | 边界候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aea2092) | 4 |
@@ -38,6 +45,7 @@ outline: deep
 | [Is intermittent swimming lazy or clever?](https://www.science.org/doi/10.1126/scirobotics.aee3862) | 待复核 | 排除 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aee3862) | 1 |
 | [Milliwatt ultrasound for navigation in visually degraded environments on palm-sized aerial robots](https://www.science.org/doi/10.1126/scirobotics.adz9609) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | [2603.24699](https://arxiv.org/abs/2603.24699) | [DOI](https://doi.org/10.1126/scirobotics.adz9609) | 1 |
 | [The codevelopment of soft robotics and assistive technology](https://www.science.org/doi/10.1126/scirobotics.aee0269) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aee0269) | 1 |
+| [Ultra-wideband radar to measure in vivo muscle forces](https://www.science.org/doi/10.1126/scirobotics.aed5865) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aed5865) | 1 |
 | [A minimally invasive robotic spinal surgical system for anterior lumbar nerve decompression](https://www.science.org/doi/10.1126/scirobotics.adu0590) | 灵巧、双臂与接触操作 | 边界候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adu0590) | 0 |
 | [A self-guided intubation device](https://www.science.org/doi/10.1126/scirobotics.aef4218) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aef4218) | 0 |
 | [Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV](https://www.science.org/doi/10.1126/scirobotics.adx9939) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adx9939) | 0 |
@@ -55,12 +63,15 @@ outline: deep
 | [Fusing LiDAR and vision to generate high-quality reconstructions](https://www.science.org/doi/10.1126/scirobotics.aej0223) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aej0223) | 0 |
 | [Grasshopper-inspired wing design improves gliding performance](https://www.science.org/doi/10.1126/scirobotics.aeg3450) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeg3450) | 0 |
 | [How foundation models will revolutionize robot swarms](https://www.science.org/doi/10.1126/scirobotics.adz1543) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.adz1543) | 0 |
+| [Is a robot a tool or an agent?](https://www.science.org/doi/10.1126/scirobotics.aej9331) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aej9331) | 0 |
 | [Is your robot vacuum cleaner spying on you?](https://www.science.org/doi/10.1126/scirobotics.aei9833) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aei9833) | 0 |
 | [Learning flight navigation like a honey bee](https://www.science.org/doi/10.1126/scirobotics.aej7866) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aej7866) | 0 |
 | [Lightweight haptic ring delivers high force feedback](https://www.science.org/doi/10.1126/scirobotics.aef4236) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aef4236) | 0 |
 | [Neurorobotics may make a smarter, but not happier, robot](https://www.science.org/doi/10.1126/scirobotics.aeg2324) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeg2324) | 0 |
 | [Origami-inspired grasper for safe tissue manipulation](https://www.science.org/doi/10.1126/scirobotics.aeh1283) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeh1283) | 0 |
+| [Physical AI is enabled by mechanical hardware](https://www.science.org/doi/10.1126/scirobotics.aee2921) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aee2921) | 0 |
 | [Robot farm elegy](https://www.science.org/doi/10.1126/scirobotics.aeh3279) | 人形、运动与全身控制 | 边界候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeh3279) | 0 |
+| [Robot in a crib: How a playing robot helps us understand sensorimotor contingency learning](https://www.science.org/doi/10.1126/scirobotics.aed4106) | 人形、运动与全身控制 | 边界候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aed4106) | 0 |
 | [Robot-mediated haptic feedback outperforms vision in violin duo coordination](https://www.science.org/doi/10.1126/scirobotics.aeb1901) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeb1901) | 0 |
 | [Scalable robot collective resilience by sharing resources](https://www.science.org/doi/10.1126/scirobotics.ady6304) | 人形、运动与全身控制 | 边界候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.ady6304) | 0 |
 | [Shape-morphing metamaterials with continuous relearning](https://www.science.org/doi/10.1126/scirobotics.aei8549) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aei8549) | 0 |
@@ -68,13 +79,12 @@ outline: deep
 | [The forgotten spectrum: Reviving ultrasound for robust autonomy](https://www.science.org/doi/10.1126/scirobotics.aef8847) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aef8847) | 0 |
 | [The Moon needs robots](https://www.science.org/doi/10.1126/scirobotics.aei3965) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aei3965) | 0 |
 | [Therapist-exoskeleton-patient interaction for gait therapy](https://www.science.org/doi/10.1126/scirobotics.adz9628) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | [2507.16059](https://arxiv.org/abs/2507.16059) | [DOI](https://doi.org/10.1126/scirobotics.adz9628) | 0 |
+| [Toward measurement of muscle forces during movement](https://www.science.org/doi/10.1126/scirobotics.aej8562) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aej8562) | 0 |
 | [Transfer learning in robotics: From promises to practice through the emerging role of foundation models](https://www.science.org/doi/10.1126/scirobotics.aeh4374) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeh4374) | 0 |
 | [Translational bottlenecks for biohybrid microrobots](https://www.science.org/doi/10.1126/scirobotics.aeg2985) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeg2985) | 0 |
 | [Vibrotactile feedback aids prosthesis usability](https://www.science.org/doi/10.1126/scirobotics.aeg9510) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aeg9510) | 0 |
 | [Within arm’s reach: A path forward for robot dexterity](https://www.science.org/doi/10.1126/scirobotics.aee5782) | 动作关联的空间感知与表征 | 边界候选 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aee5782) | 0 |
 | [Would you give four stars to a restaurant entirely staffed by robots?](https://www.science.org/doi/10.1126/scirobotics.aef2586) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aef2586) | 0 |
-| [Is a robot a tool or an agent?](https://www.science.org/doi/10.1126/scirobotics.aej9331) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aej9331) | — |
 | [Object-centric task representation and transfer using diffused orientation fields](https://www.science.org/doi/10.1126/scirobotics.aea1762) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aea1762) | — |
 | [RAPTOR: A foundation policy for quadrotor control](https://www.science.org/doi/10.1126/scirobotics.aec1481) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aec1481) | — |
-| [Toward measurement of muscle forces during movement](https://www.science.org/doi/10.1126/scirobotics.aej8562) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aej8562) | — |
-| [Ultra-wideband radar to measure in vivo muscle forces](https://www.science.org/doi/10.1126/scirobotics.aed5865) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aed5865) | — |
+| [ZEST: Zero-shot embodied skill transfer for athletic robot control](https://www.science.org/doi/10.1126/scirobotics.aec7695) | 待复核 | 待摘要/人工复核 | DOI 已登记，待逐页核验 | — | [DOI](https://doi.org/10.1126/scirobotics.aec7695) | — |

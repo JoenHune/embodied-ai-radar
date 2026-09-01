@@ -4,7 +4,7 @@ outline: deep
 
 # Google DeepMind Robotics
 
-> 企业/独立研究组织 · Global / United Kingdom / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · Global / United Kingdom / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Google DeepMind 的机器人研究团队以 Gemini Robotics VLA 与 Embodied Reasoning 模型为核心，覆盖跨本体迁移、大小脑协同、全身控制、灵巧操作、多机器人协作和安全评测。官方页面未公开单一团队负责人，避免以博客署名替代组织领导关系。
 

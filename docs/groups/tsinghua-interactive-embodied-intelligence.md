@@ -4,7 +4,7 @@ outline: deep
 
 # Tsinghua Interactive Embodied Intelligence Lab
 
-> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 以交互世界模型、灵巧控制与感知、具身基础模型为三条主线，连接高层意图与低层物理动作。
 

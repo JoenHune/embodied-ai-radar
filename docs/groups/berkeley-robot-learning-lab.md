@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Robot Learning Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 研究机器人与机器学习，长期覆盖强化、模仿、无监督、迁移与元学习，并重视真实机器人验证。
 

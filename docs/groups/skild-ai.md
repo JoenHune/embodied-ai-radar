@@ -4,7 +4,7 @@ outline: deep
 
 # Skild AI
 
-> 企业/独立研究组织 · Global / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · Global / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 以 omni-bodied intelligence 为核心的机器人基础模型公司，利用大规模仿真、互联网人类视频、遥操作与真实部署形成数据飞轮，目标是一套模型控制多种机器人和任务。
 

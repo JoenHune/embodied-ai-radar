@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04",
+  "generated_at": "2026-08-31",
   "records": 3161,
   "by_venue": {
     "ICRA": 2951,
@@ -49,11 +49,11 @@
   "source_refresh": [
     {
       "cache_name": "icra26-day-1.html",
-      "status": "current_snapshot_cache"
+      "status": "fresh_body"
     },
     {
       "cache_name": "icra26-day-2.html",
-      "status": "current_snapshot_cache"
+      "status": "fresh_body"
     },
     {
       "cache_name": "icra26-day-3.html",

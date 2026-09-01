@@ -1,9 +1,9 @@
 {
   "version": "2.1",
-  "updated": "2026-08-24",
+  "updated": "2026-08-31",
   "window": {
     "from": "2024-07-01",
-    "until": "2026-08-24"
+    "until": "2026-08-31"
   },
   "conference_sources": [
     {

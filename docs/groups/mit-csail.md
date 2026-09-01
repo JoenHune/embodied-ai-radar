@@ -4,7 +4,7 @@ outline: deep
 
 # MIT CSAIL
 
-> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 Broad AI institute with a dense robotics ecosystem, open facilities, and multiple distinct PI groups; child-lab work requires separate attribution.
 

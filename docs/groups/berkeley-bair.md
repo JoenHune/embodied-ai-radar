@@ -4,7 +4,7 @@ outline: deep
 
 # Berkeley AI Research (BAIR)
 
-> 研究院/开放平台 · North America / United States · **来源状态：stale** · 最后核验 2026-08-26
+> 研究院/开放平台 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
 
 Academic AI umbrella connecting robot learning, control, perception, human interaction, and open humanoid work across several independently tracked Berkeley groups.
 

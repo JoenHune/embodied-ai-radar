@@ -10,7 +10,7 @@ outline: deep
 
 | 数据层 | 数量 |
 |---|---:|
-| Canonical works | 41592 |
+| Canonical works | 42083 |
 | 带 organization 归属边的 work | 100 |
 | 持续跟踪研究组 | 63 |
 | 待复核 G3/G0 候选 | 180 |

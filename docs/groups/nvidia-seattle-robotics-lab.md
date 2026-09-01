@@ -4,7 +4,7 @@ outline: deep
 
 # NVIDIA Seattle Robotics Lab
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 覆盖感知、任务与运动规划、控制、强化学习、模仿学习、仿真和 VLA 的全栈机器人实验室，重点连接 GPU 加速规划、多模态接触感知与真实机器人部署。
 

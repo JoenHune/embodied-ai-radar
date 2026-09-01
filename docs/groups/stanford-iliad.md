@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Intelligent and Interactive Autonomous Systems Group
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究安全可靠的人机与人—AI交互，关注交互式机器人学习、控制、协调和人类对齐。
 

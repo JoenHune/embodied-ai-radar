@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Interactive Perception and Robot Learning Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 研究稳健感觉运动协调、交互感知、抓取与操作，连接机器人学习、计算机视觉和多模态接触。
 

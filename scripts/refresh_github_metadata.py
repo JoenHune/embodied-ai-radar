@@ -10,6 +10,7 @@ watchlist until they receive the same adoption audit.
 
 from __future__ import annotations
 
+import argparse
 import json
 import subprocess
 import time
@@ -80,14 +81,18 @@ def apply_metadata(record: dict, payload: dict) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--watchlist-only", action="store_true")
+    args = parser.parse_args()
     records = json.loads(REPOSITORIES.read_text())
-    for index, record in enumerate(records, 1):
-        payload = github_repo(record["repo_full_name"])
-        apply_metadata(record, payload)
-        print(f"metadata {index}/{len(records)}: {payload['full_name']}", flush=True)
-    REPOSITORIES.write_text(
-        json.dumps(records, ensure_ascii=False, separators=(",", ":")) + "\n"
-    )
+    if not args.watchlist_only:
+        for index, record in enumerate(records, 1):
+            payload = github_repo(record["repo_full_name"])
+            apply_metadata(record, payload)
+            print(f"metadata {index}/{len(records)}: {payload['full_name']}", flush=True)
+        REPOSITORIES.write_text(
+            json.dumps(records, ensure_ascii=False, separators=(",", ":")) + "\n"
+        )
 
     seed_rows = json.loads(SEEDS.read_text())["repositories"]
     watch_rows = []

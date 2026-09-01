@@ -4,7 +4,7 @@ outline: deep
 
 # OpenDriveLab
 
-> 研究院/开放平台 · Asia / China · **来源状态：healthy** · 最后核验 2026-08-26
+> 研究院/开放平台 · Asia / China · **来源状态：healthy** · 最后核验 2026-08-30
 
 Open research platform connecting embodied AI and planning-oriented autonomous driving through models, datasets, benchmarks, challenges, and real-robot collaborations.
 

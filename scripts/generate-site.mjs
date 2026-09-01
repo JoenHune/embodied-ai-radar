@@ -29,7 +29,7 @@ const analysisMonths = [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12',
   '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06',
 ]
-const allMonths = [...analysisMonths, '2026-07']
+const allMonths = [...analysisMonths, '2026-07', '2026-08']
 const included = papers.filter((paper) => paper.included)
 const byId = new Map(papers.map((paper) => [paper.id, paper]))
 
@@ -87,7 +87,8 @@ const inferredCurrentTopic = (title, fallback) => {
   return fallback
 }
 const currentTopicLabel = (paper) => {
-  const mapped = currentPreprintById.get(paper.id)?.primary_topic
+  const mapped = paper.current_primary_topic
+    ?? currentPreprintById.get(paper.id)?.primary_topic
     ?? inferredCurrentTopic(paper.title, legacyTopicToCurrent[paper.primary_topic])
   return currentTaxonomy.categories[mapped]?.label ?? paper.primary_topic
 }
@@ -218,11 +219,15 @@ function monthlyPage(month) {
   const currentWideCount = preprintCoverage.months?.[month]?.included ?? current.length
   const conclusion = month === '2026-07'
     ? `7 月完整月总量较 6 月回落，但月末的世界模型决策化、失败纠错、触觉未来监督和行为对齐跨本体迁移组成了比总量更值得跟踪的弱信号。`
+    : month === '2026-08'
+      ? `8 月完整月的数量与 7 月接近，但结构上更重要的变化是 world model 的动作跟随/执行评测、跨本体共同表征、持久记忆和部署自改进在月末同时成簇。`
     : monthTrends.length
     ? `${monthTrends[0].title}；与此同时，${monthTrends.at(-1).title}。`
     : '样本不足，暂不形成趋势判断。'
   const coverageNote = month === '2026-07'
     ? `> **7 月完整月。** arXiv 母集覆盖至 31 日，并补入 30–31 日 10 篇高信号精读；主题结构统一采用当前 15 个研究方向。\n`
+    : month === '2026-08'
+      ? `> **8 月完整月。** arXiv 母集覆盖 1–31 日；完整月环比与同比均可直接计算。${curated.length} 篇高信号工作已逐项核验 arXiv ID、标题和 v1 日期。\n`
     : `> **统计口径。** 当前 15 个研究方向用于数量结构；${curated.length} 篇精读样本用于实验与开放性指标。上月为 ${previousMonthValue}，同比月为 ${baselineMonth}。\n`
   const topicRows = topicOrder.map((key) => {
     const monthDelta = counts[key] - previousCounts[key]
@@ -248,7 +253,7 @@ function monthlyPage(month) {
 
   return `${frontmatter}
 
-# ${monthLabel(month)}研究雷达${month === '2026-07' ? '（完整月）' : ''}
+# ${monthLabel(month)}研究雷达${['2026-07', '2026-08'].includes(month) ? '（完整月）' : ''}
 
 ${coverageNote}
 
@@ -318,14 +323,14 @@ function monthlyIndex() {
     const dominant = topicOrder.toSorted((a, b) => counts[b] - counts[a])[0]
     const curated = curatedTop(month)
     const real = curated.filter((paper) => evidenceValue(paper, 'real_robot')).length
-    const label = month === '2026-07' ? `${monthLabel(month)}（完整月）` : monthLabel(month)
+    const label = ['2026-07', '2026-08'].includes(month) ? `${monthLabel(month)}（完整月）` : monthLabel(month)
     return `| [${label}](/monthly/${month}) | ${current.length} | ${signed(current.length - previous.length)} | ${changeRate(current.length, previous.length)} | ${signed(current.length - baseline.length)} | ${changeRate(current.length, baseline.length)} | ${topics[dominant].label}（${counts[dominant]}） | ${curated.length} | ${real}/${curated.length} |`
   }).join('\n')
   return `${frontmatter}
 
 # 月度研究雷达
 
-> 主分析期按 arXiv v1 月份归档；2026 年 7 月已收完整月，2026 年 8 月另列月初快照。候选数量衡量统一查询下的研究密度，精读样本用于技术判断。
+> 主分析期按 arXiv v1 月份归档；2026 年 7–8 月均已收完整月。候选数量衡量统一查询下的研究密度，精读样本用于技术判断。
 
 | 月份 | 候选数 | 环比增量 | 环比 | 同比增量 | 同比 | 数量主导方向 | 精读 | 真机确认 |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
@@ -557,9 +562,9 @@ ${keyTrends.map((trend) => `- **${trend.title}（${trend.grade}）**：${trend.c
 
 ${sections}
 
-## 2026 年 7 月完整月与 8 月早期快照
+## 2026 Q3 截至 8 月完整月
 
-7 月完整月中，100K 小时级轨迹仍是数量共识；更领先的 B 级信号集中在 verifier/critic/corrector、进度—记忆—运行时状态、触觉 world model 以及世界模型的规划/评价用途。8 月截至 ${Number(preprintCoverage.window.until.slice(-2))} 日已有 ${augustSnapshot} 条直接候选，但不完整月不与 7 月直接计算环比；新增证据优先进入[研究问题地图](/questions/)验证既有命题。
+7 月的主线是 verifier/critic/corrector、触觉 world model 和世界模型的规划/评价用途；8 月 ${augustSnapshot} 条直接候选进一步把世界模型推向动作跟随与执行级评测，并出现跨本体共同表征、持久记忆和部署自改进的高密度证据簇。两个月均已关闭窗口，可直接比较数量与方向结构。
 
 <!-- 更新标记：季度演进 最后更新 2026.08 -->`
 }
@@ -686,8 +691,8 @@ function executiveSummary() {
 全站主题结构统一使用当前 15 个研究方向，并同时维护 arXiv 母库、正式发表母库、严格官方 proceedings 与 GitHub 证据。详见[语料扩充与覆盖审计](/analysis/corpus-expansion)。
 :::
 
-::: info 8 月更新
-7 月已收完整月；8 月截至 ${Number(preprintCoverage.window.until.slice(-2))} 日已纳入 ${currentPreprints.filter((paper) => paper.relevance?.status === 'included' && paper.first_submitted?.startsWith('2026-08')).length} 条直接候选。由于月份尚未关闭，不与完整月计算环比；本轮重点新增[问题地图](/questions/)，把接触表征、Ego-to-Action、失败回流和软硬件 co-design 与公开证据逐项对应。
+::: info 8 月完整月更新
+8 月已覆盖 1–31 日，纳入 ${currentPreprints.filter((paper) => paper.relevance?.status === 'included' && paper.first_submitted?.startsWith('2026-08')).length} 条直接候选，现可与 7 月完整月计算环比。月末新增证据将 world model 执行效用、跨本体表征、触觉基础设施和持续部署学习推进到更可验证的层级。
 :::
 
 <div class="radar-kpis">

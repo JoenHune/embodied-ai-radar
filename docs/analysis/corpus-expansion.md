@@ -4,11 +4,11 @@ outline: deep
 
 # 语料扩充与覆盖审计
 
-> 数据截点：2026-08-24。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
+> 数据截点：2026-08-31。这里把“母集”“自动相关候选”“边界复核”“精读锚点”分开，避免再用精选篇数冒充总覆盖量。
 
 <div class="radar-kpis">
-  <div class="radar-kpi"><strong>31,773</strong><span>arXiv 母集</span></div>
-  <div class="radar-kpi"><strong>10,404</strong><span>窗口内正式发表母集</span></div>
+  <div class="radar-kpi"><strong>32,218</strong><span>arXiv 母集</span></div>
+  <div class="radar-kpi"><strong>10,488</strong><span>窗口内正式发表母集</span></div>
   <div class="radar-kpi"><strong>824</strong><span>完整官方容器记录</span></div>
   <div class="radar-kpi"><strong>3,161</strong><span>官方节目/待 proceedings</span></div>
   <div class="radar-kpi"><strong>42</strong><span>GitHub 核验仓库</span></div>
@@ -27,13 +27,13 @@ outline: deep
 | Venue | 母集（含去重前缘） | 窗口内 | 窗口内直接候选 | 窗口内边界候选 | 窗口内待摘要/人工 | 有摘要 | 有 arXiv | 有 DOI |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | CoRL | 265 | 265 | 117 | 39 | 109 | 0 | 0 | 0 |
-| ICRA | 3366 | 1605 | 455 | 287 | 809 | 3357 | 2037 | 3366 |
-| IJRR | 263 | 263 | 75 | 47 | 137 | 222 | 98 | 263 |
-| IROS | 3568 | 3568 | 922 | 621 | 1920 | 3561 | 1805 | 3568 |
-| RA-L | 3740 | 3740 | 875 | 629 | 2160 | 3502 | 1314 | 3740 |
+| ICRA | 3366 | 1605 | 455 | 287 | 809 | 3358 | 2038 | 3366 |
+| IJRR | 266 | 266 | 75 | 48 | 139 | 230 | 102 | 266 |
+| IROS | 3568 | 3568 | 922 | 621 | 1920 | 3562 | 1806 | 3568 |
+| RA-L | 3792 | 3792 | 899 | 655 | 2162 | 3648 | 1373 | 3792 |
 | RSS | 135 | 135 | 50 | 20 | 65 | 35 | 17 | 134 |
-| Science Robotics | 274 | 274 | 44 | 48 | 178 | 245 | 16 | 274 |
-| T-RO | 554 | 554 | 132 | 97 | 317 | 521 | 250 | 554 |
+| Science Robotics | 284 | 284 | 51 | 49 | 180 | 258 | 19 | 284 |
+| T-RO | 573 | 573 | 139 | 99 | 327 | 531 | 259 | 573 |
 
 “母集”是 venue 内采到的全部论文版本；“直接候选”是当前词表与语境自动筛出的具身智能工作，并非最终趋势结论。DBLP/Crossref/Semantic Scholar 只承担发现或字段补全；严格同行评审标签仍需官方 proceedings、OpenReview 最终录用或出版社文章页。
 

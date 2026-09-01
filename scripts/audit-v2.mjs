@@ -44,6 +44,10 @@ const previousMonth = (month) => {
 assert(Object.keys(taxonomy.categories).length === 15,
   `expected 15 v2 topics, got ${Object.keys(taxonomy.categories).length}`)
 assert(taxonomy.version === '2.1', `unexpected taxonomy version: ${taxonomy.version}`)
+assert(preprintCoverage.window?.until === cutoff, 'preprint coverage cutoff mismatch')
+assert(publicationCoverage.window?.until === cutoff, 'publication coverage cutoff mismatch')
+assert(officialCoverage.generated_at === cutoff, 'official proceedings snapshot cutoff mismatch')
+assert(programCoverage.generated_at === cutoff, 'official program snapshot cutoff mismatch')
 
 assert(preprints.length === preprintCoverage.mother_corpus,
   'preprint mother-corpus count mismatch')
@@ -62,6 +66,13 @@ assert(Object.values(preprintCoverage.months).reduce((sum, row) => sum + row.mot
 assert(Object.values(preprintCoverage.months).reduce((sum, row) => sum + row.cs_ro, 0) === csRoCount,
   `monthly cs.RO counts do not sum to ${csRoCount}`)
 assert(preprintCoverage.included >= 8800, 'v2 included preprints unexpectedly small')
+assert(preprintCoverage.generated_at === cutoff, 'preprint coverage generation date mismatch')
+assert(preprintCoverage.months?.['2026-08']?.mother_corpus === 1452, 'August mother-corpus count mismatch')
+assert(preprintCoverage.months?.['2026-08']?.included === 469, 'August included count mismatch')
+assert(preprintCoverage.months?.['2026-08']?.cs_ro === 1125, 'August cs.RO count mismatch')
+assert(preprints.filter((row) => row.first_submitted.startsWith('2026-08')).length === 1452,
+  'August records do not reproduce coverage total')
+assert(preprints.at(-1)?.first_submitted === '2026-08-31', 'August collection does not reach month end')
 
 assert(publications.length === publicationCoverage.mother_corpus,
   'publication mother-corpus count mismatch')
@@ -191,7 +202,7 @@ assert(fs.readdirSync(path.join(root, 'docs', 'database', 'publications')).filte
   'venue-year publication page count does not match current corpus')
 for (const month of [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12',
-  '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07',
+  '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08',
 ]) {
   const monthlyPage = fs.readFileSync(path.join(root, 'docs', 'monthly', `${month}.md`), 'utf8')
   assert(monthlyPage.includes('## 主题结构与环比'),
@@ -206,10 +217,10 @@ for (const month of [
   }
 }
 const augustPage = fs.readFileSync(path.join(root, 'docs', 'monthly', '2026-08.md'), 'utf8')
-assert(augustPage.includes(`前瞻快照，截至 ${Number(cutoff.slice(-2))} 日`),
-  'August snapshot cutoff missing')
-assert(augustPage.includes('不完整月，不计算环比'),
-  'August false month-over-month warning missing')
+assert(augustPage.includes('2026 年 8 月研究雷达（完整月）'),
+  'August complete-month title missing')
+assert(!augustPage.includes('不完整月') && !augustPage.includes('前瞻快照'),
+  'August retained partial-month language')
 const corpusPage = fs.readFileSync(path.join(root, 'docs', 'analysis', 'corpus-expansion.md'), 'utf8')
 assert(corpusPage.includes(preprints.length.toLocaleString('zh-CN')),
   'corpus page preprint KPI mismatch')

@@ -4,7 +4,7 @@ outline: deep
 
 # Sunday Robotics
 
-> 初创前沿观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 初创前沿观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 家庭机器人初创公司，以无机器人数据预训练与家庭任务适配为核心，ACT 系列报告重点展示衣物折叠等真实双臂操作。
 

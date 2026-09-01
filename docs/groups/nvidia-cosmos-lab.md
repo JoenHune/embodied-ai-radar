@@ -4,7 +4,7 @@ outline: deep
 
 # NVIDIA Cosmos Lab
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-26
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
 
 面向 Physical AI 的世界基础模型实验室，研究生成式世界仿真、物理推理、具身策略和评测，并持续开放模型、代码与 benchmark。
 
