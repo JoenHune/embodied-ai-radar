@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Interactive Agents and Collaborative Technologies Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-09-06
 
 研究人机与人—AI交互、从人类反馈学习目标、协作决策和对齐，使智能体围绕人的需求行动。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://interact.berkeley.edu/](https://interact.berkeley.edu/) | partial | 2026-08-26 | 1 |
-| publications | [https://interact.berkeley.edu/research.html](https://interact.berkeley.edu/research.html) | stale | — | 2 |
+| home | [https://interact.berkeley.edu/](https://interact.berkeley.edu/) | healthy | 2026-09-06 | 0 |
+| publications | [https://interact.berkeley.edu/research.html](https://interact.berkeley.edu/research.html) | stale | — | 3 |
 
 - 来源健康状态为 stale，请谨慎解读最近更新。

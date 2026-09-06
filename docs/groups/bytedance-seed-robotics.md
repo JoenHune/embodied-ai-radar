@@ -4,7 +4,7 @@ outline: deep
 
 # ByteDance Seed Robotics
 
-> 企业/独立研究组织 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-08-30
+> 企业/独立研究组织 · Asia-Pacific / China · **来源状态：healthy** · 最后核验 2026-09-06
 
 ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、感知、灵巧操作、交互和系统孵化，代表性资产包括 GR-3、GR-RL 与 ByteDexter。官方方向页未设置负责人字段。
 
@@ -17,7 +17,7 @@ ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、�
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ ByteDance Seed 的通用智能机器人团队，聚焦机器人基础模型、�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://seed.bytedance.com/en/direction/robotics](https://seed.bytedance.com/en/direction/robotics) | healthy | 2026-08-30 | 0 |
-| publications | [https://seed.bytedance.com/en/research](https://seed.bytedance.com/en/research) | healthy | 2026-08-30 | 0 |
-| blog | [https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time](https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time) | healthy | 2026-08-30 | 0 |
+| home | [https://seed.bytedance.com/en/direction/robotics](https://seed.bytedance.com/en/direction/robotics) | healthy | 2026-09-06 | 0 |
+| publications | [https://seed.bytedance.com/en/research](https://seed.bytedance.com/en/research) | healthy | 2026-09-06 | 0 |
+| blog | [https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time](https://seed.bytedance.com/en/blog/seed-research-gr-rl-released-a-breakthrough-in-high-precision-manipulation-for-vla-models-applying-real-world-reinforcement-learning-to-shoe-lacing-for-the-first-time) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

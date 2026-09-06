@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Pathak Research Group
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究计算机视觉、机器学习与机器人交叉，目标是让智能体从原始感知中持续获得知识并在真实多样环境中泛化。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -27,7 +27,7 @@ outline: deep
 
 | 当前 12 个月更新 | 前一 12 个月更新 | 已关联 work | 严格评审 work | 最新实质变化 |
 |---:|---:|---:|---:|---|
-| 6 | 7 | 15 | 4 | 2026-04-13 |
+| 5 | 8 | 15 | 4 | 2026-04-13 |
 
 **观察到的方向：** [D1 · 具身基础模型与通才策略](/frontiers/foundation-models)、[D6 · 导航与移动操作](/frontiers/navigation-mobile-manipulation)、[D8 · 策略学习与优化](/frontiers/policy-learning)、[D9 · 数据引擎与人类视频学习](/frontiers/data-engines)、[D13 · 持续学习、部署学习与自改进](/frontiers/continual-deployment-learning)、[D3 · 世界模型与预测控制](/frontiers/world-models)、[D5 · 人形、运动与全身控制](/frontiers/humanoid-whole-body)、[D2 · 分层推理、规划与记忆](/frontiers/reasoning-planning)、[D4 · 灵巧、双臂与接触操作](/frontiers/dexterous-manipulation)、[D10 · 仿真、合成数据与 Sim-to-Real](/frontiers/simulation-transfer)、[D12 · 评测、安全、可靠性与故障恢复](/frontiers/safety-evaluation)
 
@@ -85,7 +85,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.ri.cmu.edu/robotics-groups/pathak-research-group/](https://www.ri.cmu.edu/robotics-groups/pathak-research-group/) | healthy | 2026-08-30 | 0 |
-| publications | [https://www.cs.cmu.edu/~dpathak/](https://www.cs.cmu.edu/~dpathak/) | healthy | 2026-08-30 | 0 |
+| home | [https://www.ri.cmu.edu/robotics-groups/pathak-research-group/](https://www.ri.cmu.edu/robotics-groups/pathak-research-group/) | healthy | 2026-09-06 | 0 |
+| publications | [https://www.cs.cmu.edu/~dpathak/](https://www.cs.cmu.edu/~dpathak/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

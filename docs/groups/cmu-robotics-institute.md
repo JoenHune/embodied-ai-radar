@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Robotics Institute
 
-> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 研究院/开放平台 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 Umbrella institute spanning the complete embodied-intelligence stack; lab-level attribution must remain separate.
 
@@ -17,7 +17,7 @@ Umbrella institute spanning the complete embodied-intelligence stack; lab-level 
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -38,6 +38,7 @@ Umbrella institute spanning the complete embodied-intelligence stack; lab-level 
 | 日期 | 类型 | 工作/项目 | 评审状态 | 归属证据 | 方向 | 摘要 |
 |---|---|---|---|---|---|---|
 | 2025-08 | 项目 | [Learning Generalizable Robot Skills for Dynamic and Interactive Tasks](https://publications.ri.cmu.edu/learning-generalizable-robot-skills-for-dynamic-and-interactive-tasks) | 未严格同行评审 | G1 直接证据 | — | The official RI publication page records a CMU-RI technical report on multimodal foundation models, closed-loop policies, embodied memory, and safety-aware robot learning. This is an institute repository attribution to a specific RI work, not a blanket attribution to every RI child lab. |
+| 日期待核 | 预印本 | [View Publication](https://publications.ri.cmu.edu/from-margin-to-center-designing-inclusive-and-equitable-service-robots-with-disabled-adults) | 未严格同行评审 | G1 直接证据 | — | 官方来源页面新发现的链接，等待结构化归类。 |
 
 ## Canonical works 与归属证据
 
@@ -55,8 +56,8 @@ Umbrella institute spanning the complete embodied-intelligence stack; lab-level 
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| publications | [https://www.ri.cmu.edu/publications/](https://www.ri.cmu.edu/publications/) | healthy | 2026-08-30 | 0 |
-| projects | [https://www.ri.cmu.edu/research/projects/](https://www.ri.cmu.edu/research/projects/) | healthy | 2026-08-30 | 0 |
-| people | [https://www.ri.cmu.edu/research/labs-groups/](https://www.ri.cmu.edu/research/labs-groups/) | healthy | 2026-08-30 | 0 |
+| publications | [https://www.ri.cmu.edu/publications/](https://www.ri.cmu.edu/publications/) | healthy | 2026-09-06 | 0 |
+| projects | [https://www.ri.cmu.edu/research/projects/](https://www.ri.cmu.edu/research/projects/) | healthy | 2026-09-06 | 0 |
+| people | [https://www.ri.cmu.edu/research/labs-groups/](https://www.ri.cmu.edu/research/labs-groups/) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

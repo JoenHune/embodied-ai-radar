@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Interactive Perception and Robot Learning Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究稳健感觉运动协调、交互感知、抓取与操作，连接机器人学习、计算机视觉和多模态接触。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -64,7 +64,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://iprl.stanford.edu/](https://iprl.stanford.edu/) | healthy | 2026-08-30 | 0 |
-| publications | [https://iprl.stanford.edu/publications.html](https://iprl.stanford.edu/publications.html) | healthy | 2026-08-30 | 0 |
+| home | [https://iprl.stanford.edu/](https://iprl.stanford.edu/) | healthy | 2026-09-06 | 0 |
+| publications | [https://iprl.stanford.edu/publications.html](https://iprl.stanford.edu/publications.html) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

@@ -4,7 +4,7 @@ outline: deep
 
 # Tesla Optimus
 
-> 企业/独立研究组织 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
+> 企业/独立研究组织 · North America / United States · **来源状态：stale** · 最后核验 2026-09-06
 
 Tesla 的通用双足人形机器人项目，公开方向覆盖平衡、导航、视觉感知、规划、控制、端侧推理硬件与规模化制造。由于论文和正式实验披露有限，Demo、招聘和投资者材料只能进入部署战略观察层。
 
@@ -17,7 +17,7 @@ Tesla 的通用双足人形机器人项目，公开方向覆盖平衡、导航�
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | low |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ Tesla 的通用双足人形机器人项目，公开方向覆盖平衡、导航�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.tesla.com/AI](https://www.tesla.com/AI) | stale | — | 2 |
-| publications | [https://ir.tesla.com/](https://ir.tesla.com/) | stale | — | 2 |
+| home | [https://www.tesla.com/AI](https://www.tesla.com/AI) | stale | — | 3 |
+| publications | [https://ir.tesla.com/](https://ir.tesla.com/) | stale | — | 3 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。
 - 来源健康状态为 stale，请谨慎解读最近更新。

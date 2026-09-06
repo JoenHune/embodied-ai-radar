@@ -4,7 +4,7 @@ outline: deep
 
 # MIT Distributed Robotics Laboratory
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究网络化、分布式和协作机器人，同时覆盖机器人计算设计、感知规划控制、可审计学习及人与机器协作。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,6 +55,6 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.csail.mit.edu/research/distributed-robotics-laboratory](https://www.csail.mit.edu/research/distributed-robotics-laboratory) | healthy | 2026-08-30 | 0 |
+| home | [https://www.csail.mit.edu/research/distributed-robotics-laboratory](https://www.csail.mit.edu/research/distributed-robotics-laboratory) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

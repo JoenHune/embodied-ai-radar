@@ -4,7 +4,7 @@ outline: deep
 
 # MIT Robot Locomotion Group
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 以动力学、控制理论和机器学习研究敏捷、高效、鲁棒机器人，当前重点转向操作、感知—控制融合与物理推理。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://locomotion.csail.mit.edu/](https://locomotion.csail.mit.edu/) | healthy | 2026-08-30 | 0 |
-| publications | [https://drake.mit.edu/](https://drake.mit.edu/) | healthy | 2026-08-30 | 0 |
+| home | [https://locomotion.csail.mit.edu/](https://locomotion.csail.mit.edu/) | healthy | 2026-09-06 | 0 |
+| publications | [https://drake.mit.edu/](https://drake.mit.edu/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

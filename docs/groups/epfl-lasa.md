@@ -4,7 +4,7 @@ outline: deep
 
 # EPFL Learning Algorithms and Systems Laboratory
 
-> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究人类示教、灵巧技能、适应性与反应式控制、人机协作及安全，使机器人获得接近人类的操作能力。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.epfl.ch/labs/lasa/](https://www.epfl.ch/labs/lasa/) | healthy | 2026-08-30 | 0 |
-| publications | [https://www.epfl.ch/research/domains/robotics/robotics-labs/](https://www.epfl.ch/research/domains/robotics/robotics-labs/) | healthy | 2026-08-30 | 0 |
+| home | [https://www.epfl.ch/labs/lasa/](https://www.epfl.ch/labs/lasa/) | healthy | 2026-09-06 | 0 |
+| publications | [https://www.epfl.ch/research/domains/robotics/robotics-labs/](https://www.epfl.ch/research/domains/robotics/robotics-labs/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

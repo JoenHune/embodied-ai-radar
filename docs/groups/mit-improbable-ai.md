@@ -4,7 +4,7 @@ outline: deep
 
 # MIT Improbable AI Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究强化学习、视觉与机器人，强调从物理交互中学习运动、操作和可泛化表征。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://improbableai.com/](https://improbableai.com/) | healthy | 2026-08-30 | 0 |
-| publications | [https://professional.mit.edu/programs/faculty-profiles/pulkit-agrawal](https://professional.mit.edu/programs/faculty-profiles/pulkit-agrawal) | healthy | 2026-08-30 | 0 |
+| home | [https://improbableai.com/](https://improbableai.com/) | healthy | 2026-09-06 | 0 |
+| publications | [https://professional.mit.edu/programs/faculty-profiles/pulkit-agrawal](https://professional.mit.edu/programs/faculty-profiles/pulkit-agrawal) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

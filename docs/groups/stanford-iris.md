@@ -4,7 +4,7 @@ outline: deep
 
 # Stanford Intelligence through Robotic Interaction at Scale Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究机器人和智能体如何通过大规模学习与交互形成广泛智能行为，覆盖元学习、策略学习与持续适应。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://irislab.stanford.edu/](https://irislab.stanford.edu/) | healthy | 2026-08-30 | 0 |
-| people | [https://irislab.stanford.edu/people.html](https://irislab.stanford.edu/people.html) | healthy | 2026-08-30 | 0 |
+| home | [https://irislab.stanford.edu/](https://irislab.stanford.edu/) | healthy | 2026-09-06 | 0 |
+| people | [https://irislab.stanford.edu/people.html](https://irislab.stanford.edu/people.html) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

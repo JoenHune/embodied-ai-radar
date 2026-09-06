@@ -4,7 +4,7 @@ outline: deep
 
 # Meta FAIR Embodied AI
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模型、触觉表征与传感硬件、灵巧操作、人机协作、Habitat 导航与开放机器人研究资产。该节点不把所有 Meta affiliation 自动归入同一持久实验室。
 
@@ -17,7 +17,7 @@ Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模�
 | 雷达问题映射 | [Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -56,8 +56,8 @@ Meta FAIR 内与具身智能相关的跨项目研究簇，覆盖视频世界模�
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics](https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics) | healthy | 2026-08-30 | 0 |
-| blog | [https://ai.meta.com/blog/fair-robotics-open-source/](https://ai.meta.com/blog/fair-robotics-open-source/) | healthy | 2026-08-30 | 0 |
-| publications | [https://ai.meta.com/research/vjepa/](https://ai.meta.com/research/vjepa/) | healthy | 2026-08-30 | 0 |
+| home | [https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics](https://ai.meta.com/results/?content_types%5B0%5D=publication&research_areas%5B0%5D=robotics) | healthy | 2026-09-06 | 0 |
+| blog | [https://ai.meta.com/blog/fair-robotics-open-source/](https://ai.meta.com/blog/fair-robotics-open-source/) | healthy | 2026-09-06 | 0 |
+| publications | [https://ai.meta.com/research/vjepa/](https://ai.meta.com/research/vjepa/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

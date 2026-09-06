@@ -4,7 +4,7 @@ outline: deep
 
 # University of Washington Personal Robotics Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究杂乱和不确定环境中与人共处的复杂物理操作，覆盖感知、规划、学习、辅助机器人和交互。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://personalrobotics.cs.washington.edu/](https://personalrobotics.cs.washington.edu/) | healthy | 2026-08-30 | 0 |
-| publications | [https://robotics.cs.washington.edu/](https://robotics.cs.washington.edu/) | healthy | 2026-08-30 | 0 |
+| home | [https://personalrobotics.cs.washington.edu/](https://personalrobotics.cs.washington.edu/) | healthy | 2026-09-06 | 0 |
+| publications | [https://robotics.cs.washington.edu/](https://robotics.cs.washington.edu/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

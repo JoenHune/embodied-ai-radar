@@ -4,7 +4,7 @@ outline: deep
 
 # Generalist AI
 
-> 初创前沿观察 · Europe / United Kingdom · **来源状态：healthy** · 最后核验 2026-08-30
+> 初创前沿观察 · Europe / United Kingdom · **来源状态：healthy** · 最后核验 2026-09-06
 
 以大规模跨任务机器人数据训练通才策略的初创公司，研究重点从 GEN-0/GEN-1 的规模化预训练推进到 GEN-1.5 的少样本快速适配。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -65,8 +65,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://generalistai.com/](https://generalistai.com/) | healthy | 2026-08-30 | 0 |
-| research | [https://generalistai.com/blog/research](https://generalistai.com/blog/research) | healthy | 2026-08-30 | 0 |
-| people | [https://generalistai.com/about](https://generalistai.com/about) | healthy | 2026-08-30 | 0 |
+| home | [https://generalistai.com/](https://generalistai.com/) | healthy | 2026-09-06 | 0 |
+| research | [https://generalistai.com/blog/research](https://generalistai.com/blog/research) | healthy | 2026-09-06 | 0 |
+| people | [https://generalistai.com/about](https://generalistai.com/about) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

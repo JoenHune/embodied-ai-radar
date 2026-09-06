@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Learning and Control for Agile Robotics Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究学习与控制交叉，重点关注具身智能的敏捷性、可靠性、自适应性与真实系统部署。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -62,7 +62,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.ri.cmu.edu/robotics-groups/lecar-lab/](https://www.ri.cmu.edu/robotics-groups/lecar-lab/) | healthy | 2026-08-30 | 0 |
-| publications | [https://lecar-lab.github.io/](https://lecar-lab.github.io/) | healthy | 2026-08-30 | 0 |
+| home | [https://www.ri.cmu.edu/robotics-groups/lecar-lab/](https://www.ri.cmu.edu/robotics-groups/lecar-lab/) | healthy | 2026-09-06 | 0 |
+| publications | [https://lecar-lab.github.io/](https://lecar-lab.github.io/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

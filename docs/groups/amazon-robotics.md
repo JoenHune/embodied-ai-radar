@@ -4,7 +4,7 @@ outline: deep
 
 # Amazon Robotics
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 以全球超大规模履约机器人集群为真实部署场，研究多机器人协调、移动机器人、触觉操作、人机协作和生产系统中的持续数据闭环；必须与 Amazon FAR 分开跟踪。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.amazon.science/research-areas/robotics](https://www.amazon.science/research-areas/robotics) | healthy | 2026-08-30 | 0 |
-| people | [https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center](https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center) | healthy | 2026-08-30 | 0 |
-| blog | [https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination](https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination) | healthy | 2026-08-30 | 0 |
+| home | [https://www.amazon.science/research-areas/robotics](https://www.amazon.science/research-areas/robotics) | healthy | 2026-09-06 | 0 |
+| people | [https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center](https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center) | healthy | 2026-09-06 | 0 |
+| blog | [https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination](https://www.amazon.science/blog/amazon-builds-first-foundation-model-for-multirobot-coordination) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

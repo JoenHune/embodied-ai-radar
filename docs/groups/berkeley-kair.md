@@ -4,7 +4,7 @@ outline: deep
 
 # UC Berkeley Kanazawa AI Research Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：stale** · 最后核验 2026-09-06
 
 研究从日常图像与视频捕获、感知和理解动态三维世界，并持续学习世界模型。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,6 +55,6 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://people.eecs.berkeley.edu/~kanazawa/index.html](https://people.eecs.berkeley.edu/~kanazawa/index.html) | stale | — | 2 |
+| home | [https://people.eecs.berkeley.edu/~kanazawa/index.html](https://people.eecs.berkeley.edu/~kanazawa/index.html) | stale | — | 3 |
 
 - 来源健康状态为 stale，请谨慎解读最近更新。

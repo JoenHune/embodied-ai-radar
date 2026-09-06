@@ -4,7 +4,7 @@ outline: deep
 
 # Dexterity AI
 
-> 部署与早期观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 部署与早期观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 Deployment watch for production-scale dexterous manipulation, interpretable world models, tactile/force-guided recovery, and multi-arm logistics workflows.
 
@@ -17,7 +17,7 @@ Deployment watch for production-scale dexterous manipulation, interpretable worl
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -56,8 +56,8 @@ Deployment watch for production-scale dexterous manipulation, interpretable worl
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| blog | [https://dexterity.ai/blog](https://dexterity.ai/blog) | healthy | 2026-08-30 | 0 |
-| home | [https://dexterity.ai/about](https://dexterity.ai/about) | healthy | 2026-08-30 | 0 |
-| projects | [https://dexterity.ai/blog/case-studies/fedex](https://dexterity.ai/blog/case-studies/fedex) | healthy | 2026-08-30 | 0 |
+| blog | [https://dexterity.ai/blog](https://dexterity.ai/blog) | healthy | 2026-09-06 | 0 |
+| home | [https://dexterity.ai/about](https://dexterity.ai/about) | healthy | 2026-09-06 | 0 |
+| projects | [https://dexterity.ai/blog/case-studies/fedex](https://dexterity.ai/blog/case-studies/fedex) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

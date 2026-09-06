@@ -4,7 +4,7 @@ outline: deep
 
 # ETH Zurich Robotic Systems Lab
 
-> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · Europe / Switzerland · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究腿足与移动机器人、感知、控制和自主系统，以复杂地形真机部署和鲁棒野外能力见长。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://rsl.ethz.ch/](https://rsl.ethz.ch/) | healthy | 2026-08-30 | 0 |
-| people | [https://rsl.ethz.ch/the-lab/people.html](https://rsl.ethz.ch/the-lab/people.html) | healthy | 2026-08-30 | 0 |
+| home | [https://rsl.ethz.ch/](https://rsl.ethz.ch/) | healthy | 2026-09-06 | 0 |
+| people | [https://rsl.ethz.ch/the-lab/people.html](https://rsl.ethz.ch/the-lab/people.html) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

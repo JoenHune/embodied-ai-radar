@@ -4,7 +4,7 @@ outline: deep
 
 # Figure AI
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 围绕 Figure 人形本体与 Helix 分层 VLA 联合开发的闭源研究和产品团队，重点追踪全身像素到动作控制、触觉灵巧操作、人类视频迁移、长时家庭任务与工业部署。
 
@@ -17,11 +17,11 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
-| 2026-08-25 | [Introducing Index](https://www.figure.ai/news/introducing-index) | 技术报告 | 公司报告将 Index 描述为人类视频数据引擎，并披露 1,600 万视频等规模指标；数据集与评测未开放。 |
+| — | 本周无可升级信号 | — | 官方来源未发现新的 G1/G2 更新。 |
 
 ## 最近 12 个月与前一窗口
 
@@ -58,7 +58,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.figure.ai/](https://www.figure.ai/) | healthy | 2026-08-30 | 0 |
-| publications | [https://www.figure.ai/news](https://www.figure.ai/news) | healthy | 2026-08-30 | 0 |
+| home | [https://www.figure.ai/](https://www.figure.ai/) | healthy | 2026-09-06 | 0 |
+| publications | [https://www.figure.ai/news](https://www.figure.ai/news) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

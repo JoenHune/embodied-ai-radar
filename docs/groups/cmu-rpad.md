@@ -4,7 +4,7 @@ outline: deep
 
 # CMU Robots Perceiving and Doing Lab
 
-> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 学术实验室/PI 组 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 研究机器人感知与控制，使机器人能够在日常杂乱环境中理解变化并完成操作任务。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.ri.cmu.edu/robotics-groups/robots-perceiving-and-doing/](https://www.ri.cmu.edu/robotics-groups/robots-perceiving-and-doing/) | healthy | 2026-08-30 | 0 |
-| publications | [https://davheld.github.io/](https://davheld.github.io/) | healthy | 2026-08-30 | 0 |
+| home | [https://www.ri.cmu.edu/robotics-groups/robots-perceiving-and-doing/](https://www.ri.cmu.edu/robotics-groups/robots-perceiving-and-doing/) | healthy | 2026-09-06 | 0 |
+| publications | [https://davheld.github.io/](https://davheld.github.io/) | healthy | 2026-09-06 | 0 |
 
 - 当前没有影响档案解读的重大来源缺口。

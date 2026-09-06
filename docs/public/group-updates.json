@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-31",
+  "generated_at": "2026-09-07",
   "updates": [
     {
       "update_id": "upd-dyna-customer-deployments-20260827",
@@ -4108,6 +4108,24 @@
       "curated": true
     },
     {
+      "update_id": "group-update:0f2f0e4cd6d08ec7",
+      "organization_id": "org:google-deepmind-robotics",
+      "title": "View model card",
+      "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-07",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
       "update_id": "group-update:421cc48992759e72",
       "organization_id": "org:genesis-ai",
       "title": "The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward May 27, 2026 Research",
@@ -4288,6 +4306,24 @@
       "curated": true
     },
     {
+      "update_id": "group-update:789242b2fec4f6e5",
+      "organization_id": "org:cmu-robotics-institute",
+      "title": "View Publication",
+      "url": "https://publications.ri.cmu.edu/from-margin-to-center-designing-inclusive-and-equitable-service-robots-with-disabled-adults",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-07",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
       "update_id": "group-update:c3e747cd5fc2ddc0",
       "organization_id": "org:cmu-pathak-research-group",
       "title": "Extreme Parkour with Legged Robots",
@@ -4324,6 +4360,24 @@
       "question_codes": [],
       "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
       "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:2f315facd421cf11",
+      "organization_id": "org:1x-ai",
+      "title": "CAD Modeler San Carlos , California",
+      "url": "https://jobs.ashbyhq.com/1x/b72d011c-6a38-48f7-ada7-1f7ce76e66bf",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-07",
       "strict_peer_reviewed": false,
       "curated": false
     }

@@ -4,7 +4,7 @@ outline: deep
 
 # NVIDIA Seattle Robotics Lab
 
-> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 企业/独立研究组织 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 覆盖感知、任务与运动规划、控制、强化学习、模仿学习、仿真和 VLA 的全栈机器人实验室，重点连接 GPU 加速规划、多模态接触感知与真实机器人部署。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q1 · 接触中心的最小充分交互表征](/questions/#q1)、[Q3 · 视觉、力觉与触觉的任务条件化消融](/questions/#q3)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q5 · 站位、视角、支撑与操作的联合 loco-manipulation](/questions/#q5)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://research.nvidia.com/labs/srl/](https://research.nvidia.com/labs/srl/) | healthy | 2026-08-30 | 0 |
-| publications | [https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/](https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/) | healthy | 2026-08-30 | 0 |
+| home | [https://research.nvidia.com/labs/srl/](https://research.nvidia.com/labs/srl/) | healthy | 2026-09-06 | 0 |
+| publications | [https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/](https://research.nvidia.com/labs/srl/post/icra-research-robotics-simulation-to-real-world/) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

@@ -4,7 +4,7 @@ outline: deep
 
 # Sunday Robotics
 
-> 初创前沿观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-08-30
+> 初创前沿观察 · North America / United States · **来源状态：healthy** · 最后核验 2026-09-06
 
 家庭机器人初创公司，以无机器人数据预训练与家庭任务适配为核心，ACT 系列报告重点展示衣物折叠等真实双臂操作。
 
@@ -17,7 +17,7 @@ outline: deep
 | 雷达问题映射 | [Q0 · 人类先验—交互表征—动作—失败回流能否形成闭环](/questions/#q0)、[Q2 · Ego／人类视频到可执行机器人动作](/questions/#q2)、[Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q7 · 失败边界数据与低人力纠正闭环](/questions/#q7)、[Q9 · 机器人模型、数据与交互的 scaling law](/questions/#q9) |
 | 披露水平 | medium |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -57,8 +57,8 @@ outline: deep
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.sunday.ai/](https://www.sunday.ai/) | healthy | 2026-08-30 | 0 |
-| research | [https://www.sunday.ai/technology](https://www.sunday.ai/technology) | healthy | 2026-08-30 | 0 |
-| blog | [https://www.sunday.ai/blog](https://www.sunday.ai/blog) | healthy | 2026-08-30 | 0 |
+| home | [https://www.sunday.ai/](https://www.sunday.ai/) | healthy | 2026-09-06 | 0 |
+| research | [https://www.sunday.ai/technology](https://www.sunday.ai/technology) | healthy | 2026-09-06 | 0 |
+| blog | [https://www.sunday.ai/blog](https://www.sunday.ai/blog) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。

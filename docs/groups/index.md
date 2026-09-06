@@ -27,7 +27,7 @@ Genesis、Generalist、Figure、DYNA 与 Sunday 的官方技术报告会进入�
 
 ## 周报与方法
 
-- [2026-W35 周报](/groups/weekly/2026-w35)
+- [2026-W36 周报](/groups/weekly/2026-w36)
 - [组织层级图](/groups/organizations)
 - [研究组合作网络](/groups/collaboration)
 - [领先初创技术报告](/groups/startups)

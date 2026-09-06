@@ -4,7 +4,7 @@ outline: deep
 
 # Intrinsic
 
-> 企业/独立研究组织 · Global / United States / Germany / Singapore · **来源状态：healthy** · 最后核验 2026-08-30
+> 企业/独立研究组织 · Global / United States / Germany / Singapore · **来源状态：healthy** · 最后核验 2026-09-06
 
 Google 体系内面向工业机器人的 Physical AI 平台与研究团队，围绕 Flowstate、Intrinsic Vision Model、开放 ROS/Gazebo 生态、多机器人编排和可重构智能工作单元推进从开发到生产部署。
 
@@ -17,7 +17,7 @@ Google 体系内面向工业机器人的 Physical AI 平台与研究团队，围
 | 雷达问题映射 | [Q4 · 真实接触与仿真扩增的最优组合](/questions/#q4)、[Q6 · 可跨任务复用的 post-training recipe](/questions/#q6)、[Q8 · 模型、数采设备与机器人硬件共设计](/questions/#q8)、[Q10 · 决策相关世界模型与自动评测闭环（Physical RSI 观察项）](/questions/#q10) |
 | 披露水平 | high |
 
-## 本周新增（2026-W35）
+## 本周新增（2026-W36）
 
 | 日期 | 动态 | 类型 | 为什么重要 |
 |---|---|---|---|
@@ -55,8 +55,8 @@ Google 体系内面向工业机器人的 Physical AI 平台与研究团队，围
 
 | 来源 | URL | 状态 | 最近成功 | 连续失败 |
 |---|---|---|---|---:|
-| home | [https://www.intrinsic.ai/mission](https://www.intrinsic.ai/mission) | healthy | 2026-08-30 | 0 |
-| blog | [https://www.intrinsic.ai/blog](https://www.intrinsic.ai/blog) | healthy | 2026-08-30 | 0 |
-| publications | [https://www.intrinsic.ai/careers](https://www.intrinsic.ai/careers) | healthy | 2026-08-30 | 0 |
+| home | [https://www.intrinsic.ai/mission](https://www.intrinsic.ai/mission) | healthy | 2026-09-06 | 0 |
+| blog | [https://www.intrinsic.ai/blog](https://www.intrinsic.ai/blog) | healthy | 2026-09-06 | 0 |
+| publications | [https://www.intrinsic.ai/careers](https://www.intrinsic.ai/careers) | healthy | 2026-09-06 | 0 |
 
 - 尚无 canonical work 归属边；当前档案主要依赖官方项目更新。
