@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-07",
+  "generated_at": "2026-09-14",
   "updates": [
+    {
+      "update_id": "group-update:53d64a438319ec6b",
+      "organization_id": "org:agibot-research",
+      "title": "Newsroom | 2026-09-08 AGIBOT Humanoid Robots Re... More+",
+      "url": "https://www.agibot.com/article/231/detail/98.html",
+      "published_at": "2026-09-08",
+      "date_precision": "day",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
     {
       "update_id": "upd-dyna-customer-deployments-20260827",
       "organization_id": "org:dyna-robotics",
@@ -683,6 +701,26 @@
       "curated": true
     },
     {
+      "update_id": "group-update:2585d425fbe51a72",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Scaling Test-Time Compute in Robotics",
+      "url": "https://arxiv.org/abs/2606.31132",
+      "published_at": "2026-06-30",
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.31132",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
       "update_id": "group-update:71860a071333093d",
       "organization_id": "org:berkeley-autolab",
       "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
@@ -850,6 +888,48 @@
       "curated": true
     },
     {
+      "update_id": "group-update:00b21395be3f5881",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Steering via Vision & Touch",
+      "url": "https://arxiv.org/pdf/2606.14981",
+      "published_at": "2026-06-12",
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.14981",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:46a171149bf9cbbe",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Learning What to Say to Your VLA",
+      "url": "https://arxiv.org/abs/2606.12299",
+      "published_at": "2026-06-10",
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.12299",
+      "direction_codes": [
+        "D1"
+      ],
+      "question_codes": [
+        "Q0"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
       "update_id": "group-update:b292fc0a7a8981f8",
       "organization_id": "org:opendrivelab",
       "title": "RoboNaldo: Accurate, Stable and Powerful Humanoid Soccer Shooting via Motion-Guided Curriculum Reinforcement Learning",
@@ -958,6 +1038,26 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": true,
       "curated": true
+    },
+    {
+      "update_id": "group-update:6acfc0c2c9892deb",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "StressDream",
+      "url": "https://arxiv.org/abs/2606.00267",
+      "published_at": "2026-05-29",
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2606.00267",
+      "direction_codes": [
+        "D12"
+      ],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
     },
     {
       "update_id": "upd-nvidia-srl-icra-20260528",
@@ -2201,6 +2301,29 @@
       "first_seen_at": "2026-08-26",
       "strict_peer_reviewed": false,
       "curated": true
+    },
+    {
+      "update_id": "group-update:0801565b8576ee4b",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Do World Models Understand Partially Observable Safety Constraints?",
+      "url": "https://arxiv.org/abs/2510.06492",
+      "published_at": "2025-10-07",
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": "arxiv:2510.06492",
+      "direction_codes": [
+        "D3"
+      ],
+      "question_codes": [
+        "Q3",
+        "Q8"
+      ],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
     },
     {
       "update_id": "group-update:0774f0c4b8a82025",
@@ -4340,6 +4463,42 @@
       "question_codes": [],
       "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
       "first_seen_at": "2026-08-26",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:991e63daa66049db",
+      "organization_id": "org:cmu-lecar",
+      "title": "Blog",
+      "url": "https://lecar-lab.github.io/blog.html",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
+      "strict_peer_reviewed": false,
+      "curated": false
+    },
+    {
+      "update_id": "group-update:e00a5b1fceeee162",
+      "organization_id": "org:cmu-intent-robotics",
+      "title": "Northeast Robotics Colloquium",
+      "url": "https://nerc2026.github.io",
+      "published_at": null,
+      "date_precision": "unknown",
+      "update_type": "preprint",
+      "evidence_grade": "G1",
+      "source_type": "official_group_publications",
+      "work_id": null,
+      "direction_codes": [],
+      "question_codes": [],
+      "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
+      "first_seen_at": "2026-09-14",
       "strict_peer_reviewed": false,
       "curated": false
     },
