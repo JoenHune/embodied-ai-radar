@@ -63,8 +63,12 @@ class SQLiteDownloadTests(unittest.TestCase):
         self.assertEqual(restored, self.raw.read_bytes())
         self.assertEqual(integrity["sha256"], hashlib.sha256(restored).hexdigest())
         self.assertEqual(verify_archive(self.archive, integrity, raw_path=self.raw)["status"], "passed")
-        with closing(sqlite3.connect(":memory:")) as database:
-            database.deserialize(restored)
+        # CI may use pysqlite3 for FTS/JSON support; its connection does not
+        # necessarily expose deserialize(). Open the exact extracted bytes
+        # read-only instead, retaining every integrity/view/FTS assertion.
+        restored_path = self.root / "roundtrip.sqlite"
+        restored_path.write_bytes(restored)
+        with closing(sqlite3.connect(f"file:{restored_path}?mode=ro", uri=True)) as database:
             self.assertEqual(database.execute("PRAGMA integrity_check").fetchone()[0], "ok")
             self.assertEqual(database.execute("SELECT count(*) FROM works").fetchone()[0], 2)
             self.assertEqual(database.execute("SELECT title FROM restored WHERE work_id='arxiv:fixture'").fetchone()[0], "π0 世界模型")
