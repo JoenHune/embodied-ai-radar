@@ -11,6 +11,14 @@ const validationLabels: Record<string, string> = { closed_loop_real: '真机闭�
 const validationContextLabels: Record<string, string> = { real_to_sim_trajectory_replay: '真实轨迹采集→仿真回放，不等于策略真机闭环', real_robot_closed_loop: '真机闭环', real_robot_closed_loop_offline_reference: '真机闭环；离线参考', real_robot_closed_loop_with_operator_supervision: '真机闭环；操作员监督', real_robot_trajectory_replay: '真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_trajectory_replay: '仿真与真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_robot_closed_loop: '仿真与真机闭环', simulation_only: '仅仿真' }
 const hasContext = (device: any, contexts: string[]) => device.sources.some((source: any) => source.usages.some((usage: any) => contexts.includes(usage.validation_context)))
 Object.assign(validationContextLabels, {
+  closed_loop_real: '真机闭环；具体控制与验证条件见下方出处',
+  measurement_calibration: '真实测量与离线标定，不等于在线完整状态验证',
+  planned_trajectory_execution_feedback_not_established: '真机执行规划轨迹；在线反馈重规划尚未验证',
+  planning_computation_benchmark: '规划计算评测，不等于训练或机载部署',
+  learned_alignment_then_demonstration_replay: '学习接近阶段，再回放示教完成末段',
+  gravity_compensation_demonstration_collection: '重力补偿模式下的引导示教采集',
+  eye_in_hand_alignment_visual_input: '眼在手上视觉输入；末段改用回放',
+  deployed_policy_workstation: '策略部署工作站，不等于机载GPU',
   offline_policy_training: '离线策略训练',
   real_robot_policy_visual_input: '真机策略视觉输入',
   real_robot_closed_loop_with_manual_initialization: '真机闭环；需要人工初始化',
