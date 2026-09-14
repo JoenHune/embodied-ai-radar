@@ -15,7 +15,7 @@ outline: deep
 
 ## 最新周报
 
-- [2026-W35 · 2026-08-24—2026-08-30](/social/weekly/2026-w35)
+- [2026-W37 · 2026-09-07—2026-09-13](/social/weekly/2026-w37)
 - [历史周报](/social/weekly/)
 - [检索、去噪与热度方法](/social/method)
 

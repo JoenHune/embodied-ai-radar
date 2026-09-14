@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-31",
+  "generated_at": "2026-09-14",
   "links": [
     {
       "work_id": "arxiv:2510.08754",
@@ -94,6 +94,19 @@
       "fractional_credit": 0.33333333
     },
     {
+      "work_id": "arxiv:2606.31132",
+      "organization_id": "org:cmu-intent-robotics",
+      "role": "contributor",
+      "attribution_basis": "official_group_update",
+      "evidence_grade": "G1",
+      "confidence": 1,
+      "evidence_url": "https://arxiv.org/abs/2606.31132",
+      "verified_at": "2026-09-14",
+      "allocation_method": "equal_leaf_split",
+      "allocation_quality": "coarse",
+      "fractional_credit": 1.0
+    },
+    {
       "work_id": "arxiv:2606.19836",
       "organization_id": "org:opendrivelab",
       "role": "contributor",
@@ -144,6 +157,32 @@
       "allocation_method": "equal_leaf_split",
       "allocation_quality": "coarse",
       "fractional_credit": 0.33333333
+    },
+    {
+      "work_id": "arxiv:2606.14981",
+      "organization_id": "org:cmu-intent-robotics",
+      "role": "contributor",
+      "attribution_basis": "official_group_update",
+      "evidence_grade": "G1",
+      "confidence": 1,
+      "evidence_url": "https://arxiv.org/pdf/2606.14981",
+      "verified_at": "2026-09-14",
+      "allocation_method": "equal_leaf_split",
+      "allocation_quality": "coarse",
+      "fractional_credit": 1.0
+    },
+    {
+      "work_id": "arxiv:2606.12299",
+      "organization_id": "org:cmu-intent-robotics",
+      "role": "contributor",
+      "attribution_basis": "official_group_update",
+      "evidence_grade": "G1",
+      "confidence": 1,
+      "evidence_url": "https://arxiv.org/abs/2606.12299",
+      "verified_at": "2026-09-14",
+      "allocation_method": "equal_leaf_split",
+      "allocation_quality": "coarse",
+      "fractional_credit": 1.0
     },
     {
       "work_id": "arxiv:2606.11092",
@@ -206,6 +245,19 @@
       "confidence": 1,
       "evidence_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Cross-Hand_Latent_Representation_for_Vision-Language-Action_Models_CVPR_2026_paper.html",
       "verified_at": "2026-08-26",
+      "allocation_method": "equal_leaf_split",
+      "allocation_quality": "coarse",
+      "fractional_credit": 1.0
+    },
+    {
+      "work_id": "arxiv:2606.00267",
+      "organization_id": "org:cmu-intent-robotics",
+      "role": "contributor",
+      "attribution_basis": "official_group_update",
+      "evidence_grade": "G1",
+      "confidence": 1,
+      "evidence_url": "https://arxiv.org/abs/2606.00267",
+      "verified_at": "2026-09-14",
       "allocation_method": "equal_leaf_split",
       "allocation_quality": "coarse",
       "fractional_credit": 1.0
@@ -583,6 +635,19 @@
       "confidence": 1,
       "evidence_url": "https://air-dream.netlify.app/",
       "verified_at": "2026-08-26",
+      "allocation_method": "equal_leaf_split",
+      "allocation_quality": "coarse",
+      "fractional_credit": 1.0
+    },
+    {
+      "work_id": "arxiv:2510.06492",
+      "organization_id": "org:cmu-intent-robotics",
+      "role": "contributor",
+      "attribution_basis": "official_group_update",
+      "evidence_grade": "G1",
+      "confidence": 1,
+      "evidence_url": "https://arxiv.org/abs/2510.06492",
+      "verified_at": "2026-09-14",
       "allocation_method": "equal_leaf_split",
       "allocation_quality": "coarse",
       "fractional_credit": 1.0
