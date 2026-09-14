@@ -1,0 +1,994 @@
+{
+  "version": "3.0",
+  "updated": "2026-09-05",
+  "batch_id": "attribution-batch5-2026-09-05",
+  "scope": "First 15 high-signal unassigned works after batches 2–4 were ingested; no evidence threshold relaxed.",
+  "organizations": [
+    {
+      "organization_id": "org:pennsylvania-state-university",
+      "display_name": "The Pennsylvania State University",
+      "short_name": "The Pennsylvania State University",
+      "slug": "pennsylvania-state-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.psu.edu/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "Penn State 母机构节点，不计为独立研究执行组。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:harvard-university",
+      "display_name": "Harvard University",
+      "short_name": "Harvard University",
+      "slug": "harvard-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.harvard.edu/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "Harvard 母机构节点，不与 Embodied Minds Lab 合并。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:renmin-university-of-china",
+      "display_name": "Renmin University of China",
+      "short_name": "Renmin University of China",
+      "slug": "renmin-university-of-china",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.ruc.edu.cn/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "中国人民大学母机构；Jing Zhang PI 研究组单列。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:ut-austin-urban-information-lab",
+      "display_name": "UT Austin Urban Information Lab",
+      "short_name": "UT Austin Urban Information Lab",
+      "slug": "ut-austin-urban-information-lab",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-texas-at-austin",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.urbaninfolab.com/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://www.urbaninfolab.com/",
+        "people": "https://www.urbaninfolab.com/team",
+        "news": "https://www.urbaninfolab.com/news"
+      },
+      "leaders": [
+        {
+          "name": "Junfeng Jiao",
+          "role": "Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.urbaninfolab.com/team"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D6"
+      ],
+      "question_codes": [
+        "Q6"
+      ],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "RoboPhys-3D 为 G2 时间关系重建，不宣称论文直接署名 UIL。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2608.28718"
+        ],
+        "basis": "public_3d_grounded_robotics_benchmark_and_dated_membership",
+        "source_url": "https://arxiv.org/html/2608.28718v1"
+      }
+    },
+    {
+      "organization_id": "org:pku-multimedia-information-processing",
+      "display_name": "Peking University State Key Laboratory of Multimedia Information Processing",
+      "short_name": "Peking University State Key Laboratory of Multimedia Information Processing",
+      "slug": "pku-multimedia-information-processing",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "北京大学多媒体信息处理全国重点实验室"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:peking-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://hr.pku.edu.cn/rczp/jxky/3146e82e54f845aaa26f39886d56816f.htm"
+        }
+      ],
+      "official_urls": {
+        "home": "https://hr.pku.edu.cn/rczp/jxky/3146e82e54f845aaa26f39886d56816f.htm",
+        "identity_source": "https://www.research.pku.edu.cn/kyjd/kyjdml/gjjkyjd/gjzdsys/index.htm"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D4",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "登记官方实验室招聘/名录渠道；尚未确认独立实验室 publications 聚合页面。",
+        "负责人任期未在本批核实，不填推测值。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2608.24885"
+        ],
+        "basis": "paper_explicit_lab_with_real_robot_and_world_model_benchmark",
+        "source_url": "https://arxiv.org/html/2608.24885v1"
+      }
+    },
+    {
+      "organization_id": "org:psu-carl",
+      "display_name": "Penn State Control and Autonomous Robotics Lab",
+      "short_name": "Penn State Control and Autonomous Robotics Lab",
+      "slug": "psu-carl",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Penn State CARL"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:pennsylvania-state-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://news.engr.psu.edu/2022/ebeigbe-donald-joins-eecs.aspx"
+        }
+      ],
+      "official_urls": {
+        "home": "https://sites.psu.edu/carl/",
+        "identity_source": "https://news.engr.psu.edu/2022/ebeigbe-donald-joins-eecs.aspx",
+        "member_research": "https://kassra-sinaei.github.io/"
+      },
+      "leaders": [
+        {
+          "name": "Donald Ebeigbe",
+          "role": "Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://news.engr.psu.edu/2022/ebeigbe-donald-joins-eecs.aspx"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "stale",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "实验室站点本次直连失败；校方身份公告与带时间的成员研究主页可读。",
+        "G2 使用 Kasra Sinaei 的 2022–present CARL 身份，不把 Chewy 实习归入本论文。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2607.29569"
+        ],
+        "basis": "real_robot_vla_safety_evidence_and_dated_membership",
+        "source_url": "https://arxiv.org/abs/2607.29569"
+      }
+    },
+    {
+      "organization_id": "org:berkeley-msc",
+      "display_name": "UC Berkeley Mechanical Systems Control Lab",
+      "short_name": "UC Berkeley Mechanical Systems Control Lab",
+      "slug": "berkeley-msc",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Berkeley MSC Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-california-berkeley",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://msc.berkeley.edu/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://msc.berkeley.edu/",
+        "people": "https://msc.berkeley.edu/people/students.html",
+        "research": "https://msc.berkeley.edu/research/"
+      },
+      "leaders": [
+        {
+          "name": "Masayoshi Tomizuka",
+          "role": "Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://msc.berkeley.edu/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "Fall 2022 入组按保守边界 2023-01-01 处理；不是推断精确入组日。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2607.29172"
+        ],
+        "basis": "real_humanoid_policy_adaptation_and_official_dated_roster",
+        "source_url": "https://thomaschen98.github.io/clift/"
+      }
+    },
+    {
+      "organization_id": "org:ntu-s-lab",
+      "display_name": "NTU S-Lab for Advanced Intelligence",
+      "short_name": "NTU S-Lab for Advanced Intelligence",
+      "slug": "ntu-s-lab",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "Singapore",
+      "aliases": [
+        "S-Lab for Advanced Intelligence"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:nanyang-technological-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.ntu.edu.sg/s-lab"
+        }
+      ],
+      "official_urls": {
+        "home": "https://www.ntu.edu.sg/s-lab",
+        "people": "https://www.ntu.edu.sg/s-lab/our-people",
+        "publications": "https://www.ntu.edu.sg/s-lab/publications"
+      },
+      "leaders": [
+        {
+          "name": "Guan Cuntai",
+          "role": "Co-Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.ntu.edu.sg/s-lab/our-people"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D9",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "Ziwei Liu 是该实验室 PI，不将整个 S-Lab 等同其个人研究组。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2607.28625"
+        ],
+        "basis": "released_embodied_dataset_and_explicit_lab_affiliation",
+        "source_url": "https://ace-data-engine.github.io/ACE-Data-0/"
+      }
+    },
+    {
+      "organization_id": "org:harvard-embodied-minds",
+      "display_name": "Harvard Embodied Minds Lab",
+      "short_name": "Harvard Embodied Minds Lab",
+      "slug": "harvard-embodied-minds",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Embodied Minds Lab at Harvard"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:harvard-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://embodied-minds-lab.github.io/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://embodied-minds-lab.github.io/",
+        "people": "https://embodied-minds-lab.github.io/people/",
+        "publications": "https://embodied-minds-lab.github.io/publications/"
+      },
+      "leaders": [
+        {
+          "name": "Yilun Du",
+          "role": "Principal Investigator",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://embodied-minds-lab.github.io/people/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D2",
+        "D3",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "World Action Planner 为 G2：论文 Harvard affiliation、组内 PI 身份与 2025 年带日期组内公告联合支持；不是 G1 列表匹配。",
+        "Yilun Du 兼任 NVIDIA Research 的当前角色不反向增加 GEAR 归属。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2607.27599"
+        ],
+        "basis": "world_model_robot_planning_work_and_dated_pi_lab_relationship",
+        "source_url": "https://arxiv.org/html/2607.27599v1"
+      }
+    },
+    {
+      "organization_id": "org:ruc-jing-zhang",
+      "display_name": "RUC Jing Zhang Research Group",
+      "short_name": "RUC Jing Zhang Research Group",
+      "slug": "ruc-jing-zhang",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "RUC Jing Zhang Group"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:renmin-university-of-china",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://xiaojingzi.github.io/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://xiaojingzi.github.io/"
+      },
+      "leaders": [
+        {
+          "name": "Jing Zhang",
+          "role": "Principal Investigator",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://xiaojingzi.github.io/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "展示名称为按 PI 规范化的跟踪单元名称，不声称官网使用同名实验室品牌。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2606.30552"
+        ],
+        "additional_public_work_ids": [
+          "arxiv:2605.04678",
+          "arxiv:2603.18091"
+        ],
+        "basis": "official_pi_publications_list_multiple_embodied_research_outputs",
+        "source_url": "https://xiaojingzi.github.io/"
+      }
+    },
+    {
+      "organization_id": "org:agibot-finch",
+      "display_name": "AGIBOT Finch",
+      "short_name": "AGIBOT Finch",
+      "slug": "agibot-finch",
+      "entity_type": "research_division",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:agibot-innovation-shanghai-technology-co-ltd",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://finch.agibot.com/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://finch.agibot.com/",
+        "research": "https://finch.agibot.com/research",
+        "project": "https://finch.agibot.com/research/tau0-wm"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "stale",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [
+        "本次官网直连 502；官方索引缓存显示 2026-01 至 2026-05 多项研究，论文直接署名 Finch。保留可追溯来源但不标健康。",
+        "不把 Finch 与 AgiBot Research 或上海创智学院合并；负责人任期未在本批核实。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2606.01027"
+        ],
+        "basis": "explicit_research_division_affiliation_and_multiple_official_research_releases",
+        "source_urls": [
+          "https://arxiv.org/html/2606.01027v1",
+          "https://finch.agibot.com/research"
+        ]
+      }
+    },
+    {
+      "organization_id": "org:airoa",
+      "display_name": "AI Robot Association (AIRoA)",
+      "short_name": "AI Robot Association (AIRoA)",
+      "slug": "airoa",
+      "entity_type": "nonprofit",
+      "tracking_unit": true,
+      "tracking_category": "platform",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "Japan",
+      "aliases": [
+        "AIRoA",
+        "AI Robot Association"
+      ],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.airoa.org/",
+        "publications": "https://www.airoa.org/publication/",
+        "people": "https://www.airoa.org/people/",
+        "about": "https://www.airoa.org/about/"
+      },
+      "leaders": [
+        {
+          "name": "Kei Ota",
+          "role": "Head of AI and Robotics",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.airoa.org/people/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D9"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "通过公开论文、官方研究渠道及有时间范围的成员关系核验；不从母机构名称推定具体研究组。",
+      "information_gaps": [],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2606.00229"
+        ],
+        "basis": "official_research_program_multiple_robot_model_dataset_releases",
+        "source_url": "https://www.airoa.org/publication/"
+      }
+    },
+    {
+      "organization_id": "org:sii-jingjing-gong",
+      "display_name": "Shanghai Innovation Institute Jingjing Gong Research Group",
+      "short_name": "SII Jingjing Gong Group",
+      "slug": "sii-jingjing-gong",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "SII Jingjing Gong Group"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:shanghai-innovation-institute",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://jjgong.com/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://jjgong.com/",
+        "publications": "https://jjgong.com/"
+      },
+      "leaders": [
+        {
+          "name": "Jingjing Gong",
+          "role": "Principal Investigator",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://jjgong.com/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "按上海创智学院具身智能方向助理教授 Jingjing Gong 规范化的 PI 跟踪单元；官网直接列出 HiMe 等机器人研究。",
+      "information_gaps": [
+        "展示名称为 PI 规范化名称，不声称官网有同名品牌实验室。",
+        "不把其历史 Fudan 博士或 Tsinghua AIR 博士后身份倒灌到当前作品。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2607.03449"
+        ],
+        "basis": "official_pi_publication_list_with_multiple_vla_research_works",
+        "source_url": "https://jjgong.com/"
+      }
+    }
+  ],
+  "counts": {
+    "reviewed": 15,
+    "verified_works": 10,
+    "g1_links": 6,
+    "g2_links": 4,
+    "still_unverified": 5
+  },
+  "review_items": [
+    {
+      "queue_position": 1,
+      "work_id": "arxiv:2608.30536",
+      "title": "Behavior-Skill: A Fine-Grained Benchmark for Evaluating Vision-Language-Action Policies in Long-Horizon Tasks",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "论文直接列 National Key Laboratory of Equipment State Sensing and Smart Support；NuBot 仓库存在，但本批未确认该命名实验室可持续官方组级发布渠道。不把 nubot-nudt owner 或作者当前主页自动视为 NuBot G1。",
+      "checked_urls": [
+        "https://arxiv.org/html/2608.30536v1",
+        "https://chen-xieyuanli.github.io/",
+        "https://www.nudt.edu.cn/xwgg/hdss/index.htm"
+      ]
+    },
+    {
+      "queue_position": 2,
+      "work_id": "arxiv:2608.28718",
+      "title": "RoboPhys-3D: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:ut-austin-urban-information-lab"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://tianyi-wang-010705.com/",
+        "https://arxiv.org/html/2608.28718v1",
+        "https://www.urbaninfolab.com/news",
+        "https://www.urbaninfolab.com/team"
+      ]
+    },
+    {
+      "queue_position": 3,
+      "work_id": "arxiv:2608.27406",
+      "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "IRoM 公开 people.yml 有 Ola Sho 与 Kechen Liu，但没有关系有效期；publications.yml 无 CLAP。Ola 官网失效；Stanford 页面为旧 PhD 身份，不能用于2026 Princeton论文。保留G3线索，不生成正式归属。",
+      "checked_urls": [
+        "https://arxiv.org/abs/2608.27406",
+        "https://irom-lab.princeton.edu/data/people.yml",
+        "https://irom-lab.princeton.edu/data/publications.yml",
+        "https://os-hash.github.io/",
+        "https://msl.stanford.edu/people/olashorinwa"
+      ]
+    },
+    {
+      "queue_position": 4,
+      "work_id": "arxiv:2608.26578",
+      "title": "TrapVLA: Trapping Vision-Language-Action Models in Configured Failure Modes",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "论文仅列 SYSU、Pengcheng、HKU、Jiangxing 层级。查明 Wei-Shi Zheng 的 iSEE/PI组与 SYSU-HCP 不是可互换节点；官方 selected paper list 尚无本作，未找到覆盖论文日期的成员起止关系。",
+      "checked_urls": [
+        "https://arxiv.org/html/2608.26578v1",
+        "https://www.sysu-hcp.net/publications/index.html",
+        "https://isee-ai.cn/~zhwshi/",
+        "https://isee-ai.cn/~zhwshi/selected_paper_list.html"
+      ]
+    },
+    {
+      "queue_position": 5,
+      "work_id": "arxiv:2608.24885",
+      "title": "Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:pku-multimedia-information-processing"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://arxiv.org/html/2608.24885v1",
+        "https://hr.pku.edu.cn/rczp/jxky/3146e82e54f845aaa26f39886d56816f.htm"
+      ]
+    },
+    {
+      "queue_position": 6,
+      "work_id": "arxiv:2607.29569",
+      "title": "Safe Vision Language Action Models via Barrier Enhanced Flow Matching",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:psu-carl"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://kassra-sinaei.github.io/",
+        "https://arxiv.org/html/2607.29569v1",
+        "https://news.engr.psu.edu/2022/ebeigbe-donald-joins-eecs.aspx",
+        "https://sites.psu.edu/carl/"
+      ]
+    },
+    {
+      "queue_position": 7,
+      "work_id": "arxiv:2607.29172",
+      "title": "CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:berkeley-msc"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://msc.berkeley.edu/people/students.html",
+        "https://thomaschen98.github.io/clift/",
+        "https://thomaschen98.github.io/",
+        "https://msc.berkeley.edu/"
+      ]
+    },
+    {
+      "queue_position": 8,
+      "work_id": "arxiv:2607.28625",
+      "title": "ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:ntu-s-lab"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://arxiv.org/html/2607.28625v1",
+        "https://www.ntu.edu.sg/s-lab",
+        "https://www.ntu.edu.sg/s-lab/our-people",
+        "https://ace-data-engine.github.io/ACE-Data-0/"
+      ]
+    },
+    {
+      "queue_position": 9,
+      "work_id": "arxiv:2607.27599",
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:harvard-embodied-minds"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://embodied-minds-lab.github.io/",
+        "https://embodied-minds-lab.github.io/people/",
+        "https://yilundu.github.io/",
+        "https://arxiv.org/html/2607.27599v1"
+      ]
+    },
+    {
+      "queue_position": 10,
+      "work_id": "arxiv:2607.24485",
+      "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "论文通讯地址为 BJTU；Wenjuan Han 的公开主页仍主要列早期工作，无本作及组级有效期。PKU CoRe 的同名作者页面不能证明论文属于该组，故不据当前/历史作者关系猜归属。",
+      "checked_urls": [
+        "https://arxiv.org/html/2607.24485v1",
+        "https://winniehan.github.io/",
+        "https://pku.ai/author/wenjuan-han/"
+      ]
+    },
+    {
+      "queue_position": 11,
+      "work_id": "arxiv:2607.03449",
+      "title": "HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:sii-jingjing-gong"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://jjgong.com/",
+        "https://arxiv.org/html/2607.03449v1"
+      ]
+    },
+    {
+      "queue_position": 12,
+      "work_id": "arxiv:2606.30552",
+      "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:ruc-jing-zhang"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://xiaojingzi.github.io/",
+        "https://arxiv.org/html/2606.30552v1"
+      ]
+    },
+    {
+      "queue_position": 13,
+      "work_id": "arxiv:2606.01027",
+      "title": "$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:agibot-finch"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://arxiv.org/html/2606.01027v1",
+        "https://finch.agibot.com/research/tau0-wm",
+        "https://finch.agibot.com/research"
+      ]
+    },
+    {
+      "queue_position": 14,
+      "work_id": "arxiv:2606.00229",
+      "title": "Continuous Reasoning for Vision-Language-Action",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:airoa"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批可追溯的官方组级证据或带时间的 G2 成员关系。",
+      "checked_urls": [
+        "https://www.airoa.org/publication/",
+        "https://continuous-reasoning.airoa.io/",
+        "https://arxiv.org/abs/2606.00229",
+        "https://www.airoa.org/people/"
+      ]
+    },
+    {
+      "queue_position": 15,
+      "work_id": "arxiv:2605.30226",
+      "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "只可直接确认 Shanghai AI Laboratory、SJTU、USTC、CASIA 等；Yao Mu 官网未列本作或明确执行组，不能把大实验室 affiliation 自动映射到其 Embodied AI Center。",
+      "checked_urls": [
+        "https://arxiv.org/html/2605.30226v1",
+        "https://yaomarkmu.github.io/"
+      ]
+    }
+  ],
+  "notes": [
+    "Only G1/G2 source-supported records are in the attribution JSONL. Pending items remain solely in review_items.",
+    "All current publication/acceptance claims on PI pages remain separate from official peer-review verification.",
+    "Four G2 records use conservative start boundaries and retain the raw year/month/cohort wording.",
+    "Finch and CARL official home channels had direct-access failures; registered entity identity is preserved with explicit source-health gaps, never labeled freshly healthy."
+  ]
+}

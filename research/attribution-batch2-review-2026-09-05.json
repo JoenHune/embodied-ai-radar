@@ -1,0 +1,712 @@
+{
+  "version": "3.0",
+  "batch_id": "attribution-2026-09-05-02",
+  "scope": "冻结当前organization-coverage.json高信号待归属队列的前30项；不越过第30项新增作品归属。",
+  "frozen_work_ids": [
+    "arxiv:2608.30536",
+    "arxiv:2608.28718",
+    "arxiv:2608.27406",
+    "arxiv:2608.26578",
+    "arxiv:2608.26239",
+    "arxiv:2608.26103",
+    "arxiv:2608.24885",
+    "arxiv:2608.11870",
+    "arxiv:2607.29569",
+    "arxiv:2607.29172",
+    "arxiv:2607.28625",
+    "arxiv:2607.27599",
+    "arxiv:2607.24485",
+    "arxiv:2607.15330",
+    "arxiv:2607.03449",
+    "arxiv:2606.32028",
+    "arxiv:2606.32009",
+    "arxiv:2606.31909",
+    "arxiv:2606.31723",
+    "arxiv:2606.31329",
+    "arxiv:2606.30552",
+    "arxiv:2606.20048",
+    "arxiv:2606.01027",
+    "arxiv:2606.00229",
+    "arxiv:2605.31286",
+    "arxiv:2605.30280",
+    "arxiv:2605.30226",
+    "arxiv:2605.27817",
+    "arxiv:2605.00244",
+    "arxiv:2604.26848"
+  ],
+  "counts": {
+    "reviewed": 30,
+    "g1_links": 16,
+    "g1_works": 15,
+    "g0_links": 7,
+    "remaining_without_g1": 15,
+    "new_tracking_units": 9,
+    "new_parent_nodes": 6
+  },
+  "dependencies": {
+    "batch3_organization_ids": [
+      "org:xiaomi-robotics",
+      "org:x-square-robot",
+      "org:mit-scene-representation"
+    ],
+    "g0_parent_only_verified": true
+  },
+  "checks": {
+    "first_batch_unchanged": true,
+    "all_30_primary_papers_read": true,
+    "no_current_roster_backprojection": true,
+    "no_peer_review_status_promoted": true,
+    "no_execution_of_remote_scripts": true
+  },
+  "notes": [
+    "RobIn准入参考既有MimicDroid与CoDex两项官方资料，MimicDroid不作为本批新增归属对象。",
+    "新组只设置已验证研究身份与来源；本批未核验的负责人、任期、法律主体及所在地保留为空或显式未核实。",
+    "来源访问失败与科学证据不存在不同；任何验证挑战均未绕过。"
+  ],
+  "items": [
+    {
+      "queue_position": 1,
+      "work_id": "arxiv:2608.30536",
+      "title": "Behavior-Skill: A Fine-Grained Benchmark for Evaluating Vision-Language-Action Policies in Long-Horizon Tasks",
+      "evidence_grade_before": "E0",
+      "disposition": "named_unit_registration_pending",
+      "observed_units": [
+        "National Key Laboratory of Equipment State Sensing and Smart Support",
+        "National University of Defense Technology",
+        "XPeng Inc."
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.30536v1",
+      "source_excerpt": "National Key Laboratory of Equipment State Sensing and Smart Support",
+      "source_read_status": "read",
+      "reason": "论文明确具体实验室与XPeng，但本批未完成该实验室持续官方渠道及T1准入门槛核验；不把nubot-nudt仓库owner直接当研究组。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 2,
+      "work_id": "arxiv:2608.28718",
+      "title": "RoboPhys-3D: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction",
+      "evidence_grade_before": "E0",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "The University of Texas at Austin",
+        "Purdue University",
+        "Futurewei Technologies, Inc"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.28718v1",
+      "source_excerpt": "The University of Texas at Austin",
+      "source_read_status": "read",
+      "reason": "仅确认大学及公司层级；无UT Austin RPL或RobIn的直接组级证据。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [
+        "org:university-of-texas-at-austin"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/html/2608.28718v1"
+      ]
+    },
+    {
+      "queue_position": 3,
+      "work_id": "arxiv:2608.27406",
+      "title": "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "Princeton University"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.27406v1",
+      "source_excerpt": "Princeton University",
+      "source_read_status": "read",
+      "reason": "论文只明确Princeton；已读IROM入口未定位该作品，不由学校affiliation推IROM。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [
+        "org:princeton-university"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/html/2608.27406v1"
+      ]
+    },
+    {
+      "queue_position": 4,
+      "work_id": "arxiv:2608.26578",
+      "title": "TrapVLA: Trapping Vision-Language-Action Models in Configured Failure Modes",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "Sun Yat-sen University",
+        "Pengcheng Laboratory",
+        "The University of Hong Kong",
+        "Jiangxing Intelligence"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.26578v1",
+      "source_excerpt": "Sun Yat-sen University",
+      "source_read_status": "read",
+      "reason": "官方项目页普通HTTP读取成功，但只列上述机构，没有HCP名称；不由共同作者推HCP。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [
+        "org:the-university-of-hong-kong"
+      ],
+      "evidence_urls": [
+        "https://john-liua.github.io/TrapVLA/"
+      ],
+      "supplemental_source_url": "https://john-liua.github.io/TrapVLA/"
+    },
+    {
+      "queue_position": 5,
+      "work_id": "arxiv:2608.26239",
+      "title": "WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression",
+      "evidence_grade_before": "E0",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "X Square Robot Team"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.26239v1",
+      "source_excerpt": "X Square Robot Team",
+      "source_read_status": "read",
+      "reason": "论文明确执行团队；复用batch3核验的X Square Robot节点。",
+      "verified_organization_ids": [
+        "org:x-square-robot"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2608.26239v1"
+      ]
+    },
+    {
+      "queue_position": 6,
+      "work_id": "arxiv:2608.26103",
+      "title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "Robbyant",
+        "HKUST (GZ)",
+        "HKUST"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.26103v1",
+      "source_excerpt": "Robbyant",
+      "source_read_status": "read",
+      "reason": "项目页明确Robbyant，技术主页确认其研究业务及Ant Group关系。",
+      "verified_organization_ids": [
+        "org:robbyant"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://robbyant-research.github.io/Zero-WAM/"
+      ]
+    },
+    {
+      "queue_position": 7,
+      "work_id": "arxiv:2608.24885",
+      "title": "Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning",
+      "evidence_grade_before": "E2",
+      "disposition": "named_unit_registration_pending",
+      "observed_units": [
+        "State Key Laboratory of Multimedia Information Processing, Peking University",
+        "Beijing Innovation Center of Humanoid Robotics",
+        "New York University"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2608.24885v1",
+      "source_excerpt": "State Key Laboratory of Multimedia Information Processing",
+      "source_read_status": "read",
+      "reason": "保留论文明确的实验室/中心名称；本批未完成新单位官方持续渠道登记。NYU只保留G0母机构，不推GRAIL。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [
+        "org:new-york-university"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/html/2608.24885v1"
+      ]
+    },
+    {
+      "queue_position": 8,
+      "work_id": "arxiv:2608.11870",
+      "title": "Enhancing Visual Domain Robustness in Behaviour Cloning via Saliency-Guided Augmentation",
+      "evidence_grade_before": "E3",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "KTH Robotics, Perception and Learning",
+        "Aalto University"
+      ],
+      "primary_source_url": "https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:113808",
+      "source_excerpt": "Robotics, Perception and Learning, RPL",
+      "source_read_status": "read",
+      "reason": "KTH官方逐论文列表明确该篇部分作者的RPL归属；该工作是CoRL2024旧作的迟发arXiv，另列时间复核。",
+      "verified_organization_ids": [
+        "org:kth-rpl"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://kth.diva-portal.org/smash/person.jsf?pid=authority-person:113808"
+      ],
+      "temporal_review": {
+        "issue": "late_arxiv_upload_of_prior_publication",
+        "confirmed_prior_venue": "CoRL 2024",
+        "confirmed_prior_volume": "PMLR 270",
+        "publisher_record_url": "https://proceedings.mlr.press/v270/zhuang25b.html",
+        "archive_record_url": "https://kth.diva-portal.org/smash/record.jsf?pid=diva2:1947991",
+        "archive_record_current_access": "access_blocked_anubis",
+        "archive_available_from_candidate": "2025-03-27",
+        "archive_available_from_verified_this_batch": false,
+        "policy": "Archive Available from must not be treated as conference notification; use root-verified publisher publication date first."
+      }
+    },
+    {
+      "queue_position": 9,
+      "work_id": "arxiv:2607.29569",
+      "title": "Safe Vision Language Action Models via Barrier Enhanced Flow Matching",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "The Pennsylvania State University, Department of Electrical Engineering"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2607.29569v1",
+      "source_excerpt": "Department of Electrical Engineering, The Pennsylvania State University",
+      "source_read_status": "read",
+      "reason": "论文明确院系，但未定位特定研究组；不由作者当前个人资料推定实验室。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 10,
+      "work_id": "arxiv:2607.29172",
+      "title": "CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "University of California, Berkeley",
+        "Google DeepMind",
+        "NVIDIA Research"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2607.29172v1",
+      "source_excerpt": "Google DeepMind",
+      "source_read_status": "read",
+      "reason": "只落Berkeley/Google DeepMind/NVIDIA母节点；使用Gemini Robotics或出现NVIDIA作者都不能直接归到机器人具体组。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [
+        "org:university-of-california-berkeley",
+        "org:google-deepmind",
+        "org:nvidia"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/html/2607.29172v1"
+      ]
+    },
+    {
+      "queue_position": 11,
+      "work_id": "arxiv:2607.28625",
+      "title": "ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine",
+      "evidence_grade_before": "E0",
+      "disposition": "named_unit_registration_pending",
+      "observed_units": [
+        "S-Lab, Nanyang Technological University",
+        "ACE Robotics"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2607.28625v1",
+      "source_excerpt": "S-Lab, Nanyang Technological University",
+      "source_read_status": "read",
+      "reason": "论文明确S-Lab与ACE Robotics；本批尚未完成两单位的官方持续渠道与准入资料核验，保留待登记而非猜主页。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 12,
+      "work_id": "arxiv:2607.27599",
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "Harvard University"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2607.27599v1",
+      "source_excerpt": "Harvard University",
+      "source_read_status": "read",
+      "reason": "论文明确Harvard大学；没有把Yilun Du当前职位或历史MIT联系当作具体实验室归属。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 13,
+      "work_id": "arxiv:2607.24485",
+      "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
+      "evidence_grade_before": "E0",
+      "disposition": "insufficient_group_evidence",
+      "observed_units": [],
+      "primary_source_url": "https://arxiv.org/html/2607.24485v1",
+      "source_excerpt": "Corresponding author",
+      "source_read_status": "read",
+      "reason": "已读作者页未定位明确组名；通讯邮箱bjtu.edu.cn不足以证明具体实验室归属。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 14,
+      "work_id": "arxiv:2607.15330",
+      "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "Xiaomi Robotics"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2607.15330v1",
+      "source_excerpt": "Xiaomi Robotics",
+      "source_read_status": "read",
+      "reason": "官方Robotics @ XIAOMI发布页与论文直接署名交叉确认；复用batch3节点。",
+      "verified_organization_ids": [
+        "org:xiaomi-robotics"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://robotics.xiaomi.com/xiaomi-robotics-1.html"
+      ]
+    },
+    {
+      "queue_position": 15,
+      "work_id": "arxiv:2607.03449",
+      "title": "HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "Fudan University",
+        "Shanghai Innovation Institute",
+        "East China Normal University"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2607.03449v1",
+      "source_excerpt": "Fudan University",
+      "source_read_status": "read",
+      "reason": "论文明确合作机构，但未明确Fudan NLP/MOSS等具体执行组；不由Xipeng Qiu等当前身份反推。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 16,
+      "work_id": "arxiv:2606.32028",
+      "title": "DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "GigaAI",
+        "Nanyang Technological University",
+        "Beijing University of Posts and Telecommunications"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.32028v1",
+      "source_excerpt": "Xiaofeng Wang Affiliation: GigaAI",
+      "source_read_status": "read",
+      "reason": "论文明确GigaAI；官方open-gigaai渠道互链gigaai.cc，排除同名营销咨询站。",
+      "verified_organization_ids": [
+        "org:gigaai"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2606.32028v1"
+      ]
+    },
+    {
+      "queue_position": 17,
+      "work_id": "arxiv:2606.32009",
+      "title": "Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "DeepCybo",
+        "ZGCA",
+        "ZGCI"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.32009v1",
+      "source_excerpt": "DeepCybo",
+      "source_read_status": "read",
+      "reason": "论文及官方项目页明确DeepCybo核心作者与硬件团队；不把联合作品的ZGCA/ZGCI自动设为母机构。",
+      "verified_organization_ids": [
+        "org:deepcybo"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://deepcybo-physai.github.io/HumanAsHumanoid/"
+      ]
+    },
+    {
+      "queue_position": 18,
+      "work_id": "arxiv:2606.31909",
+      "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
+      "evidence_grade_before": "E0",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "Robot Interactive Intelligence Lab (RobIn), University of Texas at Austin"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.31909v1",
+      "source_excerpt": "Robot Interactive Intelligence Lab (RobIn)",
+      "source_read_status": "read",
+      "reason": "论文直接说明全部作者属于RobIn，且官方实验室主页证实实体；与UT RPL分开。",
+      "verified_organization_ids": [
+        "org:ut-austin-robin"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2606.31909v1"
+      ]
+    },
+    {
+      "queue_position": 19,
+      "work_id": "arxiv:2606.31723",
+      "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "Daimon Robotics"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.31723v1",
+      "source_excerpt": "Daimon Robotics",
+      "source_read_status": "read",
+      "reason": "论文直接列Daimon Robotics；官网确认触觉、数据与机器人模型研发业务。",
+      "verified_organization_ids": [
+        "org:daimon-robotics"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2606.31723v1"
+      ]
+    },
+    {
+      "queue_position": 20,
+      "work_id": "arxiv:2606.31329",
+      "title": "3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "DAVIAN Robotics",
+        "KAIST AI",
+        "POSTECH",
+        "Holiday Robotics",
+        "KRAFTON AI"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.31329v1",
+      "source_excerpt": "3D HAMSTER",
+      "source_read_status": "read",
+      "reason": "DAVIAN Robotics主页明确其为DAVIAN Lab机器人组；同页script清单中的data/projects.js含本作精确arXiv链接。",
+      "verified_organization_ids": [
+        "org:kaist-davian-robotics"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://davian-robotics.github.io/"
+      ]
+    },
+    {
+      "queue_position": 21,
+      "work_id": "arxiv:2606.30552",
+      "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "Renmin University of China",
+        "Zhipu AI"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.30552v1",
+      "source_excerpt": "Renmin University of China",
+      "source_read_status": "read",
+      "reason": "论文明确学校与Zhipu AI实习关系，未明确机器人执行组；不把母公司自动变成机器人实验室。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 22,
+      "work_id": "arxiv:2606.20048",
+      "title": "MirrorDuo: Reflection-Consistent Visuomotor Learning from Mirrored Demonstration Pairs",
+      "evidence_grade_before": "E3",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "KTH Division of Robotics, Perception and Learning"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.20048v1",
+      "source_excerpt": "Division of Robotics, Perception and Learning",
+      "source_read_status": "read",
+      "reason": "论文作者affiliation直接写RPL部门，官方KTH页面确认该执行单位。",
+      "verified_organization_ids": [
+        "org:kth-rpl"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2606.20048v1"
+      ]
+    },
+    {
+      "queue_position": 23,
+      "work_id": "arxiv:2606.01027",
+      "title": "$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation",
+      "evidence_grade_before": "E0",
+      "disposition": "named_unit_registration_pending",
+      "observed_units": [
+        "AGIBOT Finch",
+        "Shanghai Innovation Institute"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2606.01027v1",
+      "source_excerpt": "AGIBOT Finch",
+      "source_read_status": "read",
+      "reason": "论文明确Finch，且给出finch.agibot.com研究页；该页本次返回502。尚未完成Finch独立单位准入核验，不直接等同AgiBot Research。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": [],
+      "supplemental_source_check": {
+        "url": "https://finch.agibot.com/research/tau0-wm",
+        "status": "http_502"
+      }
+    },
+    {
+      "queue_position": 24,
+      "work_id": "arxiv:2606.00229",
+      "title": "Continuous Reasoning for Vision-Language-Action",
+      "evidence_grade_before": "E2",
+      "disposition": "insufficient_group_evidence",
+      "observed_units": [],
+      "primary_source_url": "https://arxiv.org/html/2606.00229v1",
+      "source_excerpt": "kris.wu@airoa.org",
+      "source_read_status": "read",
+      "reason": "论文可读但没有清晰单位块；AIROA邮箱不作为组织隶属或具体研究组证据。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 25,
+      "work_id": "arxiv:2605.31286",
+      "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "AIRC, Midea Group",
+        "Tongji University"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2605.31286v1",
+      "source_excerpt": "AIRC, Midea Group",
+      "source_read_status": "read",
+      "reason": "论文与项目页明确AIRC，美的研究中心模型卡使用相同研究中心名称。",
+      "verified_organization_ids": [
+        "org:midea-airc"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://demavla.github.io/"
+      ]
+    },
+    {
+      "queue_position": 26,
+      "work_id": "arxiv:2605.30280",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "Qwen Team"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2605.30280v1",
+      "source_excerpt": "Qwen Team",
+      "source_read_status": "read",
+      "reason": "论文由Qwen Team署名并直接链接QwenLM/Qwen-VLA官方仓库；团队官方关于页和组织资料确认身份。",
+      "verified_organization_ids": [
+        "org:qwen-team"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2605.30280v1"
+      ]
+    },
+    {
+      "queue_position": 27,
+      "work_id": "arxiv:2605.30226",
+      "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+      "evidence_grade_before": "E2",
+      "disposition": "G0_parent_only",
+      "observed_units": [
+        "Shanghai AI Laboratory",
+        "University of Science and Technology of China",
+        "Shanghai Jiao Tong University",
+        "CASIA"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2605.30226v1",
+      "source_excerpt": "Shanghai AI Laboratory",
+      "source_read_status": "read",
+      "reason": "论文给出合作机构而非具体机器人组；不由作者企业兼职或通讯作者姓名猜Galaxea等归属。",
+      "verified_organization_ids": [],
+      "parent_observation_ids": [],
+      "evidence_urls": []
+    },
+    {
+      "queue_position": 28,
+      "work_id": "arxiv:2605.27817",
+      "title": "Turning Video Models into Generalist Robot Policies",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "Amazon FAR",
+        "MIT Scene Representation Group",
+        "CMU",
+        "MIT"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2605.27817v1",
+      "source_excerpt": "Amazon FAR",
+      "source_read_status": "read",
+      "reason": "论文明确Amazon FAR；MIT Scene官方论文列表另直接列VERA。MIT或CMU母机构不会自动扩散到其他实验室。",
+      "verified_organization_ids": [
+        "org:amazon-far",
+        "org:mit-scene-representation"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2605.27817v1",
+        "https://scenerepresentations.org/publications/"
+      ]
+    },
+    {
+      "queue_position": 29,
+      "work_id": "arxiv:2605.00244",
+      "title": "Lucid-XR: An Extended-Reality Data Engine for Robotic Manipulation",
+      "evidence_grade_before": "E3",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "MIT CSAIL",
+        "FortyFive Labs",
+        "UC San Diego"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2605.00244v1",
+      "source_excerpt": "MIT CSAIL",
+      "source_read_status": "read",
+      "reason": "论文明确CSAIL执行研究院；Xiaolong Wang个人页未找到该作品，本批不额外推UCSD具体组。FortyFive Labs保留待登记线索。",
+      "verified_organization_ids": [
+        "org:mit-csail"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2605.00244v1"
+      ]
+    },
+    {
+      "queue_position": 30,
+      "work_id": "arxiv:2604.26848",
+      "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+      "evidence_grade_before": "E2",
+      "disposition": "G1_verified",
+      "observed_units": [
+        "DeepCybo",
+        "Zhongguancun Academy",
+        "Zhongguancun Institute of Artificial Intelligence"
+      ],
+      "primary_source_url": "https://arxiv.org/html/2604.26848v1",
+      "source_excerpt": "DeepCybo",
+      "source_read_status": "read",
+      "reason": "论文明确Cong Huang的DeepCybo归属，与Human-as-Humanoid的同名单位交叉确认。",
+      "verified_organization_ids": [
+        "org:deepcybo"
+      ],
+      "parent_observation_ids": [],
+      "evidence_urls": [
+        "https://arxiv.org/html/2604.26848v1"
+      ]
+    }
+  ]
+}

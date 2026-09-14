@@ -1,0 +1,48 @@
+{
+  "schema_version": "1",
+  "cohort_id": "b82d9a2d10d0e5bb9dda33f3506dcd8b316a1d9ca1ee23ae78e1d3ce9b711b6e",
+  "scope": "window",
+  "checks": [
+    {
+      "person_id": "person:huazhe-xu",
+      "kind": "official_profile_declares_homepage_url",
+      "source_url": "https://iiis.tsinghua.edu.cn/en/People/Faculty/XuHuazhe.htm",
+      "linked_url": "http://hxu.rocks",
+      "observed_at": "2026-09-14T03:12:30Z",
+      "source_sha256": "0fc26b3fa5db788e82228610f1917c4e07ac04e428696610678bb1de0dd26bc9",
+      "locator": "div.v_news_content > p: Homepage",
+      "source_html": "<p><b>Homepage</b>: http://hxu.rocks</p>",
+      "note": "官方档案明确指定的Homepage字段，不伪称该字段是可点击HTML锚点。"
+    },
+    {
+      "person_id": "person:marco-hutter",
+      "kind": "official_person_record_identity",
+      "source_url": "https://rsl.ethz.ch/the-lab/people/person-detail.hutter.html",
+      "person_data_url": "https://rsl.ethz.ch/the-lab/people/person-detail/_jcr_content/listinfo.person-info.hutter.json",
+      "observed_at": "2026-09-14T03:12:29Z",
+      "source_sha256": "6a90ac936d88d8fa415262bba01eb68d7aa2e33011ca008a70efad5ed8487bc5",
+      "locator": "div#personDetailApp[data-json-url] -> personData",
+      "name": "Marco Hutter",
+      "email": "mahutter@ethz.ch",
+      "office": "LEE H 305",
+      "phone": "+41 44 632 74 17",
+      "orcid": "0000-0002-4285-4990",
+      "known_profile_url": "https://rsl.ethz.ch/the-lab/people.html",
+      "note": "详情页自身公开数据端点的机构邮箱、办公室和电话与已核验教授目录一致，不依赖同名推断；不伪造两页面之间的导航链接。"
+    },
+    {
+      "person_id": "person:huazhe-xu",
+      "work_id": "doi:10.1126/scirobotics.aed6267",
+      "kind": "same_entry_manifestation_identity_bridge",
+      "source_url": "https://lei-kun.github.io/",
+      "observed_at": "2026-09-14T03:16:54Z",
+      "locator": "Publications and preprints > RL-100 independent publication entry; arXiv and paper anchors",
+      "same_entry_arxiv": "https://arxiv.org/abs/2510.14830",
+      "linked_url": "https://www.science.org/doi/10.1126/scirobotics.aed6267",
+      "normalized_doi_url": "https://doi.org/10.1126/scirobotics.aed6267",
+      "arxiv_follow_status": "readable",
+      "publisher_follow_status": "HTTP 403",
+      "note": "本轮直接确认共同作者官网同一论文条目下的两条实际硬标识链接，非标题匹配。Science正文受限未冒称全文已读。原始arXiv linked_url和manifestation_identity_bridge保留在人物证据；未改canonical别名、论文状态或数据。"
+    }
+  ]
+}

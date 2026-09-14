@@ -1,0 +1,4281 @@
+{
+  "analysis_version": "exploratory-author-strings-v1",
+  "author_metadata_audit": {
+    "structured_author_id_orcid_affiliation_roles_citations_in_cohort": 0,
+    "works_with_as_of_version_byline": 4456,
+    "canonical_byline_differs_from_as_of_version": 218,
+    "works_with_exact_duplicate_names": 2,
+    "works_with_normalization_duplicate_candidates": 38,
+    "works_with_colon_author_entry": 5,
+    "works_with_ieee_membership_title_entries": 3,
+    "ieee_membership_title_entries": 7,
+    "interpretation": "Name-string aggregation and fractional counting are exploratory only. Canonical author arrays are merged from sources, not trustworthy contribution-role ordering. Normalize candidates require evidence review."
+  },
+  "quality_findings": [
+    "These are exploratory catalogue/name-string counts, not audited distinct-person or final deduplicated-work rankings.",
+    "Some author arrays contain organizational credits and punctuation: Cosmos 3 (arxiv:2606.02800) and Isaac Lab (arxiv:2511.04831) include NVIDIA and a colon. Do not interpret array length as number of people.",
+    "Potential remaining cross-version duplicate: title:b7cfc97034350808bb66ca16 and arxiv:2509.07962 have matching eight-author bylines and titles differing by TA-VLA prefix. Flagged for review, not merged in this exploration.",
+    "Within the monthly cohort, 17 works have a technical_report manifestation; 15 have no personal author byline in the current catalogue.",
+    "47 additional included records pass a raw first_public_date string filter but have year-only precision and are absent from the audited monthly cohort; not assigned to a specific month here."
+  ],
+  "generated_date": "2026-09-06",
+  "catalog_hash": "4d3169f9308159ecff01aa3a4acb9f2181724031c0660236842746a1eb31b8ff",
+  "period": {
+    "from": "2025-09-01",
+    "to": "2026-08-31",
+    "research_status_as_of": "2026-09-06"
+  },
+  "method": {
+    "cohort": "Union of work_ids from 12 published complete monthly snapshots; canonical work once globally.",
+    "identity": "Exact author strings, NFC plus whitespace normalization only; NOT disambiguated people. Case, punctuation, accents, initials and name order preserved.",
+    "fraction": "For sensitivity analysis only: sum 1 / number of distinct nonempty credited names per work. Collective credits may be in denominator; this is not contribution share.",
+    "peer": "Canonical strict_peer_reviewed flag with currently blocked work excluded. Incomplete coverage, not actual author peer-reviewed output.",
+    "selected": "Distinct work IDs referenced by existing executive, D and Q summaries. Editorial selection, not independent impact.",
+    "executive": "Distinct work IDs supporting existing executive findings. Editorial selection, not independent impact.",
+    "first": "First array position only, NOT verified first/equal/corresponding-author contribution.",
+    "not_computed": [
+      "citations",
+      "h-index",
+      "independent adoption",
+      "person-level influence rank",
+      "disambiguated coauthor centrality"
+    ]
+  },
+  "summary": {
+    "all": 42153,
+    "cohort": 4776,
+    "monthly_sum": 4776,
+    "missing": 25,
+    "refs": 30696,
+    "distinct_name_strings": 19492,
+    "dup": 2,
+    "strict_peer": 42,
+    "blocked": 1,
+    "curated": 91,
+    "high": 144,
+    "selected": 694,
+    "executive": 201,
+    "author_median": 5,
+    "author_p90": 11,
+    "author_max": 296,
+    "month_counts": [
+      [
+        "2025-09",
+        398
+      ],
+      [
+        "2025-10",
+        365
+      ],
+      [
+        "2025-11",
+        301
+      ],
+      [
+        "2025-12",
+        251
+      ],
+      [
+        "2026-01",
+        252
+      ],
+      [
+        "2026-02",
+        381
+      ],
+      [
+        "2026-03",
+        582
+      ],
+      [
+        "2026-04",
+        348
+      ],
+      [
+        "2026-05",
+        476
+      ],
+      [
+        "2026-06",
+        606
+      ],
+      [
+        "2026-07",
+        426
+      ],
+      [
+        "2026-08",
+        390
+      ]
+    ]
+  },
+  "raw_top": [
+    {
+      "name": "Jiangmiao Pang",
+      "n": 37,
+      "f": 3.833,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 2,
+      "first": 0,
+      "months": 11,
+      "recent3": 8,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          13
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Shanghang Zhang",
+      "n": 29,
+      "f": 2.374,
+      "peer": 1,
+      "pf": 0.083,
+      "curated": 1,
+      "high": 1,
+      "selected": 8,
+      "exec": 4,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 7,
+      "D": [
+        [
+          "D3",
+          8
+        ],
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          6
+        ]
+      ]
+    },
+    {
+      "name": "Marco Hutter",
+      "n": 28,
+      "f": 4.918,
+      "peer": 1,
+      "pf": 0.143,
+      "curated": 0,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 9,
+      "D": [
+        [
+          "D5",
+          15
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D8",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Yue Wang",
+      "n": 28,
+      "f": 4.847,
+      "peer": 1,
+      "pf": 0.067,
+      "curated": 1,
+      "high": 1,
+      "selected": 4,
+      "exec": 2,
+      "first": 2,
+      "months": 11,
+      "recent3": 4,
+      "prior3": 11,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          7
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Cewu Lu",
+      "n": 25,
+      "f": 3.352,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 10,
+      "recent3": 9,
+      "prior3": 5,
+      "D": [
+        [
+          "D8",
+          6
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          6
+        ]
+      ]
+    },
+    {
+      "name": "Guanya Shi",
+      "n": 23,
+      "f": 2.808,
+      "peer": 1,
+      "pf": 0.071,
+      "curated": 1,
+      "high": 2,
+      "selected": 8,
+      "exec": 2,
+      "first": 0,
+      "months": 9,
+      "recent3": 7,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          12
+        ],
+        [
+          "D4",
+          4
+        ],
+        [
+          "D8",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Donglin Wang",
+      "n": 22,
+      "f": 3.007,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 0,
+      "selected": 8,
+      "exec": 2,
+      "first": 0,
+      "months": 9,
+      "recent3": 1,
+      "prior3": 6,
+      "D": [
+        [
+          "D1",
+          14
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D5",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Jun Ma",
+      "n": 21,
+      "f": 3.208,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 8,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 7,
+      "prior3": 7,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D6",
+          5
+        ],
+        [
+          "D1",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Renjing Xu",
+      "n": 21,
+      "f": 2.335,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 5,
+      "exec": 1,
+      "first": 0,
+      "months": 8,
+      "recent3": 8,
+      "prior3": 5,
+      "D": [
+        [
+          "D5",
+          11
+        ],
+        [
+          "D8",
+          6
+        ],
+        [
+          "D6",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Yao Mu",
+      "n": 21,
+      "f": 2.167,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 2,
+      "exec": 1,
+      "first": 0,
+      "months": 7,
+      "recent3": 12,
+      "prior3": 6,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D8",
+          5
+        ],
+        [
+          "D4",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "He Wang",
+      "n": 20,
+      "f": 2.293,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 4,
+      "exec": 1,
+      "first": 0,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 7,
+      "D": [
+        [
+          "D4",
+          8
+        ],
+        [
+          "D5",
+          4
+        ],
+        [
+          "D1",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Jan Peters",
+      "n": 20,
+      "f": 3.571,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 4,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 6,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D8",
+          5
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Pieter Abbeel",
+      "n": 20,
+      "f": 2.781,
+      "peer": 1,
+      "pf": 0.111,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Yang Liu",
+      "n": 20,
+      "f": 3.578,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 4,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 7,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D3",
+          4
+        ],
+        [
+          "D2",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "C. Karen Liu",
+      "n": 18,
+      "f": 3.187,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 4,
+      "exec": 2,
+      "first": 0,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          10
+        ],
+        [
+          "D4",
+          6
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Yuke Zhu",
+      "n": 18,
+      "f": 1.642,
+      "peer": 2,
+      "pf": 0.214,
+      "curated": 1,
+      "high": 3,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Guillaume Sartoretti",
+      "n": 17,
+      "f": 2.343,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 0,
+      "months": 9,
+      "recent3": 3,
+      "prior3": 4,
+      "D": [
+        [
+          "D8",
+          8
+        ],
+        [
+          "D5",
+          5
+        ],
+        [
+          "D6",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Hao Li",
+      "n": 17,
+      "f": 1.541,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 2,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 5,
+      "D": [
+        [
+          "D3",
+          6
+        ],
+        [
+          "D1",
+          5
+        ],
+        [
+          "D4",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Jianfei Yang",
+      "n": 17,
+      "f": 2.134,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 10,
+      "recent3": 9,
+      "prior3": 4,
+      "D": [
+        [
+          "D8",
+          7
+        ],
+        [
+          "D5",
+          5
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Yang Gao",
+      "n": 17,
+      "f": 1.839,
+      "peer": 1,
+      "pf": 0.053,
+      "curated": 1,
+      "high": 1,
+      "selected": 3,
+      "exec": 2,
+      "first": 0,
+      "months": 7,
+      "recent3": 5,
+      "prior3": 5,
+      "D": [
+        [
+          "D4",
+          4
+        ],
+        [
+          "D6",
+          3
+        ],
+        [
+          "D8",
+          3
+        ]
+      ]
+    }
+  ],
+  "fractional_top": [
+    {
+      "name": "Marco Hutter",
+      "n": 28,
+      "f": 4.918,
+      "peer": 1,
+      "pf": 0.143,
+      "curated": 0,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 9,
+      "D": [
+        [
+          "D5",
+          15
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D8",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Yue Wang",
+      "n": 28,
+      "f": 4.847,
+      "peer": 1,
+      "pf": 0.067,
+      "curated": 1,
+      "high": 1,
+      "selected": 4,
+      "exec": 2,
+      "first": 2,
+      "months": 11,
+      "recent3": 4,
+      "prior3": 11,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          7
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Jiangmiao Pang",
+      "n": 37,
+      "f": 3.833,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 2,
+      "first": 0,
+      "months": 11,
+      "recent3": 8,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          13
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Yang Liu",
+      "n": 20,
+      "f": 3.578,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 4,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 7,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D3",
+          4
+        ],
+        [
+          "D2",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Jan Peters",
+      "n": 20,
+      "f": 3.571,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 4,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 6,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D8",
+          5
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Cewu Lu",
+      "n": 25,
+      "f": 3.352,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 10,
+      "recent3": 9,
+      "prior3": 5,
+      "D": [
+        [
+          "D8",
+          6
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          6
+        ]
+      ]
+    },
+    {
+      "name": "Ahmed H. Qureshi",
+      "n": 11,
+      "f": 3.333,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 9,
+      "recent3": 3,
+      "prior3": 3,
+      "D": [
+        [
+          "D2",
+          6
+        ],
+        [
+          "D8",
+          4
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Hongbo Wang",
+      "n": 5,
+      "f": 3.292,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 3,
+      "months": 2,
+      "recent3": 3,
+      "prior3": 2,
+      "D": [
+        [
+          "D3",
+          3
+        ],
+        [
+          "D8",
+          1
+        ],
+        [
+          "D12",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Jun Ma",
+      "n": 21,
+      "f": 3.208,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 8,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 7,
+      "prior3": 7,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D6",
+          5
+        ],
+        [
+          "D1",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "C. Karen Liu",
+      "n": 18,
+      "f": 3.187,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 4,
+      "exec": 2,
+      "first": 0,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          10
+        ],
+        [
+          "D4",
+          6
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Aaron D. Ames",
+      "n": 11,
+      "f": 3.1,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 0,
+      "months": 8,
+      "recent3": 3,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          10
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Donglin Wang",
+      "n": 22,
+      "f": 3.007,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 0,
+      "selected": 8,
+      "exec": 2,
+      "first": 0,
+      "months": 9,
+      "recent3": 1,
+      "prior3": 6,
+      "D": [
+        [
+          "D1",
+          14
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D5",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Sehoon Ha",
+      "n": 12,
+      "f": 2.811,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 2,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 1,
+      "prior3": 4,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Guanya Shi",
+      "n": 23,
+      "f": 2.808,
+      "peer": 1,
+      "pf": 0.071,
+      "curated": 1,
+      "high": 2,
+      "selected": 8,
+      "exec": 2,
+      "first": 0,
+      "months": 9,
+      "recent3": 7,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          12
+        ],
+        [
+          "D4",
+          4
+        ],
+        [
+          "D8",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Minghui Zheng",
+      "n": 11,
+      "f": 2.804,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 3,
+      "exec": 2,
+      "first": 0,
+      "months": 7,
+      "recent3": 3,
+      "prior3": 5,
+      "D": [
+        [
+          "D2",
+          5
+        ],
+        [
+          "D7",
+          2
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Pieter Abbeel",
+      "n": 20,
+      "f": 2.781,
+      "peer": 1,
+      "pf": 0.111,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Boyuan Chen",
+      "n": 10,
+      "f": 2.778,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 0,
+      "exec": 0,
+      "first": 1,
+      "months": 8,
+      "recent3": 3,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          3
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D6",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Xiao Liang",
+      "n": 10,
+      "f": 2.693,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 2,
+      "exec": 1,
+      "first": 0,
+      "months": 6,
+      "recent3": 2,
+      "prior3": 4,
+      "D": [
+        [
+          "D2",
+          5
+        ],
+        [
+          "D7",
+          2
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Xiaolong Wang",
+      "n": 14,
+      "f": 2.504,
+      "peer": 4,
+      "pf": 0.376,
+      "curated": 1,
+      "high": 3,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Weiming Zhi",
+      "n": 8,
+      "f": 2.5,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 5,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D9",
+          2
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D12",
+          1
+        ]
+      ]
+    }
+  ],
+  "peer_top": [
+    {
+      "name": "Xiaolong Wang",
+      "n": 14,
+      "f": 2.504,
+      "peer": 4,
+      "pf": 0.376,
+      "curated": 1,
+      "high": 3,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Hao Zhao",
+      "n": 10,
+      "f": 1.1,
+      "peer": 4,
+      "pf": 0.428,
+      "curated": 1,
+      "high": 2,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 7,
+      "recent3": 2,
+      "prior3": 2,
+      "D": [
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D5",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Ziwei Wang",
+      "n": 13,
+      "f": 1.683,
+      "peer": 3,
+      "pf": 0.375,
+      "curated": 2,
+      "high": 4,
+      "selected": 5,
+      "exec": 4,
+      "first": 0,
+      "months": 6,
+      "recent3": 5,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Yuke Zhu",
+      "n": 18,
+      "f": 1.642,
+      "peer": 2,
+      "pf": 0.214,
+      "curated": 1,
+      "high": 3,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Hao Dong",
+      "n": 16,
+      "f": 1.776,
+      "peer": 2,
+      "pf": 0.208,
+      "curated": 1,
+      "high": 2,
+      "selected": 3,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 2,
+      "prior3": 6,
+      "D": [
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          5
+        ],
+        [
+          "D11",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Peter Stone",
+      "n": 8,
+      "f": 1.199,
+      "peer": 2,
+      "pf": 0.433,
+      "curated": 0,
+      "high": 1,
+      "selected": 2,
+      "exec": 0,
+      "first": 0,
+      "months": 7,
+      "recent3": 1,
+      "prior3": 2,
+      "D": [
+        [
+          "D8",
+          2
+        ],
+        [
+          "D2",
+          2
+        ],
+        [
+          "D5",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Dieter Fox",
+      "n": 6,
+      "f": 0.619,
+      "peer": 2,
+      "pf": 0.174,
+      "curated": 1,
+      "high": 2,
+      "selected": 3,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          3
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Zongzheng Zhang",
+      "n": 6,
+      "f": 0.501,
+      "peer": 2,
+      "pf": 0.25,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 4,
+      "months": 5,
+      "recent3": 2,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          1
+        ],
+        [
+          "D12",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Deepak Pathak",
+      "n": 5,
+      "f": 1.075,
+      "peer": 2,
+      "pf": 0.5,
+      "curated": 1,
+      "high": 1,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 3,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D3",
+          2
+        ],
+        [
+          "D2",
+          1
+        ],
+        [
+          "D4",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Yu-Wei Chao",
+      "n": 5,
+      "f": 0.537,
+      "peer": 2,
+      "pf": 0.208,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 1,
+      "prior3": 1,
+      "D": [
+        [
+          "D8",
+          2
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Huan-ang Gao",
+      "n": 4,
+      "f": 0.415,
+      "peer": 2,
+      "pf": 0.25,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 3,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          3
+        ],
+        [
+          "D4",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Wei Yang",
+      "n": 4,
+      "f": 0.575,
+      "peer": 2,
+      "pf": 0.208,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 1,
+      "prior3": 0,
+      "D": [
+        [
+          "D4",
+          2
+        ],
+        [
+          "D3",
+          1
+        ],
+        [
+          "D5",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Chenghao Yue",
+      "n": 3,
+      "f": 0.375,
+      "peer": 2,
+      "pf": 0.25,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 2,
+      "recent3": 0,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Haobo Xu",
+      "n": 3,
+      "f": 0.375,
+      "peer": 2,
+      "pf": 0.25,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 2,
+      "recent3": 0,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Arsalan Mousavian",
+      "n": 2,
+      "f": 0.208,
+      "peer": 2,
+      "pf": 0.208,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 2,
+      "recent3": 0,
+      "prior3": 0,
+      "D": [
+        [
+          "D4",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Shanghang Zhang",
+      "n": 29,
+      "f": 2.374,
+      "peer": 1,
+      "pf": 0.083,
+      "curated": 1,
+      "high": 1,
+      "selected": 8,
+      "exec": 4,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 7,
+      "D": [
+        [
+          "D3",
+          8
+        ],
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          6
+        ]
+      ]
+    },
+    {
+      "name": "Marco Hutter",
+      "n": 28,
+      "f": 4.918,
+      "peer": 1,
+      "pf": 0.143,
+      "curated": 0,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 9,
+      "D": [
+        [
+          "D5",
+          15
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D8",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Yue Wang",
+      "n": 28,
+      "f": 4.847,
+      "peer": 1,
+      "pf": 0.067,
+      "curated": 1,
+      "high": 1,
+      "selected": 4,
+      "exec": 2,
+      "first": 2,
+      "months": 11,
+      "recent3": 4,
+      "prior3": 11,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          7
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Guanya Shi",
+      "n": 23,
+      "f": 2.808,
+      "peer": 1,
+      "pf": 0.071,
+      "curated": 1,
+      "high": 2,
+      "selected": 8,
+      "exec": 2,
+      "first": 0,
+      "months": 9,
+      "recent3": 7,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          12
+        ],
+        [
+          "D4",
+          4
+        ],
+        [
+          "D8",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Pieter Abbeel",
+      "n": 20,
+      "f": 2.781,
+      "peer": 1,
+      "pf": 0.111,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    }
+  ],
+  "curated_top": [
+    {
+      "name": "Haoqi Yuan",
+      "n": 11,
+      "f": 1.182,
+      "peer": 0,
+      "pf": 0,
+      "curated": 3,
+      "high": 3,
+      "selected": 4,
+      "exec": 3,
+      "first": 1,
+      "months": 8,
+      "recent3": 3,
+      "prior3": 2,
+      "D": [
+        [
+          "D1",
+          3
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Ye Wang",
+      "n": 10,
+      "f": 1.189,
+      "peer": 0,
+      "pf": 0,
+      "curated": 3,
+      "high": 3,
+      "selected": 3,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 2,
+      "prior3": 2,
+      "D": [
+        [
+          "D1",
+          2
+        ],
+        [
+          "D3",
+          2
+        ],
+        [
+          "D8",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Jiangmiao Pang",
+      "n": 37,
+      "f": 3.833,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 2,
+      "first": 0,
+      "months": 11,
+      "recent3": 8,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          13
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Pieter Abbeel",
+      "n": 20,
+      "f": 2.781,
+      "peer": 1,
+      "pf": 0.111,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Yilun Du",
+      "n": 16,
+      "f": 2.448,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 8,
+      "prior3": 2,
+      "D": [
+        [
+          "D3",
+          8
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D5",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Jitendra Malik",
+      "n": 15,
+      "f": 1.794,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 7,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D4",
+          9
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Kai Chen",
+      "n": 15,
+      "f": 2.09,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 1,
+      "months": 9,
+      "recent3": 4,
+      "prior3": 5,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D1",
+          3
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Chelsea Finn",
+      "n": 14,
+      "f": 2.204,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 1,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 4,
+      "D": [
+        [
+          "D1",
+          6
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Hao Wang",
+      "n": 13,
+      "f": 1.548,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 1,
+      "first": 4,
+      "months": 9,
+      "recent3": 5,
+      "prior3": 4,
+      "D": [
+        [
+          "D1",
+          4
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D9",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Xiaofeng Wang",
+      "n": 13,
+      "f": 1.126,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 1,
+      "selected": 4,
+      "exec": 3,
+      "first": 0,
+      "months": 8,
+      "recent3": 7,
+      "prior3": 3,
+      "D": [
+        [
+          "D3",
+          4
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D9",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Zheng Zhu",
+      "n": 13,
+      "f": 1.206,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 1,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 8,
+      "recent3": 6,
+      "prior3": 4,
+      "D": [
+        [
+          "D3",
+          4
+        ],
+        [
+          "D1",
+          3
+        ],
+        [
+          "D8",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Ziwei Wang",
+      "n": 13,
+      "f": 1.683,
+      "peer": 3,
+      "pf": 0.375,
+      "curated": 2,
+      "high": 4,
+      "selected": 5,
+      "exec": 4,
+      "first": 0,
+      "months": 6,
+      "recent3": 5,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Zongqing Lu",
+      "n": 13,
+      "f": 1.677,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 5,
+      "exec": 4,
+      "first": 0,
+      "months": 9,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          4
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Hao Chen",
+      "n": 12,
+      "f": 1.31,
+      "peer": 1,
+      "pf": 0.083,
+      "curated": 2,
+      "high": 1,
+      "selected": 3,
+      "exec": 2,
+      "first": 2,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D1",
+          5
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Hangjun Ye",
+      "n": 11,
+      "f": 0.87,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 0,
+      "first": 0,
+      "months": 7,
+      "recent3": 3,
+      "prior3": 3,
+      "D": [
+        [
+          "D6",
+          3
+        ],
+        [
+          "D1",
+          3
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Cong Huang",
+      "n": 9,
+      "f": 1.104,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 1,
+      "first": 0,
+      "months": 5,
+      "recent3": 4,
+      "prior3": 5,
+      "D": [
+        [
+          "D5",
+          4
+        ],
+        [
+          "D1",
+          2
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Haoyang Li",
+      "n": 8,
+      "f": 0.855,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 3,
+      "selected": 1,
+      "exec": 0,
+      "first": 3,
+      "months": 5,
+      "recent3": 3,
+      "prior3": 3,
+      "D": [
+        [
+          "D1",
+          2
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Zhenyu Wu",
+      "n": 8,
+      "f": 1.185,
+      "peer": 1,
+      "pf": 0.125,
+      "curated": 2,
+      "high": 3,
+      "selected": 3,
+      "exec": 3,
+      "first": 2,
+      "months": 5,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          2
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Kui Jia",
+      "n": 7,
+      "f": 2.5,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 2,
+      "first": 0,
+      "months": 5,
+      "recent3": 0,
+      "prior3": 2,
+      "D": [
+        [
+          "D4",
+          3
+        ],
+        [
+          "D5",
+          2
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Dorsa Sadigh",
+      "n": 6,
+      "f": 1.374,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 2,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 2,
+      "prior3": 3,
+      "D": [
+        [
+          "D8",
+          2
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D1",
+          1
+        ]
+      ]
+    }
+  ],
+  "executive_top": [
+    {
+      "name": "Shanghang Zhang",
+      "n": 29,
+      "f": 2.374,
+      "peer": 1,
+      "pf": 0.083,
+      "curated": 1,
+      "high": 1,
+      "selected": 8,
+      "exec": 4,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 7,
+      "D": [
+        [
+          "D3",
+          8
+        ],
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          6
+        ]
+      ]
+    },
+    {
+      "name": "Jian Tang",
+      "n": 16,
+      "f": 1.076,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 5,
+      "exec": 4,
+      "first": 0,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 4,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D8",
+          4
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Ziwei Wang",
+      "n": 13,
+      "f": 1.683,
+      "peer": 3,
+      "pf": 0.375,
+      "curated": 2,
+      "high": 4,
+      "selected": 5,
+      "exec": 4,
+      "first": 0,
+      "months": 6,
+      "recent3": 5,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Zongqing Lu",
+      "n": 13,
+      "f": 1.677,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 5,
+      "exec": 4,
+      "first": 0,
+      "months": 9,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          4
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Xiaofeng Wang",
+      "n": 13,
+      "f": 1.126,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 1,
+      "selected": 4,
+      "exec": 3,
+      "first": 0,
+      "months": 8,
+      "recent3": 7,
+      "prior3": 3,
+      "D": [
+        [
+          "D3",
+          4
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D9",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Zheng Zhu",
+      "n": 13,
+      "f": 1.206,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 1,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 8,
+      "recent3": 6,
+      "prior3": 4,
+      "D": [
+        [
+          "D3",
+          4
+        ],
+        [
+          "D1",
+          3
+        ],
+        [
+          "D8",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Haoqi Yuan",
+      "n": 11,
+      "f": 1.182,
+      "peer": 0,
+      "pf": 0,
+      "curated": 3,
+      "high": 3,
+      "selected": 4,
+      "exec": 3,
+      "first": 1,
+      "months": 8,
+      "recent3": 3,
+      "prior3": 2,
+      "D": [
+        [
+          "D1",
+          3
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D3",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Hao Zhao",
+      "n": 10,
+      "f": 1.1,
+      "peer": 4,
+      "pf": 0.428,
+      "curated": 1,
+      "high": 2,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 7,
+      "recent3": 2,
+      "prior3": 2,
+      "D": [
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D5",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Hongyang Li",
+      "n": 9,
+      "f": 0.872,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 5,
+      "exec": 3,
+      "first": 0,
+      "months": 5,
+      "recent3": 0,
+      "prior3": 4,
+      "D": [
+        [
+          "D5",
+          4
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Chi Zhang",
+      "n": 8,
+      "f": 1.041,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 4,
+      "exec": 3,
+      "first": 1,
+      "months": 5,
+      "recent3": 1,
+      "prior3": 2,
+      "D": [
+        [
+          "D5",
+          2
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Zhengping Che",
+      "n": 8,
+      "f": 0.642,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 6,
+      "recent3": 3,
+      "prior3": 2,
+      "D": [
+        [
+          "D8",
+          4
+        ],
+        [
+          "D5",
+          2
+        ],
+        [
+          "D4",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Zhenyu Wu",
+      "n": 8,
+      "f": 1.185,
+      "peer": 1,
+      "pf": 0.125,
+      "curated": 2,
+      "high": 3,
+      "selected": 3,
+      "exec": 3,
+      "first": 2,
+      "months": 5,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D8",
+          2
+        ],
+        [
+          "D3",
+          2
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Hao Luo",
+      "n": 6,
+      "f": 0.823,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 3,
+      "first": 3,
+      "months": 5,
+      "recent3": 1,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          1
+        ],
+        [
+          "D3",
+          1
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Wanpeng Zhang",
+      "n": 6,
+      "f": 0.673,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 4,
+      "exec": 3,
+      "first": 1,
+      "months": 5,
+      "recent3": 2,
+      "prior3": 0,
+      "D": [
+        [
+          "D4",
+          2
+        ],
+        [
+          "D1",
+          1
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Sipeng Zheng",
+      "n": 5,
+      "f": 0.573,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 4,
+      "recent3": 1,
+      "prior3": 0,
+      "D": [
+        [
+          "D1",
+          1
+        ],
+        [
+          "D3",
+          1
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Wanlin Li",
+      "n": 5,
+      "f": 0.66,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 4,
+      "exec": 3,
+      "first": 0,
+      "months": 4,
+      "recent3": 4,
+      "prior3": 0,
+      "D": [
+        [
+          "D4",
+          3
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Jianlan Luo",
+      "n": 4,
+      "f": 0.284,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 3,
+      "exec": 3,
+      "first": 0,
+      "months": 4,
+      "recent3": 1,
+      "prior3": 1,
+      "D": [
+        [
+          "D3",
+          2
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Jiangmiao Pang",
+      "n": 37,
+      "f": 3.833,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 2,
+      "first": 0,
+      "months": 11,
+      "recent3": 8,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          13
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Yue Wang",
+      "n": 28,
+      "f": 4.847,
+      "peer": 1,
+      "pf": 0.067,
+      "curated": 1,
+      "high": 1,
+      "selected": 4,
+      "exec": 2,
+      "first": 2,
+      "months": 11,
+      "recent3": 4,
+      "prior3": 11,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D5",
+          7
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Cewu Lu",
+      "n": 25,
+      "f": 3.352,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 10,
+      "recent3": 9,
+      "prior3": 5,
+      "D": [
+        [
+          "D8",
+          6
+        ],
+        [
+          "D1",
+          6
+        ],
+        [
+          "D4",
+          6
+        ]
+      ]
+    }
+  ],
+  "first_top": [
+    {
+      "name": "Zihao Zheng",
+      "n": 6,
+      "f": 0.587,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 6,
+      "months": 2,
+      "recent3": 0,
+      "prior3": 6,
+      "D": [
+        [
+          "D1",
+          6
+        ]
+      ]
+    },
+    {
+      "name": "Yang Liu",
+      "n": 20,
+      "f": 3.578,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 4,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 7,
+      "D": [
+        [
+          "D1",
+          7
+        ],
+        [
+          "D3",
+          4
+        ],
+        [
+          "D2",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Hao Wang",
+      "n": 13,
+      "f": 1.548,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 3,
+      "exec": 1,
+      "first": 4,
+      "months": 9,
+      "recent3": 5,
+      "prior3": 4,
+      "D": [
+        [
+          "D1",
+          4
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D9",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Heng Zhang",
+      "n": 12,
+      "f": 1.539,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 3,
+      "exec": 1,
+      "first": 4,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 5,
+      "D": [
+        [
+          "D8",
+          4
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Kento Kawaharazuka",
+      "n": 10,
+      "f": 2.328,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 4,
+      "months": 6,
+      "recent3": 5,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          4
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Zhe Li",
+      "n": 10,
+      "f": 0.814,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 2,
+      "exec": 1,
+      "first": 4,
+      "months": 7,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          5
+        ],
+        [
+          "D8",
+          2
+        ],
+        [
+          "D1",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Daojie Peng",
+      "n": 6,
+      "f": 1.221,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 4,
+      "exec": 1,
+      "first": 4,
+      "months": 5,
+      "recent3": 3,
+      "prior3": 2,
+      "D": [
+        [
+          "D6",
+          3
+        ],
+        [
+          "D1",
+          2
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Zongzheng Zhang",
+      "n": 6,
+      "f": 0.501,
+      "peer": 2,
+      "pf": 0.25,
+      "curated": 0,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 4,
+      "months": 5,
+      "recent3": 2,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          1
+        ],
+        [
+          "D12",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Alejandro Gonzalez-Garcia",
+      "n": 5,
+      "f": 0.813,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 4,
+      "months": 5,
+      "recent3": 2,
+      "prior3": 1,
+      "D": [
+        [
+          "D2",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Harry Robertshaw",
+      "n": 5,
+      "f": 0.7,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 4,
+      "months": 5,
+      "recent3": 1,
+      "prior3": 2,
+      "D": [
+        [
+          "D3",
+          3
+        ],
+        [
+          "D8",
+          1
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "HyoJae Kang",
+      "n": 5,
+      "f": 1.15,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 4,
+      "months": 2,
+      "recent3": 0,
+      "prior3": 5,
+      "D": [
+        [
+          "D4",
+          4
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Jingyi Liu",
+      "n": 4,
+      "f": 1.125,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 4,
+      "months": 2,
+      "recent3": 1,
+      "prior3": 3,
+      "D": [
+        [
+          "D8",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Yubiao Ma",
+      "n": 4,
+      "f": 0.517,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 4,
+      "months": 4,
+      "recent3": 2,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Yuhang Zhang",
+      "n": 4,
+      "f": 0.718,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 2,
+      "exec": 0,
+      "first": 4,
+      "months": 4,
+      "recent3": 0,
+      "prior3": 2,
+      "D": [
+        [
+          "D8",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Yang Zhang",
+      "n": 13,
+      "f": 1.887,
+      "peer": 1,
+      "pf": 0.167,
+      "curated": 0,
+      "high": 1,
+      "selected": 3,
+      "exec": 2,
+      "first": 3,
+      "months": 10,
+      "recent3": 2,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D8",
+          4
+        ],
+        [
+          "D1",
+          2
+        ]
+      ]
+    }
+  ],
+  "named": [
+    {
+      "name": "Sergey Levine",
+      "n": 15,
+      "f": 2.035,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 2,
+      "selected": 4,
+      "exec": 2,
+      "first": 0,
+      "months": 10,
+      "recent3": 4,
+      "prior3": 4,
+      "D": [
+        [
+          "D1",
+          10
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Pieter Abbeel",
+      "n": 20,
+      "f": 2.781,
+      "peer": 1,
+      "pf": 0.111,
+      "curated": 2,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          8
+        ],
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          5
+        ]
+      ]
+    },
+    {
+      "name": "Chelsea Finn",
+      "n": 14,
+      "f": 2.204,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 1,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 4,
+      "D": [
+        [
+          "D1",
+          6
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Shuran Song",
+      "n": 5,
+      "f": 0.34,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 1,
+      "prior3": 3,
+      "D": [
+        [
+          "D6",
+          1
+        ],
+        [
+          "D5",
+          1
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Dieter Fox",
+      "n": 6,
+      "f": 0.619,
+      "peer": 2,
+      "pf": 0.174,
+      "curated": 1,
+      "high": 2,
+      "selected": 3,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          3
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Deepak Pathak",
+      "n": 5,
+      "f": 1.075,
+      "peer": 2,
+      "pf": 0.5,
+      "curated": 1,
+      "high": 1,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 3,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D3",
+          2
+        ],
+        [
+          "D2",
+          1
+        ],
+        [
+          "D4",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Abhinav Gupta",
+      "n": 0
+    },
+    {
+      "name": "Xiaolong Wang",
+      "n": 14,
+      "f": 2.504,
+      "peer": 4,
+      "pf": 0.376,
+      "curated": 1,
+      "high": 3,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D4",
+          5
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D3",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Jitendra Malik",
+      "n": 15,
+      "f": 1.794,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 7,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D4",
+          9
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Yuke Zhu",
+      "n": 18,
+      "f": 1.642,
+      "peer": 2,
+      "pf": 0.214,
+      "curated": 1,
+      "high": 3,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 5,
+      "prior3": 3,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D1",
+          4
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Tao Chen",
+      "n": 6,
+      "f": 0.975,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 1,
+      "months": 5,
+      "recent3": 3,
+      "prior3": 1,
+      "D": [
+        [
+          "D4",
+          1
+        ],
+        [
+          "D8",
+          1
+        ],
+        [
+          "D11",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Lerrel Pinto",
+      "n": 4,
+      "f": 0.583,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 3,
+      "recent3": 0,
+      "prior3": 2,
+      "D": [
+        [
+          "D4",
+          2
+        ],
+        [
+          "D6",
+          1
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Pulkit Agrawal",
+      "n": 8,
+      "f": 1.798,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 3,
+      "exec": 1,
+      "first": 0,
+      "months": 7,
+      "recent3": 2,
+      "prior3": 2,
+      "D": [
+        [
+          "D8",
+          3
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D5",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Jiajun Wu",
+      "n": 13,
+      "f": 1.539,
+      "peer": 1,
+      "pf": 0.125,
+      "curated": 0,
+      "high": 0,
+      "selected": 4,
+      "exec": 1,
+      "first": 0,
+      "months": 7,
+      "recent3": 1,
+      "prior3": 2,
+      "D": [
+        [
+          "D3",
+          5
+        ],
+        [
+          "D5",
+          3
+        ],
+        [
+          "D1",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Karol Hausman",
+      "n": 1,
+      "f": 0.011,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 1,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Ashish Kumar",
+      "n": 0
+    },
+    {
+      "name": "Zachary Manchester",
+      "n": 3,
+      "f": 0.316,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 3,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D5",
+          2
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Jitendra Malik",
+      "n": 15,
+      "f": 1.794,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 5,
+      "exec": 2,
+      "first": 0,
+      "months": 7,
+      "recent3": 4,
+      "prior3": 3,
+      "D": [
+        [
+          "D4",
+          9
+        ],
+        [
+          "D8",
+          3
+        ],
+        [
+          "D9",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Fei-Fei Li",
+      "n": 0
+    },
+    {
+      "name": "Yunzhu Li",
+      "n": 11,
+      "f": 1.095,
+      "peer": 1,
+      "pf": 0.083,
+      "curated": 0,
+      "high": 1,
+      "selected": 2,
+      "exec": 2,
+      "first": 0,
+      "months": 8,
+      "recent3": 4,
+      "prior3": 2,
+      "D": [
+        [
+          "D4",
+          4
+        ],
+        [
+          "D3",
+          4
+        ],
+        [
+          "D12",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Zhou Xian",
+      "n": 1,
+      "f": 0.167,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 0,
+      "months": 1,
+      "recent3": 1,
+      "prior3": 0,
+      "D": [
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Jan Peters",
+      "n": 20,
+      "f": 3.571,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 4,
+      "exec": 1,
+      "first": 0,
+      "months": 9,
+      "recent3": 6,
+      "prior3": 8,
+      "D": [
+        [
+          "D5",
+          6
+        ],
+        [
+          "D8",
+          5
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Marco Hutter",
+      "n": 28,
+      "f": 4.918,
+      "peer": 1,
+      "pf": 0.143,
+      "curated": 0,
+      "high": 2,
+      "selected": 6,
+      "exec": 1,
+      "first": 0,
+      "months": 12,
+      "recent3": 8,
+      "prior3": 9,
+      "D": [
+        [
+          "D5",
+          15
+        ],
+        [
+          "D4",
+          3
+        ],
+        [
+          "D8",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Davide Scaramuzza",
+      "n": 4,
+      "f": 0.76,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 4,
+      "recent3": 1,
+      "prior3": 2,
+      "D": [
+        [
+          "D8",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Dorsa Sadigh",
+      "n": 6,
+      "f": 1.374,
+      "peer": 0,
+      "pf": 0,
+      "curated": 2,
+      "high": 2,
+      "selected": 2,
+      "exec": 1,
+      "first": 0,
+      "months": 4,
+      "recent3": 2,
+      "prior3": 3,
+      "D": [
+        [
+          "D8",
+          2
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D1",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Russ Tedrake",
+      "n": 3,
+      "f": 0.476,
+      "peer": 0,
+      "pf": 0,
+      "curated": 1,
+      "high": 1,
+      "selected": 0,
+      "exec": 0,
+      "first": 0,
+      "months": 2,
+      "recent3": 2,
+      "prior3": 0,
+      "D": [
+        [
+          "D8",
+          1
+        ],
+        [
+          "D2",
+          1
+        ],
+        [
+          "D1",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Ken Goldberg",
+      "n": 9,
+      "f": 1.149,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 0,
+      "exec": 0,
+      "first": 0,
+      "months": 6,
+      "recent3": 4,
+      "prior3": 2,
+      "D": [
+        [
+          "D8",
+          3
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D3",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "He Wang",
+      "n": 20,
+      "f": 2.293,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 4,
+      "exec": 1,
+      "first": 0,
+      "months": 10,
+      "recent3": 5,
+      "prior3": 7,
+      "D": [
+        [
+          "D4",
+          8
+        ],
+        [
+          "D5",
+          4
+        ],
+        [
+          "D1",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Huazhe Xu",
+      "n": 9,
+      "f": 1.043,
+      "peer": 1,
+      "pf": 0.053,
+      "curated": 1,
+      "high": 1,
+      "selected": 1,
+      "exec": 1,
+      "first": 0,
+      "months": 6,
+      "recent3": 1,
+      "prior3": 6,
+      "D": [
+        [
+          "D8",
+          5
+        ],
+        [
+          "D4",
+          2
+        ],
+        [
+          "D11",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Yang Gao",
+      "n": 17,
+      "f": 1.839,
+      "peer": 1,
+      "pf": 0.053,
+      "curated": 1,
+      "high": 1,
+      "selected": 3,
+      "exec": 2,
+      "first": 0,
+      "months": 7,
+      "recent3": 5,
+      "prior3": 5,
+      "D": [
+        [
+          "D4",
+          4
+        ],
+        [
+          "D6",
+          3
+        ],
+        [
+          "D8",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Li Yi",
+      "n": 8,
+      "f": 0.884,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 2,
+      "exec": 0,
+      "first": 0,
+      "months": 7,
+      "recent3": 4,
+      "prior3": 2,
+      "D": [
+        [
+          "D5",
+          5
+        ],
+        [
+          "D4",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Yi Li",
+      "n": 1,
+      "f": 0.067,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 0,
+      "selected": 1,
+      "exec": 0,
+      "first": 0,
+      "months": 1,
+      "recent3": 0,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Jie Tan",
+      "n": 0
+    },
+    {
+      "name": "Dhruv Shah",
+      "n": 7,
+      "f": 0.976,
+      "peer": 0,
+      "pf": 0,
+      "curated": 0,
+      "high": 1,
+      "selected": 2,
+      "exec": 1,
+      "first": 0,
+      "months": 5,
+      "recent3": 1,
+      "prior3": 1,
+      "D": [
+        [
+          "D1",
+          3
+        ],
+        [
+          "D3",
+          2
+        ],
+        [
+          "D8",
+          1
+        ]
+      ]
+    }
+  ],
+  "labels": [
+    [
+      "D1",
+      "具身基础模型与通才策略"
+    ],
+    [
+      "D2",
+      "分层推理、规划与记忆"
+    ],
+    [
+      "D3",
+      "世界模型与预测控制"
+    ],
+    [
+      "D4",
+      "灵巧、双臂与接触操作"
+    ],
+    [
+      "D5",
+      "人形、运动与全身控制"
+    ],
+    [
+      "D6",
+      "导航与移动操作"
+    ],
+    [
+      "D7",
+      "人机协作与交互学习"
+    ],
+    [
+      "D8",
+      "策略学习与优化"
+    ],
+    [
+      "D9",
+      "数据引擎与人类视频学习"
+    ],
+    [
+      "D10",
+      "仿真、合成数据与 Sim-to-Real"
+    ],
+    [
+      "D11",
+      "动作关联的空间感知与表征"
+    ],
+    [
+      "D12",
+      "评测、安全、可靠性与故障恢复"
+    ],
+    [
+      "D13",
+      "持续学习、部署学习与自改进"
+    ],
+    [
+      "D14",
+      "多机器人协同与群体智能"
+    ],
+    [
+      "D15",
+      "触觉、力觉与多模态身体感知"
+    ]
+  ]
+}

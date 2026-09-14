@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independently sourced public release regression record",
+  "type": "object",
+  "required": ["schema_version", "record_type", "gold_id", "organization_id", "sampling_frame_id", "title", "url", "published_at", "published_at_precision", "frozen_at", "index_url", "release_type", "selection_basis", "window", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "record_type": {"const": "release"},
+    "gold_id": {"type": "string", "minLength": 1},
+    "organization_id": {"type": "string", "pattern": "^org:"},
+    "sampling_frame_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "url": {"type": "string", "format": "uri"},
+    "index_url": {"type": "string", "format": "uri"},
+    "published_at": {"type": "string", "minLength": 10},
+    "published_at_precision": {"enum": ["day", "month"]},
+    "frozen_at": {"type": "string", "format": "date-time"},
+    "release_type": {"enum": ["paper", "technical_report", "model_report", "dataset_report", "infrastructure_report", "deployment_report", "research_video", "code_release", "benchmark"]},
+    "selection_basis": {"const": "source_first_frozen_before_catalog_reconciliation"},
+    "window": {"type": "object", "required": ["from", "to"], "properties": {"from": {"const": "2025-09-01"}, "to": {"const": "2026-08-31"}}},
+    "provenance": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["source_url", "observed_at", "status", "sha256", "hash_scope", "role", "excerpt"], "properties": {
+      "source_url": {"type": "string", "format": "uri"},
+      "observed_at": {"type": "string", "format": "date-time"},
+      "status": {"enum": ["captured", "access_gap"]},
+      "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+      "hash_scope": {"enum": ["http_response_body_bytes", null]},
+      "role": {"enum": ["official_index", "official_index_data", "release_page"]},
+      "excerpt": {"type": "string"}
+    }}}
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "version": "3.0",
+  "updated": "2026-09-05",
+  "batch_id": "required-groups-2026-09-05",
+  "organizations": [
+    {
+      "organization_id": "org:cornell-university", "display_name": "Cornell University", "short_name": "Cornell", "slug": "cornell-university",
+      "entity_type": "university", "tracking_unit": false, "tracking_category": "parent", "tier": "T2", "startup_frontier": false,
+      "region": "North America", "country": "United States", "aliases": [], "parent_relations": [],
+      "official_urls": {"home": "https://www.cornell.edu/"}, "leaders": [], "declared_direction_codes": [], "question_codes": [],
+      "disclosure_level": "high", "status": "active", "active_from": null, "active_to": null, "last_checked": "2026-09-05", "last_changed": null,
+      "source_health": "unverified", "summary_zh": "Cornell 母机构节点；EmPRISE 与大学的关系由实验室官方主页直接说明。", "representative_updates": []
+    },
+    {
+      "organization_id": "org:cornell-emprise", "display_name": "Cornell EmPRISE Lab", "short_name": "Cornell EmPRISE", "slug": "cornell-emprise",
+      "entity_type": "laboratory", "tracking_unit": true, "tracking_category": "academic", "tier": "T0", "startup_frontier": false,
+      "region": "North America", "country": "United States", "aliases": ["EmPRISE Lab", "EMpowering People with Robots and Intelligent Shared Experiences"],
+      "parent_relations": [{"parent_id": "org:cornell-university", "relation": "part_of", "valid_from": null, "valid_to": null, "evidence_url": "https://emprise.cs.cornell.edu/"}],
+      "official_urls": {"home": "https://emprise.cs.cornell.edu/", "publications": "https://emprise.cs.cornell.edu/publications/", "people": "https://emprise.cs.cornell.edu/people/"},
+      "leaders": [{"name": "Tapomayukh Bhattacharjee", "role": "Faculty", "valid_from": null, "valid_to": null, "source_url": "https://emprise.cs.cornell.edu/people/"}],
+      "declared_direction_codes": ["D4", "D7", "D15"], "question_codes": [], "disclosure_level": "high", "status": "active",
+      "active_from": null, "active_to": null, "last_checked": "2026-09-05", "last_changed": null, "source_health": "unverified",
+      "summary_zh": "研究协助行动不便人群完成日常活动的机器人，结合人机交互、触觉感知、操作、规划与控制，强调真实用户与真实系统评测。",
+      "information_gaps": ["建组日期和负责人任期起点尚未由带日期官方资料确认；网页内容已核实，自动来源健康检查待执行。"], "representative_updates": []
+    },
+    {
+      "organization_id": "org:university-of-texas-at-austin", "display_name": "The University of Texas at Austin", "short_name": "UT Austin", "slug": "university-of-texas-at-austin",
+      "entity_type": "university", "tracking_unit": false, "tracking_category": "parent", "tier": "T2", "startup_frontier": false,
+      "region": "North America", "country": "United States", "aliases": ["University of Texas at Austin"], "parent_relations": [],
+      "official_urls": {"home": "https://www.utexas.edu/"}, "leaders": [], "declared_direction_codes": [], "question_codes": [],
+      "disclosure_level": "high", "status": "active", "active_from": null, "active_to": null, "last_checked": "2026-09-05", "last_changed": null,
+      "source_health": "unverified", "summary_zh": "UT Austin 母机构节点；RPL 与大学关系由实验室主页及 Yuke Zhu 官方院系主页共同确认。", "representative_updates": []
+    },
+    {
+      "organization_id": "org:ut-austin-rpl", "display_name": "UT Austin Robot Perception and Learning Lab", "short_name": "UT Austin RPL", "slug": "ut-austin-rpl",
+      "entity_type": "laboratory", "tracking_unit": true, "tracking_category": "academic", "tier": "T0", "startup_frontier": false,
+      "region": "North America", "country": "United States", "aliases": ["UT Austin RPL Lab", "Robot Perception and Learning Lab"],
+      "parent_relations": [{"parent_id": "org:university-of-texas-at-austin", "relation": "part_of", "valid_from": null, "valid_to": null, "evidence_url": "https://rpl.cs.utexas.edu/"}],
+      "official_urls": {"home": "https://rpl.cs.utexas.edu/", "publications": "https://rpl.cs.utexas.edu/publications/", "people": "https://rpl.cs.utexas.edu/people/"},
+      "leaders": [{"name": "Yuke Zhu", "role": "Principal Investigator", "valid_from": null, "valid_to": null, "source_url": "https://rpl.cs.utexas.edu/people/"}],
+      "declared_direction_codes": ["D1", "D4", "D8", "D11"], "question_codes": [], "disclosure_level": "high", "status": "active",
+      "active_from": null, "active_to": null, "last_checked": "2026-09-05", "last_changed": null, "source_health": "unverified",
+      "summary_zh": "研究机器人感知与学习、通用机器人自主性及具身智能，以感知和动作闭环应对真实环境中的变化与不确定性。",
+      "information_gaps": ["Yuke Zhu 同时参与 NVIDIA GEAR；双重角色不用于把 RPL 论文自动归到 GEAR，工作归属逐篇核验。", "负责人任期起点未知；自动来源健康检查待执行。"], "representative_updates": []
+    },
+    {
+      "organization_id": "org:columbia-university", "display_name": "Columbia University", "short_name": "Columbia", "slug": "columbia-university",
+      "entity_type": "university", "tracking_unit": false, "tracking_category": "parent", "tier": "T2", "startup_frontier": false,
+      "region": "North America", "country": "United States", "aliases": [], "parent_relations": [],
+      "official_urls": {"home": "https://www.columbia.edu/"}, "leaders": [], "declared_direction_codes": [], "question_codes": [],
+      "disclosure_level": "high", "status": "active", "active_from": null, "active_to": null, "last_checked": "2026-09-05", "last_changed": null,
+      "source_health": "unverified", "summary_zh": "Columbia 母机构节点；ROAM 官方主页明确列出大学及院系归属。", "representative_updates": []
+    },
+    {
+      "organization_id": "org:columbia-roam", "display_name": "Columbia Robotic Manipulation and Mobility Lab", "short_name": "Columbia ROAM", "slug": "columbia-roam",
+      "entity_type": "laboratory", "tracking_unit": true, "tracking_category": "academic", "tier": "T0", "startup_frontier": false,
+      "region": "North America", "country": "United States", "aliases": ["Columbia ROAM Lab", "Robotic Manipulation and Mobility Lab"],
+      "parent_relations": [{"parent_id": "org:columbia-university", "relation": "part_of", "valid_from": null, "valid_to": null, "evidence_url": "https://roam.me.columbia.edu/"}],
+      "official_urls": {"home": "https://roam.me.columbia.edu/", "publications": "https://roam.me.columbia.edu/content/publications", "people": "https://roam.me.columbia.edu/people/matei-ciocarlie"},
+      "leaders": [{"name": "Matei Ciocarlie", "role": "Faculty", "valid_from": null, "valid_to": null, "source_url": "https://roam.me.columbia.edu/people/matei-ciocarlie"}],
+      "declared_direction_codes": ["D4", "D7", "D8", "D15"], "question_codes": [], "disclosure_level": "high", "status": "active",
+      "active_from": null, "active_to": null, "last_checked": "2026-09-05", "last_changed": null, "source_health": "unverified",
+      "summary_zh": "研究灵巧操作、触觉与本体感知、运动技能学习和控制、机构与传感器设计以及人在环操作。",
+      "information_gaps": ["不得与同校其他机器人组或 Stanford REAL 合并；历史跨组合作逐篇归属。", "建组及负责人任期起点未知；自动来源健康检查待执行。"], "representative_updates": []
+    }
+  ]
+}

@@ -1,0 +1,1168 @@
+{
+  "schema_version": "1",
+  "reviewed_at": "2026-09-05T16:59:07Z",
+  "gold_sample_changed": false,
+  "catalog_mutated": false,
+  "baseline_catalog_hash": "22e75cac546c7434f7c51d0a207c07eb964f368170d4fa7683cee644d72561ab",
+  "baseline_gold_hash": "399c12b11a9dd5abaaaffcc421b3aababe4cc5ec5b01a496efb3ea986b423da1",
+  "merge_reviews": [
+    {
+      "review_id": "identity:gold-release:2026-09-06:genesis-ai:01",
+      "review_status": "verified_merge_proposal_not_applied",
+      "gold_id": "gold-release:2026-09-06:genesis-ai:01",
+      "official_title": "The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward",
+      "official_url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+      "official_published_at": "2026-05-27",
+      "recommended_canonical_work_id": "report:05fa0e469c30ccee234e",
+      "merge_work_ids": [
+        "artifact:16fe0bb0acb571174c77"
+      ],
+      "canonical_records": [
+        {
+          "work_id": "artifact:16fe0bb0acb571174c77",
+          "title": "The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward May 27, 2026 Research",
+          "authors": [],
+          "first_public_date": null,
+          "first_public_date_precision": "unknown",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_project"
+            ],
+            "score": 1,
+            "status": "manual_review"
+          },
+          "aliases": [
+            "artifact:16fe0bb0acb571174c77",
+            "group-update:421cc48992759e72"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:f832f79256d1f6032cdb"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:6d5baebc05f7463f4795",
+              "kind": "project",
+              "title": null,
+              "url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+              "published_at": null,
+              "status": "official_group_update",
+              "source_record_id": "source:f832f79256d1f6032cdb"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:genesis-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward"
+            }
+          ]
+        },
+        {
+          "work_id": "report:05fa0e469c30ccee234e",
+          "title": "Genesis World 1.0 and the Path Forward",
+          "authors": [],
+          "first_public_date": "2026-05-27",
+          "first_public_date_precision": "day",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_technical_report"
+            ],
+            "score": 1,
+            "status": "included"
+          },
+          "aliases": [
+            "report:05fa0e469c30ccee234e",
+            "upd-genesis-world-1-20260527"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:693731e64d4c86cfaa57",
+            "source:group-updates:891cef752e0c09fb6fea9230",
+            "source:group-updates:8f1b61ae55e45205228487e6"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:72267bd491583ed83a21",
+              "kind": "technical_report",
+              "title": null,
+              "url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+              "published_at": "2026-05-27",
+              "status": "first_party_technical_report",
+              "source_record_id": "source:693731e64d4c86cfaa57"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:genesis-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_url": "https://www.genesis.ai/blog",
+          "effective_url": "https://www.genesis.ai/blog",
+          "observed_at": "2026-09-05T16:35:44.811092Z",
+          "sha256": "3eec9957e4b4d2da99ac20bc06b5aa936a1a5f4e86e7fc5f15bfdddbbcad22e0",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 29270,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "cy Policy . Blog 2 posts The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward May 27, 2026 Research GENE-26.5: Advancing Robotic Manipulation to Human Level May 7, 2026 Research"
+        },
+        {
+          "source_url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+          "effective_url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+          "observed_at": "2026-09-05T16:35:45.434831Z",
+          "sha256": "45c14a61ce2246a24d6876fd7457824db2a23bb75f0b5f88c21be7bb920bfc08",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 81792,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward Careers Blog News Contact Eno Close Join the waitlist We plan to begin targeted customer deployment"
+        }
+      ],
+      "reason": "The new artifact was created from the complete official index-card text, including date/summary fragments. It points to exactly the same first-party report URL as the existing dated technical report, not a distinct research contribution.",
+      "required_preservation": [
+        "all historical work aliases",
+        "source records and field provenance",
+        "organization links",
+        "model/project/report manifestations",
+        "merge lineage and change log"
+      ],
+      "additional_evidence": []
+    },
+    {
+      "review_id": "identity:gold-release:2026-09-06:genesis-ai:02",
+      "review_status": "verified_merge_proposal_not_applied",
+      "gold_id": "gold-release:2026-09-06:genesis-ai:02",
+      "official_title": "GENE-26.5: Advancing Robotic Manipulation to Human Level",
+      "official_url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+      "official_published_at": "2026-05-07",
+      "recommended_canonical_work_id": "report:cb5307205dbf7033264f",
+      "merge_work_ids": [
+        "artifact:68fbc8c3cb55bc64a39f"
+      ],
+      "canonical_records": [
+        {
+          "work_id": "report:cb5307205dbf7033264f",
+          "title": "GENE-26.5: Advancing Robotic Manipulation to Human Level",
+          "authors": [],
+          "first_public_date": "2026-05-07",
+          "first_public_date_precision": "day",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_technical_report"
+            ],
+            "score": 1,
+            "status": "included"
+          },
+          "aliases": [
+            "report:cb5307205dbf7033264f",
+            "upd-genesis-gene-26-5-20260507"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:b5d973b421b73eec4a1d",
+            "source:group-updates:b197abbeb3d1fc573daf6b90",
+            "source:group-updates:e547d61080464cc469f00ded"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:b39041385fce7de66950",
+              "kind": "technical_report",
+              "title": null,
+              "url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+              "published_at": "2026-05-07",
+              "status": "first_party_technical_report",
+              "source_record_id": "source:b5d973b421b73eec4a1d"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:genesis-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level"
+            }
+          ]
+        },
+        {
+          "work_id": "artifact:68fbc8c3cb55bc64a39f",
+          "title": "GENE-26.5: Advancing Robotic Manipulation to Human Level May 7, 2026 Research",
+          "authors": [],
+          "first_public_date": null,
+          "first_public_date_precision": "unknown",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_project"
+            ],
+            "score": 1,
+            "status": "manual_review"
+          },
+          "aliases": [
+            "artifact:68fbc8c3cb55bc64a39f",
+            "group-update:4a251150828ece01"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:1156f8aad44cb3b38256"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:9673b77442e38f4935a1",
+              "kind": "project",
+              "title": null,
+              "url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+              "published_at": null,
+              "status": "official_group_update",
+              "source_record_id": "source:1156f8aad44cb3b38256"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:genesis-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_url": "https://www.genesis.ai/blog",
+          "effective_url": "https://www.genesis.ai/blog",
+          "observed_at": "2026-09-05T16:35:44.811092Z",
+          "sha256": "3eec9957e4b4d2da99ac20bc06b5aa936a1a5f4e86e7fc5f15bfdddbbcad22e0",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 29270,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "rd May 27, 2026 Research GENE-26.5: Advancing Robotic Manipulation to Human Level May 7, 2026 Research 2 posts Made by humans, for humans. Careers Blog News Contact info@genesis.ai "
+        },
+        {
+          "source_url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+          "effective_url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+          "observed_at": "2026-09-05T16:35:45.383660Z",
+          "sha256": "5301102cc796bf6eccafa96588445f8d7efbaf8374d4a97c5ee13df1f449207b",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 82185,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "GENE-26.5: Advancing Robotic Manipulation to Human Level Careers Blog News Contact Eno Close Join the waitlist We plan to begin targeted customer deployment"
+        }
+      ],
+      "reason": "The new artifact was created from the complete official index-card text, including date/summary fragments. It points to exactly the same first-party report URL as the existing dated technical report, not a distinct research contribution.",
+      "required_preservation": [
+        "all historical work aliases",
+        "source records and field provenance",
+        "organization links",
+        "model/project/report manifestations",
+        "merge lineage and change log"
+      ],
+      "additional_evidence": []
+    },
+    {
+      "review_id": "identity:gold-release:2026-09-06:generalist-ai:01",
+      "review_status": "verified_merge_proposal_not_applied",
+      "gold_id": "gold-release:2026-09-06:generalist-ai:01",
+      "official_title": "GEN-1.5 / Embodied Foundation Models are One-Shot Learners",
+      "official_url": "https://generalistai.com/blog/gen-1.5",
+      "official_published_at": "2026-08-19",
+      "recommended_canonical_work_id": "report:de9e41b42353bf59a7e3",
+      "merge_work_ids": [
+        "artifact:3185739af03a39ce8cc2"
+      ],
+      "canonical_records": [
+        {
+          "work_id": "report:de9e41b42353bf59a7e3",
+          "title": "GEN-1.5",
+          "authors": [],
+          "first_public_date": "2026-08-19",
+          "first_public_date_precision": "day",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_technical_report"
+            ],
+            "score": 1,
+            "status": "included"
+          },
+          "aliases": [
+            "report:de9e41b42353bf59a7e3",
+            "upd-generalist-gen15-20260819"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:6244c1bed99bf542da11",
+            "source:group-updates:f836c0b8e9036cb2e0b8f837",
+            "source:group-updates:ff941b27ea5dbdeeca8662fa"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:29c0bd6a32f3e7b5dd1e",
+              "kind": "technical_report",
+              "title": null,
+              "url": "https://generalistai.com/blog/gen-1.5",
+              "published_at": "2026-08-19",
+              "status": "first_party_technical_report",
+              "source_record_id": "source:6244c1bed99bf542da11"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:generalist-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://generalistai.com/blog/gen-1.5"
+            }
+          ]
+        },
+        {
+          "work_id": "artifact:3185739af03a39ce8cc2",
+          "title": "GEN-1.5 / Embodied Foundation Models are One-Shot Learners GEN-1.5 can in-context learn a new task from as little as 12 seconds of demonstration data — or adapt with 1 to 10 gradient steps on minutes of data. These capabilities emerge from pretraining on large-scale physical experience. 17 min read August 19, 2026 GEN- 1.5",
+          "authors": [],
+          "first_public_date": null,
+          "first_public_date_precision": "unknown",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_project"
+            ],
+            "score": 1,
+            "status": "manual_review"
+          },
+          "aliases": [
+            "artifact:3185739af03a39ce8cc2",
+            "group-update:6d1c111d53af2b25"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:ccdeb97d28010284efeb"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:aa07c424178e5c8c3cea",
+              "kind": "project",
+              "title": null,
+              "url": "https://generalistai.com/blog/gen-1.5",
+              "published_at": null,
+              "status": "official_group_update",
+              "source_record_id": "source:ccdeb97d28010284efeb"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:generalist-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://generalistai.com/blog/gen-1.5"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_url": "https://generalistai.com/blog/research",
+          "effective_url": "https://generalistai.com/blog/research",
+          "observed_at": "2026-09-05T16:35:40.742767Z",
+          "sha256": "c307aa7e451c683204ff4d6d88216e54c9aa72d704a5e91a1b6e814eb5daf20d",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 112476,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": " to Index Research Posts GEN-1.5 / Embodied Foundation Models are One-Shot Learners GEN-1.5 can in-context learn a new task from as little as 12 seconds of demonstration data — or ada"
+        },
+        {
+          "source_url": "https://generalistai.com/blog/gen-1.5",
+          "effective_url": "https://generalistai.com/blog/gen-1.5",
+          "observed_at": "2026-09-05T16:35:40.733074Z",
+          "sha256": "51a564986512219caf72feea9e83488ae2a396dc8963afd68ac7a61947dd140d",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 85114,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "Generalist - GEN-1.5: Embodied Foundation Models are One-Shot Learners Index Blog About Careers Contact YouTube LinkedIn x.com © 2026 Generalist AI, Inc. All rights reserv"
+        }
+      ],
+      "reason": "The new artifact was created from the complete official index-card text, including date/summary fragments. It points to exactly the same first-party report URL as the existing dated technical report, not a distinct research contribution.",
+      "required_preservation": [
+        "all historical work aliases",
+        "source records and field provenance",
+        "organization links",
+        "model/project/report manifestations",
+        "merge lineage and change log"
+      ],
+      "additional_evidence": []
+    },
+    {
+      "review_id": "identity:gold-release:2026-09-06:generalist-ai:02",
+      "review_status": "verified_merge_proposal_not_applied",
+      "gold_id": "gold-release:2026-09-06:generalist-ai:02",
+      "official_title": "Towards Machines with a Thousand Hands",
+      "official_url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+      "official_published_at": "2026-07-23",
+      "recommended_canonical_work_id": "report:15d529127608f9b48896",
+      "merge_work_ids": [
+        "artifact:a7e4224b76168647bbe7"
+      ],
+      "canonical_records": [
+        {
+          "work_id": "report:15d529127608f9b48896",
+          "title": "Towards Machines with a Thousand Hands",
+          "authors": [],
+          "first_public_date": "2026-07-23",
+          "first_public_date_precision": "day",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_technical_report"
+            ],
+            "score": 1,
+            "status": "included"
+          },
+          "aliases": [
+            "report:15d529127608f9b48896",
+            "upd-generalist-thousand-hands-20260723"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:2b2a7371b55f88803aaf",
+            "source:group-updates:854c20afc3027fb570a40ec2",
+            "source:group-updates:ddb95adfa0db173996ac6f81"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:52f5a5135b6b3bc308b7",
+              "kind": "technical_report",
+              "title": null,
+              "url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+              "published_at": "2026-07-23",
+              "status": "first_party_technical_report",
+              "source_record_id": "source:2b2a7371b55f88803aaf"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:generalist-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands"
+            }
+          ]
+        },
+        {
+          "work_id": "artifact:a7e4224b76168647bbe7",
+          "title": "Towards Machines with a Thousand Hands Robots aren't locked into the hands they're born with. GEN-1 now supports a broad range of end effectors, showing how a single model can transfer across radically different ways of interacting with the physical world. 5 min read July 23, 2026",
+          "authors": [],
+          "first_public_date": null,
+          "first_public_date_precision": "unknown",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_project"
+            ],
+            "score": 1,
+            "status": "manual_review"
+          },
+          "aliases": [
+            "artifact:a7e4224b76168647bbe7",
+            "group-update:2b947614e42126ca"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:f0f57c4bfa5a939cba32"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:baf21cd5038e4309723d",
+              "kind": "project",
+              "title": null,
+              "url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+              "published_at": null,
+              "status": "official_group_update",
+              "source_record_id": "source:f0f57c4bfa5a939cba32"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:generalist-ai",
+              "evidence_grade": "G1",
+              "evidence_url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_url": "https://generalistai.com/blog/research",
+          "effective_url": "https://generalistai.com/blog/research",
+          "observed_at": "2026-09-05T16:35:40.742767Z",
+          "sha256": "c307aa7e451c683204ff4d6d88216e54c9aa72d704a5e91a1b6e814eb5daf20d",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 112476,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "August 19, 2026 GEN- 1.5 Towards Machines with a Thousand Hands Robots aren't locked into the hands they're born with. GEN-1 now supports a broad range of end effe"
+        },
+        {
+          "source_url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+          "effective_url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+          "observed_at": "2026-09-05T16:35:40.857958Z",
+          "sha256": "e88f64fb42fcf239ab802a72635411bf9e97212413a1873c97647190034e64eb",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 47347,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "Generalist - Towards Machines with a Thousand Hands Index Blog About Careers Contact YouTube LinkedIn x.com © 2026 Generalist AI, Inc. All rights reser"
+        }
+      ],
+      "reason": "The new artifact was created from the complete official index-card text, including date/summary fragments. It points to exactly the same first-party report URL as the existing dated technical report, not a distinct research contribution.",
+      "required_preservation": [
+        "all historical work aliases",
+        "source records and field provenance",
+        "organization links",
+        "model/project/report manifestations",
+        "merge lineage and change log"
+      ],
+      "additional_evidence": []
+    },
+    {
+      "review_id": "identity:gold-release:2026-09-06:physical-intelligence:01",
+      "review_status": "verified_merge_proposal_not_applied",
+      "gold_id": "gold-release:2026-09-06:physical-intelligence:01",
+      "official_title": "π0.7: a Steerable Model with Emergent Capabilities",
+      "official_url": "https://www.pi.website/blog/pi07",
+      "official_published_at": "2026-04-16",
+      "recommended_canonical_work_id": "arxiv:2604.15483",
+      "merge_work_ids": [
+        "artifact:40a33f7363fa2fdd534f"
+      ],
+      "canonical_records": [
+        {
+          "work_id": "artifact:40a33f7363fa2fdd534f",
+          "title": "π0.7: a Steerable Model with Emergent Capabilities",
+          "authors": [],
+          "first_public_date": "2026-04-16",
+          "first_public_date_precision": "day",
+          "identifiers": {
+            "arxiv": null,
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "official_group_model_release"
+            ],
+            "score": 1,
+            "status": "included"
+          },
+          "aliases": [
+            "artifact:40a33f7363fa2fdd534f",
+            "upd-pi-pi07-20260416"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:830b601b3a980df0c3e5",
+            "source:group-updates:36560165b4cf3fbb867ef20f"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:d510d0353737bc76306c",
+              "kind": "model",
+              "title": null,
+              "url": "https://www.pi.website/blog/pi07",
+              "published_at": "2026-04-16",
+              "status": "official_group_update",
+              "source_record_id": "source:830b601b3a980df0c3e5"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:physical-intelligence",
+              "evidence_grade": "G1",
+              "evidence_url": "https://www.pi.website/blog/pi07"
+            }
+          ]
+        },
+        {
+          "work_id": "arxiv:2604.15483",
+          "title": "$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities",
+          "authors": [
+            "Physical Intelligence",
+            "Bo Ai",
+            "Ali Amin",
+            "Raichelle Aniceto",
+            "Ashwin Balakrishna",
+            "Greg Balke",
+            "Kevin Black",
+            "George Bokinsky",
+            "Shihao Cao",
+            "Thomas Charbonnier",
+            "Vedant Choudhary",
+            "Foster Collins",
+            "Ken Conley",
+            "Grace Connors",
+            "James Darpinian",
+            "Karan Dhabalia",
+            "Maitrayee Dhaka",
+            "Jared DiCarlo",
+            "Danny Driess",
+            "Michael Equi",
+            "Adnan Esmail",
+            "Yunhao Fang",
+            "Chelsea Finn",
+            "Catherine Glossop",
+            "Thomas Godden",
+            "Ivan Goryachev",
+            "Lachlan Groom",
+            "Haroun Habeeb",
+            "Hunter Hancock",
+            "Karol Hausman",
+            "Gashon Hussein",
+            "Victor Hwang",
+            "Brian Ichter",
+            "Connor Jacobsen",
+            "Szymon Jakubczak",
+            "Rowan Jen",
+            "Tim Jones",
+            "Gregg Kammerer",
+            "Ben Katz",
+            "Liyiming Ke",
+            "Mairbek Khadikov",
+            "Chandra Kuchi",
+            "Marinda Lamb",
+            "Devin LeBlanc",
+            "Brendon LeCount",
+            "Sergey Levine",
+            "Xinyu Li",
+            "Adrian Li-Bell",
+            "Vladislav Lialin",
+            "Zhonglin Liang",
+            "Wallace Lim",
+            "Yao Lu",
+            "Enyu Luo",
+            "Vishnu Mano",
+            "Nandan Marwaha",
+            "Aikys Mongush",
+            "Liam Murphy",
+            "Suraj Nair",
+            "Tyler Patterson",
+            "Karl Pertsch",
+            "Allen Z. Ren",
+            "Gavin Schelske",
+            "Charvi Sharma",
+            "Baifeng Shi",
+            "Lucy Xiaoyang Shi",
+            "Laura Smith",
+            "Jost Tobias Springenberg",
+            "Kyle Stachowicz",
+            "Will Stoeckle",
+            "Jiaming Tang",
+            "Jimmy Tanner",
+            "Shalom Tekeste",
+            "Marcel Torne",
+            "Kyle Vedder",
+            "Quan Vuong",
+            "Anna Walling",
+            "Haohuan Wang",
+            "Jason Wang",
+            "XuDong Wang",
+            "Chris Whalen",
+            "Samuel Whitmore",
+            "Blake Williams",
+            "Charles Xu",
+            "Sukwon Yoo",
+            "Lili Yu",
+            "Wuming Zhang",
+            "Zhuoyang Zhang",
+            "Ury Zhilinsky"
+          ],
+          "first_public_date": "2026-04-16",
+          "first_public_date_precision": "day",
+          "identifiers": {
+            "arxiv": "2604.15483",
+            "doi": null
+          },
+          "relevance": {
+            "classifier_version": "3.0",
+            "reasons": [
+              "primary:foundation_models",
+              "hit:robotic foundation model",
+              "hit:generalist robot"
+            ],
+            "score": 6,
+            "status": "included"
+          },
+          "aliases": [
+            "arxiv:2604.15483"
+          ],
+          "output_types": null,
+          "source_record_ids": [
+            "source:2d92eff06934a1f0610b",
+            "source:attribution:57419966c3e479bc0ea4537b",
+            "source:papers:5148c80dd5dff18a53d6a28d",
+            "source:preprints:dc484699b09394c07140f61c",
+            "source:works:91422fe80ab11d0e951fa617"
+          ],
+          "manifestations": [
+            {
+              "manifestation_id": "manifest:049ce7aab4e86bfa2eb0",
+              "kind": "preprint",
+              "title": null,
+              "url": "https://arxiv.org/abs/2604.15483",
+              "published_at": "2026-04-16",
+              "status": "preprint",
+              "source_record_id": "source:2d92eff06934a1f0610b"
+            }
+          ],
+          "organization_links": [
+            {
+              "organization_id": "org:physical-intelligence",
+              "evidence_grade": "G1",
+              "evidence_url": "https://www.pi.website/blog/pi07"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_url": "https://www.pi.website/blog",
+          "effective_url": "https://www.pi.website/blog",
+          "observed_at": "2026-09-05T16:35:45.638126Z",
+          "sha256": "44fcecfbcf4d7fc4ffa6c24a4cabadd70440ed7937b8ed393e935063e05a82e9",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 45292,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "Research Join Us π 0.7 : a Steerable Model with Emergent Capabilities April 16, 2026 A steerable robotic foundation model that exhibits a step-change in generalization. Precis"
+        },
+        {
+          "source_url": "https://www.pi.website/blog/pi07",
+          "effective_url": "https://www.pi.website/blog/pi07",
+          "observed_at": "2026-09-05T16:35:45.680483Z",
+          "sha256": "69a9bcffd175b6aba8fdbe712f1775e1efb2a5bf11c18d4a1cfa1e5a31054b98",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 252068,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "A Steerable Model with Emergent Capabilities Physical Intelligence (π) Home Research Join Us π 0.7 : a Steerable Model with Emergent Capabilities Publ"
+        }
+      ],
+      "reason": "The official π0.7 blog links pi07.pdf. The PDF title is the arXiv work's full title and describes the same named model; preserve the model release as a manifestation of the arXiv canonical work.",
+      "required_preservation": [
+        "all historical work aliases",
+        "source records and field provenance",
+        "organization links",
+        "model/project/report manifestations",
+        "merge lineage and change log"
+      ],
+      "additional_evidence": [
+        {
+          "url": "https://www.pi.website/download/pi07.pdf",
+          "sha256": "d718dbcfcf294f87a2179052dcd2e783ea1f542f484d05dfa2ce139bc00d7d5b",
+          "hash_scope": "http_response_body_bytes",
+          "excerpt": "π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities",
+          "basis": "official_blog_PDF_title_and_model_identity_match_arxiv2604.15483"
+        }
+      ]
+    }
+  ],
+  "verified_release_identities": [
+    {
+      "review_id": "source-chain:tri-safe",
+      "gold_id": "gold-release:2026-09-06:tri-robotics:01",
+      "review_status": "verified_primary_source_identity",
+      "confirmed_work_identifier": "arxiv:2506.09937",
+      "existing_work_id": "arxiv:2506.09937",
+      "gold_url": "https://www.tri.global/research/safe-multitask-failure-detection-vision-language-action-models",
+      "release_date": "2025-10-30",
+      "source_chain": [
+        {
+          "url": "https://www.tri.global/research/safe-multitask-failure-detection-vision-language-action-models",
+          "relation": "official_TRI_release_redirects_to_project"
+        },
+        {
+          "url": "https://vla-safe.github.io/",
+          "relation": "project_arxiv_link_and_exact_title_authors"
+        },
+        {
+          "url": "https://arxiv.org/abs/2506.09937",
+          "relation": "primary_arxiv_identity"
+        }
+      ],
+      "authors": [
+        "Qiao Gu",
+        "Yuanliang Ju",
+        "Shengxiang Sun",
+        "Igor Gilitschenski",
+        "Haruki Nishimura",
+        "Masha Itkina",
+        "Florian Shkurti"
+      ],
+      "recommendation": "Attach TRI release URL and dated v2/project manifestation to the existing work, rather than creating a second canonical work.",
+      "date_note": "First arXiv public release is 2025-06-11; TRI posting coincides with arXiv v2 on 2025-10-30. This gold row tests the later release, not a new October work.",
+      "catalog_link_state_at_review": "title_candidate_in_baseline_matcher; work_identity_now_verified_externally; missing_official_release_alias_not_a_missing_paper"
+    },
+    {
+      "review_id": "source-chain:tri-rola",
+      "gold_id": "gold-release:2026-09-06:tri-robotics:02",
+      "review_status": "verified_primary_source_identity",
+      "confirmed_work_identifier": "arxiv:2509.22970",
+      "existing_work_id": "arxiv:2509.22970",
+      "gold_url": "https://www.tri.global/research/robot-learning-any-images",
+      "release_date": "2025-09-26",
+      "source_chain": [
+        {
+          "url": "https://www.tri.global/research/robot-learning-any-images",
+          "relation": "official_TRI_release_redirects_to_project"
+        },
+        {
+          "url": "https://sihengz02.github.io/RoLA/",
+          "relation": "project_arxiv_link_and_exact_title_authors"
+        },
+        {
+          "url": "https://arxiv.org/abs/2509.22970",
+          "relation": "primary_arxiv_identity"
+        }
+      ],
+      "authors": [
+        "Siheng Zhao",
+        "Jiageng Mao",
+        "Wei Chow",
+        "Zeyu Shangguan",
+        "Tianheng Shi",
+        "Rong Xue",
+        "Yuxi Zheng",
+        "Yijia Weng",
+        "Yang You",
+        "Daniel Seita",
+        "Leonidas Guibas",
+        "Sergey Zakharov",
+        "Vitor Guizilini",
+        "Yue Wang"
+      ],
+      "recommendation": "Attach the official TRI release/project URLs to the existing canonical work and separately preserve its existing USC attribution.",
+      "catalog_link_state_at_review": "title_candidate_in_baseline_matcher; work_identity_now_verified_externally; missing_official_release_alias_not_a_missing_paper"
+    }
+  ],
+  "unmatched_release_reviews": [
+    {
+      "identifiers": {
+        "official_release_id": "figure:f-03-at-bmw"
+      },
+      "summary_zh": "Figure 自述 F.03 在 BMW Spartanburg 工厂完成零件排序、取放与拉动推车等全身协同操作，属于部署观察报告；不是新的独立同行评审成果。",
+      "authors": [],
+      "existing_work_ids": [
+        "artifact:ff42121d5bafdde2753d"
+      ],
+      "relationship": {
+        "type": "deployment_of_existing_model_family",
+        "family": "Helix 02 / Figure 03",
+        "status": "verified_named_product_relationship",
+        "evidence_url": "https://www.figure.ai/news/f-03-at-bmw"
+      },
+      "recommendation": "Add a dated deployment manifestation/event linked to the Helix 02/production project family. Do not upgrade maturity from a company demonstration alone.",
+      "research_evidence_lane": "company_observation",
+      "gold_id": "gold-release:2026-09-06:figure-ai:02",
+      "title": "F.03 Arrives at BMW",
+      "url": "https://www.figure.ai/news/f-03-at-bmw",
+      "published_at": "2026-06-30",
+      "release_type": "deployment_report",
+      "official_source_provenance": [
+        {
+          "source_url": "https://www.figure.ai/news",
+          "effective_url": "https://www.figure.ai/news",
+          "observed_at": "2026-09-05T16:35:43.446609Z",
+          "sha256": "01fd1161e906199db6348d4aa3c0b084ed232765d4f407c877e991705b2ea8ab",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 55179,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "gure Stock June 30, 2026 F.03 Arrives at BMW May 26, 2026 Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations May 08, 2026 "
+        },
+        {
+          "source_url": "https://www.figure.ai/news/f-03-at-bmw",
+          "effective_url": "https://www.figure.ai/news/f-03-at-bmw",
+          "observed_at": "2026-09-05T16:35:43.473398Z",
+          "sha256": "719bd55bed8a5919b4b3109ae600a39d2f967970d9130f8f8c096ec4f418bf93",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 35802,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "F.03 Arrives at BMW FIGURE 03 HELIX INDEX NEWS CAREERS COMPANY F.03 Arrives at BMW June 30, 2026 F.03 Arrives at BMW To"
+        }
+      ]
+    },
+    {
+      "identifiers": {
+        "arxiv": "2604.23073",
+        "official_report_url": "https://www.pi.website/download/rlt.pdf"
+      },
+      "summary_zh": "PI 的 RL Token 方法用 VLA 的紧凑表示连接轻量 actor-critic，针对精密操作进行数小时内的在线强化学习；博客是已有 arXiv 工作的较早公开报告。",
+      "authors": [
+        "Charles Xu",
+        "Jost Tobias Springenberg",
+        "Michael Equi",
+        "Ali Amin",
+        "Adnan Esmail",
+        "Sergey Levine",
+        "Liyiming Ke"
+      ],
+      "existing_work_ids": [
+        "arxiv:2604.23073"
+      ],
+      "relationship": {
+        "type": "same_work_earlier_official_report",
+        "status": "verified_title_all_authors_method_and_official_backlink",
+        "evidence_urls": [
+          "https://www.pi.website/research/rlt",
+          "https://www.pi.website/download/rlt.pdf",
+          "https://arxiv.org/abs/2604.23073"
+        ],
+        "pdf_sha256": "feecf0f5799bcb3775f42d5de5d5832e61eb379bd47b627ad9a0f6c86f3ebf31",
+        "pdf_title": "RL Token: Bootstrapping Online RL with Vision-Language-Action Models"
+      },
+      "recommendation": "Attach the official blog and PDF to arxiv:2604.23073, retain the later arXiv manifestation, and revise first_public_date to 2026-03-19 with provenance/lineage. Do not add a duplicate work.",
+      "date_revision": {
+        "current_first_public_date": "2026-04-24",
+        "verified_earlier_public_date": "2026-03-19",
+        "source_url": "https://www.pi.website/research/rlt"
+      },
+      "gold_id": "gold-release:2026-09-06:physical-intelligence:02",
+      "title": "Precise Manipulation with Efficient Online RL",
+      "url": "https://www.pi.website/research/rlt",
+      "published_at": "2026-03-19",
+      "release_type": "technical_report",
+      "official_source_provenance": [
+        {
+          "source_url": "https://www.pi.website/blog",
+          "effective_url": "https://www.pi.website/blog",
+          "observed_at": "2026-09-05T16:35:45.638126Z",
+          "sha256": "44fcecfbcf4d7fc4ffa6c24a4cabadd70440ed7937b8ed393e935063e05a82e9",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 45292,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "hange in generalization. Precise Manipulation with Efficient Online RL March 19, 2026 We extract an RL Token from VLA models to enable fast online RL and improve throughp"
+        },
+        {
+          "source_url": "https://www.pi.website/research/rlt",
+          "effective_url": "https://www.pi.website/research/rlt",
+          "observed_at": "2026-09-05T16:35:45.715434Z",
+          "sha256": "f109b6bcaebd3181c78e28b88ff1179a24f30fa6008b0732d33a9f6050552c31",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 156789,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "Precise Manipulation with Efficient Online RL Physical Intelligence (π) Home Research Join Us Precise Manipulation with Efficient Online RL Publi"
+        }
+      ]
+    },
+    {
+      "identifiers": {
+        "arxiv": "2603.04553"
+      },
+      "summary_zh": "LPWM 从视频自监督学习物体中心表示与随机动力学，并通过潜在动作模块支持动作、语言和图像目标条件，展示目标条件模仿学习等决策用途。",
+      "authors": [
+        "Tal Daniel",
+        "Carl Qi",
+        "Dan Haramati",
+        "Amir Zadeh",
+        "Chuan Li",
+        "Aviv Tamar",
+        "Deepak Pathak",
+        "David Held"
+      ],
+      "existing_work_ids": [],
+      "relationship": {
+        "type": "new_work_not_found_by_primary_identifier",
+        "status": "verified_exact_arxiv_identifier_absent_in_catalog_index",
+        "evidence_urls": [
+          "https://www.cs.cmu.edu/~dpathak/",
+          "https://arxiv.org/abs/2603.04553"
+        ]
+      },
+      "recommendation": "Ingest the arXiv record and the official Pathak publication-page evidence. Apply normal relevance/classification/peer-review gates; do not derive acceptance from the lab label alone.",
+      "first_public_at": "2026-03-04T19:36:08Z",
+      "gold_id": "gold-release:2026-09-06:cmu-pathak-research-group:01",
+      "title": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+      "url": "https://arxiv.org/abs/2603.04553",
+      "published_at": "2026-03-04T19:36:08Z",
+      "release_type": "paper",
+      "official_source_provenance": [
+        {
+          "source_url": "https://www.cs.cmu.edu/~dpathak/",
+          "effective_url": "https://www.cs.cmu.edu/~dpathak/",
+          "observed_at": "2026-09-05T16:35:43.185011Z",
+          "sha256": "b1aa0fef92134f5fb356eae55e8dd2da217678a7c6fc6ca5b9bd46a85e3b09b0",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 292277,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "Learning}, year={2026} } Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling Tal Daniel, Carl Qi, Dan Haramati, Amir Zadeh, Chuan Li, Aviv Tamar, Deepak Pathak, David Held ICLR"
+        },
+        {
+          "source_url": "https://arxiv.org/abs/2603.04553",
+          "effective_url": "https://arxiv.org/abs/2603.04553",
+          "observed_at": "2026-09-05T16:35:39.631539Z",
+          "sha256": "33765f37b792c90912c018ed4e258e84b5711e3bdafbb368c7436ff5ba99a177",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 42065,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "[2603.04553] Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced sear"
+        }
+      ]
+    },
+    {
+      "identifiers": {
+        "official_model_id": "gemini-robotics-er-2",
+        "model_card_url": "https://deepmind.google/models/model-cards/gemini-robotics-er-2/"
+      },
+      "summary_zh": "Google 的 ER 2 发布具体介绍高层具身推理模型的视频进度理解、任务工具调度、多机器人协同及低延迟接口；它与已收录的 Robotics 2 全身动作模型同属一代产品族，但发布链接和角色不能省略。",
+      "authors": [
+        "Steven Hansen",
+        "Peng Xu"
+      ],
+      "existing_work_ids": [
+        "artifact:be0e6d9f58324b6c783a"
+      ],
+      "relationship": {
+        "type": "distinct_model_in_existing_release_family",
+        "family": "Gemini Robotics 2",
+        "status": "verified_family_relationship_not_automatic_canonical_merge",
+        "evidence_urls": [
+          "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+          "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+        ]
+      },
+      "recommendation": "Record ER 2 as an explicit model/output and preserve its own announcement/model-card URLs. Review whether it is a manifestation of the existing family announcement or warrants a separate canonical technical work; do not use the parent's URL as proof that this release was captured.",
+      "gold_id": "gold-release:2026-09-06:google-deepmind-robotics:02",
+      "title": "Introducing Gemini Robotics ER 2",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+      "published_at": "2026-07-30",
+      "release_type": "model_report",
+      "official_source_provenance": [
+        {
+          "source_url": "https://deepmind.google/blog/",
+          "effective_url": "https://deepmind.google/blog/",
+          "observed_at": "2026-09-05T16:35:40.599327Z",
+          "sha256": "0642319ec1e8ced67e049af954cf0865f1c794da06bc61ecae6c3414244acccd",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 193465,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "News — Google DeepMind Skip to main content Explore our next generation AI systems Explore models Gemini Gemini Build intelligent agents Gemini Omni Create anything from anything N"
+        },
+        {
+          "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+          "effective_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+          "observed_at": "2026-09-05T16:35:40.546669Z",
+          "sha256": "678f38a408c8de8fd4bca594bc2660fdc0fd49987405fb097ffa643dbe58b42d",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 386567,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "R 2 Skip to main content Introducing Gemini Robotics ER 2 Innovation & AI Products & platforms Company news Feed Newsletter Back Innovation & AI See all in I"
+        }
+      ]
+    },
+    {
+      "identifiers": {
+        "arxiv_related": "2608.20546",
+        "official_project_url": "https://koalagripper.rai-inst.com/",
+        "release_video_id": "Lg0Lq7s69G4",
+        "paper_video_id": "ZoygFCWAVhg"
+      },
+      "summary_zh": "RAI 的视频发布介绍同名 Koala 数据采集设备与机器人夹爪协同设计。已有论文覆盖该系统；此条视频是单独的后续传播/观察发布，未显示独立于论文的新实验结论。",
+      "authors": [],
+      "existing_work_ids": [
+        "arxiv:2608.20546"
+      ],
+      "relationship": {
+        "type": "same_named_hardware_project_followup_video",
+        "status": "verified_same_system_but_not_same_video_asset",
+        "evidence_urls": [
+          "https://rai-inst.com/resources/videos/the-koala-gripper-advancing-dexterous-robotic-manipulation-through-human-centric-data-collection/",
+          "https://koalagripper.rai-inst.com/",
+          "https://arxiv.org/abs/2608.20546"
+        ],
+        "note": "The official release and paper reference different YouTube assets; do not pretend they are the same video or an independent replication."
+      },
+      "recommendation": "Keep the frozen research_video sample. Add it as a follow-up video/observation manifestation linked to the existing Koala work/project after the relationship audit, not as a fresh mature research signal.",
+      "research_evidence_lane": "research_observation",
+      "gold_id": "gold-release:2026-09-06:rai-institute:01",
+      "title": "The Koala Gripper: Advancing Dexterous Robotic Manipulation through Human-Centric Data Collection",
+      "url": "https://rai-inst.com/resources/videos/the-koala-gripper-advancing-dexterous-robotic-manipulation-through-human-centric-data-collection/",
+      "published_at": "2026-08-29",
+      "release_type": "research_video",
+      "official_source_provenance": [
+        {
+          "source_url": "https://rai-inst.com/resources/",
+          "effective_url": "https://rai-inst.com/resources/",
+          "observed_at": "2026-09-05T16:35:41.939547Z",
+          "sha256": "7bc0ac1e6c6fc4dfe63d5481e591d86b4f98f850e5c55751ffc463fee70518d6",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 74385,
+          "status": "captured",
+          "role": "official_index",
+          "excerpt": "kshop Reset Aug 29, 2026 The Koala Gripper: Advancing Dexterous Robotic Manipulation through Human-Centric Data Collection Get a closer look at the Koala gripper! The co-designed system pairs a handheld data collector and "
+        },
+        {
+          "source_url": "https://rai-inst.com/resources/videos/the-koala-gripper-advancing-dexterous-robotic-manipulation-through-human-centric-data-collection/",
+          "effective_url": "https://rai-inst.com/resources/videos/the-koala-gripper-advancing-dexterous-robotic-manipulation-through-human-centric-data-collection/",
+          "observed_at": "2026-09-05T16:35:42.200559Z",
+          "sha256": "543a5431f5e46841957bdd35875268656744954aadb5de61d55c2e34510bc851",
+          "hash_scope": "http_response_body_bytes",
+          "byte_count": 57881,
+          "status": "captured",
+          "role": "release_page",
+          "excerpt": "The Koala Gripper: Advancing Dexterous Robotic Manipulation through Human-Centric Data Collection | RAI Institute Toggle navigation Research About Overview Learn about our mission to shape the futu"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "These are inspectable source-based proposals, not applied database mutations or a reason to remove gold rows.",
+    "Four index-card artifacts are duplicate representations of already dated reports; their title strings include card descriptions/dates. Fix the parser and preserve lineage on merge.",
+    "The π0.7 model artifact and paper are two manifestations of the same named work, as supported by the official PDF.",
+    "A missing official release URL does not establish that the underlying paper is absent. RLT, Koala, SAFE and RoLA already have canonical works and need source/manifestation linkage.",
+    "Only LPWM is confirmed absent by its primary arXiv identifier in this audit. ER 2 and Figure's deployment announcement require explicit representation and relationship decisions."
+  ]
+}

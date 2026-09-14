@@ -2,18 +2,34 @@ import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import { defineAsyncComponent } from 'vue'
 import './custom.css'
+import './visual-radar.css'
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app, router }) {
-    app.component('ResearchVisuals', defineAsyncComponent(
-      () => import('./components/ResearchVisuals.vue'),
+    app.component('HardwareRadar', defineAsyncComponent(
+      () => import('./components/HardwareRadar.vue'),
     ))
-    app.component('ResearchGroupExplorer', defineAsyncComponent(
-      () => import('./components/ResearchGroupExplorer.vue'),
+    app.component('LocoManipRadar', defineAsyncComponent(
+      () => import('./components/LocoManipRadar.vue'),
     ))
-    app.component('ResearchGroupLandscape', defineAsyncComponent(
-      () => import('./components/ResearchGroupLandscape.vue'),
+    app.component('PeopleRadar', defineAsyncComponent(
+      () => import('./components/PeopleRadar.vue'),
+    ))
+    app.component('RadarDashboard', defineAsyncComponent(
+      () => import('./components/RadarDashboard.vue'),
+    ))
+    app.component('DatabaseExplorer', defineAsyncComponent(
+      () => import('./components/DatabaseExplorer.vue'),
+    ))
+    app.component('PulseFeed', defineAsyncComponent(
+      () => import('./components/PulseFeed.vue'),
+    ))
+    app.component('ConferenceRadar', defineAsyncComponent(
+      () => import('./components/ConferenceRadar.vue'),
+    ))
+    app.component('OrganizationCoverage', defineAsyncComponent(
+      () => import('./components/OrganizationCoverage.vue'),
     ))
     if (typeof window === 'undefined') return
     let disposePageEnhancements = () => {}
@@ -26,9 +42,10 @@ export default {
         const headers = thead.querySelectorAll('th')
         headers.forEach((header, column) => {
           header.tabIndex = 0
-          header.title = '点击排序'
-          header.setAttribute('role', 'button')
-          header.insertAdjacentHTML('beforeend', '<span class="sort-indicator"> ⇅</span>')
+          header.title = '按回车、空格或点击排序'
+          header.scope = 'col'
+          header.setAttribute('aria-label', `${header.textContent?.trim() || '此列'}：回车或空格排序`)
+          header.insertAdjacentHTML('beforeend', '<span class="sort-indicator" aria-hidden="true"> ⇅</span>')
           let ascending = true
           const sort = () => {
             const tbody = table.querySelector('tbody')
@@ -51,10 +68,13 @@ export default {
             })
             const indicator = header.querySelector('.sort-indicator')
             if (indicator) indicator.textContent = ascending ? ' ↑' : ' ↓'
+            headers.forEach((cell) => cell.removeAttribute('aria-sort'))
+            header.setAttribute('aria-sort', ascending ? 'ascending' : 'descending')
             ascending = !ascending
           }
           header.addEventListener('click', sort)
           header.addEventListener('keydown', (event) => {
+            if (event.target !== header) return
             if (event.key === 'Enter' || event.key === ' ') {
               event.preventDefault()
               sort()
@@ -78,6 +98,12 @@ export default {
         floating.setAttribute('aria-hidden', 'true')
         const clone = document.createElement('table')
         const clonedHead = table.querySelector('thead')?.cloneNode(true) as HTMLTableSectionElement
+        clonedHead.removeAttribute('id')
+        clonedHead.querySelectorAll('[id]').forEach((element) => element.removeAttribute('id'))
+        const excludeCloneFocus = () => {
+          clonedHead.querySelectorAll<HTMLElement>('[tabindex], a, button, input, select, textarea').forEach((element) => { element.tabIndex = -1 })
+        }
+        excludeCloneFocus()
         clone.appendChild(clonedHead)
         floating.appendChild(clone)
         document.body.appendChild(floating)
@@ -90,6 +116,7 @@ export default {
             clonedHeaders.forEach((cell, cellIndex) => {
               cell.innerHTML = originalHeaders[cellIndex]?.innerHTML ?? cell.innerHTML
             })
+            excludeCloneFocus()
           }, { signal: controller.signal })
         })
 
@@ -154,9 +181,32 @@ export default {
       initSortableTables()
       disposePageEnhancements = initFloatingHeaders()
     }
+    let enhancementTimer = 0
     const scheduleInit = () => {
-      window.setTimeout(initPageEnhancements, 80)
+      window.clearTimeout(enhancementTimer)
+      enhancementTimer = window.setTimeout(initPageEnhancements, 80)
     }
+    // Data-backed Vue tables may arrive after the route's initial mount.
+    // Observe only new, uninitialized documentation tables; our decorative
+    // floating copies live outside .vp-doc and cannot trigger a feedback loop.
+    const tableObserver = new MutationObserver((records) => {
+      const addedTable = records.some((record) => Array.from(record.addedNodes).some((node) => {
+        if (!(node instanceof Element)) return false
+        return node.matches('.vp-doc table:not(.sortable-init)') || Boolean(node.querySelector('.vp-doc table:not(.sortable-init)'))
+      }))
+      if (addedTable) scheduleInit()
+    })
+    tableObserver.observe(document.body, { childList: true, subtree: true })
+    window.addEventListener('pagehide', () => {
+      tableObserver.disconnect()
+      window.clearTimeout(enhancementTimer)
+      disposePageEnhancements()
+    })
+    window.addEventListener('pageshow', (event) => {
+      if (!event.persisted) return
+      tableObserver.observe(document.body, { childList: true, subtree: true })
+      scheduleInit()
+    })
     router.onAfterRouteChanged = scheduleInit
     window.addEventListener('load', scheduleInit, { once: true })
     scheduleInit()

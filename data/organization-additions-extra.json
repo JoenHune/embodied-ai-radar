@@ -1,0 +1,275 @@
+{
+  "version": "3.1",
+  "updated": "2026-09-05",
+  "batch_id": "required-groups-extra-2026-09-05",
+  "verification_scope": "Official identity, leader and university affiliation checks only; source_health remains unverified until the registered source monitoring workflow runs. No paper attribution is inferred from current employment or roster.",
+  "organizations": [
+    {
+      "organization_id": "org:new-york-university",
+      "display_name": "New York University",
+      "short_name": "NYU",
+      "slug": "new-york-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": ["NYU"],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.nyu.edu/",
+        "identity_source": "https://robotics.engineering.nyu.edu/group/grail/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "New York University 母机构节点；GRAIL 与 NYU 的关系由学校 CREO 实验室页和 Lerrel Pinto 官方教师页共同支持。",
+      "information_gaps": ["本次仅核查身份来源；NYU 主站读取返回 403，不能视为已完成自动来源健康检查。"],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:nyu-grail",
+      "display_name": "NYU General-purpose Robotics and AI Lab",
+      "short_name": "NYU GRAIL",
+      "slug": "nyu-grail",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T0",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": ["NYU GRAIL", "General-purpose Robotics and AI Lab", "General Robotics & AI Lab at NYU"],
+      "parent_relations": [
+        {
+          "parent_id": "org:new-york-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://robotics.engineering.nyu.edu/group/grail/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://robotics.engineering.nyu.edu/group/grail/",
+        "publications": "https://www.lerrelpinto.com/",
+        "leader_profile": "https://engineering.nyu.edu/faculty/lerrel-pinto"
+      },
+      "leaders": [
+        {
+          "name": "Lerrel Pinto",
+          "role": "Lab Lead",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://robotics.engineering.nyu.edu/group/grail/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "pi_lineage_id": "pi:lerrel-pinto",
+      "declared_direction_codes": ["D1", "D4", "D8", "D9", "D11", "D15"],
+      "question_codes": [],
+      "direction_mapping_source": "https://www.lerrelpinto.com/",
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人泛化与适应，重点包括大规模机器人学习、感知表征、动作与行为建模、强化学习适配及低成本开源机器人；公开研究亦覆盖灵巧操作与触觉。学校页与负责人页使用略有不同的 GRAIL 全称，按同一官方关联实验室记录。",
+      "information_gaps": [
+        "负责人任期和建组起点未知，保持 null；本次为身份核验，未执行自动来源监测或工作回填。",
+        "Lerrel Pinto 的个人主页当前同时披露 Meta Superintelligence Labs 与 ARI 等产业角色，并保留 NYU GRAIL 学术角色；这些角色不能用于回写历史论文雇主或合并实验室。",
+        "未将裸缩写 GRAIL 作为跨机构自动合并依据；工作归属需逐篇直接证据或带时间的成员关系。"
+      ],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:university-of-california-san-diego",
+      "display_name": "University of California San Diego",
+      "short_name": "UC San Diego",
+      "slug": "university-of-california-san-diego",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": ["UC San Diego", "UCSD", "University of California, San Diego"],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.ucsd.edu/",
+        "identity_source": "https://jacobs.ucsd.edu/node/3659"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "UC San Diego 母机构节点；Xiaolong Wang 的任职与个人研究主页链接由 Jacobs School 官方教师档案支持。",
+      "information_gaps": ["本次仅核查身份与主页可读取性，未执行自动来源监测。"],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:ucsd-xiaolong-wang",
+      "display_name": "UC San Diego Xiaolong Wang Group",
+      "short_name": "UCSD Xiaolong Wang Group",
+      "slug": "ucsd-xiaolong-wang",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T0",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": ["UCSD Xiaolong Wang Group", "Xiaolong Wang Research Group at UC San Diego"],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-california-san-diego",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://jacobs.ucsd.edu/node/3659"
+        }
+      ],
+      "official_urls": {
+        "home": "https://xiaolonw.github.io/",
+        "people": "https://xiaolonw.github.io/group.html",
+        "publications": "https://xiaolonw.github.io/publication_select.html",
+        "leader_profile": "https://jacobs.ucsd.edu/node/3659"
+      },
+      "leaders": [
+        {
+          "name": "Xiaolong Wang",
+          "role": "Associate Professor and Research Group Lead",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://jacobs.ucsd.edu/node/3659"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "pi_lineage_id": "pi:xiaolong-wang",
+      "declared_direction_codes": ["D4", "D5", "D8", "D9", "D11", "D15"],
+      "question_codes": [],
+      "direction_mapping_source": "https://xiaolonw.github.io/",
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "以视频与物理交互数据学习表征及机器人技能，研究真实世界中对不同物体和环境的泛化；官方个人研究页及学术组页覆盖灵巧操作、人形机器人、空间表征与触觉。尚无核实的独立实验室正式名称，使用明确的 PI 研究组名称。",
+      "information_gaps": [
+        "官方教师简介给出 2020 年加入 UCSD，但这不足以确定当前研究组成立日或负责人完整任期，因此有效期保持 null。",
+        "个人主页当前同时披露 Meta Superintelligence Labs 研究总监、ARI 与 NVIDIA 历史角色，并明确保留 UCSD 副教授身份；学术组与雇主分别记录，不据当前角色合并或回溯归属。",
+        "当前 roster 只作发现线索；人员页面中的未来去向不视为已生效历史成员关系。",
+        "本次仅完成官方身份与链接核验，尚未执行自动来源健康检查、逐篇回填或 Q0–Q10 映射。"
+      ],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:princeton-university",
+      "display_name": "Princeton University",
+      "short_name": "Princeton",
+      "slug": "princeton-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": ["Princeton"],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.princeton.edu/",
+        "identity_source": "https://irom-lab.princeton.edu/data/lab.yml"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "Princeton University 母机构节点；IRoM 官网元数据直接列明大学与机械航空工程院系归属。",
+      "information_gaps": ["本次仅核查身份与主页可读取性，未执行自动来源监测。"],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:princeton-irom",
+      "display_name": "Princeton Intelligent Robot Motion Lab",
+      "short_name": "Princeton IRoM Lab",
+      "slug": "princeton-irom",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T0",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": ["Princeton IRoM Lab", "Intelligent Robot Motion Lab"],
+      "parent_relations": [
+        {
+          "parent_id": "org:princeton-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://irom-lab.princeton.edu/data/lab.yml"
+        }
+      ],
+      "official_urls": {
+        "home": "https://irom-lab.princeton.edu/",
+        "research": "https://irom-lab.princeton.edu/research/",
+        "people": "https://irom-lab.princeton.edu/people/",
+        "publications": "https://irom-lab.princeton.edu/publications/",
+        "leader_profile": "https://engineering.princeton.edu/faculty/anirudha-majumdar",
+        "identity_metadata": "https://irom-lab.princeton.edu/data/people.yml"
+      },
+      "leaders": [
+        {
+          "name": "Anirudha Majumdar",
+          "role": "Principal Investigator",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://irom-lab.princeton.edu/data/people.yml"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "pi_lineage_id": "pi:anirudha-majumdar",
+      "declared_direction_codes": ["D1", "D3", "D8", "D10", "D12", "D13"],
+      "question_codes": [],
+      "direction_mapping_source": "https://irom-lab.princeton.edu/research/",
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究有用、安全且可信的通用机器人，当前官方路线聚焦动作条件世界模型的预训练、快速本体适配、部署评测与策略改进，并关注不确定性和安全规划。PI 与大学归属由实验室官网使用的公开结构化元数据直接支持。",
+      "information_gaps": [
+        "负责人有效期与实验室成立日期未确认，保持 null；负责人当前 DeepMind 访问职位不用于自动把 IRoM 论文归到 DeepMind。",
+        "官网 people/publications 页面由 JavaScript 渲染；本次沿官网 site.js 读取其公开 data/people.yml 和 data/lab.yml 完成身份核验，后续监测需避免把空 HTML 当作零篇论文或零成员。",
+        "官网研究路线中的 Q1–Q9 是实验室自定义问题编号，不能直接等同雷达 Q0–Q10；本批暂不填写问题轴。",
+        "本次未执行自动来源健康检查或逐篇研究归属回填。"
+      ],
+      "representative_updates": []
+    }
+  ]
+}

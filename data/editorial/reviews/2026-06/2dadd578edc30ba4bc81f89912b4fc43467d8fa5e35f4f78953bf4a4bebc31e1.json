@@ -1,0 +1,197 @@
+{
+  "review_id": "editorial-review:2026-06:source-scope-1",
+  "reviewer": "Codex AI（源绑定内容审校，非人工专家）",
+  "reviewer_kind": "ai",
+  "reviewed_at": "2026-09-06T08:14:16Z",
+  "parent_artifact_digest": "f6125674e993e81de0d986c8f2a56be045fe7c83242524c04b4092f94d8000d2",
+  "parent_response_id": "resp_03cda349cc546219016a9d1c6dd98087d09f944a5b56c3fc27",
+  "input_digest": "884132b4bdb95e6f01447e3fed462be204176a25b6713fbee7a2965ac059794f",
+  "edits": [
+    {
+      "path": "/claims",
+      "before": [
+        {
+          "title": "触觉与力觉被用于接触预测和闭环动作修正",
+          "summary": "本月预印本探索统一触觉潜空间、未来接触或力信号预测、实时反馈修正与在线策略细化；相关效果均来自作者摘要，尚不等于独立复现。",
+          "directions": [
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.31723",
+            "arxiv:2606.08737",
+            "arxiv:2606.13232"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:1"
+        },
+        {
+          "title": "世界模型同时服务于动作生成、控制和策略评测",
+          "summary": "样本包括潜空间未来预测、动作条件动力学与闭环策略评测；不同工作使用的任务、预算和评测协议并不统一。",
+          "directions": [
+            "D3"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.03188",
+            "arxiv:2606.04907",
+            "arxiv:2606.05699"
+          ],
+          "counterevidence_ids": [
+            "arxiv:2606.27374"
+          ],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:2"
+        },
+        {
+          "title": "人类视频到机器人动作依赖本体和动作接口对齐",
+          "summary": "Human-as-Humanoid通过第一—第三视角视频、运动恢复和控制器对齐动作块转换监督；HumanScale则在固定协议下比较第一视角人类视频与真机遥操作数据。积极结果仍受各自处理管线和评测条件约束。",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.32009",
+            "arxiv:2606.20521"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:3"
+        },
+        {
+          "title": "失败发现、干预和适配正在形成闭环研究对象",
+          "summary": "主动失败搜索、不确定性检测和代理干预分别面向暴露风险、选择适配数据与减少人工纠正，但本月证据尚未提供统一跨平台验证。",
+          "directions": [
+            "D1",
+            "D7",
+            "D12"
+          ],
+          "questions": [
+            "Q7"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.02307",
+            "arxiv:2606.12372",
+            "arxiv:2606.18043"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:4"
+        }
+      ],
+      "after": [
+        {
+          "title": "触觉与力觉被用于接触预测和闭环动作修正",
+          "summary": "本月预印本探索统一触觉潜空间、未来接触或力信号预测、实时反馈修正与在线策略细化；相关效果均来自作者摘要，尚不等于独立复现。",
+          "directions": [
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.31723",
+            "arxiv:2606.08737",
+            "arxiv:2606.13232"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:1"
+        },
+        {
+          "title": "世界模型同时服务于动作生成、控制和策略评测",
+          "summary": "样本包括潜空间未来预测、动作条件动力学与闭环策略评测；不同工作使用的任务、预算和评测协议并不统一。",
+          "directions": [
+            "D3"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.03188",
+            "arxiv:2606.04907",
+            "arxiv:2606.05699"
+          ],
+          "counterevidence_ids": [
+            "arxiv:2606.27374"
+          ],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:2"
+        },
+        {
+          "title": "人类视频到机器人动作依赖本体和动作接口对齐",
+          "summary": "Human-as-Humanoid通过第一—第三视角视频、运动恢复和控制器对齐动作块转换监督；HumanScale则在固定协议下比较第一视角人类视频与真机遥操作数据。积极结果仍受各自处理管线和评测条件约束。",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.32009",
+            "arxiv:2606.20521"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:3"
+        },
+        {
+          "title": "失败发现、干预和适配正在形成闭环研究对象",
+          "summary": "主动失败搜索、不确定性检测和代理干预分别面向暴露风险、选择适配数据与减少人工纠正，但本月证据尚未提供统一跨平台验证。",
+          "directions": [
+            "D1",
+            "D7",
+            "D12"
+          ],
+          "questions": [
+            "Q7"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.02307",
+            "arxiv:2606.12372",
+            "arxiv:2606.18043"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-06:llm:claims:4"
+        },
+        {
+          "title": "负载适配与运动风格条件化用于人形全身控制",
+          "summary": "SplitAdapter冻结预训练搬箱策略，分别编码物体负载与机体动力学条件；运动风格迁移工作结合风格、动作内容和轨迹条件，并引入接触一致性与时间平滑约束。作者摘要分别报告了对应的仿真与真机实验；本条仅核对摘要，不据此判断跨平台通用性、证据成熟度或独立复现。",
+          "directions": [
+            "D5"
+          ],
+          "questions": [
+            "Q5"
+          ],
+          "supporting_ids": [
+            "arxiv:2606.03297",
+            "arxiv:2606.03536"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": []
+        }
+      ],
+      "evidence_ids": [
+        "arxiv:2606.03297",
+        "arxiv:2606.03536"
+      ],
+      "reason": "按content-audit的内容遗漏、专名和事实一致性清单补充执行层尚未覆盖的全身控制主题。已直接读取官方指定版本摘要 https://arxiv.org/abs/2606.03297v1 与 https://arxiv.org/abs/2606.03536v1，核对负载/动力学分离适配、风格/动作内容/轨迹条件及作者报告的实验载体，与 logs/editorial/2026-06-49477a5dfa4c/evidence-packet.json 中已可用摘要一致。本次仅做AI摘要层来源审校，不声称阅读全文或独立复现，不添加数值事实、成熟度或跨平台能力结论。原四条及其ID、引用、数值字段完整保留；新增条目仅引用本次核对的原始来源。"
+    }
+  ]
+}

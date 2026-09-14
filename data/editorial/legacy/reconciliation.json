@@ -1,0 +1,854 @@
+{
+  "schema_version": "3",
+  "status": "reconciled",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "active_complete_months": [
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "provisional_month": "2026-09",
+  "source_counts": {
+    "trend_cards": 46,
+    "paper_editorial_notes": 121,
+    "direction_context": 5,
+    "forecasts": 8
+  },
+  "restored_counts": {
+    "trend_cards": 46,
+    "active_window_trend_cards": 40,
+    "paper_editorial_notes": 121,
+    "direction_context": 5,
+    "forecasts": 8
+  },
+  "trend_cards_requiring_evidence_review": 33,
+  "paper_notes_requiring_evidence_review": 51,
+  "mapping_counts": {
+    "exact": 132
+  },
+  "relevance_counts": {
+    "candidate": 18,
+    "included": 74,
+    "manual_review": 40
+  },
+  "review_reasons": {
+    "canonical_relevance_candidate": 18,
+    "canonical_relevance_manual_review": 40,
+    "classification_review_required": 53
+  },
+  "cards": [
+    {
+      "claim_id": "claim:legacy:2025-07:31122eeb284c",
+      "month": "2025-07",
+      "title": "人类视频开始被拆成可迁移的动作先验",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-07/0",
+        "record_sha256": "0a735bfee200a28aebc016e160530b24da6d6edb7be33a4a027b0f2d82dc2857"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
+      "output_path": "data/editorial/legacy/2025-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-07:4044a8fc5409",
+      "month": "2025-07",
+      "title": "“大脑—小脑”正在从二层变成三系统",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-07/1",
+        "record_sha256": "0640ee192ce6e367545f0583127ee7e2b37e7481e03b7946305031377c3bc2f1"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
+      "output_path": "data/editorial/legacy/2025-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-07:2db7101640dc",
+      "month": "2025-07",
+      "title": "空间增强很热，但尚未等于通用性",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-07/2",
+        "record_sha256": "11a15379596d39f14a4ed8bafe6bcd5b90004444597f633bf4f0aafecadfdb49"
+      },
+      "legacy_evidence_count": 1,
+      "canonical_evidence_count": 1,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
+      "output_path": "data/editorial/legacy/2025-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-08:06b286be38b5",
+      "month": "2025-08",
+      "title": "视频生成器开始越过“数据增强”，直接扮演策略",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-08/0",
+        "record_sha256": "de093ac54cc2609db5eaf716b19eba4e756b8da2f7fae109a157b8f5c52df1db"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
+      "output_path": "data/editorial/legacy/2025-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-08:93bfa90765e9",
+      "month": "2025-08",
+      "title": "触觉开始进入 VLA 统一语义空间",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-08/1",
+        "record_sha256": "1606c4f1ddb81f860a63340c059689471c5a2625e94f291b9d8a7233a5336d48"
+      },
+      "legacy_evidence_count": 1,
+      "canonical_evidence_count": 1,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
+      "output_path": "data/editorial/legacy/2025-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-08:54f5ce696be7",
+      "month": "2025-08",
+      "title": "世界模型仍更像适配器，而非可靠规划器",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-08/2",
+        "record_sha256": "a0700910ecf6a073c8899f7437cddd8f378dcfbf1b1c55d7d27162af5a5209f7"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
+      "output_path": "data/editorial/legacy/2025-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-09:b448ec393472",
+      "month": "2025-09",
+      "title": "flow matching 正在成为通用策略的新执行底座",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-09/0",
+        "record_sha256": "7877e52836b81aa7e653618e7171ae9963cedcff378433d31c9bfe7d60b4d6f0"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-09.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-09:bbc331d5f4fe",
+      "month": "2025-09",
+      "title": "灵巧操作的数据表示从关节轨迹转向接触与第一视角",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-09/1",
+        "record_sha256": "d6a3c8e84a7dacfb86ee6e97c283873499807522f896a0964155941746c43363"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-09.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-09:aa6fbf01c896",
+      "month": "2025-09",
+      "title": "在线搜索被塞进 VLA 推理环",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-09/2",
+        "record_sha256": "75071df99909e7f1bed59aaf091b617c3002af119400b73f81e48eed97f951f6"
+      },
+      "legacy_evidence_count": 1,
+      "canonical_evidence_count": 1,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-09.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-10:77ab19317fac",
+      "month": "2025-10",
+      "title": "fast–slow 从隐式分工变成显式训练目标",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-10/0",
+        "record_sha256": "6fc34a8e15a823dc1e265c2ec1aeea4d4f2f14070a0e44d6085744c786935310"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-10.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-10:fb308fe3c128",
+      "month": "2025-10",
+      "title": "世界模型开始进入 VLA 后训练",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-10/1",
+        "record_sha256": "72983369d8142cf5c5d21372bfc6cbfead27bfe4237e0a4ab8b9efd4a174fb6b"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-10.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-10:e404c38bb53c",
+      "month": "2025-10",
+      "title": "视频驱动双臂学习成为数据规模化的第二战场",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-10/2",
+        "record_sha256": "315787f120fd4ea54601a2e136a27999d141cbae47a02a20f7d4d163413f6edd"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-10.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-11:5b3e1ac2509b",
+      "month": "2025-11",
+      "title": "世界模型终于开始用规划成功率证明自己",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-11/0",
+        "record_sha256": "c32900089dd345dc10042da1dea31615af5bc6a968efd051e7055369e6a6a489"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-11.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-11:0b3366e8c0c1",
+      "month": "2025-11",
+      "title": "跨本体迁移从模型适配转向数据分布设计",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-11/1",
+        "record_sha256": "751c4d904c558e8af1d2b5216628b7325a19e87172910564bea91cd897a05658"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-11.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-11:009ecf34c532",
+      "month": "2025-11",
+      "title": "VLA 开始从示范学习走向“从经验学习”",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-11/2",
+        "record_sha256": "a13e6b498345c6cf04fb88733b20103d20634bdce1c2fae89e257ce7a938fd7d"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-11.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-12:76284cca5267",
+      "month": "2025-12",
+      "title": "世界模型与搜索/规划形成方法簇",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-12/0",
+        "record_sha256": "b3f6617990d95cd3aa476e80476d3b8cd391457de4163fdcb67e51854b123d39"
+      },
+      "legacy_evidence_count": 4,
+      "canonical_evidence_count": 4,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-12.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-12:9ef93025e524",
+      "month": "2025-12",
+      "title": "双系统跨出 manipulation，开始覆盖导航与视频策略",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-12/1",
+        "record_sha256": "78945a2d6020e324bc74fa435f48d502bcc05df146992048e148b33dbe1ef044"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-12.json"
+    },
+    {
+      "claim_id": "claim:legacy:2025-12:d90f516153a7",
+      "month": "2025-12",
+      "title": "低成本示范采集与合成开始合流",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-12/2",
+        "record_sha256": "30279b33482912016b73f51c8863c409882817ab24dc77fbf99294f3aae5a72c"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2025-12.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-01:79f9fc5fd7ff",
+      "month": "2026-01",
+      "title": "latent action world model 从实验室走向 in-the-wild",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-01/0",
+        "record_sha256": "ce80246c9367584ceae4f8ab74f15a808202a3c86c37e8ccd861e25bf05d2211"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-01.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-01:0c6330c754a4",
+      "month": "2026-01",
+      "title": "Action CoT 与非对称专家正在重写大小脑接口",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-01/1",
+        "record_sha256": "1f28d72c0c13b03012b3ba7fba7ecda7c2fae25568035af2a901b59122f240cf"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-01.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-01:7cd80646c9f1",
+      "month": "2026-01",
+      "title": "人类中心数据被推到跨本体预训练主线",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-01/2",
+        "record_sha256": "99917d90f0ddffc993a7955217901c266a075018899b1391e905081d9ed530b6"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-01.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-02:1a4e2ccaa218",
+      "month": "2026-02",
+      "title": "世界模型开始承担 RL 模拟器与在线自纠错",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-02/0",
+        "record_sha256": "e0b5a0e9cdba6a239a152a94cf714ebe20c733964e5f5c43b38e6ca4244ae2fa"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-02.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-02:aeca71c699e1",
+      "month": "2026-02",
+      "title": "快慢系统开始感知力、接触与完成状态",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-02/1",
+        "record_sha256": "a712c0ab34b96737d984ad215fb43cb81759131978cbc3bcda952bf4cb53bcef"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-02.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-02:246dd967eba2",
+      "month": "2026-02",
+      "title": "egocentric 数据开始真正服务灵巧规模化",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-02/2",
+        "record_sha256": "d434eeb192844f8182a706751eee1cb5e51f50a115fa5a00833079db0dc45fbd"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-02.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-03:9cf00cd3d1d7",
+      "month": "2026-03",
+      "title": "world model 的新门槛是“动作可执行”",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-03/0",
+        "record_sha256": "7982822fae045175d2f049aa078d9a418d0c31948b5d9300dbce703c22e93335"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-03.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-03:81f48d5d72f6",
+      "month": "2026-03",
+      "title": "灵巧操作从单步抓取转向可观测的长时接触",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-03/1",
+        "record_sha256": "51573f00d85efcd3e0e3aac0bf3c6ad41114dab488dc4ff6b22cb79c51807fe8"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-03.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-03:1b63f56b9955",
+      "month": "2026-03",
+      "title": "论文量激增，但不能把提交周期当成技术爆发",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-03/2",
+        "record_sha256": "219b6d96915b43916b79c27d32c5445f3c5748877356d6be77ebe03e58b91b29"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-03.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-04:ba55460e62f4",
+      "month": "2026-04",
+      "title": "触觉与 world model 开始合流",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-04/0",
+        "record_sha256": "6b54ca18dfeaf4c860fd99cbedea2b02d0f4e89f474b6fcd07ffac2e8a3ea758"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-04.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-04:5d88f8061c9d",
+      "month": "2026-04",
+      "title": "双系统进入异步 coarse-to-fine 调度",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-04/1",
+        "record_sha256": "d86ed9cbf1e858d27aba22dd16ed914ae077ef813c32fb8d22801db89879992f"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-04.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-04:6ba21e933b8e",
+      "month": "2026-04",
+      "title": "foundation model 开始接受垂直本体与可控行为约束",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-04/2",
+        "record_sha256": "ef7f46f3a98cf8e2224a7ca7541f14a246285131159e1116d75b752ce6517921"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-04.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-05:745179157d46",
+      "month": "2026-05",
+      "title": "视频模型正在被改造成 generalist policy，而非外置 world model",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-05/0",
+        "record_sha256": "29ea9fcaac72b9395ba08b3d596d1a44b9bc23de951ba3955174345ea9fb69a6"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-05.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-05:e49070976597",
+      "month": "2026-05",
+      "title": "连续推理开始取代离散 reason–act 循环",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-05/1",
+        "record_sha256": "1423d05fdf447ff8f7e8ead400e5cd625b39f791829bb728d97b507bc6fa2d62"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-05.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-05:a87f509d92e9",
+      "month": "2026-05",
+      "title": "generalist 底座开始向软体与灵巧专用能力下沉",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-05/2",
+        "record_sha256": "e0a42871d51ce686231fd22d00fbd3015c8dfebd79d2981c1aaf1ab37a9375f7"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-05.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-06:645c4b88db94",
+      "month": "2026-06",
+      "title": "大小脑接口正在变成可监督的 3D 轨迹语言",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-06/0",
+        "record_sha256": "3a35e248a7f0348f801f3d9581b692fb0ff4d7823fd9a1cd9de5e07a368236e4"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-06.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-06:721c5136e68b",
+      "month": "2026-06",
+      "title": "触觉从专用 policy 升级为 VLA 的预测通道",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-06/1",
+        "record_sha256": "313cabfe63c677c96cccdb1f2a3308b50e4cf400d977c220b35f3cb8bad14e67"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-06.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-06:852af9959dda",
+      "month": "2026-06",
+      "title": "开放训练栈与人类视频迁移同时加速",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-06/2",
+        "record_sha256": "8c44966122d0023a5183336f74056cd1c0ccf0dd099273004c9cb9661fd5881d"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": false,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-06.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:9b8e788d62b0",
+      "month": "2026-07",
+      "title": "论文报告 100K 小时级真实轨迹，暂不是已确认趋势",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/0",
+        "record_sha256": "c43e96362a41339609ef56aad327921f64be06a1c93b8bf5e40f2e08391d0431"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:d86839135883",
+      "month": "2026-07",
+      "title": "视触觉 world model 正从感知融合转向失败恢复",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/1",
+        "record_sha256": "2c5bd5a0ab6962f522ae93022de773ba36eef6d0859eea8d7ca7f87d423b9918"
+      },
+      "legacy_evidence_count": 4,
+      "canonical_evidence_count": 4,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:d6773930f1a8",
+      "month": "2026-07",
+      "title": "VLA 的下一层竞争从动作生成转向在线评价与纠错",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/2",
+        "record_sha256": "d5eba0a26a5749408da939ad1b0353930436bd70309c1a5ffc35574287700500"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:ea8bb3534209",
+      "month": "2026-07",
+      "title": "长时序瓶颈正在从“任务分解”迁移到进度、记忆与运行时状态",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/3",
+        "record_sha256": "83ca4bba7fb41f0242fad886088565709b15f1277c28880f21db4988499ff204"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:c8b677aec14d",
+      "month": "2026-07",
+      "title": "具身 Agent OS 可能成为模型之上的系统层",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/4",
+        "record_sha256": "355dd98f92fab0da935e22aac3ffdbf4042c3efc343bf76a9886196d2d8e94b6"
+      },
+      "legacy_evidence_count": 1,
+      "canonical_evidence_count": 1,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-07.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-08:3f7ff2b21d76",
+      "month": "2026-08",
+      "title": "world model 的评价中心转向动作跟随与执行效用",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-08/0",
+        "record_sha256": "a20b1d14239126ffc17f94e826b036b3a234576fa1c376339e2bcfeb2f58718a"
+      },
+      "legacy_evidence_count": 6,
+      "canonical_evidence_count": 6,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-08:19fcf2503a69",
+      "month": "2026-08",
+      "title": "跨本体接口正从关节适配器迁移到行为与几何共同表征",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-08/1",
+        "record_sha256": "4a4c30036eb8fa0fbadbe2960cd09d2e250046f0c64955dde318abbe7316953d"
+      },
+      "legacy_evidence_count": 5,
+      "canonical_evidence_count": 5,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-08:65fb18b7b8ce",
+      "month": "2026-08",
+      "title": "部署学习从单次后训练转向持久记忆与无梯度自适应",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-08/2",
+        "record_sha256": "a7757889b39dd25190f80306c16bf31f78f23081031a36cd9462a36355997da0"
+      },
+      "legacy_evidence_count": 3,
+      "canonical_evidence_count": 3,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-08:f74f1d0374f2",
+      "month": "2026-08",
+      "title": "长时序从延长 context 转向执行历史、技能边界与持久程序",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-08/3",
+        "record_sha256": "1704e3cfb78201db79372e7dc0339ae592e94eca43de4f8e78c8e26166324d9d"
+      },
+      "legacy_evidence_count": 5,
+      "canonical_evidence_count": 5,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-08.json"
+    },
+    {
+      "claim_id": "claim:legacy:2026-08:f86a3a6f39d0",
+      "month": "2026-08",
+      "title": "触觉数据规模首次成为基础设施级变量，但独立复现仍不足",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-08/4",
+        "record_sha256": "c6547e6e115c1eaef03fc2a74b0280e640dc22c29de4ed363fb53dc3ec5f641d"
+      },
+      "legacy_evidence_count": 2,
+      "canonical_evidence_count": 2,
+      "unresolved_legacy_ids": [],
+      "evidence_review_required": true,
+      "in_active_window": true,
+      "disposition": "restored_active_month",
+      "output_path": "data/editorial/legacy/2026-08.json"
+    }
+  ],
+  "output_months": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "scientific_judgments_reaudited": false,
+  "context_assessment": {
+    "directions": "Five legacy categories contain useful definitions, route comparisons and limitations; use as dated background only, not D1–D15 monthly statistics.",
+    "forecasts": "All existing forecasts retain observed evidence, confirmation milestones and falsifiers; use only in the as-of month watchlist without claiming outcomes occurred."
+  }
+}

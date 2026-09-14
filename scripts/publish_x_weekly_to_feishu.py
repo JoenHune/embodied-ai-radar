@@ -11,6 +11,7 @@ from pathlib import Path
 from publish_group_weekly_to_feishu import (
     append_index,
     create_document,
+    document_url,
     markdown_blocks,
     read,
     replace_document_blocks,
@@ -56,11 +57,15 @@ def main() -> None:
         document_id, doc_url = existing["document_id"], existing["doc_url"]
     else:
         document_id, doc_url = create_document(token, os.environ["FEISHU_FOLDER_TOKEN"], title)
-    replace_document_blocks(token, document_id, blocks)
-    if not existing:
-        append_index(token, os.environ["FEISHU_X_INDEX_DOC_TOKEN"], week_id, title, doc_url, summary)
-        existing = {"week": week_id, "document_id": document_id, "doc_url": doc_url}
+        existing = {"week": week_id, "document_id": document_id, "doc_url": doc_url, "status": "pending"}
         deliveries["deliveries"].append(existing)
+        DELIVERIES.write_text(json.dumps(deliveries, ensure_ascii=False, indent=2) + "\n")
+    if not doc_url:
+        doc_url = document_url(token, document_id)
+        existing["doc_url"] = doc_url
+    replace_document_blocks(token, document_id, blocks)
+    if existing.get("status") != "published":
+        append_index(token, os.environ["FEISHU_X_INDEX_DOC_TOKEN"], week_id, title, doc_url, summary)
     existing.update({"status": "published", "updated_at": weekly.get("generated_at"), "title": title})
     DELIVERIES.write_text(json.dumps(deliveries, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(existing, ensure_ascii=False))

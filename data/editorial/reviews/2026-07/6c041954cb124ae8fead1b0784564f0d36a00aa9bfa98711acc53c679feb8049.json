@@ -1,0 +1,213 @@
+{
+  "review_id": "editorial-review:2026-07:source-scope-1",
+  "reviewer": "Codex AI（逐版本摘要内容审校，非人工专家）",
+  "reviewer_kind": "ai",
+  "reviewed_at": "2026-09-06T08:23:47Z",
+  "parent_artifact_digest": "bb55b10bb560768f1840272e43cf2aecda90151b8e87acdfce4a0567d4833c5d",
+  "parent_response_id": "resp_02843e912394d2dc016a9d2124df1c87d0b830ad46a2b3dd6a",
+  "input_digest": "51ddf454500175fd04e6fd5befef5bf332a0dc3902ddda781fcb304a41883ead",
+  "edits": [
+    {
+      "op": "replace",
+      "path": "/claims",
+      "before": [
+        {
+          "title": "策略改进覆盖评估、在线适配与部署反馈",
+          "summary": "本月样本把动作后果评估、在线强化学习、价值估计和部署反馈转化为策略改进信号；相关结论主要来自论文摘要，尚不能视为独立复现。",
+          "directions": [
+            "D8",
+            "D13"
+          ],
+          "questions": [
+            "Q0",
+            "Q6"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.03751",
+            "arxiv:2607.04265",
+            "arxiv:2607.09866",
+            "arxiv:2607.29172"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:1"
+        },
+        {
+          "title": "世界模型进入决策时规划与可实现性检查",
+          "summary": "动作条件世界模型被用于想象滚动搜索、中间转移的动作一致性检查和未来环境变化下的路径评估；现有摘要不足以证明相同数据与计算预算下的普遍闭环收益。",
+          "directions": [
+            "D2",
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q4",
+            "Q10"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.00673",
+            "arxiv:2607.02403",
+            "arxiv:2607.27599"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:2"
+        },
+        {
+          "title": "人类数据被转化为动作、触觉和主动视角监督",
+          "summary": "样本从人类触觉—动作数据、第一视角相机运动和家庭多模态活动中构造机器人学习监督，但其跨本体执行净收益仍需在固定机器人数据预算下比较。",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2",
+            "Q3"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.01067",
+            "arxiv:2607.02417",
+            "arxiv:2607.28625"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:3"
+        },
+        {
+          "title": "触觉学习覆盖表征、预测和闭环纠正",
+          "summary": "本月研究涉及未来视觉监督的触觉表征、想象触觉、触觉残差适配、触觉世界模型以及高频接触约束；不同硬件和控制接口下的结果尚不可直接横向比较。",
+          "directions": [
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.24485",
+            "arxiv:2607.01684",
+            "arxiv:2607.03723",
+            "arxiv:2607.23783",
+            "doi:10.1109/lra.2026.3701123"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:4"
+        }
+      ],
+      "after": [
+        {
+          "title": "策略改进覆盖评估、在线适配与部署反馈",
+          "summary": "本月样本把动作后果评估、在线强化学习、价值估计和部署反馈转化为策略改进信号；相关结论主要来自论文摘要，尚不能视为独立复现。",
+          "directions": [
+            "D8",
+            "D13"
+          ],
+          "questions": [
+            "Q0",
+            "Q6"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.03751",
+            "arxiv:2607.04265",
+            "arxiv:2607.09866",
+            "arxiv:2607.29172"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:1"
+        },
+        {
+          "title": "世界模型进入决策时规划与可实现性检查",
+          "summary": "动作条件世界模型被用于想象滚动搜索、中间转移的动作一致性检查和未来环境变化下的路径评估；现有摘要不足以证明相同数据与计算预算下的普遍闭环收益。",
+          "directions": [
+            "D2",
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q4",
+            "Q10"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.00673",
+            "arxiv:2607.02403",
+            "arxiv:2607.27599"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:2"
+        },
+        {
+          "title": "人类数据被转化为动作、触觉和主动视角监督",
+          "summary": "样本从人类触觉—动作数据、第一视角相机运动和家庭多模态活动中构造机器人学习监督，但其跨本体执行净收益仍需在固定机器人数据预算下比较。",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2",
+            "Q3"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.01067",
+            "arxiv:2607.02417",
+            "arxiv:2607.28625"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:3"
+        },
+        {
+          "title": "触觉学习覆盖表征、预测和闭环纠正",
+          "summary": "本月研究涉及未来视觉监督的触觉表征、想象触觉、触觉残差适配、触觉世界模型以及高频接触约束；不同硬件和控制接口下的结果尚不可直接横向比较。",
+          "directions": [
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.24485",
+            "arxiv:2607.01684",
+            "arxiv:2607.03723",
+            "arxiv:2607.23783",
+            "doi:10.1109/lra.2026.3701123"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": [],
+          "claim_id": "claim:2026-07:llm:claims:4"
+        },
+        {
+          "title": "全身运动控制显式处理动力学、接触与步态约束",
+          "summary": "本月样本用动力学特征构建人形抗扰运动先验，并在四足步态训练与墙支撑行走中引入时序逻辑约束和接触点规划，关注全身运动的可行性与稳定性；所引步态及墙支撑行走结果为作者报告的仿真证据，不能视为独立真机验证。",
+          "directions": [
+            "D5"
+          ],
+          "questions": [
+            "Q1",
+            "Q4"
+          ],
+          "supporting_ids": [
+            "arxiv:2607.03454",
+            "arxiv:2607.00442",
+            "arxiv:2607.01574"
+          ],
+          "counterevidence_ids": [],
+          "numeric_claims": []
+        }
+      ],
+      "evidence_ids": [
+        "arxiv:2607.03454",
+        "arxiv:2607.00442",
+        "arxiv:2607.01574"
+      ],
+      "reason": "AI摘要审校：四条原判断分别覆盖策略闭环、学习型世界模型规划、人类数据与触觉，但未呈现已有D5样本中的物理一致性及全身运动约束主题；本次仅追加第五条，原条目字段和引用均不变。逐项实际读取与七月证据包一致的官方版本摘要：https://arxiv.org/abs/2607.03454v2（动力学特征的对抗正则与抗扰运动先验），https://arxiv.org/abs/2607.00442v1（时序逻辑步态约束、MuJoCo XLA仿真），https://arxiv.org/abs/2607.01574v1（接触点规划、全身控制与数值仿真）。只描述当月样本机制，不加入数值、不推断增长或历史转向、不升级同行评审/独立复现。MR-NMPC的作者自报接收信息不作为官方评审确认。新增主题不使用已发现后续撤回版本的Athena-WBC。"
+    }
+  ]
+}

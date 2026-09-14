@@ -1,7 +1,16 @@
 node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+docs/public/api/v1/
+docs/public/downloads/
+logs/
+.weekly-v3.lock/
+.venv/
+data/migration-archive/
 .DS_Store
+.env
+.env.*
+!.env.example
 *.local
 __pycache__/
 .research/

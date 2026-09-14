@@ -1,0 +1,449 @@
+{
+  "schema_version": "1",
+  "requested_source_cutoff": "2026-09-14",
+  "analysis_cutoff": "2026-09-14",
+  "cutoff_basis": "analysis_window_not_collection_completeness",
+  "available_data_through": "2026-09-11",
+  "last_observed_arxiv_v1_date": "2026-09-11",
+  "registered_scope_complete": false,
+  "primary_corpora_complete": false,
+  "status": "partial",
+  "sources": [
+    {
+      "source": "arxiv",
+      "status": "partial",
+      "complete": false,
+      "check_status_this_run": "imported_official_html_fallback",
+      "rechecked_this_run": false,
+      "imported_at": "2026-09-14T02:58:49Z",
+      "checked_at": "2026-09-14T02:11:15Z",
+      "analysis_cutoff": "2026-09-14",
+      "requested_window": {
+        "from": "2026-09-01",
+        "until": "2026-09-14",
+        "basis": "first_submission_date_UTC"
+      },
+      "source_data_through": null,
+      "last_observed_data_through": "2026-09-11",
+      "observed_records": 568,
+      "expected_records": null,
+      "html_fallback": {
+        "complete_for_observed_html_scope": true,
+        "core_cs_ro": {
+          "advertised_month_list_total": 491,
+          "listed_unique_ids": 491,
+          "listing_pagination_complete": true,
+          "metadata_complete_for_observed_month_list": true,
+          "verified_cs_ro_records": 460,
+          "outside_first_submission_window": 31,
+          "unresolved_metadata_count": 0,
+          "scope_limit": "Complete only against this observed official monthly announcement list, not claimed equivalent to the failed submittedDate API query.",
+          "source": {
+            "url": "https://arxiv.org/list/cs.RO/2026-09?skip=0&show=2000",
+            "sha256": "dc0c7af7c7598f46556b7ef285d06dcc1f0da920ac32f8e65aff2cdf3e91b601",
+            "finished_at": "2026-09-14T01:56:00Z",
+            "raw_file": "raw/monthly-cs-ro.html"
+          }
+        },
+        "supplementary": {
+          "robot_crosslist": {
+            "status": "ok",
+            "search_advertised_total_before_category_filter": 472,
+            "search_unique_ids_before_category_filter": 472,
+            "verified_cohort_records": 199,
+            "complete_pagination": true,
+            "method": "official advanced search over computer-science classification; OR clauses use separate form fields; locally restrict categories to cs.AI/cs.CV/cs.LG",
+            "original_api_query_status": "failed",
+            "api_search_equivalence": "not_claimed_unverified_search_backend_index_and_tokenization_differences"
+          },
+          "embodied_crosslist": {
+            "status": "ok",
+            "search_advertised_total_before_category_filter": 116,
+            "search_unique_ids_before_category_filter": 116,
+            "verified_cohort_records": 55,
+            "complete_pagination": true,
+            "method": "official advanced search over computer-science classification; OR clauses use separate form fields; locally restrict categories to cs.AI/cs.CV/cs.LG",
+            "original_api_query_status": "failed",
+            "api_search_equivalence": "not_claimed_unverified_search_backend_index_and_tokenization_differences"
+          }
+        },
+        "api_equivalence_verified": false
+      },
+      "api_collection": {
+        "status": "failed",
+        "complete": false,
+        "expected_records": null,
+        "observed_records": 0,
+        "checks": [
+          {
+            "query_id": "cs_ro",
+            "status": "failed",
+            "complete": false,
+            "advertised_total": null,
+            "observed_records": 0,
+            "error_type": "HTTPError"
+          },
+          {
+            "query_id": "robot_crosslist",
+            "status": "failed",
+            "complete": false,
+            "advertised_total": null,
+            "observed_records": 0,
+            "error_type": "HTTPError"
+          },
+          {
+            "query_id": "embodied_crosslist",
+            "status": "failed",
+            "complete": false,
+            "advertised_total": null,
+            "observed_records": 0,
+            "error_type": "HTTPError"
+          }
+        ]
+      },
+      "collection_run": "data/collection-runs/2026-09-14/arxiv.json"
+    },
+    {
+      "source": "publications",
+      "status": "not_checked_this_run",
+      "complete": false,
+      "check_status_this_run": "not_checked_this_run",
+      "rechecked_this_run": false,
+      "expected_records": null,
+      "observed_records": null
+    },
+    {
+      "source": "arxiv_research_status",
+      "status": "not_checked_this_run",
+      "complete": false,
+      "check_status_this_run": "not_checked_this_run",
+      "rechecked_this_run": false,
+      "expected_records": null,
+      "observed_records": null
+    },
+    {
+      "source": "official_groups",
+      "status": "partial",
+      "complete": false,
+      "check_status_this_run": "targeted_official_review",
+      "rechecked_this_run": true,
+      "checked_at": "2026-09-14T01:58:48Z",
+      "expected_records": null,
+      "observed_records": 6,
+      "reviewed_organizations": 16,
+      "scope_note": "定向核验登记的16个核心组织渠道，不代表全部200组织或T0全覆盖。",
+      "organizations": [
+        {
+          "organization_id": "org:nvidia-gear",
+          "display_name": "NVIDIA GEAR",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "partial_source_no_verified_new_record",
+          "checked_urls": [
+            "https://research.nvidia.com/labs/gear/publications/"
+          ],
+          "observations_zh": "当前直读返回空的Publications栏目，HTML内publicationsData为空；搜索索引缓存显示7月/8月旧项目但不是当前完整列表。",
+          "limitations_zh": "源部分失败；不把空列表解释为无研究变化。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:nvidia-cosmos-lab",
+          "display_name": "NVIDIA Cosmos Lab",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://research.nvidia.com/labs/cosmos-lab/",
+            "https://research.nvidia.com/labs/cosmos-lab/data/publications.json",
+            "https://research.nvidia.com/labs/cosmos-lab/data/press.json",
+            "https://github.com/NVIDIA/cosmos/releases"
+          ],
+          "observations_zh": "已读取页面所引用的出版与新闻JSON；版本API所列Cosmos3发布日为2026-06-01。9/10合作报道只证明Cosmos产品使用，未证明该Lab新作品。",
+          "limitations_zh": "非穷尽所有关联仓库及HF模型历史。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:nvidia-seattle-robotics-lab",
+          "display_name": "NVIDIA Seattle Robotics Lab",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://research.nvidia.com/labs/srl/publication/"
+          ],
+          "observations_zh": "可读论文页顶部为2026年7月会议工作，本轮未定位到9月首次发布。",
+          "limitations_zh": "实验室页面可能滞后，会议月份不是论文首发日；不推出无变化。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:physical-intelligence",
+          "display_name": "Physical Intelligence",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://www.pi.website/blog",
+            "https://www.pi.website/research",
+            "https://github.com/Physical-Intelligence/openpi/releases"
+          ],
+          "observations_zh": "博客索引可读，顶部为2026-04-16的π0.7；openpi Releases API返回空数组。",
+          "limitations_zh": "空Releases不代表仓库没有新提交、模型权重或非tag更新。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:google-deepmind-robotics",
+          "display_name": "Google DeepMind Robotics",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://deepmind.google/blog/",
+            "https://deepmind.google/accelerators/robotics/"
+          ],
+          "observations_zh": "博客索引中的Gemini Robotics 2/ER 2标为7月；9月所列一般AI产品未取得机器人专属新发布证据。",
+          "limitations_zh": "未穷尽所有Google研究者预印本；accelerator覆盖6–9月不等于9月新公告。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:tri-robotics",
+          "display_name": "Toyota Research Institute Robotics",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://www.tri.global/publications",
+            "https://www.tri.global/news"
+          ],
+          "observations_zh": "可读出版首页包含7月机器人论文及8月材料研究；新闻首页未出现已核实9月机器人新发布。",
+          "limitations_zh": "主页排序与更新可能不完备；不把非机器人材料论文计入。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:rai-institute",
+          "display_name": "RAI Institute",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "verified_update_existing_work_not_new_paper",
+          "checked_urls": [
+            "https://rai-inst.com/research/",
+            "https://rai-inst.com/resources/",
+            "https://rai-inst.com/resources/blog/q2rl-reinforcement-learning-to-improve-beyond-behavior-cloning/",
+            "https://q2rl.rai-inst.com/",
+            "https://arxiv.org/abs/2605.05172",
+            "https://github.com/rai-opensource/q2rl"
+          ],
+          "observations_zh": "9/8 Q2RL解读已核实；论文首发5/6、代码首发5/7；研究概览页只列旧精选，必须进入Resources才能发现新文章。",
+          "limitations_zh": "技术解读不新增论文；现实任务表现仍为作者自报。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:genesis-ai",
+          "display_name": "Genesis AI",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "verified_software_updates_partial_corporate_site",
+          "checked_urls": [
+            "https://www.genesis.ai/blog",
+            "https://www.genesis.ai/press",
+            "https://github.com/Genesis-Embodied-AI/genesis-world",
+            "https://github.com/Genesis-Embodied-AI/genesis-world/releases",
+            "https://api.github.com/repos/Genesis-Embodied-AI/genesis-world/releases?per_page=5"
+          ],
+          "observations_zh": "公司主页、博客和新闻直读均只返回导航与Eno等候名单；官方支持的软件仓库核实9/6及9/12两个release，README有Genesis AI支持关系直接证据。",
+          "limitations_zh": "仅按开发支持关系归属；未取得公司博客完整正文，不能声称公司没有其他发布。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:generalist-ai",
+          "display_name": "Generalist AI",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://generalistai.com/blog",
+            "https://generalistai.com/blog/research"
+          ],
+          "observations_zh": "两个索引可读，当前顶部研究为2026-08-19 GEN-1.5；没有核实9月新事件。",
+          "limitations_zh": "8月模型不能因9月被其他公司引用而重新首发。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:figure-ai",
+          "display_name": "Figure AI",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "verified_strategy_update_not_new_model",
+          "checked_urls": [
+            "https://www.figure.ai/news",
+            "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership"
+          ],
+          "observations_zh": "9/3算力合作核实；8/25 Index数据计划在页上可见，但不纳入9月新数据集。",
+          "limitations_zh": "算力为未来承诺，不是已交付集群；没有新论文或权重证据。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:dyna-robotics",
+          "display_name": "DYNA Robotics",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://www.dyna.co/research",
+            "https://www.dyna.co/news"
+          ],
+          "observations_zh": "研究索引可读，顶部8/27产品化文章、8/17训练文章、8/15 Dyna-2；新闻索引未核实9月新记录。",
+          "limitations_zh": "8月发布不重复计数；不推断部署或代码无新变化。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:sunday-robotics",
+          "display_name": "Sunday Robotics",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://www.sunday.ai/blog"
+          ],
+          "observations_zh": "可读博客顶部ACT-2 Preview标为2026-07-17。",
+          "limitations_zh": "2026 Launching等无精确日期常驻宣传不作为9月发布证据。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:1x-ai",
+          "display_name": "1X AI",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_with_partial_research_category",
+          "checked_urls": [
+            "https://www.1x.tech/discover",
+            "https://www.1x.tech/discover/category/research",
+            "https://www.1x.tech/ai"
+          ],
+          "observations_zh": "Discover顶部手部产品文章为7/9；AI页列旧World Model/Redwood；研究分类页只返回导航。",
+          "limitations_zh": "分类页未读全，不能推断无9月研究发布。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:skild-ai",
+          "display_name": "Skild AI",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "verified_deployment_update_existing_model",
+          "checked_urls": [
+            "https://www.skild.ai/blogs",
+            "https://www.skild.ai/blogs/s1",
+            "https://www.skild.ai/blogs/skild-crosses-100m-arr",
+            "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/"
+          ],
+          "observations_zh": "9/10部署公告核实；S1索引为8/18、正文引用August 2026。",
+          "limitations_zh": "9/10两篇文章用两周前/上周描述推出时间，和正式索引日期不一致；首发优先正式索引与模型文章。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:agibot-research",
+          "display_name": "AgiBot Research",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_release_code_date_candidate",
+          "checked_urls": [
+            "https://www.agibot.com/research/",
+            "https://www.agibot.com/research/content/featured.js",
+            "https://github.com/AgibotTech",
+            "https://api.github.com/orgs/AgibotTech/repos?sort=created&direction=desc&per_page=12"
+          ],
+          "observations_zh": "网页精选空壳通过其引用的featured.js补读；官方组织最新12个仓库未显示9月创建，旧X2 URDF仓库有9/8 EDU模型提交候选。",
+          "limitations_zh": "featured.js的月日期注释明确仅排序用途；created_at、pushed_at和commit时间均不自动等于首次公开。",
+          "exhaustive": false
+        },
+        {
+          "organization_id": "org:bytedance-seed-robotics",
+          "display_name": "ByteDance Seed Robotics",
+          "tier": "T0",
+          "checked_at": "2026-09-14",
+          "status": "no_verified_new_record_in_checked_channels",
+          "checked_urls": [
+            "https://seed.bytedance.com/en/direction/robotics",
+            "https://seed.bytedance.com/en/research"
+          ],
+          "observations_zh": "机器人页仍展示GR-RL/GR-3/ByteDexter，未核实窗口内机器人新发布。",
+          "limitations_zh": "母品牌Seed通用模型发布不自动归为Seed Robotics；精选列表非全量论文目录。",
+          "exhaustive": false
+        }
+      ]
+    },
+    {
+      "source": "corl",
+      "status": "failed",
+      "complete": false,
+      "rechecked_this_run": true,
+      "check_status_this_run": "official_list_access_blocked",
+      "checked_at": "2026-09-14T01:58:48Z",
+      "expected_records": null,
+      "observed_records": null,
+      "checks": [
+        {
+          "url": "https://www.corl.org/",
+          "result": "official_home_readable",
+          "observed_zh": "首页显示2026 Austin，11月9–12日。"
+        },
+        {
+          "url": "https://www.corl.org/program",
+          "result": "official_program_readable_no_paper_list_in_extracted_text",
+          "observed_zh": "只列主会/Workshop日程和keynote等链接。"
+        },
+        {
+          "url": "https://2026.corl.org/contributions/call-for-demos",
+          "result": "official_announcement_readable",
+          "observed_zh": "官方说明Fast Track须在2026-09-04论文录用通知后提交；这不是接收名单本身。"
+        },
+        {
+          "url": "https://www.corl.org/tbd_program",
+          "result": "stale_wrong_year_links",
+          "observed_zh": "页面挂CoRL2026标题，但正文为9月Seoul，Proceedings、OpenReview与Decision链接实际为2025。",
+          "linked_targets": [
+            {
+              "url": "https://proceedings.mlr.press/v305/",
+              "actual_year": 2025
+            },
+            {
+              "url": "https://openreview.net/group?id=robot-learning.org/CoRL/2025/Conference",
+              "actual_year": 2025
+            },
+            {
+              "url": "https://docs.google.com/spreadsheets/d/1WHpqUxFGqVqsY7vYHf5cciylymuTsTy68h5lC54PCG0/edit?usp=sharing",
+              "actual_year": 2025
+            }
+          ]
+        },
+        {
+          "url": "https://openreview.net/group?id=robot-learning.org/CoRL/2026/Conference",
+          "result": "loading_shell_only",
+          "observed_zh": "可读内容仅Loading和导航，未取得论文条目。"
+        },
+        {
+          "url": "https://api2.openreview.net/notes?content.venueid=robot-learning.org%2FCoRL%2F2026%2FConference&limit=2",
+          "result": "access_challenge",
+          "http_status": 403,
+          "error_name": "ChallengeRequiredError",
+          "observed_zh": "API明确返回验证挑战；未绕过、未以空结果当零篇。"
+        }
+      ],
+      "limitations": [
+        "本轮未取得可读的CoRL2026官方接收论文清单；不是断言尚未公布，也不是断言没有接收论文。",
+        "不利用错误年份页面做2026全榜/总量/机构排名。",
+        "不把Workshop接收名单当主会接收论文。",
+        "不把OpenReview读取失败当不存在论文。"
+      ]
+    }
+  ],
+  "incomplete_sources": [
+    "arxiv",
+    "publications",
+    "arxiv_research_status",
+    "official_groups",
+    "corl"
+  ],
+  "scope_note": "arXiv HTML补采范围已逐项对账，API仍失败；16个核心组织完成定向官方检查；CoRL2026清单访问受阻。未核验渠道不视为无新成果。",
+  "complete_through": null,
+  "primary_corpora_complete_through": null
+}

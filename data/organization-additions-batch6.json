@@ -1,0 +1,689 @@
+{
+  "version": "3.0",
+  "updated": "2026-09-05",
+  "batch_id": "attribution-batch6-2026-09-06",
+  "verification_scope": "Frozen last 12 of the 27-item unassigned queue after batches 2–4; no ingest or build performed.",
+  "organizations": [
+    {
+      "organization_id": "org:aalto-university",
+      "display_name": "Aalto University",
+      "short_name": "Aalto University",
+      "slug": "aalto-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Finland",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.aalto.fi/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "Aalto 母机构节点；Robot Learning 研究组单列。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:westlake-university",
+      "display_name": "Westlake University",
+      "short_name": "Westlake University",
+      "slug": "westlake-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.westlake.edu.cn/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "西湖大学母机构节点；MiLAB 单列。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:microsoft",
+      "display_name": "Microsoft",
+      "short_name": "Microsoft",
+      "slug": "microsoft",
+      "entity_type": "company",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.microsoft.com/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "Microsoft 母机构，不自动形成具体研究组归属。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:microsoft-research-asia",
+      "display_name": "Microsoft Research Asia",
+      "short_name": "Microsoft Research Asia",
+      "slug": "microsoft-research-asia",
+      "entity_type": "research_institute",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:microsoft",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.microsoft.com/en-us/research/people/jiaoyan/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "MSRA 组织级节点；具体 Jiaolong Yang 研究团队单列，不与整个研究院等同。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:aalto-robot-learning",
+      "display_name": "Aalto Robot Learning Group",
+      "short_name": "Aalto Robot Learning Group",
+      "slug": "aalto-robot-learning",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Finland",
+      "aliases": [
+        "Aalto Robot Learning"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:aalto-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/robot-learning"
+        }
+      ],
+      "official_urls": {
+        "home": "https://rl.aalto.fi/",
+        "people": "https://rl.aalto.fi/team/",
+        "publications": "https://rl.aalto.fi/publication/",
+        "identity_source": "https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/robot-learning"
+      },
+      "leaders": [
+        {
+          "name": "Joni Pajarinen",
+          "role": "Group Leader",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/robot-learning"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "按官方研究页面与带日期成员关系登记的研究执行单元。",
+      "information_gaps": [
+        "OmniPianist 归属以 Joni Pajarinen 的带日期组级身份重建为 G2；不把 Yi Zhao 当前/历史访学身份或 Dieter Büchler 的新机构倒灌。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2511.02504"
+        ],
+        "basis": "robot_learning_publication_and_dated_group_leader_identity",
+        "source_urls": [
+          "https://rl.aalto.fi/publication/",
+          "https://fcai.fi/calendar/2021/11/24/ai-for-mobile-work-machines"
+        ]
+      }
+    },
+    {
+      "organization_id": "org:tsinghua-mars",
+      "display_name": "Tsinghua MARS Lab",
+      "short_name": "Tsinghua MARS Lab",
+      "slug": "tsinghua-mars",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Tsinghua MARS"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:tsinghua-university-institute-for-interdisciplinary-information-sciences",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://group.iiis.tsinghua.edu.cn/~marslab/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://group.iiis.tsinghua.edu.cn/~marslab/",
+        "identity_source": "https://hangzhaomit.github.io/",
+        "publications": "https://group.iiis.tsinghua.edu.cn/~marslab/#/publications"
+      },
+      "leaders": [
+        {
+          "name": "Hang Zhao",
+          "role": "Principal Investigator",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://hangzhaomit.github.io/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D5",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "按官方研究页面与带日期成员关系登记的研究执行单元。",
+      "information_gaps": [
+        "不要与 ShanghaiTech 的同名 MARS Lab 合并。",
+        "网站研究与人员数据位于公开前端资源；静态正文抽取可能漏掉论文和带日期名册。",
+        "Embrace Contacts 与 Embrace Collisions 待按官方互链合并，避免将较晚会议题名误算为新 work。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2601.07718",
+          "arxiv:2601.07701"
+        ],
+        "basis": "two_recent_robot_works_with_official_dated_lab_membership",
+        "source_url": "https://group.iiis.tsinghua.edu.cn/~marslab/static/js/chunk-f533e89a.a0957210.js"
+      }
+    },
+    {
+      "organization_id": "org:msra-jiaolong-yang-team",
+      "display_name": "Microsoft Research Asia Jiaolong Yang Research Team",
+      "short_name": "Microsoft Research Asia Jiaolong Yang Research Team",
+      "slug": "msra-jiaolong-yang-team",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "MSRA Jiaolong Yang Team"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:microsoft-research-asia",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.microsoft.com/en-us/research/people/jiaoyan/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://jlyang.org/",
+        "identity_source": "https://www.microsoft.com/en-us/research/people/jiaoyan/"
+      },
+      "leaders": [
+        {
+          "name": "Jiaolong Yang",
+          "role": "Research Manager / Team Lead",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://jlyang.org/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "按 Jiaolong Yang 官方互链主页明确自述领导的 Spatial and Physical AI 研究团队规范化登记；以其公开项目和论文为证据。",
+      "information_gaps": [
+        "规范名称为负责人研究团队，不声称其等于整个 MSRA Spatial Intelligence Group。",
+        "不沿用已失效的 Internet Graphics 组名；历史组织名称变更时间尚待独立核实。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2510.21571"
+        ],
+        "additional_public_work_ids": [
+          "arxiv:2608.03483",
+          "arxiv:2411.19650"
+        ],
+        "basis": "team_lead_official_project_announcement_and_multiple_robot_research_outputs",
+        "source_url": "https://jlyang.org/"
+      }
+    },
+    {
+      "organization_id": "org:westlake-milab",
+      "display_name": "Westlake University Machine Intelligence Lab",
+      "short_name": "Westlake University Machine Intelligence Lab",
+      "slug": "westlake-milab",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Westlake MiLAB"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:westlake-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://milab.westlake.edu.cn/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://milab.westlake.edu.cn/",
+        "identity_source": "https://en.westlake.edu.cn/faculty/donglin-wang.html"
+      },
+      "leaders": [
+        {
+          "name": "Donglin Wang",
+          "role": "Founder and Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://milab.westlake.edu.cn/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D5",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "按官方研究页面与带日期成员关系登记的研究执行单元。",
+      "information_gaps": [
+        "OpenHelix 为项目/合作团队线索，未虚构为另一个独立持久实验室。",
+        "VLA-RFT 本批为 G2（创办者2017年至今的明确任期），不把项目页的大学名直接当 MiLAB G1。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "work_ids": [
+          "arxiv:2510.00406"
+        ],
+        "basis": "open_robot_model_and_verified_dated_lab_founder_relationship",
+        "source_urls": [
+          "https://vla-rft.github.io/",
+          "https://milab.westlake.edu.cn/"
+        ]
+      }
+    }
+  ],
+  "reviewed_work_ids": [
+    "arxiv:2603.22263",
+    "arxiv:2602.23721",
+    "arxiv:2601.05230",
+    "arxiv:2512.18477",
+    "arxiv:2511.03077",
+    "arxiv:2511.02504",
+    "arxiv:2510.21571",
+    "title:bd65316b42a341f109b2b449",
+    "arxiv:2510.00406",
+    "arxiv:2509.18428",
+    "arxiv:2509.09863",
+    "arxiv:2509.03889"
+  ],
+  "review_items": [
+    {
+      "queue_position": 16,
+      "work_id": "arxiv:2603.22263",
+      "title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:stanford-iliad"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批官方组级证据或带日期的 G2 归属记录。",
+      "checked_urls": [
+        "https://hai.stanford.edu/news/stanford-ai-projects-greenlighted-national-ai-research-resource-pilot",
+        "https://iliad.stanford.edu/people/",
+        "https://dexdrummer.github.io/",
+        "https://arxiv.org/abs/2603.22263"
+      ]
+    },
+    {
+      "queue_position": 17,
+      "work_id": "arxiv:2602.23721",
+      "title": "StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "最新 v2 PDF 可读，直接署名 Ricoh Software Research Center (Beijing) 的 Image Processing 等单位。但尚未确认该研究执行单元近年的持续官方研究发布渠道与机器人方向准入证据；未把母公司 Ricoh 或泛称 Image Processing 当具体组。",
+      "observed_units": [
+        "Ricoh Software Research Center (Beijing) Co., Ltd.",
+        "Beijing YZH Engineering Technology Co., Ltd."
+      ],
+      "checked_urls": [
+        "https://arxiv.org/abs/2602.23721",
+        "https://arxiv.org/pdf/2602.23721",
+        "https://www.ricoh.com/about/facts"
+      ]
+    },
+    {
+      "queue_position": 18,
+      "work_id": "arxiv:2601.05230",
+      "title": "Learning Latent Action World Models In The Wild",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "论文仅直接署名 FAIR at Meta。可确认到该研究事业部，但本批没有足以归到已登记 Meta FAIR Embodied AI 具体单元的证据；不将普通 FAIR affiliation 自动视为该细组。",
+      "observed_units": [
+        "FAIR at Meta"
+      ],
+      "checked_urls": [
+        "https://arxiv.org/html/2601.05230v1"
+      ]
+    },
+    {
+      "queue_position": 19,
+      "work_id": "arxiv:2512.18477",
+      "title": "STORM: Search-Guided Generative World Models for Robotic Manipulation",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "Keze Wang 官网、学校教师页及 selected publications 未直接列 STORM，且无法确认覆盖论文日期的具体组内成员起止。当前 X-Era 职务与历史 HCP 关系不能反向替代作品归属。",
+      "checked_urls": [
+        "https://arxiv.org/html/2512.18477v1",
+        "https://kezewang.com/",
+        "https://kezewang.com/pb.html",
+        "https://cse.sysu.edu.cn/en/teacher/WangKeze"
+      ]
+    },
+    {
+      "queue_position": 20,
+      "work_id": "arxiv:2511.03077",
+      "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "论文明确 NYU Center for Robotics and Embodied Intelligence，并说明 FAIR 作者为顾问贡献。本批没有直接 Machines in Motion / GRAIL 的作品条目或带日期成员关系，保留中心层身份而不虚构具体实验室归属。",
+      "observed_units": [
+        "NYU Center for Robotics and Embodied Intelligence",
+        "FAIR at Meta (advisory contribution)"
+      ],
+      "checked_urls": [
+        "https://arxiv.org/html/2511.03077v1",
+        "https://robotics.engineering.nyu.edu/"
+      ]
+    },
+    {
+      "queue_position": 21,
+      "work_id": "arxiv:2511.02504",
+      "title": "Dexterous Robotic Piano Playing at Scale",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:aalto-robot-learning"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批官方组级证据或带日期的 G2 归属记录。",
+      "checked_urls": [
+        "https://fcai.fi/calendar/2021/11/24/ai-for-mobile-work-machines",
+        "https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/robot-learning",
+        "https://rl.aalto.fi/team/",
+        "https://arxiv.org/abs/2511.02504",
+        "https://clthegoat.github.io/"
+      ]
+    },
+    {
+      "queue_position": 22,
+      "work_id": "arxiv:2510.21571",
+      "title": "Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:msra-jiaolong-yang-team"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批官方组级证据或带日期的 G2 归属记录。",
+      "checked_urls": [
+        "https://jlyang.org/",
+        "https://www.microsoft.com/en-us/research/people/jiaoyan/",
+        "https://www.microsoft.com/en-us/research/articles/vitra/",
+        "https://microsoft.github.io/VITRA/",
+        "https://arxiv.org/abs/2510.21571"
+      ]
+    },
+    {
+      "queue_position": 23,
+      "work_id": "title:bd65316b42a341f109b2b449",
+      "title": "Embrace Contacts: humanoid shadowing with full body ground contacts",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:tsinghua-mars"
+      ],
+      "attribution_grades": [
+        "G1"
+      ],
+      "reason": "已有本批官方组级证据或带日期的 G2 归属记录。",
+      "checked_urls": [
+        "https://group.iiis.tsinghua.edu.cn/~marslab/static/js/chunk-f533e89a.a0957210.js",
+        "https://group.iiis.tsinghua.edu.cn/~marslab/#/publications",
+        "https://proceedings.mlr.press/v305/zhuang25b.html",
+        "https://arxiv.org/abs/2502.01465",
+        "https://project-instinct.github.io/"
+      ]
+    },
+    {
+      "queue_position": 24,
+      "work_id": "arxiv:2510.00406",
+      "title": "VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators",
+      "disposition": "verified",
+      "verified_organization_ids": [
+        "org:westlake-milab"
+      ],
+      "attribution_grades": [
+        "G2"
+      ],
+      "reason": "已有本批官方组级证据或带日期的 G2 归属记录。",
+      "checked_urls": [
+        "https://milab.westlake.edu.cn/",
+        "https://en.westlake.edu.cn/faculty/donglin-wang.html",
+        "https://vla-rft.github.io/",
+        "https://arxiv.org/html/2510.00406v1"
+      ]
+    },
+    {
+      "queue_position": 25,
+      "work_id": "arxiv:2509.18428",
+      "title": "Latent Action Pretraining Through World Modeling",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "官方项目页只有 MBZUAI 与 Alexandria University 的院校层级，未找到具体研究组作品页或带日期关系。Ian Reid 的当前机构/职务本身不足以证明细组。",
+      "checked_urls": [
+        "https://arxiv.org/abs/2509.18428",
+        "https://yaranasserr.github.io/lawm-paper/"
+      ]
+    },
+    {
+      "queue_position": 26,
+      "work_id": "arxiv:2509.09863",
+      "title": "Off Policy Lyapunov Stability in Reinforcement Learning",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "官方答辩页提供 2026-07-13 导师关系；OpenReview 自述硕士从2024开始，但没有同时覆盖2025-09的具体实验室身份。历史 ARM Lab 介绍不足以证明该硕士论文的组级关系，未据近似领域直接分配。",
+      "checked_urls": [
+        "https://www.uvic.ca/graduatestudies/oral-exams/exam-candidates/data/sarvan-gill.php",
+        "https://openreview.net/profile?id=~Sarvan_Gill1",
+        "https://proceedings.mlr.press/v305/gill25a.html",
+        "https://www.uvic.ca/ecs/biomedical/faculty-staff/faculty/constantinescudaniela.php"
+      ]
+    },
+    {
+      "queue_position": 27,
+      "work_id": "arxiv:2509.03889",
+      "title": "Reactive In-Air Clothing Manipulation with Confidence-Aware Dense Correspondence and Visuotactile Affordance",
+      "disposition": "still_unverified",
+      "verified_organization_ids": [],
+      "attribution_grades": [],
+      "reason": "论文声明工作在 MIT 完成；MCube 官方 publications.xml 不含本作，且其关闭早于首发。MIT Perceptual Science 官方简介列 Megha Tippur，但文件本身未提供足够精确的成员有效期；不把文件名2022或OpenReview学校/导师关系直接当组内在任区间，也不回填到当前 Boston Dynamics/Prosper AI。",
+      "checked_urls": [
+        "https://arxiv.org/html/2509.03889v1",
+        "https://mhtippur.github.io/inairclothmanipulation/",
+        "https://mcube.mit.edu/data/publications.xml",
+        "https://mcube.mit.edu/news.html",
+        "https://cap.csail.mit.edu/sites/default/files/resource-pdfs/perceptual%20science%20slip%20sheet%202022_1.pdf",
+        "https://openreview.net/profile?id=~Megha_Tippur1"
+      ]
+    }
+  ],
+  "counts": {
+    "reviewed": 12,
+    "verified_queue_works": 5,
+    "still_unverified": 7,
+    "g1_queue_links": 2,
+    "g2_queue_links": 3,
+    "additional_admission_work_links": 2,
+    "new_tracking_units": 4,
+    "new_parent_nodes": 4
+  },
+  "identity_review": [
+    {
+      "status": "evidence_verified_merge_required",
+      "work_ids": [
+        "title:bd65316b42a341f109b2b449",
+        "arxiv:2502.01465"
+      ],
+      "recommended_canonical_work_id": "arxiv:2502.01465",
+      "earliest_public_at": "2025-02-03T15:57:54Z",
+      "reason": "Official MARS publication data lists the CoRL 2025 Embrace Contacts project and links arxiv:2502.01465; the original arXiv Embrace Collisions links the same Project Instinct site, and PMLR has identical authors and substantively matching abstract. Preserve both titles, publication manifestation, historical IDs, and lineage; do not count the October 2025 title as a new work.",
+      "source_urls": [
+        "https://group.iiis.tsinghua.edu.cn/~marslab/static/js/chunk-f533e89a.a0957210.js",
+        "https://arxiv.org/abs/2502.01465",
+        "https://proceedings.mlr.press/v305/zhuang25b.html",
+        "https://project-instinct.github.io/"
+      ]
+    }
+  ],
+  "version_review": [
+    {
+      "work_id": "arxiv:2602.23721",
+      "status": "source_version_diff_verified",
+      "versions": [
+        {
+          "version": "v1",
+          "public_at": "2026-02-27T06:43:37Z",
+          "source_url": "https://arxiv.org/abs/2602.23721v1",
+          "note": "Indexed v1 abstract contains the placeholder XXX and six authors."
+        },
+        {
+          "version": "v2",
+          "public_at": "2026-06-30T14:23:11Z",
+          "source_url": "https://arxiv.org/abs/2602.23721v2",
+          "note": "Latest official abstract/PDF has five authors and reports LIBERO 92.0% overall / 86.0% Long. The original placeholder is a historical-version issue, not a claim that the current PDF still contains it."
+        }
+      ],
+      "action": "Keep version-specific source records and refresh latest manifestation fields only through normal ingestion; this batch does not edit the factual work."
+    }
+  ],
+  "notes": [
+    "Current employment and GitHub owners were never used alone to infer historical lab attribution.",
+    "The MSRA unit is explicitly normalized to a team whose manager publicly states he leads it; it is not the entire Spatial Intelligence Group.",
+    "Two extra MARS G2 links establish recent-work admission evidence. They are not additional resolutions of the frozen high-signal queue.",
+    "Project Instinct and OpenHelix are project-series/cooperation signals, not invented persistent organizational units."
+  ]
+}

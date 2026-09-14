@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://embodied-ai-radar.local/catalog-v3.schema.json",
+  "title": "Embodied AI Radar v3 canonical work",
+  "type": "object",
+  "required": ["work_id", "title", "authors", "relevance", "manifestation_ids", "directions", "facets"],
+  "properties": {
+    "work_id": {"type": "string", "minLength": 3},
+    "title": {"type": "string", "minLength": 1},
+    "title_zh": {"type": ["string", "null"]},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "abstract": {"type": "string"},
+    "first_public_date": {"type": ["string", "null"]},
+    "identifiers": {"type": "object"},
+    "relevance": {
+      "type": "object",
+      "required": ["status", "score", "classifier_version"],
+      "properties": {
+        "status": {"enum": ["included", "candidate", "manual_review", "excluded"]},
+        "score": {"type": "number"},
+        "classifier_version": {"type": "string"}
+      }
+    },
+    "primary_direction": {"type": ["string", "null"], "pattern": "^D([1-9]|1[0-5])$"},
+    "directions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^D([1-9]|1[0-5])$"}},
+    "questions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^Q([0-9]|10)$"}},
+    "facets": {"type": "object"},
+    "evidence_grade": {"enum": ["E0", "E1", "E2", "E3", "E4"]},
+    "manifestation_ids": {"type": "array", "items": {"type": "string"}},
+    "source_record_ids": {"type": "array", "items": {"type": "string"}},
+    "aliases": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"relevance": {"properties": {"status": {"const": "included"}}}}},
+      "then": {"required": ["primary_direction"], "properties": {"primary_direction": {"type": "string"}}}
+    }
+  ]
+}

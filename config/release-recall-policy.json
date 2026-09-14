@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "scope": "stratified_regression_sample_not_internet_census",
+  "gold_hash": "399c12b11a9dd5abaaaffcc421b3aababe4cc5ec5b01a496efb3ea986b423da1",
+  "minimum_sampled_organizations": 12,
+  "minimum_research_releases": 21,
+  "minimum_manifestation_link_recall": 0.95,
+  "notes": "Frozen source-first regression frame. Expansion requires a reviewed new frame and policy revision; classification visibility and all-T0 source coverage remain separate measures."
+}

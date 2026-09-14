@@ -1,0 +1,2047 @@
+{
+  "schema_version": "3",
+  "month": "2026-07",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-07:9b8e788d62b0",
+      "month": "2026-07",
+      "title": "论文报告 100K 小时级真实轨迹，暂不是已确认趋势",
+      "summary": "Xiaomi-Robotics-1 论文报告超过 100K 小时真实轨迹，Data Pyramid 讨论数据层级；若数据口径能被下游能力和开放评测验证，数据工程门槛将显著抬高。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/0",
+        "record_sha256": "c43e96362a41339609ef56aad327921f64be06a1c93b8bf5e40f2e08391d0431"
+      },
+      "supporting_ids": [
+        "arxiv:2607.15330",
+        "arxiv:2607.24744"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.15330",
+          "arxiv_id": "2607.15330",
+          "work_id": "arxiv:2607.15330",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.15330"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-16",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D6"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.15330"
+          ],
+          "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2607.24744",
+          "arxiv_id": "2607.24744",
+          "work_id": "arxiv:2607.24744",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.24744"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q3",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.24744"
+          ],
+          "title": "Data Pyramid for Embodied Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D6",
+        "D8"
+      ],
+      "questions": [
+        "Q10",
+        "Q2",
+        "Q3",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.24744"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.15330",
+        "https://arxiv.org/abs/2607.24744"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "7 月完整月候选量低于 6 月、但显著高于 2025 年 7 月；高召回语料为 506 对 735，环比 −31.2%，仍需结合 6 月集中提交效应解读。",
+      "maturity": "超大规模单团队信号。",
+      "bottleneck": "数据质量、任务分布与外部可验证性。",
+      "implication": "未来应问“有效多样性/小时”，而不只看总小时。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": true,
+      "original_record": {
+        "title": "论文报告 100K 小时级真实轨迹，暂不是已确认趋势",
+        "grade": "C",
+        "kind": "weak",
+        "change": "Xiaomi-Robotics-1 论文报告超过 100K 小时真实轨迹，Data Pyramid 讨论数据层级；若数据口径能被下游能力和开放评测验证，数据工程门槛将显著抬高。",
+        "comparison": "7 月完整月候选量低于 6 月、但显著高于 2025 年 7 月；高召回语料为 506 对 735，环比 −31.2%，仍需结合 6 月集中提交效应解读。",
+        "evidence_ids": [
+          "2607.15330",
+          "2607.24744"
+        ],
+        "maturity": "超大规模单团队信号。",
+        "bottleneck": "数据质量、任务分布与外部可验证性。",
+        "implication": "未来应问“有效多样性/小时”，而不只看总小时。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:d86839135883",
+      "month": "2026-07",
+      "title": "视触觉 world model 正从感知融合转向失败恢复",
+      "summary": "ViTacWorld、τ、TACO 与 DC-WAM 分别把触觉接到 rollout 生成、未来视觉监督、失败纠正和 world-action 联合建模；共同目标不再只是提升融合表征。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/1",
+        "record_sha256": "2c5bd5a0ab6962f522ae93022de773ba36eef6d0859eea8d7ca7f87d423b9918"
+      },
+      "supporting_ids": [
+        "arxiv:2607.22530",
+        "arxiv:2607.24485",
+        "arxiv:2607.02840",
+        "arxiv:2607.25918"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.22530",
+          "arxiv_id": "2607.22530",
+          "work_id": "arxiv:2607.22530",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.22530"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-24",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D12"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.22530"
+          ],
+          "title": "ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2607.24485",
+          "arxiv_id": "2607.24485",
+          "work_id": "arxiv:2607.24485",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.24485"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.24485"
+          ],
+          "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2607.02840",
+          "arxiv_id": "2607.02840",
+          "work_id": "arxiv:2607.02840",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.02840"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-03",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q3",
+            "Q6",
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.02840"
+          ],
+          "title": "TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2607.25918",
+          "arxiv_id": "2607.25918",
+          "work_id": "arxiv:2607.25918",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.25918"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D12"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.25918"
+          ],
+          "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D15",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q1",
+        "Q10",
+        "Q3",
+        "Q6",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.22530",
+        "arxiv:2607.25918"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.02840",
+        "https://arxiv.org/abs/2607.22530",
+        "https://arxiv.org/abs/2607.24485",
+        "https://arxiv.org/abs/2607.25918"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "6 月 TacForeSight 等工作把触觉推进到预测通道，7 月又出现多个独立团队把预测结果用于数据增强、策略评估和纠错。",
+      "maturity": "跨月、跨团队的新兴方法簇，但传感器和任务仍高度异构。",
+      "bottleneck": "跨触觉硬件迁移、未来监督偏差，以及恢复率的统一 benchmark。",
+      "implication": "这是 7 月最强的非共识信号；未来应以接触失败恢复率、跨传感器迁移和数据边际收益验证。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "视触觉 world model 正从感知融合转向失败恢复",
+        "grade": "B",
+        "kind": "weak",
+        "change": "ViTacWorld、τ、TACO 与 DC-WAM 分别把触觉接到 rollout 生成、未来视觉监督、失败纠正和 world-action 联合建模；共同目标不再只是提升融合表征。",
+        "comparison": "6 月 TacForeSight 等工作把触觉推进到预测通道，7 月又出现多个独立团队把预测结果用于数据增强、策略评估和纠错。",
+        "evidence_ids": [
+          "2607.22530",
+          "2607.24485",
+          "2607.02840",
+          "2607.25918"
+        ],
+        "maturity": "跨月、跨团队的新兴方法簇，但传感器和任务仍高度异构。",
+        "bottleneck": "跨触觉硬件迁移、未来监督偏差，以及恢复率的统一 benchmark。",
+        "implication": "这是 7 月最强的非共识信号；未来应以接触失败恢复率、跨传感器迁移和数据边际收益验证。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:d6773930f1a8",
+      "month": "2026-07",
+      "title": "VLA 的下一层竞争从动作生成转向在线评价与纠错",
+      "summary": "VLA-Corrector 监视执行偏差并触发重规划，TACO 用触觉世界模型生成纠正片段，SVA 则把树搜索蒸馏为候选动作价值评估；三者都保留或冻结主策略，把增量能力放到测试时侧车。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/2",
+        "record_sha256": "d5eba0a26a5749408da939ad1b0353930436bd70309c1a5ffc35574287700500"
+      },
+      "supporting_ids": [
+        "arxiv:2607.01804",
+        "arxiv:2607.02840",
+        "arxiv:2607.03751"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.01804",
+          "arxiv_id": "2607.01804",
+          "work_id": "arxiv:2607.01804",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.01804"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [
+            "Q0",
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.01804"
+          ],
+          "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2607.02840",
+          "arxiv_id": "2607.02840",
+          "work_id": "arxiv:2607.02840",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.02840"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-03",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q3",
+            "Q6",
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.02840"
+          ],
+          "title": "TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2607.03751",
+          "arxiv_id": "2607.03751",
+          "work_id": "arxiv:2607.03751",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.03751"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-04",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8",
+            "D12"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.03751"
+          ],
+          "title": "Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q3",
+        "Q6",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.01804"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.01804",
+        "https://arxiv.org/abs/2607.02840",
+        "https://arxiv.org/abs/2607.03751"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "此前自纠错更多依赖重新训练主策略或人工失败数据；7 月集中出现轻量 monitor、verifier/value model 和事件触发机制。",
+      "maturity": "三个独立团队形成同月簇，且至少两项报告真实机器人或跨 backbone 结果。",
+      "bottleneck": "异常检测误报、纠错延迟、价值模型分布外可靠性与统一恢复评测。",
+      "implication": "短期优先跟踪能量化 success-per-call、失败恢复率和安全边界的 verifier/corrector 基础设施。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "VLA 的下一层竞争从动作生成转向在线评价与纠错",
+        "grade": "B",
+        "kind": "weak",
+        "change": "VLA-Corrector 监视执行偏差并触发重规划，TACO 用触觉世界模型生成纠正片段，SVA 则把树搜索蒸馏为候选动作价值评估；三者都保留或冻结主策略，把增量能力放到测试时侧车。",
+        "comparison": "此前自纠错更多依赖重新训练主策略或人工失败数据；7 月集中出现轻量 monitor、verifier/value model 和事件触发机制。",
+        "evidence_ids": [
+          "2607.01804",
+          "2607.02840",
+          "2607.03751"
+        ],
+        "maturity": "三个独立团队形成同月簇，且至少两项报告真实机器人或跨 backbone 结果。",
+        "bottleneck": "异常检测误报、纠错延迟、价值模型分布外可靠性与统一恢复评测。",
+        "implication": "短期优先跟踪能量化 success-per-call、失败恢复率和安全边界的 verifier/corrector 基础设施。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:ea8bb3534209",
+      "month": "2026-07",
+      "title": "长时序瓶颈正在从“任务分解”迁移到进度、记忆与运行时状态",
+      "summary": "FurnitureVLA 用连续进度触发子任务切换，HiMe 用 Executor–Sentry–Planner 管理不同时间尺度的记忆，PhyAgentOS 则把 session、验证和经验固化为系统服务。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/3",
+        "record_sha256": "83ca4bba7fb41f0242fad886088565709b15f1277c28880f21db4988499ff204"
+      },
+      "supporting_ids": [
+        "arxiv:2607.01212",
+        "arxiv:2607.03449",
+        "arxiv:2607.16636"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.01212",
+          "arxiv_id": "2607.01212",
+          "work_id": "arxiv:2607.01212",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.01212"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.01212"
+          ],
+          "title": "FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2607.03449",
+          "arxiv_id": "2607.03449",
+          "work_id": "arxiv:2607.03449",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.03449"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-03",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.03449"
+          ],
+          "title": "HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2607.16636",
+          "arxiv_id": "2607.16636",
+          "work_id": "arxiv:2607.16636",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.16636"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.16636"
+          ],
+          "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D9"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.01212",
+        "arxiv:2607.16636"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.01212",
+        "https://arxiv.org/abs/2607.03449",
+        "https://arxiv.org/abs/2607.16636"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "此前长时 VLA 多依赖语言 planner 生成步骤；本月三个独立团队开始显式表示任务完成度、非马尔可夫记忆和跨层执行状态。",
+      "maturity": "已出现全尺寸双臂和真实机器人验证，但任务范围与接口标准仍有限。",
+      "bottleneck": "完成度校准、记忆污染、模块错误归因和跨机器人可复用性。",
+      "implication": "长期价值可能沉淀在 progress/verifier/memory runtime，而非更长的语言 chain-of-thought。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "长时序瓶颈正在从“任务分解”迁移到进度、记忆与运行时状态",
+        "grade": "B",
+        "kind": "weak",
+        "change": "FurnitureVLA 用连续进度触发子任务切换，HiMe 用 Executor–Sentry–Planner 管理不同时间尺度的记忆，PhyAgentOS 则把 session、验证和经验固化为系统服务。",
+        "comparison": "此前长时 VLA 多依赖语言 planner 生成步骤；本月三个独立团队开始显式表示任务完成度、非马尔可夫记忆和跨层执行状态。",
+        "evidence_ids": [
+          "2607.01212",
+          "2607.03449",
+          "2607.16636"
+        ],
+        "maturity": "已出现全尺寸双臂和真实机器人验证，但任务范围与接口标准仍有限。",
+        "bottleneck": "完成度校准、记忆污染、模块错误归因和跨机器人可复用性。",
+        "implication": "长期价值可能沉淀在 progress/verifier/memory runtime，而非更长的语言 chain-of-thought。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-07:c8b677aec14d",
+      "month": "2026-07",
+      "title": "具身 Agent OS 可能成为模型之上的系统层",
+      "summary": "PhyAgentOS 把认知规划与物理执行解耦，并强调自演化操作系统；它呼应过去一年的双系统和调度趋势。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-07/4",
+        "record_sha256": "355dd98f92fab0da935e22aac3ffdbf4042c3efc343bf76a9886196d2d8e94b6"
+      },
+      "supporting_ids": [
+        "arxiv:2607.16636"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.16636",
+          "arxiv_id": "2607.16636",
+          "work_id": "arxiv:2607.16636",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.16636"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.16636"
+          ],
+          "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.16636"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.16636"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "此前多是论文内架构，本月出现系统软件层叙事，但当前仍主要由单一项目定义接口和评测。",
+      "maturity": "单项早期信号。",
+      "bottleneck": "接口标准、实时性、安全隔离和跨硬件兼容。",
+      "implication": "若未来出现跨模型/跨机器人的第三方采用，系统层可能形成独立平台价值。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "具身 Agent OS 可能成为模型之上的系统层",
+        "grade": "C",
+        "kind": "weak",
+        "change": "PhyAgentOS 把认知规划与物理执行解耦，并强调自演化操作系统；它呼应过去一年的双系统和调度趋势。",
+        "comparison": "此前多是论文内架构，本月出现系统软件层叙事，但当前仍主要由单一项目定义接口和评测。",
+        "evidence_ids": [
+          "2607.16636"
+        ],
+        "maturity": "单项早期信号。",
+        "bottleneck": "接口标准、实时性、安全隔离和跨硬件兼容。",
+        "implication": "若未来出现跨模型/跨机器人的第三方采用，系统层可能形成独立平台价值。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2607.01212",
+      "work_id": "arxiv:2607.01212",
+      "legacy_id": "2607.01212",
+      "title": "FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "把 VLA 推进到全尺寸双臂家具装配，以连续进度预测衔接最多 7 个子任务和 1,550 个控制步，并在真实 Kinova Gen3 上验证。",
+      "limitation_zh": "真实实验仍集中于单一双臂平台和三类家具，跨硬件迁移、错误恢复与长期重复部署尚无独立验证。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2885",
+        "record_sha256": "9646c632cecc32877852e4a550394c0cf6cd8b755ee88c161299d05f868202fd"
+      },
+      "supporting_ids": [
+        "arxiv:2607.01212"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.01212",
+          "arxiv_id": "2607.01212",
+          "work_id": "arxiv:2607.01212",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.01212"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.01212"
+          ],
+          "title": "FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D9"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.01212"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.01212"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.01804",
+      "work_id": "arxiv:2607.01804",
+      "legacy_id": "2607.01804",
+      "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "在冻结 VLA 之外加入 latent dynamics 监视、事件触发截断与梯度引导重规划，让固定 action chunk 变成按执行偏差自适应的闭环控制。",
+      "limitation_zh": "40M 纠错器仍需按 benchmark 示范训练；视觉 latent 偏差并不等于接触或语义失败，跨环境误报率和部署成本仍待验证。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2889",
+        "record_sha256": "a65e2e6c62dce75cbbfabc55c87bb8fe1da81dd90dbe16bbcdd4b5afd593aea7"
+      },
+      "supporting_ids": [
+        "arxiv:2607.01804"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.01804",
+          "arxiv_id": "2607.01804",
+          "work_id": "arxiv:2607.01804",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.01804"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [
+            "Q0",
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.01804"
+          ],
+          "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4"
+      ],
+      "questions": [
+        "Q0",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.01804"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.01804"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.02604",
+      "work_id": "arxiv:2607.02604",
+      "legacy_id": "2607.02604",
+      "title": "DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "用动作条件、多视角动态表征和 flow-matching DiT 重生成移动物体操作轨迹，并在四类基础 VLA 上测试可插拔增益。",
+      "limitation_zh": "当前证据来自自建仿真 benchmark，尚未证明动态预测在真实机器人、遮挡和时延条件下仍能稳定改善闭环成功率。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2899",
+        "record_sha256": "4e9952e29081d6f601f11669917fa915e704fa174396225ce3e97bd33bb4cb12"
+      },
+      "supporting_ids": [
+        "arxiv:2607.02604"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.02604",
+          "arxiv_id": "2607.02604",
+          "work_id": "arxiv:2607.02604",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.02604"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.02604"
+          ],
+          "title": "DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.02604"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.02604"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.03449",
+      "work_id": "arxiv:2607.03449",
+      "legacy_id": "2607.03449",
+      "title": "HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "将长时 VLA 拆成高频 Executor、工作记忆 Sentry 和慢速 Planner，并用可增删改的跨模态记忆在真实机器人上处理非马尔可夫任务。",
+      "limitation_zh": "任务主要由简单 pick-and-place 原语构成，Planner 仍依赖强 VLM；论文也承认缺少匹配的标准仿真 benchmark 和更长时间部署验证。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2904",
+        "record_sha256": "bb153a1fcca4e7228dae0fcaf96d902351e973aec69faf10fc84305d141cedb1"
+      },
+      "supporting_ids": [
+        "arxiv:2607.03449"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.03449",
+          "arxiv_id": "2607.03449",
+          "work_id": "arxiv:2607.03449",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.03449"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-03",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.03449"
+          ],
+          "title": "HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.03449"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.15330",
+      "work_id": "arxiv:2607.15330",
+      "legacy_id": "2607.15330",
+      "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "用超过 100K 小时 UMI 真实轨迹和自动语言标注预训练基础 VLA，展示数据与模型规模向真实机器人零样本和少样本能力传导。",
+      "limitation_zh": "代码与 checkpoint 截至摘要仍是“将发布”，100K 小时数据的去重、质量和可外部审计性尚未说明。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3018",
+        "record_sha256": "512b5611a2a18a77c904f242ef10da7137eb1b9f7da3d8d6945f50fefb59c9b5"
+      },
+      "supporting_ids": [
+        "arxiv:2607.15330"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.15330",
+          "arxiv_id": "2607.15330",
+          "work_id": "arxiv:2607.15330",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.15330"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-16",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D6"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.15330"
+          ],
+          "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D6"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.15330"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.16636",
+      "work_id": "arxiv:2607.16636",
+      "legacy_id": "2607.16636",
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 session 运行时、文件化状态、语义验证、记忆和安全服务解耦认知规划与异构机器人执行，并覆盖 19+ 仿真/实体本体。",
+      "limitation_zh": "系统级编排把能力依赖分散到多模型和运行时组件，端到端可比性、故障归因与开放复现仍不清楚。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3029",
+        "record_sha256": "3f9a7aae0b919ff4497b986889932ffba1257abdc20564057e3f72e8bd817247"
+      },
+      "supporting_ids": [
+        "arxiv:2607.16636"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.16636",
+          "arxiv_id": "2607.16636",
+          "work_id": "arxiv:2607.16636",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.16636"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.16636"
+          ],
+          "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.16636"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.16636"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.22530",
+      "work_id": "arxiv:2607.22530",
+      "legacy_id": "2607.22530",
+      "title": "ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "联合公开真实触觉数据与仿真，训练可生成视觉—触觉—动作 rollout 的世界模型，用于策略数据增强和离线评估。",
+      "limitation_zh": "截至快照日摘要仅称结果提升，未披露真实硬件范围、绝对成功率和开放资产状态。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3056",
+        "record_sha256": "d3b782d982ffbceea15a6b1834a146a2a7e21ae2a666d7891f9032d23615f789"
+      },
+      "supporting_ids": [
+        "arxiv:2607.22530"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.22530",
+          "arxiv_id": "2607.22530",
+          "work_id": "arxiv:2607.22530",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.22530"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-24",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D12"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.22530"
+          ],
+          "title": "ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D12",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.22530"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.22530"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.24485",
+      "work_id": "arxiv:2607.24485",
+      "legacy_id": "2607.24485",
+      "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "以未来视觉 latent 监督学习 action-conditioned 时空触觉表征，在部署零额外开销下适配预训练 VLA。",
+      "limitation_zh": "截至快照日仅覆盖 TacAura 四类任务，摘要没有跨触觉传感器或更大规模真实机器人结果。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3073",
+        "record_sha256": "2c7aaa41714bd8d43c7dcef668f7f80988801e16d0190f3ed4d396174919de92"
+      },
+      "supporting_ids": [
+        "arxiv:2607.24485"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.24485",
+          "arxiv_id": "2607.24485",
+          "work_id": "arxiv:2607.24485",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.24485"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.24485"
+          ],
+          "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D15",
+        "D4"
+      ],
+      "questions": [
+        "Q1",
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.24485"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.24744",
+      "work_id": "arxiv:2607.24744",
+      "legacy_id": "2607.24744",
+      "title": "Data Pyramid for Embodied Manipulation",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "以真实机器人、UMI、人类 ego/exo、仿真和通用视觉语言五层数据金字塔梳理具身数据配方与能力关系。",
+      "limitation_zh": "这是分析框架而非新模型或实体实验，不能单独作为某条技术路线成熟度上升的证据。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3074",
+        "record_sha256": "e99472a37a46e56f1779ad419c67ee97f2ea815118ebd5ca84eca44b5a5cc8fc"
+      },
+      "supporting_ids": [
+        "arxiv:2607.24744"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.24744",
+          "arxiv_id": "2607.24744",
+          "work_id": "arxiv:2607.24744",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.24744"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q3",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.24744"
+          ],
+          "title": "Data Pyramid for Embodied Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q10",
+        "Q2",
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.24744"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.24744"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.25918",
+      "work_id": "arxiv:2607.25918",
+      "legacy_id": "2607.25918",
+      "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "用时间差 flow matching、轨迹加权和 DynaRoute 注意力偏置，把世界模型容量从外观重建转向控制相关动态。",
+      "limitation_zh": "截至 7 月 29 日仅为 v1 早期信号，摘要未给出跨平台复现和相对计算成本的完整数据。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3080",
+        "record_sha256": "63d7c2115d0ebebd4ab1d2e15a745d3a5eed5fd2c16c1458fbed73d7d9e92c66"
+      },
+      "supporting_ids": [
+        "arxiv:2607.25918"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.25918",
+          "arxiv_id": "2607.25918",
+          "work_id": "arxiv:2607.25918",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.25918"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D12"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.25918"
+          ],
+          "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D12",
+        "D3"
+      ],
+      "questions": [
+        "Q10"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.25918"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.25918"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.27549",
+      "work_id": "arxiv:2607.27549",
+      "legacy_id": "2607.27549",
+      "title": "Cross-Embodiment Transfer via Behavior-Aligned Representations",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "证明末端执行器轨迹等行为对齐表征可以绕开关节空间差异，将多本体数据真正转化为新本体增益。",
+      "limitation_zh": "28% 增益报告的是任务完成进度而非完整成功率，真机范围和第三方复现仍有限。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3082",
+        "record_sha256": "80aa933cea1111812d1f73d70321cdd53331c84bce1e5755a9b52ec79603206b"
+      },
+      "supporting_ids": [
+        "arxiv:2607.27549"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.27549",
+          "arxiv_id": "2607.27549",
+          "work_id": "arxiv:2607.27549",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.27549"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.27549",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_283"
+          ],
+          "title": "Cross-Embodiment Transfer via Behavior-Aligned Representations",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.27549",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_283"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.27599",
+      "work_id": "arxiv:2607.27599",
+      "legacy_id": "2607.27599",
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "让 VLM 提案、动作条件世界模型预演，再用优化与搜索修改计划，把 world model 从表象生成推向决策空间。",
+      "limitation_zh": "摘要没有明确给出真机实验，计算延迟与搜索失败的闭环代价仍待验证。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3083",
+        "record_sha256": "c49a7dec113d5d34e0fe2d3544d7e520973a813c6e59c2a3d78c762f7fe50ad2"
+      },
+      "supporting_ids": [
+        "arxiv:2607.27599"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.27599",
+          "arxiv_id": "2607.27599",
+          "work_id": "arxiv:2607.27599",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.27599"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.27599"
+          ],
+          "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D8"
+      ],
+      "questions": [
+        "Q10"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.27599"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.27782",
+      "work_id": "arxiv:2607.27782",
+      "legacy_id": "2607.27782",
+      "title": "RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "把失败轨迹拆成动作级负例和可替换的成功动作，以约十分之一的样本量学到部署后纠错。",
+      "limitation_zh": "纠错目标依赖相似上下文中的成功替代，对新型失败和高风险接触的安全边界尚不清楚。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3084",
+        "record_sha256": "a1127742599fc7c27cc53100831f06d254389bda0d1efc9a5a26b28a02d5682b"
+      },
+      "supporting_ids": [
+        "arxiv:2607.27782"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.27782",
+          "arxiv_id": "2607.27782",
+          "work_id": "arxiv:2607.27782",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.27782"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.27782"
+          ],
+          "title": "RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.27782"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.27782"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.28391",
+      "work_id": "arxiv:2607.28391",
+      "legacy_id": "2607.28391",
+      "title": "TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "将未来触觉中的力、形变和滑移变成 world-action model 的训练监督，但隔离部署时不可见的未来信息。",
+      "limitation_zh": "仅有四项真机任务，触觉传感器变化、长时使用漂移和跨硬件迁移未得到验证。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3085",
+        "record_sha256": "a9e805ded9295f18f2cf8c25101ad441a993a91c40f04c72bd2ab407dc49a515"
+      },
+      "supporting_ids": [
+        "arxiv:2607.28391"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.28391",
+          "arxiv_id": "2607.28391",
+          "work_id": "arxiv:2607.28391",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.28391"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D15"
+          ],
+          "questions": [
+            "Q1",
+            "Q3",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.28391"
+          ],
+          "title": "TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D15",
+        "D3",
+        "D4"
+      ],
+      "questions": [
+        "Q1",
+        "Q10",
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.28391"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.28391"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.28596",
+      "work_id": "arxiv:2607.28596",
+      "legacy_id": "2607.28596",
+      "title": "FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "用变频策略匹配接触前的多模态路径与接触后的快速力反馈，把控制频率本身变成可学习结构。",
+      "limitation_zh": "摘要未明确确认真机平台，且三任务尚不足以证明跨接触材料和本体的普适性。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3086",
+        "record_sha256": "29dccf155a721ab4413aded2d17f6a26b4dff891bd0d757692ebbdaba7eb5558"
+      },
+      "supporting_ids": [
+        "arxiv:2607.28596"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.28596",
+          "arxiv_id": "2607.28596",
+          "work_id": "arxiv:2607.28596",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.28596"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q1"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.28596"
+          ],
+          "title": "FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q1"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.28596"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.28596"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.28625",
+      "work_id": "arxiv:2607.28625",
+      "legacy_id": "2607.28625",
+      "title": "ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "把真实家庭改造为同步采集工厂，将第一/第三人称视频、全身与手部运动、物体轨迹、音频和触觉对齐到同一交互流。",
+      "limitation_zh": "当前证据是数据覆盖与 benchmark 差距，还没证明这些人类数据能稳定提升多本体真机策略。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3087",
+        "record_sha256": "7c111e8f3149725d36fbf2553dc8d23dc96ff2d87b4f0bc6214a80f04f595414"
+      },
+      "supporting_ids": [
+        "arxiv:2607.28625"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.28625",
+          "arxiv_id": "2607.28625",
+          "work_id": "arxiv:2607.28625",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.28625"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.28625"
+          ],
+          "title": "ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.28625"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.29172",
+      "work_id": "arxiv:2607.29172",
+      "legacy_id": "2607.29172",
+      "title": "CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "将真机部署奖励转换为托管 SFT API 可接受的监督数据，在不访问权重、梯度或损失的情况下形成两轮部署飞轮。",
+      "limitation_zh": "结果依赖特定商业 API 与团队内部反复部署，成本、可复现性和第三方可用性都弱于开源路线。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3088",
+        "record_sha256": "da933c122a4a07e1cb76bcff979a1c06db06dd861e3010c749633d3e54e1370b"
+      },
+      "supporting_ids": [
+        "arxiv:2607.29172"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.29172",
+          "arxiv_id": "2607.29172",
+          "work_id": "arxiv:2607.29172",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.29172"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [
+            "Q0"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.29172"
+          ],
+          "title": "CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [
+        "Q0"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.29172"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.29302",
+      "work_id": "arxiv:2607.29302",
+      "legacy_id": "2607.29302",
+      "title": "BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "把动作条件视频模型同时做成仿真器、数据引擎和策略评估器，直接对齐预测质量与机器人决策用途。",
+      "limitation_zh": "开源承诺尚需以实际资产和第三方复现核对，世界模型排序与真机成功率的相关性仍是关键门槛。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3089",
+        "record_sha256": "759a308c4e6ef69c22c2958b2b33243d7b34a8040f912d9711fa5be40a62dfaa"
+      },
+      "supporting_ids": [
+        "arxiv:2607.29302"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.29302",
+          "arxiv_id": "2607.29302",
+          "work_id": "arxiv:2607.29302",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.29302"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D9",
+            "D10",
+            "D12"
+          ],
+          "questions": [
+            "Q0",
+            "Q4",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.29302"
+          ],
+          "title": "BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D10",
+        "D12",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q0",
+        "Q10",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.29302"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.29302"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.29569",
+      "work_id": "arxiv:2607.29569",
+      "legacy_id": "2607.29569",
+      "title": "Safe Vision Language Action Models via Barrier Enhanced Flow Matching",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "不在 VLA 输出后外挂安全滤波器，而把 CBF 约束写入 flow-matching 去噪过程，直接约束整个 action chunk。",
+      "limitation_zh": "形式保证依赖屏障函数和系统假设的正确性，未覆盖感知错误、未建模接触和开放世界语义风险。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3090",
+        "record_sha256": "34e257eabe9659f26ea0547c279f8af2f7a7415ad55a9c8027a308bb3157e0a2"
+      },
+      "supporting_ids": [
+        "arxiv:2607.29569"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.29569",
+          "arxiv_id": "2607.29569",
+          "work_id": "arxiv:2607.29569",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.29569"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-07-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.29569"
+          ],
+          "title": "Safe Vision Language Action Models via Barrier Enhanced Flow Matching",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.29569"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2607.29613",
+      "work_id": "arxiv:2607.29613",
+      "legacy_id": "2607.29613",
+      "title": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+      "month": "2026-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "让 critic 在估值之外同时预测未来 latent，用世界建模目标补足单帧价值估计对部分可观测控制的状态缺口。",
+      "limitation_zh": "虽有大规模 benchmark 和七项真机任务，仍是单一团队预印本；长时序估值偏差和安全关联尚需独立复现。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/3091",
+        "record_sha256": "daa8b909e48d1607a9803ddfee4e9ab56c917f8ead89eca06684c0d155b65a33"
+      },
+      "supporting_ids": [
+        "arxiv:2607.29613"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2607.29613",
+          "arxiv_id": "2607.29613",
+          "work_id": "arxiv:2607.29613",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2607.29613"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-07-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D12"
+          ],
+          "questions": [
+            "Q6",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2607.29613"
+          ],
+          "title": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q10",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2607.29613"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2607.29613"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "0597d9bff47f4fe4847278e7c560003bcf0549540d9530c3839a43903e032887"
+}

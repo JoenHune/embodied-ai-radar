@@ -1,0 +1,912 @@
+{
+  "schema_version": "3",
+  "month": "2026-03",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-03:9cf00cd3d1d7",
+      "month": "2026-03",
+      "title": "world model 的新门槛是“动作可执行”",
+      "summary": "EVA 用 inverse-dynamics rewards 对齐可执行动作，DreamPlan 用视频世界模型训练 planner，DIAL 用 latent world model 解耦 intent/action。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-03/0",
+        "record_sha256": "7982822fae045175d2f049aa078d9a418d0c31948b5d9300dbce703c22e93335"
+      },
+      "supporting_ids": [
+        "arxiv:2603.17808",
+        "arxiv:2603.16860",
+        "arxiv:2603.29844"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.17808",
+          "arxiv_id": "2603.17808",
+          "work_id": "arxiv:2603.17808",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.17808"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.17808"
+          ],
+          "title": "EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2603.16860",
+          "arxiv_id": "2603.16860",
+          "work_id": "arxiv:2603.16860",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.16860"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-17",
+          "temporal_role": "current_month",
+          "directions": [
+            "D2",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.16860"
+          ],
+          "title": "DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2603.29844",
+          "arxiv_id": "2603.29844",
+          "work_id": "arxiv:2603.29844",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.29844"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.29844"
+          ],
+          "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [
+        "Q2",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2603.29844"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.16860",
+        "https://arxiv.org/abs/2603.17808",
+        "https://arxiv.org/abs/2603.29844"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "视频质量不再是主论据，策略可执行性成为共同评价轴。",
+      "maturity": "三团队同时出现，评审与长期真机数据仍滞后。",
+      "bottleneck": "逆动力学奖励的偏差和闭环漂移。",
+      "implication": "这是比论文数量更重要的评价范式迁移。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "world model 的新门槛是“动作可执行”",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "EVA 用 inverse-dynamics rewards 对齐可执行动作，DreamPlan 用视频世界模型训练 planner，DIAL 用 latent world model 解耦 intent/action。",
+        "comparison": "视频质量不再是主论据，策略可执行性成为共同评价轴。",
+        "evidence_ids": [
+          "2603.17808",
+          "2603.16860",
+          "2603.29844"
+        ],
+        "maturity": "三团队同时出现，评审与长期真机数据仍滞后。",
+        "bottleneck": "逆动力学奖励的偏差和闭环漂移。",
+        "implication": "这是比论文数量更重要的评价范式迁移。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-03:81f48d5d72f6",
+      "month": "2026-03",
+      "title": "灵巧操作从单步抓取转向可观测的长时接触",
+      "summary": "DexDrummer、UniDex 与 OmniVTA 分别覆盖长时演奏、通用手控制和视触觉世界模型。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-03/1",
+        "record_sha256": "51573f00d85efcd3e0e3aac0bf3c6ad41114dab488dc4ff6b22cb79c51807fe8"
+      },
+      "supporting_ids": [
+        "arxiv:2603.22263",
+        "arxiv:2603.22264",
+        "arxiv:2603.19201"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.22263",
+          "arxiv_id": "2603.22263",
+          "work_id": "arxiv:2603.22263",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.22263"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-23",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.22263"
+          ],
+          "title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2603.22264",
+          "arxiv_id": "2603.22264",
+          "work_id": "arxiv:2603.22264",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.22264"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-23",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D7",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.22264",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html"
+          ],
+          "title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2603.19201",
+          "arxiv_id": "2603.19201",
+          "work_id": "arxiv:2603.19201",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.19201"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-19",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q0",
+            "Q1",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.19201"
+          ],
+          "title": "OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D3",
+        "D4",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2603.19201"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.19201",
+        "https://arxiv.org/abs/2603.22263",
+        "https://arxiv.org/abs/2603.22264",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相比早期 reward shaping，任务与感知都更接近连续接触闭环。",
+      "maturity": "真实机器人证据增强，硬件可复制性仍有限。",
+      "bottleneck": "高频触觉、动作空间维度和设备差异。",
+      "implication": "优先跟踪“传感器—数据—策略”一体化团队。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "灵巧操作从单步抓取转向可观测的长时接触",
+        "grade": "B",
+        "kind": "weak",
+        "change": "DexDrummer、UniDex 与 OmniVTA 分别覆盖长时演奏、通用手控制和视触觉世界模型。",
+        "comparison": "相比早期 reward shaping，任务与感知都更接近连续接触闭环。",
+        "evidence_ids": [
+          "2603.22263",
+          "2603.22264",
+          "2603.19201"
+        ],
+        "maturity": "真实机器人证据增强，硬件可复制性仍有限。",
+        "bottleneck": "高频触觉、动作空间维度和设备差异。",
+        "implication": "优先跟踪“传感器—数据—策略”一体化团队。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-03:1b63f56b9955",
+      "month": "2026-03",
+      "title": "论文量激增，但不能把提交周期当成技术爆发",
+      "summary": "自动宽召回候选显著上升，基础模型命名占比最高；同期官方同行评审覆盖仍低。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-03/2",
+        "record_sha256": "219b6d96915b43916b79c27d32c5445f3c5748877356d6be77ebe03e58b91b29"
+      },
+      "supporting_ids": [
+        "arxiv:2603.28545",
+        "arxiv:2603.29844"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.28545",
+          "arxiv_id": "2603.28545",
+          "work_id": "arxiv:2603.28545",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.28545"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D6"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.28545"
+          ],
+          "title": "ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2603.29844",
+          "arxiv_id": "2603.29844",
+          "work_id": "arxiv:2603.29844",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.29844"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.29844"
+          ],
+          "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "questions": [
+        "Q10",
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2603.29844"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.28545",
+        "https://arxiv.org/abs/2603.29844"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "增长既包含真实扩散，也受到会议周期与 VLA 命名泛化影响。",
+      "maturity": "数量强、质量分化。",
+      "bottleneck": "统一真机评测和独立复现。",
+      "implication": "本月趋势判断应降低数量权重，提高真实机器人和开放资产权重。",
+      "legacy_grade": "D",
+      "legacy_kind": "cooling",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "论文量激增，但不能把提交周期当成技术爆发",
+        "grade": "D",
+        "kind": "cooling",
+        "change": "自动宽召回候选显著上升，基础模型命名占比最高；同期官方同行评审覆盖仍低。",
+        "comparison": "增长既包含真实扩散，也受到会议周期与 VLA 命名泛化影响。",
+        "evidence_ids": [
+          "2603.28545",
+          "2603.29844"
+        ],
+        "maturity": "数量强、质量分化。",
+        "bottleneck": "统一真机评测和独立复现。",
+        "implication": "本月趋势判断应降低数量权重，提高真实机器人和开放资产权重。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2603.16860",
+      "work_id": "arxiv:2603.16860",
+      "legacy_id": "2603.16860",
+      "title": "DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "先用零样本 VLM 收集次优交互训练动作条件视频世界模型，再在想象 rollout 中强化微调高层 planner。",
+      "limitation_zh": "性能依赖任务专用世界模型对复杂物理的覆盖，摘要未量化世界模型错误对 planner 更新的偏差。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1984",
+        "record_sha256": "2eb726372feb01e7357e886bcf58820c9d9ff31d86594915b92874e4752fe10e"
+      },
+      "supporting_ids": [
+        "arxiv:2603.16860"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.16860",
+          "arxiv_id": "2603.16860",
+          "work_id": "arxiv:2603.16860",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.16860"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-17",
+          "temporal_role": "current_month",
+          "directions": [
+            "D2",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.16860"
+          ],
+          "title": "DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D2",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.16860"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2603.17808",
+      "work_id": "arxiv:2603.17808",
+      "legacy_id": "2603.17808",
+      "title": "EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "把 inverse dynamics model 反用作奖励模型，以速度、加速度、jerk 和本体约束对视频世界模型做可执行性对齐。",
+      "limitation_zh": "可执行性奖励仍由已训练 IDM 定义，若 IDM 在分布外失真，可能把错误动力学偏好写回世界模型。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1991",
+        "record_sha256": "4dbba23b2c4266ca09c73d1596b8c24925ae67d5fc2f9ca358b899239098b8df"
+      },
+      "supporting_ids": [
+        "arxiv:2603.17808"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.17808",
+          "arxiv_id": "2603.17808",
+          "work_id": "arxiv:2603.17808",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.17808"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.17808"
+          ],
+          "title": "EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D4"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.17808"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2603.19201",
+      "work_id": "arxiv:2603.19201",
+      "legacy_id": "2603.19201",
+      "title": "OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 21K+ 轨迹、86 任务的视觉—触觉—动作数据训练双流世界模型，并用 60Hz 触觉反射闭环纠偏。",
+      "limitation_zh": "资产在摘要中表述为“将公开”，且高频触觉收益可能依赖特定传感器标定与接触接口。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2006",
+        "record_sha256": "ac3296af99b81b91286b879831bbf8d406eded5d57ec07b1f933b1bbf0957224"
+      },
+      "supporting_ids": [
+        "arxiv:2603.19201"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.19201",
+          "arxiv_id": "2603.19201",
+          "work_id": "arxiv:2603.19201",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.19201"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-19",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q0",
+            "Q1",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.19201"
+          ],
+          "title": "OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D3",
+        "D4"
+      ],
+      "questions": [
+        "Q0",
+        "Q1",
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2603.19201"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.19201"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2603.22263",
+      "work_id": "arxiv:2603.22263",
+      "legacy_id": "2603.22263",
+      "title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "以架子鼓把手内控制、反复接触和长时序双手协调合并为统一测试床，并用规划加 residual RL 实现 sim-to-real。",
+      "limitation_zh": "任务高度专用且策略训练于仿真，尚不能据此推断对非周期性日常灵巧任务的通用性。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2020",
+        "record_sha256": "a94ba39420bb83b381e348e7898dbeeb0851193bb84af04f06660be5e9b00c46"
+      },
+      "supporting_ids": [
+        "arxiv:2603.22263"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.22263",
+          "arxiv_id": "2603.22263",
+          "work_id": "arxiv:2603.22263",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.22263"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-23",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.22263"
+          ],
+          "title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D10",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.22263"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2603.22264",
+      "work_id": "arxiv:2603.22264",
+      "legacy_id": "2603.22264",
+      "title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "将 50K 轨迹、八种灵巧手、FAAS 统一动作空间、3D VLA 与便携采集装置组成 universal dexterous foundation suite。",
+      "limitation_zh": "下游工具使用实测集中在两种手，人工参与的重定向流程是否可随数据规模线性扩展仍不明确。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2021",
+        "record_sha256": "7ad3e574705c72e0049e591f63b0faee97c58e5a689c886bce4d46133cb94302"
+      },
+      "supporting_ids": [
+        "arxiv:2603.22264"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.22264",
+          "arxiv_id": "2603.22264",
+          "work_id": "arxiv:2603.22264",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.22264"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-23",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D7",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.22264",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html"
+          ],
+          "title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D7",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.22264",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2603.28545",
+      "work_id": "arxiv:2603.28545",
+      "legacy_id": "2603.28545",
+      "title": "ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "用 20 个实体任务、10,812 条专家轨迹和成对 real-to-sim 场景，为 VLA/WAM 提供可诊断的统一真实机器人评测。",
+      "limitation_zh": "当前评测覆盖七种桌面配置，仍不能代表更多机器人本体、接触丰富任务和跨实验室硬件差异。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2064",
+        "record_sha256": "57f54c3a0470d17e524f92afc92103c93d06e03aecfa9e854e9f64cab3be9460"
+      },
+      "supporting_ids": [
+        "arxiv:2603.28545"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.28545",
+          "arxiv_id": "2603.28545",
+          "work_id": "arxiv:2603.28545",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.28545"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-03-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D6"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.28545"
+          ],
+          "title": "ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D6"
+      ],
+      "questions": [
+        "Q10"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.28545"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2603.29844",
+      "work_id": "arxiv:2603.29844",
+      "legacy_id": "2603.29844",
+      "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+      "month": "2026-03",
+      "status": "legacy_editorial",
+      "contribution_zh": "用可微 latent intent bottleneck 连接 System-2 的未来表征与 System-1 的逆动力学控制，并以两阶段训练稳定端到端优化。",
+      "limitation_zh": "主要 benchmark 证据来自 RoboCasa GR1 Tabletop，真实人形机器人零样本结果的任务广度和失效模式仍需展开。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2069",
+        "record_sha256": "99019e5d61ffa5b2a90ffba34359120afc8bdb3e7b95450c80f65e6c46d38389"
+      },
+      "supporting_ids": [
+        "arxiv:2603.29844"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2603.29844",
+          "arxiv_id": "2603.29844",
+          "work_id": "arxiv:2603.29844",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.29844"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.29844"
+          ],
+          "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2603.29844"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.29844"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "5269bc0947317a0ef0a1ebcd27a1cc608a454a43c09c9f6f37e86d5729c7fc36"
+}

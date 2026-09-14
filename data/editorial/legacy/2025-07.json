@@ -1,0 +1,826 @@
+{
+  "schema_version": "3",
+  "month": "2025-07",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": false,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2025-07:31122eeb284c",
+      "month": "2025-07",
+      "title": "人类视频开始被拆成可迁移的动作先验",
+      "summary": "EC-Flow、H-RDT 与 GR-3 分别从无动作标签视频、双臂人类操作和通用数据配方切入，信号尚未形成单一范式，但都在绕开机器人示教瓶颈。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-07/0",
+        "record_sha256": "0a735bfee200a28aebc016e160530b24da6d6edb7be33a4a027b0f2d82dc2857"
+      },
+      "supporting_ids": [
+        "arxiv:2507.06224",
+        "arxiv:2507.23523",
+        "arxiv:2507.15493"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.06224",
+          "arxiv_id": "2507.06224",
+          "work_id": "arxiv:2507.06224",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.06224"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-08",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.06224"
+          ],
+          "title": "EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2507.23523",
+          "arxiv_id": "2507.23523",
+          "work_id": "arxiv:2507.23523",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.23523"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.23523"
+          ],
+          "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2507.15493",
+          "arxiv_id": "2507.15493",
+          "work_id": "arxiv:2507.15493",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.15493"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-21",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.15493"
+          ],
+          "title": "GR-3 Technical Report",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.06224",
+        "arxiv:2507.23523",
+        "arxiv:2507.15493"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.06224",
+        "https://arxiv.org/abs/2507.15493",
+        "https://arxiv.org/abs/2507.23523"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "同比基线中此类工作多停留在表征对齐；本月开始把人类数据直接接入动作生成或双臂策略。",
+      "maturity": "多为预训练或受控任务验证，跨本体稳定性仍弱。",
+      "bottleneck": "人—机动作空间对齐，以及视频中不可观测的力与接触。",
+      "implication": "优先跟踪能同时拥有数据转换器、机器人数据闭环和跨本体评测的团队。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "人类视频开始被拆成可迁移的动作先验",
+        "grade": "B",
+        "kind": "weak",
+        "change": "EC-Flow、H-RDT 与 GR-3 分别从无动作标签视频、双臂人类操作和通用数据配方切入，信号尚未形成单一范式，但都在绕开机器人示教瓶颈。",
+        "comparison": "同比基线中此类工作多停留在表征对齐；本月开始把人类数据直接接入动作生成或双臂策略。",
+        "evidence_ids": [
+          "2507.06224",
+          "2507.23523",
+          "2507.15493"
+        ],
+        "maturity": "多为预训练或受控任务验证，跨本体稳定性仍弱。",
+        "bottleneck": "人—机动作空间对齐，以及视频中不可观测的力与接触。",
+        "implication": "优先跟踪能同时拥有数据转换器、机器人数据闭环和跨本体评测的团队。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-07:4044a8fc5409",
+      "month": "2025-07",
+      "title": "“大脑—小脑”正在从二层变成三系统",
+      "summary": "TriVLA 把高层语义、低层动作与 episodic world model 明确拆分；EmbodieDreamer 则让世界模型承担 real-to-sim-to-real 中介。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-07/1",
+        "record_sha256": "0640ee192ce6e367545f0583127ee7e2b37e7481e03b7946305031377c3bc2f1"
+      },
+      "supporting_ids": [
+        "arxiv:2507.01424",
+        "arxiv:2507.05198"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.01424",
+          "arxiv_id": "2507.01424",
+          "work_id": "arxiv:2507.01424",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.01424"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.01424"
+          ],
+          "title": "TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2507.05198",
+          "arxiv_id": "2507.05198",
+          "work_id": "arxiv:2507.05198",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.05198"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-07",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.05198"
+          ],
+          "title": "EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D2",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.01424",
+        "arxiv:2507.05198"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.01424",
+        "https://arxiv.org/abs/2507.05198"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "早期 planner–policy 通常只有两层；本月出现把记忆/预测独立成第三模块的尝试。",
+      "maturity": "概念结构清晰，但独立团队和长时序真机证据不足。",
+      "bottleneck": "模块间误差传递与实时调度。",
+      "implication": "将“第三系统”作为观察项，不把新架构命名直接当作能力跃迁。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "“大脑—小脑”正在从二层变成三系统",
+        "grade": "C",
+        "kind": "weak",
+        "change": "TriVLA 把高层语义、低层动作与 episodic world model 明确拆分；EmbodieDreamer 则让世界模型承担 real-to-sim-to-real 中介。",
+        "comparison": "早期 planner–policy 通常只有两层；本月出现把记忆/预测独立成第三模块的尝试。",
+        "evidence_ids": [
+          "2507.01424",
+          "2507.05198"
+        ],
+        "maturity": "概念结构清晰，但独立团队和长时序真机证据不足。",
+        "bottleneck": "模块间误差传递与实时调度。",
+        "implication": "将“第三系统”作为观察项，不把新架构命名直接当作能力跃迁。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-07:2db7101640dc",
+      "month": "2025-07",
+      "title": "空间增强很热，但尚未等于通用性",
+      "summary": "Evo-0 用外部视觉几何模型补足 VLA 的 3D 表征，真实机器人结果积极；但没有同时证明跨本体、长时序和独立复现。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-07/2",
+        "record_sha256": "11a15379596d39f14a4ed8bafe6bcd5b90004444597f633bf4f0aafecadfdb49"
+      },
+      "supporting_ids": [
+        "arxiv:2507.00416"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.00416",
+          "arxiv_id": "2507.00416",
+          "work_id": "arxiv:2507.00416",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.00416"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-07-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.00416"
+          ],
+          "title": "Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.00416"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "数量增量主要来自为 VLA 加适配器，而不是统一训练目标。",
+      "maturity": "单点能力改善。",
+      "bottleneck": "空间 benchmark 增益能否转化为开放环境成功率。",
+      "implication": "投资研判应区分“VLA 组件供应商”与真正拥有数据和部署闭环的平台。",
+      "legacy_grade": "D",
+      "legacy_kind": "cooling",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "空间增强很热，但尚未等于通用性",
+        "grade": "D",
+        "kind": "cooling",
+        "change": "Evo-0 用外部视觉几何模型补足 VLA 的 3D 表征，真实机器人结果积极；但没有同时证明跨本体、长时序和独立复现。",
+        "comparison": "数量增量主要来自为 VLA 加适配器，而不是统一训练目标。",
+        "evidence_ids": [
+          "2507.00416"
+        ],
+        "maturity": "单点能力改善。",
+        "bottleneck": "空间 benchmark 增益能否转化为开放环境成功率。",
+        "implication": "投资研判应区分“VLA 组件供应商”与真正拥有数据和部署闭环的平台。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2507.00416",
+      "work_id": "arxiv:2507.00416",
+      "legacy_id": "2507.00416",
+      "title": "Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "把现成视觉几何基础模型的深度感知特征以即插即用方式注入 VLA，在无需额外深度传感器的前提下提升仿真与真实场景的空间操作。",
+      "limitation_zh": "依赖外部几何基础模型，摘要未显示跨本体或长时序验证；增益是否来自真正 3D 因果理解仍需独立复现。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/763",
+        "record_sha256": "97fca096c91a0b8a9e3e54d26fd8205f7f1ffc8f27b6a1179b95a7f130d2b88b"
+      },
+      "supporting_ids": [
+        "arxiv:2507.00416"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.00416",
+          "arxiv_id": "2507.00416",
+          "work_id": "arxiv:2507.00416",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.00416"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-07-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.00416"
+          ],
+          "title": "Evo-0: Vision-Language-Action Model with Implicit Spatial Understanding",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.00416"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2507.01424",
+      "work_id": "arxiv:2507.01424",
+      "legacy_id": "2507.01424",
+      "title": "TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "用 VLM、视频扩散式情景世界模型和 flow-matching 低层策略组成三系统，在约 36 Hz 下兼顾记忆、未来预测与真实机器人长时序控制。",
+      "limitation_zh": "三系统带来训练与部署复杂度，当前证据主要来自作者自建统一系统；世界模型误差如何累积尚缺充分消融。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/769",
+        "record_sha256": "e938f3b4e27338bda10f4a9d28a01901eabaae3e77016be4af0e579c15deab4a"
+      },
+      "supporting_ids": [
+        "arxiv:2507.01424"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.01424",
+          "arxiv_id": "2507.01424",
+          "work_id": "arxiv:2507.01424",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.01424"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.01424"
+          ],
+          "title": "TriVLA: A Triple-System-Based Unified Vision-Language-Action Model with Episodic World Modeling for General Robot Control",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.01424"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.01424"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2507.05198",
+      "work_id": "arxiv:2507.05198",
+      "legacy_id": "2507.05198",
+      "title": "EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "联合可微物理参数对齐与条件视频扩散外观对齐，缩小 Real2Sim2Real 差距，并报告真实任务平均成功率提升 29.17%。",
+      "limitation_zh": "物理参数与视频外观对齐都依赖可观测配对数据，面向新机器人/新接触动力学的泛化未被证明；开放资产当时仅为预告。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/786",
+        "record_sha256": "774375d7159b387276ffc54969501aa71a4c60b6f89420228c684c48baef23e1"
+      },
+      "supporting_ids": [
+        "arxiv:2507.05198"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.05198",
+          "arxiv_id": "2507.05198",
+          "work_id": "arxiv:2507.05198",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.05198"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-07",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.05198"
+          ],
+          "title": "EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D10",
+        "D3",
+        "D8"
+      ],
+      "questions": [
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.05198"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.05198"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2507.06224",
+      "work_id": "arxiv:2507.06224",
+      "legacy_id": "2507.06224",
+      "title": "EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "从无动作标签视频预测 embodiment-centric flow，再借 URDF 约束转成可执行动作，覆盖遮挡、柔性物体及非位移操作。",
+      "limitation_zh": "仍需准确 URDF 和动作转换，视频流对力、接触状态及严重遮挡的表达有限；跨本体规模未达基础模型量级。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/792",
+        "record_sha256": "dbb5e493571622c3e95fc54f6b8516207c05b569958b60f7cabac5af0d625c8a"
+      },
+      "supporting_ids": [
+        "arxiv:2507.06224"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.06224",
+          "arxiv_id": "2507.06224",
+          "work_id": "arxiv:2507.06224",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.06224"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-08",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.06224"
+          ],
+          "title": "EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.06224"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.06224"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2507.09117",
+      "work_id": "arxiv:2507.09117",
+      "legacy_id": "2507.09117",
+      "title": "Towards Human-level Dexterity via Robot Learning",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "以结构化探索、采样式规划和视触觉人类示范为主线，总结可扩展多指灵巧操作强化学习的一套方法体系。",
+      "limitation_zh": "这是博士论文式工作汇总而非单一可复算 benchmark，硬件、任务和训练配方差异使横向量化比较有限。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/797",
+        "record_sha256": "abf540518b736ab5ae3e6cc60ce1df2cf522592f2bbfa3a68c79e28807f244fe"
+      },
+      "supporting_ids": [
+        "arxiv:2507.09117"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.09117",
+          "arxiv_id": "2507.09117",
+          "work_id": "arxiv:2507.09117",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.09117"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-12",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.09117"
+          ],
+          "title": "Towards Human-level Dexterity via Robot Learning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2",
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.09117"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.09117"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2507.15493",
+      "work_id": "arxiv:2507.15493",
+      "legacy_id": "2507.15493",
+      "title": "GR-3 Technical Report",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "GR-3 以网络视觉语言数据、VR 人类轨迹和机器人轨迹协同训练，展示新物体/环境/抽象指令、双臂移动与长时序真实任务泛化。",
+      "limitation_zh": "技术报告由模型开发方自评，核心数据、权重与训练代码未承诺开放，真实任务的独立复现和安全边界未知。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/813",
+        "record_sha256": "0e1c7da01b3abfc0799442a2c21bbce2fb1e7778e59b5beb3b9e76d6ea18e338"
+      },
+      "supporting_ids": [
+        "arxiv:2507.15493"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.15493",
+          "arxiv_id": "2507.15493",
+          "work_id": "arxiv:2507.15493",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.15493"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-21",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.15493"
+          ],
+          "title": "GR-3 Technical Report",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.15493"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.15493"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2507.23523",
+      "work_id": "arxiv:2507.23523",
+      "legacy_id": "2507.23523",
+      "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+      "month": "2025-07",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 2B diffusion transformer 先学大规模第一视角人类手部先验，再用模块化动作编解码器适配不同机器人，显著提升双臂真实操作。",
+      "limitation_zh": "预训练依赖 3D 手姿态标注，迁移仍需机器人专用微调；摘要未给出代码/权重开放信号。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/828",
+        "record_sha256": "9b5256d5c9565496b70a5220d4cb27e92cef0438d718c3bb5d248ab728492e3e"
+      },
+      "supporting_ids": [
+        "arxiv:2507.23523"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2507.23523",
+          "arxiv_id": "2507.23523",
+          "work_id": "arxiv:2507.23523",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.23523"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.23523"
+          ],
+          "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.23523"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.23523"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "b4c4a194e607dcaf2ee11a7493a673e900edbf456679322bb4f9236a6f1d7e91"
+}

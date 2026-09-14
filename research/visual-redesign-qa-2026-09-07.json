@@ -1,0 +1,428 @@
+{
+  "checked_at": "2026-09-07T03:29:54.755Z",
+  "scope": "Local built preview; emulated CSS widths, not physical-device performance",
+  "checks": [
+    {
+      "route": "people-final",
+      "dialogOpen": false,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "people-final",
+      "dialogOpen": false,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "people-final",
+      "dialogOpen": false,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "people-final",
+      "dialogOpen": false,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "people-final",
+      "dialogOpen": false,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "home-final",
+      "dialogOpen": false,
+      "heading": "具身智能研究雷达",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "home-final",
+      "dialogOpen": false,
+      "heading": "具身智能研究雷达",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "home-final",
+      "dialogOpen": false,
+      "heading": "具身智能研究雷达",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "home-final",
+      "dialogOpen": false,
+      "heading": "具身智能研究雷达",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "home-final",
+      "dialogOpen": false,
+      "heading": "具身智能研究雷达",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "trends-final",
+      "dialogOpen": false,
+      "heading": "研究趋势",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "trends-final",
+      "dialogOpen": false,
+      "heading": "研究趋势",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "trends-final",
+      "dialogOpen": false,
+      "heading": "研究趋势",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "trends-final",
+      "dialogOpen": false,
+      "heading": "研究趋势",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "trends-final",
+      "dialogOpen": false,
+      "heading": "研究趋势",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "monthly-final",
+      "dialogOpen": false,
+      "heading": "月度研究重点",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "monthly-final",
+      "dialogOpen": false,
+      "heading": "月度研究重点",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "monthly-final",
+      "dialogOpen": false,
+      "heading": "月度研究重点",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "monthly-final",
+      "dialogOpen": false,
+      "heading": "月度研究重点",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "monthly-final",
+      "dialogOpen": false,
+      "heading": "月度研究重点",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "organizations-final",
+      "dialogOpen": false,
+      "heading": "关键公司与研究组",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "organizations-final",
+      "dialogOpen": false,
+      "heading": "关键公司与研究组",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "organizations-final",
+      "dialogOpen": false,
+      "heading": "关键公司与研究组",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "organizations-final",
+      "dialogOpen": false,
+      "heading": "关键公司与研究组",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "organizations-final",
+      "dialogOpen": false,
+      "heading": "关键公司与研究组",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "pulse-final",
+      "dialogOpen": false,
+      "heading": "动态观察",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "pulse-final",
+      "dialogOpen": false,
+      "heading": "动态观察",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "pulse-final",
+      "dialogOpen": false,
+      "heading": "动态观察",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "pulse-final",
+      "dialogOpen": false,
+      "heading": "动态观察",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "pulse-final",
+      "dialogOpen": false,
+      "heading": "动态观察",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "methods-final",
+      "dialogOpen": false,
+      "heading": "方法与数据 ​",
+      "ready": false,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "methods-final",
+      "dialogOpen": false,
+      "heading": "方法与数据 ​",
+      "ready": false,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "methods-final",
+      "dialogOpen": false,
+      "heading": "方法与数据 ​",
+      "ready": false,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "methods-final",
+      "dialogOpen": false,
+      "heading": "方法与数据 ​",
+      "ready": false,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "methods-final",
+      "dialogOpen": false,
+      "heading": "方法与数据 ​",
+      "ready": false,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "database-results-final",
+      "dialogOpen": false,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "database-results-final",
+      "dialogOpen": false,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "database-results-final",
+      "dialogOpen": false,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "database-results-final",
+      "dialogOpen": false,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "database-results-final",
+      "dialogOpen": false,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "database-dialog-final",
+      "dialogOpen": true,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "database-dialog-final",
+      "dialogOpen": true,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "database-dialog-final",
+      "dialogOpen": true,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "database-dialog-final",
+      "dialogOpen": true,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "database-dialog-final",
+      "dialogOpen": true,
+      "heading": "研究证据库",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "route": "people-dialog-final",
+      "dialogOpen": true,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "route": "people-dialog-final",
+      "dialogOpen": true,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "route": "people-dialog-final",
+      "dialogOpen": true,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "route": "people-dialog-final",
+      "dialogOpen": true,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "route": "people-dialog-final",
+      "dialogOpen": true,
+      "heading": "人物与研究",
+      "ready": true,
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  ],
+  "accessibility": {
+    "people": {
+      "passes": 26,
+      "violations": []
+    },
+    "home": {
+      "passes": 25,
+      "violations": []
+    }
+  },
+  "interactions": {
+    "world_model_share": "49 / 390 primary-direction works; chart-linked feed showed 49",
+    "generalist_august": "Only GEN-1.5 from Generalist retained",
+    "database": "GEN-1.5 original link and canonical evidence dialog opened; Escape closed",
+    "people_keyboard": "Enter opens; Escape closes and focus returns to Binghao Huang link",
+    "theme": "Light and dark native desktop screenshots inspected"
+  },
+  "limits": [
+    "No Lighthouse or physical-device LCP/CLS measurement",
+    "Image source relationships verified; no blanket image reuse permission",
+    "Pointer activation may restore body focus; keyboard activation returned to the originating link"
+  ]
+}

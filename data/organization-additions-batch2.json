@@ -1,0 +1,764 @@
+{
+  "version": "3.0",
+  "updated": "2026-09-05",
+  "batch_id": "attribution-2026-09-05-02",
+  "organizations": [
+    {
+      "organization_id": "org:ant-group",
+      "display_name": "Ant Group",
+      "short_name": "Ant Group",
+      "slug": "ant-group",
+      "entity_type": "company",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.antgroup.com/en"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "母机构节点；不作为独立研究跟踪名额。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:kth",
+      "display_name": "KTH Royal Institute of Technology",
+      "short_name": "KTH Royal Institute of Technology",
+      "slug": "kth",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Sweden",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.kth.se/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "母机构节点；不作为独立研究跟踪名额。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:kaist",
+      "display_name": "KAIST",
+      "short_name": "KAIST",
+      "slug": "kaist",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "South Korea",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.kaist.ac.kr/en/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "母机构节点；不作为独立研究跟踪名额。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:midea-group",
+      "display_name": "Midea Group",
+      "short_name": "Midea Group",
+      "slug": "midea-group",
+      "entity_type": "company",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.midea.com/global/about-midea"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "母机构节点；不作为独立研究跟踪名额。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:alibaba-cloud",
+      "display_name": "Alibaba Cloud",
+      "short_name": "Alibaba Cloud",
+      "slug": "alibaba-cloud",
+      "entity_type": "company",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.alibabacloud.com/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "母机构节点；不作为独立研究跟踪名额。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:kaist-davian",
+      "display_name": "KAIST DAVIAN Lab",
+      "short_name": "KAIST DAVIAN Lab",
+      "slug": "kaist-davian",
+      "entity_type": "laboratory",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "South Korea",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:kaist",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://davian.kaist.ac.kr/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://davian.kaist.ac.kr/"
+      },
+      "leaders": [
+        {
+          "name": "Jaegul Choo",
+          "role": "Professor / Lab PI",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://davian.kaist.ac.kr/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "DAVIAN 实验室母节点，机器人方向由独立跟踪单元 DAVIAN Robotics 呈现。",
+      "information_gaps": [],
+      "representative_updates": []
+    },
+    {
+      "organization_id": "org:robbyant",
+      "display_name": "Robbyant",
+      "short_name": "Robbyant",
+      "slug": "robbyant",
+      "entity_type": "research_company",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Shanghai Ant Robbyant Technology Co., Ltd."
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:ant-group",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://technology.robbyant.com/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://technology.robbyant.com/",
+        "projects": "https://robbyant-research.github.io/Zero-WAM/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人空间感知、视觉语言动作模型与世界模型；技术主页明确该公司属于 Ant Group。",
+      "information_gaps": [
+        "本批未核验组织负责人及任期，不从论文通讯作者或当前 roster 推定。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2608.26103"
+        ],
+        "source_urls": [
+          "https://robbyant-research.github.io/Zero-WAM/",
+          "https://technology.robbyant.com/"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:kth-rpl",
+      "display_name": "KTH Robotics, Perception and Learning",
+      "short_name": "KTH Robotics, Perception and Learning",
+      "slug": "kth-rpl",
+      "entity_type": "research_division",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Sweden",
+      "aliases": [
+        "KTH RPL",
+        "KTH Department of Robotics, Perception and Learning",
+        "KTH Division of Robotics, Perception and Learning"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:kth",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.kth.se/rpl"
+        }
+      ],
+      "official_urls": {
+        "home": "https://www.kth.se/rpl",
+        "research": "https://www.kth.se/rpl/research"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D6",
+        "D7",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "KTH 从事机器人、计算机视觉和机器学习的研究部门，覆盖感知、操作、导航、规划和社交机器人。",
+      "information_gaps": [
+        "论文中的 Division 与官网 Department 保留为名称变体；不据此猜测改组日期。",
+        "部门负责人及任期本批未核验。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2606.20048"
+        ],
+        "source_urls": [
+          "https://arxiv.org/html/2606.20048v1",
+          "https://www.kth.se/rpl"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:gigaai",
+      "display_name": "GigaAI",
+      "short_name": "GigaAI",
+      "slug": "gigaai",
+      "entity_type": "research_company",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "极佳科技"
+      ],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://gigaai.cc/",
+        "github": "https://github.com/open-gigaai",
+        "projects": "https://gigaai-research.github.io/GigaBrain-Challenge-2026/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D8",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "从事机器人世界模型、视觉语言动作模型与开源训练工具的研究公司。DVG-WM 论文明确列出 GigaAI 作者归属。",
+      "information_gaps": [
+        "公司网页正文依赖客户端渲染；公开研究身份由论文及官网互链的 open-gigaai 渠道核验。",
+        "与 gigaai.in 同名营销咨询业务分开；负责人及法律主体细节尚未核验。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2606.32028"
+        ],
+        "source_urls": [
+          "https://arxiv.org/html/2606.32028v1",
+          "https://github.com/open-gigaai"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:deepcybo",
+      "display_name": "DeepCybo",
+      "short_name": "DeepCybo",
+      "slug": "deepcybo",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "platform",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Unknown",
+      "country": "Unverified",
+      "aliases": [],
+      "parent_relations": [],
+      "official_urls": {
+        "projects": "https://deepcybo-physai.github.io/HumanAsHumanoid/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D5",
+        "D9"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "在论文与官方项目页中明确署名的机器人研究及硬件团队，参与人类视频到人形机器人学习及世界模型研究。",
+      "information_gaps": [
+        "法律主体、所在地、负责人及母机构关系均未核验；本节点仅表示论文明确署名的研究执行团队。",
+        "不由联合作者的 ZGCA/ZGCI 角色推断公司隶属关系。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "two_related_works",
+        "work_ids": [
+          "arxiv:2606.32009",
+          "arxiv:2604.26848"
+        ],
+        "source_urls": [
+          "https://deepcybo-physai.github.io/HumanAsHumanoid/",
+          "https://arxiv.org/html/2604.26848v1"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:ut-austin-robin",
+      "display_name": "UT Austin Robot Interactive Intelligence Lab",
+      "short_name": "UT Austin Robot Interactive Intelligence Lab",
+      "slug": "ut-austin-robin",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "UT Austin RobIn",
+        "Robot Interactive Intelligence Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-texas-at-austin",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://robin-lab.cs.utexas.edu/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://robin-lab.cs.utexas.edu/",
+        "publications": "https://robin-lab.cs.utexas.edu/publications/",
+        "people": "https://robin-lab.cs.utexas.edu/lab/"
+      },
+      "leaders": [
+        {
+          "name": "Roberto Martín-Martín",
+          "role": "Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://robin-lab.cs.utexas.edu/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D2",
+        "D4",
+        "D6",
+        "D7",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人在真实环境中的物理交互、学习、规划、控制与多模态感知；与 UT Austin RPL 是不同实验室。",
+      "information_gaps": [
+        "MimicDroid 仅作组织纳入门槛的既有语料参考，本批30项补证仍只新增 CoDex 归属。",
+        "不由负责人当前 Amazon 角色反推本实验室历史论文归属。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "two_related_works",
+        "work_ids": [
+          "arxiv:2606.31909",
+          "arxiv:2509.09769"
+        ],
+        "source_urls": [
+          "https://arxiv.org/html/2606.31909v1",
+          "https://robin-lab.cs.utexas.edu/publications/"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:daimon-robotics",
+      "display_name": "Daimon Robotics",
+      "short_name": "Daimon Robotics",
+      "slug": "daimon-robotics",
+      "entity_type": "research_company",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "戴盟机器人"
+      ],
+      "parent_relations": [],
+      "official_urls": {
+        "home": "https://www.dmrobot.com/en/"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D9",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "从事视触觉传感、物理交互数据与触觉机器人基础模型的研究与产品团队，UniTacVLA 论文明确列其为作者单位。",
+      "information_gaps": [
+        "官网列有深圳及香港经营主体，本节点跟踪统一研究品牌，不将不同法律主体强制合并为法人。",
+        "负责人及任期本批未核验。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2606.31723"
+        ],
+        "source_urls": [
+          "https://arxiv.org/html/2606.31723v1",
+          "https://www.dmrobot.com/en/"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:kaist-davian-robotics",
+      "display_name": "KAIST DAVIAN Robotics",
+      "short_name": "KAIST DAVIAN Robotics",
+      "slug": "kaist-davian-robotics",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "South Korea",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:kaist-davian",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://davian-robotics.github.io/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://davian-robotics.github.io/",
+        "projects": "https://davian-robotics.github.io/3D_HAMSTER/",
+        "github": "https://github.com/DAVIAN-Robotics"
+      },
+      "leaders": [
+        {
+          "name": "Jaegul Choo",
+          "role": "Professor / Lab PI",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://davian-robotics.github.io/"
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "DAVIAN Lab 的机器人研究组，研究视觉语言动作模型、机器人操作与仿真到现实强化学习。",
+      "information_gaps": [
+        "官网研究列表由公开 data/projects.js 渲染；其会议标签只作作者/实验室发布，不当作官方主会决定。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2606.31329"
+        ],
+        "source_urls": [
+          "https://davian-robotics.github.io/",
+          "https://davian-robotics.github.io/data/projects.js"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:midea-airc",
+      "display_name": "Midea AI Research Center",
+      "short_name": "Midea AI Research Center",
+      "slug": "midea-airc",
+      "entity_type": "research_division",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Midea AIRC",
+        "AIRC, Midea Group"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:midea-group",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://demavla.github.io/"
+        }
+      ],
+      "official_urls": {
+        "home": "https://huggingface.co/Midea-AIRC",
+        "projects": "https://demavla.github.io/",
+        "models": "https://huggingface.co/Midea-AIRC/DeMaVLA"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D7",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "Midea Group 的 AI 研究中心；DeMaVLA 项目与已发布模型明确标注 AIRC/Midea AI Research Center。",
+      "information_gaps": [
+        "论文项目负责人不推定为中心负责人；中心负责人任期尚未核验。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2605.31286"
+        ],
+        "source_urls": [
+          "https://demavla.github.io/",
+          "https://huggingface.co/Midea-AIRC/DeMaVLA"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    },
+    {
+      "organization_id": "org:qwen-team",
+      "display_name": "Qwen Team",
+      "short_name": "Qwen Team",
+      "slug": "qwen-team",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Qwen Research Team"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:alibaba-cloud",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://github.com/QwenLM"
+        }
+      ],
+      "official_urls": {
+        "home": "https://qwenlm.github.io/about/",
+        "blog": "https://qwen.ai/blog?id=qwenvla",
+        "code": "https://github.com/QwenLM/Qwen-VLA"
+      },
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "medium",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研发通用语言、多模态与视觉语言动作模型的研究团队；Qwen-VLA 论文直接由 Qwen Team 署名。",
+      "information_gaps": [
+        "博客正文依赖客户端渲染；论文署名、官方关于页与论文直接链接的代码库已读。",
+        "负责人及任期未核验；Qwen Team 与母机构 Alibaba Cloud 分开。"
+      ],
+      "representative_updates": [],
+      "admission_evidence": {
+        "rule": "one_E2_or_higher_work",
+        "work_ids": [
+          "arxiv:2605.30280"
+        ],
+        "source_urls": [
+          "https://arxiv.org/html/2605.30280v1",
+          "https://github.com/QwenLM/Qwen-VLA",
+          "https://qwenlm.github.io/about/"
+        ],
+        "checked_at": "2026-09-05",
+        "review_scope": "组织与相关公开作品门槛；不升级同行评审或独立复现状态。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,910 @@
+{
+  "schema_version": "3",
+  "month": "2026-05",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-05:745179157d46",
+      "month": "2026-05",
+      "title": "视频模型正在被改造成 generalist policy，而非外置 world model",
+      "summary": "Turning Video Models into Generalist Robot Policies、τ0-WM 与 Cosmos Policy 把视频预测和动作生成压进同一训练栈。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-05/0",
+        "record_sha256": "29ea9fcaac72b9395ba08b3d596d1a44b9bc23de951ba3955174345ea9fb69a6"
+      },
+      "supporting_ids": [
+        "arxiv:2605.27817",
+        "arxiv:2606.01027",
+        "arxiv:2601.16163"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2605.27817",
+          "arxiv_id": "2605.27817",
+          "work_id": "arxiv:2605.27817",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.27817"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q0",
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.27817"
+          ],
+          "title": "Turning Video Models into Generalist Robot Policies",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2606.01027",
+          "arxiv_id": "2606.01027",
+          "work_id": "arxiv:2606.01027",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.01027"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.01027"
+          ],
+          "title": "$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2601.16163",
+          "arxiv_id": "2601.16163",
+          "work_id": "arxiv:2601.16163",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.16163"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-01-22",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.16163"
+          ],
+          "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q0",
+        "Q2",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2601.16163"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.16163",
+        "https://arxiv.org/abs/2605.27817",
+        "https://arxiv.org/abs/2606.01027"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "2025 年视频模型多是数据或模拟器；现在开始直接承担控制表示。",
+      "maturity": "跨团队方向明确，实时控制成本仍高。",
+      "bottleneck": "像素生成冗余与动作时延。",
+      "implication": "未来胜出的可能是压缩 latent video-action model，而非最大视频生成器。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "视频模型正在被改造成 generalist policy，而非外置 world model",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Turning Video Models into Generalist Robot Policies、τ0-WM 与 Cosmos Policy 把视频预测和动作生成压进同一训练栈。",
+        "comparison": "2025 年视频模型多是数据或模拟器；现在开始直接承担控制表示。",
+        "evidence_ids": [
+          "2605.27817",
+          "2606.01027",
+          "2601.16163"
+        ],
+        "maturity": "跨团队方向明确，实时控制成本仍高。",
+        "bottleneck": "像素生成冗余与动作时延。",
+        "implication": "未来胜出的可能是压缩 latent video-action model，而非最大视频生成器。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-05:e49070976597",
+      "month": "2026-05",
+      "title": "连续推理开始取代离散 reason–act 循环",
+      "summary": "Continuous Reasoning、Libra-VLA 与 StreamVLA 都试图让思考与控制异步或连续发生。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-05/1",
+        "record_sha256": "1423d05fdf447ff8f7e8ead400e5cd625b39f791829bb728d97b507bc6fa2d62"
+      },
+      "supporting_ids": [
+        "arxiv:2606.00229",
+        "arxiv:2604.24921",
+        "arxiv:2602.01100"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.00229",
+          "arxiv_id": "2606.00229",
+          "work_id": "arxiv:2606.00229",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.00229"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.00229"
+          ],
+          "title": "Continuous Reasoning for Vision-Language-Action",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2604.24921",
+          "arxiv_id": "2604.24921",
+          "work_id": "arxiv:2604.24921",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.24921"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-27",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.24921"
+          ],
+          "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2602.01100",
+          "arxiv_id": "2602.01100",
+          "work_id": "arxiv:2602.01100",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.01100"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-01",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.01100"
+          ],
+          "title": "StreamVLA: Breaking the Reason-Act Cycle via Completion-State Gating",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.24921",
+        "arxiv:2602.01100"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.01100",
+        "https://arxiv.org/abs/2604.24921",
+        "https://arxiv.org/abs/2606.00229"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "大小脑竞争由模块命名转向时钟与状态同步。",
+      "maturity": "三团队连续出现。",
+      "bottleneck": "推理状态陈旧、测试时计算不可控。",
+      "implication": "系统软件和推理调度会成为 VLA 部署的关键护城河。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "连续推理开始取代离散 reason–act 循环",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Continuous Reasoning、Libra-VLA 与 StreamVLA 都试图让思考与控制异步或连续发生。",
+        "comparison": "大小脑竞争由模块命名转向时钟与状态同步。",
+        "evidence_ids": [
+          "2606.00229",
+          "2604.24921",
+          "2602.01100"
+        ],
+        "maturity": "三团队连续出现。",
+        "bottleneck": "推理状态陈旧、测试时计算不可控。",
+        "implication": "系统软件和推理调度会成为 VLA 部署的关键护城河。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-05:a87f509d92e9",
+      "month": "2026-05",
+      "title": "generalist 底座开始向软体与灵巧专用能力下沉",
+      "summary": "DeMaVLA、BORA 与 Qwen-VLA 分别覆盖可变形物体、真实灵巧在线适配和跨任务/本体统一。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-05/2",
+        "record_sha256": "e0a42871d51ce686231fd22d00fbd3015c8dfebd79d2981c1aaf1ab37a9375f7"
+      },
+      "supporting_ids": [
+        "arxiv:2605.31286",
+        "arxiv:2605.30226",
+        "arxiv:2605.30280"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2605.31286",
+          "arxiv_id": "2605.31286",
+          "work_id": "arxiv:2605.31286",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.31286"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D7"
+          ],
+          "questions": [
+            "Q4",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.31286"
+          ],
+          "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2605.30226",
+          "arxiv_id": "2605.30226",
+          "work_id": "arxiv:2605.30226",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.30226"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D7",
+            "D8",
+            "D13"
+          ],
+          "questions": [
+            "Q0",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.30226"
+          ],
+          "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2605.30280",
+          "arxiv_id": "2605.30280",
+          "work_id": "arxiv:2605.30280",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.30280"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D10",
+            "D11",
+            "D12"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.30280"
+          ],
+          "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D4",
+        "D7",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q4",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2605.30226",
+        "https://arxiv.org/abs/2605.30280",
+        "https://arxiv.org/abs/2605.31286"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相较只做 kitchen benchmark，任务物理性明显增强。",
+      "maturity": "真实任务信号增强，开放与独立复现待确认。",
+      "bottleneck": "专用数据稀缺与在线适配安全。",
+      "implication": "通用模型价值将通过高难度垂直任务兑现，而不是只看平均 benchmark。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "generalist 底座开始向软体与灵巧专用能力下沉",
+        "grade": "B",
+        "kind": "weak",
+        "change": "DeMaVLA、BORA 与 Qwen-VLA 分别覆盖可变形物体、真实灵巧在线适配和跨任务/本体统一。",
+        "comparison": "相较只做 kitchen benchmark，任务物理性明显增强。",
+        "evidence_ids": [
+          "2605.31286",
+          "2605.30226",
+          "2605.30280"
+        ],
+        "maturity": "真实任务信号增强，开放与独立复现待确认。",
+        "bottleneck": "专用数据稀缺与在线适配安全。",
+        "implication": "通用模型价值将通过高难度垂直任务兑现，而不是只看平均 benchmark。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2605.27817",
+      "work_id": "arxiv:2605.27817",
+      "legacy_id": "2605.27817",
+      "title": "Turning Video Models into Generalist Robot Policies",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "保持 video planner 本体无关，仅为各机器人训练基于 Jacobian 的 IDM，形成可替换视频模型的闭环 VERA 路线。",
+      "limitation_zh": "每个本体仍需专用 IDM 和自玩数据，通用性从规划端转移到了动作翻译端而未完全消除适配成本。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2421",
+        "record_sha256": "30fc1d0eafc3a2979fdb5d50d9b36cecf889c737ef62e88bf1388ca8cddb7a86"
+      },
+      "supporting_ids": [
+        "arxiv:2605.27817"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2605.27817",
+          "arxiv_id": "2605.27817",
+          "work_id": "arxiv:2605.27817",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.27817"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q0",
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.27817"
+          ],
+          "title": "Turning Video Models into Generalist Robot Policies",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q0",
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2605.27817"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2605.30226",
+      "work_id": "arxiv:2605.30226",
+      "legacy_id": "2605.30226",
+      "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "用离线动作条件 critic 稳定价值学习，再冻结 VLA 基座，以人类介入的 chunk-wise residual 做低风险在线适配。",
+      "limitation_zh": "需要真实硬件在线阶段和人工干预，扩展到大规模无人值守学习时的成本与安全性尚未解决。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2448",
+        "record_sha256": "234cfd7d906bf43a09a25da363ded2ebfb3b0acb901d17edee06173e6cb64d16"
+      },
+      "supporting_ids": [
+        "arxiv:2605.30226"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2605.30226",
+          "arxiv_id": "2605.30226",
+          "work_id": "arxiv:2605.30226",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.30226"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D7",
+            "D8",
+            "D13"
+          ],
+          "questions": [
+            "Q0",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.30226"
+          ],
+          "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D13",
+        "D4",
+        "D7",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2605.30226"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2605.30280",
+      "work_id": "arxiv:2605.30280",
+      "legacy_id": "2605.30280",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 embodiment-aware prompt 和统一动作—轨迹预测，把操作、导航、轨迹预测及多源数据纳入单一 Qwen-VLA。",
+      "limitation_zh": "跨任务指标来自多个异质 benchmark，仍需统一实体任务检验能力是否真正共享而非任务头间并置。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2449",
+        "record_sha256": "63a84d4a78fb0665d5be10fd65e0708c7d252190140ee982d362c86b00089259"
+      },
+      "supporting_ids": [
+        "arxiv:2605.30280"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2605.30280",
+          "arxiv_id": "2605.30280",
+          "work_id": "arxiv:2605.30280",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.30280"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D10",
+            "D11",
+            "D12"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.30280"
+          ],
+          "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D11",
+        "D12"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2605.30280"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2605.31286",
+      "work_id": "arxiv:2605.31286",
+      "legacy_id": "2605.31286",
+      "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "以约 5,000 小时双臂真实示范预训练，再用失败纠正轨迹和 HiL DAgger 学习跨服装类别的通用折叠策略。",
+      "limitation_zh": "应用仍聚焦折叠，跨材料和场景的强结果尚不足以代表更广泛的柔性物体操作。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2459",
+        "record_sha256": "9105ba19595f68d7fcfff357e445068c166f32b10413febe97fb5b6a71d806e8"
+      },
+      "supporting_ids": [
+        "arxiv:2605.31286"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2605.31286",
+          "arxiv_id": "2605.31286",
+          "work_id": "arxiv:2605.31286",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.31286"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D7"
+          ],
+          "questions": [
+            "Q4",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.31286"
+          ],
+          "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D7"
+      ],
+      "questions": [
+        "Q4",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2605.31286"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.00229",
+      "work_id": "arxiv:2606.00229",
+      "legacy_id": "2606.00229",
+      "title": "Continuous Reasoning for Vision-Language-Action",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "把可共享、可验证的 Gaussian continuous thoughts 作为 VLA 推理介质，并以教师消费学生 latent 的动作改善来约束推理。",
+      "limitation_zh": "连续 latent 的可解释性弱于文本和显式子目标，真实机器人结果仍集中于两种平台与既定子任务。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2469",
+        "record_sha256": "3b9ae1b51a389916ea1fd8f228d408991dcb13e05bd6a2d601a3cb87733dda8f"
+      },
+      "supporting_ids": [
+        "arxiv:2606.00229"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.00229",
+          "arxiv_id": "2606.00229",
+          "work_id": "arxiv:2606.00229",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.00229"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.00229"
+          ],
+          "title": "Continuous Reasoning for Vision-Language-Action",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.00229"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.01027",
+      "work_id": "arxiv:2606.01027",
+      "legacy_id": "2606.01027",
+      "title": "$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "以共享视频 diffusion backbone 统一动作生成、未来视频模拟和进度评分，并在约 27,300 小时混合数据上训练。",
+      "limitation_zh": "测试时多候选采样和 simulator rectification 增加推理成本，摘要未报告实时性及独立真实机器人基线。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2480",
+        "record_sha256": "aa042a6e1a309d08ed25dbbfe8c134c0468b1d08a620484ec600115b125fc2dd"
+      },
+      "supporting_ids": [
+        "arxiv:2606.01027"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.01027",
+          "arxiv_id": "2606.01027",
+          "work_id": "arxiv:2606.01027",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.01027"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.01027"
+          ],
+          "title": "$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.01027"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.01241",
+      "work_id": "arxiv:2606.01241",
+      "legacy_id": "2606.01241",
+      "title": "OneVLA: A Unified Framework for Embodied Tasks",
+      "month": "2026-05",
+      "status": "legacy_editorial",
+      "contribution_zh": "用统一 action head 和渐进式多阶段训练把导航与操作纳入同一 VLA，探索跨任务正迁移。",
+      "limitation_zh": "“将公开”不等于已开放，摘要也未给出跨本体范围与导航—操作联合长任务的结果。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2486",
+        "record_sha256": "cc8f50cf1abf73bbf7201e08d3fcb15527bef5cd67050ac1615e0ae50e071d14"
+      },
+      "supporting_ids": [
+        "arxiv:2606.01241"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.01241",
+          "arxiv_id": "2606.01241",
+          "work_id": "arxiv:2606.01241",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.01241"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-05-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.01241"
+          ],
+          "title": "OneVLA: A Unified Framework for Embodied Tasks",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2606.01241"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.01241"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "ec3ebd856cdb67c9af9d1138266d32872694b2d081650497d763dd055ce3f01e"
+}

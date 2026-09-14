@@ -1,0 +1,897 @@
+{
+  "schema_version": "3",
+  "month": "2025-11",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2025-11:5b3e1ac2509b",
+      "month": "2025-11",
+      "title": "世界模型终于开始用规划成功率证明自己",
+      "summary": "WorldPlanner 把 action-conditioned visual world model 接入 MCTS/MPC；跨本体灵巧世界模型与 Ctrl-World 构成独立跟进。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-11/0",
+        "record_sha256": "c32900089dd345dc10042da1dea31615af5bc6a968efd051e7055369e6a6a489"
+      },
+      "supporting_ids": [
+        "arxiv:2511.03077",
+        "arxiv:2511.01177",
+        "arxiv:2510.10125"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.03077",
+          "arxiv_id": "2511.03077",
+          "work_id": "arxiv:2511.03077",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.03077"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-04",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.03077",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_262"
+          ],
+          "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2511.01177",
+          "arxiv_id": "2511.01177",
+          "work_id": "arxiv:2511.01177",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.01177"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-03",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.01177"
+          ],
+          "title": "Scaling Cross-Embodiment World Models for Dexterous Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2510.10125",
+          "arxiv_id": "2510.10125",
+          "work_id": "arxiv:2510.10125",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.10125"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-11",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.10125"
+          ],
+          "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2511.01177"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.10125",
+        "https://arxiv.org/abs/2511.01177",
+        "https://arxiv.org/abs/2511.03077",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_262"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "比 8 月的生成/适配信号更接近闭环决策，但仍缺正式评审与规模化真机验证。",
+      "maturity": "闭环 PoC。",
+      "bottleneck": "长时预测误差和规划计算量。",
+      "implication": "世界模型团队的关键里程碑应是同算力下的控制收益。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "世界模型终于开始用规划成功率证明自己",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "WorldPlanner 把 action-conditioned visual world model 接入 MCTS/MPC；跨本体灵巧世界模型与 Ctrl-World 构成独立跟进。",
+        "comparison": "比 8 月的生成/适配信号更接近闭环决策，但仍缺正式评审与规模化真机验证。",
+        "evidence_ids": [
+          "2511.03077",
+          "2511.01177",
+          "2510.10125"
+        ],
+        "maturity": "闭环 PoC。",
+        "bottleneck": "长时预测误差和规划计算量。",
+        "implication": "世界模型团队的关键里程碑应是同算力下的控制收益。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-11:0b3366e8c0c1",
+      "month": "2025-11",
+      "title": "跨本体迁移从模型适配转向数据分布设计",
+      "summary": "X-Diffusion、InternData-A1 与 X-VLA 分别统一人类示范、合成数据和软提示式跨本体策略。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-11/1",
+        "record_sha256": "751c4d904c558e8af1d2b5216628b7325a19e87172910564bea91cd897a05658"
+      },
+      "supporting_ids": [
+        "arxiv:2511.04671",
+        "arxiv:2511.16651",
+        "arxiv:2510.10274"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.04671",
+          "arxiv_id": "2511.04671",
+          "work_id": "arxiv:2511.04671",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.04671"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-06",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.04671",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_281"
+          ],
+          "title": "X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2511.16651",
+          "arxiv_id": "2511.16651",
+          "work_id": "arxiv:2511.16651",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.16651"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-20",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.16651"
+          ],
+          "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2510.10274",
+          "arxiv_id": "2510.10274",
+          "work_id": "arxiv:2510.10274",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.10274"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-10-11",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://air-dream.netlify.app/",
+            "https://arxiv.org/abs/2510.10274"
+          ],
+          "title": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2510.10274"
+      ],
+      "source_urls": [
+        "https://air-dream.netlify.app/",
+        "https://arxiv.org/abs/2510.10274",
+        "https://arxiv.org/abs/2511.04671",
+        "https://arxiv.org/abs/2511.16651",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_281"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相比“为每台机器人做 adapter”，本月更多工作试图在数据和动作空间层消除本体差异。",
+      "maturity": "多路线并行，尚无统一跨本体 benchmark。",
+      "bottleneck": "动作坐标标准、硬件观测差异和负迁移。",
+      "implication": "跨本体数据协议可能比单一 VLA 权重更具平台价值。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "跨本体迁移从模型适配转向数据分布设计",
+        "grade": "B",
+        "kind": "weak",
+        "change": "X-Diffusion、InternData-A1 与 X-VLA 分别统一人类示范、合成数据和软提示式跨本体策略。",
+        "comparison": "相比“为每台机器人做 adapter”，本月更多工作试图在数据和动作空间层消除本体差异。",
+        "evidence_ids": [
+          "2511.04671",
+          "2511.16651",
+          "2510.10274"
+        ],
+        "maturity": "多路线并行，尚无统一跨本体 benchmark。",
+        "bottleneck": "动作坐标标准、硬件观测差异和负迁移。",
+        "implication": "跨本体数据协议可能比单一 VLA 权重更具平台价值。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-11:009ecf34c532",
+      "month": "2025-11",
+      "title": "VLA 开始从示范学习走向“从经验学习”",
+      "summary": "π*0.6 明确强调 experience learning，与 VLA-RFT 的可验证奖励形成呼应。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-11/2",
+        "record_sha256": "a13e6b498345c6cf04fb88733b20103d20634bdce1c2fae89e257ce7a938fd7d"
+      },
+      "supporting_ids": [
+        "arxiv:2511.14759",
+        "arxiv:2510.00406"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.14759",
+          "arxiv_id": "2511.14759",
+          "work_id": "arxiv:2511.14759",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.14759"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.14759",
+            "https://roboticsconference.org/program/papers/87/"
+          ],
+          "title": "$π^{*}_{0.6}$: a VLA That Learns From Experience",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2510.00406",
+          "arxiv_id": "2510.00406",
+          "work_id": "arxiv:2510.00406",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.00406"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-01",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D3",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.00406"
+          ],
+          "title": "VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D3",
+        "D8"
+      ],
+      "questions": [
+        "Q4",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2511.14759"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.00406",
+        "https://arxiv.org/abs/2511.14759",
+        "https://roboticsconference.org/program/papers/87/"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "共识仍是离线模仿；在线经验闭环尚属少数。",
+      "maturity": "两个高信号项目，独立复现弱。",
+      "bottleneck": "真实机器人安全探索和奖励设计。",
+      "implication": "跟踪拥有部署场景、可持续回收失败数据的团队。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "VLA 开始从示范学习走向“从经验学习”",
+        "grade": "C",
+        "kind": "weak",
+        "change": "π*0.6 明确强调 experience learning，与 VLA-RFT 的可验证奖励形成呼应。",
+        "comparison": "共识仍是离线模仿；在线经验闭环尚属少数。",
+        "evidence_ids": [
+          "2511.14759",
+          "2510.00406"
+        ],
+        "maturity": "两个高信号项目，独立复现弱。",
+        "bottleneck": "真实机器人安全探索和奖励设计。",
+        "implication": "跟踪拥有部署场景、可持续回收失败数据的团队。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2511.01177",
+      "work_id": "arxiv:2511.01177",
+      "legacy_id": "2511.01177",
+      "title": "Scaling Cross-Embodiment World Models for Dexterous Manipulation",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "把不同人手/机器人手统一为 3D 粒子与末端位移场，以跨本体世界模型和 MPC 在新硬件上迁移刚体及柔性操作。",
+      "limitation_zh": "共享粒子空间仍依赖准确几何与接触观测，任务与硬件数量有限；对高速、长时序和强触觉依赖技能尚未证明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1250",
+        "record_sha256": "e3116c9ca70a69c0dfa8692073475f954d16ce0c9e0263b4d7be14ef13d055ff"
+      },
+      "supporting_ids": [
+        "arxiv:2511.01177"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.01177",
+          "arxiv_id": "2511.01177",
+          "work_id": "arxiv:2511.01177",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.01177"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-03",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.01177"
+          ],
+          "title": "Scaling Cross-Embodiment World Models for Dexterous Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2511.01177"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.01177"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2511.02504",
+      "work_id": "arxiv:2511.02504",
+      "legacy_id": "2511.02504",
+      "title": "Dexterous Robotic Piano Playing at Scale",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "OmniPianist 训练 2000+ 专项 RL 智能体并汇成百万轨迹 RP1M++，再以 flow transformer 蒸馏出覆盖近千曲目的双手策略。",
+      "limitation_zh": "能力高度特化于钢琴，主要规模来自仿真 RL 与蒸馏，不能直接代表开放世界多物体灵巧操作。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1260",
+        "record_sha256": "2d8d4f56cfaae5d8c05c76f1087a79046d92512762099690809199e7165f960f"
+      },
+      "supporting_ids": [
+        "arxiv:2511.02504"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.02504",
+          "arxiv_id": "2511.02504",
+          "work_id": "arxiv:2511.02504",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.02504"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-04",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.02504"
+          ],
+          "title": "Dexterous Robotic Piano Playing at Scale",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.02504"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2511.03077",
+      "work_id": "arxiv:2511.03077",
+      "legacy_id": "2511.03077",
+      "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "WorldPlanner 用数小时无结构 play data 学动作条件视频世界模型、动作采样器和可选奖励，再以 MCTS+MPC 在真实机器人上规划。",
+      "limitation_zh": "仅三个真实任务，MCTS+MPC 计算重且世界模型幻觉仍可能误导规划；开放场景的安全恢复证据不足。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1263",
+        "record_sha256": "160f4cabbee370cbdcb639c8d29fa829384e142caf48c9906e35488948326410"
+      },
+      "supporting_ids": [
+        "arxiv:2511.03077"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.03077",
+          "arxiv_id": "2511.03077",
+          "work_id": "arxiv:2511.03077",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.03077"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-04",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.03077",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_262"
+          ],
+          "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.03077",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_262"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2511.04671",
+      "work_id": "arxiv:2511.04671",
+      "legacy_id": "2511.04671",
+      "title": "X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "X-Diffusion 将人类动作视为机器人动作的噪声对应物，只在高噪声层引入跨本体人类示范，五个真实任务平均提升 16%。",
+      "limitation_zh": "五个任务样本仍小，把人类动作当高噪声机器人动作的假设可能丢失关键接触/动力学差异。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1268",
+        "record_sha256": "4809c20f23fd1d2664b2a2502f8986574d424173b7fd199bc3e1f68980cf2534"
+      },
+      "supporting_ids": [
+        "arxiv:2511.04671"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.04671",
+          "arxiv_id": "2511.04671",
+          "work_id": "arxiv:2511.04671",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.04671"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-06",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.04671",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_281"
+          ],
+          "title": "X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.04671",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_281"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2511.14759",
+      "work_id": "arxiv:2511.14759",
+      "legacy_id": "2511.14759",
+      "title": "$π^{*}_{0.6}$: a VLA That Learns From Experience",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "RECAP 把示范、在线 rollout 与专家纠正统一为 advantage-conditioned VLA 强化学习，使 π*0.6 在家庭与商业设备任务中持续改进。",
+      "limitation_zh": "训练与部署数据、模型权重和完整配方未开放，结果来自单一开发团队；专家介入成本及长期安全治理未量化。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1310",
+        "record_sha256": "65a063f7a16f17450a2cca181db6fbb751c197cfaef1da631973a710542600f9"
+      },
+      "supporting_ids": [
+        "arxiv:2511.14759"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.14759",
+          "arxiv_id": "2511.14759",
+          "work_id": "arxiv:2511.14759",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.14759"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.14759",
+            "https://roboticsconference.org/program/papers/87/"
+          ],
+          "title": "$π^{*}_{0.6}$: a VLA That Learns From Experience",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2511.14759"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.14759",
+        "https://roboticsconference.org/program/papers/87/"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2511.16651",
+      "work_id": "arxiv:2511.16651",
+      "legacy_id": "2511.16651",
+      "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "InternData-A1 以自动仿真流水线生成 63 万轨迹/7433 小时、4 本体/70 任务数据，报告纯合成预训练可匹配 π0 并零样本 sim-to-real。",
+      "limitation_zh": "纯合成数据与 π0 的对比由同一团队完成，真实任务仅少量；生成流水线当时为未来开源承诺，sim-to-real 外推需谨慎。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1325",
+        "record_sha256": "a499d98f6c18fbee4d1a8c93ce0da8dd050e143a33779be40e661fa5f62186b2"
+      },
+      "supporting_ids": [
+        "arxiv:2511.16651"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.16651",
+          "arxiv_id": "2511.16651",
+          "work_id": "arxiv:2511.16651",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.16651"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-20",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.16651"
+          ],
+          "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4"
+      ],
+      "questions": [
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.16651"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2511.22134",
+      "work_id": "arxiv:2511.22134",
+      "legacy_id": "2511.22134",
+      "title": "DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action",
+      "month": "2025-11",
+      "status": "legacy_editorial",
+      "contribution_zh": "DualVLA 通过双层数据裁剪与双教师蒸馏缓解推理微调导致的动作退化，并提出按 reasoning/intention/action/alignment 分解的 VLA Score。",
+      "limitation_zh": "主要数字来自 SimplerEnv 和多模态 benchmark，摘要没有真实机器人证据；双教师与剪枝质量依赖专有标注。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1363",
+        "record_sha256": "7b272b1665a289c794f47819d5ab034ebefc813e36a72872cd0b0695cd321e8d"
+      },
+      "supporting_ids": [
+        "arxiv:2511.22134"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2511.22134",
+          "arxiv_id": "2511.22134",
+          "work_id": "arxiv:2511.22134",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.22134"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.22134"
+          ],
+          "title": "DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2511.22134"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.22134"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "c236f7470364a9789cc2dc91b2d5e2b3afbb9ba39914de7fa13eb163bd865e41"
+}

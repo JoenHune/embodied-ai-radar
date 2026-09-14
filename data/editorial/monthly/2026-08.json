@@ -1,0 +1,1221 @@
+{
+  "month": "2026-08",
+  "claims": [
+    {
+      "title": "动作条件世界模型同时面对动作遵循与闭环效用问题",
+      "summary": "本月预印本诊断离专家轨迹下的动作忽略、无效生成和长时漂移，并尝试以动作对齐改善策略评估或迭代用途；证据仍是作者报告的实验结果。",
+      "directions": [
+        "D3",
+        "D12"
+      ],
+      "questions": [
+        "Q10"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.24885",
+        "arxiv:2608.26239"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:claims:1"
+    },
+    {
+      "title": "人类视频被用于任务提示与跨本体物理建模",
+      "summary": "Zero-WAM将人类视频作为上下文任务说明，CLAP从人类及多类机器人视频学习跨本体视频世界模型；现有摘要不足以确认固定真机数据预算下的普遍收益。",
+      "directions": [
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q10"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.26103",
+        "arxiv:2608.27406"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:claims:2"
+    },
+    {
+      "title": "长时任务评测下钻到技能级失败",
+      "summary": "Behavior-Skill把完整任务拆为可独立恢复和评测的组成技能，并报告接触密集型技能是突出瓶颈，为总体成功率提供更细粒度的补充。",
+      "directions": [
+        "D1",
+        "D4",
+        "D6"
+      ],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2608.30536"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:claims:3"
+    },
+    {
+      "title": "触觉闭环强调接触状态相关的表征与纠正",
+      "summary": "CAAT按接触阶段调整视觉与触觉信息权重，ReTouch利用执行时触觉反馈细化预测与动作，VT-MUSE建模跨模态接触演化；这些均为预印本作者实验。",
+      "directions": [
+        "D4",
+        "D8",
+        "D11",
+        "D15"
+      ],
+      "questions": [
+        "Q1",
+        "Q3"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.01102",
+        "arxiv:2608.01824",
+        "arxiv:2608.21290"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:claims:4"
+    },
+    {
+      "title": "全身移动操作采用分层动作与预测表征",
+      "summary": "ω-0以紧凑未来表征耦合全身动作生成，HAF将动作流分层并在紧凑潜空间进行离线到在线强化学习；所提供摘要未披露统一的跨硬件对照。",
+      "directions": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D13"
+      ],
+      "questions": [
+        "Q5",
+        "Q6",
+        "Q10"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.06375",
+        "arxiv:2608.16837"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:claims:5"
+    },
+    {
+      "title": "安全评测覆盖配置化失败与执行相关指标",
+      "summary": "TrapVLA研究文本触发器诱导的指定失败模式；RoboPhys-3D以三维重建和任务相关指标揭示感知型评分可能遗漏的状态与执行失败。两者均为预印本，不构成独立安全认证。",
+      "directions": [
+        "D1",
+        "D3",
+        "D9"
+      ],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2608.26578",
+        "arxiv:2608.28718"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:claims:6"
+    },
+    {
+      "title": "严格同行评审记录需谨慎解释",
+      "summary": "本库在截止时点尚未核验到当月已登记样本的严格同行评审记录；这不表示本月不存在同行评审研究。",
+      "directions": [],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2608.24885",
+        "arxiv:2608.26103",
+        "arxiv:2608.26239"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [
+        {
+          "metric": "coverage.strict_peer_reviewed",
+          "value": 0,
+          "unit": "count",
+          "evidence_ids": [
+            "arxiv:2608.24885",
+            "arxiv:2608.26103",
+            "arxiv:2608.26239"
+          ]
+        }
+      ],
+      "claim_id": "claim:2026-08:llm:claims:7"
+    }
+  ],
+  "direction_summaries": [
+    {
+      "code": "D1",
+      "summary": "本月样本涵盖云边协同VLA、轨迹先验、持久世界状态、故障攻击与通才模型适配，研究问题涉及时延、记忆、动作结构和安全。",
+      "supporting_ids": [
+        "arxiv:2608.00569",
+        "arxiv:2608.06729",
+        "arxiv:2608.26578",
+        "arxiv:2608.30536",
+        "arxiv:2608.01265"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:1"
+    },
+    {
+      "code": "D2",
+      "summary": "分层推理与记忆工作覆盖动态环境规划、潜技能层级控制、任务图与场景图规划，以及带坐标记忆的快慢导航代理。",
+      "supporting_ids": [
+        "arxiv:2608.00625",
+        "arxiv:2608.07746",
+        "arxiv:2608.07905",
+        "arxiv:2608.09816"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:2"
+    },
+    {
+      "code": "D3",
+      "summary": "世界模型样本聚焦动作—后果耦合、长时生成、跨本体视频建模和执行相关评测，而不只关注视觉生成质量。",
+      "supporting_ids": [
+        "arxiv:2608.24885",
+        "arxiv:2608.26239",
+        "arxiv:2608.27406",
+        "arxiv:2608.28718"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:3"
+    },
+    {
+      "code": "D4",
+      "summary": "操作研究覆盖人类视频提示、接触感知融合、触觉闭环、双臂标注与硬件—数采协同设计，证据横跨仿真与作者报告的真机实验。",
+      "supporting_ids": [
+        "arxiv:2608.26103",
+        "arxiv:2608.01102",
+        "arxiv:2608.01824",
+        "arxiv:2608.20546",
+        "arxiv:2608.04425"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:4"
+    },
+    {
+      "code": "D5",
+      "summary": "人形与全身控制样本涉及单腿平衡、生成器—跟踪器协同训练、并行移动操作及坐姿移动，凸显控制表征和接触条件的作用。",
+      "supporting_ids": [
+        "arxiv:2608.00500",
+        "arxiv:2608.01410",
+        "arxiv:2608.06375",
+        "arxiv:2608.28090"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:5"
+    },
+    {
+      "code": "D6",
+      "summary": "导航与移动操作覆盖可复用语义记忆、无序图像地标、跨楼层持久地图和技能级长时评测，重点是历史信息复用与失败定位。",
+      "supporting_ids": [
+        "arxiv:2608.00527",
+        "arxiv:2608.06833",
+        "arxiv:2608.07079",
+        "arxiv:2608.30536"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:6"
+    },
+    {
+      "code": "D7",
+      "summary": "人机协作与交互学习包括包容性社会机器人设计、人类在环操作学习、社区评测框架和无线协作单元。",
+      "supporting_ids": [
+        "arxiv:2608.03820",
+        "arxiv:2608.03872",
+        "arxiv:2608.06898",
+        "arxiv:2608.09658"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:7"
+    },
+    {
+      "code": "D8",
+      "summary": "策略学习样本覆盖可供性对齐、触觉策略、世界模型对齐、在线强化学习与离线到在线移动操作；任务差异较大，不能从单月样本推断统一路线。",
+      "supporting_ids": [
+        "arxiv:2608.00502",
+        "arxiv:2608.01102",
+        "arxiv:2608.07314",
+        "arxiv:2608.12063"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:8"
+    },
+    {
+      "code": "D9",
+      "summary": "数据引擎样本包括人类—机器人上下文配对、可供性数据、跨本体视频和三维世界模型评测数据，均强调数据结构与执行用途的连接。",
+      "supporting_ids": [
+        "arxiv:2608.26103",
+        "arxiv:2608.05215",
+        "arxiv:2608.27406",
+        "arxiv:2608.28718"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:9"
+    },
+    {
+      "code": "D10",
+      "summary": "仿真与Sim-to-Real研究覆盖数字孪生、模拟器侧动力学归一化、安全迁移和由仿真专家生成离线数据等路径。",
+      "supporting_ids": [
+        "arxiv:2608.00406",
+        "arxiv:2608.01697",
+        "arxiv:2608.06481",
+        "arxiv:2608.12063"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:10"
+    },
+    {
+      "code": "D11",
+      "summary": "动作相关感知研究涵盖可供性定位、场景图、持久世界状态、主动消歧和视觉触觉时序表征，强调任务条件化空间证据。",
+      "supporting_ids": [
+        "arxiv:2608.00502",
+        "arxiv:2608.06170",
+        "arxiv:2608.06729",
+        "arxiv:2608.13605",
+        "arxiv:2608.21290"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:11"
+    },
+    {
+      "code": "D12",
+      "summary": "可靠性工作从动作遵循诊断、长时漂移、因果混淆、安全控制到部署阻塞项展开；结果多来自作者在特定基准上的实验。",
+      "supporting_ids": [
+        "arxiv:2608.24885",
+        "arxiv:2608.26239",
+        "arxiv:2608.04396",
+        "arxiv:2608.07154"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:12"
+    },
+    {
+      "code": "D13",
+      "summary": "所列样本涉及恢复控制、VLA强化学习后训练、真机在线强化学习及离线到在线全身控制。部署时执行已学习的恢复策略不等于现场更新模型；所提供摘要不足以统一比较人工成本与旧技能回归。",
+      "supporting_ids": [
+        "arxiv:2608.02385",
+        "arxiv:2608.07314",
+        "arxiv:2608.09762",
+        "arxiv:2608.16837"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:13"
+    },
+    {
+      "code": "D14",
+      "summary": "本月所列证据采用遗传模糊系统进行去中心化多机器人协同搬运，并在由高程图转换的可通行地图场景中验证。",
+      "supporting_ids": [
+        "arxiv:2608.12755"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:14"
+    },
+    {
+      "code": "D15",
+      "summary": "身体感知样本覆盖在线触觉纠正、全身EIT皮肤、近传感计算和视觉触觉时序表征，连接传感器结构、时延与策略学习。",
+      "supporting_ids": [
+        "arxiv:2608.01824",
+        "arxiv:2608.02080",
+        "arxiv:2608.05725",
+        "arxiv:2608.21290"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:direction_summaries:15"
+    }
+  ],
+  "question_summaries": [
+    {
+      "code": "Q0",
+      "summary": "闭环方案包括在线触觉纠正、自纠正世界模型、事件驱动重规划和离线到在线策略优化；所列摘要不足以确认各方法采用可直接比较的跨任务失败回流评测。",
+      "supporting_ids": [
+        "arxiv:2608.01824",
+        "arxiv:2608.07548",
+        "arxiv:2608.07905",
+        "arxiv:2608.12063"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:1"
+    },
+    {
+      "code": "Q1",
+      "summary": "接触表征分别采用接触先验、结构化触觉块、恢复状态划分和足部感知交叉注意力；所列摘要没有给出这些表示之间同条件的直接比较，不能据此判断全领域不存在该类比较。",
+      "supporting_ids": [
+        "arxiv:2608.01102",
+        "arxiv:2608.01824",
+        "arxiv:2608.02385",
+        "arxiv:2608.05975"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:2"
+    },
+    {
+      "code": "Q10",
+      "summary": "决策相关世界模型用于动作遵循诊断、内窥镜导航、潜空间动作生成和人类视频条件策略；所列证据尚未建立统一闭环收益标准。",
+      "supporting_ids": [
+        "arxiv:2608.24885",
+        "arxiv:2608.26103",
+        "arxiv:2608.01221",
+        "arxiv:2608.01397"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:3"
+    },
+    {
+      "code": "Q2",
+      "summary": "人类数据到机器人执行的路径包括人类视频上下文提示、接触可操作性迁移、可供性抽取和人类轨迹学习；所列摘要不足以跨方法比较本体适配成本。",
+      "supporting_ids": [
+        "arxiv:2608.26103",
+        "arxiv:2608.00554",
+        "arxiv:2608.05215",
+        "arxiv:2608.06221"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:4"
+    },
+    {
+      "code": "Q3",
+      "summary": "视觉—触觉研究报告接触阶段加权、执行时触觉纠正、硬件触觉覆盖和时序跨模态学习，但摘要中的消融设置并不统一。",
+      "supporting_ids": [
+        "arxiv:2608.01102",
+        "arxiv:2608.01824",
+        "arxiv:2608.02080",
+        "arxiv:2608.21290"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:5"
+    },
+    {
+      "code": "Q4",
+      "summary": "真实接触与仿真扩增样本涉及动力学归一化、策略随机化、统计验证和仿真专家数据；目前难以比较何种组合在等预算下最优。",
+      "supporting_ids": [
+        "arxiv:2608.01697",
+        "arxiv:2608.05975",
+        "arxiv:2608.06481",
+        "arxiv:2608.12063"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:6"
+    },
+    {
+      "code": "Q5",
+      "summary": "联合移动操作采用潜预测全身动作、潜技能层级规划、跨形态离线到在线学习和主动视角选择；任务与硬件差异阻碍横向结论。",
+      "supporting_ids": [
+        "arxiv:2608.06375",
+        "arxiv:2608.07746",
+        "arxiv:2608.12063",
+        "arxiv:2608.13605"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:7"
+    },
+    {
+      "code": "Q6",
+      "summary": "后训练方案涵盖生成器—跟踪器协同训练、语义—动作双时间尺度强化学习、安全控制组件耦合和潜空间离线到在线优化；所提供摘要不足以比较各方法的旧技能回归。",
+      "supporting_ids": [
+        "arxiv:2608.01410",
+        "arxiv:2608.04732",
+        "arxiv:2608.07314",
+        "arxiv:2608.16837"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:8"
+    },
+    {
+      "code": "Q7",
+      "summary": "面向降低人工纠正需求的研究包括世界模型反馈式自纠正和人类介入的在线强化学习。有人介入不等于已经证明低人力成本；所提供摘要不足以统一比较持续监护、接管时间与长期回归。",
+      "supporting_ids": [
+        "arxiv:2608.07548",
+        "arxiv:2608.09762"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:9"
+    },
+    {
+      "code": "Q8",
+      "summary": "共设计样本覆盖VLA加速器、夹爪与数采设备协同设计、社会机器人形态配置及人形手势安全控制；这些摘要不足以确认可跨任务和硬件外推的统一收益。",
+      "supporting_ids": [
+        "arxiv:2608.04428",
+        "arxiv:2608.18488",
+        "arxiv:2608.20546",
+        "arxiv:2608.28693"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:10"
+    },
+    {
+      "code": "Q9",
+      "summary": "短时社会人机交互实验中，扩大语言模型规模未带来总体显著偏好；这不足以构成机器人模型、数据与交互的通用缩放律。",
+      "supporting_ids": [
+        "arxiv:2608.08320"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:question_summaries:11"
+    }
+  ],
+  "organization_changes": [
+    {
+      "title": "GEN-1.5技术报告事件",
+      "summary": "Generalist AI本月登记了GEN-1.5技术报告发布事件；可用内容为公司自报短摘录，不是独立验证。",
+      "directions": [
+        "D1",
+        "D2",
+        "D8",
+        "D13"
+      ],
+      "questions": [
+        "Q0",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "supporting_ids": [
+        "upd-generalist-gen15-20260819"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:organization_changes:1"
+    },
+    {
+      "title": "Dyna技术报告事件",
+      "summary": "Dyna Robotics本月登记了Dyna-2、Dyna-2 Infrastructure和客户部署主题的技术报告事件；此处仅记录发布元数据。",
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9",
+        "D12",
+        "D13"
+      ],
+      "questions": [
+        "Q0",
+        "Q2",
+        "Q6",
+        "Q7",
+        "Q9",
+        "Q10"
+      ],
+      "supporting_ids": [
+        "upd-dyna-2-20260815",
+        "upd-dyna-2-infra-20260817",
+        "upd-dyna-customer-deployments-20260827"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:organization_changes:2"
+    },
+    {
+      "title": "S1模型发布事件",
+      "summary": "Skild AI本月登记了S1模型发布事件；此处仅记录发布元数据。",
+      "directions": [
+        "D1",
+        "D2",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q6",
+        "Q9"
+      ],
+      "supporting_ids": [
+        "upd-skild-s1-20260818"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:organization_changes:3"
+    },
+    {
+      "title": "Figure Index技术报告事件",
+      "summary": "Figure AI本月登记了Introducing Index技术报告发布事件；此处仅记录发布元数据，不据缺失的历史正文推断实验效果。",
+      "directions": [
+        "D1",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q9"
+      ],
+      "supporting_ids": [
+        "upd-figure-index-20260825"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:review:fc2ea6a4b614ed91bab646ad"
+    }
+  ],
+  "counterevidence": [
+    {
+      "title": "正常输入表现不能排除触发式后门风险",
+      "summary": "TrapVLA作者报告，在所测仿真和真机设置中，文本触发器能够诱导预设失败，同时大体保持干净输入下的表现。因此，正常任务评测通过不足以排除这类后门风险；这是攻击者构造条件下的作者实验，不是自然部署事故率或独立安全验证。",
+      "directions": [
+        "D1"
+      ],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2608.26578"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:review:dba0271f5c81f4ea0a7fffbe"
+    },
+    {
+      "title": "更大模型未必改善短时社交机器人体验",
+      "summary": "所列短时开放式社交人机交互研究未发现最大模型相对较小模型的总体显著偏好；作者同时报告，参与者使用AI的频率与对最大模型的智能排名相关。该结果限定于所测模型和交互协议，不能把未检出显著差异写成效果相同，也不能外推为机器人规模扩展普遍无效。",
+      "directions": [
+        "D7"
+      ],
+      "questions": [
+        "Q9"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.08320"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:review:dbf41f08257c487b6dd00570"
+    }
+  ],
+  "limitations": [
+    "统计反映已登记公开来源的覆盖，不能视为全部研究工作的普查。",
+    "摘要和公司披露不能替代全文实验核验；同行评审接收也不等于独立复现。",
+    "单月样本只能描述本月已登记研究；子主题缺少可比历史证据时，不能断言研究转向或首次开始。",
+    "严格同行评审计数为零仅表示本库在截止时点尚未核验到该样本的正式评审记录，不表示本月不存在同行评审研究。",
+    "部分公司报告或项目网页尚无内容与时间绑定的正文档案；报告标注发布日期不证明当前网页全文当时已存在，旧中文摘要不能替代原文。",
+    "公司报告只提供有来源和时间证明的必要短摘录；语境说明为AI提取，不是逐字引文，作者自报不等于独立验证。"
+  ],
+  "watchlist": [
+    {
+      "title": "等预算闭环控制收益",
+      "summary": "需检验动作遵循和视频指标改善能否在相同数据、计算与控制预算下稳定转化为策略收益。",
+      "directions": [
+        "D3",
+        "D12"
+      ],
+      "questions": [
+        "Q10"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.24885",
+        "arxiv:2608.26239"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:watchlist:1"
+    },
+    {
+      "title": "人类视频的跨本体净收益",
+      "summary": "需在固定真机数据预算下区分人类视频带来的视觉表征收益与最终机器人执行收益。",
+      "directions": [
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.26103",
+        "arxiv:2608.27406"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:watchlist:2"
+    },
+    {
+      "title": "部署后学习的人工成本与技能回归",
+      "summary": "需统一报告真机交互、人类接管、奖励设计成本，以及新技能适配后的旧技能回归。",
+      "directions": [
+        "D8",
+        "D13"
+      ],
+      "questions": [
+        "Q6",
+        "Q7"
+      ],
+      "supporting_ids": [
+        "arxiv:2608.07314",
+        "arxiv:2608.09762",
+        "arxiv:2608.16837"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:watchlist:3"
+    },
+    {
+      "title": "配置化失败评测的外部复现",
+      "summary": "需确认配置化失败攻击与评测能否由外部团队复现，并预测真实部署中的安全故障。",
+      "directions": [
+        "D1"
+      ],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2608.26578"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2026-08:llm:watchlist:4"
+    }
+  ],
+  "localizations": [
+    {
+      "work_id": "arxiv:2608.24885",
+      "title_zh": "机器人世界模型真的遵循动作吗？面向策略学习的动作条件生成诊断与对齐",
+      "summary_zh": "提出WorldEcho诊断专家与离专家动作分布下的动作遵循，并以WorldSync加强动作后果覆盖、表征落地和干预效果对齐。",
+      "keywords_zh": [
+        "世界模型",
+        "动作遵循",
+        "策略学习",
+        "离专家轨迹"
+      ],
+      "source_ids": [
+        "source:version-text:fc0fd9fd9297f380b22c70be"
+      ]
+    },
+    {
+      "work_id": "arxiv:2608.26103",
+      "title_zh": "Zero-WAM：基于人类视频上下文的开放任务世界—动作建模",
+      "summary_zh": "以人类视频作为任务上下文提示，训练因果视频—动作模型执行训练中未见任务，并报告仿真与真机泛化结果。",
+      "keywords_zh": [
+        "人类视频",
+        "上下文学习",
+        "世界—动作模型",
+        "任务泛化"
+      ],
+      "source_ids": [
+        "source:version-text:ad86189a60451770c38d292d"
+      ]
+    },
+    {
+      "work_id": "arxiv:2608.26239",
+      "title_zh": "WALL-SS：通过下一尺度自回归扩展长时世界模型",
+      "summary_zh": "以尺度级自回归生成动作可控的长时视觉未来，并结合压缩记忆、梦境强制与在策略对齐降低长时漂移。",
+      "keywords_zh": [
+        "长时世界模型",
+        "自回归",
+        "动作条件生成",
+        "记忆"
+      ],
+      "source_ids": [
+        "source:version-text:f4d9c65ce242ec7cd8d3ad60"
+      ]
+    },
+    {
+      "work_id": "arxiv:2608.26578",
+      "title_zh": "TrapVLA：将视觉—语言—动作模型诱入预设失败模式",
+      "summary_zh": "研究由隐蔽文本触发器诱导指定机器人失败方式的后门攻击，并构建配置化失败基准与攻击方法。",
+      "keywords_zh": [
+        "VLA安全",
+        "后门攻击",
+        "配置化失败",
+        "数据引擎"
+      ],
+      "source_ids": [
+        "source:version-text:fa2073ecf1eb1a2b24fe8197"
+      ]
+    },
+    {
+      "work_id": "arxiv:2608.27406",
+      "title_zh": "CLAP：跨本体视频世界模型作为零样本物理模拟器",
+      "summary_zh": "统一末端位姿、语言和潜动作条件，从人类与多类机器人视频学习跨本体视频世界模型，并报告零样本真机用途。",
+      "keywords_zh": [
+        "跨本体",
+        "视频世界模型",
+        "潜动作",
+        "零样本部署"
+      ],
+      "source_ids": [
+        "source:version-text:bf2e4bc423d328a02b15744b"
+      ]
+    },
+    {
+      "work_id": "arxiv:2608.28718",
+      "title_zh": "RoboPhys-3D：基于三维重建的具身世界模型综合评测",
+      "summary_zh": "通过统一三维重建流程评估生成视频的几何、状态与任务完整性，并指出感知型判断可能遗漏执行相关失败。",
+      "keywords_zh": [
+        "世界模型评测",
+        "三维重建",
+        "执行相关指标",
+        "RoboTwin"
+      ],
+      "source_ids": [
+        "source:version-text:107f3938e66e12d8345d891d"
+      ]
+    },
+    {
+      "work_id": "arxiv:2608.30536",
+      "title_zh": "Behavior-Skill：长时任务视觉—语言—动作策略的细粒度评测基准",
+      "summary_zh": "将长时家庭任务拆分为带可恢复中间状态和成功条件的组成技能，以定位总体成功率掩盖的中间失败。",
+      "keywords_zh": [
+        "长时任务",
+        "技能级评测",
+        "VLA",
+        "失败分析"
+      ],
+      "source_ids": [
+        "source:version-text:997fc77f116baedc15f4451f"
+      ]
+    },
+    {
+      "work_id": "report:de9e41b42353bf59a7e3",
+      "title_zh": "GEN-1.5",
+      "summary_zh": "公司自报在简单短时任务上的快速适配，分别涉及无梯度更新的上下文示教，以及额外示教后的少量梯度更新；不构成独立验证。",
+      "keywords_zh": [
+        "公司自报",
+        "机器人适配",
+        "上下文学习",
+        "技术报告"
+      ],
+      "source_ids": [
+        "source:report-archive:85a86ff8604d40b0f2f2973d"
+      ]
+    }
+  ],
+  "signal_assessments": [],
+  "schema_version": "3",
+  "status": "complete",
+  "generated_at": "2026-09-06T06:01:44Z",
+  "model": "gpt-5.6-sol",
+  "input_digest": "b8bacf3298ae98edbb07334671619997f64b271acf251660eaeafb0141ecf3b1",
+  "response_id": "resp_0b8b82b1dccf03a9016a9d01cb7d8887d0b24bc5ce8e55a913",
+  "failure": null,
+  "sampling": {
+    "monthly_included_works": 390,
+    "selected_works": 78,
+    "selected_events": 14,
+    "per_direction_clusters": 8,
+    "per_question_clusters": 4
+  },
+  "localization_work_ids": [
+    "arxiv:2608.24885",
+    "arxiv:2608.26103",
+    "arxiv:2608.26239",
+    "arxiv:2608.26578",
+    "arxiv:2608.27406",
+    "arxiv:2608.28718",
+    "arxiv:2608.30536",
+    "report:de9e41b42353bf59a7e3"
+  ],
+  "signal_evidence_record_ids": [],
+  "post_edit_reviews": [
+    {
+      "review_id": "editorial-review:2026-08:source-scope-1",
+      "reviewer": "Codex AI（源绑定内容审校，非人工专家）",
+      "reviewer_kind": "ai",
+      "reviewed_at": "2026-09-06T06:12:05Z",
+      "parent_artifact_digest": "82577b8ac8edbdf66138417a15b513e5da1fba538b42179e0c4d644a37756a68",
+      "parent_response_id": "resp_0b8b82b1dccf03a9016a9d01cb7d8887d0b24bc5ce8e55a913",
+      "input_digest": "b8bacf3298ae98edbb07334671619997f64b271acf251660eaeafb0141ecf3b1",
+      "edits": [
+        {
+          "path": "/direction_summaries/0/supporting_ids",
+          "before": [
+            "arxiv:2608.00569",
+            "arxiv:2608.06729",
+            "arxiv:2608.26578",
+            "arxiv:2608.30536"
+          ],
+          "after": [
+            "arxiv:2608.00569",
+            "arxiv:2608.06729",
+            "arxiv:2608.26578",
+            "arxiv:2608.30536",
+            "arxiv:2608.01265"
+          ],
+          "evidence_ids": [
+            "arxiv:2608.00569",
+            "arxiv:2608.06729",
+            "arxiv:2608.26578",
+            "arxiv:2608.30536",
+            "arxiv:2608.01265"
+          ],
+          "reason": "为轨迹先验补入直接对应的已可用原文"
+        },
+        {
+          "path": "/direction_summaries/3/supporting_ids",
+          "before": [
+            "arxiv:2608.26103",
+            "arxiv:2608.01102",
+            "arxiv:2608.01824",
+            "arxiv:2608.20546"
+          ],
+          "after": [
+            "arxiv:2608.26103",
+            "arxiv:2608.01102",
+            "arxiv:2608.01824",
+            "arxiv:2608.20546",
+            "arxiv:2608.04425"
+          ],
+          "evidence_ids": [
+            "arxiv:2608.26103",
+            "arxiv:2608.01102",
+            "arxiv:2608.01824",
+            "arxiv:2608.20546",
+            "arxiv:2608.04425"
+          ],
+          "reason": "为双臂标注补入直接对应的已可用原文"
+        },
+        {
+          "path": "/direction_summaries/10/supporting_ids",
+          "before": [
+            "arxiv:2608.00502",
+            "arxiv:2608.06170",
+            "arxiv:2608.06729",
+            "arxiv:2608.13605"
+          ],
+          "after": [
+            "arxiv:2608.00502",
+            "arxiv:2608.06170",
+            "arxiv:2608.06729",
+            "arxiv:2608.13605",
+            "arxiv:2608.21290"
+          ],
+          "evidence_ids": [
+            "arxiv:2608.00502",
+            "arxiv:2608.06170",
+            "arxiv:2608.06729",
+            "arxiv:2608.13605",
+            "arxiv:2608.21290"
+          ],
+          "reason": "为视觉触觉时序表征补入直接对应的已可用原文"
+        },
+        {
+          "path": "/direction_summaries/12/summary",
+          "before": "持续与部署后学习样本包括跌倒恢复、VLA强化学习后训练、真机在线强化学习及离线到在线全身控制，尚缺统一的人力成本和旧技能回归指标。",
+          "after": "所列样本涉及恢复控制、VLA强化学习后训练、真机在线强化学习及离线到在线全身控制。部署时执行已学习的恢复策略不等于现场更新模型；所提供摘要不足以统一比较人工成本与旧技能回归。",
+          "evidence_ids": [
+            "arxiv:2608.02385",
+            "arxiv:2608.07314",
+            "arxiv:2608.09762",
+            "arxiv:2608.16837"
+          ],
+          "reason": "区分部署执行恢复控制与部署后模型学习，并将缺失比较限定为所提供摘要"
+        },
+        {
+          "path": "/question_summaries/0/summary",
+          "before": "闭环方案包括在线触觉纠正、自纠正世界模型、事件驱动重规划和离线到在线策略优化，但跨任务统一的失败回流评测仍未形成。",
+          "after": "闭环方案包括在线触觉纠正、自纠正世界模型、事件驱动重规划和离线到在线策略优化；所列摘要不足以确认各方法采用可直接比较的跨任务失败回流评测。",
+          "evidence_ids": [
+            "arxiv:2608.01824",
+            "arxiv:2608.07548",
+            "arxiv:2608.07905",
+            "arxiv:2608.12063"
+          ],
+          "reason": "把研究缺口限定于所提供证据，避免由摘要缺失推断全领域没有实验或比较"
+        },
+        {
+          "path": "/question_summaries/1/summary",
+          "before": "接触表征分别采用接触先验、结构化触觉块、恢复状态划分和足部感知交叉注意力；尚无共同最小表示的直接比较。",
+          "after": "接触表征分别采用接触先验、结构化触觉块、恢复状态划分和足部感知交叉注意力；所列摘要没有给出这些表示之间同条件的直接比较，不能据此判断全领域不存在该类比较。",
+          "evidence_ids": [
+            "arxiv:2608.01102",
+            "arxiv:2608.01824",
+            "arxiv:2608.02385",
+            "arxiv:2608.05975"
+          ],
+          "reason": "把研究缺口限定于所提供证据，避免由摘要缺失推断全领域没有实验或比较"
+        },
+        {
+          "path": "/question_summaries/3/summary",
+          "before": "人类数据到机器人执行的路径包括人类视频上下文提示、接触可操作性迁移、可供性抽取和人类轨迹学习；本体适配成本仍缺统一披露。",
+          "after": "人类数据到机器人执行的路径包括人类视频上下文提示、接触可操作性迁移、可供性抽取和人类轨迹学习；所列摘要不足以跨方法比较本体适配成本。",
+          "evidence_ids": [
+            "arxiv:2608.26103",
+            "arxiv:2608.00554",
+            "arxiv:2608.05215",
+            "arxiv:2608.06221"
+          ],
+          "reason": "把研究缺口限定于所提供证据，避免由摘要缺失推断全领域没有实验或比较"
+        },
+        {
+          "path": "/question_summaries/7/summary",
+          "before": "后训练方案涵盖生成器—跟踪器协同训练、语义—动作双时间尺度强化学习、安全控制组件耦合和潜空间离线到在线优化，尚缺统一旧技能回归测试。",
+          "after": "后训练方案涵盖生成器—跟踪器协同训练、语义—动作双时间尺度强化学习、安全控制组件耦合和潜空间离线到在线优化；所提供摘要不足以比较各方法的旧技能回归。",
+          "evidence_ids": [
+            "arxiv:2608.01410",
+            "arxiv:2608.04732",
+            "arxiv:2608.07314",
+            "arxiv:2608.16837"
+          ],
+          "reason": "把研究缺口限定于所提供证据，避免由摘要缺失推断全领域没有实验或比较"
+        },
+        {
+          "path": "/question_summaries/8/summary",
+          "before": "低人力纠正证据包括世界模型反馈式自纠正和人类介入的在线强化学习；持续监护、接管时间与长期回归仍未统一报告。",
+          "after": "面向降低人工纠正需求的研究包括世界模型反馈式自纠正和人类介入的在线强化学习。有人介入不等于已经证明低人力成本；所提供摘要不足以统一比较持续监护、接管时间与长期回归。",
+          "evidence_ids": [
+            "arxiv:2608.07548",
+            "arxiv:2608.09762"
+          ],
+          "reason": "把研究缺口限定于所提供证据，避免由摘要缺失推断全领域没有实验或比较"
+        },
+        {
+          "path": "/question_summaries/9/summary",
+          "before": "共设计样本覆盖VLA加速器、夹爪与数采设备协同设计、社会机器人形态配置及人形手势安全控制，仍需受控硬件消融。",
+          "after": "共设计样本覆盖VLA加速器、夹爪与数采设备协同设计、社会机器人形态配置及人形手势安全控制；这些摘要不足以确认可跨任务和硬件外推的统一收益。",
+          "evidence_ids": [
+            "arxiv:2608.04428",
+            "arxiv:2608.18488",
+            "arxiv:2608.20546",
+            "arxiv:2608.28693"
+          ],
+          "reason": "把研究缺口限定于所提供证据，避免由摘要缺失推断全领域没有实验或比较"
+        },
+        {
+          "path": "/localizations/7/summary_zh",
+          "before": "公司自报的机器人快速适配技术报告，定性描述单次示教与少量梯度更新适配；不构成独立验证。",
+          "after": "公司自报在简单短时任务上的快速适配，分别涉及无梯度更新的上下文示教，以及额外示教后的少量梯度更新；不构成独立验证。",
+          "evidence_ids": [
+            "report:de9e41b42353bf59a7e3"
+          ],
+          "reason": "保留历史摘录中的简单短时任务限制，区分无梯度上下文示教与额外示教后的参数适配"
+        },
+        {
+          "path": "/organization_changes",
+          "before": [
+            {
+              "title": "GEN-1.5技术报告事件",
+              "summary": "Generalist AI本月登记了GEN-1.5技术报告发布事件；可用内容为公司自报短摘录，不是独立验证。",
+              "directions": [
+                "D1",
+                "D2",
+                "D8",
+                "D13"
+              ],
+              "questions": [
+                "Q0",
+                "Q6",
+                "Q7",
+                "Q9"
+              ],
+              "supporting_ids": [
+                "upd-generalist-gen15-20260819"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": [],
+              "claim_id": "claim:2026-08:llm:organization_changes:1"
+            },
+            {
+              "title": "Dyna技术报告事件",
+              "summary": "Dyna Robotics本月登记了Dyna-2、Dyna-2 Infrastructure和客户部署主题的技术报告事件；此处仅记录发布元数据。",
+              "directions": [
+                "D1",
+                "D3",
+                "D4",
+                "D8",
+                "D9",
+                "D12",
+                "D13"
+              ],
+              "questions": [
+                "Q0",
+                "Q2",
+                "Q6",
+                "Q7",
+                "Q9",
+                "Q10"
+              ],
+              "supporting_ids": [
+                "upd-dyna-2-20260815",
+                "upd-dyna-2-infra-20260817",
+                "upd-dyna-customer-deployments-20260827"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": [],
+              "claim_id": "claim:2026-08:llm:organization_changes:2"
+            },
+            {
+              "title": "S1模型发布事件",
+              "summary": "Skild AI本月登记了S1模型发布事件；此处仅记录发布元数据。",
+              "directions": [
+                "D1",
+                "D2",
+                "D8",
+                "D9"
+              ],
+              "questions": [
+                "Q2",
+                "Q6",
+                "Q9"
+              ],
+              "supporting_ids": [
+                "upd-skild-s1-20260818"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": [],
+              "claim_id": "claim:2026-08:llm:organization_changes:3"
+            }
+          ],
+          "after": [
+            {
+              "title": "GEN-1.5技术报告事件",
+              "summary": "Generalist AI本月登记了GEN-1.5技术报告发布事件；可用内容为公司自报短摘录，不是独立验证。",
+              "directions": [
+                "D1",
+                "D2",
+                "D8",
+                "D13"
+              ],
+              "questions": [
+                "Q0",
+                "Q6",
+                "Q7",
+                "Q9"
+              ],
+              "supporting_ids": [
+                "upd-generalist-gen15-20260819"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": [],
+              "claim_id": "claim:2026-08:llm:organization_changes:1"
+            },
+            {
+              "title": "Dyna技术报告事件",
+              "summary": "Dyna Robotics本月登记了Dyna-2、Dyna-2 Infrastructure和客户部署主题的技术报告事件；此处仅记录发布元数据。",
+              "directions": [
+                "D1",
+                "D3",
+                "D4",
+                "D8",
+                "D9",
+                "D12",
+                "D13"
+              ],
+              "questions": [
+                "Q0",
+                "Q2",
+                "Q6",
+                "Q7",
+                "Q9",
+                "Q10"
+              ],
+              "supporting_ids": [
+                "upd-dyna-2-20260815",
+                "upd-dyna-2-infra-20260817",
+                "upd-dyna-customer-deployments-20260827"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": [],
+              "claim_id": "claim:2026-08:llm:organization_changes:2"
+            },
+            {
+              "title": "S1模型发布事件",
+              "summary": "Skild AI本月登记了S1模型发布事件；此处仅记录发布元数据。",
+              "directions": [
+                "D1",
+                "D2",
+                "D8",
+                "D9"
+              ],
+              "questions": [
+                "Q2",
+                "Q6",
+                "Q9"
+              ],
+              "supporting_ids": [
+                "upd-skild-s1-20260818"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": [],
+              "claim_id": "claim:2026-08:llm:organization_changes:3"
+            },
+            {
+              "title": "Figure Index技术报告事件",
+              "summary": "Figure AI本月登记了Introducing Index技术报告发布事件；此处仅记录发布元数据，不据缺失的历史正文推断实验效果。",
+              "directions": [
+                "D1",
+                "D9"
+              ],
+              "questions": [
+                "Q2",
+                "Q9"
+              ],
+              "supporting_ids": [
+                "upd-figure-index-20260825"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": []
+            }
+          ],
+          "evidence_ids": [
+            "upd-figure-index-20260825"
+          ],
+          "reason": "补回证据包中已存在的关键公司发布事件；仅描述元数据，不将其升级为实验验证"
+        },
+        {
+          "path": "/counterevidence",
+          "before": [],
+          "after": [
+            {
+              "title": "正常输入表现不能排除触发式后门风险",
+              "summary": "TrapVLA作者报告，在所测仿真和真机设置中，文本触发器能够诱导预设失败，同时大体保持干净输入下的表现。因此，正常任务评测通过不足以排除这类后门风险；这是攻击者构造条件下的作者实验，不是自然部署事故率或独立安全验证。",
+              "directions": [
+                "D1"
+              ],
+              "questions": [],
+              "supporting_ids": [
+                "arxiv:2608.26578"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": []
+            },
+            {
+              "title": "更大模型未必改善短时社交机器人体验",
+              "summary": "所列短时开放式社交人机交互研究未发现最大模型相对较小模型的总体显著偏好；作者同时报告，参与者使用AI的频率与对最大模型的智能排名相关。该结果限定于所测模型和交互协议，不能把未检出显著差异写成效果相同，也不能外推为机器人规模扩展普遍无效。",
+              "directions": [
+                "D7"
+              ],
+              "questions": [
+                "Q9"
+              ],
+              "supporting_ids": [
+                "arxiv:2608.08320"
+              ],
+              "counterevidence_ids": [],
+              "numeric_claims": []
+            }
+          ],
+          "evidence_ids": [
+            "arxiv:2608.26578",
+            "arxiv:2608.08320"
+          ],
+          "reason": "补充可用原文明确报告的失败边界和未检出显著差异；不虚构独立复现或外部反驳"
+        }
+      ],
+      "review_digest": "b7905d0151eeaadce0d3add30ee4930fecca08d5d073031b10d79bd6421f70cb",
+      "result_content_digest": "3d1e63aa134a4eb3f10e9164cfe6f2b04fc0e903ec3113835024acb9d17a4fc8",
+      "scope": "content_review_not_independent_validation",
+      "label": "AI内容审校",
+      "independent_validation": false,
+      "generation_provenance": "post_edit_not_new_model_response"
+    }
+  ]
+}

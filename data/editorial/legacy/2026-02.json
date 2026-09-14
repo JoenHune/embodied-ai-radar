@@ -1,0 +1,933 @@
+{
+  "schema_version": "3",
+  "month": "2026-02",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-02:1a4e2ccaa218",
+      "month": "2026-02",
+      "title": "世界模型开始承担 RL 模拟器与在线自纠错",
+      "summary": "WoVR、Self-Correcting VLA 与 World-Gymnast 分别用于后训练模拟、稀疏想象修正和世界模型内 RL。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-02/0",
+        "record_sha256": "e0b5a0e9cdba6a239a152a94cf714ebe20c733964e5f5c43b38e6ca4244ae2fa"
+      },
+      "supporting_ids": [
+        "arxiv:2602.13977",
+        "arxiv:2602.21633",
+        "arxiv:2602.02454"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.13977",
+          "arxiv_id": "2602.13977",
+          "work_id": "arxiv:2602.13977",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.13977"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-15",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q0",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.13977"
+          ],
+          "title": "WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2602.21633",
+          "arxiv_id": "2602.21633",
+          "work_id": "arxiv:2602.21633",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.21633"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q7",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.21633",
+            "https://github.com/Kisaragi0/SC-VLA"
+          ],
+          "title": "Self-Correcting VLA: Online Action Refinement via Sparse World Imagination",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2602.02454",
+          "arxiv_id": "2602.02454",
+          "work_id": "arxiv:2602.02454",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.02454"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.02454"
+          ],
+          "title": "World-Gymnast: Training Robots with Reinforcement Learning in a World Model",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q10",
+        "Q4",
+        "Q6",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2602.13977",
+        "arxiv:2602.21633",
+        "arxiv:2602.02454"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.02454",
+        "https://arxiv.org/abs/2602.13977",
+        "https://arxiv.org/abs/2602.21633",
+        "https://github.com/Kisaragi0/SC-VLA"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相比 2025 年底的离线规划，这是一轮更靠近策略优化的迁移。",
+      "maturity": "多团队新兴趋势，真实机器人长期稳定性未确认。",
+      "bottleneck": "模型偏差会被 RL 放大。",
+      "implication": "验证时需报告 simulator exploitation 和真机回归测试。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "世界模型开始承担 RL 模拟器与在线自纠错",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "WoVR、Self-Correcting VLA 与 World-Gymnast 分别用于后训练模拟、稀疏想象修正和世界模型内 RL。",
+        "comparison": "相比 2025 年底的离线规划，这是一轮更靠近策略优化的迁移。",
+        "evidence_ids": [
+          "2602.13977",
+          "2602.21633",
+          "2602.02454"
+        ],
+        "maturity": "多团队新兴趋势，真实机器人长期稳定性未确认。",
+        "bottleneck": "模型偏差会被 RL 放大。",
+        "implication": "验证时需报告 simulator exploitation 和真机回归测试。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-02:aeca71c699e1",
+      "month": "2026-02",
+      "title": "快慢系统开始感知力、接触与完成状态",
+      "summary": "FAVLA 将力适应写入 fast–slow 架构，StreamVLA 用 completion-state gating 打破固定 reason–act 循环，自纠错框架补上终止判断。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-02/1",
+        "record_sha256": "a712c0ab34b96737d984ad215fb43cb81759131978cbc3bcda952bf4cb53bcef"
+      },
+      "supporting_ids": [
+        "arxiv:2602.23648",
+        "arxiv:2602.01100",
+        "arxiv:2602.01811"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.23648",
+          "arxiv_id": "2602.23648",
+          "work_id": "arxiv:2602.23648",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.23648"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [
+            "Q1"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.23648"
+          ],
+          "title": "FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2602.01100",
+          "arxiv_id": "2602.01100",
+          "work_id": "arxiv:2602.01100",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.01100"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.01100"
+          ],
+          "title": "StreamVLA: Breaking the Reason-Act Cycle via Completion-State Gating",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2602.01811",
+          "arxiv_id": "2602.01811",
+          "work_id": "arxiv:2602.01811",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.01811"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.01811"
+          ],
+          "title": "From Knowing to Doing Precisely: A General Self-Correction and Termination Framework for VLA models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "questions": [
+        "Q1",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2602.23648",
+        "arxiv:2602.01100"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.01100",
+        "https://arxiv.org/abs/2602.01811",
+        "https://arxiv.org/abs/2602.23648"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "双系统从“多想一步”转向“何时想、何时停、何时改动作”。",
+      "maturity": "接口创新明显，跨平台复现不足。",
+      "bottleneck": "事件触发器的误报与控制抖动。",
+      "implication": "调度器、状态估计和 verifier 将成为独立技术层。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "快慢系统开始感知力、接触与完成状态",
+        "grade": "B",
+        "kind": "weak",
+        "change": "FAVLA 将力适应写入 fast–slow 架构，StreamVLA 用 completion-state gating 打破固定 reason–act 循环，自纠错框架补上终止判断。",
+        "comparison": "双系统从“多想一步”转向“何时想、何时停、何时改动作”。",
+        "evidence_ids": [
+          "2602.23648",
+          "2602.01100",
+          "2602.01811"
+        ],
+        "maturity": "接口创新明显，跨平台复现不足。",
+        "bottleneck": "事件触发器的误报与控制抖动。",
+        "implication": "调度器、状态估计和 verifier 将成为独立技术层。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-02:246dd967eba2",
+      "month": "2026-02",
+      "title": "egocentric 数据开始真正服务灵巧规模化",
+      "summary": "EgoScale、Joint-Aligned Latent Action 与 Being-H0.5 把第一视角人类数据接入灵巧和跨本体预训练。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-02/2",
+        "record_sha256": "d434eeb192844f8182a706751eee1cb5e51f50a115fa5a00833079db0dc45fbd"
+      },
+      "supporting_ids": [
+        "arxiv:2602.16710",
+        "arxiv:2602.21736",
+        "arxiv:2601.12993"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.16710",
+          "arxiv_id": "2602.16710",
+          "work_id": "arxiv:2602.16710",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.16710"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2",
+            "Q9"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.16710",
+            "https://research.nvidia.com/labs/gear/egoscale/"
+          ],
+          "title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2602.21736",
+          "arxiv_id": "2602.21736",
+          "work_id": "arxiv:2602.21736",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.21736"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.21736"
+          ],
+          "title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2601.12993",
+          "arxiv_id": "2601.12993",
+          "work_id": "arxiv:2601.12993",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.12993"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-19",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.12993"
+          ],
+          "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q9"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.12993",
+        "https://arxiv.org/abs/2602.16710",
+        "https://arxiv.org/abs/2602.21736",
+        "https://research.nvidia.com/labs/gear/egoscale/"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "9 月 OpenEgo 还是数据集信号，本月已有训练管线和泛化目标。",
+      "maturity": "数据规模化起步。",
+      "bottleneck": "手—物接触状态和第三维动作不可观测。",
+      "implication": "具备可穿戴采集与物理对齐工具链的团队可能形成数据壁垒。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "egocentric 数据开始真正服务灵巧规模化",
+        "grade": "B",
+        "kind": "weak",
+        "change": "EgoScale、Joint-Aligned Latent Action 与 Being-H0.5 把第一视角人类数据接入灵巧和跨本体预训练。",
+        "comparison": "9 月 OpenEgo 还是数据集信号，本月已有训练管线和泛化目标。",
+        "evidence_ids": [
+          "2602.16710",
+          "2602.21736",
+          "2601.12993"
+        ],
+        "maturity": "数据规模化起步。",
+        "bottleneck": "手—物接触状态和第三维动作不可观测。",
+        "implication": "具备可穿戴采集与物理对齐工具链的团队可能形成数据壁垒。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2602.12684",
+      "work_id": "arxiv:2602.12684",
+      "legacy_id": "2602.12684",
+      "title": "Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "以跨本体预训练、异步执行训练和动作块时间对齐，让开放 VLA 在消费级 GPU 上实现平滑实时双臂控制。",
+      "limitation_zh": "真实机器人评估仅两项任务，开放模型的跨平台复现和长时序鲁棒性仍待验证。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1728",
+        "record_sha256": "a90fd3491259ac11efe933acb0b0fd1a734a21023ca97148959f4e939109b65a"
+      },
+      "supporting_ids": [
+        "arxiv:2602.12684"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.12684",
+          "arxiv_id": "2602.12684",
+          "work_id": "arxiv:2602.12684",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.12684"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-13",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.12684"
+          ],
+          "title": "Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.12684"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.13977",
+      "work_id": "arxiv:2602.13977",
+      "legacy_id": "2602.13977",
+      "title": "WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "通过可控动作条件视频模型、关键帧初始化 rollout 和模型—策略共同演化，降低想象滚动的幻觉深度并用于 VLA 的 RL 后训练。",
+      "limitation_zh": "世界模型仍非真实物理仿真器，摘要中的真实收益无法排除针对特定任务和平台调参的影响。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1743",
+        "record_sha256": "30a6d3e866dcfe390b5a1dc0b45e010cde0bf76cdd8a099b1cc3c4b8471d6e4f"
+      },
+      "supporting_ids": [
+        "arxiv:2602.13977"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.13977",
+          "arxiv_id": "2602.13977",
+          "work_id": "arxiv:2602.13977",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.13977"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-15",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q0",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.13977"
+          ],
+          "title": "WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D3",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2602.13977"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.13977"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.16710",
+      "work_id": "arxiv:2602.16710",
+      "legacy_id": "2602.16710",
+      "title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "在 20,854 小时动作标注第一视角人类视频上建立 scaling law，并以轻量 human-robot mid-training 迁移到 22-DoF 灵巧手。",
+      "limitation_zh": "真实机器人主结果集中于特定灵巧手与少量下游任务，跨本体结论还需更多独立硬件复现。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1755",
+        "record_sha256": "6898c8932ab71fb3a1b4200e93b3a0ef6705760d899bcc85b99b3eed245de857"
+      },
+      "supporting_ids": [
+        "arxiv:2602.16710"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.16710",
+          "arxiv_id": "2602.16710",
+          "work_id": "arxiv:2602.16710",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.16710"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-18",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2",
+            "Q9"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.16710",
+            "https://research.nvidia.com/labs/gear/egoscale/"
+          ],
+          "title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q9"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.16710",
+        "https://research.nvidia.com/labs/gear/egoscale/"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.21633",
+      "work_id": "arxiv:2602.21633",
+      "legacy_id": "2602.21633",
+      "title": "Self-Correcting VLA: Online Action Refinement via Sparse World Imagination",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "以任务进度和未来轨迹趋势构成稀疏世界想象，再把预测状态转成密集奖励在线修正动作。",
+      "limitation_zh": "稀疏预测只覆盖短期物理演化，摘要尚未证明在开放世界长时序任务中能避免错误自强化。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1783",
+        "record_sha256": "72fd98437950ea8d935febef7f20ab63e0a0d604a3e7d03db6b001295a5dac1e"
+      },
+      "supporting_ids": [
+        "arxiv:2602.21633"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.21633",
+          "arxiv_id": "2602.21633",
+          "work_id": "arxiv:2602.21633",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.21633"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q7",
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.21633",
+            "https://github.com/Kisaragi0/SC-VLA"
+          ],
+          "title": "Self-Correcting VLA: Online Action Refinement via Sparse World Imagination",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q10",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2602.21633"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.21633",
+        "https://github.com/Kisaragi0/SC-VLA"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.21736",
+      "work_id": "arxiv:2602.21736",
+      "legacy_id": "2602.21736",
+      "title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "以逆动力学和真实动作联合对齐 latent action，在 7.5M 段、2,000 多小时人类视频上预训练可迁移的行为表征。",
+      "limitation_zh": "人类手部运动更真实并不等于机器人执行更可靠，摘要未细化不同机器人和任务上的迁移规模。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1785",
+        "record_sha256": "27a401cca1e245214323b20b0a34a5c184ce72bf568711d106c91d8982e5b656"
+      },
+      "supporting_ids": [
+        "arxiv:2602.21736"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.21736",
+          "arxiv_id": "2602.21736",
+          "work_id": "arxiv:2602.21736",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.21736"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.21736"
+          ],
+          "title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.21736"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.23648",
+      "work_id": "arxiv:2602.23648",
+      "legacy_id": "2602.23648",
+      "title": "FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "将低频 VLM 感知规划与高频力反馈动作专家解耦，并根据预测的力变化动态调度控制频率。",
+      "limitation_zh": "摘要未列明任务数量、跨物体泛化和硬件控制频率上限，难以判断收益对传感器与控制栈的依赖。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1796",
+        "record_sha256": "76c3a06afc66bcb31d3a807c1c3f6b25a4d96acd776591bde540ea2697018ac0"
+      },
+      "supporting_ids": [
+        "arxiv:2602.23648"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.23648",
+          "arxiv_id": "2602.23648",
+          "work_id": "arxiv:2602.23648",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.23648"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-02-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [
+            "Q1"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.23648"
+          ],
+          "title": "FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "questions": [
+        "Q1"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2602.23648"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.23648"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.23721",
+      "work_id": "arxiv:2602.23721",
+      "legacy_id": "2602.23721",
+      "title": "StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation",
+      "month": "2026-02",
+      "status": "legacy_editorial",
+      "contribution_zh": "把未来 3D 几何预测与历史 4D 时空表征同时注入动作生成，使 VLA 显式建模场景动态与空间结构。",
+      "limitation_zh": "摘要只报告 LIBERO 仿真结果，尚无真实机器人证据验证预测几何误差是否会在闭环控制中累积。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1797",
+        "record_sha256": "3138ffb9ab138ae4ab7c4e82de3f8d85d0356c12d045f7d417121b5f0502a0cc"
+      },
+      "supporting_ids": [
+        "arxiv:2602.23721"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.23721",
+          "arxiv_id": "2602.23721",
+          "work_id": "arxiv:2602.23721",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.23721"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-02-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D11"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.23721"
+          ],
+          "title": "StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.23721"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "820b9e0a508948a1a1be27542e631d29ffb45e76ecf40dca733e9d21cb5c21b9"
+}

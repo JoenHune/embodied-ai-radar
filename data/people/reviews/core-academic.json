@@ -1,0 +1,1361 @@
+{
+  "schema_version": "1",
+  "review_id": "core-academic-2026-09-06",
+  "people": [
+    {
+      "person_id": "person:sergey-levine",
+      "slug": "sergey-levine",
+      "name": "Sergey Levine",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://simons.berkeley.edu/people/sergey-levine",
+          "label": "UC Berkeley Simons 官方人物档案",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "url": "https://vcresearch.berkeley.edu/faculty/sergey-levine",
+          "label": "UC Berkeley 官方研究档案",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "University of California, Berkeley",
+          "title": "Associate Professor（Simons 官方档案声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://simons.berkeley.edu/people/sergey-levine",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2601.00675",
+          "status": "verified",
+          "matched_author_name": "Sergey Levine",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://irislab.stanford.edu/publications.html",
+              "work_url": "https://arxiv.org/abs/2601.00675",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "Stanford IRIS 官方 Publications 的 RoboReward 条目明确列出 Sergey Levine，Paper 按钮已实际打开并对应 2601.00675；不是由合作者网络或导师身份推断。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2604.23073",
+          "status": "verified",
+          "matched_author_name": "Sergey Levine",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://www.pi.website/research/rlt",
+              "work_url": "https://www.pi.website/research/rlt",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "Physical Intelligence 的 RLT 官方发布页逐项列出 Sergey Levine 为本项作者，并提供论文下载入口；该发布 URL 已是本库 RL Token canonical work 的 manifestation。仅核验此项明确署名，不把公司全部报告归给创始人。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2601.00675",
+          "work_url": "https://arxiv.org/abs/2601.00675",
+          "source_url": "https://openalex.org/W7118501563",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7118501563 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.00675 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2604.23073",
+          "work_url": "https://arxiv.org/abs/2604.23073",
+          "source_url": "https://openalex.org/W7157012058",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7157012058 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2604.23073 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "Berkeley 两个官方页面的职级描述不同：Simons 为 Associate Professor，研究档案仍写 Assistant Professor；保留来源差异，不推定晋升日期。"
+      ]
+    },
+    {
+      "person_id": "person:chelsea-finn",
+      "slug": "chelsea-finn",
+      "name": "Chelsea Finn",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://ai.stanford.edu/~cbfinn/",
+          "label": "Stanford 官方个人主页",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Stanford University",
+          "title": "Assistant Professor, Computer Science and Electrical Engineering",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://ai.stanford.edu/~cbfinn/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Physical Intelligence",
+          "title": "Co-founder（本人官网声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://ai.stanford.edu/~cbfinn/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2510.10125",
+          "status": "verified",
+          "matched_author_name": "Chelsea Finn",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://irislab.stanford.edu/publications.html",
+              "work_url": "https://arxiv.org/abs/2510.10125",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人主页直接链接的 IRIS Publications 明确列出 Ctrl-World 及 Chelsea Finn，并已打开该条 Paper 确认为 2510.10125。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2601.00675",
+          "status": "verified",
+          "matched_author_name": "Chelsea Finn",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://irislab.stanford.edu/publications.html",
+              "work_url": "https://arxiv.org/abs/2601.00675",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人主页直接链接的 IRIS Publications 明确列出 RoboReward 及 Chelsea Finn，并已打开该条 Paper 确认为 2601.00675。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.10125",
+          "work_url": "https://arxiv.org/abs/2510.10125",
+          "source_url": "https://openalex.org/W4415273528",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415273528 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.10125 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2601.00675",
+          "work_url": "https://arxiv.org/abs/2601.00675",
+          "source_url": "https://openalex.org/W7118501563",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7118501563 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.00675 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:yuke-zhu",
+      "slug": "yuke-zhu",
+      "name": "Yuke Zhu",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://yukezhu.me/",
+          "label": "本人官方主页",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "University of Texas at Austin",
+          "title": "Associate Professor, Computer Science",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yukezhu.me/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Robot Perception and Learning Lab",
+          "title": "Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yukezhu.me/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "NVIDIA Research / GEAR",
+          "title": "Director and Distinguished Research Scientist; GEAR co-lead",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yukezhu.me/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2602.16710",
+          "status": "verified",
+          "matched_author_name": "Yuke Zhu",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://rpl.cs.utexas.edu/publications/",
+              "work_url": "https://arxiv.org/abs/2602.16710",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人主页 Publications 直接链接的 RPL 官方列表明确列出 EgoScale、Yuke Zhu 与 arXiv:2602.16710。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2511.15200",
+          "status": "verified",
+          "matched_author_name": "Yuke Zhu",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://rpl.cs.utexas.edu/publications/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人主页链接的 RPL 官方列表明确列出 VIRAL 及 Yuke Zhu；Paper 按钮已实际打开，指向 arXiv:2511.15200。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.15200",
+          "work_url": "https://arxiv.org/abs/2511.15200",
+          "source_url": "https://openalex.org/W7106466341",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2602.16710",
+          "work_url": "https://arxiv.org/abs/2602.16710",
+          "source_url": "https://openalex.org/W7130590664",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7130590664 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.16710 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:dieter-fox",
+      "slug": "dieter-fox",
+      "name": "Dieter Fox",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://www.cs.washington.edu/people/faculty/dieter-fox/",
+          "label": "University of Washington 官方教师档案",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "url": "https://homes.cs.washington.edu/~fox/dieter-fox/publications/",
+          "label": "官方教师档案所链接的本人论文目录",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "University of Washington",
+          "title": "Professor, Paul G. Allen School of Computer Science & Engineering",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.cs.washington.edu/people/faculty/dieter-fox/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "UW Robotics and State Estimation Lab",
+          "title": "Head",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.cs.washington.edu/people/faculty/dieter-fox/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Allen Institute for AI (Ai2)",
+          "title": "Robotics foundation-model research（官网未给出职位名称）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.cs.washington.edu/people/faculty/dieter-fox/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2509.01819",
+          "status": "verified",
+          "matched_author_name": "Dieter Fox",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://maniflow-policy.github.io/",
+              "work_url": "https://arxiv.org/abs/2509.01819",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "ManiFlow 官方项目页明确列出 Dieter Fox，姓名回链 UW 本人主页，同页提供本库对应 arXiv 入口；不是由 NVIDIA affiliation 自动归人。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2510.14930",
+          "status": "verified",
+          "matched_author_name": "Dieter Fox",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://binghao-huang.github.io/vt_refine/",
+              "work_url": "https://arxiv.org/abs/2510.14930",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "VT-Refine 官方项目页明确列出 Dieter Fox，姓名回链 UW 本人主页，并提供该 work 的 arXiv 入口。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.14930",
+          "work_url": "https://arxiv.org/abs/2510.14930",
+          "source_url": "https://openalex.org/W4415947131",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.01819",
+          "work_url": "https://arxiv.org/abs/2509.01819",
+          "source_url": "https://openalex.org/W4417045284",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417045284 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.01819 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "当前 UW 官方档案将 NVIDIA 写为加入 Ai2 之前的经历；本批不把 NVIDIA 旧角色标为当前，也不改论文当时的 NVIDIA 署名。"
+      ]
+    },
+    {
+      "person_id": "person:deepak-pathak",
+      "slug": "deepak-pathak",
+      "name": "Deepak Pathak",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://www.cs.cmu.edu/~dpathak/",
+          "label": "CMU 官方个人主页",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Carnegie Mellon University",
+          "title": "Raj Reddy Associate Professor, School of Computer Science; Robotics Institute member",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.cs.cmu.edu/~dpathak/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Skild AI",
+          "title": "Co-Founder and CEO（本人官网声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.cs.cmu.edu/~dpathak/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2509.23745",
+          "status": "verified",
+          "matched_author_name": "Deepak Pathak",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://www.cs.cmu.edu/~dpathak/",
+              "work_url": "https://arxiv.org/abs/2509.23745",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人 Publications 明确列出 LocoFormer 及 Deepak Pathak；已实际打开该条 arXiv 按钮，确认 2509.23745。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2509.06953",
+          "status": "verified",
+          "matched_author_name": "Deepak Pathak",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://www.cs.cmu.edu/~dpathak/",
+              "work_url": "https://arxiv.org/abs/2509.06953",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人 Publications 明确列出 Deep Reactive Policy 及 Deepak Pathak；已实际打开该条 paper 按钮，确认 2509.06953。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.06953",
+          "work_url": "https://arxiv.org/abs/2509.06953",
+          "source_url": "https://openalex.org/W4415057828",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415057828 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.06953 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:pieter-abbeel",
+      "slug": "pieter-abbeel",
+      "name": "Pieter Abbeel",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://vcresearch.berkeley.edu/faculty/pieter-abbeel",
+          "label": "UC Berkeley 官方研究档案",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "University of California, Berkeley",
+          "title": "Professor in Artificial Intelligence and Robotics",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://vcresearch.berkeley.edu/faculty/pieter-abbeel",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Amazon",
+          "title": "Amazon Scholar（Berkeley 官方研究档案声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://vcresearch.berkeley.edu/faculty/pieter-abbeel",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2512.15840",
+          "status": "verified",
+          "matched_author_name": "Pieter Abbeel",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://www.boyuan.space/large-video-planner/",
+              "work_url": "http://arxiv.org/abs/2512.15840",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "Large Video Planner 官方项目当前作者区明确列出 Pieter Abbeel、UC Berkeley 标记及其 Berkeley 个人主页链接，并提供本库 arXiv ID；不由同组其他作者推定。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2512.15840",
+          "work_url": "https://arxiv.org/abs/2512.15840",
+          "source_url": "https://openalex.org/W4417534140",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "个人 publications 域名本次读取失败，未用搜索摘要冒充成功读取。LVP 项目当前作者区与旧 BibTeX 的名单并不完全一致；本条仅确认当前官方项目署名，不将其反写为最初版本作者。"
+      ]
+    },
+    {
+      "person_id": "person:jitendra-malik",
+      "slug": "jitendra-malik",
+      "name": "Jitendra Malik",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://vcresearch.berkeley.edu/faculty/jitendra-malik",
+          "label": "UC Berkeley 官方研究档案",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "University of California, Berkeley",
+          "title": "Professor; Arthur Chick Endowed Chair in Electrical Engineering and Computer Sciences",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://vcresearch.berkeley.edu/faculty/jitendra-malik",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2512.15840",
+          "status": "verified",
+          "matched_author_name": "Jitendra Malik",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://www.boyuan.space/large-video-planner/",
+              "work_url": "http://arxiv.org/abs/2512.15840",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "Large Video Planner 官方项目作者区列出 Jitendra Malik、UC Berkeley 及 Berkeley 本人主页链接；该旧主页地址也由已读取的 Berkeley 官方研究档案引用，且同页 Paper/BibTeX 指向 2512.15840。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2512.15840",
+          "work_url": "https://arxiv.org/abs/2512.15840",
+          "source_url": "https://openalex.org/W4417534140",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "旧个人主页当前重定向后返回 404，身份采用仍可读取的 Berkeley 官方档案。未将其论文列表中的所有同名字符串自动认证。"
+      ]
+    },
+    {
+      "person_id": "person:shuran-song",
+      "slug": "shuran-song",
+      "name": "Shuran Song",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://shurans.github.io/",
+          "label": "本人官方主页",
+          "observed_at": "2026-09-06T12:39:52.834Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Stanford University",
+          "title": "Associate Professor, Electrical Engineering; courtesy appointment in Computer Science",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://shurans.github.io/",
+          "observed_at": "2026-09-06T12:39:52.834Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Robotics and Embodied AI Lab (REAL)",
+          "title": "Lab lead（本人官网声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://shurans.github.io/",
+          "observed_at": "2026-09-06T12:39:52.834Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2603.03243",
+          "status": "verified",
+          "matched_author_name": "Shuran Song",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://shurans.github.io/",
+              "work_url": "https://arxiv.org/abs/2603.03243",
+              "observed_at": "2026-09-06T12:39:52.834Z",
+              "statement": "本人官网 Publications 的 HoMMI 条目直接列出 Shuran Song，并提供对应 arXiv Paper 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2601.03607",
+          "status": "verified",
+          "matched_author_name": "Shuran Song",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://shurans.github.io/",
+              "work_url": "https://arxiv.org/pdf/2601.03607",
+              "observed_at": "2026-09-06T12:39:52.834Z",
+              "statement": "本人官网 Publications 的 Locomotion Beyond Feet 条目直接列出 Shuran Song，并提供该 arXiv PDF 链接；不采用论文目录年份标签重写首次公开日期。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2601.03607",
+          "work_url": "https://arxiv.org/abs/2601.03607",
+          "source_url": "https://openalex.org/W7119532450",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7119532450 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.03607 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:lerrel-pinto",
+      "slug": "lerrel-pinto",
+      "name": "Lerrel Pinto",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://www.lerrelpinto.com/",
+          "label": "本人官方主页",
+          "observed_at": "2026-09-06T12:39:53.687Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Meta Superintelligence Labs",
+          "title": "Robotics research（本人官网未在此说明正式职位名称）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.lerrelpinto.com/",
+          "observed_at": "2026-09-06T12:39:53.687Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "NYU General Robotics & AI Lab (GRAIL)",
+          "title": "Lab lead（本人官网声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.lerrelpinto.com/",
+          "observed_at": "2026-09-06T12:39:53.687Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2603.26660",
+          "status": "verified",
+          "matched_author_name": "Lerrel Pinto",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://ruka-hand-v2.github.io/",
+              "work_url": "https://arxiv.org/abs/2603.26660",
+              "observed_at": "2026-09-06T12:37:32.645Z",
+              "statement": "Ruka-v2 官方项目页作者区列出 Lerrel Pinto，姓名链接指向本人官网 lerrelpinto.com，且同页 arXiv 链接对应本库 work。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2511.16661",
+          "status": "verified",
+          "matched_author_name": "Lerrel Pinto",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://aina-robot.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.16661",
+              "observed_at": "2026-09-06T12:38:37.834Z",
+              "statement": "AINA 官方项目页作者区列出 Lerrel Pinto，姓名链接指向本人官网 lerrelpinto.com，并提供对应 arXiv 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.16661",
+          "work_url": "https://arxiv.org/abs/2511.16661",
+          "source_url": "https://openalex.org/W4416550724",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4416550724 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.16661 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2603.26660",
+          "work_url": "https://arxiv.org/abs/2603.26660",
+          "source_url": "https://openalex.org/W7143371339",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7143371339 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.26660 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "当前官网角色不代表过去论文署名单位，尤其不将窗口内工作自动归属 Meta。"
+      ]
+    },
+    {
+      "person_id": "person:pulkit-agrawal",
+      "slug": "pulkit-agrawal",
+      "name": "Pulkit Agrawal",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://people.csail.mit.edu/pulkitag/",
+          "label": "MIT 官方个人主页",
+          "observed_at": "2026-09-06T12:39:56.101Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Massachusetts Institute of Technology",
+          "title": "Associate Professor, EECS",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://people.csail.mit.edu/pulkitag/",
+          "observed_at": "2026-09-06T12:39:56.101Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Eka Robotics",
+          "title": "Co-founder（本人官网声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://people.csail.mit.edu/pulkitag/",
+          "observed_at": "2026-09-06T12:39:56.101Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Improbable AI Lab",
+          "title": "研究组负责人（本人官网称其为 my research group）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://people.csail.mit.edu/pulkitag/",
+          "observed_at": "2026-09-06T12:39:56.101Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2510.17792",
+          "status": "verified",
+          "matched_author_name": "Pulkit Agrawal",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://people.csail.mit.edu/pulkitag/",
+              "work_url": "https://arxiv.org/abs/2510.17792",
+              "observed_at": "2026-09-06T12:39:56.101Z",
+              "statement": "MIT 本人主页 Pre-Prints 栏直接列出 SoftMimic 及 Pulkit Agrawal 作者署名，并提供对应 arXiv 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2509.04441",
+          "status": "verified",
+          "matched_author_name": "Pulkit Agrawal",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://people.csail.mit.edu/pulkitag/",
+              "work_url": "https://arxiv.org/abs/2509.04441",
+              "observed_at": "2026-09-06T12:39:56.101Z",
+              "statement": "MIT 本人主页 Pre-Prints 栏直接列出 DEXOP 及 Pulkit Agrawal 作者署名，并提供对应 arXiv 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.04441",
+          "work_url": "https://arxiv.org/abs/2509.04441",
+          "source_url": "https://openalex.org/W4415058782",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415058782 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.04441 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.17792",
+          "work_url": "https://arxiv.org/abs/2510.17792",
+          "source_url": "https://openalex.org/W4415966876",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415966876 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.17792 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:jiajun-wu",
+      "slug": "jiajun-wu",
+      "name": "Jiajun Wu",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://profiles.stanford.edu/jiajun-wu",
+          "label": "Stanford 官方人物档案",
+          "observed_at": "2026-09-06T12:40:03.444Z"
+        },
+        {
+          "url": "https://www.jiajunwu.com/",
+          "label": "本人主页与 Publications",
+          "observed_at": "2026-09-06T12:38:37.883Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Stanford University",
+          "title": "Assistant Professor of Computer Science; courtesy appointment in Psychology",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://profiles.stanford.edu/jiajun-wu",
+          "observed_at": "2026-09-06T12:40:03.444Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2509.18830",
+          "status": "verified",
+          "matched_author_name": "Jiajun Wu",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://dex-skin.github.io/",
+              "work_url": "https://arxiv.org/abs/2509.18830",
+              "observed_at": "2026-09-06T12:38:37.883Z",
+              "statement": "本人 Publications 页面直接列出 DexSkin 及 Jiajun Wu，并链接此官方项目；项目页作者姓名回链 jiajunwu.com，同时提供对应 arXiv 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2510.02252",
+          "status": "verified",
+          "matched_author_name": "Jiajun Wu",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://jaraujo98.github.io/retargeting_matters/",
+              "work_url": "http://arxiv.org/abs/2510.02252",
+              "observed_at": "2026-09-06T12:38:37.673Z",
+              "statement": "本人 Publications 页面直接列出 Retargeting Matters 并链接此项目；项目页列出 Jiajun Wu，姓名回链本人官网，Paper 链接对应本库 arXiv ID。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.02252",
+          "work_url": "https://arxiv.org/abs/2510.02252",
+          "source_url": "https://openalex.org/W4414927347",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 1,
+          "statement": "OpenAlex Graph 的 W4414927347 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.02252 匹配，cited_by_count 为 1。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:dorsa-sadigh",
+      "slug": "dorsa-sadigh",
+      "name": "Dorsa Sadigh",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://dorsa.fyi/",
+          "label": "本人官方主页",
+          "observed_at": "2026-09-06T12:39:53.108Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Stanford University",
+          "title": "Associate Professor, Computer Science",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://dorsa.fyi/",
+          "observed_at": "2026-09-06T12:39:53.108Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2603.12243",
+          "status": "verified",
+          "matched_author_name": "Dorsa Sadigh",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://amberxie88.github.io/handelbot/",
+              "work_url": "https://arxiv.org/abs/2603.12243",
+              "observed_at": "2026-09-06T12:38:37.748Z",
+              "statement": "HandelBot 官方项目页直接列出 Dorsa Sadigh，姓名回链 dorsa.fyi，并提供对应 arXiv Paper 链接；Citation 也明确列出她。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2603.22263",
+          "status": "verified",
+          "matched_author_name": "Dorsa Sadigh",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://dexdrummer.github.io/",
+              "work_url": "https://arxiv.org/abs/2603.22263",
+              "observed_at": "2026-09-06T12:39:07.038Z",
+              "statement": "DexDrummer 官方项目页直接列出 Dorsa Sadigh，姓名回链 dorsa.fyi，并提供对应 arXiv Paper 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2603.12243",
+          "work_url": "https://arxiv.org/abs/2603.12243",
+          "source_url": "https://openalex.org/W7135175122",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7135175122 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.12243 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2603.22263",
+          "work_url": "https://arxiv.org/abs/2603.22263",
+          "source_url": "https://openalex.org/W7140191134",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7140191134 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.22263 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    },
+    {
+      "person_id": "person:russ-tedrake",
+      "slug": "russ-tedrake",
+      "name": "Russ Tedrake",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://locomotion.csail.mit.edu/russt.html",
+          "label": "MIT Robot Locomotion Group 官方个人主页",
+          "observed_at": "2026-09-06T12:39:54.997Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Massachusetts Institute of Technology",
+          "title": "Toyota Professor of EECS, Aero/Astro, and Mechanical Engineering",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://locomotion.csail.mit.edu/russt.html",
+          "observed_at": "2026-09-06T12:39:54.997Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2606.12365",
+          "status": "verified",
+          "matched_author_name": "Russ Tedrake",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://ambient-diffusion-policy.github.io/",
+              "work_url": "https://arxiv.org/abs/2606.12365v1",
+              "observed_at": "2026-09-06T12:37:31.903Z",
+              "statement": "Ambient Diffusion Policy 官方项目页作者 Russ Tedrake 的姓名链接直接指向上述 MIT 个人页，并提供对应 arXiv v1 链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2512.15840",
+          "status": "verified",
+          "matched_author_name": "Russ Tedrake",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://www.boyuan.space/large-video-planner/",
+              "work_url": "http://arxiv.org/abs/2512.15840",
+              "observed_at": "2026-09-06T12:37:32.309Z",
+              "statement": "Large Video Planner 官方项目页列出 Russ Tedrake，姓名指向其 MIT Robot Locomotion Group 个人页旧地址；同页 Paper 链接对应本库 arXiv ID。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2512.15840",
+          "work_url": "https://arxiv.org/abs/2512.15840",
+          "source_url": "https://openalex.org/W4417534140",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2606.12365",
+          "work_url": "https://arxiv.org/abs/2606.12365",
+          "source_url": "https://openalex.org/W7164304316",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7164304316 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2606.12365 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "当前官网另自述领导未披露名称的 Physical AI 初创公司；组织名未知，未虚构公司节点，也未把过去 TRI 职位当作当前身份。"
+      ]
+    },
+    {
+      "person_id": "person:ken-goldberg",
+      "slug": "ken-goldberg",
+      "name": "Ken Goldberg",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://goldberg.berkeley.edu/",
+          "label": "UC Berkeley 本人官方主页",
+          "observed_at": "2026-09-06T12:39:54.985Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "University of California, Berkeley",
+          "title": "William S. Floyd Jr. Distinguished Chair of Engineering; Distinguished Professor, IEOR, EECS, and Art Practice",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://goldberg.berkeley.edu/",
+          "observed_at": "2026-09-06T12:39:54.985Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2605.29298",
+          "status": "verified",
+          "matched_author_name": "Ken Goldberg",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://bimanual-monoduo.github.io/",
+              "work_url": "https://arxiv.org/abs/2605.29298",
+              "observed_at": "2026-09-06T12:38:37.599Z",
+              "statement": "MonoDuo 官方项目页直接列出 Ken Goldberg，姓名回链 goldberg.berkeley.edu，并提供对应 arXiv 链接；本人主页链接的 AUTOLAB 论文目录也列出此工作。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2605.29298",
+          "work_url": "https://arxiv.org/abs/2605.29298",
+          "source_url": "https://openalex.org/W7162757006",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7162757006 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.29298 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。",
+        "T-Rex 项目的 Ken Goldberg 人物回链本次返回 404，未把这一备选关系升级为已核验。",
+        "本人链接的 AUTOLAB 目录列有 OXE-AugE，但本轮未取得与本库 arXiv 版本匹配的直接硬链接；暂留缺口，不伪造来源入口。"
+      ]
+    },
+    {
+      "person_id": "person:yilun-du",
+      "slug": "yilun-du",
+      "name": "Yilun Du",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://yilundu.github.io/",
+          "label": "本人官方主页",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Harvard University / Kempner Institute",
+          "title": "Assistant Professor of Computer Science",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yilundu.github.io/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Embodied Minds Lab",
+          "title": "Lab lead（本人官网声明）",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yilundu.github.io/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "NVIDIA Research",
+          "title": "Part-time Research Scientist",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yilundu.github.io/",
+          "observed_at": "2026-09-06T12:43:45Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2512.15840",
+          "status": "verified",
+          "matched_author_name": "Yilun Du",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://yilundu.github.io/",
+              "work_url": "https://arxiv.org/abs/2512.15840",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人 Publications 的 Large Video Planner 条目列出 Yilun Du；已实际打开 Paper 按钮，确认为 2512.15840。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2605.22882",
+          "status": "verified",
+          "matched_author_name": "Yilun Du",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://yilundu.github.io/",
+              "work_url": "https://arxiv.org/pdf/2605.22882",
+              "observed_at": "2026-09-06T12:43:45Z",
+              "statement": "本人 Publications 明确列出 GEM-4D 及 Yilun Du，Paper 入口实际为 2605.22882 的 arXiv PDF；这里只使用论文目录和硬链接，不据页面会议标签升级本库评审。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2512.15840",
+          "work_url": "https://arxiv.org/abs/2512.15840",
+          "source_url": "https://openalex.org/W4417534140",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2605.22882",
+          "work_url": "https://arxiv.org/abs/2605.22882",
+          "source_url": "https://openalex.org/W7162293033",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7162293033 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.22882 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "AI 官网内容核查记录；确认身份和具体公开署名，不代表人工专家批准、实验复现或贡献份额评定。角色有效期未知，不据当前任职反推历史论文组织归属。"
+      ]
+    }
+  ]
+}

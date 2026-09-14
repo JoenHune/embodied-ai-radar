@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit reviewed research-status addition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["notice_id", "work_id", "event_type", "scope", "public_at", "date_precision", "source_record_ids", "source_url", "review_status", "summary_zh", "source_record"],
+  "properties": {
+    "notice_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "work_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "event_type": {"enum": ["withdrawn", "retracted", "corrected", "expression_of_concern", "reinstated"]},
+    "scope": {"const": "work"},
+    "public_at": {"type": "string", "minLength": 4},
+    "date_precision": {"enum": ["second", "day", "month", "year"]},
+    "source_record_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "pattern": "\\S"}},
+    "source_url": {"type": "string", "minLength": 1},
+    "review_status": {"const": "verified"},
+    "summary_zh": {"type": "string", "minLength": 1, "pattern": "[\u3400-\u9fff]"},
+    "source_record": {
+      "type": "object",
+      "required": ["source_record_id", "url", "source_type", "observed_at", "published_at", "raw"],
+      "properties": {
+        "source_record_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+        "url": {"type": "string", "minLength": 1},
+        "source_type": {"enum": ["official_arxiv_status_notice", "official_publisher_status_notice", "official_venue_status_notice", "official_project_status_notice", "official_research_status_notice"]},
+        "observed_at": {"type": "string", "minLength": 20},
+        "published_at": {"type": "string", "minLength": 4},
+        "date_precision": {"enum": ["second", "day", "month", "year"]},
+        "retrieved_at": {"type": "string", "minLength": 20},
+        "raw": {"type": "object", "minProperties": 1}
+      },
+      "additionalProperties": true
+    }
+  }
+}

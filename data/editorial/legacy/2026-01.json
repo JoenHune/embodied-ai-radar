@@ -1,0 +1,908 @@
+{
+  "schema_version": "3",
+  "month": "2026-01",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-01:79f9fc5fd7ff",
+      "month": "2026-01",
+      "title": "latent action world model 从实验室走向 in-the-wild",
+      "summary": "Learning Latent Action World Models In The Wild、Cosmos Policy 与 Motus 分别覆盖野外视频、视频模型微调和统一 latent action。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-01/0",
+        "record_sha256": "ce80246c9367584ceae4f8ab74f15a808202a3c86c37e8ccd861e25bf05d2211"
+      },
+      "supporting_ids": [
+        "arxiv:2601.05230",
+        "arxiv:2601.16163",
+        "arxiv:2512.13030"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.05230",
+          "arxiv_id": "2601.05230",
+          "work_id": "arxiv:2601.05230",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.05230"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-08",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.05230"
+          ],
+          "title": "Learning Latent Action World Models In The Wild",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2601.16163",
+          "arxiv_id": "2601.16163",
+          "work_id": "arxiv:2601.16163",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.16163"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-01-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.16163"
+          ],
+          "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2512.13030",
+          "arxiv_id": "2512.13030",
+          "work_id": "arxiv:2512.13030",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.13030"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-15",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.13030",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html"
+          ],
+          "title": "Motus: A Unified Latent Action World Model",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2601.16163"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.13030",
+        "https://arxiv.org/abs/2601.05230",
+        "https://arxiv.org/abs/2601.16163",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "12 月强调搜索，本月强调如何从开放视频获得可执行潜变量。",
+      "maturity": "跨月多团队，真实环境可控性仍弱。",
+      "bottleneck": "动作语义不可辨识和时序对齐。",
+      "implication": "把 inverse dynamics 与可执行性奖励视为核心能力，而非附属模块。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "latent action world model 从实验室走向 in-the-wild",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Learning Latent Action World Models In The Wild、Cosmos Policy 与 Motus 分别覆盖野外视频、视频模型微调和统一 latent action。",
+        "comparison": "12 月强调搜索，本月强调如何从开放视频获得可执行潜变量。",
+        "evidence_ids": [
+          "2601.05230",
+          "2601.16163",
+          "2512.13030"
+        ],
+        "maturity": "跨月多团队，真实环境可控性仍弱。",
+        "bottleneck": "动作语义不可辨识和时序对齐。",
+        "implication": "把 inverse dynamics 与可执行性奖励视为核心能力，而非附属模块。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-01:0c6330c754a4",
+      "month": "2026-01",
+      "title": "Action CoT 与非对称专家正在重写大小脑接口",
+      "summary": "ACoT-VLA、TwinBrainVLA 与 DualVLA 从动作链推理、非对称混合专家和部分解耦三种方式定义高低层接口。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-01/1",
+        "record_sha256": "1f28d72c0c13b03012b3ba7fba7ecda7c2fae25568035af2a901b59122f240cf"
+      },
+      "supporting_ids": [
+        "arxiv:2601.11404",
+        "arxiv:2601.14133",
+        "arxiv:2511.22134"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.11404",
+          "arxiv_id": "2601.11404",
+          "work_id": "arxiv:2601.11404",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.11404"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-01-16",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.11404",
+            "https://github.com/AgibotTech/ACoT-VLA",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html"
+          ],
+          "title": "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2601.14133",
+          "arxiv_id": "2601.14133",
+          "work_id": "arxiv:2601.14133",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.14133"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-20",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.14133",
+            "https://github.com/ZGC-EmbodyAI/TwinBrainVLA"
+          ],
+          "title": "TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers",
+          "review_reasons": [
+            "canonical_relevance_candidate"
+          ]
+        },
+        {
+          "legacy_id": "2511.22134",
+          "arxiv_id": "2511.22134",
+          "work_id": "arxiv:2511.22134",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.22134"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-27",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.22134"
+          ],
+          "title": "DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2601.11404",
+        "arxiv:2601.14133",
+        "arxiv:2511.22134"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.22134",
+        "https://arxiv.org/abs/2601.11404",
+        "https://arxiv.org/abs/2601.14133",
+        "https://github.com/AgibotTech/ACoT-VLA",
+        "https://github.com/ZGC-EmbodyAI/TwinBrainVLA",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相比显式 planner 调 policy，这些工作更倾向于可联合训练的内部接口。",
+      "maturity": "架构簇形成，实时性尚未标准化。",
+      "bottleneck": "慢分支是否真的提升成功率而非只增加计算。",
+      "implication": "需要按任务难度自适应启用慢推理。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "Action CoT 与非对称专家正在重写大小脑接口",
+        "grade": "B",
+        "kind": "weak",
+        "change": "ACoT-VLA、TwinBrainVLA 与 DualVLA 从动作链推理、非对称混合专家和部分解耦三种方式定义高低层接口。",
+        "comparison": "相比显式 planner 调 policy，这些工作更倾向于可联合训练的内部接口。",
+        "evidence_ids": [
+          "2601.11404",
+          "2601.14133",
+          "2511.22134"
+        ],
+        "maturity": "架构簇形成，实时性尚未标准化。",
+        "bottleneck": "慢分支是否真的提升成功率而非只增加计算。",
+        "implication": "需要按任务难度自适应启用慢推理。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-01:7cd80646c9f1",
+      "month": "2026-01",
+      "title": "人类中心数据被推到跨本体预训练主线",
+      "summary": "Being-H0.5、RoboWheel 和 InternData-A1 都把人类数据转化为 generalist policy 的可扩展监督。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-01/2",
+        "record_sha256": "99917d90f0ddffc993a7955217901c266a075018899b1391e905081d9ed530b6"
+      },
+      "supporting_ids": [
+        "arxiv:2601.12993",
+        "arxiv:2512.02729",
+        "arxiv:2511.16651"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.12993",
+          "arxiv_id": "2601.12993",
+          "work_id": "arxiv:2601.12993",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.12993"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-19",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.12993"
+          ],
+          "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2512.02729",
+          "arxiv_id": "2512.02729",
+          "work_id": "arxiv:2512.02729",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.02729"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-02",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D4",
+            "D5",
+            "D8",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.02729"
+          ],
+          "title": "RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2511.16651",
+          "arxiv_id": "2511.16651",
+          "work_id": "arxiv:2511.16651",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.16651"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-20",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D4",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.16651"
+          ],
+          "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.16651",
+        "https://arxiv.org/abs/2512.02729",
+        "https://arxiv.org/abs/2601.12993"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "2025 年的零散数据编辑开始收敛为预训练数据栈。",
+      "maturity": "模型规模化信号明确，独立机器人平台验证仍有限。",
+      "bottleneck": "人类动作与机器人动力学不一致。",
+      "implication": "关注能将人类视频、少量真机和在线修正闭环结合的团队。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "人类中心数据被推到跨本体预训练主线",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Being-H0.5、RoboWheel 和 InternData-A1 都把人类数据转化为 generalist policy 的可扩展监督。",
+        "comparison": "2025 年的零散数据编辑开始收敛为预训练数据栈。",
+        "evidence_ids": [
+          "2601.12993",
+          "2512.02729",
+          "2511.16651"
+        ],
+        "maturity": "模型规模化信号明确，独立机器人平台验证仍有限。",
+        "bottleneck": "人类动作与机器人动力学不一致。",
+        "implication": "关注能将人类视频、少量真机和在线修正闭环结合的团队。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2601.04629",
+      "work_id": "arxiv:2601.04629",
+      "legacy_id": "2601.04629",
+      "title": "UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "统一 VR 与主从式输入，在共享控制栈中加入零空间避碰和奇异规避，为双臂灵巧操作提供可开源的数据采集底座。",
+      "limitation_zh": "贡献重心是遥操作基础设施而非通用策略，摘要验证集中于单个五子任务厨房整理序列。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1539",
+        "record_sha256": "8ab5760667bab15c14a5b0a789738ba98cdf2ed2b59662ecb5d90d8339518db4"
+      },
+      "supporting_ids": [
+        "arxiv:2601.04629"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.04629",
+          "arxiv_id": "2601.04629",
+          "work_id": "arxiv:2601.04629",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.04629"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-08",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.04629"
+          ],
+          "title": "UniBiDex: A Unified Teleoperation Framework for Robotic Bimanual Dexterous Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.04629"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2601.05230",
+      "work_id": "arxiv:2601.05230",
+      "legacy_id": "2601.05230",
+      "title": "Learning Latent Action World Models In The Wild",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "从无动作标注的 in-the-wild 视频学习受约束连续 latent actions，并用控制器映射已知动作以支持世界模型规划。",
+      "limitation_zh": "作者明确指出缺少共同本体时 latent action 主要退化为相机相对的空间定位，离可执行通用动作接口仍有差距。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1541",
+        "record_sha256": "7828d38616355ac14705c43d98c1a394a070edb8b7a9049212148c01d0085fde"
+      },
+      "supporting_ids": [
+        "arxiv:2601.05230"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.05230",
+          "arxiv_id": "2601.05230",
+          "work_id": "arxiv:2601.05230",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.05230"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-08",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.05230"
+          ],
+          "title": "Learning Latent Action World Models In The Wild",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.05230"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2601.11404",
+      "work_id": "arxiv:2601.11404",
+      "legacy_id": "2601.11404",
+      "title": "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "把 Chain-of-Thought 直接落在动作空间，以显式粗轨迹和隐式动作先验共同条件化下游动作头，缩短语义推理到连续控制的距离。",
+      "limitation_zh": "粗轨迹与隐式先验的联合收益依赖任务结构，摘要未说明在高频接触或长时序失败恢复中的稳定性。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1561",
+        "record_sha256": "64731cf542ea3ed2228a1acd100ac44e6a78e7aa63181b7eaee3b175ded53b5d"
+      },
+      "supporting_ids": [
+        "arxiv:2601.11404"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.11404",
+          "arxiv_id": "2601.11404",
+          "work_id": "arxiv:2601.11404",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.11404"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-01-16",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.11404",
+            "https://github.com/AgibotTech/ACoT-VLA",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html"
+          ],
+          "title": "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2601.11404"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.11404",
+        "https://github.com/AgibotTech/ACoT-VLA",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Zhong_ACoT-VLA_Action_Chain-of-Thought_for_Vision-Language-Action_Models_CVPR_2026_paper.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2601.12993",
+      "work_id": "arxiv:2601.12993",
+      "legacy_id": "2601.12993",
+      "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 35,000 小时、30 种本体的 UniHand-2.0 和统一动作空间训练人类中心 VLA，并用 Mixture-of-Flow 分离共享运动原语与本体专家。",
+      "limitation_zh": "真实硬件验证覆盖五个平台，仍远少于训练时的 30 种本体，跨本体泛化是否依赖相近动作接口尚待拆解。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1570",
+        "record_sha256": "edc6f63c14a4266ef3dc728626ad4743af7eeeec7f8b5424a5a79d16c1c44bc2"
+      },
+      "supporting_ids": [
+        "arxiv:2601.12993"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.12993",
+          "arxiv_id": "2601.12993",
+          "work_id": "arxiv:2601.12993",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.12993"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-19",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.12993"
+          ],
+          "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.12993"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2601.14133",
+      "work_id": "arxiv:2601.14133",
+      "legacy_id": "2601.14133",
+      "title": "TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "以冻结 generalist VLM 与可训练 specialist VLM 构成双路径，通过 AsyMoT 查询未被破坏的语义能力并驱动 flow-matching 动作专家。",
+      "limitation_zh": "摘要中的实证主要来自 SimplerEnv 与 RoboCasa，尚未给出真实机器人上的时延、鲁棒性和灾难性遗忘对照。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1572",
+        "record_sha256": "615cfccae568750ca4adb4077d7102b35edb2252d2c4489ffbde21818d591075"
+      },
+      "supporting_ids": [
+        "arxiv:2601.14133"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.14133",
+          "arxiv_id": "2601.14133",
+          "work_id": "arxiv:2601.14133",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.14133"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-20",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.14133",
+            "https://github.com/ZGC-EmbodyAI/TwinBrainVLA"
+          ],
+          "title": "TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers",
+          "review_reasons": [
+            "canonical_relevance_candidate"
+          ]
+        }
+      ],
+      "directions": [
+        "D1"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2601.14133"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.14133",
+        "https://github.com/ZGC-EmbodyAI/TwinBrainVLA"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2601.16163",
+      "work_id": "arxiv:2601.16163",
+      "legacy_id": "2601.16163",
+      "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "用单阶段后训练把预训练视频模型直接改造成动作、未来状态和价值联合生成器，并以测试时规划提升双臂真实任务表现。",
+      "limitation_zh": "仍需目标机器人示范进行平台专用后训练，摘要证据尚不能证明同一策略可零样本迁移到新本体。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1581",
+        "record_sha256": "7dd0464264b8def2ced2ecca10cc0346f61658102dbdb848e7217752806e051d"
+      },
+      "supporting_ids": [
+        "arxiv:2601.16163"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2601.16163",
+          "arxiv_id": "2601.16163",
+          "work_id": "arxiv:2601.16163",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2601.16163"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-01-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2601.16163"
+          ],
+          "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2601.16163"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.16163"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2602.00919",
+      "work_id": "arxiv:2602.00919",
+      "legacy_id": "2602.00919",
+      "title": "Green-VLA: Staged Vision-Language-Action Model for Generalist Robots",
+      "month": "2026-01",
+      "status": "legacy_editorial",
+      "contribution_zh": "以五阶段课程、3,000 小时示范和统一的本体感知动作接口，把 VLM grounding、多本体预训练、单本体适配与 RL 对齐串成可部署的 generalist VLA。",
+      "limitation_zh": "摘要虽报告真实机器人和多本体结果，但不同硬件上的任务集合与统一评测细节仍不足以判断跨本体迁移的边界。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1623",
+        "record_sha256": "e88935caf791de1a2c774002dd42c214134a77612299cf999825d8fb9cee4c67"
+      },
+      "supporting_ids": [
+        "arxiv:2602.00919"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2602.00919",
+          "arxiv_id": "2602.00919",
+          "work_id": "arxiv:2602.00919",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2602.00919"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-01-31",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D5",
+            "D6",
+            "D12"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2602.00919"
+          ],
+          "title": "Green-VLA: Staged Vision-Language-Action Model for Generalist Robots",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D5",
+        "D6"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2602.00919"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "61d4bcd864f651a0eb2e307cf4502eba6d02efe02e268bf422c7083ba8f41260"
+}

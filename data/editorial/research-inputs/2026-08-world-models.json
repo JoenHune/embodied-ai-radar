@@ -1,0 +1,49 @@
+{
+  "month": "2026-08",
+  "origin": "codex_session_source_reading",
+  "model": null,
+  "reviewed_at": "2026-09-06T03:06:34Z",
+  "reviewer": "Codex AI source check; not a human review",
+  "assessments": [
+    {
+      "signal_id": "S1",
+      "work_id": "arxiv:2608.24885",
+      "stance": "supports",
+      "statement": "作者报告动作跟随对齐改善了仿真及真机策略学习，可作为闭环收益命题的待审支持；不能由此推断通用世界模型已成熟。",
+      "source_url": "https://arxiv.org/abs/2608.24885v1",
+      "quotes": ["RoboTwin benchmarks and real-robot tasks", "higher success rates", "struggle with diverse off-expert trajectories"],
+      "experiment": {"setting": "RoboTwin benchmarks and real-robot tasks", "baseline": null, "metric": "higher success rates", "limitations": []},
+      "note": "AI已读取v1全文§4.4及§5：同域固定初始策略、交互、生成和训练预算，堆杯真机对比存在。此卡只绑定摘要能逐字支持的结论，具体预算和数值另见研究阅读稿；未作人工语义批准，未确认外部独立复现。"
+    },
+    {
+      "signal_id": "S1",
+      "work_id": "arxiv:2608.26239",
+      "stance": "neutral",
+      "statement": "作者报告流式预测的一致性与动作跟随改善；这段摘要不能单独证明固定预算下的真实控制收益，也不能把生成时长等同于机器人自主运行时长。",
+      "source_url": "https://arxiv.org/abs/2608.26239v1",
+      "quotes": ["minute-long streaming rollout under bounded memory", "reducing action drift and long-horizon inconsistency"],
+      "experiment": {"setting": "minute-long streaming rollout under bounded memory", "baseline": null, "metric": null, "limitations": []},
+      "note": "AI读取v1全文§6.5—6.6后，区分视频预测、虚实校准、动作分支真机控制。Task Progress不是严格成功率，接触阶段仍有乐观偏差；这些全文事实不伪装成摘要原文。未作人工语义批准。"
+    },
+    {
+      "signal_id": "S1",
+      "work_id": "arxiv:2608.27406",
+      "stance": "neutral",
+      "statement": "摘要支持跨本体视频建模和少样本适配的作者主张，但仅凭视频预测比较不能认定固定计算预算下的控制收益。真机规划条件与幻觉限制需结合全文复核。",
+      "source_url": "https://arxiv.org/abs/2608.27406v1",
+      "quotes": ["curriculum-based cross-embodiment learning recipe", "DROID", "We open-source all code and models"],
+      "experiment": {"setting": "DROID", "baseline": null, "metric": null, "limitations": []},
+      "note": "AI读取v1全文§4.2—4.3及§5，确认动作表示的效果依条件而异、规划使用多个策略候选与额外评分器、作者承认幻觉风险。此卡不将开源声明等同于已核查资产，也不将跨本体数据混合作为跨平台独立复现。未作人工语义批准。"
+    },
+    {
+      "signal_id": "S3",
+      "work_id": "arxiv:2608.26103",
+      "stance": "neutral",
+      "statement": "作者在未见任务的仿真评测中报告47.0%平均成功率，比所比较的视频动作基线高29.5个百分点。这是人类视频任务提示的相关证据，未直接验证该命题所要求的数据规模、多样性和跨本体收益，不能作为该完整命题的支持。",
+      "source_url": "https://arxiv.org/abs/2608.26103v2",
+      "quotes": ["seven unseen tasks in RoboTwin 2.0 simulation", "47.0% average success rate", "29.5 percentage points", "semantically matched human videos"],
+      "experiment": {"setting": "seven unseen tasks in RoboTwin 2.0 simulation", "baseline": null, "metric": "47.0% average success rate", "limitations": []},
+      "note": "AI二次对照S3命题范围，将初稿待审支持纠正为中性：跨任务提示能力不等于人类数据规模/多样性带来的跨本体收益。v2全文§4.2—4.4另有提示和预训练消融，但不能据此泛化成完整S3结论。v2公开于8月27日。未作人工语义批准。"
+    }
+  ]
+}

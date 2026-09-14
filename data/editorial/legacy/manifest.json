@@ -1,0 +1,28 @@
+{
+  "schema_version": "3",
+  "months": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "source_counts": {
+    "trend_cards": 46,
+    "paper_editorial_notes": 121,
+    "direction_context": 5,
+    "forecasts": 8
+  },
+  "status": "legacy_editorial",
+  "source_digest": "3607de708e48f901cfb9bc89e7b7f09aa8a6166a4a951308afb53c8a8e11aca2"
+}

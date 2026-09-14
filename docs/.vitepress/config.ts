@@ -1,25 +1,65 @@
 import { defineConfig } from 'vitepress'
-import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default withMermaid(defineConfig({
+export default defineConfig({
   title: '具身智能研究雷达',
-  description: '2025.07–2026.06 具身智能月度研究趋势、同行评审锚点与结构化证据库',
+  description: '论文、技术报告、研究趋势与全球关键研究组的可追溯研究情报系统',
   lang: 'zh-CN',
   base: '/embodied-ai-radar/',
   lastUpdated: true,
   cleanUrls: true,
+  router: { prefetchLinks: false },
+  transformHead({ page, head }) {
+    // VitePress 1.x includes every global async component in every page's
+    // preload list. Keep only the component actually rendered by this route;
+    // other components remain available through their normal dynamic import.
+    const component = page === 'hardware/index.md' ? 'HardwareRadar'
+      : page === 'trends/loco-manip/index.md' ? 'LocoManipRadar'
+      : page === 'organizations/people/index.md' ? 'PeopleRadar' : page === 'index.md' || /^(trends|monthly|organizations)\//.test(page)
+      ? 'RadarDashboard'
+      : page === 'database/index.md' ? 'DatabaseExplorer'
+        : page === 'pulse/index.md' ? 'PulseFeed'
+          : page === 'pulse/corl-2026.md' ? 'ConferenceRadar'
+            : page === 'methods/coverage.md' ? 'OrganizationCoverage' : null
+    for (let index = head.length - 1; index >= 0; index--) {
+      const [tag, attrs] = head[index]
+      const href = String(attrs?.href || '')
+      const match = href.match(/\/(RadarDashboard|PeopleRadar|HardwareRadar|LocoManipRadar|DatabaseExplorer|PulseFeed|ConferenceRadar|OrganizationCoverage|VPLocalSearchBox)\.[^/]+\.js$/)
+      const chartDependency = /\/(echarts|ChartFrame|useEChart)\.[^/]+\.js$/.test(href)
+      const trendDependency = /\/(DirectionTrendGrid|DirectionTrendChart|monthlySeries)\.[^/]+\.js$/.test(href)
+      const overviewDependency = /\/v3-overview\.[^/]+\.js$/.test(href)
+      const reportCoverageDependency = /\/ReportCoverage\.[^/]+\.js$/.test(href)
+      const feedDependency = /\/ResearchFeed\.[^/]+\.js$/.test(href)
+      const mediaDependency = /\/(SourceImage|ResearchCard|useVisualMedia|research-card)\.[^/]+\.js$/.test(href)
+      const shareOverviewDependency = /\/DirectionShareOverview\.[^/]+\.js$/.test(href)
+      if (tag === 'link' && attrs?.rel === 'modulepreload' && (
+        (match && match[1] !== component)
+        || (chartDependency && !['RadarDashboard', 'PeopleRadar', 'HardwareRadar', 'LocoManipRadar'].includes(component || ''))
+        || (trendDependency && component !== 'RadarDashboard')
+        || (overviewDependency && component !== 'RadarDashboard')
+        || (feedDependency && !['RadarDashboard', 'PulseFeed'].includes(component || ''))
+        || (mediaDependency && !['RadarDashboard', 'PeopleRadar', 'HardwareRadar', 'LocoManipRadar', 'DatabaseExplorer', 'PulseFeed'].includes(component || ''))
+        || (shareOverviewDependency && page !== 'index.md')
+        || (reportCoverageDependency && (component !== 'RadarDashboard' || !page.startsWith('organizations/') || page === 'organizations/collaboration.md'))
+      )) head.splice(index, 1)
+    }
+  },
+  srcExclude: [
+    'analysis/**', 'frontiers/**', 'groups/**', 'questions/**', 'quarterly/**', 'social/**',
+    'monthly/20*.md', 'database/20*.md', 'database/publications.md', 'database/publications/**', 'references.md',
+  ],
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/embodied-ai-radar/favicon.svg' }],
-    ['meta', { name: 'theme-color', content: '#4f46e5' }],
+    ['meta', { name: 'theme-color', content: '#4338ca' }],
+    ['meta', { name: 'color-scheme', content: 'light dark' }],
   ],
-  markdown: {
-    math: true,
-  },
-  mermaid: {
-    flowchart: { padding: 16, nodeSpacing: 30, rankSpacing: 40, htmlLabels: true },
-  },
+  markdown: { math: true },
   vite: {
-    build: { chunkSizeWarningLimit: 1600 },
+    build: {
+      chunkSizeWarningLimit: 500,
+      rollupOptions: { output: { manualChunks(id) {
+        if (id.includes('/node_modules/echarts/') || id.includes('/node_modules/zrender/')) return 'echarts'
+      } } },
+    },
   },
   themeConfig: {
     logo: '/favicon.svg',
@@ -28,143 +68,36 @@ export default withMermaid(defineConfig({
       provider: 'local',
       options: {
         translations: {
-          button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
-          modal: {
-            noResultsText: '未找到结果',
-            resetButtonTitle: '清除搜索',
-            footer: { selectText: '选择', navigateText: '导航', closeText: '关闭' },
-          },
+          button: { buttonText: '搜索页面', buttonAriaLabel: '搜索页面' },
+          modal: { noResultsText: '未找到页面', resetButtonTitle: '清除', footer: { selectText: '选择', navigateText: '导航', closeText: '关闭' } },
         },
       },
     },
     nav: [
-      { text: '首页', link: '/' },
-      { text: '月度雷达', link: '/monthly/' },
-      { text: '研究方向', link: '/frontiers/' },
-      { text: '问题地图', link: '/questions/' },
-      { text: '关键研究组', link: '/groups/' },
-      { text: 'X 热点', link: '/social/' },
-      { text: '年度综合', link: '/analysis/annual' },
-      { text: '弱信号', link: '/analysis/weak-signals' },
-      { text: '团队机构', link: '/analysis/institutions' },
-      { text: '扩充语料', link: '/analysis/corpus-expansion' },
-      { text: '证据库', link: '/database/' },
-      { text: '方法', link: '/methods/' },
+      { text: '总览', link: '/' },
+      { text: '趋势', activeMatch: '^/trends/', items: [{ text: '趋势总览', link: '/trends/' }, { text: '移动与全身操作', link: '/trends/loco-manip/' }] },
+      { text: '月度', link: '/monthly/' },
+      { text: '人物与组织', items: [{ text: '人物与代表作', link: '/organizations/people/' }, { text: '公司与研究组', link: '/organizations/' }, { text: '合作关系', link: '/organizations/collaboration' }] },
+      { text: '研究库', activeMatch: '^/(database|hardware)/', items: [{ text: '全文检索', link: '/database/' }, { text: '研究设备', link: '/hardware/' }] },
+      { text: '动态', link: '/pulse/' }, { text: '方法', link: '/methods/' },
     ],
-    sidebar: [
-      {
-        text: '总览',
-        collapsed: false,
+    sidebar: {
+      '/methods/': [{
+        text: '方法与数据',
         items: [
-          { text: '执行摘要', link: '/analysis/executive-summary' },
-          { text: '年度综合', link: '/analysis/annual' },
-          { text: '弱信号与未来判断', link: '/analysis/weak-signals' },
-          { text: '季度演进', link: '/quarterly/' },
+          { text: '方法总览', link: '/methods/' }, { text: '纳排规则', link: '/methods/inclusion' },
+          { text: '语料扩充协议', link: '/methods/expansion-protocol' }, { text: '研究组归属', link: '/methods/research-groups' },
+          { text: '覆盖审计与发现池', link: '/methods/coverage' },
+          { text: '人物、贡献与影响', link: '/methods/people' },
+          { text: '研究设备与联合操作', link: '/methods/equipment-loco' },
+          { text: '视觉设计与配图口径', link: '/methods/visual-design' },
         ],
-      },
-      {
-        text: '月度研究雷达',
-        collapsed: false,
-        items: [
-          { text: '月度总览', link: '/monthly/' },
-          { text: '2025 年 7 月', link: '/monthly/2025-07' },
-          { text: '2025 年 8 月', link: '/monthly/2025-08' },
-          { text: '2025 年 9 月', link: '/monthly/2025-09' },
-          { text: '2025 年 10 月', link: '/monthly/2025-10' },
-          { text: '2025 年 11 月', link: '/monthly/2025-11' },
-          { text: '2025 年 12 月', link: '/monthly/2025-12' },
-          { text: '2026 年 1 月', link: '/monthly/2026-01' },
-          { text: '2026 年 2 月', link: '/monthly/2026-02' },
-          { text: '2026 年 3 月', link: '/monthly/2026-03' },
-          { text: '2026 年 4 月', link: '/monthly/2026-04' },
-          { text: '2026 年 5 月', link: '/monthly/2026-05' },
-          { text: '2026 年 6 月', link: '/monthly/2026-06' },
-          { text: '2026 年 7 月（完整月）', link: '/monthly/2026-07' },
-          { text: '2026 年 8 月（完整月）', link: '/monthly/2026-08' },
-        ],
-      },
-      {
-        text: '研究问题地图',
-        collapsed: false,
-        items: [
-          { text: 'Q0–Q10 问题追踪器', link: '/questions/' },
-          { text: '文档之外的遗漏方向', link: '/questions/blind-spots' },
-          { text: '问题层方法', link: '/methods/research-question-layer' },
-        ],
-      },
-      {
-        text: '全球关键研究组',
-        collapsed: false,
-        items: [
-          { text: '60 核心组 + 初创前沿', link: '/groups/' },
-          { text: '领先初创技术报告', link: '/groups/startups' },
-          { text: '本周研究组周报', link: '/groups/weekly/' },
-          { text: '组织层级图', link: '/groups/organizations' },
-          { text: '合作网络', link: '/groups/collaboration' },
-          { text: '归属与更新方法', link: '/methods/research-groups' },
-        ],
-      },
-      {
-        text: 'X 讨论雷达',
-        collapsed: false,
-        items: [
-          { text: '本周讨论总览', link: '/social/' },
-          { text: '历史周报', link: '/social/weekly/' },
-          { text: '检索与热度方法', link: '/social/method' },
-        ],
-      },
-      {
-        text: '15 个研究方向',
-        collapsed: true,
-        items: [
-          { text: '前沿总览', link: '/frontiers/' },
-          { text: '具身基础模型与通才策略', link: '/frontiers/foundation-models' },
-          { text: '分层推理、规划与记忆', link: '/frontiers/reasoning-planning' },
-          { text: '世界模型与预测控制', link: '/frontiers/world-models' },
-          { text: '灵巧、双臂与接触操作', link: '/frontiers/dexterous-manipulation' },
-          { text: '人形、运动与全身控制', link: '/frontiers/humanoid-whole-body' },
-          { text: '导航与移动操作', link: '/frontiers/navigation-mobile-manipulation' },
-          { text: '人机协作与交互学习', link: '/frontiers/human-robot-interaction' },
-          { text: '策略学习与优化', link: '/frontiers/policy-learning' },
-          { text: '数据引擎与人类视频', link: '/frontiers/data-engines' },
-          { text: '仿真、合成数据与迁移', link: '/frontiers/simulation-transfer' },
-          { text: '空间感知与表征', link: '/frontiers/spatial-perception' },
-          { text: '评测、安全与可靠性', link: '/frontiers/safety-evaluation' },
-          { text: '持续学习与自改进', link: '/frontiers/continual-deployment-learning' },
-          { text: '多机器人协同', link: '/frontiers/multi-robot-coordination' },
-          { text: '多模态身体感知', link: '/frontiers/embodied-multisensory' },
-        ],
-      },
-      {
-        text: '证据与方法',
-        collapsed: false,
-        items: [
-          { text: '同行评审锚点', link: '/analysis/peer-review' },
-          { text: '团队与机构雷达', link: '/analysis/institutions' },
-          { text: '评估基准', link: '/analysis/benchmarks' },
-          { text: '语料扩充与覆盖审计', link: '/analysis/corpus-expansion' },
-          { text: 'GitHub 与开源生态', link: '/analysis/open-source-ecosystem' },
-          { text: '论文数据库', link: '/database/' },
-          { text: '正式发表数据库', link: '/database/publications' },
-          { text: '2024 候选', link: '/database/2024' },
-          { text: '2025 候选', link: '/database/2025' },
-          { text: '2026 候选', link: '/database/2026' },
-          { text: '检索与分类方法', link: '/methods/' },
-          { text: '语料扩充协议', link: '/methods/expansion-protocol' },
-          { text: '纳排与局限', link: '/methods/inclusion' },
-          { text: '参考文献', link: '/references' },
-        ],
-      },
-    ],
+      }],
+    },
     outline: { level: [2, 3], label: '本页目录' },
     lastUpdated: { text: '最后更新' },
     docFooter: { prev: '上一篇', next: '下一篇' },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/JoenHune/embodied-ai-radar' },
-    ],
-    footer: {
-      message: '数据与统计由结构化证据库自动生成',
-      copyright: 'MIT License © 2026',
-    },
+    socialLinks: [{ icon: 'github', link: 'https://github.com/JoenHune/embodied-ai-radar' }],
+    footer: { message: '所有统计均可由公开 JSONL 与 SQLite 复算', copyright: 'MIT License © 2026' },
   },
-}))
+})

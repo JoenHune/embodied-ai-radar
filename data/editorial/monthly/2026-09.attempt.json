@@ -1,0 +1,23 @@
+{
+  "schema_version": "3",
+  "month": "2026-09",
+  "status": "data_only",
+  "generated_at": "2026-09-14T03:55:48Z",
+  "model": "gpt-5.6-sol",
+  "input_digest": "49523fc9e247f51753846d9c09bbc7fb2febf2970d686bf57d0f7e68ef012577",
+  "claims": [],
+  "direction_summaries": [],
+  "question_summaries": [],
+  "organization_changes": [],
+  "counterevidence": [],
+  "limitations": [],
+  "watchlist": [],
+  "localization_work_ids": [],
+  "localizations": [],
+  "signal_assessments": [],
+  "failure": {
+    "reason": "unbound_number_in_prose",
+    "attempts": 3
+  },
+  "previous_complete_preserved": false
+}

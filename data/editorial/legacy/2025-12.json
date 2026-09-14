@@ -1,0 +1,948 @@
+{
+  "schema_version": "3",
+  "month": "2025-12",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2025-12:76284cca5267",
+      "month": "2025-12",
+      "title": "世界模型与搜索/规划形成方法簇",
+      "summary": "Motus、Large Video Planner、STORM 与 WorldPlanner 从统一 latent action、视频规划器和 search-guided generation 三路汇合。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-12/0",
+        "record_sha256": "b3f6617990d95cd3aa476e80476d3b8cd391457de4163fdcb67e51854b123d39"
+      },
+      "supporting_ids": [
+        "arxiv:2512.13030",
+        "arxiv:2512.15840",
+        "arxiv:2512.18477",
+        "arxiv:2511.03077"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.13030",
+          "arxiv_id": "2512.13030",
+          "work_id": "arxiv:2512.13030",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.13030"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-15",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.13030",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html"
+          ],
+          "title": "Motus: A Unified Latent Action World Model",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2512.15840",
+          "arxiv_id": "2512.15840",
+          "work_id": "arxiv:2512.15840",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.15840"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-17",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.15840"
+          ],
+          "title": "Large Video Planner Enables Generalizable Robot Control",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2512.18477",
+          "arxiv_id": "2512.18477",
+          "work_id": "arxiv:2512.18477",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.18477"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-20",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D12"
+          ],
+          "questions": [
+            "Q0",
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.18477"
+          ],
+          "title": "STORM: Search-Guided Generative World Models for Robotic Manipulation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2511.03077",
+          "arxiv_id": "2511.03077",
+          "work_id": "arxiv:2511.03077",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.03077"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-04",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D3",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.03077",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_262"
+          ],
+          "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D2",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q0",
+        "Q2",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.03077",
+        "https://arxiv.org/abs/2512.13030",
+        "https://arxiv.org/abs/2512.15840",
+        "https://arxiv.org/abs/2512.18477",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_262"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "这是全年首次在同月出现三项以上、不同作者团队的 planning-oriented world model。",
+      "maturity": "研究密度高，同行评审滞后明显。",
+      "bottleneck": "可执行性校验与长时 roll-out 漂移。",
+      "implication": "2026 年应观察这批工作能否转化为真实机器人闭环收益。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "世界模型与搜索/规划形成方法簇",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Motus、Large Video Planner、STORM 与 WorldPlanner 从统一 latent action、视频规划器和 search-guided generation 三路汇合。",
+        "comparison": "这是全年首次在同月出现三项以上、不同作者团队的 planning-oriented world model。",
+        "evidence_ids": [
+          "2512.13030",
+          "2512.15840",
+          "2512.18477",
+          "2511.03077"
+        ],
+        "maturity": "研究密度高，同行评审滞后明显。",
+        "bottleneck": "可执行性校验与长时 roll-out 漂移。",
+        "implication": "2026 年应观察这批工作能否转化为真实机器人闭环收益。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-12:9ef93025e524",
+      "month": "2025-12",
+      "title": "双系统跨出 manipulation，开始覆盖导航与视频策略",
+      "summary": "Video2Act、Ground Slow Move Fast 与 DualVLA 显示快慢分工可跨视频策略、导航和通用代理。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-12/1",
+        "record_sha256": "78945a2d6020e324bc74fa435f48d502bcc05df146992048e148b33dbe1ef044"
+      },
+      "supporting_ids": [
+        "arxiv:2512.03044",
+        "arxiv:2512.08186",
+        "arxiv:2511.22134"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.03044",
+          "arxiv_id": "2512.03044",
+          "work_id": "arxiv:2512.03044",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.03044"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-12-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D2",
+            "D3",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.03044"
+          ],
+          "title": "Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2512.08186",
+          "arxiv_id": "2512.08186",
+          "work_id": "arxiv:2512.08186",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.08186"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-09",
+          "temporal_role": "current_month",
+          "directions": [
+            "D2",
+            "D6"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.08186"
+          ],
+          "title": "Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2511.22134",
+          "arxiv_id": "2511.22134",
+          "work_id": "arxiv:2511.22134",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.22134"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-11-27",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.22134"
+          ],
+          "title": "DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D6",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2512.03044",
+        "arxiv:2511.22134"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.22134",
+        "https://arxiv.org/abs/2512.03044",
+        "https://arxiv.org/abs/2512.08186"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "10 月主要是 VLA 内部推理；本月开始形成跨任务架构语言。",
+      "maturity": "跨任务概念扩散，统一实验标准缺失。",
+      "bottleneck": "不同任务的时钟频率和状态抽象不统一。",
+      "implication": "双系统价值在于复用调度框架，而非统一一个超大模型。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "双系统跨出 manipulation，开始覆盖导航与视频策略",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Video2Act、Ground Slow Move Fast 与 DualVLA 显示快慢分工可跨视频策略、导航和通用代理。",
+        "comparison": "10 月主要是 VLA 内部推理；本月开始形成跨任务架构语言。",
+        "evidence_ids": [
+          "2512.03044",
+          "2512.08186",
+          "2511.22134"
+        ],
+        "maturity": "跨任务概念扩散，统一实验标准缺失。",
+        "bottleneck": "不同任务的时钟频率和状态抽象不统一。",
+        "implication": "双系统价值在于复用调度框架，而非统一一个超大模型。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-12:d90f516153a7",
+      "month": "2025-12",
+      "title": "低成本示范采集与合成开始合流",
+      "summary": "RoboWheel、One-Shot Demonstration Synthesis 和 InternData-A1 覆盖真实人类示范、单样本合成与高保真合成预训练。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-12/2",
+        "record_sha256": "30279b33482912016b73f51c8863c409882817ab24dc77fbf99294f3aae5a72c"
+      },
+      "supporting_ids": [
+        "arxiv:2512.02729",
+        "arxiv:2512.09297",
+        "arxiv:2511.16651"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.02729",
+          "arxiv_id": "2512.02729",
+          "work_id": "arxiv:2512.02729",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.02729"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D5",
+            "D8",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.02729"
+          ],
+          "title": "RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2512.09297",
+          "arxiv_id": "2512.09297",
+          "work_id": "arxiv:2512.09297",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.09297"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-10",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9",
+            "D10",
+            "D12"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.09297",
+            "https://roboticsconference.org/program/papers/1/"
+          ],
+          "title": "One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2511.16651",
+          "arxiv_id": "2511.16651",
+          "work_id": "arxiv:2511.16651",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2511.16651"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-11-20",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D4",
+            "D10"
+          ],
+          "questions": [
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2511.16651"
+          ],
+          "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D12",
+        "D4",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2511.16651",
+        "https://arxiv.org/abs/2512.02729",
+        "https://arxiv.org/abs/2512.09297",
+        "https://roboticsconference.org/program/papers/1/"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "数据规模化从单一 teleoperation 扩展为真实—合成混合流水线。",
+      "maturity": "数据引擎成形，但跨团队采用尚未验证。",
+      "bottleneck": "数据质量过滤与许可合规。",
+      "implication": "评估数据公司时，应要求展示对下游多机器人成功率的边际贡献。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "低成本示范采集与合成开始合流",
+        "grade": "B",
+        "kind": "weak",
+        "change": "RoboWheel、One-Shot Demonstration Synthesis 和 InternData-A1 覆盖真实人类示范、单样本合成与高保真合成预训练。",
+        "comparison": "数据规模化从单一 teleoperation 扩展为真实—合成混合流水线。",
+        "evidence_ids": [
+          "2512.02729",
+          "2512.09297",
+          "2511.16651"
+        ],
+        "maturity": "数据引擎成形，但跨团队采用尚未验证。",
+        "bottleneck": "数据质量过滤与许可合规。",
+        "implication": "评估数据公司时，应要求展示对下游多机器人成功率的边际贡献。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2512.02729",
+      "work_id": "arxiv:2512.02729",
+      "legacy_id": "2512.02729",
+      "title": "RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "RoboWheel 将单目/RGB-D 人类手物视频重建为物理可行接触轨迹，再重定向到夹爪、灵巧手和人形本体并做仿真扩增。",
+      "limitation_zh": "单目手物重建和 RL 物理修正都可能产生隐性偏差，摘要未明确多平台真实闭环成功率和数据开放状态。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1390",
+        "record_sha256": "6e93f7848657561a5c88841611701ac7b91d47f332f11c1a56deaca0feaba177"
+      },
+      "supporting_ids": [
+        "arxiv:2512.02729"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.02729",
+          "arxiv_id": "2512.02729",
+          "work_id": "arxiv:2512.02729",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.02729"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D5",
+            "D8",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.02729"
+          ],
+          "title": "RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.02729"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2512.03044",
+      "work_id": "arxiv:2512.03044",
+      "legacy_id": "2512.03044",
+      "title": "Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "Video2Act 以视频扩散模型作低频慢系统、DiT 动作头作快速系统，通过空间边界与跨帧运动条件提升真实任务成功率。",
+      "limitation_zh": "依赖预训练视频扩散表征且慢系统低频更新，场景突变时可能使用陈旧条件；验证任务数量和开放资产未说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1394",
+        "record_sha256": "0335a5994ba3b63a4f1155cc6ba44f62cddd085c61534b0684769ac5e3059665"
+      },
+      "supporting_ids": [
+        "arxiv:2512.03044"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.03044",
+          "arxiv_id": "2512.03044",
+          "work_id": "arxiv:2512.03044",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.03044"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-12-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D2",
+            "D3",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.03044"
+          ],
+          "title": "Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D2",
+        "D3",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2512.03044"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.03044"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2512.08186",
+      "work_id": "arxiv:2512.08186",
+      "legacy_id": "2512.08186",
+      "title": "Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "DualVLN 让 VLM 全局规划器慢速生成中程像素目标，轻量 diffusion transformer 快速输出连续轨迹，在真实动态环境实现长时序导航。",
+      "limitation_zh": "证据集中在导航而非操作，系统 2 waypoint 错误会向下传播；动态安全与跨机器人泛化仍缺独立验证。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1423",
+        "record_sha256": "720e966155c20f6db00525fa7e4f1316eeffe58bf9e2526d0f991832a266f3e2"
+      },
+      "supporting_ids": [
+        "arxiv:2512.08186"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.08186",
+          "arxiv_id": "2512.08186",
+          "work_id": "arxiv:2512.08186",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.08186"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-09",
+          "temporal_role": "current_month",
+          "directions": [
+            "D2",
+            "D6"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.08186"
+          ],
+          "title": "Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D2",
+        "D6"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.08186"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2512.09297",
+      "work_id": "arxiv:2512.09297",
+      "legacy_id": "2512.09297",
+      "title": "One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "BiDemoSyn 从一条真实示范分解协调不变量与对象相关调整，数小时合成数千条双臂接触轨迹，并展示新平台零样本迁移。",
+      "limitation_zh": "实验为六个双臂任务，简化 6-DoF 末端动作可能忽略力/顺应性与灵巧手细节；RSS 标签需以官方程序页再核。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1431",
+        "record_sha256": "343da28f6389b7c424614097545a59bacaa2f22c42399f8074fbcb0ee5187f01"
+      },
+      "supporting_ids": [
+        "arxiv:2512.09297"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.09297",
+          "arxiv_id": "2512.09297",
+          "work_id": "arxiv:2512.09297",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.09297"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-10",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9",
+            "D10",
+            "D12"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.09297",
+            "https://roboticsconference.org/program/papers/1/"
+          ],
+          "title": "One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D10",
+        "D12",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.09297",
+        "https://roboticsconference.org/program/papers/1/"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2512.13030",
+      "work_id": "arxiv:2512.13030",
+      "legacy_id": "2512.13030",
+      "title": "Motus: A Unified Latent Action World Model",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "Motus 用 MoT 统一理解、视频生成和动作专家，并以 optical-flow latent action 支持世界模型、VLA、逆动力学等多种模式。",
+      "limitation_zh": "MoT、六层数据金字塔与多模式调度复现复杂，摘要未给开放权重/数据；统一模型是否胜过同算力专用模型仍需外部检验。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1455",
+        "record_sha256": "11cb61ec22c298ef60e37c105dabaf3738e483a304b079aa4b12c1d3625663de"
+      },
+      "supporting_ids": [
+        "arxiv:2512.13030"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.13030",
+          "arxiv_id": "2512.13030",
+          "work_id": "arxiv:2512.13030",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.13030"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-15",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.13030",
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html"
+          ],
+          "title": "Motus: A Unified Latent Action World Model",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.13030",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2512.15840",
+      "work_id": "arxiv:2512.15840",
+      "legacy_id": "2512.15840",
+      "title": "Large Video Planner Enables Generalizable Robot Control",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "以互联网规模人类活动视频预训练开放视频规划器，零样本生成新场景任务的视频计划并后处理为可执行真实机器人动作。",
+      "limitation_zh": "视频计划需后处理才能变成动作，动力学不可执行与闭环漂移仍可能出现；“第三方选题”不等同大规模独立复现。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1466",
+        "record_sha256": "3fdd1cf0eace8eb7415e450a50bf0c71b9afd63f22fb732139cea1f9fb864418"
+      },
+      "supporting_ids": [
+        "arxiv:2512.15840"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.15840",
+          "arxiv_id": "2512.15840",
+          "work_id": "arxiv:2512.15840",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.15840"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-17",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.15840"
+          ],
+          "title": "Large Video Planner Enables Generalizable Robot Control",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.15840"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2512.18477",
+      "work_id": "arxiv:2512.18477",
+      "legacy_id": "2512.18477",
+      "title": "STORM: Search-Guided Generative World Models for Robotic Manipulation",
+      "month": "2025-12",
+      "status": "legacy_editorial",
+      "contribution_zh": "STORM 让 diffusion VLA 提议动作、视频世界模型预测结果、MCTS 搜索与重规划，在 SimplerEnv 达到 51.0% 平均成功率。",
+      "limitation_zh": "仅 SimplerEnv 仿真，无真实机器人证据；视频世界模型误差与 MCTS 计算成本可能随长时序迅速放大。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1481",
+        "record_sha256": "e134f5e3455e17be01659e0e540db298ffa731646ab51d31c9dbb54de893aff2"
+      },
+      "supporting_ids": [
+        "arxiv:2512.18477"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2512.18477",
+          "arxiv_id": "2512.18477",
+          "work_id": "arxiv:2512.18477",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2512.18477"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-12-20",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D12"
+          ],
+          "questions": [
+            "Q0",
+            "Q7"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2512.18477"
+          ],
+          "title": "STORM: Search-Guided Generative World Models for Robotic Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "questions": [
+        "Q0",
+        "Q7"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2512.18477"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "f113e4ca0f4217d077cc613f08aa39612541505857cf82806344294fd31a7b76"
+}

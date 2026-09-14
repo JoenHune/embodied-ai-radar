@@ -1,0 +1,803 @@
+{
+  "schema_version": "1",
+  "scope": "stratified_regression_sample_not_internet_census",
+  "catalog_hash": "22e75cac546c7434f7c51d0a207c07eb964f368170d4fa7683cee644d72561ab",
+  "gold_hash": "399c12b11a9dd5abaaaffcc421b3aababe4cc5ec5b01a496efb3ea986b423da1",
+  "sample_frozen_at": [
+    "2026-09-05T16:34:42Z"
+  ],
+  "sampled_organizations": 12,
+  "organizations_with_at_least_two_releases": 12,
+  "source_gaps": [],
+  "overall": {
+    "denominator": 24,
+    "status_counts": {
+      "ambiguous": 5,
+      "included": 10,
+      "manual_review": 2,
+      "missing": 5,
+      "title_candidate": 2
+    },
+    "catalog_relevance_counts": {
+      "included": 10,
+      "manual_review": 2,
+      "unmatched": 12
+    },
+    "release_url_present": 17,
+    "release_url_presence_rate": 0.7083333333333334,
+    "release_captured": 12,
+    "release_capture_recall": 0.5,
+    "canonical_work_present": 17,
+    "canonical_work_recall": 0.7083333333333334,
+    "canonical_identity_resolved": 12,
+    "canonical_resolution_rate": 0.5,
+    "formal_visible": 10,
+    "formal_visible_recall": 0.4166666666666667
+  },
+  "research_artifacts": {
+    "denominator": 21,
+    "status_counts": {
+      "ambiguous": 5,
+      "included": 9,
+      "manual_review": 2,
+      "missing": 3,
+      "title_candidate": 2
+    },
+    "catalog_relevance_counts": {
+      "included": 9,
+      "manual_review": 2,
+      "unmatched": 10
+    },
+    "release_url_present": 16,
+    "release_url_presence_rate": 0.7619047619047619,
+    "release_captured": 11,
+    "release_capture_recall": 0.5238095238095238,
+    "canonical_work_present": 16,
+    "canonical_work_recall": 0.7619047619047619,
+    "canonical_identity_resolved": 11,
+    "canonical_resolution_rate": 0.5238095238095238,
+    "formal_visible": 9,
+    "formal_visible_recall": 0.42857142857142855
+  },
+  "observational_releases": {
+    "denominator": 3,
+    "status_counts": {
+      "included": 1,
+      "missing": 2
+    },
+    "catalog_relevance_counts": {
+      "included": 1,
+      "unmatched": 2
+    },
+    "release_url_present": 1,
+    "release_url_presence_rate": 0.3333333333333333,
+    "release_captured": 1,
+    "release_capture_recall": 0.3333333333333333,
+    "canonical_work_present": 1,
+    "canonical_work_recall": 0.3333333333333333,
+    "canonical_identity_resolved": 1,
+    "canonical_resolution_rate": 0.3333333333333333,
+    "formal_visible": 1,
+    "formal_visible_recall": 0.3333333333333333
+  },
+  "organizations": [
+    {
+      "organization_id": "org:cmu-lecar",
+      "denominator": 2,
+      "status_counts": {
+        "included": 1,
+        "manual_review": 1
+      },
+      "catalog_relevance_counts": {
+        "included": 1,
+        "manual_review": 1
+      },
+      "release_url_present": 2,
+      "release_url_presence_rate": 1,
+      "release_captured": 2,
+      "release_capture_recall": 1,
+      "canonical_work_present": 2,
+      "canonical_work_recall": 1,
+      "canonical_identity_resolved": 2,
+      "canonical_resolution_rate": 1,
+      "formal_visible": 1,
+      "formal_visible_recall": 0.5
+    },
+    {
+      "organization_id": "org:cmu-pathak-research-group",
+      "denominator": 2,
+      "status_counts": {
+        "included": 1,
+        "missing": 1
+      },
+      "catalog_relevance_counts": {
+        "included": 1,
+        "unmatched": 1
+      },
+      "release_url_present": 1,
+      "release_url_presence_rate": 0.5,
+      "release_captured": 1,
+      "release_capture_recall": 0.5,
+      "canonical_work_present": 1,
+      "canonical_work_recall": 0.5,
+      "canonical_identity_resolved": 1,
+      "canonical_resolution_rate": 0.5,
+      "formal_visible": 1,
+      "formal_visible_recall": 0.5
+    },
+    {
+      "organization_id": "org:dyna-robotics",
+      "denominator": 2,
+      "status_counts": {
+        "included": 2
+      },
+      "catalog_relevance_counts": {
+        "included": 2
+      },
+      "release_url_present": 2,
+      "release_url_presence_rate": 1,
+      "release_captured": 2,
+      "release_capture_recall": 1,
+      "canonical_work_present": 2,
+      "canonical_work_recall": 1,
+      "canonical_identity_resolved": 2,
+      "canonical_resolution_rate": 1,
+      "formal_visible": 2,
+      "formal_visible_recall": 1
+    },
+    {
+      "organization_id": "org:figure-ai",
+      "denominator": 2,
+      "status_counts": {
+        "included": 1,
+        "missing": 1
+      },
+      "catalog_relevance_counts": {
+        "included": 1,
+        "unmatched": 1
+      },
+      "release_url_present": 1,
+      "release_url_presence_rate": 0.5,
+      "release_captured": 1,
+      "release_capture_recall": 0.5,
+      "canonical_work_present": 1,
+      "canonical_work_recall": 0.5,
+      "canonical_identity_resolved": 1,
+      "canonical_resolution_rate": 0.5,
+      "formal_visible": 1,
+      "formal_visible_recall": 0.5
+    },
+    {
+      "organization_id": "org:generalist-ai",
+      "denominator": 2,
+      "status_counts": {
+        "ambiguous": 2
+      },
+      "catalog_relevance_counts": {
+        "unmatched": 2
+      },
+      "release_url_present": 2,
+      "release_url_presence_rate": 1,
+      "release_captured": 0,
+      "release_capture_recall": 0,
+      "canonical_work_present": 2,
+      "canonical_work_recall": 1,
+      "canonical_identity_resolved": 0,
+      "canonical_resolution_rate": 0,
+      "formal_visible": 0,
+      "formal_visible_recall": 0
+    },
+    {
+      "organization_id": "org:genesis-ai",
+      "denominator": 2,
+      "status_counts": {
+        "ambiguous": 2
+      },
+      "catalog_relevance_counts": {
+        "unmatched": 2
+      },
+      "release_url_present": 2,
+      "release_url_presence_rate": 1,
+      "release_captured": 0,
+      "release_capture_recall": 0,
+      "canonical_work_present": 2,
+      "canonical_work_recall": 1,
+      "canonical_identity_resolved": 0,
+      "canonical_resolution_rate": 0,
+      "formal_visible": 0,
+      "formal_visible_recall": 0
+    },
+    {
+      "organization_id": "org:google-deepmind-robotics",
+      "denominator": 2,
+      "status_counts": {
+        "included": 1,
+        "missing": 1
+      },
+      "catalog_relevance_counts": {
+        "included": 1,
+        "unmatched": 1
+      },
+      "release_url_present": 1,
+      "release_url_presence_rate": 0.5,
+      "release_captured": 1,
+      "release_capture_recall": 0.5,
+      "canonical_work_present": 1,
+      "canonical_work_recall": 0.5,
+      "canonical_identity_resolved": 1,
+      "canonical_resolution_rate": 0.5,
+      "formal_visible": 1,
+      "formal_visible_recall": 0.5
+    },
+    {
+      "organization_id": "org:nvidia-gear",
+      "denominator": 2,
+      "status_counts": {
+        "included": 1,
+        "manual_review": 1
+      },
+      "catalog_relevance_counts": {
+        "included": 1,
+        "manual_review": 1
+      },
+      "release_url_present": 2,
+      "release_url_presence_rate": 1,
+      "release_captured": 2,
+      "release_capture_recall": 1,
+      "canonical_work_present": 2,
+      "canonical_work_recall": 1,
+      "canonical_identity_resolved": 2,
+      "canonical_resolution_rate": 1,
+      "formal_visible": 1,
+      "formal_visible_recall": 0.5
+    },
+    {
+      "organization_id": "org:physical-intelligence",
+      "denominator": 2,
+      "status_counts": {
+        "ambiguous": 1,
+        "missing": 1
+      },
+      "catalog_relevance_counts": {
+        "unmatched": 2
+      },
+      "release_url_present": 1,
+      "release_url_presence_rate": 0.5,
+      "release_captured": 0,
+      "release_capture_recall": 0,
+      "canonical_work_present": 1,
+      "canonical_work_recall": 0.5,
+      "canonical_identity_resolved": 0,
+      "canonical_resolution_rate": 0,
+      "formal_visible": 0,
+      "formal_visible_recall": 0
+    },
+    {
+      "organization_id": "org:rai-institute",
+      "denominator": 2,
+      "status_counts": {
+        "included": 1,
+        "missing": 1
+      },
+      "catalog_relevance_counts": {
+        "included": 1,
+        "unmatched": 1
+      },
+      "release_url_present": 1,
+      "release_url_presence_rate": 0.5,
+      "release_captured": 1,
+      "release_capture_recall": 0.5,
+      "canonical_work_present": 1,
+      "canonical_work_recall": 0.5,
+      "canonical_identity_resolved": 1,
+      "canonical_resolution_rate": 0.5,
+      "formal_visible": 1,
+      "formal_visible_recall": 0.5
+    },
+    {
+      "organization_id": "org:sunday-robotics",
+      "denominator": 2,
+      "status_counts": {
+        "included": 2
+      },
+      "catalog_relevance_counts": {
+        "included": 2
+      },
+      "release_url_present": 2,
+      "release_url_presence_rate": 1,
+      "release_captured": 2,
+      "release_capture_recall": 1,
+      "canonical_work_present": 2,
+      "canonical_work_recall": 1,
+      "canonical_identity_resolved": 2,
+      "canonical_resolution_rate": 1,
+      "formal_visible": 2,
+      "formal_visible_recall": 1
+    },
+    {
+      "organization_id": "org:tri-robotics",
+      "denominator": 2,
+      "status_counts": {
+        "title_candidate": 2
+      },
+      "catalog_relevance_counts": {
+        "unmatched": 2
+      },
+      "release_url_present": 0,
+      "release_url_presence_rate": 0,
+      "release_captured": 0,
+      "release_capture_recall": 0,
+      "canonical_work_present": 0,
+      "canonical_work_recall": 0,
+      "canonical_identity_resolved": 0,
+      "canonical_resolution_rate": 0,
+      "formal_visible": 0,
+      "formal_visible_recall": 0
+    }
+  ],
+  "results": [
+    {
+      "gold_id": "gold-release:2026-09-06:genesis-ai:01",
+      "organization_id": "org:genesis-ai",
+      "title": "The Role of Simulation in Scalable Robotics, Genesis World 1.0, and the Path Forward",
+      "url": "https://www.genesis.ai/blog/the-role-of-simulation-in-scalable-robotics-genesis-world-10-and-the-path-forward",
+      "published_at": "2026-05-27",
+      "release_type": "technical_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "artifact:16fe0bb0acb571174c77",
+        "report:05fa0e469c30ccee234e"
+      ],
+      "release_captured": false,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "ambiguous"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:genesis-ai:02",
+      "organization_id": "org:genesis-ai",
+      "title": "GENE-26.5: Advancing Robotic Manipulation to Human Level",
+      "url": "https://www.genesis.ai/blog/gene-26-5-advancing-robotic-manipulation-to-human-level",
+      "published_at": "2026-05-07",
+      "release_type": "model_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "artifact:68fbc8c3cb55bc64a39f",
+        "report:cb5307205dbf7033264f"
+      ],
+      "release_captured": false,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "ambiguous"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:generalist-ai:01",
+      "organization_id": "org:generalist-ai",
+      "title": "GEN-1.5 / Embodied Foundation Models are One-Shot Learners",
+      "url": "https://generalistai.com/blog/gen-1.5",
+      "published_at": "2026-08-19",
+      "release_type": "model_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "artifact:3185739af03a39ce8cc2",
+        "report:de9e41b42353bf59a7e3"
+      ],
+      "release_captured": false,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "ambiguous"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:generalist-ai:02",
+      "organization_id": "org:generalist-ai",
+      "title": "Towards Machines with a Thousand Hands",
+      "url": "https://generalistai.com/blog/towards-machines-with-a-thousand-hands",
+      "published_at": "2026-07-23",
+      "release_type": "technical_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "artifact:a7e4224b76168647bbe7",
+        "report:15d529127608f9b48896"
+      ],
+      "release_captured": false,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "ambiguous"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:figure-ai:01",
+      "organization_id": "org:figure-ai",
+      "title": "Introducing Index: Building The World’s Largest and Most Diverse Physical Dataset",
+      "url": "https://www.figure.ai/news/introducing-index",
+      "published_at": "2026-08-25",
+      "release_type": "dataset_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "report:d2430c7ec9fe0bb65a51"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:figure-ai:02",
+      "organization_id": "org:figure-ai",
+      "title": "F.03 Arrives at BMW",
+      "url": "https://www.figure.ai/news/f-03-at-bmw",
+      "published_at": "2026-06-30",
+      "release_type": "deployment_report",
+      "match_basis": null,
+      "matched_work_ids": [],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "missing"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:dyna-robotics:01",
+      "organization_id": "org:dyna-robotics",
+      "title": "Not Just a Model, But a Product",
+      "url": "https://www.dyna.co/research/scaling-customer-deployments",
+      "published_at": "2026-08-27",
+      "release_type": "deployment_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "report:96552e715a096a6242d1"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:dyna-robotics:02",
+      "organization_id": "org:dyna-robotics",
+      "title": "Training Dyna-2 at million-hour scale, repeatably",
+      "url": "https://www.dyna.co/research/dyna-2-infrastructure",
+      "published_at": "2026-08-17",
+      "release_type": "infrastructure_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "report:3fcd631f3e973a746389"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:sunday-robotics:01",
+      "organization_id": "org:sunday-robotics",
+      "title": "ACT-2 Preview: Generalizing Reliability",
+      "url": "https://www.sunday.ai/blog/act-2-preview",
+      "published_at": "2026-07-17",
+      "release_type": "model_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "report:51e925035cade3fb94b8"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:sunday-robotics:02",
+      "organization_id": "org:sunday-robotics",
+      "title": "ACT-1: A Robot Foundation Model Trained on Zero Robot Data",
+      "url": "https://www.sunday.ai/blog/no-robot-data",
+      "published_at": "2025-11-19",
+      "release_type": "model_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "report:c3f39ceaa0250ce4fbbb"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:nvidia-gear:01",
+      "organization_id": "org:nvidia-gear",
+      "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+      "url": "https://arxiv.org/abs/2602.06949",
+      "published_at": "2026-02-06T18:49:43Z",
+      "release_type": "paper",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "arxiv:2602.06949"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "manual_review",
+      "formal_visible": false,
+      "status": "manual_review"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:nvidia-gear:02",
+      "organization_id": "org:nvidia-gear",
+      "title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+      "url": "https://arxiv.org/abs/2602.16710",
+      "published_at": "2026-02-18T18:59:05Z",
+      "release_type": "paper",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "arxiv:2602.16710"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:physical-intelligence:01",
+      "organization_id": "org:physical-intelligence",
+      "title": "π0.7: a Steerable Model with Emergent Capabilities",
+      "url": "https://www.pi.website/blog/pi07",
+      "published_at": "2026-04-16",
+      "release_type": "model_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "artifact:40a33f7363fa2fdd534f",
+        "arxiv:2604.15483"
+      ],
+      "release_captured": false,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "ambiguous"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:physical-intelligence:02",
+      "organization_id": "org:physical-intelligence",
+      "title": "Precise Manipulation with Efficient Online RL",
+      "url": "https://www.pi.website/research/rlt",
+      "published_at": "2026-03-19",
+      "release_type": "technical_report",
+      "match_basis": null,
+      "matched_work_ids": [],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "missing"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:cmu-lecar:01",
+      "organization_id": "org:cmu-lecar",
+      "title": "FADA: Few-Shot Domain Adaptation via Dynamics Alignment for Humanoid Control",
+      "url": "https://arxiv.org/abs/2606.28476",
+      "published_at": "2026-06-26T16:05:10Z",
+      "release_type": "paper",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "arxiv:2606.28476"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:cmu-lecar:02",
+      "organization_id": "org:cmu-lecar",
+      "title": "Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation",
+      "url": "https://arxiv.org/abs/2607.13154",
+      "published_at": "2026-07-14T18:04:58Z",
+      "release_type": "paper",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "arxiv:2607.13154"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "manual_review",
+      "formal_visible": false,
+      "status": "manual_review"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:cmu-pathak-research-group:01",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+      "url": "https://arxiv.org/abs/2603.04553",
+      "published_at": "2026-03-04T19:36:08Z",
+      "release_type": "paper",
+      "match_basis": null,
+      "matched_work_ids": [],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "missing"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:cmu-pathak-research-group:02",
+      "organization_id": "org:cmu-pathak-research-group",
+      "title": "ViPRA: Video Prediction for Robot Actions",
+      "url": "https://arxiv.org/abs/2511.07732",
+      "published_at": "2025-11-11T01:33:03Z",
+      "release_type": "paper",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "arxiv:2511.07732"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:google-deepmind-robotics:01",
+      "organization_id": "org:google-deepmind-robotics",
+      "title": "Gemini Robotics 2 brings whole body intelligence to robots",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+      "published_at": "2026-07-30",
+      "release_type": "model_report",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "artifact:be0e6d9f58324b6c783a"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:google-deepmind-robotics:02",
+      "organization_id": "org:google-deepmind-robotics",
+      "title": "Introducing Gemini Robotics ER 2",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+      "published_at": "2026-07-30",
+      "release_type": "model_report",
+      "match_basis": null,
+      "matched_work_ids": [],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "missing"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:rai-institute:01",
+      "organization_id": "org:rai-institute",
+      "title": "The Koala Gripper: Advancing Dexterous Robotic Manipulation through Human-Centric Data Collection",
+      "url": "https://rai-inst.com/resources/videos/the-koala-gripper-advancing-dexterous-robotic-manipulation-through-human-centric-data-collection/",
+      "published_at": "2026-08-29",
+      "release_type": "research_video",
+      "match_basis": null,
+      "matched_work_ids": [],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "missing"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:rai-institute:02",
+      "organization_id": "org:rai-institute",
+      "title": "Whole-Body Model Predictive Control for Spin-Aware Quadrupedal Table Tennis",
+      "url": "https://rai-inst.com/resources/papers/whole-body-model-predictive-control-for-spin-aware-quadrupedal-table-tennis/",
+      "published_at": "2026-08-19",
+      "release_type": "paper",
+      "match_basis": "release_url",
+      "matched_work_ids": [
+        "arxiv:2510.08754"
+      ],
+      "release_captured": true,
+      "release_url_present": true,
+      "canonical_work_present": true,
+      "canonical_identity_resolved": true,
+      "catalog_relevance": "included",
+      "formal_visible": true,
+      "status": "included"
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:tri-robotics:01",
+      "organization_id": "org:tri-robotics",
+      "title": "SAFE: Multitask Failure Detection for Vision-Language-Action Models",
+      "url": "https://www.tri.global/research/safe-multitask-failure-detection-vision-language-action-models",
+      "published_at": "2025-10-30",
+      "release_type": "paper",
+      "match_basis": "exact_normalized_title",
+      "matched_work_ids": [
+        "arxiv:2506.09937"
+      ],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "title_candidate",
+      "candidate_catalog_relevance": "manual_review",
+      "review_reason": "Title alone does not establish identity; require verified author/project/identifier evidence."
+    },
+    {
+      "gold_id": "gold-release:2026-09-06:tri-robotics:02",
+      "organization_id": "org:tri-robotics",
+      "title": "Robot Learning from Any Images",
+      "url": "https://www.tri.global/research/robot-learning-any-images",
+      "published_at": "2025-09-26",
+      "release_type": "paper",
+      "match_basis": "exact_normalized_title",
+      "matched_work_ids": [
+        "arxiv:2509.22970"
+      ],
+      "release_captured": false,
+      "release_url_present": false,
+      "canonical_work_present": false,
+      "canonical_identity_resolved": false,
+      "catalog_relevance": null,
+      "formal_visible": false,
+      "status": "title_candidate",
+      "candidate_catalog_relevance": "included",
+      "review_reason": "Title alone does not establish identity; require verified author/project/identifier evidence."
+    }
+  ],
+  "limitations": [
+    "A frozen source-first sample, not a census of all public releases or all T0 organizations.",
+    "Presence is not correctness, peer review, reliable attribution, or independent replication.",
+    "Release URL presence includes ambiguous/unlinked receipts; release_capture_recall requires a unique canonical binding. Hard-evidence ambiguous receipts count toward work presence but not identity resolution or formal visibility.",
+    "Known work without the observed release URL is not counted as release capture.",
+    "Exact-title fallback is a review candidate, never identity or recall credit without author/project/identifier corroboration.",
+    "Missing, excluded, candidate, manual-review and ambiguous items remain in the denominator."
+  ]
+}

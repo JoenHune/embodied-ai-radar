@@ -1,0 +1,893 @@
+{
+  "schema_version": "3",
+  "month": "2026-06",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-06:645c4b88db94",
+      "month": "2026-06",
+      "title": "大小脑接口正在变成可监督的 3D 轨迹语言",
+      "summary": "Dense Embodied CoT、3D HAMSTER 与 Continuous Reasoning 分别提供密集思维监督、3D 轨迹桥接和连续推理。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-06/0",
+        "record_sha256": "3a35e248a7f0348f801f3d9581b692fb0ff4d7823fd9a1cd9de5e07a368236e4"
+      },
+      "supporting_ids": [
+        "arxiv:2606.30552",
+        "arxiv:2606.31329",
+        "arxiv:2606.00229"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.30552",
+          "arxiv_id": "2606.30552",
+          "work_id": "arxiv:2606.30552",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.30552"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.30552"
+          ],
+          "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2606.31329",
+          "arxiv_id": "2606.31329",
+          "work_id": "arxiv:2606.31329",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.31329"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.31329"
+          ],
+          "title": "3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2606.00229",
+          "arxiv_id": "2606.00229",
+          "work_id": "arxiv:2606.00229",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.00229"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-29",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.00229"
+          ],
+          "title": "Continuous Reasoning for Vision-Language-Action",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.00229",
+        "https://arxiv.org/abs/2606.30552",
+        "https://arxiv.org/abs/2606.31329"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "从抽象语言计划进化到可落地的几何中间表示。",
+      "maturity": "跨团队新兴趋势，标准数据格式尚未形成。",
+      "bottleneck": "中间监督获取成本和错误计划的可恢复性。",
+      "implication": "3D trajectory token/trace 可能成为跨模型、跨控制器的接口标准。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "大小脑接口正在变成可监督的 3D 轨迹语言",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Dense Embodied CoT、3D HAMSTER 与 Continuous Reasoning 分别提供密集思维监督、3D 轨迹桥接和连续推理。",
+        "comparison": "从抽象语言计划进化到可落地的几何中间表示。",
+        "evidence_ids": [
+          "2606.30552",
+          "2606.31329",
+          "2606.00229"
+        ],
+        "maturity": "跨团队新兴趋势，标准数据格式尚未形成。",
+        "bottleneck": "中间监督获取成本和错误计划的可恢复性。",
+        "implication": "3D trajectory token/trace 可能成为跨模型、跨控制器的接口标准。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-06:721c5136e68b",
+      "month": "2026-06",
+      "title": "触觉从专用 policy 升级为 VLA 的预测通道",
+      "summary": "UniTacVLA、CoDex 与 Touch Dreaming 分别统一触觉理解/预测、无示范组合灵巧任务和触觉想象。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-06/1",
+        "record_sha256": "313cabfe63c677c96cccdb1f2a3308b50e4cf400d977c220b35f3cb8bad14e67"
+      },
+      "supporting_ids": [
+        "arxiv:2606.31723",
+        "arxiv:2606.31909",
+        "arxiv:2604.13015"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.31723",
+          "arxiv_id": "2606.31723",
+          "work_id": "arxiv:2606.31723",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.31723"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D11",
+            "D15"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.31723"
+          ],
+          "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2606.31909",
+          "arxiv_id": "2606.31909",
+          "work_id": "arxiv:2606.31909",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.31909"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.31909",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi1i_142"
+          ],
+          "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2604.13015",
+          "arxiv_id": "2604.13015",
+          "work_id": "arxiv:2604.13015",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.13015"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-04-14",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q1",
+            "Q3",
+            "Q5"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.13015"
+          ],
+          "title": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D15",
+        "D2",
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q5"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.13015",
+        "https://arxiv.org/abs/2606.31723",
+        "https://arxiv.org/abs/2606.31909",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi1i_142"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相较 2025 年仅做感知融合，本月出现预测和组合泛化目标。",
+      "maturity": "方法簇初成，硬件标准化不足。",
+      "bottleneck": "传感器寿命、同步频率和跨手型迁移。",
+      "implication": "触觉数据层可能成为新基础设施赛道。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "触觉从专用 policy 升级为 VLA 的预测通道",
+        "grade": "B",
+        "kind": "weak",
+        "change": "UniTacVLA、CoDex 与 Touch Dreaming 分别统一触觉理解/预测、无示范组合灵巧任务和触觉想象。",
+        "comparison": "相较 2025 年仅做感知融合，本月出现预测和组合泛化目标。",
+        "evidence_ids": [
+          "2606.31723",
+          "2606.31909",
+          "2604.13015"
+        ],
+        "maturity": "方法簇初成，硬件标准化不足。",
+        "bottleneck": "传感器寿命、同步频率和跨手型迁移。",
+        "implication": "触觉数据层可能成为新基础设施赛道。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-06:852af9959dda",
+      "month": "2026-06",
+      "title": "开放训练栈与人类视频迁移同时加速",
+      "summary": "Scalable Behavior Cloning、Human-as-Humanoid 与 Qwen-VLA 分别强调开放数据/训练/评测、人类对齐本体和跨本体统一。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-06/2",
+        "record_sha256": "8c44966122d0023a5183336f74056cd1c0ccf0dd099273004c9cb9661fd5881d"
+      },
+      "supporting_ids": [
+        "arxiv:2606.27375",
+        "arxiv:2606.32009",
+        "arxiv:2605.30280"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.27375",
+          "arxiv_id": "2606.27375",
+          "work_id": "arxiv:2606.27375",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.27375"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.27375"
+          ],
+          "title": "Scalable Behavior Cloning with Open Data, Training, and Evaluation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2606.32009",
+          "arxiv_id": "2606.32009",
+          "work_id": "arxiv:2606.32009",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.32009"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D5",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.32009"
+          ],
+          "title": "Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2605.30280",
+          "arxiv_id": "2605.30280",
+          "work_id": "arxiv:2605.30280",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2605.30280"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-05-28",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D10",
+            "D11",
+            "D12"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2605.30280"
+          ],
+          "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D11",
+        "D12",
+        "D4",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2605.30280",
+        "https://arxiv.org/abs/2606.27375",
+        "https://arxiv.org/abs/2606.32009"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "开放不再只等于放权重，而是开始覆盖数据与评测。",
+      "maturity": "资产开放信号强，独立采用尚需时间。",
+      "bottleneck": "数据许可、硬件可复现与评测碎片化。",
+      "implication": "跟踪外部团队是否在 3–6 个月内真正采用这些资产。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "开放训练栈与人类视频迁移同时加速",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Scalable Behavior Cloning、Human-as-Humanoid 与 Qwen-VLA 分别强调开放数据/训练/评测、人类对齐本体和跨本体统一。",
+        "comparison": "开放不再只等于放权重，而是开始覆盖数据与评测。",
+        "evidence_ids": [
+          "2606.27375",
+          "2606.32009",
+          "2605.30280"
+        ],
+        "maturity": "资产开放信号强，独立采用尚需时间。",
+        "bottleneck": "数据许可、硬件可复现与评测碎片化。",
+        "implication": "跟踪外部团队是否在 3–6 个月内真正采用这些资产。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2606.27375",
+      "work_id": "arxiv:2606.27375",
+      "legacy_id": "2606.27375",
+      "title": "Scalable Behavior Cloning with Open Data, Training, and Evaluation",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "发布 3,500 小时、130K episodes、195 任务的 ABC-130K，以及硬件、训练、仿真和真实评测全栈。",
+      "limitation_zh": "行为克隆仍受示范分布限制，摘要未显示在长时序错误恢复和跨本体迁移上的能力。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2829",
+        "record_sha256": "d729a64d777a648ffcc7d3cd5c594eb29c824fad27cb69849d28cd56d5721fd7"
+      },
+      "supporting_ids": [
+        "arxiv:2606.27375"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.27375",
+          "arxiv_id": "2606.27375",
+          "work_id": "arxiv:2606.27375",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.27375"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.27375"
+          ],
+          "title": "Scalable Behavior Cloning with Open Data, Training, and Evaluation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.27375"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.30552",
+      "work_id": "arxiv:2606.30552",
+      "legacy_id": "2606.30552",
+      "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 60M 帧的 dense ECoT 对齐跨本体高层认知，同时由 flow action expert 输出连续动作且推理时可跳过 CoT。",
+      "limitation_zh": "真实验证仅 xArm，训练时的密集推理标注成本和对新任务分解的泛化仍需独立评估。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2856",
+        "record_sha256": "c565f4dd426662f5eb5ae37cd4244c12013f85c1c9861a732cfedb726bd59f26"
+      },
+      "supporting_ids": [
+        "arxiv:2606.30552"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.30552",
+          "arxiv_id": "2606.30552",
+          "work_id": "arxiv:2606.30552",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.30552"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.30552"
+          ],
+          "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.30552"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.31329",
+      "work_id": "arxiv:2606.31329",
+      "legacy_id": "2606.31329",
+      "title": "3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "让高层 VLM 直接输出 metric 3D waypoint，并无缝接入点云低层策略，修正 2D guidance 的深度歧义。",
+      "limitation_zh": "显式 waypoint 仍可能限制非刚性、接触密集或需要多解策略的动作表达。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2867",
+        "record_sha256": "f7a54f2ae50ae99c2849b851017e7e0de8ece5393209cecc4137439c3b1c1521"
+      },
+      "supporting_ids": [
+        "arxiv:2606.31329"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.31329",
+          "arxiv_id": "2606.31329",
+          "work_id": "arxiv:2606.31329",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.31329"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.31329"
+          ],
+          "title": "3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.31329"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.31723",
+      "work_id": "arxiv:2606.31723",
+      "legacy_id": "2606.31723",
+      "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "以统一 tactile latent 同时建模当前接触语义和未来变化，再用 tactile-action mixed controller 高频修正低频动作块。",
+      "limitation_zh": "四类真实任务验证仍依赖特定触觉装置，跨传感器和跨本体迁移尚无证据。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2869",
+        "record_sha256": "2c22ed56f74bef6a9978f6e51ac24d73a456d3cc539442001616677a4d64e7bb"
+      },
+      "supporting_ids": [
+        "arxiv:2606.31723"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.31723",
+          "arxiv_id": "2606.31723",
+          "work_id": "arxiv:2606.31723",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.31723"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D11",
+            "D15"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.31723"
+          ],
+          "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D15",
+        "D2",
+        "D4"
+      ],
+      "questions": [
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.31723"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.31909",
+      "work_id": "arxiv:2606.31909",
+      "legacy_id": "2606.31909",
+      "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "让 VLM 提取功能和场景约束，经解析优化筛选功能抓取，再以 RL 形成可 sim-to-real 的抓—移—触发组合策略。",
+      "limitation_zh": "六项功能物体任务仍由明确机制和目标约束构成，开放世界物体上的语义误判与安全性尚未覆盖。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2872",
+        "record_sha256": "2c0c76aa0215978b747a3fac720269778d23be75309fa8d925f26ff7c5a8ce48"
+      },
+      "supporting_ids": [
+        "arxiv:2606.31909"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.31909",
+          "arxiv_id": "2606.31909",
+          "work_id": "arxiv:2606.31909",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.31909"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.31909",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi1i_142"
+          ],
+          "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.31909",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi1i_142"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.32009",
+      "work_id": "arxiv:2606.32009",
+      "legacy_id": "2606.32009",
+      "title": "Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "通过 ego-exo 同步、60-DoF 动作重定向和 FK-aware supervision，把人类视频转成可直接训练 humanoid VLA 的动作标签。",
+      "limitation_zh": "方案依赖人形硬件、相机和动作接口与人类对齐，未必能直接推广到形态差异更大的机器人。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2874",
+        "record_sha256": "2ce48b5f275783193d0fa3255b5c18bb86fe388036149f23048cac09f224243e"
+      },
+      "supporting_ids": [
+        "arxiv:2606.32009"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.32009",
+          "arxiv_id": "2606.32009",
+          "work_id": "arxiv:2606.32009",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.32009"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D5",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.32009"
+          ],
+          "title": "Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D5",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.32009"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2606.32028",
+      "work_id": "arxiv:2606.32028",
+      "legacy_id": "2606.32028",
+      "title": "DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation",
+      "month": "2026-06",
+      "status": "legacy_editorial",
+      "contribution_zh": "把低层动力学演化与高分辨率视觉合成解耦，通过级联 latent 生成在保留接触细节的同时最高加速 3.97 倍。",
+      "limitation_zh": "摘要主要报告视频质量和速度，尚未量化更快世界模型对闭环规划成功率的因果提升。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2875",
+        "record_sha256": "2c1256812493717976e355bef56f9d27e1516e68a68055382b81223f5a41dc21"
+      },
+      "supporting_ids": [
+        "arxiv:2606.32028"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2606.32028",
+          "arxiv_id": "2606.32028",
+          "work_id": "arxiv:2606.32028",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2606.32028"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-06-30",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2606.32028"
+          ],
+          "title": "DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2606.32028"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "6a1c45b29e1bc009ba89e2c75a4ceac43993bd07ee6d470c2d157730dc450ff5"
+}

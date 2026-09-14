@@ -1,0 +1,1495 @@
+{
+  "version": "3.1",
+  "updated": "2026-09-05",
+  "batch_id": "attribution-batch3-2026-09-05",
+  "verification_scope": "Official identities and source-backed work attribution only. No author clustering, current-employer inference, or peer-review upgrades.",
+  "reviewed_work_ids": [
+    "arxiv:2604.13015",
+    "doi:10.15607/rss.2025.xxi.085",
+    "arxiv:2603.28545",
+    "arxiv:2603.22264",
+    "arxiv:2603.22263",
+    "arxiv:2603.17808",
+    "arxiv:2603.16860",
+    "arxiv:2603.07648",
+    "arxiv:2602.23721",
+    "arxiv:2602.22818",
+    "arxiv:2602.21736",
+    "arxiv:2602.12684",
+    "arxiv:2602.00919",
+    "arxiv:2601.12993",
+    "arxiv:2601.05230",
+    "arxiv:2601.04629",
+    "arxiv:2512.18477",
+    "arxiv:2512.15840",
+    "arxiv:2512.13030",
+    "arxiv:2512.09297",
+    "arxiv:2512.08186",
+    "arxiv:2512.02729",
+    "arxiv:2511.16651",
+    "arxiv:2511.04671",
+    "arxiv:2511.03077",
+    "arxiv:2511.02504",
+    "arxiv:2510.21571",
+    "doi:10.15607/rss.2025.xxi.123",
+    "arxiv:2510.08475",
+    "title:eb55e72e9de75dbad974a7db"
+  ],
+  "attribution_review": [
+    {
+      "work_id": "doi:10.15607/rss.2025.xxi.085",
+      "source_index": 31,
+      "status": "unresolved_specific_group",
+      "reason": "具体执行组未核实；KTH官方记录目前只确认学校及Speech, Music and Hearing院系。",
+      "inspected_source_urls": [
+        "https://www.kth.se/profile/ekator/publications?l=en"
+      ]
+    },
+    {
+      "work_id": "arxiv:2603.22263",
+      "source_index": 34,
+      "status": "unresolved_specific_group",
+      "reason": "项目只列Stanford，致谢ILIAD不等于归属，ILIAD官方论文页未找到该工作。",
+      "inspected_source_urls": [
+        "https://dexdrummer.github.io/",
+        "https://iliad.stanford.edu/publications/"
+      ]
+    },
+    {
+      "work_id": "arxiv:2602.23721",
+      "source_index": 38,
+      "status": "unresolved_specific_group",
+      "reason": "官方HTML不可用，未取得足够研究组身份信息；不以作者姓名或第三方占位affiliation猜测。",
+      "inspected_source_urls": [
+        "https://arxiv.org/abs/2602.23721"
+      ]
+    },
+    {
+      "work_id": "arxiv:2601.05230",
+      "source_index": 44,
+      "status": "unresolved_specific_group",
+      "reason": "论文仅直接声明FAIR at Meta，不能据此升级为更细的Meta FAIR Embodied AI执行组。",
+      "inspected_source_urls": [
+        "https://arxiv.org/html/2601.05230v1"
+      ]
+    },
+    {
+      "work_id": "arxiv:2512.18477",
+      "source_index": 46,
+      "status": "unresolved_specific_group",
+      "reason": "仅确认Sun Yat-sen University；未找到具体实验室官方条目，不能由作者名归HCP。",
+      "inspected_source_urls": [
+        "https://arxiv.org/html/2512.18477v1"
+      ]
+    },
+    {
+      "work_id": "arxiv:2511.03077",
+      "source_index": 54,
+      "status": "unresolved_specific_group",
+      "reason": "仅确认NYU CREO研究中心，不自动下钻为Machines in Motion或GRAIL。",
+      "inspected_source_urls": [
+        "https://arxiv.org/html/2511.03077v1",
+        "https://robotics.engineering.nyu.edu/"
+      ]
+    },
+    {
+      "work_id": "arxiv:2511.02504",
+      "source_index": 55,
+      "status": "unresolved_specific_group",
+      "reason": "作者个人论文页不足以证明论文日期的组成员关系；具名实验室页未能直接核实；under review不升级同行评审。",
+      "inspected_source_urls": [
+        "https://clthegoat.github.io/",
+        "https://zhaoyi11.github.io/"
+      ]
+    },
+    {
+      "work_id": "arxiv:2510.21571",
+      "source_index": 56,
+      "status": "unresolved_specific_group",
+      "reason": "Microsoft官方只确认MSRA；Internet Graphics列表直接读取失败，细组归属待核验。",
+      "inspected_source_urls": [
+        "https://www.microsoft.com/en-us/research/articles/vitra/?lang=ja",
+        "https://microsoft.github.io/VITRA/"
+      ]
+    },
+    {
+      "work_id": "doi:10.15607/rss.2025.xxi.123",
+      "source_index": 57,
+      "status": "unresolved_specific_group",
+      "reason": "同标题/DOI官方列表行作者与论文冲突；现有BRAIN成员信息不充分覆盖2025，保留复核。",
+      "inspected_source_urls": [
+        "https://www.manoonpong.com/Publications.html",
+        "https://arxiv.org/html/2510.10759v1"
+      ]
+    }
+  ],
+  "organizations": [
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:university-of-southern-california",
+      "display_name": "University of Southern California",
+      "short_name": "University of Southern California",
+      "slug": "university-of-southern-california",
+      "entity_type": "university",
+      "official_urls": {
+        "home": "https://www.usc.edu/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Physical Superintelligence Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-southern-california",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://psi-lab.ai/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Yue Wang",
+          "role": "Principal Investigator",
+          "source_url": "https://yuewang.xyz/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D5",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:usc-psi",
+      "display_name": "USC Physical Superintelligence Lab",
+      "short_name": "USC PSI",
+      "slug": "usc-psi",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://psi-lab.ai/",
+        "publications": "https://psi-lab.ai/research.html",
+        "people": "https://psi-lab.ai/lab.html",
+        "leader_profile": "https://yuewang.xyz/"
+      },
+      "summary_zh": "研究多模态数据引擎、机器人学习和真实系统部署，连接人形全身控制、灵巧操作与场景理解。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "CMU Safe AI Laboratory"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:carnegie-mellon-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.ri.cmu.edu/robotics-groups/cmu-safe-ai-lab/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Ding Zhao",
+          "role": "Director",
+          "source_url": "https://www.ri.cmu.edu/robotics-groups/cmu-safe-ai-lab/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:cmu-safe-ai",
+      "display_name": "CMU Safe AI Lab",
+      "short_name": "CMU Safe AI",
+      "slug": "cmu-safe-ai",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://safeai-lab.github.io/",
+        "identity_source": "https://www.ri.cmu.edu/robotics-groups/cmu-safe-ai-lab/"
+      },
+      "summary_zh": "研究可信物理智能与安全泛化，官方研究项目涵盖基础模型、全身操作和触觉；CMU RI 将其标为 collaborating lab，因此母机构仅归 CMU，未虚构为 RI 直属实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "SYSU"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:sun-yat-sen-university",
+      "display_name": "Sun Yat-sen University",
+      "short_name": "Sun Yat-sen University",
+      "slug": "sun-yat-sen-university",
+      "entity_type": "university",
+      "official_urls": {
+        "home": "https://www.sysu.edu.cn/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "中山大学人机物智能融合实验室",
+        "Human Cyber Physical Intelligence Integration Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:sun-yat-sen-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://sysu-hcp.net/faculty/index.html"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Liang Lin",
+          "role": "Faculty",
+          "source_url": "https://sysu-hcp.net/faculty/index.html",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "name": "Xiaodan Liang",
+          "role": "Faculty",
+          "source_url": "https://sysu-hcp.net/faculty/index.html",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D4",
+        "D12",
+        "D13"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:sysu-hcp",
+      "display_name": "Sun Yat-sen University Human Cyber Physical Intelligence Integration Lab",
+      "short_name": "SYSU HCP",
+      "slug": "sysu-hcp",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://sysu-hcp.net/",
+        "publications": "https://sysu-hcp.net/news/achievements/index.html",
+        "people": "https://sysu-hcp.net/faculty/index.html"
+      },
+      "summary_zh": "跨视觉、多模态与机器人研究的 HCP 实验室；负责人栏仅登记官网明确列出的研究教师，不把 faculty 排序解释为单一主管职务。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Global",
+      "country": "Not specified",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:hugging-face",
+      "display_name": "Hugging Face",
+      "short_name": "Hugging Face",
+      "slug": "hugging-face",
+      "entity_type": "company",
+      "official_urls": {
+        "home": "https://huggingface.co/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Global",
+      "country": "Not specified",
+      "aliases": [
+        "LeRobot Team at Hugging Face"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:hugging-face",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://huggingface.co/blog/hugging-face-pollen-robotics-acquisition"
+        }
+      ],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D8",
+        "D9",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:huggingface-lerobot",
+      "display_name": "Hugging Face LeRobot Team",
+      "short_name": "HF LeRobot",
+      "slug": "huggingface-lerobot",
+      "entity_type": "research_group",
+      "official_urls": {
+        "home": "https://huggingface.co/docs/lerobot/index",
+        "publications": "https://github.com/huggingface/lerobot",
+        "identity_source": "https://huggingface.co/blog/hugging-face-pollen-robotics-acquisition"
+      },
+      "summary_zh": "Hugging Face 官方命名的 LeRobot 执行团队，开发端到端机器人学习库与开放数据、模型和硬件接口；项目 README 明确给出团队署名及对应学术论文。",
+      "information_gaps": [
+        "2025-04-14 官方公告列 Rémi Cadène 为项目负责人；本批未核实该角色延续至当前，因此不填当前负责人，不用首作者顺序代替管理任命。",
+        "代码的第三方贡献者不自动归为 Hugging Face 雇员；本批归属依据官方团队信用说明而非 GitHub owner。",
+        "自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": true,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "智在无界"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D9",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:beingbeyond",
+      "display_name": "BeingBeyond",
+      "short_name": "BeingBeyond",
+      "slug": "beingbeyond",
+      "entity_type": "research_company",
+      "official_urls": {
+        "home": "https://beingbeyond.com/",
+        "publications": "https://research.beingbeyond.com/"
+      },
+      "summary_zh": "专注具身智能基础模型的独立研究公司，官方研究页发布 Being-H 系列、人类视频动作预训练与跨本体策略。",
+      "information_gaps": [
+        "Being-H0.5 附录披露 Sipeng Zheng 与 Zongqing Lu 为项目负责人；不能据此推断公司管理层或其他项目负责人。",
+        "当前企业级负责人和任期待核验；自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Xiaomi"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:xiaomi",
+      "display_name": "Xiaomi Corporation",
+      "short_name": "Xiaomi Corporation",
+      "slug": "xiaomi",
+      "entity_type": "company",
+      "official_urls": {
+        "home": "https://www.mi.com/global/about/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Robotics at Xiaomi"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:xiaomi",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://robotics.xiaomi.com/"
+        }
+      ],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:xiaomi-robotics",
+      "display_name": "Xiaomi Robotics",
+      "short_name": "Xiaomi Robotics",
+      "slug": "xiaomi-robotics",
+      "entity_type": "research_group",
+      "official_urls": {
+        "home": "https://robotics.xiaomi.com/",
+        "publications": "https://robotics.xiaomi.com/#research"
+      },
+      "summary_zh": "小米明确命名的机器人研究执行团队，官方渠道发布 Xiaomi-Robotics 基础模型、世界模型与真机执行训练方案。",
+      "information_gaps": [
+        "官网未公开单一团队负责人；不以论文作者排序或公司CEO替代研究主管。",
+        "本批仅核验已公布项目归属，自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Global",
+      "country": "Not specified",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:sber-robotics-center",
+      "display_name": "Sber Robotics Center",
+      "short_name": "Sber Robotics Center",
+      "slug": "sber-robotics-center",
+      "entity_type": "research_institute",
+      "official_urls": {
+        "home": "https://greenvla.github.io/"
+      },
+      "summary_zh": "Green-VLA 官方项目明确声明的研究中心母节点；本批登记其已核验项目渠道，独立中心主站待核验。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Global",
+      "country": "Not specified",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:sber-robotics-center",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://greenvla.github.io/"
+        }
+      ],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D8",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:sber-robotics-manipulation",
+      "display_name": "Sber Robotics Center Manipulation Team",
+      "short_name": "Sber Robotics Center Manipulation Team",
+      "slug": "sber-robotics-manipulation",
+      "entity_type": "research_group",
+      "official_urls": {
+        "home": "https://greenvla.github.io/"
+      },
+      "summary_zh": "Green-VLA 官网直接署名的 Manipulation Team，研究分阶段 VLA、跨本体动作接口、策略强化学习与可靠真机执行。",
+      "information_gaps": [
+        "仅确认项目直接署名的执行团队及中心归属；未公开单一负责人，不按作者排列推断。",
+        "中心独立主站和完整组织层级待核验，已保存的 home 是公开研究项目渠道。",
+        "自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": true,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "自变量机器人"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4",
+        "D9",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:x-square-robot",
+      "display_name": "X Square Robot",
+      "short_name": "X Square Robot",
+      "slug": "x-square-robot",
+      "entity_type": "research_company",
+      "official_urls": {
+        "home": "https://x2robot.com/en",
+        "publications": "https://x2robot.com/en/research"
+      },
+      "summary_zh": "开发具身基础模型和通用机器人软硬件的独立研究公司，官方项目涉及机器人操作数据、模型与真机评测。",
+      "information_gaps": [
+        "本批以第一方研究项目和论文署名核查公司执行归属，未独立核验当前管理层任期。",
+        "不能将赞助关系单独当作论文贡献；归属边需同时有项目作者/执行说明。",
+        "自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": true,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "DexForce Technology Co., Ltd."
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D4",
+        "D10"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:dexforce",
+      "display_name": "DexForce Technology",
+      "short_name": "DexForce Technology",
+      "slug": "dexforce",
+      "entity_type": "research_company",
+      "official_urls": {
+        "home": "https://en.dexforce.top/about.html"
+      },
+      "summary_zh": "研究 Sim-to-Real 具身智能、空间视觉和软硬件系统的独立公司；EVA 官方项目直接列出公司研究作者归属。",
+      "information_gaps": [
+        "当前单一负责人未由本批官方材料核实；不把合作高校PI推为公司负责人。",
+        "自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "GBU",
+        "大湾区大学"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:great-bay-university",
+      "display_name": "Great Bay University",
+      "short_name": "Great Bay University",
+      "slug": "great-bay-university",
+      "entity_type": "university",
+      "official_urls": {
+        "home": "https://www.gbu.edu.cn/menu/341"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "EMAIL Robotics Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:great-bay-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://jeffery-zhou.github.io/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Peng Zhou",
+          "role": "Principal Investigator",
+          "source_url": "https://email-lab.github.io/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D2",
+        "D4",
+        "D8",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:gbu-email",
+      "display_name": "Great Bay University Embodied MAnipulation InteLligence Robotics Lab",
+      "short_name": "GBU EMAIL Robotics Lab",
+      "slug": "gbu-email",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://email-lab.github.io/",
+        "publications": "https://email-lab.github.io/publications.html",
+        "leader_profile": "https://jeffery-zhou.github.io/"
+      },
+      "summary_zh": "研究形变物体与灵巧操作、机器人感知学习和任务运动规划，官方论文列表直接收录 UniBiDex。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Scene Representation Group"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:mit-csail",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://scenerepresentations.org/publications/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Vincent Sitzmann",
+          "role": "Group Lead",
+          "source_url": "https://scenerepresentations.org/people/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:mit-scene-representation",
+      "display_name": "MIT Scene Representation Group",
+      "short_name": "MIT Scene Representation",
+      "slug": "mit-scene-representation",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://scenerepresentations.org/",
+        "publications": "https://scenerepresentations.org/publications/",
+        "people": "https://scenerepresentations.org/people/",
+        "leader_profile": "https://www.csail.mit.edu/person/vincent-sitzmann"
+      },
+      "summary_zh": "研究场景表征、生成式视觉与机器人控制，官方列表直接发布 Large Video Planner 和 VERA。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": true,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "生数科技",
+        "Beijing ShengShu Technology Co., Ltd."
+      ],
+      "parent_relations": [],
+      "leaders": [
+        {
+          "name": "Jun Zhu",
+          "role": "Founder",
+          "source_url": "https://www.motubrain.cn/en/news/simpleai/",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "name": "Yihang Luo",
+          "role": "CEO",
+          "source_url": "https://www.motubrain.cn/en/news/simpleai/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D4"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:shengshu-technology",
+      "display_name": "ShengShu Technology",
+      "short_name": "ShengShu Technology",
+      "slug": "shengshu-technology",
+      "entity_type": "research_company",
+      "official_urls": {
+        "home": "https://www.motubrain.cn/en/",
+        "publications": "https://www.motubrain.cn/en/research/motus-a-unified-latent-action-world-model/",
+        "identity_source": "https://www.motubrain.cn/en/news/simpleai/"
+      },
+      "summary_zh": "以通用世界模型为核心的独立研究公司，官方发布 Motus 世界动作模型；保留公司与清华合作研究组的组织边界。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "上海人工智能实验室"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:shanghai-ai-laboratory",
+      "display_name": "Shanghai AI Laboratory",
+      "short_name": "Shanghai AI Laboratory",
+      "slug": "shanghai-ai-laboratory",
+      "entity_type": "research_institute",
+      "official_urls": {
+        "home": "https://www.shlab.org.cn/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "platform",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "Intern Robotics",
+        "InternRobotics"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:shanghai-ai-laboratory",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://oceanpang.github.io/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Jiangmiao Pang",
+          "role": "Head of Embodied AI Center",
+          "source_url": "https://oceanpang.github.io/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D5",
+        "D6",
+        "D9",
+        "D10"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:shanghai-ai-lab-intern-robotics",
+      "display_name": "Shanghai AI Laboratory Embodied AI Center",
+      "short_name": "Intern Robotics",
+      "slug": "shanghai-ai-lab-intern-robotics",
+      "entity_type": "research_institute",
+      "official_urls": {
+        "home": "https://internrobotics.shlab.org.cn/",
+        "publications": "https://internrobotics.shlab.org.cn/opendataset.html",
+        "leader_profile": "https://oceanpang.github.io/"
+      },
+      "summary_zh": "上海人工智能实验室具身智能中心，以 Intern Robotics 名义建设机器人基础模型、操作、导航、仿真与数据平台。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Cornell PoRTaL",
+        "People and Robots Teaching and Learning Group"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:cornell-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://portal.cs.cornell.edu/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Sanjiban Choudhury",
+          "role": "Principal Investigator",
+          "source_url": "https://portal.cs.cornell.edu/people/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D2",
+        "D4",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:cornell-portal",
+      "display_name": "Cornell People and Robots Teaching and Learning Group",
+      "short_name": "Cornell PoRTaL",
+      "slug": "cornell-portal",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://portal.cs.cornell.edu/",
+        "publications": "https://portal.cs.cornell.edu/",
+        "people": "https://portal.cs.cornell.edu/people/"
+      },
+      "summary_zh": "研究机器人从人类交互与示范中学习，结合策略学习和规划；与同校 EmPRISE 保持独立。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": true,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "枢途科技"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D9"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:synapath-ai",
+      "display_name": "Synapath AI",
+      "short_name": "Synapath AI",
+      "slug": "synapath-ai",
+      "entity_type": "research_company",
+      "official_urls": {
+        "home": "https://synapath.ai/",
+        "publications": "https://synapath.ai/tech",
+        "identity_source": "https://www.synapath.com/join"
+      },
+      "summary_zh": "开发从真实人类视频到机器人训练信号的数据引擎，官网 Research & Open Source 直接收录 RoboWheel。",
+      "information_gaps": [
+        "负责人官方披露尚未核实，保持空值；不可推断第三方融资报道中的创始人信息。",
+        "官网产能和精度数字属第一方自述，未转为独立验证。",
+        "自动来源健康检查待执行。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "Taiwan",
+      "aliases": [
+        "國立臺灣大學"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:national-taiwan-university",
+      "display_name": "National Taiwan University",
+      "short_name": "National Taiwan University",
+      "slug": "national-taiwan-university",
+      "entity_type": "university",
+      "official_urls": {
+        "home": "https://www.ntu.edu.tw/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "Taiwan",
+      "aliases": [
+        "Embodied AI Lab at National Taiwan University"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:national-taiwan-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://embodiedai-ntu.github.io/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Tsung-Wei Ke",
+          "role": "Professor / Lab Lead",
+          "source_url": "https://embodiedai-ntu.github.io/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D4",
+        "D6",
+        "D8",
+        "D13"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:ntu-embodied-ai",
+      "display_name": "National Taiwan University Embodied AI Lab",
+      "short_name": "NTU Taiwan EAI",
+      "slug": "ntu-embodied-ai",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://embodiedai-ntu.github.io/",
+        "publications": "https://embodiedai-ntu.github.io/",
+        "leader_profile": "https://www.csie.ntu.edu.tw/zh_tw/member/Faculty/%E6%9F%AF%E5%AE%97%E7%91%8B-Tsung-Wei-Ke-11778221"
+      },
+      "summary_zh": "研究真实机器人控制、主动学习探索和交互动力学，官方研究列表直接收录 DexMan。此处 NTU 为台湾大学，不是南洋理工大学。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "SJTU",
+        "上海交通大学"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:shanghai-jiao-tong-university",
+      "display_name": "Shanghai Jiao Tong University",
+      "short_name": "Shanghai Jiao Tong University",
+      "slug": "shanghai-jiao-tong-university",
+      "entity_type": "university",
+      "official_urls": {
+        "home": "https://www.sjtu.edu.cn/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "上海创智学院"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:shanghai-innovation-institute",
+      "display_name": "Shanghai Innovation Institute",
+      "short_name": "Shanghai Innovation Institute",
+      "slug": "shanghai-innovation-institute",
+      "entity_type": "research_institute",
+      "official_urls": {
+        "home": "https://www.sii.edu.cn/"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "具身机器人与表征学习实验室",
+        "RL2 Lab at SJTU"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:shanghai-jiao-tong-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://gaoyue.sjtu.edu.cn/"
+        },
+        {
+          "parent_id": "org:shanghai-innovation-institute",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://gaoyue.sjtu.edu.cn/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Yue Gao",
+          "role": "Principal Investigator",
+          "source_url": "https://gaoyue.sjtu.edu.cn/biography.html",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:sjtu-rl2",
+      "display_name": "Robot Learning and Representation Learning Lab at SJTU/SII",
+      "short_name": "SJTU/SII RL²",
+      "slug": "sjtu-rl2",
+      "entity_type": "laboratory",
+      "official_urls": {
+        "home": "https://gaoyue.sjtu.edu.cn/",
+        "publications": "https://gaoyue.sjtu.edu.cn/publication.html",
+        "leader_profile": "https://gaoyue.sjtu.edu.cn/biography.html"
+      },
+      "summary_zh": "研究人形与足式机器人、安全强化学习、视觉语言导航与社会机器人；官网明确上海交大/上海创智学院双归属。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [
+        "CUHK-Shenzhen",
+        "香港中文大学（深圳）"
+      ],
+      "parent_relations": [],
+      "leaders": [],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:chinese-university-of-hong-kong-shenzhen",
+      "display_name": "The Chinese University of Hong Kong, Shenzhen",
+      "short_name": "The Chinese University of Hong Kong, Shenzhen",
+      "slug": "chinese-university-of-hong-kong-shenzhen",
+      "entity_type": "university",
+      "official_urls": {
+        "home": "https://www.cuhk.edu.cn/zh-hans"
+      },
+      "summary_zh": "仅作为母机构节点，不代表已解析到具体实验室。",
+      "information_gaps": [
+        "本批核查公开身份及指定工作归属，尚未运行自动来源健康检查；负责人任期未知时保持 null。"
+      ]
+    },
+    {
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia-Pacific",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:chinese-university-of-hong-kong-shenzhen",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://sds.cuhk.edu.cn/teacher/1159"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Kui Jia",
+          "role": "Faculty / Research Group Lead",
+          "source_url": "https://sds.cuhk.edu.cn/teacher/1159",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D4",
+        "D8",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "representative_updates": [],
+      "organization_id": "org:cuhk-shenzhen-kui-jia",
+      "display_name": "CUHK-Shenzhen Kui Jia Research Group",
+      "short_name": "CUHK-SZ Kui Jia Group",
+      "slug": "cuhk-shenzhen-kui-jia",
+      "entity_type": "research_group",
+      "official_urls": {
+        "home": "https://sds.cuhk.edu.cn/teacher/1159"
+      },
+      "summary_zh": "香港中文大学（深圳）贾奎 PI 研究组，作为明确的研究人员单元跟踪机器人学习与视觉；并未宣称一个未经核实的具名实验室。",
+      "information_gaps": [
+        "本批仅将 Huayi Zhou 的官方带日期研究经历作为 G2 重建依据；不由同校 affiliation 自动归入本组。",
+        "个人主页读取超时，已用学校官方教师档案确认身份；更完整的团队发布渠道待核验。",
+        "自动来源健康检查待执行。"
+      ]
+    }
+  ]
+}

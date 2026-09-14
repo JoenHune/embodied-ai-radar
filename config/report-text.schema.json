@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://embodied-radar.local/schemas/report-text.schema.json",
+  "title": "Copyright-limited, source-attested company report excerpts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["snapshot_id", "work_id", "manifestation_id", "report_url", "source_url", "source_record_id", "attestation_id", "report_published_at", "report_date_precision", "captured_at", "available_at", "date_precision", "content_sha256", "excerpts", "excerpt_digest", "observations", "license", "evidence_scope", "review_status", "context_kind", "verified_by", "verified_at"],
+  "properties": {
+    "snapshot_id": {"type": "string", "pattern": "^report-text:[a-f0-9]{24}$"},
+    "work_id": {"type": "string", "minLength": 1},
+    "manifestation_id": {"type": "string", "minLength": 1},
+    "report_url": {"type": "string", "format": "uri"},
+    "source_url": {"type": "string", "format": "uri"},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "attestation_id": {"type": "string", "minLength": 1},
+    "report_published_at": {"type": ["string", "null"]},
+    "report_date_precision": {"$ref": "#/$defs/precision"},
+    "captured_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "available_at": {"type": ["string", "null"]},
+    "date_precision": {"$ref": "#/$defs/precision"},
+    "content_sha256": {"$ref": "#/$defs/hash"},
+    "excerpt_digest": {"$ref": "#/$defs/hash"},
+    "license": {"const": "copyrighted_excerpt_only"},
+    "evidence_scope": {"const": "author_report"},
+    "review_status": {"const": "source_content_checked"},
+    "context_kind": {"const": "ai_extracted_context"},
+    "verified_by": {"type": "string", "minLength": 1},
+    "verified_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "excerpts": {
+      "type": "array", "minItems": 1, "maxItems": 25,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["excerpt_id", "text", "start", "end", "locator"],
+        "properties": {
+          "excerpt_id": {"type": "string", "minLength": 1},
+          "text": {"type": "string", "minLength": 1, "maxLength": 500},
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 1},
+          "locator": {"type": "string", "minLength": 1, "maxLength": 500}
+        }
+      }
+    },
+    "observations": {
+      "type": "array", "maxItems": 25,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "label", "value", "unit", "context", "excerpt_ids"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1, "maxLength": 160},
+          "value": {"type": "string", "pattern": "^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"},
+          "unit": {"enum": ["count", "ratio", "percentage", "percentage_points"]},
+          "context": {"type": "string", "minLength": 1, "maxLength": 400},
+          "excerpt_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "precision": {"enum": ["second", "day", "month", "year", "unknown"]},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

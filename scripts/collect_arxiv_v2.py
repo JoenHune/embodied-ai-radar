@@ -21,7 +21,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from collections import Counter
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from radar_common import ROOT, canonical_work_id, classify_research, clean_text, normalize_doi
@@ -37,6 +37,23 @@ ATOM = {
     "o": "http://a9.com/-/spec/opensearch/1.1/",
 }
 USER_AGENT = "embodied-ai-radar/2.0 research-radar@example.com"
+
+
+def metadata_time(value: str) -> tuple[str | None, str]:
+    """Preserve real UTC instants, never invent midnight for legacy dates."""
+    value = clean_text(value)
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        try:
+            return date.fromisoformat(value).isoformat(), "day"
+        except ValueError:
+            return None, "unknown"
+    try:
+        instant = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if instant.tzinfo is not None:
+            return instant.astimezone(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"), "second"
+    except (ValueError, TypeError):
+        pass
+    return None, "unknown"
 
 
 def month_keys() -> list[str]:
@@ -122,7 +139,7 @@ def parse_feed(body: str) -> tuple[int, list[dict]]:
     rows = []
     for entry in root.findall("a:entry", ATOM):
         raw_id = clean_text(entry.findtext("a:id", namespaces=ATOM))
-        match = re.search(r"/(\d{4}\.\d{4,5})(?:v\d+)?$", raw_id)
+        match = re.search(r"/(\d{4}\.\d{4,5})(v\d+)?$", raw_id)
         if not match:
             continue
         arxiv_id = match.group(1)
@@ -141,8 +158,13 @@ def parse_feed(body: str) -> tuple[int, list[dict]]:
             if node.attrib.get("term")
         ]
         doi = normalize_doi(entry.findtext("x:doi", namespaces=ATOM))
-        submitted = clean_text(entry.findtext("a:published", namespaces=ATOM))[:10]
-        updated = clean_text(entry.findtext("a:updated", namespaces=ATOM))[:10]
+        submitted_at, submitted_precision = metadata_time(entry.findtext("a:published", default="", namespaces=ATOM))
+        updated_at, updated_precision = metadata_time(entry.findtext("a:updated", default="", namespaces=ATOM))
+        version = match.group(2)
+        if not version:
+            pdf_version = re.search(r"(v\d+)(?:\.pdf)?$", links.get("pdf") or "")
+            version = pdf_version.group(1) if pdf_version else None
+        submitted, updated = (submitted_at or "")[:10], (updated_at or "")[:10]
         rows.append(
             {
                 "preprint_id": f"arxiv:{arxiv_id}",
@@ -156,7 +178,14 @@ def parse_feed(body: str) -> tuple[int, list[dict]]:
                 "primary_category": categories[0] if categories else None,
                 "first_submitted": submitted,
                 "updated": updated,
-                "date_precision": "day",
+                "submitted_at": submitted_at,
+                "submitted_at_precision": submitted_precision,
+                "updated_at": updated_at,
+                "updated_at_precision": updated_precision,
+                "version": version,
+                "arxiv_version_id": arxiv_id + version if version else None,
+                "metadata_temporal_basis": "updated_at_is_current_text_availability_not_first_submission",
+                "date_precision": "day" if submitted else "unknown",
                 "doi": doi,
                 "arxiv_url": f"https://arxiv.org/abs/{arxiv_id}",
                 "pdf_url": links.get("pdf") or f"https://arxiv.org/pdf/{arxiv_id}",
@@ -189,9 +218,23 @@ def merge_record(existing: dict, incoming: dict, query_id: str) -> dict:
     if not existing:
         incoming["discovery_queries"] = [query_id]
         return incoming
+    # Different paginated query caches may have observed different revisions.
+    # Keep their texts in metadata_history instead of silently dropping v1.
+    history_keys = ["arxiv_id", "version", "arxiv_version_id", "title", "abstract", "authors", "first_submitted", "updated", "submitted_at", "submitted_at_precision", "updated_at", "updated_at_precision", "pdf_url", "arxiv_url"]
+    def historical(row):
+        return {key: row[key] for key in history_keys if key in row}
+    history = [*existing.get("metadata_history", []), *incoming.get("metadata_history", []), historical(existing), historical(incoming)]
+    def chronology(row):
+        return (row.get("updated_at") or row.get("updated") or "", int((row.get("version") or "v0")[1:]))
+    categories = list(dict.fromkeys([*existing["categories"], *incoming["categories"]]))
+    queries = list(dict.fromkeys([*existing.get("discovery_queries", []), query_id]))
+    if chronology(incoming) > chronology(existing):
+        existing.update(incoming)
+    existing["metadata_history"] = list({json.dumps(row, sort_keys=True): row for row in history}.values())
+    existing["discovery_queries"] = queries
     if query_id not in existing["discovery_queries"]:
         existing["discovery_queries"].append(query_id)
-    existing["categories"] = list(dict.fromkeys([*existing["categories"], *incoming["categories"]]))
+    existing["categories"] = categories
     return existing
 
 

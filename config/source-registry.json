@@ -1,9 +1,10 @@
 {
   "version": "2.1",
-  "updated": "2026-08-31",
+  "updated": "2026-09-14",
   "window": {
     "from": "2024-07-01",
-    "until": "2026-08-31"
+    "until": "2026-09-14",
+    "until_basis": "analysis_cutoff_not_collection_completeness"
   },
   "conference_sources": [
     {
@@ -11,8 +12,14 @@
       "full_name": "IEEE International Conference on Robotics and Automation",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/icra",
-      "years": [2024, 2025, 2026],
-      "event_dates": {"2024": "2024-05-13"},
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "event_dates": {
+        "2024": "2024-05-13"
+      },
       "tier": "core",
       "official_index": "https://ieeexplore.ieee.org/xpl/conhome/1000639/all-proceedings"
     },
@@ -21,7 +28,11 @@
       "full_name": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/iros",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "core",
       "official_index": "https://ieeexplore.ieee.org/xpl/conhome/1000393/all-proceedings"
     },
@@ -30,7 +41,11 @@
       "full_name": "Robotics: Science and Systems",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/rss",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "core",
       "official_index": "https://www.roboticsproceedings.org/"
     },
@@ -39,7 +54,11 @@
       "full_name": "Conference on Robot Learning",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/corl",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "core",
       "official_index": "https://proceedings.mlr.press/"
     },
@@ -48,7 +67,11 @@
       "full_name": "ACM/IEEE International Conference on Human-Robot Interaction",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/hri",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "extended",
       "official_index": "https://dl.acm.org/conference/hri"
     },
@@ -57,7 +80,11 @@
       "full_name": "IEEE-RAS International Conference on Humanoid Robots",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/humanoids",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "extended",
       "official_index": "https://ieeexplore.ieee.org/xpl/conhome/1002042/all-proceedings"
     },
@@ -66,7 +93,11 @@
       "full_name": "International Conference on Learning Representations",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/iclr",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "cross_field",
       "official_index": "https://openreview.net/group?id=ICLR.cc"
     },
@@ -75,7 +106,11 @@
       "full_name": "International Conference on Machine Learning",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/icml",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "cross_field",
       "official_index": "https://proceedings.mlr.press/"
     },
@@ -84,7 +119,11 @@
       "full_name": "Conference on Neural Information Processing Systems",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/nips",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "cross_field",
       "official_index": "https://proceedings.neurips.cc/"
     },
@@ -93,7 +132,11 @@
       "full_name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/cvpr",
-      "years": [2024, 2025, 2026],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
       "tier": "cross_field",
       "official_index": "https://openaccess.thecvf.com/"
     },
@@ -102,7 +145,9 @@
       "full_name": "IEEE/CVF International Conference on Computer Vision",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/iccv",
-      "years": [2025],
+      "years": [
+        2025
+      ],
       "tier": "cross_field",
       "official_index": "https://openaccess.thecvf.com/"
     },
@@ -111,7 +156,10 @@
       "full_name": "European Conference on Computer Vision",
       "discovery": "DBLP",
       "dblp_stream": "streams/conf/eccv",
-      "years": [2024, 2026],
+      "years": [
+        2024,
+        2026
+      ],
       "tier": "cross_field",
       "official_index": "https://www.ecva.net/papers.php"
     }
@@ -160,7 +208,11 @@
   ],
   "arxiv_sources": {
     "core_query": "cat:cs.RO",
-    "supplementary_categories": ["cs.AI", "cs.CV", "cs.LG"],
+    "supplementary_categories": [
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
     "date_rule": "arXiv v1 published date",
     "queries": [
       {
@@ -199,5 +251,6 @@
       "asset_type",
       "independent_adoption"
     ]
-  }
+  },
+  "analysis_cutoff": "2026-09-14"
 }

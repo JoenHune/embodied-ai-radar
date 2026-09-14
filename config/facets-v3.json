@@ -1,0 +1,49 @@
+{
+  "version": "3.0",
+  "updated": "2026-09-01",
+  "methods": {
+    "imitation_learning": ["imitation learning", "behavior cloning", "behaviour cloning", "demonstration learning"],
+    "reinforcement_learning": ["reinforcement learning", "offline rl", "online rl", "q-learning", "policy optimization"],
+    "diffusion_flow_policy": ["diffusion policy", "flow policy", "flow matching", "action diffusion"],
+    "model_predictive_control": ["model predictive control", "mpc", "predictive control"],
+    "world_modeling": ["world model", "dynamics model", "video prediction", "action-conditioned video"],
+    "representation_learning": ["representation learning", "pretraining", "pre-training", "self-supervised"],
+    "planning_reasoning": ["task planning", "motion planning", "chain-of-thought", "reasoning", "planner"],
+    "teleoperation": ["teleoperation", "tele-operation", "remote operation"]
+  },
+  "capabilities": {
+    "generalist_manipulation": ["generalist", "multi-task", "multitask", "general-purpose"],
+    "dexterous_manipulation": ["dexterous", "in-hand", "multi-finger", "multifinger", "robotic hand"],
+    "bimanual_manipulation": ["bimanual", "dual-arm", "dual arm"],
+    "contact_rich_manipulation": ["contact-rich", "contact rich", "tactile manipulation", "force-aware"],
+    "whole_body_control": ["whole-body", "whole body", "loco-manipulation", "locomotion"],
+    "navigation": ["navigation", "mobile manipulation", "active exploration"],
+    "human_robot_interaction": ["human-robot", "shared autonomy", "assistive robot"],
+    "failure_recovery": ["failure recovery", "self-correct", "autonomous recovery", "intervention"]
+  },
+  "embodiments": {
+    "robot_arm": ["robot arm", "manipulator", "manipulation"],
+    "dexterous_hand": ["robotic hand", "dexterous hand", "multi-finger", "multifinger"],
+    "humanoid": ["humanoid", "biped"],
+    "mobile_manipulator": ["mobile manipulator", "mobile manipulation"],
+    "legged_robot": ["quadruped", "legged robot"],
+    "multi_robot": ["multi-robot", "robot team", "swarm"]
+  },
+  "modalities": {
+    "rgb_video": ["rgb", "video", "image"],
+    "depth_3d": ["depth", "point cloud", "3d", "4d"],
+    "language": ["language-conditioned", "language conditioned", "vision-language", "instruction"],
+    "tactile": ["tactile", "visuotactile", "vision-tactile"],
+    "force_proprioception": ["force-torque", "force torque", "proprioceptive", "contact sensing"],
+    "audio": ["robot audio", "acoustic", "audio-visual"]
+  },
+  "search_aliases": {
+    "vla": ["vision language action", "vision-language-action", "视觉语言动作", "具身基础模型"],
+    "大小脑": ["快慢系统", "fast slow", "fast-slow", "system 1 system 2", "分层推理"],
+    "世界模型": ["world model", "world models", "预测控制", "action-conditioned video"],
+    "灵巧操作": ["dexterous manipulation", "dexterous hand", "接触操作", "contact-rich manipulation"],
+    "跨本体": ["cross embodiment", "cross-embodiment", "cross robot", "跨机器人"],
+    "π0": ["pi0", "pi zero", "physical intelligence pi0"],
+    "技术报告": ["technical report", "company report", "first-party report"]
+  }
+}

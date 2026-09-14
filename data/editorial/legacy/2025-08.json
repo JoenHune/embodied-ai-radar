@@ -1,0 +1,824 @@
+{
+  "schema_version": "3",
+  "month": "2025-08",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": false,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2025-08:06b286be38b5",
+      "month": "2025-08",
+      "title": "视频生成器开始越过“数据增强”，直接扮演策略",
+      "summary": "Video Generators are Robot Policies、Masquerade 与 DiWA 分别尝试直接控制、视频编辑迁移和用世界模型适配 diffusion policy。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-08/0",
+        "record_sha256": "de093ac54cc2609db5eaf716b19eba4e756b8da2f7fae109a157b8f5c52df1db"
+      },
+      "supporting_ids": [
+        "arxiv:2508.00795",
+        "arxiv:2508.09976",
+        "arxiv:2508.03645"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.00795",
+          "arxiv_id": "2508.00795",
+          "work_id": "arxiv:2508.00795",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.00795"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-08-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.00795"
+          ],
+          "title": "Video Generators are Robot Policies",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2508.09976",
+          "arxiv_id": "2508.09976",
+          "work_id": "arxiv:2508.09976",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.09976"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-13",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.09976",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei1i_222"
+          ],
+          "title": "Masquerade: Learning from In-the-wild Human Videos using Data-Editing",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2508.03645",
+          "arxiv_id": "2508.03645",
+          "work_id": "arxiv:2508.03645",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.03645"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-05",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.03645",
+            "https://proceedings.mlr.press/v305/chandra25a.html"
+          ],
+          "title": "DiWA: Diffusion Policy Adaptation with World Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2508.00795"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.00795",
+        "https://arxiv.org/abs/2508.03645",
+        "https://arxiv.org/abs/2508.09976",
+        "https://proceedings.mlr.press/v305/chandra25a.html",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei1i_222"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相较 7 月主要把视频当作数据，本月首次集中出现“生成—预测—控制”连续化。",
+      "maturity": "仿真与受控任务为主。",
+      "bottleneck": "视频像素质量与可执行动作之间仍存在逆动力学鸿沟。",
+      "implication": "关注能用执行成功而非视频指标训练生成模型的团队。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "视频生成器开始越过“数据增强”，直接扮演策略",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Video Generators are Robot Policies、Masquerade 与 DiWA 分别尝试直接控制、视频编辑迁移和用世界模型适配 diffusion policy。",
+        "comparison": "相较 7 月主要把视频当作数据，本月首次集中出现“生成—预测—控制”连续化。",
+        "evidence_ids": [
+          "2508.00795",
+          "2508.09976",
+          "2508.03645"
+        ],
+        "maturity": "仿真与受控任务为主。",
+        "bottleneck": "视频像素质量与可执行动作之间仍存在逆动力学鸿沟。",
+        "implication": "关注能用执行成功而非视频指标训练生成模型的团队。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-08:93bfa90765e9",
+      "month": "2025-08",
+      "title": "触觉开始进入 VLA 统一语义空间",
+      "summary": "OmniVTLA 不再把触觉仅作为低层状态，而是与视觉、语言和动作对齐。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-08/1",
+        "record_sha256": "1606c4f1ddb81f860a63340c059689471c5a2625e94f291b9d8a7233a5336d48"
+      },
+      "supporting_ids": [
+        "arxiv:2508.08706"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.08706",
+          "arxiv_id": "2508.08706",
+          "work_id": "arxiv:2508.08706",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.08706"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-12",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D11",
+            "D15"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.08706"
+          ],
+          "title": "OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D15",
+        "D4"
+      ],
+      "questions": [
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.08706"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "同比基线更多是触觉专用策略；本月出现 foundation-model 接口层的整合。",
+      "maturity": "单团队早期信号。",
+      "bottleneck": "传感器异构、跨硬件标定和公开数据规模。",
+      "implication": "触觉价值可能先体现在接触失败恢复，而非通用语义理解。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "触觉开始进入 VLA 统一语义空间",
+        "grade": "C",
+        "kind": "weak",
+        "change": "OmniVTLA 不再把触觉仅作为低层状态，而是与视觉、语言和动作对齐。",
+        "comparison": "同比基线更多是触觉专用策略；本月出现 foundation-model 接口层的整合。",
+        "evidence_ids": [
+          "2508.08706"
+        ],
+        "maturity": "单团队早期信号。",
+        "bottleneck": "传感器异构、跨硬件标定和公开数据规模。",
+        "implication": "触觉价值可能先体现在接触失败恢复，而非通用语义理解。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-08:54f5ce696be7",
+      "month": "2025-08",
+      "title": "世界模型仍更像适配器，而非可靠规划器",
+      "summary": "DiWA 与 GWM 展示适配和场景预测价值，但闭环规划收益、长时序误差和跨任务复现仍不充分。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-08/2",
+        "record_sha256": "a0700910ecf6a073c8899f7437cddd8f378dcfbf1b1c55d7d27162af5a5209f7"
+      },
+      "supporting_ids": [
+        "arxiv:2508.03645",
+        "arxiv:2508.17600"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.03645",
+          "arxiv_id": "2508.03645",
+          "work_id": "arxiv:2508.03645",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.03645"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-05",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.03645",
+            "https://proceedings.mlr.press/v305/chandra25a.html"
+          ],
+          "title": "DiWA: Diffusion Policy Adaptation with World Models",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2508.17600",
+          "arxiv_id": "2508.17600",
+          "work_id": "arxiv:2508.17600",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.17600"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q9"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.17600"
+          ],
+          "title": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D10",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q6",
+        "Q9"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.03645",
+        "https://arxiv.org/abs/2508.17600",
+        "https://proceedings.mlr.press/v305/chandra25a.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "论文数量上升快于控制证据升级。",
+      "maturity": "PoC 到早期验证。",
+      "bottleneck": "预测误差在闭环中的累积。",
+      "implication": "把是否改善规划成功率设为世界模型的硬门槛。",
+      "legacy_grade": "D",
+      "legacy_kind": "cooling",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "世界模型仍更像适配器，而非可靠规划器",
+        "grade": "D",
+        "kind": "cooling",
+        "change": "DiWA 与 GWM 展示适配和场景预测价值，但闭环规划收益、长时序误差和跨任务复现仍不充分。",
+        "comparison": "论文数量上升快于控制证据升级。",
+        "evidence_ids": [
+          "2508.03645",
+          "2508.17600"
+        ],
+        "maturity": "PoC 到早期验证。",
+        "bottleneck": "预测误差在闭环中的累积。",
+        "implication": "把是否改善规划成功率设为世界模型的硬门槛。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2508.00795",
+      "work_id": "arxiv:2508.00795",
+      "legacy_id": "2508.00795",
+      "title": "Video Generators are Robot Policies",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "把机器人视频生成与动作生成端到端联合，显示无动作视频可在少量机器人示范下提升新物体、背景和任务的真实泛化。",
+      "limitation_zh": "策略质量受视频生成真实性和动作提取误差共同制约，实时计算成本、闭环失败恢复和开放资产均未说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/833",
+        "record_sha256": "d53d8316aa2747c6802930350d0b2fa8ad106899b6cdc71bf1f82d229527a6d3"
+      },
+      "supporting_ids": [
+        "arxiv:2508.00795"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.00795",
+          "arxiv_id": "2508.00795",
+          "work_id": "arxiv:2508.00795",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.00795"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-08-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.00795"
+          ],
+          "title": "Video Generators are Robot Policies",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2508.00795"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.00795"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2508.02062",
+      "work_id": "arxiv:2508.02062",
+      "legacy_id": "2508.02062",
+      "title": "RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "通过检索 10–20 条新任务示范，把 in-context adaptation 后置注入预训练 π0-FAST，无需参数更新即可快速教新任务。",
+      "limitation_zh": "仍要求 10–20 条目标任务示范且依赖检索命中，证据集中于 π0-FAST；对跨本体及长时序技能的稳定性待验证。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/836",
+        "record_sha256": "c4d2c55f0de0fc2281ed8387d3765d4e95bda9b5ba963814866d947e6eb13a2e"
+      },
+      "supporting_ids": [
+        "arxiv:2508.02062"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.02062",
+          "arxiv_id": "2508.02062",
+          "work_id": "arxiv:2508.02062",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.02062"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-04",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.02062",
+            "https://proceedings.mlr.press/v305/sridhar25a.html"
+          ],
+          "title": "RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.02062",
+        "https://proceedings.mlr.press/v305/sridhar25a.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2508.03645",
+      "work_id": "arxiv:2508.03645",
+      "legacy_id": "2508.03645",
+      "title": "DiWA: Diffusion Policy Adaptation with World Models",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "用一次训练的离线世界模型承载 diffusion policy 的强化学习适配，避开数百万次真实交互，并在 CALVIN 与真实技能上验证。",
+      "limitation_zh": "离线强化学习会继承世界模型偏差与数据覆盖盲区，摘要中的任务范围有限，难以证明对开放世界分布漂移安全。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/843",
+        "record_sha256": "0a412b629165ba07d87b2c8731984b7803e21a488cce0f4189b3a90617b134e4"
+      },
+      "supporting_ids": [
+        "arxiv:2508.03645"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.03645",
+          "arxiv_id": "2508.03645",
+          "work_id": "arxiv:2508.03645",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.03645"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-05",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D8"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.03645",
+            "https://proceedings.mlr.press/v305/chandra25a.html"
+          ],
+          "title": "DiWA: Diffusion Policy Adaptation with World Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D3",
+        "D8"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.03645",
+        "https://proceedings.mlr.press/v305/chandra25a.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2508.08706",
+      "work_id": "arxiv:2508.08706",
+      "legacy_id": "2508.08706",
+      "title": "OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "以双路触觉编码器和 135K 样本 ObjTac 对齐视觉、语言与多类触觉传感器，在夹爪和灵巧手真实任务上显著增益。",
+      "limitation_zh": "ObjTac 仅覆盖 56 物体/10 类，跨传感器对齐仍可能受硬件标定和接触分布影响；独立团队复现尚早。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/860",
+        "record_sha256": "c2bc6b7d4c1632deda9725fb91405791decfad793208c901b57c4e191c5715a0"
+      },
+      "supporting_ids": [
+        "arxiv:2508.08706"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.08706",
+          "arxiv_id": "2508.08706",
+          "work_id": "arxiv:2508.08706",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.08706"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-12",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D11",
+            "D15"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.08706"
+          ],
+          "title": "OmniVTLA: Vision-Tactile-Language-Action Models with Semantic-Aligned Tactile Sensing",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D15",
+        "D4"
+      ],
+      "questions": [
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.08706"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2508.09976",
+      "work_id": "arxiv:2508.09976",
+      "legacy_id": "2508.09976",
+      "title": "Masquerade: Learning from In-the-wild Human Videos using Data-Editing",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "把野外第一视角人类视频经 3D 手姿态、去人体和机器人叠加编辑为机器人化示范，675K 帧预训练后仅需每任务 50 条机器人示范。",
+      "limitation_zh": "复杂视频编辑与手姿态恢复会引入系统误差，实验集中在三个双臂厨房长任务，跨机器人形态的可迁移性未展示。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/869",
+        "record_sha256": "a2cd35fdef63600a90667d9c9a62aa6b2691e8fc79b9dadffaebb7cf9bb98022"
+      },
+      "supporting_ids": [
+        "arxiv:2508.09976"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.09976",
+          "arxiv_id": "2508.09976",
+          "work_id": "arxiv:2508.09976",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.09976"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-13",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.09976",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei1i_222"
+          ],
+          "title": "Masquerade: Learning from In-the-wild Human Videos using Data-Editing",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.09976",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei1i_222"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2508.17600",
+      "work_id": "arxiv:2508.17600",
+      "legacy_id": "2508.17600",
+      "title": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "以 3D VAE、latent DiT 与 Gaussian Splatting 预测动作后的三维高斯场，既作表征预训练也作模型式 RL 的神经模拟器。",
+      "limitation_zh": "Gaussian 场对透明、反光、柔性和高速接触的建模假设较强；“可规模化”主要是初步证据，跨本体/长时序范围有限。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/898",
+        "record_sha256": "5dfaa84f5a0aa5914a9d68b4487b02e7cf94059ce82506991acb664c749c20bb"
+      },
+      "supporting_ids": [
+        "arxiv:2508.17600"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.17600",
+          "arxiv_id": "2508.17600",
+          "work_id": "arxiv:2508.17600",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.17600"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-08-25",
+          "temporal_role": "current_month",
+          "directions": [
+            "D3",
+            "D4",
+            "D8",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q9"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.17600"
+          ],
+          "title": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D10",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q9"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.17600"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2508.21112",
+      "work_id": "arxiv:2508.21112",
+      "legacy_id": "2508.21112",
+      "title": "EO-1: An Open Unified Embodied Foundation Model for General Robot Control",
+      "month": "2025-08",
+      "status": "legacy_editorial",
+      "contribution_zh": "EO-1 在统一 decoder 中结合自回归与 flow matching，以 EO-Data1.5M 做交错 vision-text-action 预训练，覆盖多本体长时序灵巧控制。",
+      "limitation_zh": "数据与模型均由同一团队构建和评测，1.5M 样本的质量、污染和复现成本需要外部审计；开放并不等于独立验证。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/913",
+        "record_sha256": "6b5d0b4413f3c5009c765da194bfe6a7771aa6dc1ec4a130c0bfcba49194f8bc"
+      },
+      "supporting_ids": [
+        "arxiv:2508.21112"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2508.21112",
+          "arxiv_id": "2508.21112",
+          "work_id": "arxiv:2508.21112",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2508.21112"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-08-28",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2508.21112"
+          ],
+          "title": "EO-1: An Open Unified Embodied Foundation Model for General Robot Control",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2508.21112"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2508.21112"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "44a68fdb5e90bb1f11879e98565407b938aab70417bc58ee26e24cc069a348f8"
+}

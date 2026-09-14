@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "editions": [
+    {
+      "edition_id": "corl-2026",
+      "venue": "CoRL",
+      "year": 2026,
+      "scope": "main",
+      "official_url": "https://www.corl.org/",
+      "openreview_group_id": "robot-learning.org/CoRL/2026/Conference",
+      "openreview_api_url": "https://api2.openreview.net",
+      "accepted_venue_id": "robot-learning.org/CoRL/2026/Conference",
+      "notification_date": "2026-09-04",
+      "notification_date_source": "https://www.corl.org/contributions/call-for-demos",
+      "notification_date_is_not_individual_acceptance_date": true,
+      "publication_policy_url": "https://www.corl.org/contributions/instruction-for-authors",
+      "retrieval_documentation_url": "https://docs.openreview.net/how-to-guides/data-retrieval-and-modification/how-to-get-all-notes-for-submissions-reviews-rebuttals-etc",
+      "expected_count": null,
+      "output_directory": "data/conferences/corl-2026"
+    }
+  ]
+}

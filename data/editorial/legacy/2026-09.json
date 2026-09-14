@@ -1,0 +1,15 @@
+{
+  "schema_version": "3",
+  "month": "2026-09",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [],
+  "work_notes": [],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "44138351af41fcdf6b4f9f9070d067eeebfb57106bcd806a198c27f1059a8de2"
+}

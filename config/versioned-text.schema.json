@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source-bound arXiv metadata text snapshot",
+  "type": "object",
+  "required": ["snapshot_id", "work_id", "source_record_id", "version", "title", "abstract", "authors", "available_at", "date_precision", "source_url", "content_digest", "basis"],
+  "properties": {
+    "snapshot_id": {"type": "string", "pattern": "^text-snapshot:"},
+    "work_id": {"type": "string", "minLength": 1},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "version": {"type": ["string", "null"], "pattern": "^v[1-9][0-9]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "abstract": {"type": "string"},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "available_at": {"type": ["string", "null"]},
+    "date_precision": {"enum": ["second", "day", "month", "unknown"]},
+    "source_url": {"type": "string", "format": "uri"},
+    "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "basis": {"type": "string", "minLength": 1},
+    "verified_at": {"type": "string", "format": "date-time"},
+    "verification_basis": {"type": "string", "minLength": 1},
+    "metadata_license": {"const": "CC0-1.0"}
+  },
+  "additionalProperties": false
+}

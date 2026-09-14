@@ -1,0 +1,909 @@
+{
+  "schema_version": "3",
+  "month": "2025-10",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2025-10:77ab19317fac",
+      "month": "2025-10",
+      "title": "fast–slow 从隐式分工变成显式训练目标",
+      "summary": "VLA-R1、MoTVLA 与上月 VLA-Reasoner 分别用推理增强、统一快慢推理和在线搜索建立高层思考—低层动作分工。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-10/0",
+        "record_sha256": "6fc34a8e15a823dc1e265c2ec1aeea4d4f2f14070a0e44d6085744c786935310"
+      },
+      "supporting_ids": [
+        "arxiv:2510.01623",
+        "arxiv:2510.18337",
+        "arxiv:2509.22643"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.01623",
+          "arxiv_id": "2510.01623",
+          "work_id": "arxiv:2510.01623",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.01623"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D8",
+            "D11"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.01623"
+          ],
+          "title": "VLA-R1: Enhancing Reasoning in Vision-Language-Action Models",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2510.18337",
+          "arxiv_id": "2510.18337",
+          "work_id": "arxiv:2510.18337",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.18337"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-10-21",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.18337"
+          ],
+          "title": "MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2509.22643",
+          "arxiv_id": "2509.22643",
+          "work_id": "arxiv:2509.22643",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.22643"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-26",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.22643",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_128"
+          ],
+          "title": "VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D2",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2510.18337"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.22643",
+        "https://arxiv.org/abs/2510.01623",
+        "https://arxiv.org/abs/2510.18337",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_128"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相较 7 月的架构试验，已有三个独立作者团队连续出现。",
+      "maturity": "新兴架构簇，真实机器人延迟与失败恢复仍待验证。",
+      "bottleneck": "推理 token 与控制频率的冲突。",
+      "implication": "大小脑的竞争焦点将从模型大小转向调度、验证与恢复。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "fast–slow 从隐式分工变成显式训练目标",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "VLA-R1、MoTVLA 与上月 VLA-Reasoner 分别用推理增强、统一快慢推理和在线搜索建立高层思考—低层动作分工。",
+        "comparison": "相较 7 月的架构试验，已有三个独立作者团队连续出现。",
+        "evidence_ids": [
+          "2510.01623",
+          "2510.18337",
+          "2509.22643"
+        ],
+        "maturity": "新兴架构簇，真实机器人延迟与失败恢复仍待验证。",
+        "bottleneck": "推理 token 与控制频率的冲突。",
+        "implication": "大小脑的竞争焦点将从模型大小转向调度、验证与恢复。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-10:fb308fe3c128",
+      "month": "2025-10",
+      "title": "世界模型开始进入 VLA 后训练",
+      "summary": "VLA-RFT 用 world simulator 给可验证奖励，Ctrl-World 强调可控生成，Latent Action Pretraining 则把预测表征回流到动作学习。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-10/1",
+        "record_sha256": "72983369d8142cf5c5d21372bfc6cbfead27bfe4237e0a4ab8b9efd4a174fb6b"
+      },
+      "supporting_ids": [
+        "arxiv:2510.00406",
+        "arxiv:2510.10125",
+        "arxiv:2509.18428"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.00406",
+          "arxiv_id": "2510.00406",
+          "work_id": "arxiv:2510.00406",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.00406"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.00406"
+          ],
+          "title": "VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2510.10125",
+          "arxiv_id": "2510.10125",
+          "work_id": "arxiv:2510.10125",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.10125"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-11",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.10125"
+          ],
+          "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2509.18428",
+          "arxiv_id": "2509.18428",
+          "work_id": "arxiv:2509.18428",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.18428"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-22",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.18428"
+          ],
+          "title": "Latent Action Pretraining Through World Modeling",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q4",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.18428",
+        "https://arxiv.org/abs/2510.00406",
+        "https://arxiv.org/abs/2510.10125"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "8 月还以适配为主，本月开始直接改变策略训练目标。",
+      "maturity": "训练闭环已经出现，仿真偏差仍高。",
+      "bottleneck": "奖励投机与 simulator bias。",
+      "implication": "优先看同时报告模型预测质量和策略真实成功率的工作。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "世界模型开始进入 VLA 后训练",
+        "grade": "B",
+        "kind": "weak",
+        "change": "VLA-RFT 用 world simulator 给可验证奖励，Ctrl-World 强调可控生成，Latent Action Pretraining 则把预测表征回流到动作学习。",
+        "comparison": "8 月还以适配为主，本月开始直接改变策略训练目标。",
+        "evidence_ids": [
+          "2510.00406",
+          "2510.10125",
+          "2509.18428"
+        ],
+        "maturity": "训练闭环已经出现，仿真偏差仍高。",
+        "bottleneck": "奖励投机与 simulator bias。",
+        "implication": "优先看同时报告模型预测质量和策略真实成功率的工作。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-10:e404c38bb53c",
+      "month": "2025-10",
+      "title": "视频驱动双臂学习成为数据规模化的第二战场",
+      "summary": "DexMan、Parse-Augment-Distill 与真实人类活动视频预训练共同指向少机器人示教的双臂学习。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-10/2",
+        "record_sha256": "315787f120fd4ea54601a2e136a27999d141cbae47a02a20f7d4d163413f6edd"
+      },
+      "supporting_ids": [
+        "arxiv:2510.08475",
+        "arxiv:2509.20286",
+        "arxiv:2510.21571"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.08475",
+          "arxiv_id": "2510.08475",
+          "work_id": "arxiv:2510.08475",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.08475"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-09",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.08475"
+          ],
+          "title": "DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2509.20286",
+          "arxiv_id": "2509.20286",
+          "work_id": "arxiv:2509.20286",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.20286"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-09-24",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D4",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.20286"
+          ],
+          "title": "Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2510.21571",
+          "arxiv_id": "2510.21571",
+          "work_id": "arxiv:2510.21571",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.21571"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-24",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.21571"
+          ],
+          "title": "Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D5",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2509.20286"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.20286",
+        "https://arxiv.org/abs/2510.08475",
+        "https://arxiv.org/abs/2510.21571"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "从 7 月单项数据转换扩散为生成视频、单视频蒸馏和大规模人类活动三类路线。",
+      "maturity": "多团队验证，硬件与任务覆盖仍有限。",
+      "bottleneck": "双臂同步、遮挡和接触力缺失。",
+      "implication": "数据引擎应优先解决可执行性过滤，而不是只扩大视频总量。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "视频驱动双臂学习成为数据规模化的第二战场",
+        "grade": "B",
+        "kind": "weak",
+        "change": "DexMan、Parse-Augment-Distill 与真实人类活动视频预训练共同指向少机器人示教的双臂学习。",
+        "comparison": "从 7 月单项数据转换扩散为生成视频、单视频蒸馏和大规模人类活动三类路线。",
+        "evidence_ids": [
+          "2510.08475",
+          "2509.20286",
+          "2510.21571"
+        ],
+        "maturity": "多团队验证，硬件与任务覆盖仍有限。",
+        "bottleneck": "双臂同步、遮挡和接触力缺失。",
+        "implication": "数据引擎应优先解决可执行性过滤，而不是只扩大视频总量。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2510.00406",
+      "work_id": "arxiv:2510.00406",
+      "legacy_id": "2510.00406",
+      "title": "VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "VLA-RFT 把真实交互训练的动作条件世界模型当可控模拟器，以可验证轨迹奖励在少于 400 步内完成 VLA 强化微调。",
+      "limitation_zh": "可验证奖励仍来自目标参考，世界模拟器的系统偏差可能被策略利用；摘要未明确大规模真实机器人复核。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1085",
+        "record_sha256": "98af626d27dbf6e0f0ca299066104c57e9641cb0cbee9cce3e702db55df19543"
+      },
+      "supporting_ids": [
+        "arxiv:2510.00406"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.00406",
+          "arxiv_id": "2510.00406",
+          "work_id": "arxiv:2510.00406",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.00406"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q4",
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.00406"
+          ],
+          "title": "VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D3",
+        "D8"
+      ],
+      "questions": [
+        "Q4",
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.00406"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2510.01623",
+      "work_id": "arxiv:2510.01623",
+      "legacy_id": "2510.01623",
+      "title": "VLA-R1: Enhancing Reasoning in Vision-Language-Action Models",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "VLA-R1 用 RLVR/GRPO 与 13K 条 affordance-trajectory CoT 数据共同强化空间推理和动作执行，并覆盖仿真与真实机器人。",
+      "limitation_zh": "显式 CoT 与奖励对齐不必然等于真实因果推理，13K 数据和奖励设计可能形成 benchmark 特化；独立复现待观察。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1095",
+        "record_sha256": "b788855de94fd89cf901c5be46f901b04390bef8d54f88ccbabd32a3664bd8ad"
+      },
+      "supporting_ids": [
+        "arxiv:2510.01623"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.01623",
+          "arxiv_id": "2510.01623",
+          "work_id": "arxiv:2510.01623",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.01623"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-02",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D8",
+            "D11"
+          ],
+          "questions": [
+            "Q6"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.01623"
+          ],
+          "title": "VLA-R1: Enhancing Reasoning in Vision-Language-Action Models",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D11",
+        "D2",
+        "D8"
+      ],
+      "questions": [
+        "Q6"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.01623"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2510.08475",
+      "work_id": "arxiv:2510.08475",
+      "legacy_id": "2510.08475",
+      "title": "DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "DexMan 从无标定第三视角人类或生成视频估计手物运动，以接触奖励在仿真人形机器人上学习双臂灵巧技能。",
+      "limitation_zh": "实验限定在仿真人形与刚体，未给出真实机器人或触觉闭环证据；第三视角姿态估计误差可能限制复杂接触。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1137",
+        "record_sha256": "5869581c447951912a6a68d453f91b75ba338f77afc67cd39486c2a3f2904563"
+      },
+      "supporting_ids": [
+        "arxiv:2510.08475"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.08475",
+          "arxiv_id": "2510.08475",
+          "work_id": "arxiv:2510.08475",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.08475"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-09",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.08475"
+          ],
+          "title": "DexMan: Learning Bimanual Dexterous Manipulation from Human and Generated Videos",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.08475"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2510.10125",
+      "work_id": "arxiv:2510.10125",
+      "legacy_id": "2510.10125",
+      "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "Ctrl-World 以多视角预测、逐帧动作条件和姿态记忆支持通用策略的长时序 imagination rollout，用于低成本评估和改进。",
+      "limitation_zh": "世界 rollout 与真实策略排名的相关性、长时序误差累积和接触真实性仍是核心风险；摘要未说明真实部署闭环。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1148",
+        "record_sha256": "4338c5c4825ca8613289056c55803285418c28425f3852faaf98b4cdf81d7c8a"
+      },
+      "supporting_ids": [
+        "arxiv:2510.10125"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.10125",
+          "arxiv_id": "2510.10125",
+          "work_id": "arxiv:2510.10125",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.10125"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-11",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.10125"
+          ],
+          "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.10125"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2510.10274",
+      "work_id": "arxiv:2510.10274",
+      "legacy_id": "2510.10274",
+      "title": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "X-VLA 用每个数据源的软提示吸收跨本体异构数据，在 6 个仿真与 3 台真实机器人上兼顾灵巧性、适配速度和规模化。",
+      "limitation_zh": "每个数据源仍需本体特定 soft prompt，异构数据质量与规模扩大后的干扰未完全消除；开放代码/模型未说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1151",
+        "record_sha256": "f2c402f8d8f05788096e19808332f7503dfd430e3dfa99b6a173754519a366ae"
+      },
+      "supporting_ids": [
+        "arxiv:2510.10274"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.10274",
+          "arxiv_id": "2510.10274",
+          "work_id": "arxiv:2510.10274",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.10274"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-10-11",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://air-dream.netlify.app/",
+            "https://arxiv.org/abs/2510.10274"
+          ],
+          "title": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2510.10274"
+      ],
+      "source_urls": [
+        "https://air-dream.netlify.app/",
+        "https://arxiv.org/abs/2510.10274"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2510.18337",
+      "work_id": "arxiv:2510.18337",
+      "legacy_id": "2510.18337",
+      "title": "MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "MoTVLA 让预训练 VLM 承担慢速语义规划、专用 transformer 生成快速运动分解，再驱动 action expert 实时执行。",
+      "limitation_zh": "双 transformer 与 action expert 增加系统复杂度，慢系统过期特征和推理错误的容错机制未充分说明。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1195",
+        "record_sha256": "391732dd1a905e263b8360ee2972efbfae4054205684269199fd572c6593ac0c"
+      },
+      "supporting_ids": [
+        "arxiv:2510.18337"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.18337",
+          "arxiv_id": "2510.18337",
+          "work_id": "arxiv:2510.18337",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.18337"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-10-21",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D2",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.18337"
+          ],
+          "title": "MoTVLA: A Vision-Language-Action Model with Unified Fast-Slow Reasoning",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D2",
+        "D4",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2510.18337"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.18337"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2510.21571",
+      "work_id": "arxiv:2510.21571",
+      "legacy_id": "2510.21571",
+      "title": "Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos",
+      "month": "2025-10",
+      "status": "legacy_editorial",
+      "contribution_zh": "将无脚本真实人类手部视频自动切分、描述并恢复 3D 动作，构成 100 万 episode/2600 万帧的 hand-VLA 预训练语料。",
+      "limitation_zh": "自动分段、语言描述和 3D 手运动都可能含伪标签误差，主要面向手部末端；对双臂移动及接触力控制的覆盖不清楚。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1209",
+        "record_sha256": "0c7e0cd2247d522f6e5f9b17e12c3568f63ce04f30d0894824de8e1821d556ee"
+      },
+      "supporting_ids": [
+        "arxiv:2510.21571"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2510.21571",
+          "arxiv_id": "2510.21571",
+          "work_id": "arxiv:2510.21571",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2510.21571"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-10-24",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2510.21571"
+          ],
+          "title": "Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2510.21571"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "3e17edeff597440e4b97197715401d31dc689c920f8ba646a0a2377de0793c93"
+}

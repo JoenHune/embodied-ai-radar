@@ -19,7 +19,9 @@ import urllib.request
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit, urlunsplit
+from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
+from catalog_store import read_table
+from group_source_adapters import adapt_group_publications
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -93,7 +95,8 @@ class LinkParser(HTMLParser):
 
 def canonical_url(value: str) -> str:
     parts = urlsplit(value)
-    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path.rstrip("/"), "", ""))
+    query = urlencode([(key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True) if not key.lower().startswith("utm_") and key.lower() not in {"fbclid", "gclid"}])
+    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path.rstrip("/"), query, ""))
 
 
 def source_id(org_id: str, kind: str, url: str) -> str:
@@ -147,14 +150,19 @@ def main() -> None:
     parser.add_argument("--backfill-known-works", action="store_true", help="emit only official links that match an existing canonical work")
     parser.add_argument("--reemit-known", action="store_true", help="re-evaluate known links during a controlled backfill")
     parser.add_argument("--kinds", help="comma-separated official URL kinds to monitor")
-    parser.add_argument("--dry-run", action="store_true", help="fetch and report without writing state")
+    parser.add_argument("--dry-run", action="store_true", help="preview registered sources without network calls or writes")
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--max-sources", type=int)
     parser.add_argument("--as-of", default=date.today().isoformat())
     args = parser.parse_args()
 
     registry = json.loads(ORGS.read_text())
+    canonical_orgs = read_table(ROOT / "data" / "catalog", "organizations")
+    if canonical_orgs:
+        registry = {"organizations": canonical_orgs}
     works = json.loads(WORKS.read_text()) if args.backfill_known_works else []
+    if args.backfill_known_works and (ROOT / "data" / "catalog" / "manifest.json").exists():
+        works = [{**work, "arxiv_id": work.get("identifiers", {}).get("arxiv")} for work in read_table(ROOT / "data" / "catalog", "works")]
     by_arxiv = {row.get("arxiv_id"): row for row in works if row.get("arxiv_id")}
     by_title = {normalize_title(row.get("title", "")): row for row in works if row.get("title")}
     selected_kinds = set(args.kinds.split(",")) if args.kinds else None
@@ -162,14 +170,23 @@ def main() -> None:
     prior_by_id = {row["source_id"]: row for row in previous.get("sources", [])}
     sources = []
     for org in registry["organizations"]:
-        if not org.get("tracking_unit"):
+        tier = org.get("tier") or ("T0" if org.get("tracking_unit") else "T2")
+        if not org.get("tracking_unit") and tier not in {"T0", "T1"} and org.get("entity_type") not in {"laboratory", "independent_research_company"}:
             continue
         for kind, url in (org.get("official_urls") or {}).items():
             if not url or not source_meta(kind) or (selected_kinds and kind not in selected_kinds):
                 continue
+            prior = prior_by_id.get(source_id(org["organization_id"], kind, url), {})
+            checked = str(prior.get("last_checked") or "")[:10]
+            if tier == "T2" and checked and not (args.reemit_known or args.backfill_known_works):
+                if (date.fromisoformat(args.as_of) - date.fromisoformat(checked)).days < 31:
+                    continue
             sources.append((org, kind, url))
     if args.max_sources:
         sources = sources[: args.max_sources]
+    if args.dry_run:
+        print(json.dumps({"mode": "dry_run", "sources": len(sources), "registry": "canonical" if canonical_orgs else "legacy", "network_requests": 0}, ensure_ascii=False))
+        return
 
     now = datetime.now(timezone.utc).isoformat()
     status_rows = []
@@ -213,6 +230,10 @@ def main() -> None:
                     for title, link in link_parser.links
                     if likely_research_link(title, link)
                 ]
+            adapted = adapt_group_publications(url, text, lambda resource: fetch(resource, args.timeout), previous_known_links=row["known_links"], source_kind=kind)
+            if adapted["applicable"]:
+                parsed_links.extend({**item, "url": canonical_url(item["url"])} for item in adapted["links"])
+            row.update({key: adapted.get(key) for key in ["parser_status", "content_state", "empty_verified", "resource_urls", "resource_hashes"]})
             unique = {item["url"]: item for item in parsed_links}
             old_links = set(row["known_links"])
             new_links = list(unique.values()) if args.reemit_known else [item for key, item in unique.items() if key not in old_links]
@@ -240,6 +261,8 @@ def main() -> None:
                             "update_type": update_type,
                             "evidence_grade": grade,
                             "source_type": source_type,
+                            "evidence_url": item.get("evidence_url") or url,
+                            "structured_source_url": item.get("structured_source_url"),
                             "direction_codes": [],
                             "question_codes": [],
                             "summary_zh": "官方来源页面新发现的链接，等待结构化归类。",
@@ -247,21 +270,26 @@ def main() -> None:
                             "work_id": (matched_work or {}).get("work_id"),
                         }
                     )
+                    if item.get("record_field"):
+                        kinds = {"paperLink": "preprint", "projectLink": "project", "codeLink": "code_release", "datasetLink": "dataset_release", "modelsLink": "model_release", "benchmarkLink": "benchmark", "announcementLink": "strategic_update"}
+                        candidate_rows[-1]["update_type"] = kinds.get(item["record_field"], update_type)
+                        if item["record_field"] == "announcementLink":
+                            candidate_rows[-1]["evidence_grade"] = "G3"
             raw_path.write_bytes(body)
             row.update(
                 {
                     "last_success": now,
                     "consecutive_failures": 0,
                     "content_hash": digest,
-                    "known_links": sorted(unique),
-                    "status": "healthy",
+                    "known_links": sorted(set(row["known_links"]) | set(unique)),
+                    "status": "partial" if adapted.get("parser_status") == "partial" else "healthy",
                     "last_failure_date": None,
                 }
             )
             print(f"group source {index}/{len(sources)} ok: {org['display_name']} {kind} (+{len(new_links)})")
         except Exception as exc:
             already_failed_this_snapshot = str(prior.get("last_checked") or "").startswith(args.as_of)
-            failures = 1 if already_failed_this_snapshot else row["consecutive_failures"] + 1
+            failures = max(1, row["consecutive_failures"]) if already_failed_this_snapshot else row["consecutive_failures"] + 1
             row.update(
                 {
                     "consecutive_failures": failures,
@@ -276,10 +304,9 @@ def main() -> None:
     if args.dry_run:
         print(json.dumps({"sources": len(status_rows), "candidates": len(candidate_rows)}, ensure_ascii=False))
         return
-    if selected_kinds or args.max_sources:
-        processed_ids = {row["source_id"] for row in status_rows}
-        status_rows.extend(row for row in previous.get("sources", []) if row.get("source_id") not in processed_ids)
-        status_rows.sort(key=lambda row: (row.get("organization_id", ""), row.get("kind", ""), row.get("url", "")))
+    processed_ids = {row["source_id"] for row in status_rows}
+    status_rows.extend(row for row in previous.get("sources", []) if row.get("source_id") not in processed_ids)
+    status_rows.sort(key=lambda row: (row.get("organization_id", ""), row.get("kind", ""), row.get("url", "")))
     STATE.write_text(json.dumps({"version": "1.0", "generated_at": args.as_of, "sources": status_rows}, ensure_ascii=False, indent=2) + "\n")
     existing = json.loads(CANDIDATES.read_text()) if CANDIDATES.exists() else {"candidates": []}
     merged = {f"{item['organization_id']}|{canonical_url(item['url'])}": item for item in existing.get("candidates", [])}

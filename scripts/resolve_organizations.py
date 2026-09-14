@@ -16,6 +16,9 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+from catalog_store import read_table
+from catalog_rules import attribution_valid
+from collect_group_sources import canonical_url as source_canonical_url
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,8 +47,7 @@ def normalize_title(value: str) -> str:
 def canonical_url(value: str) -> str:
     if not value:
         return ""
-    parts = urlsplit(value.strip())
-    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path.rstrip("/"), "", ""))
+    return source_canonical_url(value.strip())
 
 
 def extract_arxiv_id(value: str) -> str | None:
@@ -77,6 +79,11 @@ def main() -> None:
     by_org = {row["organization_id"]: row for row in organizations}
     works = read(WORKS, [])
     taxonomy = read(TAXONOMY, {"categories": {}})
+    if (ROOT / "data" / "catalog" / "manifest.json").exists():
+        organizations = read_table(ROOT / "data" / "catalog", "organizations")
+        by_org = {row["organization_id"]: row for row in organizations}
+        code_to_topic = {spec["code"]: key for key, spec in taxonomy["categories"].items()}
+        works = [{**work, "arxiv_id": work.get("identifiers", {}).get("arxiv"), "primary_topic": code_to_topic.get(work.get("primary_direction"))} for work in read_table(ROOT / "data" / "catalog", "works")]
     question_evidence = read(QUESTION_EVIDENCE, {"records": []})
     questions_by_work = {
         row.get("work_id"): row.get("question_ids", [])
@@ -93,7 +100,7 @@ def main() -> None:
 
     candidates = []
     for org in organizations:
-        if not org.get("tracking_unit"):
+        if not org.get("tracking_unit") and org.get("tier") not in {"T0", "T1"}:
             continue
         for raw in org.get("representative_updates", []):
             candidates.append({**raw, "organization_id": org["organization_id"], "curated": True})
@@ -104,7 +111,7 @@ def main() -> None:
     review: dict[str, dict] = {}
     for raw in candidates:
         org_id = raw.get("organization_id")
-        if org_id not in by_org or not by_org[org_id].get("tracking_unit"):
+        if org_id not in by_org or (not by_org[org_id].get("tracking_unit") and by_org[org_id].get("tier") not in {"T0", "T1"}):
             continue
         title = str(raw.get("title") or "").strip()
         url = str(raw.get("url") or "").strip()
@@ -126,6 +133,8 @@ def main() -> None:
             project_matches = by_project.get(project, [])
             if len(project_matches) == 1:
                 work = project_matches[0]
+        if grade == "G2" and not attribution_valid({"evidence_grade": grade, "evidence_url": url, "membership_evidence": raw.get("membership_evidence")}, work):
+            grade = "G3"
         published_at = raw.get("published_at") or (work or {}).get("first_public_date")
         inferred_direction = taxonomy.get("categories", {}).get((work or {}).get("primary_topic"), {}).get("code")
         item = {
@@ -140,7 +149,7 @@ def main() -> None:
             "source_type": raw.get("source_type") or ("official_group_page" if raw.get("curated") else "official_source_monitor"),
             "work_id": (work or {}).get("work_id"),
             "direction_codes": list(dict.fromkeys(raw.get("direction_codes") or ([inferred_direction] if inferred_direction else []))),
-            "question_codes": list(dict.fromkeys(raw.get("question_codes") or questions_by_work.get((work or {}).get("work_id"), []))),
+            "question_codes": list(dict.fromkeys(raw.get("question_codes") or (work or {}).get("questions") or questions_by_work.get((work or {}).get("work_id"), []))),
             "summary_zh": raw.get("summary_zh") or "官方研究组来源发现的新动态。",
             "first_seen_at": raw.get("first_seen_at") or registry.get("updated") or date.today().isoformat(),
             "strict_peer_reviewed": bool((work or {}).get("strict_peer_reviewed")),
@@ -150,6 +159,7 @@ def main() -> None:
             "artifact_class", "evidence_lane", "publication_status", "peer_reviewed",
             "independent_validation", "metric_owner", "claim_status",
             "technical_stack_tags", "validation_tags", "open_assets", "report_metrics",
+            "evidence_url", "structured_source_url", "membership_evidence",
         ):
             if field in raw:
                 item[field] = raw[field]
@@ -229,7 +239,7 @@ def main() -> None:
                     "attribution_basis": "official_group_update",
                     "evidence_grade": update["evidence_grade"],
                     "confidence": 1 if update["evidence_grade"] == "G1" else 0.8,
-                    "evidence_url": update["url"],
+                    "evidence_url": update.get("evidence_url") or update["url"],
                     "verified_at": update["first_seen_at"],
                     "allocation_method": "equal_leaf_split",
                     "allocation_quality": "coarse",

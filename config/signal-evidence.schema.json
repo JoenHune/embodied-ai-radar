@@ -1,0 +1,428 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research signal evidence with source snapshot and semantic review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "signal_id",
+    "work_id",
+    "evidence_card_id",
+    "stance",
+    "statement",
+    "source_url",
+    "source_record_ids",
+    "public_at",
+    "public_at_precision",
+    "research_scope",
+    "experiment",
+    "source_spans",
+    "record_id",
+    "review_status",
+    "generator",
+    "model",
+    "generated_month",
+    "created_at",
+    "updated_at",
+    "input_digest",
+    "source_content_digest",
+    "source_text_snapshot",
+    "source_text_digest",
+    "content_digest",
+    "review_history"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string",
+      "pattern": "^S[1-9][0-9]*$"
+    },
+    "work_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_card_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stance": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "neutral"
+      ]
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "source_record_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "public_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "public_at_precision": {
+      "enum": [
+        "second",
+        "day",
+        "month",
+        "year",
+        "unknown"
+      ]
+    },
+    "research_scope": {
+      "enum": [
+        "in_scope",
+        "out_of_scope",
+        "uncertain"
+      ]
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setting",
+        "baseline",
+        "metric",
+        "limitations"
+      ],
+      "properties": {
+        "setting": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "baseline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "metric": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "source_spans": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "start",
+          "end",
+          "quote"
+        ],
+        "properties": {
+          "field": {
+            "enum": [
+              "title",
+              "abstract"
+            ]
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1600
+          }
+        }
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^signal-evidence:[a-zA-Z0-9:_-]+$"
+    },
+    "review_status": {
+      "enum": [
+        "verified",
+        "draft"
+      ]
+    },
+    "generator": {
+      "enum": [
+        "llm",
+        "human",
+        "legacy_import"
+      ]
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generated_month": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^20[0-9]{2}-(0[1-9]|1[0-2])$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "input_digest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_content_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_text_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "abstract"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "abstract": {
+          "type": "string"
+        }
+      }
+    },
+    "source_text_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "review_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "review_id",
+          "reviewer",
+          "reviewed_at",
+          "decision",
+          "note"
+        ],
+        "properties": {
+          "review_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "decision": {
+            "enum": [
+              "verified",
+              "draft"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signal_id",
+        "work_id",
+        "evidence_card_id",
+        "stance",
+        "statement",
+        "source_url",
+        "source_record_ids",
+        "public_at",
+        "public_at_precision",
+        "research_scope",
+        "experiment",
+        "source_spans"
+      ],
+      "properties": {
+        "signal_id": {
+          "type": "string",
+          "pattern": "^S[1-9][0-9]*$"
+        },
+        "work_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_card_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stance": {
+          "enum": [
+            "supports",
+            "contradicts",
+            "neutral"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source_record_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "public_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_at_precision": {
+          "enum": [
+            "second",
+            "day",
+            "month",
+            "year",
+            "unknown"
+          ]
+        },
+        "research_scope": {
+          "enum": [
+            "in_scope",
+            "out_of_scope",
+            "uncertain"
+          ]
+        },
+        "experiment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "setting",
+            "baseline",
+            "metric",
+            "limitations"
+          ],
+          "properties": {
+            "setting": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "baseline": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "metric": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "source_spans": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "start",
+              "end",
+              "quote"
+            ],
+            "properties": {
+              "field": {
+                "enum": [
+                  "title",
+                  "abstract"
+                ]
+              },
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1600
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

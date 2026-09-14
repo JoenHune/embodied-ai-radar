@@ -1,0 +1,1841 @@
+{
+  "version": "3.1",
+  "updated": "2026-09-05",
+  "batch_id": "attribution-batch4-2026-09-05",
+  "verification_scope": "Fixed high-signal unattributed queue indices 60–93: first-party identity and evidence attribution only; no ingestion, build, deployment or peer-review upgrade.",
+  "reviewed_work_ids": [
+    "title:e4e474ec53f4b4147bc0390e",
+    "title:e3229ed3c1b49c70e4d56646",
+    "title:dd3be0a7baa200ddfc8367a1",
+    "title:d245a5b2b1caf2781699781b",
+    "title:bd65316b42a341f109b2b449",
+    "title:b7cfc97034350808bb66ca16",
+    "title:b1cf6f39fb0ff62aae2ac10e",
+    "title:8feac44da399762a802e08cb",
+    "title:8bf3724bfef9e11d1c8c6827",
+    "title:741f07581b788c6b63893de1",
+    "title:34a328c2e8bb6ccec02096b6",
+    "title:1966b10bad8389829f2f0715",
+    "arxiv:2510.01623",
+    "arxiv:2510.00406",
+    "arxiv:2509.24661",
+    "arxiv:2509.23655",
+    "arxiv:2509.22970",
+    "arxiv:2509.22643",
+    "arxiv:2509.19958",
+    "arxiv:2509.18830",
+    "arxiv:2509.18428",
+    "arxiv:2509.10952",
+    "arxiv:2509.09863",
+    "arxiv:2509.09594",
+    "arxiv:2509.09074",
+    "arxiv:2509.08820",
+    "arxiv:2509.08757",
+    "arxiv:2509.07978",
+    "arxiv:2509.07445",
+    "arxiv:2509.06233",
+    "arxiv:2509.04737",
+    "arxiv:2509.03889",
+    "arxiv:2509.01819",
+    "arxiv:2509.01658"
+  ],
+  "attribution_review": [
+    {
+      "work_id": "title:bd65316b42a341f109b2b449",
+      "source_index": 64,
+      "status": "unresolved_specific_group",
+      "reason": "Embrace Contacts 的官方 Project Instinct 页面只列 IIIS Tsinghua / Shanghai Qi Zhi Institute；MARS 负责人身份可确认，但未取得该文的直接实验室条目或覆盖论文日期的成员起止证据，不将 Project Instinct 合作项目虚构为持久研究组。",
+      "inspected_source_urls": [
+        "https://project-instinct.github.io/",
+        "https://hangzhaomit.github.io/",
+        "https://ziwenzhuang.github.io/"
+      ]
+    },
+    {
+      "work_id": "arxiv:2510.00406",
+      "source_index": 73,
+      "status": "unresolved_specific_group",
+      "reason": "VLA-RFT 项目明确 OpenHelix Team，但本次未核实其独立持久组织边界和官方身份；项目负责人不等于实验室负责人，也不据当前多校 affiliation 猜测研究组。",
+      "inspected_source_urls": [
+        "https://vla-rft.github.io/",
+        "https://github.com/OpenHelix-Team/OpenHelix",
+        "https://openhelix-robot.github.io/"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.18428",
+      "source_index": 80,
+      "status": "unresolved_specific_group",
+      "reason": "LAWM 项目仅确认 MBZUAI、Alexandria 等母机构，未找到具体执行组官方条目或带时间成员关系，不因 Ian Reid 当前角色推入新团队。",
+      "inspected_source_urls": [
+        "https://yaranasserr.github.io/lawm-paper/",
+        "https://github.com/baheytharwat/lawm"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.09863",
+      "source_index": 82,
+      "status": "unresolved_specific_group",
+      "reason": "论文仅能确认 University of Victoria；2026 年 7 月 13 日官方答辩记录列导师 Daniela Constantinescu，但缺少开始时间、具体研究组名，不足覆盖 2025 年 9 月论文日期。",
+      "inspected_source_urls": [
+        "https://arxiv.org/abs/2509.09863",
+        "https://www.uvic.ca/graduatestudies/oral-exams/exam-candidates/data/sarvan-gill.php"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.03889",
+      "source_index": 91,
+      "status": "unresolved_specific_group",
+      "reason": "个人履历中 MCube 研究经历止于 2025，官方新闻又记录 2025 年 5 月 14 日答辩及实验室关闭；缺少具体论文条目与覆盖 2025 年 9 月首发日期的关系，不以现职 Boston Dynamics 回填。",
+      "inspected_source_urls": [
+        "https://nehasunil.com/Resume_NehaSunil.pdf",
+        "https://mcube.mit.edu/news.html"
+      ]
+    }
+  ],
+  "review_summary": {
+    "scope_count": 34,
+    "attributed_work_count": 29,
+    "G1": 27,
+    "G2": 2,
+    "unresolved_work_count": 5,
+    "new_tracking_groups": 21,
+    "new_parent_nodes": 16,
+    "source_health_checks_performed": false
+  },
+  "organizations": [
+    {
+      "organization_id": "org:karlsruhe-institute-of-technology",
+      "display_name": "Karlsruhe Institute of Technology",
+      "short_name": "Karlsruhe Institute of Technology",
+      "slug": "karlsruhe-institute-of-technology",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Germany",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.kit.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:peking-university",
+      "display_name": "Peking University",
+      "short_name": "Peking University",
+      "slug": "peking-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.pku.edu.cn/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:hong-kong-university-of-science-and-technology-guangzhou",
+      "display_name": "The Hong Kong University of Science and Technology (Guangzhou)",
+      "short_name": "The Hong Kong University of Science and Technology (Guangzhou)",
+      "slug": "hong-kong-university-of-science-and-technology-guangzhou",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.hkust-gz.edu.cn/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:university-of-utah",
+      "display_name": "The University of Utah",
+      "short_name": "The University of Utah",
+      "slug": "university-of-utah",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.utah.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:oxford-robotics-institute",
+      "display_name": "Oxford Robotics Institute",
+      "short_name": "Oxford Robotics Institute",
+      "slug": "oxford-robotics-institute",
+      "entity_type": "research_institute",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://ori.ox.ac.uk/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "上层牛津大学/工程科学系节点尚未单独登记；本批不据此推断研究组负责人任期。"
+      ]
+    },
+    {
+      "organization_id": "org:chinese-university-of-hong-kong",
+      "display_name": "The Chinese University of Hong Kong",
+      "short_name": "The Chinese University of Hong Kong",
+      "slug": "chinese-university-of-hong-kong",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.cuhk.edu.hk/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "与 The Chinese University of Hong Kong, Shenzhen 保持独立实体。"
+      ]
+    },
+    {
+      "organization_id": "org:kings-college-london",
+      "display_name": "King's College London",
+      "short_name": "King's College London",
+      "slug": "kings-college-london",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.kcl.ac.uk/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:qualcomm-technologies",
+      "display_name": "Qualcomm Technologies, Inc.",
+      "short_name": "Qualcomm Technologies, Inc.",
+      "slug": "qualcomm-technologies",
+      "entity_type": "company",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.qualcomm.com/research/artificial-intelligence"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "母机构身份由同页官方法律说明核实；不与 Qualcomm Incorporated 强制合并。"
+      ]
+    },
+    {
+      "organization_id": "org:nanyang-technological-university",
+      "display_name": "Nanyang Technological University",
+      "short_name": "Nanyang Technological University",
+      "slug": "nanyang-technological-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "Singapore",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.ntu.edu.sg/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "与 National Taiwan University 完全分开，禁止仅按 NTU 缩写合并。"
+      ]
+    },
+    {
+      "organization_id": "org:insait",
+      "display_name": "INSAIT",
+      "short_name": "INSAIT",
+      "slug": "insait",
+      "entity_type": "research_institute",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Bulgaria",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://insait.ai/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "INSAIT 与 Sofia University 的上层关系及任期不在本次指定论文归属核验范围。"
+      ]
+    },
+    {
+      "organization_id": "org:georgia-institute-of-technology",
+      "display_name": "Georgia Institute of Technology",
+      "short_name": "Georgia Institute of Technology",
+      "slug": "georgia-institute-of-technology",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.gatech.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:aiml",
+      "display_name": "Australian Institute for Machine Learning",
+      "short_name": "Australian Institute for Machine Learning",
+      "slug": "aiml",
+      "entity_type": "research_institute",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Oceania",
+      "country": "Australia",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://adelaide.edu.au/research/australian-institute-for-machine-learning/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "官方负责人档案分别列明 University of Adelaide (2022–2025) 与 Adelaide University (2026–)；本批不把两所学校设为同名别名，AIML 上层组织沿革待单独补证。"
+      ]
+    },
+    {
+      "organization_id": "org:university-of-pennsylvania",
+      "display_name": "University of Pennsylvania",
+      "short_name": "University of Pennsylvania",
+      "slug": "university-of-pennsylvania",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.upenn.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:university-of-bristol",
+      "display_name": "University of Bristol",
+      "short_name": "University of Bristol",
+      "slug": "university-of-bristol",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.bristol.ac.uk/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:university-of-virginia",
+      "display_name": "University of Virginia",
+      "short_name": "University of Virginia",
+      "slug": "university-of-virginia",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.virginia.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:saitama-university",
+      "display_name": "Saitama University",
+      "short_name": "Saitama University",
+      "slug": "saitama-university",
+      "entity_type": "university",
+      "tracking_unit": false,
+      "tracking_category": "parent",
+      "tier": "T2",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "Japan",
+      "aliases": [],
+      "parent_relations": [],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.saitama-u.ac.jp/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "仅作为组织层级聚合节点，不把母机构署名当作具体研究组归属。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ]
+    },
+    {
+      "organization_id": "org:kit-intuitive-robots",
+      "display_name": "KIT Intuitive Robots Lab",
+      "short_name": "KIT Intuitive Robots Lab",
+      "slug": "kit-intuitive-robots",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Germany",
+      "aliases": [
+        "Intuitive Robots Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:karlsruhe-institute-of-technology",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.irl.iar.kit.edu/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Rudolf Lioutikov",
+          "role": "Principal Investigator",
+          "source_url": "https://www.irl.iar.kit.edu/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://www.irl.iar.kit.edu/",
+        "identity_source": "https://www.irl.iar.kit.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究直觉机器人学习、模仿学习与通才策略。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:pku-embodied-generative-intelligence",
+      "display_name": "Peking University Embodied and Generative Intelligence Lab",
+      "short_name": "Peking University Embodied and Generative Intelligence Lab",
+      "slug": "pku-embodied-generative-intelligence",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:peking-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://ha0tang.github.io/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Hao Tang",
+          "role": "Principal Investigator",
+          "source_url": "https://ha0tang.github.io/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://ha0tang.github.io/",
+        "identity_source": "https://ha0tang.github.io/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究生成智能、空间表征、具身智能和多模态学习。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:hkust-gz-precognition",
+      "display_name": "HKUST(GZ) Precognition Lab",
+      "short_name": "HKUST(GZ) Precognition Lab",
+      "slug": "hkust-gz-precognition",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [
+        "Precognition Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:hong-kong-university-of-science-and-technology-guangzhou",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://precognition.team/index.html"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Junwei Liang",
+          "role": "Principal Investigator",
+          "source_url": "https://precognition.team/index.html",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://precognition.team/index.html",
+        "identity_source": "https://precognition.team/index.html"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D5",
+        "D6"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究能够感知、推理并与真实世界交互的具身智能。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:hkust-gz-jie-song",
+      "display_name": "HKUST(GZ) Jie Song Research Group",
+      "short_name": "HKUST(GZ) Jie Song Research Group",
+      "slug": "hkust-gz-jie-song",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:hong-kong-university-of-science-and-technology-guangzhou",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://hly-123.github.io/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Jie Song",
+          "role": "Principal Investigator",
+          "source_url": "https://hly-123.github.io/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page/SONG-Jie/jsongroas",
+        "identity_source": "https://hly-123.github.io/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "以具名导师及带时间成员关系登记的 PI 研究组，涵盖多指手和机器人操作。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "正式实验室品牌名尚未核实；负责人身份由官方教师档案及学生署名主页交叉支持，不将其 ETH 历史合作自动并入本组。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。",
+      "name_basis": "normalized_pi_group_name_not_asserted_formal_lab_brand"
+    },
+    {
+      "organization_id": "org:tsinghua-air-hao-zhao",
+      "display_name": "Tsinghua AIR Hao Zhao Research Group",
+      "short_name": "Tsinghua AIR Hao Zhao Research Group",
+      "slug": "tsinghua-air-hao-zhao",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:tsinghua-university-institute-for-ai-industry-research",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://sites.google.com/view/fromandto"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Hao Zhao",
+          "role": "Principal Investigator",
+          "source_url": "https://sites.google.com/view/fromandto",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://sites.google.com/view/fromandto",
+        "institutional_profile": "https://air.tsinghua.edu.cn/en/our_team/Research_Team.htm"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D3",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究具身智能、生成式场景理解和真实机器人技术。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "不将该 PI 组自动合并到 DISCOVER、DREAM 或其他 AIR 实验室。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。",
+      "name_basis": "normalized_pi_group_name_not_asserted_formal_lab_brand"
+    },
+    {
+      "organization_id": "org:pku-agibot-lab",
+      "display_name": "PKU-AgiBot Lab",
+      "short_name": "PKU-AgiBot Lab",
+      "slug": "pku-agibot-lab",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:peking-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://cfcs.pku.edu.cn/research/research_labs/42cfcs238407.htm"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Hao Dong",
+          "role": "Principal Investigator",
+          "source_url": "https://cfcs.pku.edu.cn/research/research_labs/42cfcs238407.htm",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://cfcs.pku.edu.cn/research/research_labs/42cfcs238407.htm",
+        "identity_source": "https://cfcs.pku.edu.cn/research/research_labs/42cfcs238407.htm"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D6",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人视觉、物体操作、语义导航和具身自主决策。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "联合实验室与 AgiBot Research 是独立节点；名称本身不证明企业侧组织隶属。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:utah-daniel-brown",
+      "display_name": "University of Utah Daniel S. Brown Research Group",
+      "short_name": "University of Utah Daniel S. Brown Research Group",
+      "slug": "utah-daniel-brown",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-utah",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://users.cs.utah.edu/~dsbrown/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Daniel S. Brown",
+          "role": "Principal Investigator",
+          "source_url": "https://users.cs.utah.edu/~dsbrown/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://users.cs.utah.edu/~dsbrown/",
+        "publications": "https://users.cs.utah.edu/~dsbrown/publications.html"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D7",
+        "D8",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究稳健、对齐和交互式自主系统及机器人学习。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "另一 Kuntz Lab 列表的该文作者元数据与正式记录不一致，本批只使用 Brown 的正确作者列表，不据此推断 Kuntz 组历史归属。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。",
+      "name_basis": "normalized_pi_group_name"
+    },
+    {
+      "organization_id": "org:oxford-a2i",
+      "display_name": "Oxford Applied Artificial Intelligence Lab",
+      "short_name": "Oxford Applied Artificial Intelligence Lab",
+      "slug": "oxford-a2i",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [
+        "Oxford A2I"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:oxford-robotics-institute",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://ori.ox.ac.uk/groups/a2i/people-a2i"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Ingmar Posner",
+          "role": "Principal Investigator",
+          "source_url": "https://ori.ox.ac.uk/groups/a2i/people-a2i",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://ori.ox.ac.uk/groups/a2i",
+        "people": "https://ori.ox.ac.uk/groups/a2i/people-a2i",
+        "research": "https://ori.ox.ac.uk/groups/a2i/research-a2i"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D8",
+        "D10",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人学习、自我诊断、迁移学习和真实环境中的稳健操作。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:cuhk-ren-lab",
+      "display_name": "CUHK REN Lab — Intelligent Medical Mechatronics",
+      "short_name": "CUHK REN Lab — Intelligent Medical Mechatronics",
+      "slug": "cuhk-ren-lab",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "China",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:chinese-university-of-hong-kong",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://ngchikit.github.io/renlab-endoscopic-projects/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Hongliang Ren",
+          "role": "Principal Investigator",
+          "source_url": "https://ngchikit.github.io/renlab-endoscopic-projects/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://ngchikit.github.io/renlab-endoscopic-projects/",
+        "lab": "https://www.labren.org/mm/news/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D4",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究医疗机电系统与内镜机器人自主感知、交互和控制。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "主实验室站本次直接访问不稳定；身份与 EndoVLA 归属使用明确标注 REN Lab 的作者维护项目渠道。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:kcl-robot-perception",
+      "display_name": "King's College London Robot Perception Lab",
+      "short_name": "King's College London Robot Perception Lab",
+      "slug": "kcl-robot-perception",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:kings-college-london",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://shanluo.github.io/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Shan Luo",
+          "role": "Principal Investigator",
+          "source_url": "https://shanluo.github.io/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://kings-rpl.github.io/",
+        "leader_profile": "https://shanluo.github.io/",
+        "people": "https://shanluo.github.io/people/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D11",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人感知、视觉触觉融合与灵巧操作。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:qualcomm-ai-research",
+      "display_name": "Qualcomm AI Research",
+      "short_name": "Qualcomm AI Research",
+      "slug": "qualcomm-ai-research",
+      "entity_type": "research_division",
+      "tracking_unit": true,
+      "tracking_category": "corporate",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:qualcomm-technologies",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.qualcomm.com/research/artificial-intelligence"
+        }
+      ],
+      "leaders": [],
+      "official_urls": {
+        "home": "https://www.qualcomm.com/research/artificial-intelligence",
+        "identity_source": "https://www.qualcomm.com/research/artificial-intelligence"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D8"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "官方 AI 研究执行单元；本批收录其明确署名的高效 VLA 工作。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "本批未核实统一负责人；leaders 保持空数组，不把论文末位作者当作组织负责人。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:ntu-pine",
+      "display_name": "NTU Perception and Embodied Intelligence Lab",
+      "short_name": "NTU Perception and Embodied Intelligence Lab",
+      "slug": "ntu-pine",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "Singapore",
+      "aliases": [
+        "PINE Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:nanyang-technological-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://pine-lab-ntu.github.io/team.html"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Ziwei Wang",
+          "role": "Principal Investigator",
+          "source_url": "https://pine-lab-ntu.github.io/team.html",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://pine-lab-ntu.github.io/",
+        "people": "https://pine-lab-ntu.github.io/team.html",
+        "publications": "https://pine-lab-ntu.github.io/publication.html"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D2",
+        "D6"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究具身智能、机器人感知、推理与导航。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "负责人为 Ziwei Wang（王子维），不得与 Ziwei Liu 或台湾大学 NTU 研究组误合并。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:insait-vision",
+      "display_name": "INSAIT Vision Group",
+      "short_name": "INSAIT Vision Group",
+      "slug": "insait-vision",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "Bulgaria",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:insait",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://vision.insait.ai/people/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Luc Van Gool",
+          "role": "Faculty",
+          "source_url": "https://vision.insait.ai/people/",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "name": "Danda Paudel",
+          "role": "Faculty",
+          "source_url": "https://vision.insait.ai/people/",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "name": "Jinjin Gu",
+          "role": "Faculty",
+          "source_url": "https://vision.insait.ai/people/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://vision.insait.ai/",
+        "people": "https://vision.insait.ai/people/",
+        "projects": "https://vision.insait.ai/demos/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D9",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究计算机视觉、三维表征与通用机器人学习。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "官网列出 Faculty，不由排列顺序推定组长；MotoVLA 论文题目含 Generalist 但不是 Generalist AI 公司。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:stanford-jiajun-wu",
+      "display_name": "Stanford Jiajun Wu Research Group",
+      "short_name": "Stanford Jiajun Wu Research Group",
+      "slug": "stanford-jiajun-wu",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:stanford-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://jiajunwu.com/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Jiajun Wu",
+          "role": "Principal Investigator",
+          "source_url": "https://jiajunwu.com/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://jiajunwu.com/",
+        "institutional_profile": "https://profiles.stanford.edu/jiajun-wu"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D3",
+        "D4",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究视觉感知、物理世界建模与机器人交互。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。",
+      "name_basis": "normalized_pi_group_name_not_equated_with_stanford_vision_lab"
+    },
+    {
+      "organization_id": "org:gatech-star",
+      "display_name": "Georgia Tech Structured Techniques for Algorithmic Robotics Lab",
+      "short_name": "Georgia Tech Structured Techniques for Algorithmic Robotics Lab",
+      "slug": "gatech-star",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Georgia Tech STAR Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:georgia-institute-of-technology",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://star-lab.cc.gatech.edu/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Harish Ravichandar",
+          "role": "Principal Investigator",
+          "source_url": "https://star-lab.cc.gatech.edu/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://star-lab.cc.gatech.edu/",
+        "identity_source": "https://star-lab.cc.gatech.edu/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究结构化机器人学习、从人类学习及交互。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:aiml-feras-dayoub",
+      "display_name": "AIML Embodied AI and Robotic Vision Group",
+      "short_name": "AIML Embodied AI and Robotic Vision Group",
+      "slug": "aiml-feras-dayoub",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Oceania",
+      "country": "Australia",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:aiml",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://researchers.adelaide.edu.au/profile/feras.dayoub"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Feras Dayoub",
+          "role": "Principal Investigator",
+          "source_url": "https://researchers.adelaide.edu.au/profile/feras.dayoub",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://ferasdayoub.com/group/",
+        "institutional_profile": "https://researchers.adelaide.edu.au/profile/feras.dayoub"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D1",
+        "D6",
+        "D11",
+        "D12"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究开放环境导航、稳健视觉感知与具身智能。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "组归属由 PI 明确列出的研究主题及工作支持；母机构只登记 AIML，Adelaide 两个大学实体的上层沿革待核实，当前任职不反向覆盖 2025 论文。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:upenn-scalar",
+      "display_name": "University of Pennsylvania Scalable Autonomous Robots Lab",
+      "short_name": "University of Pennsylvania Scalable Autonomous Robots Lab",
+      "slug": "upenn-scalar",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "Penn ScalAR Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-pennsylvania",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://scalar.seas.upenn.edu/publications/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "M. Ani Hsieh",
+          "role": "Principal Investigator",
+          "source_url": "https://scalar.seas.upenn.edu/publications/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://scalar.seas.upenn.edu/publications/",
+        "identity_source": "https://scalar.seas.upenn.edu/publications/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D2",
+        "D6",
+        "D14"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究可扩展自主机器人、运动规划和协同系统。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:ut-austin-larg",
+      "display_name": "UT Austin Learning Agents Research Group",
+      "short_name": "UT Austin Learning Agents Research Group",
+      "slug": "ut-austin-larg",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "UT Austin LARG"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-texas-at-austin",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://www.cs.utexas.edu/~pstone/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Peter Stone",
+          "role": "Principal Investigator",
+          "source_url": "https://www.cs.utexas.edu/~pstone/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://www.cs.utexas.edu/~pstone/research.shtml",
+        "identity_source": "https://www.cs.utexas.edu/~pstone/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D6",
+        "D7",
+        "D8",
+        "D14"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究学习智能体、机器人导航与多智能体协作。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:bristol-nathan-lepora",
+      "display_name": "University of Bristol Nathan Lepora Research Group",
+      "short_name": "University of Bristol Nathan Lepora Research Group",
+      "slug": "bristol-nathan-lepora",
+      "entity_type": "research_group",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Europe",
+      "country": "United Kingdom",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-bristol",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://lepora.com/about/"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Nathan Lepora",
+          "role": "Principal Investigator",
+          "source_url": "https://lepora.com/about/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://lepora.com/about/",
+        "publications": "https://lepora.com/papers/"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D8",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究触觉机器人、灵巧操作与学习。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。",
+        "Bristol Robotics Laboratory 的 Dexterous Robotics 专题包含多个 PI；本节点仅跟踪 Nathan Lepora 组。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。",
+      "name_basis": "normalized_pi_group_not_entire_bristol_dexterous_robotics_theme"
+    },
+    {
+      "organization_id": "org:uva-live",
+      "display_name": "University of Virginia Learning and Interactive Robotics Lab",
+      "short_name": "University of Virginia Learning and Interactive Robotics Lab",
+      "slug": "uva-live",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "North America",
+      "country": "United States",
+      "aliases": [
+        "UVA LIvE Lab"
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:university-of-virginia",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://live-robotics-uva.github.io/data/team.json"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Yen-Ling Kuo",
+          "role": "Principal Investigator",
+          "source_url": "https://live-robotics-uva.github.io/data/team.json",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://live-robotics-uva.github.io/",
+        "people": "https://live-robotics-uva.github.io/team.html",
+        "publications": "https://live-robotics-uva.github.io/publications.html"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D2",
+        "D7",
+        "D11"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究学习与交互机器人、物体关系和可泛化操作。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    },
+    {
+      "organization_id": "org:saitama-tsuji",
+      "display_name": "Saitama University Tsuji Laboratory",
+      "short_name": "Saitama University Tsuji Laboratory",
+      "slug": "saitama-tsuji",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T1",
+      "startup_frontier": false,
+      "region": "Asia",
+      "country": "Japan",
+      "aliases": [],
+      "parent_relations": [
+        {
+          "parent_id": "org:saitama-university",
+          "relation": "part_of",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_url": "https://robotics.ees.saitama-u.ac.jp/members/tsuji_eng.html"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Toshiaki Tsuji",
+          "role": "Principal Investigator",
+          "source_url": "https://robotics.ees.saitama-u.ac.jp/members/tsuji_eng.html",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "official_urls": {
+        "home": "https://robotics.ees.saitama-u.ac.jp/eng/",
+        "leader_profile": "https://robotics.ees.saitama-u.ac.jp/members/tsuji_eng.html",
+        "publications": "https://robotics.ees.saitama-u.ac.jp/eng/publications.html"
+      },
+      "active_from": null,
+      "active_to": null,
+      "declared_direction_codes": [
+        "D4",
+        "D8",
+        "D15"
+      ],
+      "question_codes": [],
+      "disclosure_level": "high",
+      "status": "active",
+      "last_checked": "2026-09-05",
+      "last_changed": null,
+      "source_health": "unverified",
+      "summary_zh": "研究机器人运动控制、接触交互及模仿学习。",
+      "representative_updates": [],
+      "information_gaps": [
+        "本批仅核查公开身份及指定工作的归属，未运行自动来源健康检查；负责人和父子关系的准确生效日期未知时保留 null。"
+      ],
+      "admission_basis": "本批高信号队列存在至少一项可追溯相关工作；E 等级和趋势由独立规则计算，不由组织归属决定。"
+    }
+  ]
+}

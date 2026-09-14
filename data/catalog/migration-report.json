@@ -1,0 +1,46 @@
+{
+  "version": "3.1",
+  "generated_at": "2026-09-14",
+  "inputs": {
+    "works": 42083,
+    "preprints": 32786,
+    "publications": 12249,
+    "official-proceedings": 824,
+    "official-programs": 3161,
+    "papers": 3109,
+    "peer-review": 31,
+    "group-updates": 187
+  },
+  "outputs": {
+    "works": 42720,
+    "included": 9992,
+    "candidate": 7778,
+    "manual_review": 18133,
+    "excluded": 6817,
+    "manifestations": 49276,
+    "technical_reports": 19,
+    "technical_report_manifestations": 21,
+    "strict_peer_reviewed": 838,
+    "organizations": 200,
+    "t0_organizations": 69,
+    "t1_organizations": 62,
+    "events": 1155
+  },
+  "reconciliation": {
+    "v2_work_delta": 637,
+    "research_updates_without_work_after_migration": 0,
+    "included_without_primary_direction": 0,
+    "links_without_work": 0
+  },
+  "notes": [
+    "Existing source corpora are retained as immutable migration inputs.",
+    "Technical reports and other official research artifacts receive stable work IDs.",
+    "Current-employer inference is never used to rewrite historical attribution."
+  ],
+  "source_row_reconciliation": {
+    "mapped": 94426,
+    "event_only": 4,
+    "matched_report_archive": 1,
+    "matched_reviewed_identity": 16
+  }
+}

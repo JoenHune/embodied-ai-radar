@@ -1,0 +1,17 @@
+{
+  "checked_on": "2026-09-06",
+  "source": "GitHub Actions run metadata via gh run view",
+  "url": "https://github.com/JoenHune/embodied-ai-radar/actions/runs/32994514392",
+  "run_id": 32994514392,
+  "head_sha": "7ed6bedcd6bcdf8730e8012e28dcb81994176773",
+  "created_at": "2026-08-26T17:30:09Z",
+  "updated_at": "2026-08-26T17:31:57Z",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {"name": "build", "started_at": "2026-08-26T17:30:12Z", "completed_at": "2026-08-26T17:31:41Z", "conclusion": "success"},
+    {"name": "deploy", "started_at": "2026-08-26T17:31:46Z", "completed_at": "2026-08-26T17:31:56Z", "conclusion": "success"}
+  ],
+  "conservative_archive_available_by": "2026-08-26T17:31:56Z",
+  "scope": "The successful deployment references this exact commit containing the publisher-source content hashes. Cache byte hashes are checked separately. This does not date the original report paragraphs to their publisher's displayed article date, nor prove experimental results."
+}

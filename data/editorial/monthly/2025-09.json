@@ -1,0 +1,765 @@
+{
+  "month": "2025-09",
+  "claims": [
+    {
+      "title": "闭环纠错进入长时程操作方案",
+      "summary": "多项预印本将执行反馈、失败触发重规划或人工纠正轨迹纳入策略闭环；现有证据仅表明作者在各自任务设置中报告了恢复或成功改善，尚不能视为跨平台独立复现。",
+      "directions": [
+        "D1",
+        "D2",
+        "D4",
+        "D7",
+        "D8",
+        "D12",
+        "D13"
+      ],
+      "questions": [
+        "Q0",
+        "Q7"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.13903",
+        "arxiv:2509.24219",
+        "arxiv:2510.00154",
+        "doi:10.1109/tro.2026.3706552"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:claims:1"
+    },
+    {
+      "title": "跨本体适配采用多种接口",
+      "summary": "本月样本分别通过统一潜空间、构型等变动作解码、人类式接触表征和交互感知导航接口处理跨本体适配；任务与评测协议不同，不能直接比较优劣。",
+      "directions": [
+        "D1",
+        "D2",
+        "D4",
+        "D6",
+        "D8",
+        "D11"
+      ],
+      "questions": [
+        "Q1",
+        "Q2"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.01658",
+        "arxiv:2509.02055",
+        "arxiv:2509.14630",
+        "arxiv:2509.24661"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:claims:2"
+    },
+    {
+      "title": "触觉与力觉进入策略、验证和数据环节",
+      "summary": "样本展示了视觉触觉可供性、扭矩感知VLA、触觉奖励设计和带力矩信号的数据集，但仍缺统一硬件与任务条件下的受控模态消融。",
+      "directions": [
+        "D1",
+        "D4",
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D15"
+      ],
+      "questions": [
+        "Q0",
+        "Q3",
+        "Q4"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.03889",
+        "arxiv:2509.07445",
+        "arxiv:2509.07962",
+        "arxiv:2509.25032"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:claims:3"
+    },
+    {
+      "title": "仿真到真实迁移使用多类桥接机制",
+      "summary": "本月方法包括触觉策略蒸馏、深度掩码、语义分割接口、特权信息蒸馏和生成式域随机化；迁移效果均为作者在各自设置下的报告。",
+      "directions": [
+        "D4",
+        "D5",
+        "D8",
+        "D10",
+        "D15"
+      ],
+      "questions": [
+        "Q4"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.04970",
+        "arxiv:2509.07445",
+        "arxiv:2509.07978",
+        "arxiv:2509.12858",
+        "arxiv:2509.13731"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:claims:4"
+    },
+    {
+      "title": "多机器人研究聚焦拥挤、弱通信与任务依赖",
+      "summary": "相关样本覆盖拥挤环境中的优先级规划、弱通信下的任务重分配、多模态采样规划以及带任务前置关系的在线协调；验证环境从仿真到硬件不等。",
+      "directions": [
+        "D2",
+        "D14"
+      ],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2509.08859",
+        "arxiv:2509.19168",
+        "doi:10.1109/lra.2025.3587841",
+        "doi:10.1109/tro.2025.3613558"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:claims:5"
+    }
+  ],
+  "direction_summaries": [
+    {
+      "code": "D1",
+      "summary": "样本涵盖高效VLA、跨本体适配、三维占据监督、表征保持及闭环生成式推理，证据主体为预印本。",
+      "supporting_ids": [
+        "arxiv:2509.02055",
+        "arxiv:2509.04996",
+        "arxiv:2509.05578",
+        "arxiv:2509.11417",
+        "arxiv:2509.13903"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:1"
+    },
+    {
+      "code": "D2",
+      "summary": "分层认知、环境记忆、运动规划优化及反馈重规划并存，验证覆盖仿真、基准和部分真实环境。",
+      "supporting_ids": [
+        "arxiv:2509.01106",
+        "arxiv:2509.01658",
+        "arxiv:2509.08222",
+        "arxiv:2509.24235",
+        "arxiv:2510.00154"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:2"
+    },
+    {
+      "code": "D3",
+      "summary": "样本将动力学潜变量、视频生成或运动预测用于残差修正、闭环操作和动态双臂任务，但评测协议差异较大。",
+      "supporting_ids": [
+        "arxiv:2509.12562",
+        "arxiv:2509.13903",
+        "arxiv:2509.14889",
+        "arxiv:2509.17350"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:3"
+    },
+    {
+      "code": "D4",
+      "summary": "灵巧与接触操作覆盖流式策略、跨本体抓取、衣物操作、触觉手内操作及长时程双臂纠错。",
+      "supporting_ids": [
+        "arxiv:2509.01819",
+        "arxiv:2509.03889",
+        "arxiv:2509.07445",
+        "arxiv:2509.24661",
+        "doi:10.1109/tro.2026.3706552"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:4"
+    },
+    {
+      "code": "D5",
+      "summary": "运动与全身控制样本覆盖跨形态通用运动、真实人形控制、跌倒恢复及操作—移动联合控制。",
+      "supporting_ids": [
+        "arxiv:2509.01819",
+        "arxiv:2509.12858",
+        "arxiv:2509.13200",
+        "arxiv:2509.13534",
+        "arxiv:2509.16061"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:5"
+    },
+    {
+      "code": "D6",
+      "summary": "导航研究使用拓扑记忆、交互关键点、跨域深度特征和对象相对控制，并报告仿真或真实环境评测。",
+      "supporting_ids": [
+        "arxiv:2509.01364",
+        "arxiv:2509.01658",
+        "arxiv:2509.02983",
+        "arxiv:2509.09594"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:6"
+    },
+    {
+      "code": "D7",
+      "summary": "人机交互样本涵盖自然语言规划、共享控制、指向理解、社会导航评测与接触偏好适配；其中社会导航评测显示现有VLM仍有明显理解缺口。",
+      "supporting_ids": [
+        "arxiv:2509.01106",
+        "arxiv:2509.01996",
+        "arxiv:2509.08757",
+        "arxiv:2509.14967"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:7"
+    },
+    {
+      "code": "D8",
+      "summary": "策略学习覆盖模仿、强化学习、残差修正、自改进和跨本体泛化，是本月登记样本中覆盖较广的方向。",
+      "supporting_ids": [
+        "arxiv:2509.01819",
+        "arxiv:2509.04259",
+        "arxiv:2509.15155",
+        "arxiv:2509.18830",
+        "arxiv:2509.24219"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:8"
+    },
+    {
+      "code": "D9",
+      "summary": "数据引擎样本涉及遥操作、多模态人类意图、触觉示教和无动作标签视频学习；各工作对数据成本的定义并不统一。",
+      "supporting_ids": [
+        "arxiv:2509.01996",
+        "arxiv:2509.03889",
+        "arxiv:2509.04441",
+        "arxiv:2509.08226",
+        "event:first-publication:e940351254786461c1dc38d8"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:9"
+    },
+    {
+      "code": "D10",
+      "summary": "仿真与迁移方法涵盖域随机化、数字孪生、视觉掩码和仿真特权信息蒸馏，真实环境验证程度不一。",
+      "supporting_ids": [
+        "arxiv:2509.04970",
+        "arxiv:2509.07445",
+        "arxiv:2509.07978",
+        "arxiv:2509.12858",
+        "arxiv:2509.13731"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:10"
+    },
+    {
+      "code": "D11",
+      "summary": "动作相关表征包括三维占据、对象间可供性、稠密对应、场景图和构型感知空间推理。",
+      "supporting_ids": [
+        "arxiv:2509.03889",
+        "arxiv:2509.05578",
+        "arxiv:2509.06233",
+        "arxiv:2509.11895",
+        "arxiv:2509.14630"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:11"
+    },
+    {
+      "code": "D12",
+      "summary": "安全与可靠性样本覆盖分布外泛化、保守离线强化学习、风险感知控制、故障恢复基准及安全约束学习。",
+      "supporting_ids": [
+        "arxiv:2509.12081",
+        "arxiv:2509.13956",
+        "arxiv:2509.23312",
+        "arxiv:2509.25727",
+        "arxiv:2510.00154"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:12"
+    },
+    {
+      "code": "D13",
+      "summary": "持续与部署后学习主要通过在线强化学习、有效动作流形探索、失败后技能记忆和传感器实例迁移展开。",
+      "supporting_ids": [
+        "arxiv:2509.04259",
+        "arxiv:2509.18830",
+        "arxiv:2509.19292",
+        "arxiv:2509.24219"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:13"
+    },
+    {
+      "code": "D14",
+      "summary": "多机器人样本处理弱通信任务分配、拥挤环境规划、候选策略共享和带前置关系的任务协作。",
+      "supporting_ids": [
+        "arxiv:2509.08859",
+        "arxiv:2509.19168",
+        "arxiv:2509.24235",
+        "doi:10.1109/lra.2025.3587841",
+        "doi:10.1109/tro.2025.3613558"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:14"
+    },
+    {
+      "code": "D15",
+      "summary": "触觉、力觉与身体感知在衣物抓取、全尺寸人形迁移和移动操作数据集中作为辅助标签出现。",
+      "supporting_ids": [
+        "arxiv:2509.03889",
+        "arxiv:2509.12858",
+        "arxiv:2509.25032"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:direction_summaries:15"
+    }
+  ],
+  "question_summaries": [
+    {
+      "code": "Q0",
+      "summary": "闭环证据包括动态障碍反应、全局残差修正、失败后重规划及执行反馈；尚缺统一失败分类与跨任务对照。",
+      "supporting_ids": [
+        "arxiv:2509.06953",
+        "arxiv:2509.12562",
+        "arxiv:2509.13903",
+        "arxiv:2509.13956",
+        "arxiv:2510.00154"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:1"
+    },
+    {
+      "code": "Q1",
+      "summary": "接触中心表征包括人类式接触图、质量—接触预测、足地约束和全身多接触几何，但尚未形成统一的最小充分性检验。",
+      "supporting_ids": [
+        "arxiv:2509.24661",
+        "arxiv:2509.13534",
+        "doi:10.1109/lra.2025.3569117",
+        "doi:10.1109/lra.2025.3592136"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:2"
+    },
+    {
+      "code": "Q2",
+      "summary": "人类或自我中心数据被用于接触目标提取、跨域模仿和跨本体表征；现有摘要尚不足以回答固定真机预算下的净收益。",
+      "supporting_ids": [
+        "arxiv:2509.03889",
+        "arxiv:2509.24661",
+        "event:first-publication:b54aaa4a0fc435f8d0b9368a",
+        "doi:10.1109/tro.2026.3706552"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:3"
+    },
+    {
+      "code": "Q3",
+      "summary": "多模态研究展示视觉—触觉可供性、触觉反馈与力矩数据，但所提供摘要未披露统一任务条件下完整的视觉、力觉、触觉消融。",
+      "supporting_ids": [
+        "arxiv:2509.03889",
+        "arxiv:2509.07445",
+        "arxiv:2509.13126",
+        "arxiv:2509.18830",
+        "arxiv:2509.25032"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:4"
+    },
+    {
+      "code": "Q4",
+      "summary": "真实接触与仿真扩增通过域随机化、蒸馏、语义掩码和特权信息编码组合；跨研究协议差异使最优组合仍无法确定。",
+      "supporting_ids": [
+        "arxiv:2509.04970",
+        "arxiv:2509.07445",
+        "arxiv:2509.12858",
+        "arxiv:2509.13731",
+        "arxiv:2509.24219"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:5"
+    },
+    {
+      "code": "Q5",
+      "summary": "站位、支撑与操作的联合控制已在开门、搬运、全身拥抱和四足操作中出现，但任务与本体差异较大。",
+      "supporting_ids": [
+        "arxiv:2509.13200",
+        "arxiv:2509.13239",
+        "arxiv:2509.13534",
+        "arxiv:2509.16061"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:6"
+    },
+    {
+      "code": "Q6",
+      "summary": "候选后训练方案包括在线强化学习、两阶段自改进、主动探索和跨传感器迁移；旧技能保持与跨任务复用仍需共同基准。",
+      "supporting_ids": [
+        "arxiv:2509.04259",
+        "arxiv:2509.12618",
+        "arxiv:2509.15155",
+        "arxiv:2509.18830"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:7"
+    },
+    {
+      "code": "Q7",
+      "summary": "低人力纠正方案包括人工介入轨迹、失败触发重规划、热异常预测和零样本部署，但接管时长与持续监督成本披露不足。",
+      "supporting_ids": [
+        "arxiv:2509.12740",
+        "arxiv:2509.13731",
+        "arxiv:2510.00154",
+        "doi:10.1109/tro.2026.3706552"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:8"
+    },
+    {
+      "code": "Q8",
+      "summary": "硬件—算法接口涉及多模态自主载荷、VLA压缩、辅助机器人共设计需求和热状态数字孪生；尚缺受控硬件消融。",
+      "supporting_ids": [
+        "arxiv:2509.08510",
+        "arxiv:2509.09090",
+        "arxiv:2509.11793",
+        "arxiv:2509.12740"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:9"
+    },
+    {
+      "code": "Q9",
+      "summary": "该方向的已列入研究缺少截止时点可核验的版本原文，不能据此判断实验结果。",
+      "supporting_ids": [
+        "report:3cab02b64f72366edf68",
+        "upd-figure-gobig-20250918"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:10"
+    },
+    {
+      "code": "Q10",
+      "summary": "该方向的已列入研究缺少截止时点可核验的版本原文，不能据此判断实验结果。",
+      "supporting_ids": [
+        "report:3cab02b64f72366edf68",
+        "upd-figure-gobig-20250918"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:question_summaries:11"
+    }
+  ],
+  "organization_changes": [
+    {
+      "title": "Figure登记发布Project Go-Big",
+      "summary": "本月记录了Figure发布Project Go-Big技术报告的公司自报元数据；本条仅描述发布事件，不判断技术内容或实验效果。",
+      "directions": [
+        "D1",
+        "D3",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q9",
+        "Q10"
+      ],
+      "supporting_ids": [
+        "upd-figure-gobig-20250918"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:organization_changes:1"
+    },
+    {
+      "title": "EPFL LASA登记双臂规划论文事件",
+      "summary": "本月记录了该工作的预印本公开及同行评审论文事件；接收或登记元数据不等于独立复现。",
+      "directions": [
+        "D4",
+        "D7",
+        "D12"
+      ],
+      "questions": [
+        "Q0",
+        "Q3",
+        "Q7"
+      ],
+      "supporting_ids": [
+        "event:first-publication:80c066ee30a8a8e0e2d2dd6a",
+        "upd-academic-epfl-lasa-bimanual-planning"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:organization_changes:2"
+    }
+  ],
+  "counterevidence": [
+    {
+      "title": "社会导航VLM仍落后于较简单基线",
+      "summary": "SocialNav-SUB作者报告，表现最佳的VLM仍低于较简单的规则方法和人类共识基线，反驳了通用视觉语言能力已足以支撑社会导航理解的强判断。",
+      "directions": [
+        "D6",
+        "D7"
+      ],
+      "questions": [],
+      "supporting_ids": [
+        "arxiv:2509.08757"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:counterevidence:1"
+    },
+    {
+      "title": "首次执行与闭环恢复应分开评估",
+      "summary": "PhysicalAgent摘要报告物理试验的首次尝试成功有限，而迭代纠错后总体成功提高，说明单次执行表现不能替代闭环恢复评测。",
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "questions": [
+        "Q0"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.13903"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:counterevidence:2"
+    }
+  ],
+  "limitations": [
+    "统计反映已登记公开来源的覆盖，不能视为全部研究工作的普查。",
+    "摘要和公司披露不能替代全文实验核验；同行评审接收也不等于独立复现。",
+    "单月样本只能描述本月已登记研究；子主题缺少可比历史证据时，不能断言研究转向或首次开始。",
+    "严格同行评审计数为零仅表示本库在截止时点尚未核验到该样本的正式评审记录，不表示本月不存在同行评审研究。",
+    "部分研究缺少截止时点可用的版本原文；其当前标题只用于识别，不能用后续摘要、作者或中文说明推断历史实验。",
+    "部分公司报告或项目网页尚无内容与时间绑定的正文档案；报告标注发布日期不证明当前网页全文当时已存在，旧中文摘要不能替代原文。"
+  ],
+  "watchlist": [
+    {
+      "title": "闭环纠错是否保持旧技能",
+      "summary": "后续需在相同数据与计算预算下比较新任务改善、旧技能回归和人工接管成本。",
+      "directions": [
+        "D8",
+        "D13"
+      ],
+      "questions": [
+        "Q6",
+        "Q7"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.04259",
+        "arxiv:2509.15155",
+        "arxiv:2509.19292",
+        "doi:10.1109/tro.2026.3706552"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:watchlist:1"
+    },
+    {
+      "title": "触觉与力觉收益能否跨硬件复现",
+      "summary": "需要统一控制频率、传感器布置和任务条件，比较视觉、触觉、扭矩及其组合。",
+      "directions": [
+        "D4",
+        "D15"
+      ],
+      "questions": [
+        "Q3"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.03889",
+        "arxiv:2509.07445",
+        "arxiv:2509.18830"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:watchlist:2"
+    },
+    {
+      "title": "人类数据能否在固定真机预算下提升执行能力",
+      "summary": "需区分视觉表征收益与最终动作策略收益，并披露跨本体适配所需机器人数据。",
+      "directions": [
+        "D1",
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.24661",
+        "event:first-publication:b54aaa4a0fc435f8d0b9368a",
+        "event:first-publication:e940351254786461c1dc38d8"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:watchlist:3"
+    },
+    {
+      "title": "VLA压缩的端侧收益能否保持闭环表现",
+      "summary": "后续评测需同时披露真实机器人端侧时延、闭环频率、失败类型与任务表现，以判断压缩加速是否转化为部署收益。",
+      "directions": [
+        "D1"
+      ],
+      "questions": [
+        "Q8"
+      ],
+      "supporting_ids": [
+        "arxiv:2509.09090"
+      ],
+      "counterevidence_ids": [],
+      "numeric_claims": [],
+      "claim_id": "claim:2025-09:llm:watchlist:4"
+    }
+  ],
+  "localizations": [
+    {
+      "work_id": "arxiv:2509.01106",
+      "title_zh": "Robix：面向机器人交互、推理与规划的统一模型",
+      "summary_zh": "Robix在单一视觉语言架构中统一高层推理、任务规划与自然语言交互，并以分层控制器执行原子动作。",
+      "keywords_zh": [
+        "具身推理",
+        "任务规划",
+        "人机交互",
+        "长时程任务"
+      ],
+      "source_ids": [
+        "source:version-text:29c8becbd5632e3130542dd3"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.01364",
+      "title_zh": "TopoNav：以拓扑图赋能高级目标导航",
+      "summary_zh": "TopoNav持续构建和更新拓扑图作为空间记忆，用于积累场景连接、邻接与语义信息。",
+      "keywords_zh": [
+        "目标导航",
+        "拓扑图",
+        "空间记忆",
+        "长时程导航"
+      ],
+      "source_ids": [
+        "source:version-text:aecbee93aa37f9671a813479"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.01658",
+      "title_zh": "MoTo：面向通用移动操作的零样本即插即用交互感知导航",
+      "summary_zh": "MoTo为现成操作基础模型增加交互感知导航，通过多视角关键点和轨迹优化生成机器人停靠位置。",
+      "keywords_zh": [
+        "移动操作",
+        "零样本",
+        "交互感知导航",
+        "视觉语言模型"
+      ],
+      "source_ids": [
+        "source:version-text:e60dd6d76a4a5b10837d0785"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.01819",
+      "title_zh": "ManiFlow：通过一致性流训练实现通用机器人操作策略",
+      "summary_zh": "ManiFlow以一致性训练的流匹配生成多模态条件动作，覆盖单臂、双臂和人形机器人操作设置。",
+      "keywords_zh": [
+        "模仿学习",
+        "流匹配",
+        "多模态策略",
+        "灵巧操作"
+      ],
+      "source_ids": [
+        "source:version-text:e93fb72a3f820395c29135ef"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.07445",
+      "title_zh": "Text2Touch：使用大语言模型设计奖励函数的触觉手内操作",
+      "summary_zh": "Text2Touch将大语言模型生成的奖励用于多轴手内旋转，并通过仿真到真实蒸馏迁移至带触觉的灵巧手。",
+      "keywords_zh": [
+        "触觉操作",
+        "奖励设计",
+        "手内旋转",
+        "仿真到真实"
+      ],
+      "source_ids": [
+        "source:version-text:872f5c686ac6f58fa13a4a7b"
+      ]
+    },
+    {
+      "work_id": "arxiv:2509.24661",
+      "title_zh": "CEDex：基于类人接触表征的大规模跨本体灵巧抓取生成",
+      "summary_zh": "CEDex对齐类人接触表征与不同机器人手的运动学模型，用于生成和优化跨本体抓取。",
+      "keywords_zh": [
+        "跨本体",
+        "灵巧抓取",
+        "接触表征",
+        "运动学对齐"
+      ],
+      "source_ids": [
+        "source:version-text:c79dda60a557deea8ae3a74b"
+      ]
+    },
+    {
+      "work_id": "doi:10.1109/lra.2024.3416796",
+      "title_zh": "双阶段情景记忆引导的机器人技能深度强化学习",
+      "summary_zh": "该方法以情景记忆引导动作决策并通过记忆回溯生成奖励，用于加速机器人操作技能学习。",
+      "keywords_zh": [
+        "情景记忆",
+        "深度强化学习",
+        "稀疏奖励",
+        "机器人技能"
+      ],
+      "source_ids": [
+        "source:01482235e9a440d69279"
+      ]
+    }
+  ],
+  "signal_assessments": [],
+  "schema_version": "3",
+  "status": "complete",
+  "generated_at": "2026-09-06T07:15:06Z",
+  "model": "gpt-5.6-sol",
+  "input_digest": "80605741773883af469b189148c4c3537383c87a50043eb2886238c91d7a86ed",
+  "response_id": "resp_0973896c3c710d4b016a9d13dbfedc87d0963fe6effd98585d",
+  "failure": null,
+  "sampling": {
+    "monthly_included_works": 398,
+    "selected_works": 98,
+    "selected_events": 25,
+    "per_direction_clusters": 8,
+    "per_question_clusters": 4
+  },
+  "localization_work_ids": [
+    "arxiv:2509.01106",
+    "arxiv:2509.01364",
+    "arxiv:2509.01658",
+    "arxiv:2509.01819",
+    "arxiv:2509.07445",
+    "arxiv:2509.24661",
+    "doi:10.1109/lra.2024.3416796"
+  ],
+  "signal_evidence_record_ids": []
+}

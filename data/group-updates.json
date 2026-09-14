@@ -4539,6 +4539,463 @@
       "first_seen_at": "2026-09-07",
       "strict_peer_reviewed": false,
       "curated": false
+    },
+    {
+      "event_id": "upd-figure-nscale-20260903",
+      "organization_id": "org:figure-ai",
+      "event_type": "strategic_partnership",
+      "artifact_class": "deployment_strategy_observation",
+      "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+      "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+      "official_source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+      "published_at": "2026-09-03",
+      "date_precision": "day",
+      "first_public_date": "2026-09-03",
+      "first_public_date_precision": "day",
+      "first_public_date_scope": "this_publication_event",
+      "observed_at": "2026-09-14",
+      "source_type": "official_group_page",
+      "attribution_grade": "G1",
+      "claim_status": "official_first_party_verified_publication_not_independently_validated",
+      "independent_validation": false,
+      "summary_zh": "Figure宣布Nscale算力合作：计划自2027年下半年起部署最多10万张Vera Rubin GPU，用于Helix训练；是未来算力承诺，不是已投入使用的训练集群。",
+      "related_paper_ids": [],
+      "work_id": null,
+      "strict_peer_reviewed": false,
+      "counts_as_new_paper": false,
+      "counts_as_new_model": false,
+      "open_assets": [],
+      "hardware_evidence": [
+        {
+          "hardware": "NVIDIA Vera Rubin GPUs",
+          "role": "planned_training_compute",
+          "quantity_upper_bound": 100000,
+          "planned_start": "2027-H2",
+          "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+          "status": "announced_future_commitment_not_current_deployment"
+        }
+      ],
+      "limitations_zh": [
+        "合作公告未提供新增Helix权重、独立技术报告或可复现评测；不得记作9月模型首发。",
+        "最多10万GPU为计划上限，初期部署面向2027年下半年，不是当前拥有量。"
+      ],
+      "research_eligible": false,
+      "evidence_lane": "deployment_strategy",
+      "organization_evidence": [
+        {
+          "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+          "basis_zh": "Figure官方新闻页以公司第一人称公告，附Figure、Nscale、NVIDIA负责人表述。"
+        }
+      ],
+      "date_evidence": [
+        {
+          "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+          "basis": "page_displayed_2026-09-03"
+        }
+      ],
+      "update_id": "upd-figure-nscale-20260903",
+      "update_type": "strategic_partnership",
+      "evidence_grade": "G1",
+      "evidence_layer": "S",
+      "review_status": "verified",
+      "curated": true,
+      "original_research_eligible": false,
+      "observed_at_precision": "day",
+      "first_seen_at": "2026-09-14"
+    },
+    {
+      "event_id": "upd-rai-q2rl-blog-20260908",
+      "organization_id": "org:rai-institute",
+      "event_type": "research_explainer",
+      "artifact_class": "research_blog",
+      "title": "Q2RL: Reinforcement Learning to Improve Beyond Behavior Cloning",
+      "url": "https://rai-inst.com/resources/blog/q2rl-reinforcement-learning-to-improve-beyond-behavior-cloning/",
+      "official_source_url": "https://rai-inst.com/resources/blog/q2rl-reinforcement-learning-to-improve-beyond-behavior-cloning/",
+      "published_at": "2026-09-08",
+      "date_precision": "day",
+      "first_public_date": "2026-09-08",
+      "first_public_date_precision": "day",
+      "first_public_date_scope": "this_publication_event",
+      "observed_at": "2026-09-14",
+      "source_type": "official_group_page",
+      "attribution_grade": "G1",
+      "claim_status": "official_first_party_verified_publication_not_independently_validated",
+      "independent_validation": false,
+      "summary_zh": "RAI对Q2RL做官方技术解读：从行为克隆策略估计Q值，再由冻结BC与可学习RL的Q值选择动作，缓解在线强化学习的遗忘。新增的是9月解读，论文首发在5月。",
+      "related_paper_ids": [
+        "arxiv:2605.05172"
+      ],
+      "work_id": "arxiv:2605.05172",
+      "strict_peer_reviewed": false,
+      "counts_as_new_paper": false,
+      "counts_as_new_model": false,
+      "open_assets": [
+        {
+          "kind": "code",
+          "url": "https://github.com/rai-opensource/q2rl",
+          "first_public_date": "2026-05-07",
+          "first_public_date_precision": "day",
+          "new_in_window": false
+        }
+      ],
+      "hardware_evidence": [
+        {
+          "hardware": "Franka Panda",
+          "role": "7-DOF real-robot arm",
+          "source_url": "https://rai-inst.com/resources/blog/q2rl-reinforcement-learning-to-improve-beyond-behavior-cloning/"
+        },
+        {
+          "hardware": "Robotiq 2F-85",
+          "role": "gripper",
+          "source_url": "https://q2rl.rai-inst.com/"
+        },
+        {
+          "hardware": "workspace and wrist RGB cameras",
+          "role": "policy observation",
+          "source_url": "https://q2rl.rai-inst.com/"
+        }
+      ],
+      "limitations_zh": [
+        "要求BC策略能够提供动作似然和熵；不自动适配所有策略类别。",
+        "项目页对pipe assembly列2.5小时，博客/摘要概括1–2小时；不能给所有任务统一写1–2小时。",
+        "性能来自作者的有限任务实验；不等同独立复现或生产线可靠性。",
+        "仓库已有arxiv:2605.05172，此项只导入为链接既有论文的事件。"
+      ],
+      "research_eligible": false,
+      "evidence_lane": "research_update_not_first_release",
+      "related_work_first_public_date": "2026-05-06",
+      "related_work_first_public_date_precision": "day",
+      "organization_evidence": [
+        {
+          "url": "https://q2rl.rai-inst.com/",
+          "basis_zh": "作者署名直接列Robotics and AI Institute、Brown University、Northeastern University；RAI官网正式介绍。"
+        }
+      ],
+      "date_evidence": [
+        {
+          "url": "https://rai-inst.com/resources/blog/q2rl-reinforcement-learning-to-improve-beyond-behavior-cloning/",
+          "basis": "page_displayed_2026-09-08"
+        },
+        {
+          "url": "https://arxiv.org/abs/2605.05172",
+          "basis": "v1_2026-05-06T17:40:11Z_v3_2026-06-27"
+        },
+        {
+          "url": "https://github.com/rai-opensource/q2rl",
+          "basis": "README_changelog_initial_public_release_2026-05-07_bugfix_2026-07-01"
+        }
+      ],
+      "dedup": {
+        "status": "existing_related_work_new_event",
+        "existing_work_id": "arxiv:2605.05172",
+        "existing_path": "data/catalog/works/01.jsonl",
+        "url_match_in_catalog": false
+      },
+      "update_id": "upd-rai-q2rl-blog-20260908",
+      "update_type": "research_explainer",
+      "evidence_grade": "G1",
+      "evidence_layer": "S",
+      "review_status": "verified",
+      "curated": true,
+      "original_research_eligible": true,
+      "observed_at_precision": "day",
+      "first_seen_at": "2026-09-14"
+    },
+    {
+      "event_id": "upd-skild-deployment-20260910",
+      "organization_id": "org:skild-ai",
+      "event_type": "deployment_update",
+      "artifact_class": "deployment_strategy_observation",
+      "title": "The Hidden Pillar of Robotics",
+      "url": "https://www.skild.ai/blogs/skild-crosses-100m-arr",
+      "official_source_url": "https://www.skild.ai/blogs/skild-crosses-100m-arr",
+      "published_at": "2026-09-10",
+      "date_precision": "day",
+      "first_public_date": "2026-09-10",
+      "first_public_date_precision": "day",
+      "first_public_date_scope": "this_publication_event",
+      "observed_at": "2026-09-14",
+      "source_type": "official_group_page",
+      "attribution_grade": "G1",
+      "claim_status": "official_first_party_verified_publication_not_independently_validated",
+      "independent_validation": false,
+      "summary_zh": "Skild披露超过60家付费客户、年化经常性收入运行率超过1亿美元，并描述与NVIDIA/Foxconn的双臂装配工作及部署数据回流策略。收入与部署规模均属公司自报。",
+      "related_paper_ids": [],
+      "work_id": "artifact:a24af581bcfd62d9f87e",
+      "strict_peer_reviewed": false,
+      "counts_as_new_paper": false,
+      "counts_as_new_model": false,
+      "open_assets": [],
+      "hardware_evidence": [
+        {
+          "hardware": "dual-arm manipulators",
+          "role": "Blackwell system precision assembly with NVIDIA and Foxconn",
+          "model": null,
+          "status": "company_reported_deploying",
+          "source_url": "https://www.skild.ai/blogs/skild-crosses-100m-arr"
+        }
+      ],
+      "limitations_zh": [
+        "ARR是运行率，不能等同全年已确认收入；本次未独立核验客户合同或财务。",
+        "S1官方博客索引注明2026-08-18，正文引用明确August 2026；不得被9月文章的相对日期措辞误导为9月首发。",
+        "住友线束为推进部署、三井厨房为试点，不能统一写成已量产部署。"
+      ],
+      "research_eligible": false,
+      "evidence_lane": "deployment_strategy",
+      "related_model": "S1",
+      "related_work_first_public_date": "2026-08-18",
+      "related_work_first_public_date_precision": "day",
+      "organization_evidence": [
+        {
+          "url": "https://www.skild.ai/blogs/skild-crosses-100m-arr",
+          "basis_zh": "Skild官方站点文章由两位联合创始人署名。"
+        }
+      ],
+      "report_metrics": [
+        {
+          "metric": "paying_customers",
+          "operator": ">=",
+          "value": 60,
+          "basis": "company_self_report"
+        },
+        {
+          "metric": "ARR_run_rate_USD",
+          "operator": ">",
+          "value": 100000000,
+          "basis": "company_self_report_not_audited_annual_revenue"
+        }
+      ],
+      "date_evidence": [
+        {
+          "url": "https://www.skild.ai/blogs/skild-crosses-100m-arr",
+          "basis": "page_displayed_2026-09-10"
+        },
+        {
+          "url": "https://www.skild.ai/blogs",
+          "basis": "S1_index_2026-08-18"
+        },
+        {
+          "url": "https://www.skild.ai/blogs/s1",
+          "basis": "citation_August_2026"
+        }
+      ],
+      "dedup": {
+        "status": "existing_related_model_new_event",
+        "existing_work_id": "artifact:a24af581bcfd62d9f87e",
+        "url_match_in_catalog": false
+      },
+      "update_id": "upd-skild-deployment-20260910",
+      "update_type": "deployment_update",
+      "evidence_grade": "G1",
+      "evidence_layer": "S",
+      "review_status": "verified",
+      "curated": true,
+      "original_research_eligible": false,
+      "observed_at_precision": "day",
+      "first_seen_at": "2026-09-14"
+    },
+    {
+      "event_id": "upd-nvidia-skild-stack-20260910",
+      "organization_id": "org:nvidia",
+      "event_type": "technology_deployment_update",
+      "artifact_class": "deployment_strategy_observation",
+      "title": "Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video",
+      "url": "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/",
+      "official_source_url": "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/",
+      "published_at": "2026-09-10",
+      "date_precision": "day",
+      "first_public_date": "2026-09-10",
+      "first_public_date_precision": "day",
+      "first_public_date_scope": "this_publication_event",
+      "observed_at": "2026-09-14",
+      "source_type": "official_group_page",
+      "attribution_grade": "G1",
+      "claim_status": "official_first_party_verified_publication_not_independently_validated",
+      "independent_validation": false,
+      "summary_zh": "NVIDIA官方补充Skild技术栈：Cosmos/Curator用于生成与整理数据，Isaac Sim/Lab用于仿真和RL，TensorRT用于推理优化；双方开发Newton接触仿真求解器，发布仍属未来计划。",
+      "related_paper_ids": [],
+      "work_id": null,
+      "strict_peer_reviewed": false,
+      "counts_as_new_paper": false,
+      "counts_as_new_model": false,
+      "open_assets": [],
+      "hardware_evidence": [],
+      "limitations_zh": [
+        "新的GPU加速仿真求解器为soon发布，不是本窗口已开放代码。",
+        "报道把S1描述为上周推出，但S1自身索引与引用均指向8月；S1首发不计入9月。",
+        "66%为所述测试的逐步成功率，不是10分钟全任务成功率；合作方宣传亦非独立复现。"
+      ],
+      "research_eligible": false,
+      "evidence_lane": "deployment_strategy",
+      "associated_organization_ids": [
+        "org:skild-ai"
+      ],
+      "organization_evidence": [
+        {
+          "url": "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/",
+          "basis_zh": "NVIDIA官方客户合作文章直接说明Skild与NVIDIA合作；未明确署名GEAR、SRL或Cosmos Lab，故不强制向子实验室归属。"
+        }
+      ],
+      "technical_stack_tags": [
+        "Cosmos",
+        "Cosmos Curator",
+        "Isaac Sim",
+        "Isaac Lab",
+        "Newton",
+        "Nsight",
+        "TensorRT"
+      ],
+      "date_evidence": [
+        {
+          "url": "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/",
+          "basis": "page_displayed_2026-09-10"
+        }
+      ],
+      "update_id": "upd-nvidia-skild-stack-20260910",
+      "update_type": "technology_deployment_update",
+      "evidence_grade": "G1",
+      "evidence_layer": "S",
+      "review_status": "verified",
+      "curated": true,
+      "original_research_eligible": false,
+      "observed_at_precision": "day",
+      "first_seen_at": "2026-09-14"
+    },
+    {
+      "event_id": "upd-genesis-world-v140-20260906",
+      "organization_id": "org:genesis-ai",
+      "event_type": "code_release",
+      "artifact_class": "software_release",
+      "title": "Genesis World v1.4.0",
+      "url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.4.0",
+      "official_source_url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.4.0",
+      "published_at": "2026-09-06",
+      "date_precision": "day",
+      "first_public_date": "2026-09-06",
+      "first_public_date_precision": "day",
+      "first_public_date_scope": "this_publication_event",
+      "observed_at": "2026-09-14",
+      "source_type": "official_repository_release",
+      "attribution_grade": "G1",
+      "claim_status": "official_first_party_verified_publication_not_independently_validated",
+      "independent_validation": false,
+      "summary_zh": "增加场景和完整轨迹的独立归档、逐位一致回放，便于复现问题；分离实体静态描述与运行时状态，并包含破坏性API调整。",
+      "related_paper_ids": [],
+      "work_id": null,
+      "strict_peer_reviewed": false,
+      "counts_as_new_paper": false,
+      "counts_as_new_model": false,
+      "open_assets": [
+        {
+          "kind": "code",
+          "url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.4.0",
+          "new_in_window": true
+        }
+      ],
+      "hardware_evidence": [],
+      "limitations_zh": [
+        "独立归档/回放目前仅支持刚体求解器；升级存在破坏性变更。",
+        "这是仿真软件版本更新，不是新的机器人基础模型、数据集或论文。"
+      ],
+      "research_eligible": false,
+      "evidence_lane": "code",
+      "published_at_timestamp": "2026-09-06T18:42:29Z",
+      "artifact_version": "v1.4.0",
+      "attribution_relation": "officially_supports_development",
+      "organization_evidence": [
+        {
+          "url": "https://github.com/Genesis-Embodied-AI/genesis-world",
+          "basis_zh": "README明确写明该学术起源项目现由Genesis AI正式支持开发；此处记录支持关系，不推断全部作者劳动归属公司。"
+        }
+      ],
+      "date_evidence": [
+        {
+          "url": "https://api.github.com/repos/Genesis-Embodied-AI/genesis-world/releases?per_page=5",
+          "basis": "GitHub_release_published_at",
+          "value": "2026-09-06T18:42:29Z"
+        }
+      ],
+      "dedup": {
+        "status": "new_release_event",
+        "url_match_in_catalog": false
+      },
+      "update_id": "upd-genesis-world-v140-20260906",
+      "update_type": "code_release",
+      "evidence_grade": "G1",
+      "evidence_layer": "S",
+      "review_status": "verified",
+      "curated": true,
+      "original_research_eligible": true,
+      "observed_at_precision": "day",
+      "first_seen_at": "2026-09-14"
+    },
+    {
+      "event_id": "upd-genesis-world-v141-20260912",
+      "organization_id": "org:genesis-ai",
+      "event_type": "code_release",
+      "artifact_class": "software_release",
+      "title": "Genesis World v1.4.1",
+      "url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.4.1",
+      "official_source_url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.4.1",
+      "published_at": "2026-09-12",
+      "date_precision": "day",
+      "first_public_date": "2026-09-12",
+      "first_public_date_precision": "day",
+      "first_public_date_scope": "this_publication_event",
+      "observed_at": "2026-09-14",
+      "source_type": "official_repository_release",
+      "attribution_grade": "G1",
+      "claim_status": "official_first_party_verified_publication_not_independently_validated",
+      "independent_validation": false,
+      "summary_zh": "优化CPU/GPU大规模、多岛与接触密集场景的约束求解性能，降低部分编译开销，并修正MJCF/glTF处理。",
+      "related_paper_ids": [],
+      "work_id": null,
+      "strict_peer_reviewed": false,
+      "counts_as_new_paper": false,
+      "counts_as_new_model": false,
+      "open_assets": [
+        {
+          "kind": "code",
+          "url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.4.1",
+          "new_in_window": true
+        }
+      ],
+      "hardware_evidence": [],
+      "limitations_zh": [
+        "性能表述来自维护者发布说明，本次未执行速度基准或机器人策略复现。",
+        "这是仿真软件版本更新，不是新的机器人基础模型、数据集或论文。"
+      ],
+      "research_eligible": false,
+      "evidence_lane": "code",
+      "published_at_timestamp": "2026-09-12T18:58:55Z",
+      "artifact_version": "v1.4.1",
+      "attribution_relation": "officially_supports_development",
+      "organization_evidence": [
+        {
+          "url": "https://github.com/Genesis-Embodied-AI/genesis-world",
+          "basis_zh": "README明确写明该学术起源项目现由Genesis AI正式支持开发；此处记录支持关系，不推断全部作者劳动归属公司。"
+        }
+      ],
+      "date_evidence": [
+        {
+          "url": "https://api.github.com/repos/Genesis-Embodied-AI/genesis-world/releases?per_page=5",
+          "basis": "GitHub_release_published_at",
+          "value": "2026-09-12T18:58:55Z"
+        }
+      ],
+      "dedup": {
+        "status": "new_release_event",
+        "url_match_in_catalog": false
+      },
+      "update_id": "upd-genesis-world-v141-20260912",
+      "update_type": "code_release",
+      "evidence_grade": "G1",
+      "evidence_layer": "S",
+      "review_status": "verified",
+      "curated": true,
+      "original_research_eligible": true,
+      "observed_at_precision": "day",
+      "first_seen_at": "2026-09-14"
     }
   ]
 }

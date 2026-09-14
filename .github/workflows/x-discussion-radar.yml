@@ -1,11 +1,8 @@
 name: X discussion radar
 
 on:
-  schedule:
-    # Four overlapping polls per day.  Recent Search only covers seven days.
-    - cron: '18 */6 * * *'
-    # Monday 04:30 Asia/Shanghai: finalize the previous Monday-Sunday week.
-    - cron: '30 20 * * 0'
+  # Social signals are an explicit opt-in. The research radar has no paid-X
+  # dependency and all scheduled writes are coordinated by weekly-groups.yml.
   workflow_dispatch:
     inputs:
       mode:
@@ -19,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: x-discussion-radar
+  group: radar-pages
   cancel-in-progress: false
 
 jobs:
@@ -59,8 +56,7 @@ jobs:
   weekly:
     needs: poll
     if: >-
-      github.event_name == 'workflow_dispatch' && (inputs.mode == 'weekly' || inputs.mode == 'both') ||
-      github.event_name == 'schedule' && github.event.schedule == '30 20 * * 0'
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'weekly' || inputs.mode == 'both')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -75,6 +71,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci
+      - run: python3 -m pip install -r requirements-v3.txt
       - name: Generate weekly discussion radar
         env:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
@@ -99,7 +96,7 @@ jobs:
             echo "Feishu X-radar secrets are not configured; running a non-publishing dry-run."
             python3 scripts/publish_x_weekly_to_feishu.py --dry-run
           fi
-      - name: Persist and deploy through the main Pages workflow
+      - name: Persist optional social snapshot
         run: |
           git config user.name "embodied-ai-radar-bot"
           git config user.email "actions@users.noreply.github.com"

@@ -1,0 +1,2928 @@
+{
+  "schema_version": "1",
+  "probe_id": "people-citation-probe-2026-09-06",
+  "generated_at": "2026-09-06T14:02:28Z",
+  "status": "partial_provider_snapshots_obtained",
+  "authority_mutated": false,
+  "production_import_approved": false,
+  "access": {
+    "api_keys_used": false,
+    "accounts_created": false,
+    "payments_made": false,
+    "google_scholar_scraped": false,
+    "rate_limit_bypass": false,
+    "semantic_scholar_stopped_after_first_429": true,
+    "data_api_requests": 3,
+    "unique_requested_canonical_works": 40
+  },
+  "input": {
+    "source": "docs/public/api/v1/people/index.json and verified_works in per-person API",
+    "dataset_version": "2e5403e328c06c2b3b0eeacf70bb304f8690dffd2b79e46373f1d9cca574c674",
+    "review_hash": "1bbf709cc3671bfbaba0e2045c9e532cb1810927afd51ae6041202310bf217ba",
+    "authority_hash": "1bbf709cc3671bfbaba0e2045c9e532cb1810927afd51ae6041202310bf217ba",
+    "generated_at": "2026-09-06T09:28:43Z",
+    "counts": {
+      "candidate_authorships": 1644,
+      "candidate_identity_persons": 1,
+      "persons": 32,
+      "persons_with_verified_work": 31,
+      "profile_verified_persons": 31,
+      "verified_authorships": 56,
+      "verified_included_works_window": 40
+    },
+    "window": {
+      "basis": "first_public_month_included_canonical_works_verified_authorship",
+      "cutoff": "2026-08-31",
+      "from": "2025-09",
+      "months": [
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "to": "2026-08"
+    },
+    "selection": "Only source-verified person-work links with in_complete_window=true; one query target per canonical work."
+  },
+  "documentation": [
+    {
+      "provider": "openalex",
+      "url": "https://help.openalex.org/api/authentication/",
+      "last_updated": "2026-08-19",
+      "accessed": "2026-09-06",
+      "finding": "官方现行帮助页允许无密钥基础查询；免费key提高额度。429可能表示日额度耗尽或超过请求速率，本探测不申请key、不重试限流。"
+    },
+    {
+      "provider": "openalex",
+      "url": "https://help.openalex.org/access/example-costs/",
+      "last_updated": "2026-08-09",
+      "accessed": "2026-09-06",
+      "finding": "官方列单实体ID/DOI查询免费、无key有每日免费预算。批量filter的名义操作成本从免费预算抵扣；本次没有账户付款。"
+    },
+    {
+      "provider": "semantic_scholar_graph",
+      "url": "https://api.semanticscholar.org/api-docs/",
+      "accessed": "2026-09-06",
+      "finding": "官方索引提供Academic Graph入口；Graph参考页面的Swagger加载未成功。API Overview与FAQ的正常网页读取返回403，未尝试绕过。下方唯一Graph数据请求返回429，并立即停止。"
+    }
+  ],
+  "summary": {
+    "requested": 40,
+    "openalex_exact_doi_matches": 32,
+    "openalex_missing_by_requested_doi": 8,
+    "openalex_identity_conflicts": 0,
+    "explicit_zero_counts": 30,
+    "positive_counts": [
+      {
+        "work_id": "arxiv:2510.02252",
+        "count": 1
+      },
+      {
+        "work_id": "doi:10.1126/scirobotics.aed4592",
+        "count": 3
+      }
+    ],
+    "semantic_scholar_count_snapshots": 0,
+    "openalex_query_complete": true,
+    "openalex_reported_operation_cost_usd": 0.0001,
+    "positive_count_interpretation": "仅提供者具体DOI记录的引用次数，不作为人物总影响力结论。"
+  },
+  "limitations": [
+    "这是一个有界免费可行性探测，不是持续采集服务或生产可用性保证。没有申请、使用或保存任何API密钥。",
+    "32条均为精确DOI匹配且标题规范化一致。OpenAlex中的零是该provider记录返回的数值；缺失8项保存null，绝不填零。",
+    "大多数目标使用arXiv DataCite DOI；提供者可能将正式发表版另建记录。因此不能声称本次数值包含canonical work所有版本的全部引用。",
+    "此快照是2026-09-06观察值，不能反推2026-08或更早月末引用数。provider publication_date不覆盖本库first_public_date。",
+    "多人共同署名可引用同一测量，但不得把多人行相加当全局引用；引用也可能包含同一引用者对多项work的重复计数。",
+    "引用数不证明外部采用、独立复现、贡献份额或研究质量；32个influence_evidence候选保持draft，等待显式导入审查。",
+    "仅对已核验person-work关系准备per-person适配；身份待核验或同名候选不能获得这些引用统计。",
+    "单篇与批量请求均成功不表示可以跳过完整性、来源URL及引文版本审查。Semantic Scholar未测得计数，不等于其未收录论文。"
+  ],
+  "probe_requests": [
+    {
+      "provider": "semantic_scholar_graph",
+      "work_id": "arxiv:2509.01819",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:2509.01819?fields=title,externalIds,citationCount,url,year",
+      "started_at": "2026-09-06T13:56:35.656Z",
+      "observed_at": "2026-09-06T13:56:36.055Z",
+      "http_status": 429,
+      "content_type": "application/json",
+      "retry_after": null,
+      "rate_limit_remaining": null,
+      "response": {
+        "message": "Too Many Requests. Please wait and try again or apply for a key for higher rate limits. https://www.semanticscholar.org/product/api#api-key-form",
+        "code": "429"
+      }
+    },
+    {
+      "provider": "openalex",
+      "work_id": "arxiv:2509.01819",
+      "url": "https://api.openalex.org/works/https://doi.org/10.48550/arXiv.2509.01819?select=id,doi,title,cited_by_count,publication_date",
+      "started_at": "2026-09-06T13:56:35.694Z",
+      "observed_at": "2026-09-06T13:56:37.011Z",
+      "http_status": 200,
+      "content_type": "application/json",
+      "retry_after": null,
+      "rate_limit_remaining": "999",
+      "response": {
+        "id": "https://openalex.org/W4417045284",
+        "doi": "https://doi.org/10.48550/arxiv.2509.01819",
+        "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+        "cited_by_count": 0,
+        "publication_date": "2025-09-01"
+      }
+    },
+    {
+      "provider": "openalex",
+      "request_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "started_at": "2026-09-06T13:58:33.687Z",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "http_status": 200,
+      "content_type": "application/json",
+      "rate_limit_remaining": "998",
+      "credits_used": "1",
+      "response": {
+        "meta": {
+          "count": 32,
+          "db_response_time_ms": 32,
+          "page": 1,
+          "per_page": 100,
+          "groups_count": null,
+          "x_query": {
+            "oql": "works where DOI is (\n    10.1126/scirobotics.aed4592 or 10.48550/arxiv.2509.01819\n    or 10.48550/arxiv.2509.04441 or 10.48550/arxiv.2509.06953\n    or 10.48550/arxiv.2509.11839 or 10.48550/arxiv.2509.13780\n    or 10.48550/arxiv.2509.16757 or 10.48550/arxiv.2509.18830\n    or 10.48550/arxiv.2509.23745 or 10.48550/arxiv.2510.02252\n    or 10.48550/arxiv.2510.10125 or 10.48550/arxiv.2510.14830\n    or 10.48550/arxiv.2510.14930 or 10.48550/arxiv.2510.17792\n    or 10.48550/arxiv.2511.02832 or 10.48550/arxiv.2511.15200\n    or 10.48550/arxiv.2511.16661 or 10.48550/arxiv.2512.15840\n    or 10.48550/arxiv.2601.00675 or 10.48550/arxiv.2601.03607\n    or 10.48550/arxiv.2601.12993 or 10.48550/arxiv.2602.08971\n    or 10.48550/arxiv.2602.09849 or 10.48550/arxiv.2602.10105\n    or 10.48550/arxiv.2602.16710 or 10.48550/arxiv.2602.21736\n    or 10.48550/arxiv.2603.03243 or 10.48550/arxiv.2603.12243\n    or 10.48550/arxiv.2603.22263 or 10.48550/arxiv.2603.22264\n    or 10.48550/arxiv.2603.26660 or 10.48550/arxiv.2604.11138\n    or 10.48550/arxiv.2604.23073 or 10.48550/arxiv.2605.17912\n    or 10.48550/arxiv.2605.22882 or 10.48550/arxiv.2605.29298\n    or 10.48550/arxiv.2606.12365 or 10.48550/arxiv.2606.17055\n    or 10.48550/arxiv.2607.15448 or 10.48550/arxiv.2608.09298\n  )",
+            "oqo": {
+              "get_rows": "works",
+              "filter_rows": [
+                {
+                  "join": "or",
+                  "filters": [
+                    {
+                      "column_id": "doi",
+                      "value": "10.1126/scirobotics.aed4592"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.01819"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.04441"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.06953"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.11839"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.13780"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.16757"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.18830"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2509.23745"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2510.02252"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2510.10125"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2510.14830"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2510.14930"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2510.17792"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2511.02832"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2511.15200"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2511.16661"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2512.15840"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2601.00675"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2601.03607"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2601.12993"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2602.08971"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2602.09849"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2602.10105"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2602.16710"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2602.21736"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2603.03243"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2603.12243"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2603.22263"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2603.22264"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2603.26660"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2604.11138"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2604.23073"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2605.17912"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2605.22882"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2605.29298"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2606.12365"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2606.17055"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2607.15448"
+                    },
+                    {
+                      "column_id": "doi",
+                      "value": "10.48550/arxiv.2608.09298"
+                    }
+                  ]
+                }
+              ]
+            },
+            "url": "/works?filter=doi:10.1126%2Fscirobotics.aed4592|10.48550%2Farxiv.2509.01819|10.48550%2Farxiv.2509.04441|10.48550%2Farxiv.2509.06953|10.48550%2Farxiv.2509.11839|10.48550%2Farxiv.2509.13780|10.48550%2Farxiv.2509.16757|10.48550%2Farxiv.2509.18830|10.48550%2Farxiv.2509.23745|10.48550%2Farxiv.2510.02252|10.48550%2Farxiv.2510.10125|10.48550%2Farxiv.2510.14830|10.48550%2Farxiv.2510.14930|10.48550%2Farxiv.2510.17792|10.48550%2Farxiv.2511.02832|10.48550%2Farxiv.2511.15200|10.48550%2Farxiv.2511.16661|10.48550%2Farxiv.2512.15840|10.48550%2Farxiv.2601.00675|10.48550%2Farxiv.2601.03607|10.48550%2Farxiv.2601.12993|10.48550%2Farxiv.2602.08971|10.48550%2Farxiv.2602.09849|10.48550%2Farxiv.2602.10105|10.48550%2Farxiv.2602.16710|10.48550%2Farxiv.2602.21736|10.48550%2Farxiv.2603.03243|10.48550%2Farxiv.2603.12243|10.48550%2Farxiv.2603.22263|10.48550%2Farxiv.2603.22264|10.48550%2Farxiv.2603.26660|10.48550%2Farxiv.2604.11138|10.48550%2Farxiv.2604.23073|10.48550%2Farxiv.2605.17912|10.48550%2Farxiv.2605.22882|10.48550%2Farxiv.2605.29298|10.48550%2Farxiv.2606.12365|10.48550%2Farxiv.2606.17055|10.48550%2Farxiv.2607.15448|10.48550%2Farxiv.2608.09298&per_page=100"
+          },
+          "cost_usd": 0.0001
+        },
+        "results": [
+          {
+            "id": "https://openalex.org/W7202294264",
+            "doi": "https://doi.org/10.1126/scirobotics.aed4592",
+            "title": "SONIC: Supersizing motion tracking for natural humanoid whole-body control",
+            "cited_by_count": 3,
+            "publication_date": "2026-08-12"
+          },
+          {
+            "id": "https://openalex.org/W4414927347",
+            "doi": "https://doi.org/10.48550/arxiv.2510.02252",
+            "title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
+            "cited_by_count": 1,
+            "publication_date": "2025-10-02"
+          },
+          {
+            "id": "https://openalex.org/W4415057828",
+            "doi": "https://doi.org/10.48550/arxiv.2509.06953",
+            "title": "Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments",
+            "cited_by_count": 0,
+            "publication_date": "2025-09-08"
+          },
+          {
+            "id": "https://openalex.org/W4415058782",
+            "doi": "https://doi.org/10.48550/arxiv.2509.04441",
+            "title": "DEXOP: A Device for Robotic Transfer of Dexterous Human Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2025-09-04"
+          },
+          {
+            "id": "https://openalex.org/W4415251265",
+            "doi": "https://doi.org/10.48550/arxiv.2509.16757",
+            "title": "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos",
+            "cited_by_count": 0,
+            "publication_date": "2025-09-20"
+          },
+          {
+            "id": "https://openalex.org/W4415273528",
+            "doi": "https://doi.org/10.48550/arxiv.2510.10125",
+            "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2025-10-11"
+          },
+          {
+            "id": "https://openalex.org/W4415947131",
+            "doi": "https://doi.org/10.48550/arxiv.2510.14930",
+            "title": "VT-Refine: Learning Bimanual Assembly with Visuo-Tactile Feedback via Simulation Fine-Tuning",
+            "cited_by_count": 0,
+            "publication_date": "2025-10-16"
+          },
+          {
+            "id": "https://openalex.org/W4415966876",
+            "doi": "https://doi.org/10.48550/arxiv.2510.17792",
+            "title": "SoftMimic: Learning Compliant Whole-body Control from Examples",
+            "cited_by_count": 0,
+            "publication_date": "2025-10-20"
+          },
+          {
+            "id": "https://openalex.org/W4416258854",
+            "doi": "https://doi.org/10.48550/arxiv.2509.11839",
+            "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+            "cited_by_count": 0,
+            "publication_date": "2025-09-15"
+          },
+          {
+            "id": "https://openalex.org/W4416550724",
+            "doi": "https://doi.org/10.48550/arxiv.2511.16661",
+            "title": "Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations",
+            "cited_by_count": 0,
+            "publication_date": "2025-11-20"
+          },
+          {
+            "id": "https://openalex.org/W4417045284",
+            "doi": "https://doi.org/10.48550/arxiv.2509.01819",
+            "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+            "cited_by_count": 0,
+            "publication_date": "2025-09-01"
+          },
+          {
+            "id": "https://openalex.org/W4417478927",
+            "doi": "https://doi.org/10.48550/arxiv.2509.13780",
+            "title": "Behavior Foundation Model for Humanoid Robots",
+            "cited_by_count": 0,
+            "publication_date": "2025-09-17"
+          },
+          {
+            "id": "https://openalex.org/W4417534140",
+            "doi": "https://doi.org/10.48550/arxiv.2512.15840",
+            "title": "Large Video Planner Enables Generalizable Robot Control",
+            "cited_by_count": 0,
+            "publication_date": "2025-12-17"
+          },
+          {
+            "id": "https://openalex.org/W7103984447",
+            "doi": "https://doi.org/10.48550/arxiv.2511.02832",
+            "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+            "cited_by_count": 0,
+            "publication_date": "2025-11-04"
+          },
+          {
+            "id": "https://openalex.org/W7106466341",
+            "doi": "https://doi.org/10.48550/arxiv.2511.15200",
+            "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2025-11-19"
+          },
+          {
+            "id": "https://openalex.org/W7118501563",
+            "doi": "https://doi.org/10.48550/arxiv.2601.00675",
+            "title": "RoboReward: General-Purpose Vision-Language Reward Models for Robotics",
+            "cited_by_count": 0,
+            "publication_date": "2026-01-02"
+          },
+          {
+            "id": "https://openalex.org/W7119532450",
+            "doi": "https://doi.org/10.48550/arxiv.2601.03607",
+            "title": "Locomotion Beyond Feet",
+            "cited_by_count": 0,
+            "publication_date": "2026-01-07"
+          },
+          {
+            "id": "https://openalex.org/W7125276686",
+            "doi": "https://doi.org/10.48550/arxiv.2601.12993",
+            "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+            "cited_by_count": 0,
+            "publication_date": "2026-01-19"
+          },
+          {
+            "id": "https://openalex.org/W7130590664",
+            "doi": "https://doi.org/10.48550/arxiv.2602.16710",
+            "title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+            "cited_by_count": 0,
+            "publication_date": "2026-02-18"
+          },
+          {
+            "id": "https://openalex.org/W7131631602",
+            "doi": "https://doi.org/10.48550/arxiv.2602.21736",
+            "title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild",
+            "cited_by_count": 0,
+            "publication_date": "2026-02-25"
+          },
+          {
+            "id": "https://openalex.org/W7135175122",
+            "doi": "https://doi.org/10.48550/arxiv.2603.12243",
+            "title": "HandelBot: Real-World Piano Playing via Fast Adaptation of Dexterous Robot Policies",
+            "cited_by_count": 0,
+            "publication_date": "2026-03-12"
+          },
+          {
+            "id": "https://openalex.org/W7140191134",
+            "doi": "https://doi.org/10.48550/arxiv.2603.22263",
+            "title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+            "cited_by_count": 0,
+            "publication_date": "2026-03-23"
+          },
+          {
+            "id": "https://openalex.org/W7140228196",
+            "doi": "https://doi.org/10.48550/arxiv.2603.22264",
+            "title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+            "cited_by_count": 0,
+            "publication_date": "2026-03-23"
+          },
+          {
+            "id": "https://openalex.org/W7143371339",
+            "doi": "https://doi.org/10.48550/arxiv.2603.26660",
+            "title": "Ruka-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning",
+            "cited_by_count": 0,
+            "publication_date": "2026-03-27"
+          },
+          {
+            "id": "https://openalex.org/W7157012058",
+            "doi": "https://doi.org/10.48550/arxiv.2604.23073",
+            "title": "RL Token: Bootstrapping Online RL with Vision-Language-Action Models",
+            "cited_by_count": 0,
+            "publication_date": "2026-04-24"
+          },
+          {
+            "id": "https://openalex.org/W7161692373",
+            "doi": "https://doi.org/10.48550/arxiv.2605.17912",
+            "title": "WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform",
+            "cited_by_count": 0,
+            "publication_date": "2026-05-18"
+          },
+          {
+            "id": "https://openalex.org/W7162293033",
+            "doi": "https://doi.org/10.48550/arxiv.2605.22882",
+            "title": "GEM-4D: Geometry-Enhanced Video World Models for Robot Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2026-05-20"
+          },
+          {
+            "id": "https://openalex.org/W7162757006",
+            "doi": "https://doi.org/10.48550/arxiv.2605.29298",
+            "title": "MonoDuo: Using One Robot Arm to Learn Bimanual Policies",
+            "cited_by_count": 0,
+            "publication_date": "2026-05-28"
+          },
+          {
+            "id": "https://openalex.org/W7164304316",
+            "doi": "https://doi.org/10.48550/arxiv.2606.12365",
+            "title": "Ambient Diffusion Policy: Imitation Learning from Suboptimal Data in Robotics",
+            "cited_by_count": 0,
+            "publication_date": "2026-06-10"
+          },
+          {
+            "id": "https://openalex.org/W7164883918",
+            "doi": "https://doi.org/10.48550/arxiv.2606.17055",
+            "title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2026-06-15"
+          },
+          {
+            "id": "https://openalex.org/W7169782790",
+            "doi": "https://doi.org/10.48550/arxiv.2607.15448",
+            "title": "VTAP Gripper: Synergizing Fingertip Sensing and a Visuo-Tactile Active Palm for Dexterous In-Hand Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2026-07-16"
+          },
+          {
+            "id": "https://openalex.org/W7202188028",
+            "doi": "https://doi.org/10.48550/arxiv.2608.09298",
+            "title": "WorldSimProbe: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation",
+            "cited_by_count": 0,
+            "publication_date": "2026-08-10"
+          }
+        ],
+        "group_by": []
+      }
+    }
+  ],
+  "records": [
+    {
+      "work_id": "arxiv:2510.14930",
+      "title": "VT-Refine: Learning Bimanual Assembly with Visuo-Tactile Feedback via Simulation Fine-Tuning",
+      "people": [
+        "person:binghao-huang",
+        "person:dieter-fox",
+        "person:xiaolong-wang"
+      ],
+      "first_public_date": "2025-10-07",
+      "lookup_doi": "10.48550/arxiv.2510.14930",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2510.14930",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4415947131",
+      "provider_record_url": "https://openalex.org/W4415947131",
+      "provider_title": "VT-Refine: Learning Bimanual Assembly with Visuo-Tactile Feedback via Simulation Fine-Tuning",
+      "provider_publication_date": "2025-10-16",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4415947131",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.14930",
+        "work_url": "https://arxiv.org/abs/2510.14930",
+        "source_url": "https://openalex.org/W4415947131",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2607.15448",
+      "title": "VTAP Gripper: Synergizing Fingertip Sensing and a Visuo-Tactile Active Palm for Dexterous In-Hand Manipulation",
+      "people": [
+        "person:binghao-huang"
+      ],
+      "first_public_date": "2026-07-16",
+      "lookup_doi": "10.48550/arxiv.2607.15448",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2607.15448",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7169782790",
+      "provider_record_url": "https://openalex.org/W7169782790",
+      "provider_title": "VTAP Gripper: Synergizing Fingertip Sensing and a Visuo-Tactile Active Palm for Dexterous In-Hand Manipulation",
+      "provider_publication_date": "2026-07-16",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7169782790",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2607.15448",
+        "work_url": "https://arxiv.org/abs/2607.15448",
+        "source_url": "https://openalex.org/W7169782790",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7169782790 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2607.15448 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2509.11839",
+      "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+      "people": [
+        "person:cewu-lu"
+      ],
+      "first_public_date": "2025-09-15",
+      "lookup_doi": "10.48550/arxiv.2509.11839",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.11839",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4416258854",
+      "provider_record_url": "https://openalex.org/W4416258854",
+      "provider_title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+      "provider_publication_date": "2025-09-15",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4416258854",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.11839",
+        "work_url": "https://arxiv.org/abs/2509.11839",
+        "source_url": "https://openalex.org/W4416258854",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4416258854 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.11839 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2510.10125",
+      "title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+      "people": [
+        "person:chelsea-finn",
+        "person:yanjiang-guo"
+      ],
+      "first_public_date": "2025-10-11",
+      "lookup_doi": "10.48550/arxiv.2510.10125",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2510.10125",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4415273528",
+      "provider_record_url": "https://openalex.org/W4415273528",
+      "provider_title": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+      "provider_publication_date": "2025-10-11",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4415273528",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.10125",
+        "work_url": "https://arxiv.org/abs/2510.10125",
+        "source_url": "https://openalex.org/W4415273528",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415273528 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.10125 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2601.00675",
+      "title": "RoboReward: General-Purpose Vision-Language Reward Models for Robotics",
+      "people": [
+        "person:chelsea-finn",
+        "person:sergey-levine"
+      ],
+      "first_public_date": "2026-01-02",
+      "lookup_doi": "10.48550/arxiv.2601.00675",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2601.00675",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7118501563",
+      "provider_record_url": "https://openalex.org/W7118501563",
+      "provider_title": "RoboReward: General-Purpose Vision-Language Reward Models for Robotics",
+      "provider_publication_date": "2026-01-02",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7118501563",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.00675",
+        "work_url": "https://arxiv.org/abs/2601.00675",
+        "source_url": "https://openalex.org/W7118501563",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7118501563 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.00675 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2509.06953",
+      "title": "Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments",
+      "people": [
+        "person:deepak-pathak"
+      ],
+      "first_public_date": "2025-09-08",
+      "lookup_doi": "10.48550/arxiv.2509.06953",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.06953",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4415057828",
+      "provider_record_url": "https://openalex.org/W4415057828",
+      "provider_title": "Deep Reactive Policy: Learning Reactive Manipulator Motion Planning for Dynamic Environments",
+      "provider_publication_date": "2025-09-08",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4415057828",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.06953",
+        "work_url": "https://arxiv.org/abs/2509.06953",
+        "source_url": "https://openalex.org/W4415057828",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415057828 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.06953 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2509.01819",
+      "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+      "people": [
+        "person:dieter-fox",
+        "person:xiaolong-wang"
+      ],
+      "first_public_date": "2025-09-01",
+      "lookup_doi": "10.48550/arxiv.2509.01819",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.01819",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4417045284",
+      "provider_record_url": "https://openalex.org/W4417045284",
+      "provider_title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+      "provider_publication_date": "2025-09-01",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4417045284",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.01819",
+        "work_url": "https://arxiv.org/abs/2509.01819",
+        "source_url": "https://openalex.org/W4417045284",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417045284 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.01819 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2603.12243",
+      "title": "HandelBot: Real-World Piano Playing via Fast Adaptation of Dexterous Robot Policies",
+      "people": [
+        "person:dorsa-sadigh"
+      ],
+      "first_public_date": "2026-03-12",
+      "lookup_doi": "10.48550/arxiv.2603.12243",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2603.12243",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7135175122",
+      "provider_record_url": "https://openalex.org/W7135175122",
+      "provider_title": "HandelBot: Real-World Piano Playing via Fast Adaptation of Dexterous Robot Policies",
+      "provider_publication_date": "2026-03-12",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7135175122",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.12243",
+        "work_url": "https://arxiv.org/abs/2603.12243",
+        "source_url": "https://openalex.org/W7135175122",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7135175122 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.12243 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2603.22263",
+      "title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+      "people": [
+        "person:dorsa-sadigh"
+      ],
+      "first_public_date": "2026-03-23",
+      "lookup_doi": "10.48550/arxiv.2603.22263",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2603.22263",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7140191134",
+      "provider_record_url": "https://openalex.org/W7140191134",
+      "provider_title": "DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming",
+      "provider_publication_date": "2026-03-23",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7140191134",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.22263",
+        "work_url": "https://arxiv.org/abs/2603.22263",
+        "source_url": "https://openalex.org/W7140191134",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7140191134 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.22263 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2511.02832",
+      "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+      "people": [
+        "person:guanya-shi",
+        "person:yanjie-ze"
+      ],
+      "first_public_date": "2025-11-04",
+      "lookup_doi": "10.48550/arxiv.2511.02832",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2511.02832",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7103984447",
+      "provider_record_url": "https://openalex.org/W7103984447",
+      "provider_title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+      "provider_publication_date": "2025-11-04",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7103984447",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.02832",
+        "work_url": "https://arxiv.org/abs/2511.02832",
+        "source_url": "https://openalex.org/W7103984447",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7103984447 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.02832 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2511.15200",
+      "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "people": [
+        "person:guanya-shi",
+        "person:linxi-fan",
+        "person:tairan-he",
+        "person:yuke-zhu",
+        "person:zhengyi-luo"
+      ],
+      "first_public_date": "2025-11-19",
+      "lookup_doi": "10.48550/arxiv.2511.15200",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2511.15200",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7106466341",
+      "provider_record_url": "https://openalex.org/W7106466341",
+      "provider_title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "provider_publication_date": "2025-11-19",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7106466341",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.15200",
+        "work_url": "https://arxiv.org/abs/2511.15200",
+        "source_url": "https://openalex.org/W7106466341",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2601.12993",
+      "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+      "people": [
+        "person:hao-luo"
+      ],
+      "first_public_date": "2026-01-19",
+      "lookup_doi": "10.48550/arxiv.2601.12993",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2601.12993",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7125276686",
+      "provider_record_url": "https://openalex.org/W7125276686",
+      "provider_title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+      "provider_publication_date": "2026-01-19",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7125276686",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.12993",
+        "work_url": "https://arxiv.org/abs/2601.12993",
+        "source_url": "https://openalex.org/W7125276686",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7125276686 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.12993 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2602.21736",
+      "title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild",
+      "people": [
+        "person:hao-luo"
+      ],
+      "first_public_date": "2026-02-25",
+      "lookup_doi": "10.48550/arxiv.2602.21736",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2602.21736",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7131631602",
+      "provider_record_url": "https://openalex.org/W7131631602",
+      "provider_title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild",
+      "provider_publication_date": "2026-02-25",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7131631602",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2602.21736",
+        "work_url": "https://arxiv.org/abs/2602.21736",
+        "source_url": "https://openalex.org/W7131631602",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7131631602 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.21736 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2603.22264",
+      "title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+      "people": [
+        "person:huazhe-xu"
+      ],
+      "first_public_date": "2026-03-23",
+      "lookup_doi": "10.48550/arxiv.2603.22264",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2603.22264",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7140228196",
+      "provider_record_url": "https://openalex.org/W7140228196",
+      "provider_title": "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+      "provider_publication_date": "2026-03-23",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7140228196",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.22264",
+        "work_url": "https://arxiv.org/abs/2603.22264",
+        "source_url": "https://openalex.org/W7140228196",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7140228196 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.22264 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2510.02252",
+      "title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
+      "people": [
+        "person:jiajun-wu",
+        "person:yanjie-ze"
+      ],
+      "first_public_date": "2025-10-02",
+      "lookup_doi": "10.48550/arxiv.2510.02252",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2510.02252",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4414927347",
+      "provider_record_url": "https://openalex.org/W4414927347",
+      "provider_title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
+      "provider_publication_date": "2025-10-02",
+      "title_normalized_match": true,
+      "count": 1,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4414927347",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.02252",
+        "work_url": "https://arxiv.org/abs/2510.02252",
+        "source_url": "https://openalex.org/W4414927347",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 1,
+        "statement": "OpenAlex Graph 的 W4414927347 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.02252 匹配，cited_by_count 为 1。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2509.13780",
+      "title": "Behavior Foundation Model for Humanoid Robots",
+      "people": [
+        "person:jiangmiao-pang"
+      ],
+      "first_public_date": "2025-09-17",
+      "lookup_doi": "10.48550/arxiv.2509.13780",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.13780",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4417478927",
+      "provider_record_url": "https://openalex.org/W4417478927",
+      "provider_title": "Behavior Foundation Model for Humanoid Robots",
+      "provider_publication_date": "2025-09-17",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4417478927",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.13780",
+        "work_url": "https://arxiv.org/abs/2509.13780",
+        "source_url": "https://openalex.org/W4417478927",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417478927 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.13780 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2512.15840",
+      "title": "Large Video Planner Enables Generalizable Robot Control",
+      "people": [
+        "person:jitendra-malik",
+        "person:pieter-abbeel",
+        "person:russ-tedrake",
+        "person:yilun-du"
+      ],
+      "first_public_date": "2025-12-17",
+      "lookup_doi": "10.48550/arxiv.2512.15840",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2512.15840",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4417534140",
+      "provider_record_url": "https://openalex.org/W4417534140",
+      "provider_title": "Large Video Planner Enables Generalizable Robot Control",
+      "provider_publication_date": "2025-12-17",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4417534140",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2512.15840",
+        "work_url": "https://arxiv.org/abs/2512.15840",
+        "source_url": "https://openalex.org/W4417534140",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2605.29298",
+      "title": "MonoDuo: Using One Robot Arm to Learn Bimanual Policies",
+      "people": [
+        "person:ken-goldberg"
+      ],
+      "first_public_date": "2026-05-28",
+      "lookup_doi": "10.48550/arxiv.2605.29298",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2605.29298",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7162757006",
+      "provider_record_url": "https://openalex.org/W7162757006",
+      "provider_title": "MonoDuo: Using One Robot Arm to Learn Bimanual Policies",
+      "provider_publication_date": "2026-05-28",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7162757006",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2605.29298",
+        "work_url": "https://arxiv.org/abs/2605.29298",
+        "source_url": "https://openalex.org/W7162757006",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7162757006 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.29298 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2511.16661",
+      "title": "Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations",
+      "people": [
+        "person:lerrel-pinto"
+      ],
+      "first_public_date": "2025-11-20",
+      "lookup_doi": "10.48550/arxiv.2511.16661",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2511.16661",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4416550724",
+      "provider_record_url": "https://openalex.org/W4416550724",
+      "provider_title": "Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations",
+      "provider_publication_date": "2025-11-20",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4416550724",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.16661",
+        "work_url": "https://arxiv.org/abs/2511.16661",
+        "source_url": "https://openalex.org/W4416550724",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4416550724 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.16661 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2603.26660",
+      "title": "Ruka-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning",
+      "people": [
+        "person:lerrel-pinto"
+      ],
+      "first_public_date": "2026-03-27",
+      "lookup_doi": "10.48550/arxiv.2603.26660",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2603.26660",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7143371339",
+      "provider_record_url": "https://openalex.org/W7143371339",
+      "provider_title": "Ruka-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning",
+      "provider_publication_date": "2026-03-27",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7143371339",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.26660",
+        "work_url": "https://arxiv.org/abs/2603.26660",
+        "source_url": "https://openalex.org/W7143371339",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7143371339 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.26660 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "doi:10.1126/scirobotics.aed4592",
+      "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+      "people": [
+        "person:linxi-fan",
+        "person:zhengyi-luo"
+      ],
+      "first_public_date": "2025-11-11",
+      "lookup_doi": "10.1126/scirobotics.aed4592",
+      "doi_basis": "catalog_doi",
+      "work_url": "https://doi.org/10.1126/scirobotics.aed4592",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7202294264",
+      "provider_record_url": "https://openalex.org/W7202294264",
+      "provider_title": "SONIC: Supersizing motion tracking for natural humanoid whole-body control",
+      "provider_publication_date": "2026-08-12",
+      "title_normalized_match": true,
+      "count": 3,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7202294264",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "doi:10.1126/scirobotics.aed4592",
+        "work_url": "https://doi.org/10.1126/scirobotics.aed4592",
+        "source_url": "https://openalex.org/W7202294264",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 3,
+        "statement": "OpenAlex Graph 的 W7202294264 记录在本次无密钥批量响应中按精确 DOI 10.1126/scirobotics.aed4592 匹配，cited_by_count 为 3。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2509.04441",
+      "title": "DEXOP: A Device for Robotic Transfer of Dexterous Human Manipulation",
+      "people": [
+        "person:pulkit-agrawal"
+      ],
+      "first_public_date": "2025-09-04",
+      "lookup_doi": "10.48550/arxiv.2509.04441",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.04441",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4415058782",
+      "provider_record_url": "https://openalex.org/W4415058782",
+      "provider_title": "DEXOP: A Device for Robotic Transfer of Dexterous Human Manipulation",
+      "provider_publication_date": "2025-09-04",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4415058782",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.04441",
+        "work_url": "https://arxiv.org/abs/2509.04441",
+        "source_url": "https://openalex.org/W4415058782",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415058782 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.04441 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2510.17792",
+      "title": "SoftMimic: Learning Compliant Whole-body Control from Examples",
+      "people": [
+        "person:pulkit-agrawal"
+      ],
+      "first_public_date": "2025-10-20",
+      "lookup_doi": "10.48550/arxiv.2510.17792",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2510.17792",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4415966876",
+      "provider_record_url": "https://openalex.org/W4415966876",
+      "provider_title": "SoftMimic: Learning Compliant Whole-body Control from Examples",
+      "provider_publication_date": "2025-10-20",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4415966876",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.17792",
+        "work_url": "https://arxiv.org/abs/2510.17792",
+        "source_url": "https://openalex.org/W4415966876",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415966876 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.17792 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2602.16710",
+      "title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+      "people": [
+        "person:ruijie-zheng",
+        "person:yuke-zhu"
+      ],
+      "first_public_date": "2026-02-18",
+      "lookup_doi": "10.48550/arxiv.2602.16710",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2602.16710",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7130590664",
+      "provider_record_url": "https://openalex.org/W7130590664",
+      "provider_title": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+      "provider_publication_date": "2026-02-18",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7130590664",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2602.16710",
+        "work_url": "https://arxiv.org/abs/2602.16710",
+        "source_url": "https://openalex.org/W7130590664",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7130590664 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.16710 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2606.17055",
+      "title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+      "people": [
+        "person:ruijie-zheng"
+      ],
+      "first_public_date": "2026-06-15",
+      "lookup_doi": "10.48550/arxiv.2606.17055",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2606.17055",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7164883918",
+      "provider_record_url": "https://openalex.org/W7164883918",
+      "provider_title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+      "provider_publication_date": "2026-06-15",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7164883918",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2606.17055",
+        "work_url": "https://arxiv.org/abs/2606.17055",
+        "source_url": "https://openalex.org/W7164883918",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7164883918 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2606.17055 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2606.12365",
+      "title": "Ambient Diffusion Policy: Imitation Learning from Suboptimal Data in Robotics",
+      "people": [
+        "person:russ-tedrake"
+      ],
+      "first_public_date": "2026-06-10",
+      "lookup_doi": "10.48550/arxiv.2606.12365",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2606.12365",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7164304316",
+      "provider_record_url": "https://openalex.org/W7164304316",
+      "provider_title": "Ambient Diffusion Policy: Imitation Learning from Suboptimal Data in Robotics",
+      "provider_publication_date": "2026-06-10",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7164304316",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2606.12365",
+        "work_url": "https://arxiv.org/abs/2606.12365",
+        "source_url": "https://openalex.org/W7164304316",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7164304316 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2606.12365 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2604.23073",
+      "title": "RL Token: Bootstrapping Online RL with Vision-Language-Action Models",
+      "people": [
+        "person:sergey-levine"
+      ],
+      "first_public_date": "2026-03-19",
+      "lookup_doi": "10.48550/arxiv.2604.23073",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2604.23073",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7157012058",
+      "provider_record_url": "https://openalex.org/W7157012058",
+      "provider_title": "RL Token: Bootstrapping Online RL with Vision-Language-Action Models",
+      "provider_publication_date": "2026-04-24",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7157012058",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2604.23073",
+        "work_url": "https://arxiv.org/abs/2604.23073",
+        "source_url": "https://openalex.org/W7157012058",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7157012058 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2604.23073 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2608.09298",
+      "title": "WorldSimProbe: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation",
+      "people": [
+        "person:shanghang-zhang"
+      ],
+      "first_public_date": "2026-08-10",
+      "lookup_doi": "10.48550/arxiv.2608.09298",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2608.09298",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7202188028",
+      "provider_record_url": "https://openalex.org/W7202188028",
+      "provider_title": "WorldSimProbe: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation",
+      "provider_publication_date": "2026-08-10",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7202188028",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2608.09298",
+        "work_url": "https://arxiv.org/abs/2608.09298",
+        "source_url": "https://openalex.org/W7202188028",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7202188028 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2608.09298 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2601.03607",
+      "title": "Locomotion Beyond Feet",
+      "people": [
+        "person:shuran-song"
+      ],
+      "first_public_date": "2026-01-07",
+      "lookup_doi": "10.48550/arxiv.2601.03607",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2601.03607",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7119532450",
+      "provider_record_url": "https://openalex.org/W7119532450",
+      "provider_title": "Locomotion Beyond Feet",
+      "provider_publication_date": "2026-01-07",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7119532450",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.03607",
+        "work_url": "https://arxiv.org/abs/2601.03607",
+        "source_url": "https://openalex.org/W7119532450",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7119532450 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.03607 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2509.16757",
+      "title": "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos",
+      "people": [
+        "person:tairan-he"
+      ],
+      "first_public_date": "2025-09-20",
+      "lookup_doi": "10.48550/arxiv.2509.16757",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.16757",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W4415251265",
+      "provider_record_url": "https://openalex.org/W4415251265",
+      "provider_title": "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos",
+      "provider_publication_date": "2025-09-20",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W4415251265",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.16757",
+        "work_url": "https://arxiv.org/abs/2509.16757",
+        "source_url": "https://openalex.org/W4415251265",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415251265 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.16757 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2605.22882",
+      "title": "GEM-4D: Geometry-Enhanced Video World Models for Robot Manipulation",
+      "people": [
+        "person:yilun-du"
+      ],
+      "first_public_date": "2026-05-20",
+      "lookup_doi": "10.48550/arxiv.2605.22882",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2605.22882",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7162293033",
+      "provider_record_url": "https://openalex.org/W7162293033",
+      "provider_title": "GEM-4D: Geometry-Enhanced Video World Models for Robot Manipulation",
+      "provider_publication_date": "2026-05-20",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7162293033",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2605.22882",
+        "work_url": "https://arxiv.org/abs/2605.22882",
+        "source_url": "https://openalex.org/W7162293033",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7162293033 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.22882 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    },
+    {
+      "work_id": "arxiv:2605.17912",
+      "title": "WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform",
+      "people": [
+        "person:yu-shang"
+      ],
+      "first_public_date": "2026-05-18",
+      "lookup_doi": "10.48550/arxiv.2605.17912",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2605.17912",
+      "status": "exact_doi_matched_snapshot_candidate",
+      "provider": "openalex",
+      "provider_work_id": "W7161692373",
+      "provider_record_url": "https://openalex.org/W7161692373",
+      "provider_title": "WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform",
+      "provider_publication_date": "2026-05-18",
+      "title_normalized_match": true,
+      "count": 0,
+      "as_of": "2026-09-06",
+      "observed_at": "2026-09-06T13:58:35.596Z",
+      "source_url": "https://openalex.org/W7161692373",
+      "retrieval_url": "https://api.openalex.org/works?filter=doi%3A10.48550%2Farxiv.2510.14930%7C10.48550%2Farxiv.2607.15448%7C10.48550%2Farxiv.2509.11839%7C10.48550%2Farxiv.2510.10125%7C10.48550%2Farxiv.2601.00675%7C10.48550%2Farxiv.2509.06953%7C10.48550%2Farxiv.2509.23745%7C10.48550%2Farxiv.2509.01819%7C10.48550%2Farxiv.2603.12243%7C10.48550%2Farxiv.2603.22263%7C10.48550%2Farxiv.2511.02832%7C10.48550%2Farxiv.2511.15200%7C10.48550%2Farxiv.2601.12993%7C10.48550%2Farxiv.2602.21736%7C10.48550%2Farxiv.2510.14830%7C10.48550%2Farxiv.2603.22264%7C10.48550%2Farxiv.2509.18830%7C10.48550%2Farxiv.2510.02252%7C10.48550%2Farxiv.2509.13780%7C10.48550%2Farxiv.2602.10105%7C10.48550%2Farxiv.2512.15840%7C10.48550%2Farxiv.2605.29298%7C10.48550%2Farxiv.2511.16661%7C10.48550%2Farxiv.2603.26660%7C10.1126%2Fscirobotics.aed4592%7C10.48550%2Farxiv.2604.11138%7C10.48550%2Farxiv.2509.04441%7C10.48550%2Farxiv.2510.17792%7C10.48550%2Farxiv.2602.16710%7C10.48550%2Farxiv.2606.17055%7C10.48550%2Farxiv.2606.12365%7C10.48550%2Farxiv.2604.23073%7C10.48550%2Farxiv.2608.09298%7C10.48550%2Farxiv.2601.03607%7C10.48550%2Farxiv.2603.03243%7C10.48550%2Farxiv.2509.16757%7C10.48550%2Farxiv.2602.09849%7C10.48550%2Farxiv.2605.22882%7C10.48550%2Farxiv.2602.08971%7C10.48550%2Farxiv.2605.17912&select=id%2Cdoi%2Ctitle%2Ccited_by_count%2Cpublication_date&per_page=100",
+      "influence_evidence_candidate": {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2605.17912",
+        "work_url": "https://arxiv.org/abs/2605.17912",
+        "source_url": "https://openalex.org/W7161692373",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7161692373 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.17912 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    }
+  ],
+  "missing": [
+    {
+      "work_id": "arxiv:2509.23745",
+      "title": "LocoFormer: Generalist Locomotion via Long-context Adaptation",
+      "people": [
+        "person:deepak-pathak"
+      ],
+      "first_public_date": "2025-09-28",
+      "lookup_doi": "10.48550/arxiv.2509.23745",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.23745",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2510.14830",
+      "title": "RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning",
+      "people": [
+        "person:huazhe-xu"
+      ],
+      "first_public_date": "2025-10-16",
+      "lookup_doi": "10.48550/arxiv.2510.14830",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2510.14830",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2509.18830",
+      "title": "DexSkin: High-Coverage Conformable Robotic Skin for Learning Contact-Rich Manipulation",
+      "people": [
+        "person:jiajun-wu"
+      ],
+      "first_public_date": "2025-09-23",
+      "lookup_doi": "10.48550/arxiv.2509.18830",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2509.18830",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2602.10105",
+      "title": "DexImit: Learning Bimanual Dexterous Manipulation from Monocular Human Videos",
+      "people": [
+        "person:jiangmiao-pang"
+      ],
+      "first_public_date": "2026-02-10",
+      "lookup_doi": "10.48550/arxiv.2602.10105",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2602.10105",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2604.11138",
+      "title": "ViserDex: Visual Sim-to-Real for Robust Dexterous In-hand Reorientation",
+      "people": [
+        "person:marco-hutter"
+      ],
+      "first_public_date": "2026-04-13",
+      "lookup_doi": "10.48550/arxiv.2604.11138",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2604.11138",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2603.03243",
+      "title": "HoMMI: Learning Whole-Body Mobile Manipulation from Human Demonstrations",
+      "people": [
+        "person:shuran-song"
+      ],
+      "first_public_date": "2026-03-03",
+      "lookup_doi": "10.48550/arxiv.2603.03243",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2603.03243",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2602.09849",
+      "title": "BagelVLA: Enhancing Long-Horizon Manipulation via Interleaved Vision-Language-Action Generation",
+      "people": [
+        "person:yanjiang-guo"
+      ],
+      "first_public_date": "2026-02-10",
+      "lookup_doi": "10.48550/arxiv.2602.09849",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2602.09849",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    },
+    {
+      "work_id": "arxiv:2602.08971",
+      "title": "WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models",
+      "people": [
+        "person:yu-shang"
+      ],
+      "first_public_date": "2026-02-09",
+      "lookup_doi": "10.48550/arxiv.2602.08971",
+      "doi_basis": "arxiv_datacite_doi",
+      "work_url": "https://arxiv.org/abs/2602.08971",
+      "status": "not_returned_by_exact_doi_lookup",
+      "count": null,
+      "reason": "本次 exact DOI filter 未返回匹配项；不是零引用，也不证明 OpenAlex 完全未收录该研究的其他版本。"
+    }
+  ],
+  "conflicts": [],
+  "person_coverage": [
+    {
+      "person_id": "person:binghao-huang",
+      "required_work_ids": [
+        "arxiv:2510.14930",
+        "arxiv:2607.15448"
+      ],
+      "matched_work_ids": [
+        "arxiv:2510.14930",
+        "arxiv:2607.15448"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:dieter-fox",
+      "required_work_ids": [
+        "arxiv:2510.14930",
+        "arxiv:2509.01819"
+      ],
+      "matched_work_ids": [
+        "arxiv:2510.14930",
+        "arxiv:2509.01819"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:xiaolong-wang",
+      "required_work_ids": [
+        "arxiv:2510.14930",
+        "arxiv:2509.01819"
+      ],
+      "matched_work_ids": [
+        "arxiv:2510.14930",
+        "arxiv:2509.01819"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:cewu-lu",
+      "required_work_ids": [
+        "arxiv:2509.11839"
+      ],
+      "matched_work_ids": [
+        "arxiv:2509.11839"
+      ],
+      "missing_work_ids": [],
+      "required_works": 1,
+      "matched_works": 1,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:chelsea-finn",
+      "required_work_ids": [
+        "arxiv:2510.10125",
+        "arxiv:2601.00675"
+      ],
+      "matched_work_ids": [
+        "arxiv:2510.10125",
+        "arxiv:2601.00675"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:yanjiang-guo",
+      "required_work_ids": [
+        "arxiv:2510.10125",
+        "arxiv:2602.09849"
+      ],
+      "matched_work_ids": [
+        "arxiv:2510.10125"
+      ],
+      "missing_work_ids": [
+        "arxiv:2602.09849"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:sergey-levine",
+      "required_work_ids": [
+        "arxiv:2601.00675",
+        "arxiv:2604.23073"
+      ],
+      "matched_work_ids": [
+        "arxiv:2601.00675",
+        "arxiv:2604.23073"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:deepak-pathak",
+      "required_work_ids": [
+        "arxiv:2509.06953",
+        "arxiv:2509.23745"
+      ],
+      "matched_work_ids": [
+        "arxiv:2509.06953"
+      ],
+      "missing_work_ids": [
+        "arxiv:2509.23745"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:dorsa-sadigh",
+      "required_work_ids": [
+        "arxiv:2603.12243",
+        "arxiv:2603.22263"
+      ],
+      "matched_work_ids": [
+        "arxiv:2603.12243",
+        "arxiv:2603.22263"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:guanya-shi",
+      "required_work_ids": [
+        "arxiv:2511.02832",
+        "arxiv:2511.15200"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.02832",
+        "arxiv:2511.15200"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:yanjie-ze",
+      "required_work_ids": [
+        "arxiv:2511.02832",
+        "arxiv:2510.02252"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.02832",
+        "arxiv:2510.02252"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:linxi-fan",
+      "required_work_ids": [
+        "arxiv:2511.15200",
+        "doi:10.1126/scirobotics.aed4592"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.15200",
+        "doi:10.1126/scirobotics.aed4592"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:tairan-he",
+      "required_work_ids": [
+        "arxiv:2511.15200",
+        "arxiv:2509.16757"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.15200",
+        "arxiv:2509.16757"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:yuke-zhu",
+      "required_work_ids": [
+        "arxiv:2511.15200",
+        "arxiv:2602.16710"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.15200",
+        "arxiv:2602.16710"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:zhengyi-luo",
+      "required_work_ids": [
+        "arxiv:2511.15200",
+        "doi:10.1126/scirobotics.aed4592"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.15200",
+        "doi:10.1126/scirobotics.aed4592"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:hao-luo",
+      "required_work_ids": [
+        "arxiv:2601.12993",
+        "arxiv:2602.21736"
+      ],
+      "matched_work_ids": [
+        "arxiv:2601.12993",
+        "arxiv:2602.21736"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:huazhe-xu",
+      "required_work_ids": [
+        "arxiv:2510.14830",
+        "arxiv:2603.22264"
+      ],
+      "matched_work_ids": [
+        "arxiv:2603.22264"
+      ],
+      "missing_work_ids": [
+        "arxiv:2510.14830"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:jiajun-wu",
+      "required_work_ids": [
+        "arxiv:2509.18830",
+        "arxiv:2510.02252"
+      ],
+      "matched_work_ids": [
+        "arxiv:2510.02252"
+      ],
+      "missing_work_ids": [
+        "arxiv:2509.18830"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:jiangmiao-pang",
+      "required_work_ids": [
+        "arxiv:2509.13780",
+        "arxiv:2602.10105"
+      ],
+      "matched_work_ids": [
+        "arxiv:2509.13780"
+      ],
+      "missing_work_ids": [
+        "arxiv:2602.10105"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:jitendra-malik",
+      "required_work_ids": [
+        "arxiv:2512.15840"
+      ],
+      "matched_work_ids": [
+        "arxiv:2512.15840"
+      ],
+      "missing_work_ids": [],
+      "required_works": 1,
+      "matched_works": 1,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:pieter-abbeel",
+      "required_work_ids": [
+        "arxiv:2512.15840"
+      ],
+      "matched_work_ids": [
+        "arxiv:2512.15840"
+      ],
+      "missing_work_ids": [],
+      "required_works": 1,
+      "matched_works": 1,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:russ-tedrake",
+      "required_work_ids": [
+        "arxiv:2512.15840",
+        "arxiv:2606.12365"
+      ],
+      "matched_work_ids": [
+        "arxiv:2512.15840",
+        "arxiv:2606.12365"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:yilun-du",
+      "required_work_ids": [
+        "arxiv:2512.15840",
+        "arxiv:2605.22882"
+      ],
+      "matched_work_ids": [
+        "arxiv:2512.15840",
+        "arxiv:2605.22882"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:ken-goldberg",
+      "required_work_ids": [
+        "arxiv:2605.29298"
+      ],
+      "matched_work_ids": [
+        "arxiv:2605.29298"
+      ],
+      "missing_work_ids": [],
+      "required_works": 1,
+      "matched_works": 1,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:lerrel-pinto",
+      "required_work_ids": [
+        "arxiv:2511.16661",
+        "arxiv:2603.26660"
+      ],
+      "matched_work_ids": [
+        "arxiv:2511.16661",
+        "arxiv:2603.26660"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:marco-hutter",
+      "required_work_ids": [
+        "arxiv:2604.11138"
+      ],
+      "matched_work_ids": [],
+      "missing_work_ids": [
+        "arxiv:2604.11138"
+      ],
+      "required_works": 1,
+      "matched_works": 0,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:pulkit-agrawal",
+      "required_work_ids": [
+        "arxiv:2509.04441",
+        "arxiv:2510.17792"
+      ],
+      "matched_work_ids": [
+        "arxiv:2509.04441",
+        "arxiv:2510.17792"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:ruijie-zheng",
+      "required_work_ids": [
+        "arxiv:2602.16710",
+        "arxiv:2606.17055"
+      ],
+      "matched_work_ids": [
+        "arxiv:2602.16710",
+        "arxiv:2606.17055"
+      ],
+      "missing_work_ids": [],
+      "required_works": 2,
+      "matched_works": 2,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:shanghang-zhang",
+      "required_work_ids": [
+        "arxiv:2608.09298"
+      ],
+      "matched_work_ids": [
+        "arxiv:2608.09298"
+      ],
+      "missing_work_ids": [],
+      "required_works": 1,
+      "matched_works": 1,
+      "full_provider_coverage": true
+    },
+    {
+      "person_id": "person:shuran-song",
+      "required_work_ids": [
+        "arxiv:2601.03607",
+        "arxiv:2603.03243"
+      ],
+      "matched_work_ids": [
+        "arxiv:2601.03607"
+      ],
+      "missing_work_ids": [
+        "arxiv:2603.03243"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    },
+    {
+      "person_id": "person:yu-shang",
+      "required_work_ids": [
+        "arxiv:2602.08971",
+        "arxiv:2605.17912"
+      ],
+      "matched_work_ids": [
+        "arxiv:2605.17912"
+      ],
+      "missing_work_ids": [
+        "arxiv:2602.08971"
+      ],
+      "required_works": 2,
+      "matched_works": 1,
+      "full_provider_coverage": false
+    }
+  ],
+  "person_draft_measurements": {
+    "person:binghao-huang": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.14930",
+        "work_url": "https://arxiv.org/abs/2510.14930",
+        "source_url": "https://openalex.org/W4415947131",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2607.15448",
+        "work_url": "https://arxiv.org/abs/2607.15448",
+        "source_url": "https://openalex.org/W7169782790",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7169782790 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2607.15448 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:dieter-fox": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.14930",
+        "work_url": "https://arxiv.org/abs/2510.14930",
+        "source_url": "https://openalex.org/W4415947131",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.01819",
+        "work_url": "https://arxiv.org/abs/2509.01819",
+        "source_url": "https://openalex.org/W4417045284",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417045284 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.01819 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:xiaolong-wang": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.14930",
+        "work_url": "https://arxiv.org/abs/2510.14930",
+        "source_url": "https://openalex.org/W4415947131",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.01819",
+        "work_url": "https://arxiv.org/abs/2509.01819",
+        "source_url": "https://openalex.org/W4417045284",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417045284 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.01819 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:cewu-lu": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.11839",
+        "work_url": "https://arxiv.org/abs/2509.11839",
+        "source_url": "https://openalex.org/W4416258854",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4416258854 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.11839 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:chelsea-finn": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.10125",
+        "work_url": "https://arxiv.org/abs/2510.10125",
+        "source_url": "https://openalex.org/W4415273528",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415273528 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.10125 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.00675",
+        "work_url": "https://arxiv.org/abs/2601.00675",
+        "source_url": "https://openalex.org/W7118501563",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7118501563 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.00675 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:yanjiang-guo": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.10125",
+        "work_url": "https://arxiv.org/abs/2510.10125",
+        "source_url": "https://openalex.org/W4415273528",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415273528 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.10125 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:sergey-levine": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.00675",
+        "work_url": "https://arxiv.org/abs/2601.00675",
+        "source_url": "https://openalex.org/W7118501563",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7118501563 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.00675 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2604.23073",
+        "work_url": "https://arxiv.org/abs/2604.23073",
+        "source_url": "https://openalex.org/W7157012058",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7157012058 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2604.23073 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:deepak-pathak": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.06953",
+        "work_url": "https://arxiv.org/abs/2509.06953",
+        "source_url": "https://openalex.org/W4415057828",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415057828 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.06953 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:dorsa-sadigh": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.12243",
+        "work_url": "https://arxiv.org/abs/2603.12243",
+        "source_url": "https://openalex.org/W7135175122",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7135175122 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.12243 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.22263",
+        "work_url": "https://arxiv.org/abs/2603.22263",
+        "source_url": "https://openalex.org/W7140191134",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7140191134 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.22263 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:guanya-shi": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.02832",
+        "work_url": "https://arxiv.org/abs/2511.02832",
+        "source_url": "https://openalex.org/W7103984447",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7103984447 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.02832 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.15200",
+        "work_url": "https://arxiv.org/abs/2511.15200",
+        "source_url": "https://openalex.org/W7106466341",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:yanjie-ze": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.02832",
+        "work_url": "https://arxiv.org/abs/2511.02832",
+        "source_url": "https://openalex.org/W7103984447",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7103984447 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.02832 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.02252",
+        "work_url": "https://arxiv.org/abs/2510.02252",
+        "source_url": "https://openalex.org/W4414927347",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 1,
+        "statement": "OpenAlex Graph 的 W4414927347 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.02252 匹配，cited_by_count 为 1。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:linxi-fan": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.15200",
+        "work_url": "https://arxiv.org/abs/2511.15200",
+        "source_url": "https://openalex.org/W7106466341",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "doi:10.1126/scirobotics.aed4592",
+        "work_url": "https://doi.org/10.1126/scirobotics.aed4592",
+        "source_url": "https://openalex.org/W7202294264",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 3,
+        "statement": "OpenAlex Graph 的 W7202294264 记录在本次无密钥批量响应中按精确 DOI 10.1126/scirobotics.aed4592 匹配，cited_by_count 为 3。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:tairan-he": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.15200",
+        "work_url": "https://arxiv.org/abs/2511.15200",
+        "source_url": "https://openalex.org/W7106466341",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.16757",
+        "work_url": "https://arxiv.org/abs/2509.16757",
+        "source_url": "https://openalex.org/W4415251265",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415251265 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.16757 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:yuke-zhu": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.15200",
+        "work_url": "https://arxiv.org/abs/2511.15200",
+        "source_url": "https://openalex.org/W7106466341",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2602.16710",
+        "work_url": "https://arxiv.org/abs/2602.16710",
+        "source_url": "https://openalex.org/W7130590664",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7130590664 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.16710 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:zhengyi-luo": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.15200",
+        "work_url": "https://arxiv.org/abs/2511.15200",
+        "source_url": "https://openalex.org/W7106466341",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "doi:10.1126/scirobotics.aed4592",
+        "work_url": "https://doi.org/10.1126/scirobotics.aed4592",
+        "source_url": "https://openalex.org/W7202294264",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 3,
+        "statement": "OpenAlex Graph 的 W7202294264 记录在本次无密钥批量响应中按精确 DOI 10.1126/scirobotics.aed4592 匹配，cited_by_count 为 3。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:hao-luo": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.12993",
+        "work_url": "https://arxiv.org/abs/2601.12993",
+        "source_url": "https://openalex.org/W7125276686",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7125276686 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.12993 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2602.21736",
+        "work_url": "https://arxiv.org/abs/2602.21736",
+        "source_url": "https://openalex.org/W7131631602",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7131631602 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.21736 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:huazhe-xu": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.22264",
+        "work_url": "https://arxiv.org/abs/2603.22264",
+        "source_url": "https://openalex.org/W7140228196",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7140228196 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.22264 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:jiajun-wu": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.02252",
+        "work_url": "https://arxiv.org/abs/2510.02252",
+        "source_url": "https://openalex.org/W4414927347",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 1,
+        "statement": "OpenAlex Graph 的 W4414927347 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.02252 匹配，cited_by_count 为 1。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:jiangmiao-pang": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.13780",
+        "work_url": "https://arxiv.org/abs/2509.13780",
+        "source_url": "https://openalex.org/W4417478927",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417478927 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.13780 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:jitendra-malik": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2512.15840",
+        "work_url": "https://arxiv.org/abs/2512.15840",
+        "source_url": "https://openalex.org/W4417534140",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:pieter-abbeel": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2512.15840",
+        "work_url": "https://arxiv.org/abs/2512.15840",
+        "source_url": "https://openalex.org/W4417534140",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:russ-tedrake": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2512.15840",
+        "work_url": "https://arxiv.org/abs/2512.15840",
+        "source_url": "https://openalex.org/W4417534140",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2606.12365",
+        "work_url": "https://arxiv.org/abs/2606.12365",
+        "source_url": "https://openalex.org/W7164304316",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7164304316 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2606.12365 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:yilun-du": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2512.15840",
+        "work_url": "https://arxiv.org/abs/2512.15840",
+        "source_url": "https://openalex.org/W4417534140",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4417534140 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2512.15840 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2605.22882",
+        "work_url": "https://arxiv.org/abs/2605.22882",
+        "source_url": "https://openalex.org/W7162293033",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7162293033 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.22882 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:ken-goldberg": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2605.29298",
+        "work_url": "https://arxiv.org/abs/2605.29298",
+        "source_url": "https://openalex.org/W7162757006",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7162757006 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.29298 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:lerrel-pinto": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2511.16661",
+        "work_url": "https://arxiv.org/abs/2511.16661",
+        "source_url": "https://openalex.org/W4416550724",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4416550724 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.16661 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2603.26660",
+        "work_url": "https://arxiv.org/abs/2603.26660",
+        "source_url": "https://openalex.org/W7143371339",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7143371339 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.26660 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:marco-hutter": [],
+    "person:pulkit-agrawal": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2509.04441",
+        "work_url": "https://arxiv.org/abs/2509.04441",
+        "source_url": "https://openalex.org/W4415058782",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415058782 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.04441 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2510.17792",
+        "work_url": "https://arxiv.org/abs/2510.17792",
+        "source_url": "https://openalex.org/W4415966876",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W4415966876 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.17792 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:ruijie-zheng": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2602.16710",
+        "work_url": "https://arxiv.org/abs/2602.16710",
+        "source_url": "https://openalex.org/W7130590664",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7130590664 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.16710 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      },
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2606.17055",
+        "work_url": "https://arxiv.org/abs/2606.17055",
+        "source_url": "https://openalex.org/W7164883918",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7164883918 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2606.17055 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:shanghang-zhang": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2608.09298",
+        "work_url": "https://arxiv.org/abs/2608.09298",
+        "source_url": "https://openalex.org/W7202188028",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7202188028 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2608.09298 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:shuran-song": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2601.03607",
+        "work_url": "https://arxiv.org/abs/2601.03607",
+        "source_url": "https://openalex.org/W7119532450",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7119532450 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.03607 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ],
+    "person:yu-shang": [
+      {
+        "dimension": "citation_count",
+        "work_id": "arxiv:2605.17912",
+        "work_url": "https://arxiv.org/abs/2605.17912",
+        "source_url": "https://openalex.org/W7161692373",
+        "observed_at": "2026-09-06T13:58:35.596Z",
+        "as_of": "2026-09-06",
+        "review_status": "draft",
+        "provider": "openalex",
+        "count": 0,
+        "statement": "OpenAlex Graph 的 W7161692373 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.17912 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+      }
+    ]
+  },
+  "proposed_import_contract": {
+    "status": "draft_only_no_import",
+    "record_field": "records[].influence_evidence_candidate",
+    "person_measurements_field": "person_draft_measurements[person_id]",
+    "person_binding": "records[].people contains already source-verified person IDs",
+    "reviewer_note": "Source response and hard-ID matching checked by AI probe; not human expert review.",
+    "source_url_semantics": "Each source_url is the public OpenAlex entity URL returned in the API record; retrieval_url and probe_requests retain the actual batch request/response.",
+    "upgrade_requirement": "Inspect every canonical manifestation and identifier alias plus provider version merging before upgrading; these single-DOI measurements are not complete all-version citation totals.",
+    "next_step": "Root must explicitly approve/import a separately versioned citation review; do not overwrite existing identity reviews or authority."
+  }
+}

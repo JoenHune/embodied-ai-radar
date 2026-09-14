@@ -1,0 +1,1471 @@
+{
+  "schema_version": "1",
+  "review_id": "contributors-2026-09-06",
+  "reviewer_kind": "ai",
+  "review_scope": "公开身份与逐项作品关联；无综合个人影响排名",
+  "observed_at": "2026-09-06T12:58:58Z",
+  "people": [
+    {
+      "person_id": "person:jiangmiao-pang",
+      "slug": "jiangmiao-pang",
+      "name": "Jiangmiao Pang",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://oceanpang.github.io/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Shanghai AI Laboratory",
+          "title": "Research Scientist；Embodied AI Center 负责人",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://oceanpang.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2509.13780",
+          "status": "verified",
+          "matched_author_name": "Jiangmiao Pang",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://bfm4humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2509.13780",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "BFM 官方项目列出 Jiangmiao Pang，作者姓名直接链接其个人主页；arXiv 按钮指向 2509.13780。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2602.10105",
+          "status": "verified",
+          "matched_author_name": "Jiangmiao Pang",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://mujc2021.github.io/deximit/",
+              "work_url": "https://arxiv.org/abs/2602.10105",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "DexImit 官方项目将 Jiangmiao Pang 链接到 oceanpang.github.io，列出上海人工智能实验室署名，并在 BibTeX 明确 2602.10105。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "corresponding_author",
+              "scope": "paper",
+              "source_url": "https://mujc2021.github.io/deximit/",
+              "work_url": "https://arxiv.org/abs/2602.10105",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "项目署名 Jiangmiao Pang 带 †，页面脚注明确 † 为 Corresponding author。",
+              "excerpt": "Corresponding author"
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.13780",
+          "work_url": "https://arxiv.org/abs/2509.13780",
+          "source_url": "https://openalex.org/W4417478927",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417478927 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.13780 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "个人主页自述现行团队名为 Intern Robotics；不将所有上海人工智能实验室工作自动归给本人。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:shanghang-zhang",
+      "slug": "shanghang-zhang",
+      "name": "Shanghang Zhang",
+      "name_zh": "仉尚航",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://cs.pku.edu.cn/info/1236/2067.htm",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Peking University, School of Computer Science",
+          "title": "Tenure Track Assistant Professor",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://cs.pku.edu.cn/info/1236/2067.htm",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2608.09298",
+          "status": "verified",
+          "matched_author_name": "Shanghang Zhang",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://evophys.com/WorldSimProbe/",
+              "work_url": "https://arxiv.org/abs/2608.09298",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "WorldSimProbe 项目明确其北大单位和通讯邮箱 shanghang@pku.edu.cn，与北大官方个人页一致；项目 arXiv 链接指向 2608.09298。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "corresponding_author",
+              "scope": "paper",
+              "source_url": "https://evophys.com/WorldSimProbe/",
+              "work_url": "https://arxiv.org/abs/2608.09298",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "项目作者行及脚注明确 Shanghang Zhang 为通讯作者。",
+              "excerpt": "Corresponding author"
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2608.09298",
+          "work_url": "https://arxiv.org/abs/2608.09298",
+          "source_url": "https://openalex.org/W7202188028",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7202188028 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2608.09298 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "个人独立站本轮打开失败，身份由北大官方教师页及项目通讯信息交叉核验；只确认列出的逐项作品。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:marco-hutter",
+      "slug": "marco-hutter",
+      "name": "Marco Hutter",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://rsl.ethz.ch/the-lab/people.html",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "ETH Zürich, Robotic Systems Lab",
+          "title": "Professor",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://rsl.ethz.ch/the-lab/people.html",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2604.11138",
+          "status": "verified",
+          "matched_author_name": "Marco Hutter",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://rffr.leggedrobotics.com/works/viserdex/",
+              "work_url": "https://arxiv.org/abs/2604.11138",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "ETH RSL 的 ViserDex 官方项目列出 Marco Hutter 及 ETH Zürich 单位，arXiv 链接实际指向 2604.11138；ETHAR 官方项目亦列同名研究负责人和该作品。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [],
+      "notes": [
+        "RSL publications 页的动态列表本轮正文未展开，未把搜索缓存中的整份论文列表批量归属给本人。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:guanya-shi",
+      "slug": "guanya-shi",
+      "name": "Guanya Shi",
+      "name_zh": "石冠亚",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://www.gshi.me/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Carnegie Mellon University, Robotics Institute",
+          "title": "Assistant Professor；LeCAR Lab 负责人",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.gshi.me/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "Amazon Frontier AI & Robotics",
+          "title": "Amazon Scholar",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.gshi.me/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2511.15200",
+          "status": "verified",
+          "matched_author_name": "Guanya Shi",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://viral-humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "VIRAL 作者行中的 Guanya Shi 直接链接 gshi.me；项目 BibTeX 和 arXiv 链接均明确 2511.15200。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2511.02832",
+          "status": "verified",
+          "matched_author_name": "Guanya Shi",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://yanjieze.com/",
+              "work_url": "https://arxiv.org/abs/2511.02832",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "Yanjie Ze 官方出版物列表列出 TWIST2 全体作者及 Guanya Shi，arXiv 指向 2511.02832；LeCAR 官方 publications 同时列此工作。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "equal_advising",
+              "scope": "paper",
+              "source_url": "https://yanjieze.com/",
+              "work_url": "https://arxiv.org/abs/2511.02832",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "TWIST2 作者行 Guanya Shi 带 †；本页 Publications 总脚注明确 † 为 equal advising。",
+              "excerpt": "equal advising."
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.02832",
+          "work_url": "https://arxiv.org/abs/2511.02832",
+          "source_url": "https://openalex.org/W7103984447",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7103984447 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.02832 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.15200",
+          "work_url": "https://arxiv.org/abs/2511.15200",
+          "source_url": "https://openalex.org/W7106466341",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "个人主页写明 2023 年 9 月加入 CMU，未提供日精度，任期边界留空；现行 Amazon Scholar 角色不追溯覆盖旧论文单位。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:cewu-lu",
+      "slug": "cewu-lu",
+      "name": "Cewu Lu",
+      "name_zh": "卢策吾",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://www.mvig.org/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Shanghai Jiao Tong University, School of Artificial Intelligence",
+          "title": "Professor",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.mvig.org/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2509.11839",
+          "status": "verified",
+          "matched_author_name": "Cewu Lu",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://jiachengliu3.github.io/TrajBooster/",
+              "work_url": "https://arxiv.org/abs/2509.11839",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "TrajBooster 官方项目作者 Cewu Lu 直接链接 MVIG 官方个人页，项目 arXiv 链接指向 2509.11839；此处仅确认署名，不采纳搜索摘要中与项目不一致的 KORR 内容。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "corresponding_author",
+              "scope": "paper",
+              "source_url": "https://jiachengliu3.github.io/TrajBooster/",
+              "work_url": "https://arxiv.org/abs/2509.11839",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "项目作者行 Cewu Lu 带 †，脚注明确为 Corresponding Authors，而非 project lead。",
+              "excerpt": "Corresponding Authors"
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.11839",
+          "work_url": "https://arxiv.org/abs/2509.11839",
+          "source_url": "https://openalex.org/W4416258854",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4416258854 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.11839 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "ForceVLA2 项目本轮可读正文未列作者，未把它仅凭同名摘要升级为已核验个人关联。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:xiaolong-wang",
+      "slug": "xiaolong-wang",
+      "name": "Xiaolong Wang",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://xiaolonw.github.io/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Meta Superintelligence Labs",
+          "title": "Research Director",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://xiaolonw.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        },
+        {
+          "organization_id": null,
+          "organization_name": "University of California, San Diego",
+          "title": "Associate Professor",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://xiaolonw.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2509.01819",
+          "status": "verified",
+          "matched_author_name": "Xiaolong Wang",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://xiaolonw.github.io/publication.html",
+              "work_url": "https://arxiv.org/pdf/2509.01819",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "其个人完整论文页直接列 ManiFlow 及本人署名，论文链接硬指向 arXiv PDF 2509.01819。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2510.14930",
+          "status": "verified",
+          "matched_author_name": "Xiaolong Wang",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://binghao-huang.github.io/vt_refine/",
+              "work_url": "https://arxiv.org/abs/2510.14930",
+              "observed_at": "2026-09-06T13:09:41Z",
+              "statement": "VT-Refine 官方项目作者行将 Xiaolong Wang 链接到 xiaolonw.github.io，项目 arXiv 链接指向 2510.14930；历史 NVIDIA、UCSD 单位逐作者列出，不由当前职务回填。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.14930",
+          "work_url": "https://arxiv.org/abs/2510.14930",
+          "source_url": "https://openalex.org/W4415947131",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.01819",
+          "work_url": "https://arxiv.org/abs/2509.01819",
+          "source_url": "https://openalex.org/W4417045284",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4417045284 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.01819 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网目前自述 Meta MSL 职务，且保留 UCSD 学术身份；没有可靠日精度任期。VT-Refine 的历史 NVIDIA/UCSD 署名不改为 Meta。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:tairan-he",
+      "slug": "tairan-he",
+      "name": "Tairan He",
+      "name_zh": "何泰然",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://tairanhe.com/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "OpenAI",
+          "title": "Member of Technical Staff",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://tairanhe.com/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2511.15200",
+          "status": "verified",
+          "matched_author_name": "Tairan He",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://viral-humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "VIRAL 官方作者行直接链接 tairanhe.com；论文 ID 为 2511.15200，个人 publications 页也列该文。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "equal_contribution",
+              "scope": "paper",
+              "source_url": "https://viral-humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "Tairan He 的作者标记为 *，项目明确 * 表示 Equal Contributions；未推断独占技术主导。",
+              "excerpt": "Equal Contributions"
+            }
+          ]
+        },
+        {
+          "work_id": "arxiv:2509.16757",
+          "status": "verified",
+          "matched_author_name": "Tairan He",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://tairanhe.com/",
+              "work_url": "https://arxiv.org/abs/2509.16757",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "个人 publications 页完整列出 HDMI 作者名单含 Tairan He，BibTeX 明确 arXiv 2509.16757。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.15200",
+          "work_url": "https://arxiv.org/abs/2511.15200",
+          "source_url": "https://openalex.org/W7106466341",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2509.16757",
+          "work_url": "https://arxiv.org/abs/2509.16757",
+          "source_url": "https://openalex.org/W4415251265",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415251265 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2509.16757 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网新闻记载 2026-05 加入 OpenAI、2026-04 完成博士答辩；无日精度任期，不将 2025 年 VIRAL/HDMI 署名归到 OpenAI。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:ruijie-zheng",
+      "slug": "ruijie-zheng",
+      "name": "Ruijie Zheng",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://ruijiezheng.com/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [],
+      "authorships": [
+        {
+          "work_id": "arxiv:2602.16710",
+          "status": "verified",
+          "matched_author_name": "Ruijie Zheng",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://research.nvidia.com/labs/gear/egoscale/",
+              "work_url": "https://arxiv.org/abs/2602.16710",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "NVIDIA GEAR 官方 EgoScale 发布页列出 Ruijie Zheng 及完整作者名单和 2602.16710；T-Rex 官方项目把同一 NVIDIA 作者姓名直接链接 ruijiezheng.com，作为人物身份桥接，不扩大到全部同名作品。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2606.17055",
+          "status": "verified",
+          "matched_author_name": "Ruijie Zheng",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://tactile-rex.github.io/",
+              "work_url": "https://arxiv.org/abs/2606.17055",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "T-Rex 官方项目作者 Ruijie Zheng 直接链接 ruijiezheng.com，并以 NVIDIA 为该篇署名单位；项目论文和 BibTeX 指向 2606.17055。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2602.16710",
+          "work_url": "https://arxiv.org/abs/2602.16710",
+          "source_url": "https://openalex.org/W7130590664",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7130590664 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.16710 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2606.17055",
+          "work_url": "https://arxiv.org/abs/2606.17055",
+          "source_url": "https://openalex.org/W7164883918",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7164883918 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2606.17055 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "个人主页仍自述 third-year PhD / GEAR intern，与后续资料时序可能不一致，现任学生或实习身份不据此确定；本轮只核验身份链接和所列两项作品。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:binghao-huang",
+      "slug": "binghao-huang",
+      "name": "Binghao Huang",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://binghao-huang.github.io/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Columbia University, Computer Science",
+          "title": "Ph.D. student",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://binghao-huang.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2510.14930",
+          "status": "verified",
+          "matched_author_name": "Binghao Huang",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://binghao-huang.github.io/vt_refine/",
+              "work_url": "https://arxiv.org/abs/2510.14930",
+              "observed_at": "2026-09-06T13:09:41Z",
+              "statement": "本人官方 publications 页链接 VT-Refine 官方项目；该项目作者行链接 Binghao Huang 本人主页，arXiv 按钮指向 2510.14930，历史 Columbia 单位逐作者列出。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2607.15448",
+          "status": "verified",
+          "matched_author_name": "Binghao Huang",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://binghao-huang.github.io/",
+              "work_url": "https://arxiv.org/abs/2607.15448",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "本人官方 publications 页列 VTAP Gripper 完整作者名单，Paper 链接实际指向 arXiv 2607.15448。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.14930",
+          "work_url": "https://arxiv.org/abs/2510.14930",
+          "source_url": "https://openalex.org/W4415947131",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415947131 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.14930 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2607.15448",
+          "work_url": "https://arxiv.org/abs/2607.15448",
+          "source_url": "https://openalex.org/W7169782790",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7169782790 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2607.15448 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网新闻记载 2026-05 开始 Amazon FAR 实习，历史 NVIDIA Seattle 实习另有 2024-05、2025-05 事件；不将全部工作自动归入当前实习组。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:yu-shang",
+      "slug": "yu-shang",
+      "name": "Yu Shang",
+      "name_zh": "商宇",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://shangy21.github.io/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Alibaba Group, Tongyi Lab (Wan Team)",
+          "title": "Researcher",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://shangy21.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2602.08971",
+          "status": "verified",
+          "matched_author_name": "Yu Shang",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://shangy21.github.io/",
+              "work_url": "https://arxiv.org/abs/2602.08971",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "个人主页 WorldArena 条目列出 Yu Shang (Project Lead)，paper 链接指向 2602.08971。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "project_lead",
+              "scope": "project",
+              "source_url": "https://shangy21.github.io/",
+              "work_url": "https://arxiv.org/abs/2602.08971",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "本人官方项目列表显式写明 Yu Shang (Project Lead)，为公开自述角色而非由首位署名推断。",
+              "excerpt": "Yu Shang (Project Lead)"
+            }
+          ]
+        },
+        {
+          "work_id": "arxiv:2605.17912",
+          "status": "verified",
+          "matched_author_name": "Yu Shang",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://shangy21.github.io/",
+              "work_url": "https://arxiv.org/html/2605.17912v1",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "个人主页 WorldArena 2.0 条目列本人及项目负责人标记；paper 实际链接 arXiv HTML 2605.17912v1。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "project_lead",
+              "scope": "project",
+              "source_url": "https://shangy21.github.io/",
+              "work_url": "https://arxiv.org/html/2605.17912v1",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "本人官方项目列表对 WorldArena 2.0 显式记为 Project Lead。",
+              "excerpt": null
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2605.17912",
+          "work_url": "https://arxiv.org/abs/2605.17912",
+          "source_url": "https://openalex.org/W7161692373",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7161692373 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2605.17912 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "WorldArena 与 WorldArena 2.0 属同一项目系列，不能自动视为两份独立外部验证。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:hao-luo",
+      "slug": "hao-luo",
+      "name": "Hao Luo",
+      "name_zh": "罗昊",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://lightet.github.io/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Peking University, School of Computer Science",
+          "title": "Ph.D. student",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://lightet.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2601.12993",
+          "status": "verified",
+          "matched_author_name": "Hao Luo",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://lightet.github.io/",
+              "work_url": "https://arxiv.org/pdf/2601.12993",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "本人主页 Being-H0.5 条目直接链接 PDF 2601.12993，并明确 First-Listed Co-First；这不是把同名 Hao Luo 的整个姓名桶确认为同一人。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "equal_contribution",
+              "scope": "paper",
+              "source_url": "https://lightet.github.io/",
+              "work_url": "https://arxiv.org/pdf/2601.12993",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "官网对 Being-H0.5 明确标记 First-Listed Co-First；只保存共同一作声明，不换算贡献比例。",
+              "excerpt": "First-Listed Co-First"
+            }
+          ]
+        },
+        {
+          "work_id": "arxiv:2602.21736",
+          "status": "verified",
+          "matched_author_name": "Hao Luo",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://lightet.github.io/",
+              "work_url": "https://arxiv.org/pdf/2602.21736",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "本人主页列出 Joint-Aligned Latent Action 和完整作者名单，PDF 链接实际指向 2602.21736。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2601.12993",
+          "work_url": "https://arxiv.org/abs/2601.12993",
+          "source_url": "https://openalex.org/W7125276686",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7125276686 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2601.12993 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2602.21736",
+          "work_url": "https://arxiv.org/abs/2602.21736",
+          "source_url": "https://openalex.org/W7131631602",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7131631602 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2602.21736 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网列 BeingBeyond 实习 2025-05—2026-06、ByteDance 实习自 2026-06；只保留月粒度文字，不生成伪精确日任期，旧 Being-H/JALA 不改归 ByteDance。",
+        "当前库 A Wheel-Gripper 的同名 Hao Luo 未在本轮被确认，不纳入该人的已核验作品。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:yanjiang-guo",
+      "slug": "yanjiang-guo",
+      "name": "Yanjiang Guo",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://robert-gyj.github.io/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Tsinghua University, Computer Science",
+          "title": "Ph.D. student",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://robert-gyj.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2510.10125",
+          "status": "verified",
+          "matched_author_name": "Yanjiang Guo",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://ctrl-world.github.io/",
+              "work_url": "https://arxiv.org/abs/2510.10125",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "官方项目作者链接本人主页并明确论文 2510.10125。",
+              "excerpt": null
+            },
+            {
+              "kind": "official_project",
+              "url": "https://github.com/Robert-gyj/Ctrl-World/blob/main/readme.md",
+              "work_url": "https://arxiv.org/abs/2510.10125",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "Ctrl-World 官方仓库列作者和 *Equal contribution 说明；仓库由项目页直接链接。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "equal_contribution",
+              "scope": "paper",
+              "source_url": "https://github.com/Robert-gyj/Ctrl-World/blob/main/readme.md",
+              "work_url": "https://arxiv.org/abs/2510.10125",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "官方仓库作者 Yanjiang Guo 带 *，紧邻说明 *Equal contribution，独立于署名顺序。",
+              "excerpt": "Equal contribution"
+            }
+          ]
+        },
+        {
+          "work_id": "arxiv:2602.09849",
+          "status": "verified",
+          "matched_author_name": "Yanjiang Guo",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://robert-gyj.github.io/",
+              "work_url": "https://arxiv.org/abs/2602.09849",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "本人 publications 页 BagelVLA 完整作者列表含 Yanjiang Guo，其 arXiv 链接本轮打开解析为 2602.09849。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.10125",
+          "work_url": "https://arxiv.org/abs/2510.10125",
+          "source_url": "https://openalex.org/W4415273528",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W4415273528 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.10125 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网明确 Stanford 访问为 2025-03—2026-01；月精度关系保留文字，不当作当前 Stanford 或 Physical Intelligence 雇佣。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:sixiang-chen-world-models",
+      "slug": "sixiang-chen-world-models",
+      "name": "Sixiang Chen",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "candidate",
+      "official_profiles": [],
+      "official_roles": [],
+      "authorships": [
+        {
+          "work_id": "arxiv:2608.09298",
+          "status": "candidate",
+          "matched_author_name": "Sixiang Chen",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://evophys.com/WorldSimProbe/",
+              "work_url": "https://arxiv.org/abs/2608.09298",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "WorldSimProbe 官方项目确有 Sixiang Chen，标注北大单位；未给个人主页或唯一人员 ID，尚不能与搜索到的同名 HKUST 作者合并。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [],
+      "notes": [
+        "待身份消歧：机器人 WorldSimProbe 的 Sixiang Chen 与 ephemeral182.github.io 所示 HKUST（广州）陈思翔不能仅凭英文同名视为同一人。该同名主页本轮审读后未作为本候选的身份来源。",
+        "目前只保留可追溯候选署名；不纳入已核验人物计数、贡献或影响排序。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:yanjie-ze",
+      "slug": "yanjie-ze",
+      "name": "Yanjie Ze",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://yanjieze.com/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "Stanford University, Computer Science",
+          "title": "Ph.D. student",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://yanjieze.com/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2511.02832",
+          "status": "verified",
+          "matched_author_name": "Yanjie Ze",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://yanjieze.com/",
+              "work_url": "https://arxiv.org/abs/2511.02832",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "个人 publications 页 TWIST2 条目完整列作者、链接本人项目和 arXiv 2511.02832。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2510.02252",
+          "status": "verified",
+          "matched_author_name": "Yanjie Ze",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://yanjieze.com/",
+              "work_url": "https://arxiv.org/abs/2510.02252",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "个人 publications 页 Retargeting Matters 列出 Yanjie Ze* 并链接 arXiv 2510.02252。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "equal_contribution",
+              "scope": "paper",
+              "source_url": "https://yanjieze.com/",
+              "work_url": "https://arxiv.org/abs/2510.02252",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "作者行 Yanjie Ze 带 *，Publications 总脚注明确 * equal contribution；不据此推断具体技术职责。",
+              "excerpt": "equal contribution."
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.02832",
+          "work_url": "https://arxiv.org/abs/2511.02832",
+          "source_url": "https://openalex.org/W7103984447",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7103984447 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.02832 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2510.02252",
+          "work_url": "https://arxiv.org/abs/2510.02252",
+          "source_url": "https://openalex.org/W4414927347",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 1,
+          "statement": "OpenAlex Graph 的 W4414927347 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2510.02252 匹配，cited_by_count 为 1。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网把 Figure Helix 和 Amazon FAR 写为 Previously at；虽有 2026-01 开始 Figure 实习事件，未确认结束日，不将其当作当前角色。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:huazhe-xu",
+      "slug": "huazhe-xu",
+      "name": "Huazhe Xu",
+      "name_zh": null,
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://iiis.tsinghua.edu.cn/en/People/Faculty/XuHuazhe.htm",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [],
+      "authorships": [
+        {
+          "work_id": "arxiv:2603.22264",
+          "status": "verified",
+          "matched_author_name": "Huazhe Xu",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://unidex-ai.github.io/",
+              "work_url": "https://arxiv.org/html/2603.22264",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "UniDex 官方作者行链接 hxu.rocks，与清华 IIIS 官方个人页所列主页相同；arXiv 按钮实际指向 HTML 2603.22264。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "arxiv:2510.14830",
+          "status": "verified",
+          "matched_author_name": "Huazhe Xu",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://lei-kun.github.io/RL-100/",
+              "work_url": "https://arxiv.org/abs/2510.14830",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "RL-100 官方 Team 作者 Huazhe Xu 链接 hxu.rocks；Paper 按钮实际指向 2510.14830，另有逐人 Contribution List。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "principal_investigator",
+              "label": "Principal Investigator (PI)",
+              "scope": "project",
+              "source_url": "https://lei-kun.github.io/RL-100/",
+              "work_url": "https://arxiv.org/abs/2510.14830",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "项目 Contribution List 明确 Huazhe 是 PI，负责项目方向与指导并参与写作；不是把末位署名自动当导师或项目负责人。",
+              "excerpt": "Huazhe: Principal Investigator (PI), Core, responsible for project direction and guidance, and contributed to paper writing."
+            }
+          ]
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2603.22264",
+          "work_url": "https://arxiv.org/abs/2603.22264",
+          "source_url": "https://openalex.org/W7140228196",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7140228196 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2603.22264 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "清华 IIIS 身份页可访问，但 hxu.rocks 本轮打不开；没有按搜索摘要填入未经该页验证的现任职称。",
+        "UniDex 官方 * 指 Core Contributors、† 指 Project Lead；不从其他作者页面的同形符号推断 Huazhe 的 equal advising。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:linxi-fan",
+      "slug": "linxi-fan",
+      "name": "Linxi Fan",
+      "name_zh": null,
+      "aliases": [
+        "Linxi \"Jim\" Fan",
+        "Jim Fan"
+      ],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://jimfan.me/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "NVIDIA GEAR",
+          "title": "GEAR Team Lead",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://viral-humanoid.github.io/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2511.15200",
+          "status": "verified",
+          "matched_author_name": "Linxi Fan",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://viral-humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "VIRAL 作者行 Linxi \"Jim\" Fan 直接链接 jimfan.me；同页 BibTeX 写作 Fan, Linxi，硬匹配当前库 Linxi Fan 署名及 2511.15200。",
+              "excerpt": null
+            }
+          ],
+          "roles": [
+            {
+              "role": "team_lead",
+              "label": "GEAR Team Lead",
+              "scope": "project",
+              "source_url": "https://viral-humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "该项目的 † 脚注明确为 GEAR Team Leads，不将其改称项目一作或唯一技术负责人。",
+              "excerpt": null
+            }
+          ]
+        },
+        {
+          "work_id": "doi:10.1126/scirobotics.aed4592",
+          "status": "verified",
+          "matched_author_name": "Linxi \"Jim\" Fan",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://tairanhe.com/",
+              "work_url": "https://arxiv.org/abs/2511.07820",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "Tairan He 官方 publications 页 SONIC 作者名单含 Linxi \"Jim\" Fan，BibTeX 明确 arXiv 2511.07820；该 arXiv 为本库 SONIC DOI canonical 的历史 alias。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.15200",
+          "work_url": "https://arxiv.org/abs/2511.15200",
+          "source_url": "https://openalex.org/W7106466341",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "doi:10.1126/scirobotics.aed4592",
+          "work_url": "https://doi.org/10.1126/scirobotics.aed4592",
+          "source_url": "https://openalex.org/W7202294264",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 3,
+          "statement": "OpenAlex Graph 的 W7202294264 记录在本次无密钥批量响应中按精确 DOI 10.1126/scirobotics.aed4592 匹配，cited_by_count 为 3。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "别名由个人主页 Linxi \"Jim\" Fan、站点标题 Jim Fan 与 VIRAL 同页作者/BibTeX 交叉证明；不把污染字符串 LinxiJimFan 另作一人。"
+      ],
+      "reviewer_kind": "ai"
+    },
+    {
+      "person_id": "person:zhengyi-luo",
+      "slug": "zhengyi-luo",
+      "name": "Zhengyi Luo",
+      "name_zh": "罗正宜",
+      "aliases": [],
+      "identity_status": "profile_verified",
+      "official_profiles": [
+        {
+          "url": "https://www.zhengyiluo.com/",
+          "label": "官方个人或机构身份页",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "official_roles": [
+        {
+          "organization_id": null,
+          "organization_name": "NVIDIA GEAR Lab",
+          "title": "Senior Research Scientist",
+          "valid_from": null,
+          "valid_to": null,
+          "source_url": "https://www.zhengyiluo.com/",
+          "observed_at": "2026-09-06T12:58:58Z"
+        }
+      ],
+      "authorships": [
+        {
+          "work_id": "arxiv:2511.15200",
+          "status": "verified",
+          "matched_author_name": "Zhengyi Luo",
+          "evidence": [
+            {
+              "kind": "official_project",
+              "url": "https://viral-humanoid.github.io/",
+              "work_url": "https://arxiv.org/abs/2511.15200",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "VIRAL 项目作者 Zhengyi Luo 直接链接 zhengyiluo.com；个人 news 也明确该项目，项目论文 2511.15200。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        },
+        {
+          "work_id": "doi:10.1126/scirobotics.aed4592",
+          "status": "verified",
+          "matched_author_name": "Zhengyi Luo",
+          "evidence": [
+            {
+              "kind": "official_publications",
+              "url": "https://tairanhe.com/",
+              "work_url": "https://arxiv.org/abs/2511.07820",
+              "observed_at": "2026-09-06T12:58:58Z",
+              "statement": "Tairan He 官方 publications 页 SONIC 完整作者/BibTeX 包含 Zhengyi Luo 和 arXiv 2511.07820；Zhengyi Luo 本人主页 Selected Research 链接 SONIC 官方项目。",
+              "excerpt": null
+            }
+          ],
+          "roles": null
+        }
+      ],
+      "influence_evidence": [
+        {
+          "dimension": "citation_count",
+          "work_id": "arxiv:2511.15200",
+          "work_url": "https://arxiv.org/abs/2511.15200",
+          "source_url": "https://openalex.org/W7106466341",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 0,
+          "statement": "OpenAlex Graph 的 W7106466341 记录在本次无密钥批量响应中按精确 DOI 10.48550/arxiv.2511.15200 匹配，cited_by_count 为 0。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        },
+        {
+          "dimension": "citation_count",
+          "work_id": "doi:10.1126/scirobotics.aed4592",
+          "work_url": "https://doi.org/10.1126/scirobotics.aed4592",
+          "source_url": "https://openalex.org/W7202294264",
+          "observed_at": "2026-09-06T13:58:35.596Z",
+          "as_of": "2026-09-06",
+          "review_status": "draft",
+          "provider": "openalex",
+          "count": 3,
+          "statement": "OpenAlex Graph 的 W7202294264 记录在本次无密钥批量响应中按精确 DOI 10.1126/scirobotics.aed4592 匹配，cited_by_count 为 3。此计数仅指该提供者记录；不代表跨版本完整引用、独立采用、复现或研究质量。source_url 是同一官方 paper ID 的可复核入口，实际读取的是下方保存的批量请求。"
+        }
+      ],
+      "notes": [
+        "官网 News 的 2025-05 开始职位和 Affiliations 的 2025-03 起始存在月级差异；任期开始保留 null，不擅自取其一。"
+      ],
+      "reviewer_kind": "ai"
+    }
+  ]
+}

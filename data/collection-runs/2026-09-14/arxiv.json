@@ -1,0 +1,105 @@
+{
+  "schema_version": "1",
+  "run_id": "monthly-arxiv:2026-09-14",
+  "signature": "5679bb35433eb5fa37b2509c93955f28811e9f529cb8a384151ef166e791f018",
+  "imported_at": "2026-09-14T02:58:49Z",
+  "analysis_cutoff": "2026-09-14",
+  "cutoff_basis": "analysis_window_not_API_collection_completeness",
+  "month": "2026-09",
+  "cohort_status": "provisional",
+  "cohort_records": 568,
+  "last_observed_arxiv_v1_date": "2026-09-11",
+  "source_data_through": null,
+  "registered_api_scope_complete": false,
+  "html_fallback": {
+    "complete_for_observed_html_scope": true,
+    "core_cs_ro": {
+      "advertised_month_list_total": 491,
+      "listed_unique_ids": 491,
+      "listing_pagination_complete": true,
+      "metadata_complete_for_observed_month_list": true,
+      "verified_cs_ro_records": 460,
+      "outside_first_submission_window": 31,
+      "unresolved_metadata_count": 0,
+      "scope_limit": "Complete only against this observed official monthly announcement list, not claimed equivalent to the failed submittedDate API query.",
+      "source": {
+        "url": "https://arxiv.org/list/cs.RO/2026-09?skip=0&show=2000",
+        "sha256": "dc0c7af7c7598f46556b7ef285d06dcc1f0da920ac32f8e65aff2cdf3e91b601",
+        "finished_at": "2026-09-14T01:56:00Z",
+        "raw_file": "raw/monthly-cs-ro.html"
+      }
+    },
+    "supplementary": {
+      "robot_crosslist": {
+        "status": "ok",
+        "search_advertised_total_before_category_filter": 472,
+        "search_unique_ids_before_category_filter": 472,
+        "verified_cohort_records": 199,
+        "complete_pagination": true,
+        "method": "official advanced search over computer-science classification; OR clauses use separate form fields; locally restrict categories to cs.AI/cs.CV/cs.LG",
+        "original_api_query_status": "failed",
+        "api_search_equivalence": "not_claimed_unverified_search_backend_index_and_tokenization_differences"
+      },
+      "embodied_crosslist": {
+        "status": "ok",
+        "search_advertised_total_before_category_filter": 116,
+        "search_unique_ids_before_category_filter": 116,
+        "verified_cohort_records": 55,
+        "complete_pagination": true,
+        "method": "official advanced search over computer-science classification; OR clauses use separate form fields; locally restrict categories to cs.AI/cs.CV/cs.LG",
+        "original_api_query_status": "failed",
+        "api_search_equivalence": "not_claimed_unverified_search_backend_index_and_tokenization_differences"
+      }
+    },
+    "api_equivalence_verified": false
+  },
+  "api_collection": {
+    "status": "failed",
+    "complete": false,
+    "expected_records": null,
+    "observed_records": 0,
+    "checks": [
+      {
+        "query_id": "cs_ro",
+        "status": "failed",
+        "complete": false,
+        "advertised_total": null,
+        "observed_records": 0,
+        "error_type": "HTTPError"
+      },
+      {
+        "query_id": "robot_crosslist",
+        "status": "failed",
+        "complete": false,
+        "advertised_total": null,
+        "observed_records": 0,
+        "error_type": "HTTPError"
+      },
+      {
+        "query_id": "embodied_crosslist",
+        "status": "failed",
+        "complete": false,
+        "advertised_total": null,
+        "observed_records": 0,
+        "error_type": "HTTPError"
+      }
+    ]
+  },
+  "input": {
+    "path": "/Users/joen/.codex/visualizations/2026/07/29/019fade6-1702-7f22-ab47-a0c39ed7229b/september-2026/arxiv/author-complete-cohort.json",
+    "sha256": "ef2094153ec116fdd807622c9eae5cb91e29459d8ded2a66211cdcebc065fef7"
+  },
+  "coverage_input": {
+    "path": "/Users/joen/.codex/visualizations/2026/07/29/019fade6-1702-7f22-ab47-a0c39ed7229b/september-2026/arxiv/fallback-manifest.json",
+    "sha256": "18e39855d0d4c9f40654e57ce99b06bd87cc573eecdd87f39ad534b5eb7fe96d"
+  },
+  "source_archives_policy": "External raw archives remain in place; record observation URLs/SHA-256 and raw references are preserved.",
+  "limitations": [
+    "September is incomplete; all counts are provisional.",
+    "Registered API queries returned HTTP 429/timeouts; they are not recorded as successful and cannot establish exact registered-query completeness.",
+    "Official HTML search fallback is audited separately; its indexing freshness and tokenization may differ from the Atom API.",
+    "Most search metadata exposes dates, not UTC seconds; no midnight timestamps are invented.",
+    "Current text belongs to the observed latest version; v1 text is not reconstructed.",
+    "Full papers and independent technical claims have not been reviewed during metadata collection."
+  ]
+}

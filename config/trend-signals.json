@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "signals": [
+    {"signal_id":"S1","title":"动作条件世界模型能否提高闭环控制收益","directions":["D3","D10","D12"],"questions":["Q1","Q4","Q10"],"terms":["world model","world-action","world action","predictive dynamics"],"required_terms":["control","planning","policy","manipulation"],"metrics":["同预算控制收益","接触预测误差","时延与模型偏差"],"falsifier":"视频质量提高，但在相同数据与计算预算下没有可复现的控制收益。"},
+    {"signal_id":"S2","title":"部署后学习能否降低接管与再训练成本","directions":["D8","D13"],"questions":["Q0","Q6","Q7"],"terms":["deployment learning","online reinforcement","self-improving","self improving","learning while deploying","failure recovery","intervention learning"],"required_terms":["robot","policy","manipulation"],"metrics":["真机小时","接管时间","旧技能回归","失败恢复率"],"falsifier":"每次适配仍需专用奖励和持续人工监护，或新技能改善导致旧技能退化。"},
+    {"signal_id":"S3","title":"人类数据的规模与多样性能否改善跨本体策略","directions":["D1","D4","D9"],"questions":["Q2","Q9"],"terms":["human video","egocentric video","human demonstration","human-to-robot","human to robot"],"required_terms":["robot","action","policy"],"metrics":["固定真机预算成功率","数据多样性","本体适配成本"],"falsifier":"人类数据只改进视觉表征，固定真机数据预算下的最终执行能力不提高。"},
+    {"signal_id":"S4","title":"持久记忆能否改善历史依赖的机器人任务","directions":["D1","D2","D13"],"questions":["Q0","Q6","Q7"],"terms":["robot memory","episodic memory","memory-augmented","memory augmented","long-term memory","persistent memory"],"required_terms":["robot","embodied","policy"],"metrics":["历史依赖任务成功率","错误复发率","长上下文对照"],"falsifier":"收益可由扩大上下文或记住训练环境解释，未证明对未知历史状态的利用。"},
+    {"signal_id":"S5","title":"硬件与控制接口是否改变策略学习结论","directions":["D4","D5","D8","D15"],"questions":["Q3","Q5","Q8"],"terms":["co-design","codesign","control frequency","action space","controller gains","sensor placement","hardware-aware"],"required_terms":["robot","manipulation","policy","control"],"metrics":["受控硬件消融","控制频率","传感器成本","跨设备泛化"],"falsifier":"算法优势只在特定控制器或硬件设置成立，控制条件一致后优势消失。"},
+    {"signal_id":"S6","title":"细粒度评测和实时约束能否揭示部署瓶颈","directions":["D1","D2","D12"],"questions":["Q3","Q8","Q10"],"terms":["failure detection","benchmark","real-time inference","inference latency","fine-grained evaluation"],"required_terms":["robot","manipulation","vla","embodied"],"metrics":["失败类型覆盖","端侧时延","理解/感知/执行消融","外部复现"],"falsifier":"综合成功率上升掩盖了关键失败类型，或推理时延使方法无法在机器人上闭环执行。"}
+  ]
+}

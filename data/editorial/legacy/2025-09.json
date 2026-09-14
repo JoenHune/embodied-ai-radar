@@ -1,0 +1,859 @@
+{
+  "schema_version": "3",
+  "month": "2025-09",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2025-09:b448ec393472",
+      "month": "2025-09",
+      "title": "flow matching 正在成为通用策略的新执行底座",
+      "summary": "ManiFlow、EC-Flow 与 FLOWER 在通用操控、无标签视频和轻量 generalist policy 三条线上同时采用 flow。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-09/0",
+        "record_sha256": "7877e52836b81aa7e653618e7171ae9963cedcff378433d31c9bfe7d60b4d6f0"
+      },
+      "supporting_ids": [
+        "arxiv:2509.01819",
+        "arxiv:2507.06224",
+        "arxiv:2509.04996"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.01819",
+          "arxiv_id": "2509.01819",
+          "work_id": "arxiv:2509.01819",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.01819"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.01819",
+            "https://proceedings.mlr.press/v305/yan25a.html"
+          ],
+          "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2507.06224",
+          "arxiv_id": "2507.06224",
+          "work_id": "arxiv:2507.06224",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2507.06224"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-07-08",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2507.06224"
+          ],
+          "title": "EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2509.04996",
+          "arxiv_id": "2509.04996",
+          "work_id": "arxiv:2509.04996",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.04996"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-05",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.04996"
+          ],
+          "title": "FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2507.06224"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2507.06224",
+        "https://arxiv.org/abs/2509.01819",
+        "https://arxiv.org/abs/2509.04996",
+        "https://proceedings.mlr.press/v305/yan25a.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "相比同比基线的 diffusion policy 主导，flow 的速度与连续控制优势开始跨团队扩散。",
+      "maturity": "多团队、跨月，但统一真机 benchmark 尚未形成。",
+      "bottleneck": "训练稳定性和闭环重规划。",
+      "implication": "基础设施层应支持 diffusion 与 flow 共存，而不是押注单一采样器。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "flow matching 正在成为通用策略的新执行底座",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "ManiFlow、EC-Flow 与 FLOWER 在通用操控、无标签视频和轻量 generalist policy 三条线上同时采用 flow。",
+        "comparison": "相比同比基线的 diffusion policy 主导，flow 的速度与连续控制优势开始跨团队扩散。",
+        "evidence_ids": [
+          "2509.01819",
+          "2507.06224",
+          "2509.04996"
+        ],
+        "maturity": "多团队、跨月，但统一真机 benchmark 尚未形成。",
+        "bottleneck": "训练稳定性和闭环重规划。",
+        "implication": "基础设施层应支持 diffusion 与 flow 共存，而不是押注单一采样器。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-09:bbc331d5f4fe",
+      "month": "2025-09",
+      "title": "灵巧操作的数据表示从关节轨迹转向接触与第一视角",
+      "summary": "OpenEgo、Text2Touch 与 CEDex 分别用 egocentric 数据、语言设计奖励和接触表示扩大灵巧操作监督。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-09/1",
+        "record_sha256": "d6a3c8e84a7dacfb86ee6e97c283873499807522f896a0964155941746c43363"
+      },
+      "supporting_ids": [
+        "arxiv:2509.05513",
+        "arxiv:2509.07445",
+        "arxiv:2509.24661"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.05513",
+          "arxiv_id": "2509.05513",
+          "work_id": "arxiv:2509.05513",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.05513"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-09-05",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.05513"
+          ],
+          "title": "OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2509.07445",
+          "arxiv_id": "2509.07445",
+          "work_id": "arxiv:2509.07445",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.07445"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-09",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q3",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.07445",
+            "https://proceedings.mlr.press/v305/field25a.html"
+          ],
+          "title": "Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2509.24661",
+          "arxiv_id": "2509.24661",
+          "work_id": "arxiv:2509.24661",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.24661"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q1",
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.24661",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_171"
+          ],
+          "title": "CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D10",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2509.05513"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.05513",
+        "https://arxiv.org/abs/2509.07445",
+        "https://arxiv.org/abs/2509.24661",
+        "https://proceedings.mlr.press/v305/field25a.html",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_171"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "本月信号不在更复杂的手，而在更可迁移的数据坐标系。",
+      "maturity": "数据与表示创新先于通用真机策略。",
+      "bottleneck": "接触标注成本与不同手型的对应关系。",
+      "implication": "长期价值更可能沉淀在接触数据协议与手型无关表示。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "灵巧操作的数据表示从关节轨迹转向接触与第一视角",
+        "grade": "B",
+        "kind": "weak",
+        "change": "OpenEgo、Text2Touch 与 CEDex 分别用 egocentric 数据、语言设计奖励和接触表示扩大灵巧操作监督。",
+        "comparison": "本月信号不在更复杂的手，而在更可迁移的数据坐标系。",
+        "evidence_ids": [
+          "2509.05513",
+          "2509.07445",
+          "2509.24661"
+        ],
+        "maturity": "数据与表示创新先于通用真机策略。",
+        "bottleneck": "接触标注成本与不同手型的对应关系。",
+        "implication": "长期价值更可能沉淀在接触数据协议与手型无关表示。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2025-09:aa6fbf01c896",
+      "month": "2025-09",
+      "title": "在线搜索被塞进 VLA 推理环",
+      "summary": "VLA-Reasoner 用 online MCTS 把推理从一次性 chain-of-thought 变成动作候选搜索。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2025-09/2",
+        "record_sha256": "75071df99909e7f1bed59aaf091b617c3002af119400b73f81e48eed97f951f6"
+      },
+      "supporting_ids": [
+        "arxiv:2509.22643"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.22643",
+          "arxiv_id": "2509.22643",
+          "work_id": "arxiv:2509.22643",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.22643"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-26",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.22643",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_128"
+          ],
+          "title": "VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.22643",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_128"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "此前 reasoning 多是离线语义提示；这是面向执行验证的早期转向。",
+      "maturity": "单项高新颖度工作。",
+      "bottleneck": "搜索延迟、奖励可信度与真实机器人安全探索。",
+      "implication": "观察后续是否出现轻量 verifier 或搜索蒸馏路线。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "在线搜索被塞进 VLA 推理环",
+        "grade": "C",
+        "kind": "weak",
+        "change": "VLA-Reasoner 用 online MCTS 把推理从一次性 chain-of-thought 变成动作候选搜索。",
+        "comparison": "此前 reasoning 多是离线语义提示；这是面向执行验证的早期转向。",
+        "evidence_ids": [
+          "2509.22643"
+        ],
+        "maturity": "单项高新颖度工作。",
+        "bottleneck": "搜索延迟、奖励可信度与真实机器人安全探索。",
+        "implication": "观察后续是否出现轻量 verifier 或搜索蒸馏路线。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2509.01819",
+      "work_id": "arxiv:2509.01819",
+      "legacy_id": "2509.01819",
+      "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "ManiFlow 用 consistency flow 将高维动作生成压到 1–2 步，并在单臂、双臂与人形真实平台上验证多模态通用操作。",
+      "limitation_zh": "虽然平台覆盖较广，摘要未证明复杂长时序、接触安全或分布外故障恢复；一致性蒸馏可能牺牲多峰动作覆盖。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/919",
+        "record_sha256": "23c53a7aedc3e588bdbe4d34cdffe50b5b311daf76c71b45a9fc44d852fba878"
+      },
+      "supporting_ids": [
+        "arxiv:2509.01819"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.01819",
+          "arxiv_id": "2509.01819",
+          "work_id": "arxiv:2509.01819",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.01819"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-01",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D5",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.01819",
+            "https://proceedings.mlr.press/v305/yan25a.html"
+          ],
+          "title": "ManiFlow: A General Robot Manipulation Policy via Consistency Flow Training",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D5",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.01819",
+        "https://proceedings.mlr.press/v305/yan25a.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2509.05513",
+      "work_id": "arxiv:2509.05513",
+      "legacy_id": "2509.05513",
+      "title": "OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "OpenEgo 统一六个公开视频集为 1107 小时、290 任务、600+ 环境的手姿态与时间定位动作原语数据，服务灵巧 VLA 预训练。",
+      "limitation_zh": "手姿态与动作原语来自自动标准化，跨数据集误差和人-机动作鸿沟仍在；当时资源为“将发布”而非已核验下载。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/931",
+        "record_sha256": "728ac0b936fbc5a5b032682e6c0dd7428eae6c766c9a5b06b35e5e901a6da63b"
+      },
+      "supporting_ids": [
+        "arxiv:2509.05513"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.05513",
+          "arxiv_id": "2509.05513",
+          "work_id": "arxiv:2509.05513",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.05513"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-09-05",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.05513"
+          ],
+          "title": "OpenEgo: A Large-Scale Multimodal Egocentric Dataset for Dexterous Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2509.05513"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.05513"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2509.07445",
+      "work_id": "arxiv:2509.07445",
+      "legacy_id": "2509.07445",
+      "title": "Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "Text2Touch 让 LLM 为 70+ 环境变量设计短奖励，经 sim-to-real 蒸馏在四指触觉手上完成多轴 in-hand rotation。",
+      "limitation_zh": "验证聚焦单类多轴 in-hand rotation，LLM 奖励对提示、变量命名和硬件触觉域偏移的敏感性尚不清楚。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/936",
+        "record_sha256": "ff5d6e71db8579cbb2306dc58239c3e7885c72be7b8ccaf634ed43f3c9df42d4"
+      },
+      "supporting_ids": [
+        "arxiv:2509.07445"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.07445",
+          "arxiv_id": "2509.07445",
+          "work_id": "arxiv:2509.07445",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.07445"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-09",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8",
+            "D10"
+          ],
+          "questions": [
+            "Q3",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.07445",
+            "https://proceedings.mlr.press/v305/field25a.html"
+          ],
+          "title": "Text2Touch: Tactile In-Hand Manipulation with LLM-Designed Reward Functions",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D10",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q3",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.07445",
+        "https://proceedings.mlr.press/v305/field25a.html"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2509.18428",
+      "work_id": "arxiv:2509.18428",
+      "legacy_id": "2509.18428",
+      "title": "Latent Action Pretraining Through World Modeling",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "LAWM 通过世界建模从无标签人/机器人视频学习 latent action，使较小模仿学习模型跨任务、环境与本体迁移。",
+      "limitation_zh": "latent action 是否对应可控物理因果仍依赖世界模型质量；真实验证和跨本体规模有限，缺少开放资产信号。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/999",
+        "record_sha256": "95a61e158ac2ab606b58d649075227231bade1d1fb7790f5db964b9439d089f9"
+      },
+      "supporting_ids": [
+        "arxiv:2509.18428"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.18428",
+          "arxiv_id": "2509.18428",
+          "work_id": "arxiv:2509.18428",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.18428"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D9"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.18428"
+          ],
+          "title": "Latent Action Pretraining Through World Modeling",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.18428"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2509.20286",
+      "work_id": "arxiv:2509.20286",
+      "legacy_id": "2509.20286",
+      "title": "Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "PAD 将单条人类视频解析成机器人关键点动作，用双臂任务与运动规划无仿真扩增，再蒸馏成可泛化视觉运动策略。",
+      "limitation_zh": "关键点与任务运动规划假设限制对柔性体、复杂接触和未知障碍的适用性；单示范结论需更多独立任务复现。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1024",
+        "record_sha256": "47c7183e74c30422cb245854cd47f1bf4dc04dda5ea9aaf9d98f8098eb6e7d32"
+      },
+      "supporting_ids": [
+        "arxiv:2509.20286"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.20286",
+          "arxiv_id": "2509.20286",
+          "work_id": "arxiv:2509.20286",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.20286"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2025-09-24",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D9",
+            "D10"
+          ],
+          "questions": [
+            "Q2",
+            "Q4"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.20286"
+          ],
+          "title": "Parse-Augment-Distill: Learning Generalizable Bimanual Visuomotor Policies from Single Human Video",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D10",
+        "D4",
+        "D9"
+      ],
+      "questions": [
+        "Q2",
+        "Q4"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2509.20286"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.20286"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2509.22643",
+      "work_id": "arxiv:2509.22643",
+      "legacy_id": "2509.22643",
+      "title": "VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "VLA-Reasoner 以世界模型 rollout、KDE 置信采样和 MCTS 为现成 VLA 增加测试时前瞻，在真实长时序任务上纠偏。",
+      "limitation_zh": "在线世界模型 rollout 与 MCTS 增加推理开销，并可能放大模型幻觉；实验尚不足以证明开放世界可靠性。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1048",
+        "record_sha256": "4d4f068babbb4165e01e42c0d39e72c66382f26e6a1fe2af889965562f4abed6"
+      },
+      "supporting_ids": [
+        "arxiv:2509.22643"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.22643",
+          "arxiv_id": "2509.22643",
+          "work_id": "arxiv:2509.22643",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.22643"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-26",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.22643",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_128"
+          ],
+          "title": "VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.22643",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_128"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2509.24661",
+      "work_id": "arxiv:2509.24661",
+      "legacy_id": "2509.24661",
+      "title": "CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations",
+      "month": "2025-09",
+      "status": "legacy_editorial",
+      "contribution_zh": "CEDex 用人类式接触表征、拓扑合并与 SDF 物理约束，把同一抓取先验扩展到任意形态的灵巧手并规模化生成数据。",
+      "limitation_zh": "工作解决的是静态抓取生成而非完整闭环操作，依赖物体点云、手部运动学与接触模型准确性，真实长时序技能未覆盖。",
+      "selection_reason_zh": "方法与五类主题直接相关，且摘要给出较强的规模、真实机器人、跨本体、长时序或开放资产证据，适合作为月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/1064",
+        "record_sha256": "ee78576649b48a4def518fad9902967d0706a592dcd84919492d64ca81e87603"
+      },
+      "supporting_ids": [
+        "arxiv:2509.24661"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2509.24661",
+          "arxiv_id": "2509.24661",
+          "work_id": "arxiv:2509.24661",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2509.24661"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2025-09-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D8"
+          ],
+          "questions": [
+            "Q1",
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2509.24661",
+            "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_171"
+          ],
+          "title": "CEDex: Cross-Embodiment Dexterous Grasp Generation at Scale from Human-like Contact Representations",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q1",
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2509.24661",
+        "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_171"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "cb424b2c58cb5a2cbb106713a2acf17b1f3c683275d73e6a208a663f3747ee6a"
+}

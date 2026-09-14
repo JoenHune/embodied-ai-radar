@@ -1,0 +1,933 @@
+{
+  "schema_version": "3",
+  "month": "2026-04",
+  "status": "legacy_editorial",
+  "label": "历史研究编辑；新增自动摘要待生成",
+  "in_active_window": true,
+  "claims": [
+    {
+      "claim_id": "claim:legacy:2026-04:ba55460e62f4",
+      "month": "2026-04",
+      "title": "触觉与 world model 开始合流",
+      "summary": "Touch Dreaming、FingerEye 与 OmniVTA 把触觉用于未来预测、连续感知和接触世界建模。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-04/0",
+        "record_sha256": "6b54ca18dfeaf4c860fd99cbedea2b02d0f4e89f474b6fcd07ffac2e8a3ea758"
+      },
+      "supporting_ids": [
+        "arxiv:2604.13015",
+        "arxiv:2604.20689",
+        "arxiv:2603.19201"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.13015",
+          "arxiv_id": "2604.13015",
+          "work_id": "arxiv:2604.13015",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.13015"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-04-14",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q1",
+            "Q3",
+            "Q5"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.13015"
+          ],
+          "title": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2604.20689",
+          "arxiv_id": "2604.20689",
+          "work_id": "arxiv:2604.20689",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.20689"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D11",
+            "D15"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.20689"
+          ],
+          "title": "FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2603.19201",
+          "arxiv_id": "2603.19201",
+          "work_id": "arxiv:2603.19201",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.19201"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-19",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D3",
+            "D4"
+          ],
+          "questions": [
+            "Q0",
+            "Q1",
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.19201"
+          ],
+          "title": "OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Robotic Manipulation",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D11",
+        "D15",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "questions": [
+        "Q0",
+        "Q1",
+        "Q3",
+        "Q5"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.20689",
+        "arxiv:2603.19201"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.19201",
+        "https://arxiv.org/abs/2604.13015",
+        "https://arxiv.org/abs/2604.20689"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "8 月只是多模态 VLA 接口；本月触觉开始改变训练目标和状态预测。",
+      "maturity": "跨团队、跨月信号明确。",
+      "bottleneck": "低成本传感器一致性与大规模同步数据。",
+      "implication": "触觉世界模型可能先在装配、工具使用和柔性物体中兑现。",
+      "legacy_grade": "B",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "触觉与 world model 开始合流",
+        "grade": "B",
+        "kind": "weak",
+        "change": "Touch Dreaming、FingerEye 与 OmniVTA 把触觉用于未来预测、连续感知和接触世界建模。",
+        "comparison": "8 月只是多模态 VLA 接口；本月触觉开始改变训练目标和状态预测。",
+        "evidence_ids": [
+          "2604.13015",
+          "2604.20689",
+          "2603.19201"
+        ],
+        "maturity": "跨团队、跨月信号明确。",
+        "bottleneck": "低成本传感器一致性与大规模同步数据。",
+        "implication": "触觉世界模型可能先在装配、工具使用和柔性物体中兑现。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-04:5d88f8061c9d",
+      "month": "2026-04",
+      "title": "双系统进入异步 coarse-to-fine 调度",
+      "summary": "Libra-VLA、Trace-Conditioned Planning 与 DIAL 不再固定每步完整推理，而是在轨迹、意图和动作层分配不同计算。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-04/1",
+        "record_sha256": "d86ed9cbf1e858d27aba22dd16ed914ae077ef813c32fb8d22801db89879992f"
+      },
+      "supporting_ids": [
+        "arxiv:2604.24921",
+        "arxiv:2604.21924",
+        "arxiv:2603.29844"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.24921",
+          "arxiv_id": "2604.24921",
+          "work_id": "arxiv:2604.24921",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.24921"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.24921"
+          ],
+          "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2604.21924",
+          "arxiv_id": "2604.21924",
+          "work_id": "arxiv:2604.21924",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.21924"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-23",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D12"
+          ],
+          "questions": [
+            "Q0"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.21924"
+          ],
+          "title": "Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        },
+        {
+          "legacy_id": "2603.29844",
+          "arxiv_id": "2603.29844",
+          "work_id": "arxiv:2603.29844",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2603.29844"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-03-31",
+          "temporal_role": "historical_context",
+          "directions": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q2"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2603.29844"
+          ],
+          "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "questions": [
+        "Q0",
+        "Q2"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.24921",
+        "arxiv:2604.21924",
+        "arxiv:2603.29844"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2603.29844",
+        "https://arxiv.org/abs/2604.21924",
+        "https://arxiv.org/abs/2604.24921"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "比 2025 年的显式 fast–slow 更接近实时系统设计。",
+      "maturity": "架构成熟度上升，工程 benchmark 缺失。",
+      "bottleneck": "异步状态陈旧与延迟抖动。",
+      "implication": "控制频率、端到端延迟和恢复时间应进入标准评测。",
+      "legacy_grade": "B",
+      "legacy_kind": "consensus",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "双系统进入异步 coarse-to-fine 调度",
+        "grade": "B",
+        "kind": "consensus",
+        "change": "Libra-VLA、Trace-Conditioned Planning 与 DIAL 不再固定每步完整推理，而是在轨迹、意图和动作层分配不同计算。",
+        "comparison": "比 2025 年的显式 fast–slow 更接近实时系统设计。",
+        "evidence_ids": [
+          "2604.24921",
+          "2604.21924",
+          "2603.29844"
+        ],
+        "maturity": "架构成熟度上升，工程 benchmark 缺失。",
+        "bottleneck": "异步状态陈旧与延迟抖动。",
+        "implication": "控制频率、端到端延迟和恢复时间应进入标准评测。"
+      }
+    },
+    {
+      "claim_id": "claim:legacy:2026-04:6ba21e933b8e",
+      "month": "2026-04",
+      "title": "foundation model 开始接受垂直本体与可控行为约束",
+      "summary": "π0.7 强调 steerable generalist policy，Open-H-Embodiment 把医疗机器人纳入大规模基础模型数据。",
+      "status": "legacy_editorial",
+      "generator": "legacy_editorial_import",
+      "original_source": {
+        "path": "data/trends.json",
+        "json_pointer": "/months/2026-04/2",
+        "record_sha256": "ef7f46f3a98cf8e2224a7ca7541f14a246285131159e1116d75b752ce6517921"
+      },
+      "supporting_ids": [
+        "arxiv:2604.15483",
+        "arxiv:2604.21017"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.15483",
+          "arxiv_id": "2604.15483",
+          "work_id": "arxiv:2604.15483",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.15483"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-04-16",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8",
+            "D2",
+            "D13"
+          ],
+          "questions": [
+            "Q2",
+            "Q0",
+            "Q6",
+            "Q7",
+            "Q9"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.15483",
+            "https://www.pi.website/blog/pi07"
+          ],
+          "title": "$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities",
+          "review_reasons": []
+        },
+        {
+          "legacy_id": "2604.21017",
+          "arxiv_id": "2604.21017",
+          "work_id": "arxiv:2604.21017",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.21017"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D12"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.21017"
+          ],
+          "title": "Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D13",
+        "D2",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q10",
+        "Q2",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.21017"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.15483",
+        "https://arxiv.org/abs/2604.21017",
+        "https://www.pi.website/blog/pi07"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited",
+      "comparison": "通用性从“同一权重做更多任务”转向“可控制地适应高约束域”。",
+      "maturity": "两个高信号工作，独立验证不足。",
+      "bottleneck": "高风险域的安全验证与数据治理。",
+      "implication": "通用底座与垂直合规层可能形成分层市场。",
+      "legacy_grade": "C",
+      "legacy_kind": "weak",
+      "historical_statistic_review_required": false,
+      "original_record": {
+        "title": "foundation model 开始接受垂直本体与可控行为约束",
+        "grade": "C",
+        "kind": "weak",
+        "change": "π0.7 强调 steerable generalist policy，Open-H-Embodiment 把医疗机器人纳入大规模基础模型数据。",
+        "comparison": "通用性从“同一权重做更多任务”转向“可控制地适应高约束域”。",
+        "evidence_ids": [
+          "2604.15483",
+          "2604.21017"
+        ],
+        "maturity": "两个高信号工作，独立验证不足。",
+        "bottleneck": "高风险域的安全验证与数据治理。",
+        "implication": "通用底座与垂直合规层可能形成分层市场。"
+      }
+    }
+  ],
+  "work_notes": [
+    {
+      "note_id": "note:legacy:2604.13015",
+      "work_id": "arxiv:2604.13015",
+      "legacy_id": "2604.13015",
+      "title": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "把低身稳定控制、全身 VR 数据采集和 touch dreaming 结合，使 humanoid policy 同时预测动作块、未来关节力与触觉 latent。",
+      "limitation_zh": "验证为五项真实接触任务，尚未覆盖大范围移动、复杂环境变化与跨人形平台迁移。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2145",
+        "record_sha256": "65aea372bf06a87ec96cdc9681fab5e89f7dccda25a1ee72c3091c69822f1d08"
+      },
+      "supporting_ids": [
+        "arxiv:2604.13015"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.13015",
+          "arxiv_id": "2604.13015",
+          "work_id": "arxiv:2604.13015",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.13015"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-04-14",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D5"
+          ],
+          "questions": [
+            "Q1",
+            "Q3",
+            "Q5"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.13015"
+          ],
+          "title": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D4",
+        "D5"
+      ],
+      "questions": [
+        "Q1",
+        "Q3",
+        "Q5"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.13015"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2604.15483",
+      "work_id": "arxiv:2604.15483",
+      "legacy_id": "2604.15483",
+      "title": "$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "通过把策略、表现元数据和子目标图像等多模态上下文纳入训练，使单一 foundation policy 可被精细 steer 并出现跨本体、组合任务和灵巧能力。",
+      "limitation_zh": "摘要未披露训练数据规模和开放资产，所谓 emergent capability 仍需独立团队在统一协议下复现。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2157",
+        "record_sha256": "5148c80dd5dff18a53d6a28d6f59f4e950d17a2b210e36d62ff341ea7359631a"
+      },
+      "supporting_ids": [
+        "arxiv:2604.15483"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.15483",
+          "arxiv_id": "2604.15483",
+          "work_id": "arxiv:2604.15483",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.15483"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-04-16",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D8",
+            "D2",
+            "D13"
+          ],
+          "questions": [
+            "Q2",
+            "Q0",
+            "Q6",
+            "Q7",
+            "Q9"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.15483",
+            "https://www.pi.website/blog/pi07"
+          ],
+          "title": "$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D13",
+        "D2",
+        "D8"
+      ],
+      "questions": [
+        "Q0",
+        "Q2",
+        "Q6",
+        "Q7",
+        "Q9"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.15483",
+        "https://www.pi.website/blog/pi07"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2604.20689",
+      "work_id": "arxiv:2604.20689",
+      "legacy_id": "2604.20689",
+      "title": "FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "用指尖双目视觉与柔顺接触环实现从接近到接触后的连续感知，并以组结构融合策略减轻模态捷径。",
+      "limitation_zh": "传感器与策略强耦合，七类任务上的提升尚不能证明可直接迁移到其他触觉硬件。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2188",
+        "record_sha256": "edcacfdb44431a85366e40d2af2feef5e8a15c67181089c07a3affc9bab29295"
+      },
+      "supporting_ids": [
+        "arxiv:2604.20689"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.20689",
+          "arxiv_id": "2604.20689",
+          "work_id": "arxiv:2604.20689",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.20689"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D4",
+            "D11",
+            "D15"
+          ],
+          "questions": [
+            "Q3"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.20689"
+          ],
+          "title": "FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D11",
+        "D15",
+        "D4"
+      ],
+      "questions": [
+        "Q3"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.20689"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.20689"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2604.21017",
+      "work_id": "arxiv:2604.21017",
+      "legacy_id": "2604.21017",
+      "title": "Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "汇集 50 多家机构、多种手术本体的同步视频—运动学开放数据，并展示 medical VLA 与多本体 action-conditioned simulator。",
+      "limitation_zh": "医疗数据跨平台异质性极高，GR00T-H 在 29 步缝合序列的成功率仍显示距离临床级可靠性很远。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2191",
+        "record_sha256": "eb7c4e8d748f19287c19c5f49012478d6b52de478ce247b93d7ae174c6998827"
+      },
+      "supporting_ids": [
+        "arxiv:2604.21017"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.21017",
+          "arxiv_id": "2604.21017",
+          "work_id": "arxiv:2604.21017",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.21017"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-22",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4",
+            "D8",
+            "D12"
+          ],
+          "questions": [
+            "Q10"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.21017"
+          ],
+          "title": "Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12",
+        "D3",
+        "D4",
+        "D8"
+      ],
+      "questions": [
+        "Q10"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.21017"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.21017"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2604.21924",
+      "work_id": "arxiv:2604.21924",
+      "legacy_id": "2604.21924",
+      "title": "Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "以任务管理 VLM 反复输出剩余子任务与 2D visual trace，驱动短时 VLA 执行器并在失败后自动保留未完成步骤。",
+      "limitation_zh": "视觉 trace 仍是 2D 提示，摘要只报告 Franka 平台，复杂 3D 接触任务中的歧义尚待检验。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2196",
+        "record_sha256": "8f38102e32bb7378e39c5249aeaed8165358fe6486cb81106bfafd8492b7454b"
+      },
+      "supporting_ids": [
+        "arxiv:2604.21924"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.21924",
+          "arxiv_id": "2604.21924",
+          "work_id": "arxiv:2604.21924",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.21924"
+          ],
+          "canonical_relevance": "candidate",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-23",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D12"
+          ],
+          "questions": [
+            "Q0"
+          ],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.21924"
+          ],
+          "title": "Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+          "review_reasons": [
+            "canonical_relevance_candidate",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D12"
+      ],
+      "questions": [
+        "Q0"
+      ],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.21924"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.21924"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2604.24921",
+      "work_id": "arxiv:2604.24921",
+      "legacy_id": "2604.24921",
+      "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "将宏观离散方向规划和微观连续位姿对齐分给异步双系统，并提出动作分解粒度存在学习均衡点。",
+      "limitation_zh": "摘要没有报告具体真实机器人、任务数或时延数据，倒 U 型粒度结论的跨平台普适性仍未知。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2212",
+        "record_sha256": "cbb93db7873a9c5788ff17ed57def42290e92827faeb0152b7b0b108362d4a15"
+      },
+      "supporting_ids": [
+        "arxiv:2604.24921"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.24921",
+          "arxiv_id": "2604.24921",
+          "work_id": "arxiv:2604.24921",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.24921"
+          ],
+          "canonical_relevance": "manual_review",
+          "classification_state": "low_confidence_review",
+          "first_public_date": "2026-04-27",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.24921"
+          ],
+          "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+          "review_reasons": [
+            "canonical_relevance_manual_review",
+            "classification_review_required"
+          ]
+        }
+      ],
+      "directions": [
+        "D1",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": true,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [
+        "arxiv:2604.24921"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.24921"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    },
+    {
+      "note_id": "note:legacy:2604.26848",
+      "work_id": "arxiv:2604.26848",
+      "legacy_id": "2604.26848",
+      "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+      "month": "2026-04",
+      "status": "legacy_editorial",
+      "contribution_zh": "在统一 diffusion 过程中联合去噪未来时空 latent 与动作，并以深度和末端几何调制动作注意力。",
+      "limitation_zh": "真实成功率虽明显提高，但仍为 70.8%，且摘要未说明对遮挡、快速动态和更长任务链的鲁棒性。",
+      "selection_reason_zh": "经主题检索与 arXiv ID/标题/v1 日期复核的月度高信号样本。",
+      "original_source": {
+        "path": "data/papers.json",
+        "json_pointer": "/2217",
+        "record_sha256": "9abb8f297252bf3b46b0ec419ef32295ba01de22767a39234bb96eac58c18026"
+      },
+      "supporting_ids": [
+        "arxiv:2604.26848"
+      ],
+      "counterevidence_ids": [],
+      "references": [
+        {
+          "legacy_id": "2604.26848",
+          "arxiv_id": "2604.26848",
+          "work_id": "arxiv:2604.26848",
+          "mapping_status": "exact",
+          "candidate_work_ids": [
+            "arxiv:2604.26848"
+          ],
+          "canonical_relevance": "included",
+          "classification_state": "accepted",
+          "first_public_date": "2026-04-29",
+          "temporal_role": "current_month",
+          "directions": [
+            "D1",
+            "D3",
+            "D4"
+          ],
+          "questions": [],
+          "source_urls": [
+            "https://arxiv.org/abs/2604.26848"
+          ],
+          "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+          "review_reasons": []
+        }
+      ],
+      "directions": [
+        "D1",
+        "D3",
+        "D4"
+      ],
+      "questions": [],
+      "direction_assignment": "canonical_evidence_union",
+      "evidence_review_required": false,
+      "unresolved_legacy_ids": [],
+      "review_required_work_ids": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.26848"
+      ],
+      "semantic_verification_status": "historical_editorial_not_reaudited"
+    }
+  ],
+  "historical_watchlist": [],
+  "limitations": [
+    "历史趋势等级与预测置信度沿用旧编辑口径，未转换为新版证据成熟度。",
+    "历史比较和实验数字保留原文，未作为当前统计值重新计算。"
+  ],
+  "source_digest": "3315158a626c4d884d44df2fb518d068797fad3f18a1646c78218ef98015b2b2"
+}
