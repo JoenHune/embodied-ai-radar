@@ -213,7 +213,11 @@ class SQLiteCatalogFidelityTests(unittest.TestCase):
     def test_plain_new_connection_can_query_every_view_without_python_udfs(self):
         build_catalog_fidelity(self.con, self.payload)
         copy_connection = sqlite3.connect(":memory:")
-        copy_connection.deserialize(self.con.serialize())
+        # The caller commits its fixture, then uses SQLite's common native
+        # backup API. Some DB-API drivers omit CPython's serialization helper;
+        # the invariant is still a fresh connection with no Python UDFs.
+        self.con.commit()
+        self.con.backup(copy_connection)
         try:
             self.assertEqual(audit_catalog_fidelity(copy_connection, self.payload)["status"], "passed")
         finally:
