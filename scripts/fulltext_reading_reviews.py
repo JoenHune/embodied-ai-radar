@@ -21,6 +21,13 @@ The checks prove source/range/locator consistency, not that an AI understood
 the text. Only a reader's explicit declaration can create a receipt; preparing
 or displaying a packet cannot. Public receipts say
 self_attested_AI_reading_not_human_review, and never modify device authority.
+
+Readers of the complete structured packet may explicitly declare
+article_normalization "reading-packet-blocks-v1" instead. Its character
+projection is all block texts joined with two newlines, including tables,
+math alternatives, captions, appendices and references. Import reconstructs
+the exact packet from original bytes and verifies its hash; it never converts
+a prepared packet or a model ACK into a reading declaration.
 """
 from __future__ import annotations
 
@@ -40,6 +47,7 @@ from collect_hardware_sources import arxiv_identity, page_identity, transport_in
 
 ROOT = Path(__file__).resolve().parents[1]
 NORMALIZATION = 'article-get-text-v1'
+PACKET_NORMALIZATION = 'reading-packet-blocks-v1'
 ASSURANCE = 'self_attested_AI_reading_not_human_review'
 TEXT_SCOPE = 'complete_available_article_text'
 HASH = re.compile(r'^[0-9a-f]{64}$')
@@ -233,7 +241,7 @@ def validate_readings(declarations, payload, observations, cache_root):
             fail('reading_declaration_object_required')
         if (declaration.get('reading_status') != 'completed' or declaration.get('preparation_status') is not None or
                 declaration.get('reader_kind') != 'AI' or declaration.get('text_scope') != TEXT_SCOPE or
-                declaration.get('article_normalization') != NORMALIZATION):
+                declaration.get('article_normalization') not in {NORMALIZATION, PACKET_NORMALIZATION}):
             fail('explicit_completed_AI_article_declaration_required')
         if declaration.get('images_inspected') is not False or declaration.get('supplementary_materials_inspected') is not False:
             fail('explicit_uninspected_external_media_required')
@@ -271,6 +279,21 @@ def validate_readings(declarations, payload, observations, cache_root):
         valid, resolved_version, _, reason = page_identity(soup, effective_url, aid, version)
         if not valid or resolved_version != version:
             fail('raw_page_identity_or_version_mismatch:' + str(reason))
+        normalization = declaration['article_normalization']
+        packet_metadata = {}
+        if normalization == PACKET_NORMALIZATION:
+            from prepare_fulltext_reading import build_reading_packet
+            segment_chars = declaration.get('reading_packet_segment_chars')
+            if type(segment_chars) is not int or not 200 <= segment_chars <= 20000:
+                fail('reading_packet_segment_chars_required')
+            packet = build_reading_packet(raw, observation, works[wid], segment_chars=segment_chars)
+            if packet['packet_sha256'] != declaration.get('reading_packet_sha256'):
+                fail('reading_packet_hash_mismatch')
+            text = '\n\n'.join(block['text'] for block in packet['blocks'])
+            packet_metadata = {'reading_packet_sha256': packet['packet_sha256'],
+                               'reading_packet_segment_chars': segment_chars}
+        elif any(key in declaration for key in ('reading_packet_sha256', 'reading_packet_segment_chars')):
+            fail('packet_metadata_requires_packet_normalization')
         size = declaration.get('article_chars')
         if type(size) is not int or size != len(text) or sha256(text.encode('utf-8')) != declaration['article_text_sha256']:
             fail('article_text_hash_or_character_count_mismatch')
@@ -297,7 +320,9 @@ def validate_readings(declarations, payload, observations, cache_root):
         math_note = required_text(declaration, 'math_source_note_zh', chinese=True)
         findings = _judgments(declaration.get('findings_zh'), locators, ambiguous, source_url)
         limitations = _judgments(declaration.get('limitations_zh'), locators, ambiguous, source_url)
-        identity = [wid, source_url, version, declaration['raw_sha256'], declaration['article_text_sha256'], TEXT_SCOPE, NORMALIZATION]
+        identity = [wid, source_url, version, declaration['raw_sha256'], declaration['article_text_sha256'], TEXT_SCOPE, normalization]
+        if packet_metadata:
+            identity += [packet_metadata['reading_packet_sha256'], packet_metadata['reading_packet_segment_chars']]
         receipt_id = 'fulltext-reading:' + fingerprint(identity)[:24]
         if receipt_id in seen:
             fail('duplicate_reading_declaration')
@@ -307,7 +332,7 @@ def validate_readings(declarations, payload, observations, cache_root):
                    'read_completed_at': declaration['read_completed_at'], 'reader_kind': 'AI', 'reading_status': 'completed',
                    'assurance': ASSURANCE, 'human_reviewed': False, 'understanding_verified': False,
                    'verification_scope': 'source_identity_hash_ranges_and_locators_only',
-                   'text_scope': TEXT_SCOPE, 'article_normalization': NORMALIZATION,
+                   'text_scope': TEXT_SCOPE, 'article_normalization': normalization, **packet_metadata,
                    'article_chars': size, 'article_text_sha256': declaration['article_text_sha256'], 'read_ranges': ranges,
                    'range_units': 'python_unicode_characters_zero_based_half_open',
                    'checked_table_ids': checked, 'checked_table_count': len(checked), 'tables_exhaustive': False,
@@ -339,7 +364,8 @@ Future-dated receipts remain valid history but are omitted from the as_of view.
                'checked_table_count', 'tables_exhaustive', 'checked_table_text_sha256', 'math_source_note_zh',
                'images_inspected', 'supplementary_materials_inspected', 'supplementary_scope_note',
                'source_availability_status', 'transport_verification', 'publisher_fulltext_or_media_completeness_verified',
-               'findings_zh', 'limitations_zh', 'declaration_sha256', 'range_basis'}
+               'findings_zh', 'limitations_zh', 'declaration_sha256', 'range_basis',
+               'reading_packet_sha256', 'reading_packet_segment_chars'}
     if not isinstance(records, list):
         fail('public_reading_records_required')
     if re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(as_of)):
@@ -360,9 +386,19 @@ Future-dated receipts remain valid history but are omitted from the as_of view.
             fail('unknown_or_private_public_reading_fields')
         constants = {'schema_version': '1', 'reader_kind': 'AI', 'reading_status': 'completed', 'assurance': ASSURANCE,
                      'verification_scope': 'source_identity_hash_ranges_and_locators_only', 'text_scope': TEXT_SCOPE,
-                     'article_normalization': NORMALIZATION, 'range_units': 'python_unicode_characters_zero_based_half_open'}
+                     'range_units': 'python_unicode_characters_zero_based_half_open'}
         if any(row.get(key) != value for key, value in constants.items()):
             fail('public_AI_self_attestation_schema_invalid')
+        normalization = row.get('article_normalization')
+        if normalization not in {NORMALIZATION, PACKET_NORMALIZATION}:
+            fail('public_reading_normalization_invalid')
+        if normalization == PACKET_NORMALIZATION:
+            if (not HASH.fullmatch(str(row.get('reading_packet_sha256', ''))) or
+                    type(row.get('reading_packet_segment_chars')) is not int or
+                    not 200 <= row['reading_packet_segment_chars'] <= 20000):
+                fail('public_reading_packet_metadata_invalid')
+        elif any(key in row for key in ('reading_packet_sha256', 'reading_packet_segment_chars')):
+            fail('public_packet_metadata_requires_packet_normalization')
         if any(row.get(key) is not False for key in ('human_reviewed', 'understanding_verified', 'images_inspected',
                 'supplementary_materials_inspected', 'tables_exhaustive', 'publisher_fulltext_or_media_completeness_verified')):
             fail('public_reading_overclaims_verification')
@@ -379,7 +415,9 @@ Future-dated receipts remain valid history but are omitted from the as_of view.
         for key in ('raw_sha256', 'article_text_sha256', 'declaration_sha256'):
             if not HASH.fullmatch(str(row.get(key, ''))):
                 fail('public_reading_hash_invalid')
-        identity = [wid, row['source_url'], version, row['raw_sha256'], row['article_text_sha256'], TEXT_SCOPE, NORMALIZATION]
+        identity = [wid, row['source_url'], version, row['raw_sha256'], row['article_text_sha256'], TEXT_SCOPE, normalization]
+        if normalization == PACKET_NORMALIZATION:
+            identity += [row['reading_packet_sha256'], row['reading_packet_segment_chars']]
         rid = 'fulltext-reading:' + fingerprint(identity)[:24]
         if row.get('reading_id') != rid or rid in seen:
             fail('public_reading_id_mismatch_or_duplicate')

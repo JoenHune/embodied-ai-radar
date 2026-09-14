@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from fulltext_reading_reviews import (ASSURANCE, NORMALIZATION, TEXT_SCOPE, article_text, import_readings,
+from fulltext_reading_reviews import (ASSURANCE, NORMALIZATION, PACKET_NORMALIZATION, TEXT_SCOPE, article_text, import_readings,
                                        public_audit, sha256, validate_readings)
 
 
@@ -68,6 +68,68 @@ class FulltextReadingReviewsTests(unittest.TestCase):
             self.assertIn(part, text)
         for part in ('DO_NOT_READ_NAV', 'SECRET_SCRIPT', 'SECRET_STYLE'):
             self.assertNotIn(part, text)
+
+    def packet_declaration(self):
+        from prepare_fulltext_reading import build_reading_packet
+        packet = build_reading_packet(self.html, self.obs, self.payload['works'][0])
+        text = '\n\n'.join(block['text'] for block in packet['blocks'])
+        self.record.update(article_normalization=PACKET_NORMALIZATION,
+                           reading_packet_sha256=packet['packet_sha256'],
+                           reading_packet_segment_chars=packet['segment_chars'],
+                           article_chars=len(text), article_text_sha256=sha256(text.encode()),
+                           read_ranges=[{'start': 0, 'end': len(text)}])
+        return packet, text
+
+    def test_explicit_packet_reader_binds_reconstructed_complete_source_without_raw_projection_claim(self):
+        packet, text = self.packet_declaration()
+        for part in ('ABSTRACT.', 'RELATED_WORK.', 'APPENDIX.', 'REFERENCE.', 'ROW 2: A | 88'):
+            self.assertIn(part, text)
+        row = self.validate()[0]
+        self.assertEqual(row['article_normalization'], PACKET_NORMALIZATION)
+        self.assertEqual(row['reading_packet_sha256'], packet['packet_sha256'])
+        self.assertFalse(row['understanding_verified'])
+        self.assertEqual(public_audit([row], self.payload, [self.obs], '2026-09-15')['counts']['AI_read_work_count'], 1)
+
+    def test_packet_hash_segment_size_and_projection_cannot_be_substituted(self):
+        self.packet_declaration()
+        for key, value in [('reading_packet_sha256', 'f' * 64), ('reading_packet_segment_chars', True),
+                           ('reading_packet_segment_chars', 3999), ('article_normalization', NORMALIZATION),
+                           ('article_text_sha256', sha256(article_text(self.html).encode()))]:
+            with self.subTest(key=key):
+                old = self.record.copy()
+                self.record[key] = value
+                with self.assertRaises(ValueError): self.validate()
+                self.record.clear(); self.record.update(old)
+
+    def test_packet_receipt_still_requires_explicit_completion_and_public_metadata(self):
+        self.packet_declaration()
+        self.record['reading_status'] = 'prepared_not_read'
+        with self.assertRaises(ValueError): self.validate()
+        self.record['reading_status'] = 'completed'
+        row = self.validate()[0]
+        for key in ('reading_packet_sha256', 'reading_packet_segment_chars'):
+            altered = copy.deepcopy(row)
+            del altered[key]
+            with self.assertRaises(ValueError): public_audit([altered], self.payload, [self.obs], '2026-09-15')
+
+    def test_raw_and_packet_readings_of_same_work_count_as_one_work(self):
+        raw = self.validate()[0]
+        self.packet_declaration()
+        packet = self.validate()[0]
+        self.assertNotEqual(raw['reading_id'], packet['reading_id'])
+        counts = public_audit([raw, packet], self.payload, [self.obs], '2026-09-15')['counts']
+        self.assertEqual(counts['reading_receipt_count'], 2)
+        self.assertEqual(counts['AI_read_work_count'], 1)
+
+    def test_public_packet_identity_detects_hash_and_segment_metadata_mutations(self):
+        self.packet_declaration()
+        row = self.validate()[0]
+        for key, value in [('reading_packet_sha256', 'f' * 64), ('reading_packet_segment_chars', 200)]:
+            with self.subTest(key=key):
+                changed = copy.deepcopy(row)
+                changed[key] = value
+                with self.assertRaisesRegex(ValueError, 'reading_id_mismatch'):
+                    public_audit([changed], self.payload, [self.obs], '2026-09-15')
 
     def test_private_validation_and_idempotent_import_never_write_source(self):
         before = {path: path.read_bytes() for path in (self.raw_path, self.observations)}

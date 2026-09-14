@@ -4,7 +4,7 @@ import { withBase } from 'vitepress'
 import { eventDate } from '../lib/dates'
 
 type Judgment = { text_zh: string; source_locator: string }
-type Reading = { reading_id: string; work_id: string; title: string; relevance_status: string; source_url: string; version: string; read_completed_at: string; checked_table_count: number; findings_zh: Judgment[]; limitations_zh: Judgment[] }
+type Reading = { reading_id: string; work_id: string; title: string; relevance_status: string; source_url: string; version: string; read_completed_at: string; article_normalization?: string; checked_table_count: number; findings_zh: Judgment[]; limitations_zh: Judgment[] }
 const props = defineProps<{ expectedVersion: string; dictionaryHash: string; cohort: 'all_works' | 'included' }>()
 const readings = ref<Reading[]>([])
 const loadedVersion = ref('')
@@ -57,7 +57,7 @@ onBeforeUnmount(() => { disposed = true; serial++; controller?.abort() })
     <template v-else>
       <p class="reading-count" aria-live="polite">当前范围 {{ new Set(filtered.map(row => row.work_id)).size }} 项研究 · {{ filtered.length }} 份版本阅读记录</p>
       <article v-for="row in visible" :key="row.reading_id" class="reading-card">
-        <header><h3><a :href="workUrl(row.work_id)">{{ row.title }}</a></h3><p>{{ labels[row.relevance_status] || '相关性状态待确认' }} · {{ row.version }} · AI阅读 {{ eventDate(row.read_completed_at) }} · 已核对 {{ row.checked_table_count }} 个表格结构</p></header>
+        <header><h3><a :href="workUrl(row.work_id)">{{ row.title }}</a></h3><p>{{ labels[row.relevance_status] || '相关性状态待确认' }} · {{ row.version }} · {{ row.article_normalization === 'reading-packet-blocks-v1' ? '结构化全文' : '全文文字' }} · AI阅读 {{ eventDate(row.read_completed_at) }} · 已核对 {{ row.checked_table_count }} 个表格结构</p></header>
         <h4>正文新增发现</h4>
         <ul><li v-for="(claim, i) in row.findings_zh" :key="i">{{ claim.text_zh }} <span class="reading-citations"><a v-for="locator in sourceParts(claim)" :key="locator" :href="locationUrl(row, locator)" target="_blank" rel="noopener noreferrer">{{ locator }} ↗</a></span></li></ul>
         <div class="reading-limitations"><h4>限制与待确认</h4><ul><li v-for="(claim, i) in row.limitations_zh" :key="i">{{ claim.text_zh }} <span class="reading-citations"><a v-for="locator in sourceParts(claim)" :key="locator" :href="locationUrl(row, locator)" target="_blank" rel="noopener noreferrer">{{ locator }} ↗</a></span></li></ul></div>
