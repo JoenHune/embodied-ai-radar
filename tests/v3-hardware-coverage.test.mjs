@@ -145,6 +145,25 @@ test('missing, failed, wrong-work and stale work responses never become no-hardw
   }
 })
 
+test('work lookup shows PDF receipt state separately when HTML was never acquired', async () => {
+  const id = 'work:pdf-only'
+  const path = `/api/v1/equipment/coverage/works/${shard(id)}.json`
+  const row = work(id, { pdf: { source_count: 1, reading_count: 1 } })
+  const view = harness({ compact: true, routes: { [path]: { ...revision, by_work: { [id]: row } } } })
+  await view.loadSummary(); view.workInput.value = id; await view.lookupWork()
+  assert.equal(view.workStatus.value, 'found')
+  assert.equal(view.workResult.value.body_source_state, 'not_attempted')
+  assert.equal(view.workResult.value.pdf.reading_count, 1)
+  assert.match(component, /HTML正文获取状态/)
+  assert.match(component, /<dt>PDF原文<\/dt>/)
+  for (const pdf of [null, [], { source_count: 0, reading_count: 0 }, { source_count: 1, reading_count: 2 }]) {
+    const invalid = harness({ compact: true, routes: { [path]: { ...revision, by_work: { [id]: work(id, { pdf }) } } } })
+    await invalid.loadSummary(); invalid.workInput.value = id; await invalid.lookupWork()
+    assert.equal(invalid.workStatus.value, 'error')
+    assert.equal(invalid.workResult.value, null)
+  }
+})
+
 test('model and source lists reveal bounded batches without hidden full-library requests', async () => {
   const models = Array.from({ length: 25 }, (_, i) => model(i, Array.from({ length: 30 }, (_, n) => `arxiv:2609.${String(n).padStart(5, '0')}`)))
   const view = harness({ routes: { '/api/v1/equipment/coverage-model-candidates.json': { ...revision, models } } })
@@ -183,7 +202,7 @@ test('copy and links explicitly distinguish metadata, body text, and unverified 
   for (const phrase of ['元数据筛查 ≠ 正文文本扫描 ≠ 设备使用关系核验', '两个分母不混用', '正文文本不包含图片', '未核验不是“无硬件”', '名称提及不是设备使用频次', '本区保留全库候选出处', '状态未知', '未核验提及', '尚未建立，不等于没有使用']) assert.ok(component.includes(phrase), phrase)
   assert.ok(component.includes(':href="downloadHref" download'))
   assert.ok(component.includes('v-if="workResult.full_text_scanned || workResult.partial_text_scanned"'))
-  assert.ok(component.includes('尚未完成正文文本扫描，命中数未知'))
+  assert.ok(component.includes('尚未完成HTML正文文本扫描，命中数未知'))
   assert.ok(component.includes('withBase(\'/methods/equipment-loco\')'))
   assert.ok(!component.includes('v-html'))
   assert.ok(!descriptor.template.content.includes('100%'))

@@ -16,14 +16,15 @@ import audit_equipment as audit_entry
 from catalog_store import encode, save_catalog
 from equipment_radar import build_equipment_bundle, equipment_sqlite, export_equipment
 from hardware_coverage_export import build_coverage, coverage_sqlite, export_coverage
+from pdf_coverage_export import build_pdf_coverage, export_pdf_coverage, pdf_coverage_sqlite, attach_pdf_coverage, API, SOURCE_DOWNLOAD, READING_DOWNLOAD
 from test_equipment_radar import fixture
 from test_hardware_census import dictionary_fixture
 
 
 def install_fixture(root):
     payload, authority, manifest = fixture()
-    manifest.update(equipment={'coverage_api': '/api/v1/equipment/coverage-summary.json', 'readings_api': '/api/v1/equipment/coverage-readings.json'},
-                    downloads={'hardware_coverage': '/downloads/equipment/hardware-coverage.jsonl.gz', 'fulltext_readings': '/downloads/equipment/fulltext-readings.jsonl'})
+    manifest.update(equipment={'coverage_api': '/api/v1/equipment/coverage-summary.json', 'readings_api': '/api/v1/equipment/coverage-readings.json', 'pdf_readings_api': API},
+                    downloads={'hardware_coverage': '/downloads/equipment/hardware-coverage.jsonl.gz', 'fulltext_readings': '/downloads/equipment/fulltext-readings.jsonl', 'pdf_readings': READING_DOWNLOAD, 'pdf_source_observations': SOURCE_DOWNLOAD})
     dictionary = dictionary_fixture()
     api, downloads = root / 'docs/public/api/v1', root / 'docs/public/downloads'
     (root / 'config').mkdir(parents=True)
@@ -34,12 +35,16 @@ def install_fixture(root):
     save_catalog(root / 'data/catalog', payload, {})
     equipment = build_equipment_bundle(payload, authority, manifest)
     coverage = build_coverage(payload, authority, dictionary, [], [], manifest)
+    pdf = build_pdf_coverage(payload, [], [], manifest, coverage['summary']['dictionary_hash'])
+    attach_pdf_coverage(coverage, pdf)
     export_equipment(equipment, api / 'equipment', downloads / 'equipment')
     export_coverage(coverage, api / 'equipment', downloads / 'equipment')
+    export_pdf_coverage(pdf, api / 'equipment', downloads / 'equipment')
     (api / 'catalog-manifest.json').write_text(encode(manifest))
     with contextlib.closing(sqlite3.connect(downloads / 'radar.sqlite')) as connection:
         equipment_sqlite(connection, equipment)
         coverage_sqlite(connection, coverage)
+        pdf_coverage_sqlite(connection, pdf)
         connection.execute('CREATE TABLE works (work_id TEXT PRIMARY KEY)')
         connection.executemany('INSERT INTO works VALUES (?)', [(row['work_id'],) for row in payload['works']])
         connection.commit()
@@ -63,10 +68,12 @@ class EquipmentAuditEntrypointTests(unittest.TestCase):
             self.assertEqual(result['hardware_coverage_included']['verified_relationship_work_count'], 1)
             self.assertEqual(result['hardware_addenda']['status'], 'passed')
             self.assertEqual(result['hardware_addenda']['addendum_review_count'], 0)
+            self.assertEqual(result['pdf_reading']['source_work_count'], 0)
+            self.assertEqual(result['pdf_reading']['all_work_count'], 0)
             self.assertEqual(hashlib.sha256((downloads / 'radar.sqlite').read_bytes()).hexdigest(), before)
 
     def test_equipment_audit_cannot_pass_when_coverage_api_download_or_sqlite_is_tampered(self):
-        for target in ('summary', 'gzip', 'sqlite', 'manifest'):
+        for target in ('summary', 'gzip', 'sqlite', 'manifest', 'pdf_api', 'pdf_table', 'pdf_download', 'pdf_manifest'):
             with self.subTest(target=target), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
                 api, downloads = install_fixture(root)
@@ -78,12 +85,24 @@ class EquipmentAuditEntrypointTests(unittest.TestCase):
                     with contextlib.closing(sqlite3.connect(downloads / 'radar.sqlite')) as connection:
                         connection.execute('DELETE FROM hardware_coverage')
                         connection.commit()
+                elif target == 'pdf_api':
+                    (api / 'equipment/coverage-pdf-readings.json').write_text('{}')
+                elif target == 'pdf_table':
+                    with contextlib.closing(sqlite3.connect(downloads / 'radar.sqlite')) as connection:
+                        connection.execute('DROP TABLE pdf_reading_receipts')
+                        connection.commit()
+                elif target == 'pdf_download':
+                    (downloads / 'equipment/pdf-readings.jsonl').unlink()
+                elif target == 'pdf_manifest':
+                    value = json.loads((api / 'catalog-manifest.json').read_text())
+                    value['equipment'].pop('pdf_readings_api')
+                    (api / 'catalog-manifest.json').write_text(encode(value))
                 else:
                     value = json.loads((api / 'catalog-manifest.json').read_text())
                     value['equipment'].pop('coverage_api')
                     (api / 'catalog-manifest.json').write_text(encode(value))
                 with patch.object(audit_entry, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
-                    with self.assertRaises((ValueError, FileNotFoundError)):
+                    with self.assertRaises((ValueError, FileNotFoundError, sqlite3.OperationalError)):
                         audit_entry.main()
 
     def test_entrypoint_requires_dictionary_before_reading_or_reporting_coverage(self):

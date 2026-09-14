@@ -2,17 +2,20 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import FulltextReadings from './FulltextReadings.vue'
+import PdfReadings from './PdfReadings.vue'
 
 type Counts = Record<string, number | null>
 type Group = { first_public_month?: string; primary_direction?: string; relevance_status?: string; all_works: Counts; included: Counts }
-type CoverageSummary = { schema_version: string; dataset_version: string; dictionary_hash: string; dictionary_version?: string; data_through: string; all_works: Counts; included: Counts; by_direction: Group[]; by_month: Group[]; by_relevance: Group[]; downloads?: { coverage?: string }; article_reading?: { all_work_count: number; included_work_count: number; receipt_count: number; assurance: string } }
+type PdfCounts = { all_work_count: number; included_work_count: number; receipt_count: number; source_count: number; source_work_count: number; included_source_work_count: number; assurance: string; overlap_policy: string }
+type CoverageSummary = { schema_version: string; dataset_version: string; dictionary_hash: string; dictionary_version?: string; data_through: string; all_works: Counts; included: Counts; by_direction: Group[]; by_month: Group[]; by_relevance: Group[]; downloads?: { coverage?: string }; article_reading?: { all_work_count: number; included_work_count: number; receipt_count: number; assurance: string }; pdf_reading?: PdfCounts }
 type Model = { dictionary_id: string; name: string; category: string; identity_level: string; evidence_status: string; usage_inference: string; metadata_work_count: number; body_work_count: number; candidate_work_count: number; included_candidate_work_count: number; metadata_work_ids: string[]; body_work_ids: string[]; work_ids: string[] }
 type ModelIndex = { schema_version: string; dataset_version: string; dictionary_hash: string; models: Model[] }
-type WorkCoverage = { work_id: string; metadata_hits: number; body_source_state: string; body_scan_status: string; body_hits: number; verified_count: number; full_text_scanned: boolean; partial_text_scanned: boolean; relevance: string }
+type WorkCoverage = { work_id: string; metadata_hits: number; body_source_state: string; body_scan_status: string; body_hits: number; verified_count: number; full_text_scanned: boolean; partial_text_scanned: boolean; relevance: string; pdf?: { source_count: number; reading_count: number } }
 const props = withDefaults(defineProps<{ compact?: boolean; expectedVersion?: string }>(), { compact: false })
 const summary = ref<CoverageSummary | null>(null)
 const loading = ref(true)
 const showReadings = ref(false)
+const showPdfReadings = ref(false)
 const error = ref('')
 const cohort = ref<'all_works' | 'included'>('all_works')
 const dimension = ref<'by_direction' | 'by_month' | 'by_relevance'>('by_direction')
@@ -100,6 +103,7 @@ const loadSummary = async () => {
   controller = new AbortController()
   loading.value = true
   showReadings.value = false
+  showPdfReadings.value = false
   error.value = ''
   summary.value = null
   modelIndex.value = null
@@ -119,6 +123,8 @@ const loadSummary = async () => {
     if (value.schema_version !== '1' || value.metadata_scope !== 'metadata_only' || !value.dataset_version || !value.dictionary_hash || !validCounts(value.all_works) || !validCounts(value.included) || !['by_direction', 'by_month', 'by_relevance'].every(key => Array.isArray(value[key]) && value[key].every((group: Group) => validCounts(group.all_works) && validCounts(group.included)))) throw new Error('invalid')
     const reading = value.article_reading
     if (reading && (reading.assurance !== 'self_attested_AI_reading_not_human_review' || ![reading.all_work_count, reading.included_work_count, reading.receipt_count].every(isCount) || reading.all_work_count > value.all_works.denominator || reading.included_work_count > value.included.denominator || reading.included_work_count > reading.all_work_count || reading.receipt_count < reading.all_work_count)) throw new Error('invalid')
+    const pdf = value.pdf_reading
+    if (pdf && (pdf.assurance !== 'self_attested_AI_reading_not_human_review' || pdf.overlap_policy !== 'not_additive_with_HTML_work_counts' || ![pdf.all_work_count, pdf.included_work_count, pdf.receipt_count, pdf.source_count, pdf.source_work_count, pdf.included_source_work_count].every(isCount) || pdf.all_work_count > pdf.source_work_count || pdf.source_work_count > value.all_works.denominator || pdf.source_count < pdf.source_work_count || pdf.receipt_count < pdf.all_work_count || pdf.included_work_count > pdf.all_work_count || pdf.included_source_work_count > pdf.source_work_count || pdf.included_work_count > pdf.included_source_work_count || pdf.included_source_work_count > value.included.denominator)) throw new Error('invalid')
     summary.value = value
     if (!props.compact) void loadModels()
   } catch { if (!disposed && request === serial) error.value = '覆盖数据暂时无法读取，当前进度未知；读取失败不等于零覆盖。' }
@@ -148,6 +154,7 @@ const lookupWork = async () => {
     const row = value.by_work[id]
     if (!row) { workStatus.value = 'missing'; return }
     if (row.work_id !== id || ![row.metadata_hits, row.body_hits, row.verified_count].every(isCount) || typeof row.full_text_scanned !== 'boolean' || typeof row.partial_text_scanned !== 'boolean' || !Object.hasOwn(sourceLabels, row.body_source_state) || !Object.hasOwn(scanLabels, row.body_scan_status)) throw new Error('invalid')
+    if (Object.hasOwn(row, 'pdf') && (!row.pdf || typeof row.pdf !== 'object' || Array.isArray(row.pdf) || !isCount(row.pdf.source_count) || row.pdf.source_count < 1 || !isCount(row.pdf.reading_count) || row.pdf.reading_count > row.pdf.source_count)) throw new Error('invalid')
     workResult.value = row
     workStatus.value = 'found'
   } catch (cause) {
@@ -193,18 +200,20 @@ onBeforeUnmount(() => { disposed = true; serial++; workSerial++; controller?.abo
       <div class="coverage-metrics" aria-live="polite">
         <article><span>{{ cohortLabel }}分母</span><strong>{{ number(selected?.denominator) }}</strong><small>同一研究去重后只计一次</small></article>
         <article><span>标题 / 摘要已筛查</span><strong>{{ number(selected?.metadata_screened_work_count) }} <i>/ {{ number(selected?.denominator) }}</i></strong><small>仅元数据；{{ number(selected?.metadata_missing_abstract_work_count) }} 项缺少摘要</small></article>
-        <article><span>正文主文文本可用</span><strong>{{ number(selected?.full_text_available_work_count) }} <i>/ {{ number(selected?.denominator) }}</i></strong><small>主文结构检查通过，非逐篇读完</small></article>
-        <article><span>正文文本 · 当前字典已扫</span><strong>{{ number(selected?.full_text_screened_current_dictionary_work_count) }} <i>/ {{ number(selected?.denominator) }}</i></strong><small>正文与字典版本均须匹配</small></article>
+        <article><span>HTML主文文本可用</span><strong>{{ number(selected?.full_text_available_work_count) }} <i>/ {{ number(selected?.denominator) }}</i></strong><small>主文结构检查通过，非逐篇读完；PDF另列</small></article>
+        <article><span>HTML正文 · 当前字典已扫</span><strong>{{ number(selected?.full_text_screened_current_dictionary_work_count) }} <i>/ {{ number(selected?.denominator) }}</i></strong><small>正文与字典版本均须匹配</small></article>
         <article class="coverage-verified"><span>已有已核验使用关系的研究</span><strong>{{ number(selected?.verified_relationship_work_count) }} <i>/ {{ number(selected?.denominator) }}</i></strong><small>{{ number(selected?.verified_usage_relationship_count) }} 条使用关系；不代表整篇审完</small></article>
       </div>
       <p class="coverage-denominators">已核验关系涉及研究：全库 {{ number(summary.all_works.verified_relationship_work_count) }} / {{ number(summary.all_works.denominator) }}；已纳入 {{ number(summary.included.verified_relationship_work_count) }} / {{ number(summary.included.denominator) }}。两个分母不混用。</p>
-      <p class="coverage-source-states" aria-live="polite">{{ cohortLabel }}：正文尚未尝试 {{ number(selected?.full_text_not_attempted_work_count) }} · 获取失败 / 受限 / 身份不符 {{ number(selected?.full_text_failed_work_count) }} · 仅部分正文可用 {{ number(selected?.partial_text_available_work_count) }} · 主文待当前字典扫描 {{ number(selected?.full_text_available_pending_scan_work_count) }}</p>
+      <p class="coverage-source-states" aria-live="polite">{{ cohortLabel }}：HTML正文尚未尝试 {{ number(selected?.full_text_not_attempted_work_count) }} · 获取失败 / 受限 / 身份不符 {{ number(selected?.full_text_failed_work_count) }} · 仅部分正文可用 {{ number(selected?.partial_text_available_work_count) }} · 主文待当前字典扫描 {{ number(selected?.full_text_available_pending_scan_work_count) }}</p>
       <p class="coverage-limit">正文文本不包含图片、音视频或补充材料的人工检查；引用、仿真设备与真实使用仍须逐项区分。未核验不是“无硬件”。</p>
       <p v-if="summary.article_reading" class="coverage-reading-progress">AI已通读可用HTML文字：<strong>{{ number(cohort === 'included' ? summary.article_reading.included_work_count : summary.article_reading.all_work_count) }} / {{ number(selected?.denominator) }} 项研究</strong>。此数来自独立阅读记录，不能用采集数或关键词扫描数替代；不代表图片、视频、外部补充材料均已看完。<a v-if="props.compact" :href="withBase('/hardware/coverage#hardware-coverage-readings')">逐篇发现与限制 →</a></p>
+      <p v-if="summary.pdf_reading" class="coverage-reading-progress">PDF来源已取得：<strong>{{ number(cohort === 'included' ? summary.pdf_reading.included_source_work_count : summary.pdf_reading.source_work_count) }} 项研究</strong>；AI已通读PDF文字：<strong>{{ number(cohort === 'included' ? summary.pdf_reading.included_work_count : summary.pdf_reading.all_work_count) }} 项研究</strong>。文件取得不等于已读；PDF与HTML可能属于同一研究，不直接相加。<a v-if="props.compact" :href="withBase('/hardware/coverage#hardware-coverage-pdf-readings')">PDF发现与页码出处 →</a></p>
 
       <template v-if="!props.compact">
         <section v-if="summary.article_reading" class="coverage-section" :aria-labelledby="`${prefix}-readings`"><header><h2 :id="`${prefix}-readings`">原文阅读 · 新增发现与限制</h2><p>方法、实验和附录中的条件单独呈现；自动准备阅读材料不计为已读，AI通读也不等于人工审稿或独立复现。</p></header><button v-if="!showReadings" type="button" class="coverage-more" @click="showReadings = true">展开逐篇原文阅读记录</button><FulltextReadings v-else :expected-version="summary.dataset_version" :dictionary-hash="summary.dictionary_hash" :cohort="cohort" /></section>
-        <section class="coverage-section" :aria-labelledby="`${prefix}-groups`"><header><h2 :id="`${prefix}-groups`">分组覆盖记录</h2><p>以下表格使用上方选定的{{ cohortLabel }}分母。按主方向每项只计一次；月份按首次公开时间，日期不明不补猜。</p></header>
+        <section v-if="summary.pdf_reading" class="coverage-section" :aria-labelledby="`${prefix}-pdf-readings`"><header><h2 :id="`${prefix}-pdf-readings`">PDF原文 · 正式版本与补充发现</h2><p>官方会议论文与HTML不可用时的PDF原文单独核对；定位使用文件页码，不混用印刷页码。</p></header><button v-if="!showPdfReadings" type="button" class="coverage-more" @click="showPdfReadings = true">展开PDF原文阅读记录</button><PdfReadings v-else :expected-version="summary.dataset_version" :dictionary-hash="summary.dictionary_hash" :cohort="cohort" /><p><a :href="withBase('/api/v1/equipment/coverage-pdf-readings.json')">PDF来源与阅读JSON ↗</a> · <a :href="withBase('/downloads/equipment/pdf-source-observations.jsonl')">来源观察下载</a> · <a :href="withBase('/downloads/equipment/pdf-readings.jsonl')">阅读记录下载</a></p></section>
+        <section class="coverage-section" :aria-labelledby="`${prefix}-groups`"><header><h2 :id="`${prefix}-groups`">分组覆盖记录</h2><p>以下表格的正文获取与扫描列统计HTML来源，PDF另列；使用上方选定的{{ cohortLabel }}分母。按主方向每项只计一次；月份按首次公开时间，日期不明不补猜。</p></header>
           <div class="coverage-toggle" role="group" aria-label="覆盖分组方式"><button type="button" :aria-pressed="dimension === 'by_direction'" @click="dimension = 'by_direction'">研究方向</button><button type="button" :aria-pressed="dimension === 'by_month'" @click="dimension = 'by_month'">首次公开月份</button><button type="button" :aria-pressed="dimension === 'by_relevance'" @click="dimension = 'by_relevance'">相关性状态</button></div>
           <div class="coverage-table-wrap" tabindex="0" aria-label="可横向滚动的分组覆盖表"><table class="coverage-table"><thead><tr><th scope="col">分组</th><th scope="col">研究分母</th><th scope="col">元数据已筛</th><th scope="col">主文文本可用</th><th scope="col">主文当前字典已扫</th><th scope="col">已核验使用研究</th><th scope="col">正文未尝试</th><th scope="col">获取失败</th></tr></thead><tbody><tr v-for="(group, i) in groups" :key="`${dimension}-${i}`"><th scope="row">{{ groupLabel(group) }}</th><td>{{ number(group[cohort].denominator) }}</td><td>{{ number(group[cohort].metadata_screened_work_count) }}</td><td>{{ number(group[cohort].full_text_available_work_count) }}</td><td>{{ number(group[cohort].full_text_screened_current_dictionary_work_count) }}</td><td>{{ number(group[cohort].verified_relationship_work_count) }}</td><td>{{ number(group[cohort].full_text_not_attempted_work_count) }}</td><td>{{ number(group[cohort].full_text_failed_work_count) }}</td></tr></tbody></table></div>
         </section>
@@ -213,7 +222,7 @@ onBeforeUnmount(() => { disposed = true; serial++; workSerial++; controller?.abo
           <p v-if="workStatus === 'loading'" role="status">正在读取该研究的覆盖记录…</p>
           <p v-if="workStatus === 'error'" role="alert" class="coverage-error">{{ workError }}</p>
           <p v-if="workStatus === 'missing'" role="status">本次覆盖记录中未找到精确ID「{{ queriedId }}」。这不表示论文不存在或未使用硬件；可在<a :href="workUrl(queriedId)">研究库检查标识符</a>。</p>
-          <article v-if="workStatus === 'found' && workResult" class="coverage-work-result"><header><a :href="workUrl(workResult.work_id)">{{ titles[workResult.work_id] || workResult.work_id }}</a><span>{{ relevanceLabels[workResult.relevance] || workResult.relevance }}</span><button v-if="!titles[workResult.work_id]" type="button" :disabled="titleLoading.has(workResult.work_id)" @click="loadTitle(workResult.work_id)">{{ titleLoading.has(workResult.work_id) ? '读取标题…' : '按需读取标题' }}</button></header><p v-if="titleErrors[workResult.work_id]" class="coverage-muted">{{ titleErrors[workResult.work_id] }}</p><dl><div><dt>标题 / 摘要名称命中</dt><dd>{{ number(workResult.metadata_hits) }} 条 · 仅元数据线索</dd></div><div><dt>正文获取状态</dt><dd>{{ sourceLabels[workResult.body_source_state] }}</dd></div><div><dt>正文扫描状态</dt><dd>{{ scanLabels[workResult.body_scan_status] }}</dd></div><div><dt>正文名称命中</dt><dd v-if="workResult.full_text_scanned || workResult.partial_text_scanned">{{ number(workResult.body_hits) }} 条 · 仅当前已扫描文本的线索，未自动核验</dd><dd v-else>尚未完成正文文本扫描，命中数未知</dd></div><div><dt>已有已核验使用关系</dt><dd>{{ number(workResult.verified_count) }} 条<span v-if="workResult.verified_count === 0"> · 尚未建立，不等于没有使用</span></dd></div></dl></article>
+          <article v-if="workStatus === 'found' && workResult" class="coverage-work-result"><header><a :href="workUrl(workResult.work_id)">{{ titles[workResult.work_id] || workResult.work_id }}</a><span>{{ relevanceLabels[workResult.relevance] || workResult.relevance }}</span><button v-if="!titles[workResult.work_id]" type="button" :disabled="titleLoading.has(workResult.work_id)" @click="loadTitle(workResult.work_id)">{{ titleLoading.has(workResult.work_id) ? '读取标题…' : '按需读取标题' }}</button></header><p v-if="titleErrors[workResult.work_id]" class="coverage-muted">{{ titleErrors[workResult.work_id] }}</p><dl><div><dt>标题 / 摘要名称命中</dt><dd>{{ number(workResult.metadata_hits) }} 条 · 仅元数据线索</dd></div><div><dt>HTML正文获取状态</dt><dd>{{ sourceLabels[workResult.body_source_state] }}</dd></div><div><dt>HTML正文扫描状态</dt><dd>{{ scanLabels[workResult.body_scan_status] }}</dd></div><div><dt>HTML正文名称命中</dt><dd v-if="workResult.full_text_scanned || workResult.partial_text_scanned">{{ number(workResult.body_hits) }} 条 · 仅当前已扫描文本的线索，未自动核验</dd><dd v-else>尚未完成HTML正文文本扫描，命中数未知</dd></div><div><dt>PDF原文</dt><dd v-if="workResult.pdf">已取得 {{ number(workResult.pdf.source_count) }} 份来源；AI已通读 {{ number(workResult.pdf.reading_count) }} 份。<a :href="`#${prefix}-pdf-readings`" @click="showPdfReadings = true">查看PDF阅读记录</a></dd><dd v-else>尚未登记PDF获取记录，不表示没有公开PDF。</dd></div><div><dt>已有已核验使用关系</dt><dd>{{ number(workResult.verified_count) }} 条<span v-if="workResult.verified_count === 0"> · 尚未建立，不等于没有使用</span></dd></div></dl></article>
         </section>
 
         <section class="coverage-section" :aria-labelledby="`${prefix}-models`"><header><h2 :id="`${prefix}-models`">设备名称线索 · 待逐篇核验</h2><p>本区保留全库候选出处，另列已纳入数量，不随上方统计范围隐藏其他记录。名称提及不是设备使用频次，不能直接作采购、部署或市场份额判断。</p></header>

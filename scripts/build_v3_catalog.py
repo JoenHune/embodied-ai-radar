@@ -44,6 +44,7 @@ RULE_CONFIG_FILES += ("research-status.schema.json",)
 RULE_SOURCE_FILES += ("people_radar.py",)
 RULE_SOURCE_FILES += ("equipment_radar.py",)
 RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "fulltext_reading_reviews.py")
+RULE_SOURCE_FILES += ("pdf_reading_reviews.py", "pdf_coverage_export.py")
 RULE_CONFIG_FILES += ("hardware-dictionary.json",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/research-card.mjs",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/work-status.mjs",)
@@ -1219,10 +1220,11 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     from equipment_radar import (TABLES as EQUIPMENT_TABLES, load_equipment_authority, build_equipment_bundle,
                                  export_equipment, equipment_sqlite)
     from hardware_coverage_export import build_coverage, export_coverage, coverage_sqlite
+    from pdf_coverage_export import build_pdf_coverage, export_pdf_coverage, pdf_coverage_sqlite, attach_pdf_coverage
     supplemental_paths = [DATA / "coverage-gold-releases.jsonl", DATA / "weekly-v3/source-coverage.json", *sorted((DATA / "conferences").glob("*/source-status.json")),
                           *[DATA / "people" / f"{table}.jsonl" for table in PEOPLE_TABLES],
                           *[DATA / "equipment" / f"{table}.jsonl" for table in EQUIPMENT_TABLES],
-                          *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews', 'fulltext-readings')]]
+                          *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews', 'fulltext-readings', 'pdf-source-observations', 'pdf-readings')]]
     manifest["supplemental_hash"] = fingerprint({str(p.relative_to(DATA)): hashlib.sha256(p.read_bytes()).hexdigest() for p in supplemental_paths if p.exists()})
     manifest["dataset_version"] = fingerprint({key: manifest[key] for key in ["catalog_hash", "editorial_hash", "rules_hash", "supplemental_hash", "data_through"]})
     # Person staging is never read here: the four JSONL tables are the only
@@ -1239,12 +1241,19 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     hardware_coverage = build_coverage(payload, equipment_authority, hardware_dictionary,
         read_table(DATA / 'hardware-review', 'source-scans'), read_table(DATA / 'hardware-review', 'source-observations'), manifest,
         reading_reviews=read_table(DATA / 'hardware-review', 'fulltext-readings'))
+    pdf_coverage = build_pdf_coverage(payload, read_table(DATA / 'hardware-review', 'pdf-source-observations'),
+        read_table(DATA / 'hardware-review', 'pdf-readings'), manifest, hardware_coverage['summary']['dictionary_hash'])
+    attach_pdf_coverage(hardware_coverage, pdf_coverage)
+    export_pdf_coverage(pdf_coverage, PUBLIC_API / 'equipment', DOWNLOADS / 'equipment')
     export_coverage(hardware_coverage, PUBLIC_API / 'equipment', DOWNLOADS / 'equipment')
     manifest["equipment"] = {"api": "/api/v1/equipment/index.json", "loco_api": "/api/v1/equipment/loco-manip.json", "counts": equipment_bundle['index']['counts'], "authority_hash": equipment_bundle['index']['authority_hash']}
     manifest['equipment']['coverage_api'] = '/api/v1/equipment/coverage-summary.json'
     manifest['equipment']['readings_api'] = '/api/v1/equipment/coverage-readings.json'
+    manifest['equipment']['pdf_readings_api'] = '/api/v1/equipment/coverage-pdf-readings.json'
     manifest['downloads']['hardware_coverage'] = '/downloads/equipment/hardware-coverage.jsonl.gz'
     manifest['downloads']['fulltext_readings'] = '/downloads/equipment/fulltext-readings.jsonl'
+    manifest['downloads']['pdf_readings'] = '/downloads/equipment/pdf-readings.jsonl'
+    manifest['downloads']['pdf_source_observations'] = '/downloads/equipment/pdf-source-observations.jsonl'
     write_json(PUBLIC_API / "catalog-manifest.json", manifest, compact=True)
     write_json(PUBLIC_API / "migration-report.json", migration_report, compact=True)
 
@@ -1335,6 +1344,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     build_people_sqlite(connection, people_bundle)
     equipment_sqlite(connection, equipment_bundle)
     coverage_sqlite(connection, hardware_coverage)
+    pdf_coverage_sqlite(connection, pdf_coverage)
     from sqlite_catalog_fidelity import build_catalog_fidelity
     from sqlite_editorial_export import build_editorial_archive, read_editorial_artifacts
     fidelity = build_catalog_fidelity(connection, payload)

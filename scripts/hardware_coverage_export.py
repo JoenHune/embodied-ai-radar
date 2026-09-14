@@ -64,6 +64,7 @@ def project_work(row):
         "full_text_scanned": row["full_text_screened_current_dictionary"],
         "partial_text_scanned": row["partial_text_screened_current_dictionary"],
         "relevance": row["relevance_status"],
+        **({'pdf': dict(row['pdf'])} if 'pdf' in row else {}),
     }
 
 

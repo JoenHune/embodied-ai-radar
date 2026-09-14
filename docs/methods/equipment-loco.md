@@ -28,6 +28,18 @@ import { withBase } from 'vitepress'
 
 “正文主文文本可用”指抽取结果通过主文结构检查，不是端到端传输审计或整篇人工阅读证书。早期缓存未保留传输退出码，标记为 `legacy_unrecorded`，不补造成功记录；新采集显式记录传输完整性，不完整响应只能进入部分文本或失败状态。来源观察包含网络获取及离线重解析，观察条数不是网络请求次数。
 
+### HTML与PDF阅读分开记录
+
+覆盖页的主文获取、字典扫描和分组表统计 **HTML来源**；PDF取得与通读另列。同一研究可能同时有HTML和PDF版本，因此两种来源的工作数不能直接相加。单篇ID查询分别显示HTML状态与PDF来源/阅读数：HTML未取得不表示该研究的PDF未读，未登记PDF也不表示没有公开PDF。
+
+AI的HTML通读声明覆盖所读版本可抽取的文章文字，包括可取得的相关工作、参考文献与附录；图片、外部视频和补充材料未读时明确列出。内容哈希、连续范围和定位校验只证明记录一致，不能证明理解质量、人工审稿或独立复现。
+
+PDF来源须绑定已有canonical work和manifestation、官方论文页实际PDF链接、完整传输、文件与逐页文本哈希。正式会议版本保留venue和年份，不捏造arXiv版本号；PDF Info里的模板作者或创建日期不覆盖可见论文身份。仅取得文件或检查首页不生成通读记录。
+
+PDF阅读使用从1开始的**文件页码**，不混同印刷页码。记录逐页阅读范围、检查过的版面页、表格数量及发现/局限的页码链接。所列版面范围之外不宣称图形已看，外部补充另列；PDF阅读本身不会自动创建型号使用关系或升级研究相关性/评审状态。
+
+公开JSONL仍是权威来源；原PDF、页面截图和全文仅保留在私有研究缓存，不随网站再分发。来源仅在本次取得成功时记为可用，公开下载不等于获得再分发许可。当前同一来源ID的身份信息修改不会静默覆盖既有记录，后续需通过明确修订机制处理。
+
 ## 设备范围与身份粒度
 
 设备目录按公开API登记九类：人形与移动机器人、机械臂、灵巧手、夹爪、算力平台、数采与遥操作设备、触觉传感器、力与力矩传感器、视觉与空间传感器。夹爪与灵巧手分开；触觉与力/力矩传感器也不混为一类。电机、关节模组、电路和驱动芯片不在本页范围。仿真软件是方法或工具，不当作硬件设备。
@@ -86,6 +98,9 @@ import { withBase } from 'vitepress'
 ## 公开来源与复算入口
 
 - [全库硬件覆盖统计](/api/v1/equipment/coverage-summary.json)
+- [HTML原文阅读发现与局限](/api/v1/equipment/coverage-readings.json)
+- [PDF来源和逐页阅读记录](/api/v1/equipment/coverage-pdf-readings.json)
+- <a :href="withBase('/downloads/equipment/pdf-source-observations.jsonl')" download>PDF来源JSONL</a>、<a :href="withBase('/downloads/equipment/pdf-readings.jsonl')" download>PDF阅读JSONL</a>；SQLite对应`pdf_source_observations`与`pdf_reading_receipts`表
 - [型号名称候选及逐项研究清单（未核验使用）](/api/v1/equipment/coverage-model-candidates.json)
 - <a :href="withBase('/downloads/equipment/hardware-coverage.jsonl.gz')" download>全库逐项覆盖表 JSONL.GZ</a>；SQLite 的 `hardware_coverage` 表与之对应
 - [设备目录与类别](/api/v1/equipment/index.json)
