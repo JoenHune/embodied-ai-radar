@@ -17,6 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "tests"))
 from test_report_text import fixture, snapshot_id_for
 from catalog_store import TABLES, fingerprint
+from sqlite_download import local_sqlite_path
 import build_v3_catalog as builder
 import generate_v3_editorial as editor
 from audit_v3 import audit_month_report_views
@@ -203,7 +204,7 @@ class ReportEditorialTests(unittest.TestCase):
                 mutate(changed)
                 with self.assertRaises(AssertionError):
                     audit_month_report_views(changed, *audit_args)
-            with sqlite3.connect(root/"downloads/radar.sqlite") as connection:
+            with sqlite3.connect(local_sqlite_path(root)) as connection:
                 saved = connection.execute("SELECT canonical_work_id,payload_json FROM report_text_snapshots").fetchone()
                 self.assertEqual(saved[0], catalog["works"][0]["work_id"])
                 self.assertEqual(json.loads(saved[1]), report)

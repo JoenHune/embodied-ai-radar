@@ -22,11 +22,12 @@ from report_editorial import report_view_with_provenance
 from temporal_evidence import evidence_as_of
 from conference_changes import build_conference_changes
 from research_status_views import status_work_views, status_changes, editorial_status_dependencies, latest_status_observation
+from sqlite_download import local_sqlite_path, verify_archive
 from collections import Counter, defaultdict
 
 CATALOG = ROOT / "data" / "catalog"
 API = ROOT / "docs" / "public" / "api" / "v1"
-SQLITE = ROOT / "docs" / "public" / "downloads" / "radar.sqlite"
+SQLITE = local_sqlite_path(ROOT)
 
 
 def read_jsonl(name: str) -> list[dict]:
@@ -320,7 +321,12 @@ def main() -> None:
     else:
         require(source_coverage.get("status") == "not_run" and not source_coverage.get("sources") and source_coverage.get("complete_through") is None, "Migration incorrectly claims a real collection run")
 
-    require(SQLITE.exists(), "SQLite export missing")
+    require(manifest.get("downloads", {}).get("sqlite") == "/downloads/radar.sqlite.zip", "ZIP SQLite download missing from manifest")
+    require(not any((ROOT / "docs/public/downloads" / name).exists() or (ROOT / "docs/public/downloads" / name).is_symlink()
+                    for name in ("radar.sqlite", "radar.sqlite.gz")), "Raw or gzip SQLite must not duplicate the public ZIP download")
+    sqlite_download_audit = verify_archive(ROOT / "docs/public/downloads/radar.sqlite.zip",
+                                           manifest.get("downloads", {}).get("sqlite_integrity"), raw_path=SQLITE)
+    require(SQLITE.exists(), "Private derived SQLite export missing")
     connection = sqlite3.connect(f"file:{SQLITE}?mode=ro", uri=True)
     from sqlite_catalog_fidelity import audit_catalog_fidelity
     from sqlite_editorial_export import audit_editorial_archive, read_editorial_artifacts
@@ -392,6 +398,7 @@ def main() -> None:
         "technical_report_manifestations": len(technical_reports),
         "text_snapshots": len(texts),
         "report_text_snapshots": len(report_texts),
+        "sqlite_download": sqlite_download_audit,
         "release_recall_regression": recall["regression_gate"],
         "organizations": len(organizations),
         "months": len(manifest["complete_months"]) + 1,

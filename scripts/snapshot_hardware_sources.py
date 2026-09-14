@@ -140,13 +140,26 @@ def load_canonical_map(catalog):
 
 
 def validate_work(work_id, canonical_ids):
-    require(isinstance(work_id, str) and work_id in canonical_ids and len(work_id) <= 256 and
-            ((work_id.startswith("arxiv:") and AID.fullmatch(work_id[6:])) or
-             re.fullmatch(r"doi:10\.\d{4,9}/[^\s\x00-\x1f]+", work_id)), "work_not_in_supported_canonical_mapping")
+    """Bind a registered work key, not validate or repair its DOI identifier.
+
+    Some immutable catalog keys predate identifier cleanup. A nonempty doi:
+    key with damaged DOI syntax may remain an opaque legacy canonical ID,
+    but only with an explicit valid arXiv mapping. Never infer a correction
+    from the key, accept an unregistered key, or relax source/hash checks.
+    """
+    require(isinstance(work_id, str) and work_id in canonical_ids and 0 < len(work_id) <= 256 and
+            all(character.isprintable() and not character.isspace() for character in work_id),
+            "work_not_in_supported_canonical_mapping")
     aid = canonical_ids[work_id]
     require(aid is None or isinstance(aid, str) and AID.fullmatch(aid), "canonical_arxiv_identity_invalid")
     if work_id.startswith("arxiv:"):
-        require(work_id[6:] == aid, "canonical_work_arxiv_identity_mismatch")
+        require(AID.fullmatch(work_id[6:]) and work_id[6:] == aid, "canonical_work_arxiv_identity_mismatch")
+    elif re.fullmatch(r"doi:10\.\d{4,9}/[^\s\x00-\x1f]+", work_id):
+        pass  # Preserve existing unresolved-source history for shaped DOI keys.
+    else:
+        require(work_id.startswith("doi:") and len(work_id) > 4,
+                "work_not_in_supported_canonical_mapping")
+        require(aid is not None, "legacy_canonical_arxiv_identity_required")
     return aid
 
 

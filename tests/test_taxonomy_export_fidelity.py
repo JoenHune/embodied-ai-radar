@@ -49,10 +49,14 @@ class TaxonomyExportFidelityTests(unittest.TestCase):
     def test_actual_sql_insert_preserves_each_field_and_multiset_not_just_count(self):
         payload = fixture()
         exported = run_export_block(payload)
-        statement = next(node for node in EXPORT.body if isinstance(node, ast.Expr) and isinstance(node.value, ast.Call)
+        # SQL publication is now inside a transactional packaging context.
+        # Exercise the actual nested INSERT, preserving the full multiset check.
+        statements = [node for node in ast.walk(EXPORT) if isinstance(node, ast.Expr) and isinstance(node.value, ast.Call)
                          and isinstance(node.value.func, ast.Attribute) and node.value.func.attr == "executemany"
                          and node.value.args and isinstance(node.value.args[0], ast.Constant)
-                         and str(node.value.args[0].value).startswith("INSERT INTO taxonomy_assignments"))
+                         and str(node.value.args[0].value).startswith("INSERT INTO taxonomy_assignments")]
+        self.assertEqual(len(statements), 1)
+        statement = statements[0]
         connection = sqlite3.connect(":memory:")
         connection.row_factory = sqlite3.Row
         connection.execute("CREATE TABLE taxonomy_assignments(work_id TEXT, axis TEXT, code TEXT, is_primary INTEGER, confidence TEXT, classifier_version TEXT)")

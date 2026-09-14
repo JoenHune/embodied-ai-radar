@@ -273,6 +273,26 @@ class PromoteHardwareSnapshotTests(unittest.TestCase):
         self.assertEqual(promotion._canonical_mapping(self.catalog), snapshot.load_canonical_map(self.catalog))
         self.assertTrue(self.run_promotion()["validated"])
 
+    def test_registered_opaque_legacy_work_survives_promotion_validation_without_renaming(self):
+        legacy = "doi:0.1109/isparo66239.2025.11436888"
+        self.new = self.observation("2512.03736", work_id=legacy)
+        self.new_scan = self.scan(self.new)
+        self.canonical = {row["work_id"]: row["arxiv_id"] for row in (self.old, self.new)}
+        (self.catalog / "works.jsonl").write_bytes(jsonl(
+            [{"work_id": wid, "identifiers": {"arxiv": aid}} for wid, aid in self.canonical.items()]))
+        self.rows = [self.old, self.new]
+        self.scans = [self.old_scan, self.new_scan]
+        self.write_stage()
+        before = tree(self.root)
+        self.assertTrue(self.run_promotion()["validated"])
+        self.assertEqual(tree(self.root), before)
+        self.assertEqual(snapshot.load_canonical_map(self.catalog), promotion._canonical_mapping(self.catalog))
+        self.assertEqual(self.rows[1]["work_id"], legacy)
+        self.assertEqual(self.scans[1]["work_id"], legacy)
+        self.rows[1] = {**self.new, "source_url": "https://arxiv.org/html/2512.03737v1"}
+        self.write_stage()
+        self.reject_without_writes("source_url_canonical_identity_mismatch")
+
     def test_public_private_fields_or_unsafe_urls_rejected_even_with_new_hashes(self):
         for key, value in (("cache_ref", "/secret/cache.html"), ("blocks_ref", "private.json"),
                            ("raw_html", "PRIVATE BODY"), ("source_url", "https://evil.example/collect"),

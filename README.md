@@ -146,7 +146,7 @@ python3 scripts/publish_group_weekly_to_feishu.py --week YYYY-Www --dry-run
 
 报告发布日期不等于正文可用时间。每报告只公开必要短摘录及指纹/定位，全文仍在本地原始缓存；不授予CC0许可。模型不能在报告叙述里自由拼接实验数字，报告观测由程序按原条件固定呈现。历史日期、JSON/SQLite、一对一归属和月度两种证据视角均有专项审计。
 
-网站公开 `/api/v1/catalog-manifest.json`、`monthly/{YYYY-MM}.json`、`trends.json`、`organizations/{slug}.json`、`organization-coverage.json`、`signal-evidence.json` 和 `evidence-events.json`。先查 `aliases.json`，再按 SHA-1(work ID) 前两位取 `works/{00–ff}.json`；SQLite 下载在 `/downloads/radar.sqlite`（以上均相对网站 base）。
+网站公开 `/api/v1/catalog-manifest.json`、`monthly/{YYYY-MM}.json`、`trends.json`、`organizations/{slug}.json`、`organization-coverage.json`、`signal-evidence.json` 和 `evidence-events.json`。先查 `aliases.json`，再按 SHA-1(work ID) 前两位取 `works/{00–ff}.json`；SQLite 无损压缩下载在 `/downloads/radar.sqlite.zip`，包内仅有 `radar.sqlite`，先解压再打开（以上均相对网站 base）。压缩不删记录、字段、原文或索引；manifest 的 `downloads.sqlite_integrity` 列出原库及 ZIP 的字节数和 SHA-256。未压缩派生库仅留在本地 `.research/derived/radar.sqlite`，不随网站重复发布。
 
 逐版标题、作者、摘要保存在权威 `text-snapshots` 分片，公开 `/api/v1/text/{00–ff}.json` 和 SQLite `text_snapshots` 提供相同原文；详情默认选择数据截止日前可用的版次，并保留原始入库摘要。后来的修订不得用于历史月份的实验判断。搜索区分“截至日版本正文”与“最新登记的标题身份／出版状态”，旧标题仍能找到同一个 work，新获会议接收也不会因预印本主源截止较早而从会议筛选中消失。
 

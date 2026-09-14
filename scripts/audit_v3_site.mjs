@@ -2,9 +2,68 @@ import fs from 'node:fs'
 import path from 'node:path'
 import readline from 'node:readline'
 import { gzipSync } from 'node:zlib'
-import { spawnSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+import { spawn, spawnSync } from 'node:child_process'
 import { load } from 'cheerio'
 
+const archiveVerificationCode = `import json,sys
+sys.path.insert(0,sys.argv[1])
+try:
+ from sqlite_download import verify_archive
+ result=verify_archive(sys.argv[2],json.loads(sys.argv[3]))
+ print(json.dumps(result))
+except Exception:
+ print(json.dumps({'status':'failed','error':'sqlite_archive_verification_failed'}))
+ sys.exit(1)
+`
+
+// Reuse the ZIP/ZIP64 reader and streaming CRC/hash/unique-entry checks from
+// Python. Data travels only as argv, never interpolated code or shell commands.
+// No SQLite dump is loaded into memory or decompressed to another file.
+export async function auditSqliteDownload(dist, downloads) {
+  if (downloads?.sqlite !== '/downloads/radar.sqlite.zip') throw new Error('sqlite_zip_manifest_download_required')
+  const expected = downloads.sqlite_integrity
+  if (!expected || Object.keys(expected).sort().join(',') !== 'archive_bytes,archive_sha256,bytes,encoding,sha256' || expected.encoding !== 'zip' ||
+      typeof expected.sha256 !== 'string' || !/^[0-9a-f]{64}$/.test(expected.sha256) ||
+      typeof expected.archive_sha256 !== 'string' || !/^[0-9a-f]{64}$/.test(expected.archive_sha256) ||
+      !Number.isSafeInteger(expected.bytes) || expected.bytes < 16 ||
+      !Number.isSafeInteger(expected.archive_bytes) || expected.archive_bytes < 1) throw new Error('sqlite_integrity_manifest_invalid')
+  let stat
+  const archive = path.join(dist, 'downloads/radar.sqlite.zip')
+  try {
+    for (const name of ['radar.sqlite', 'radar.sqlite.gz']) {
+      if (fs.lstatSync(path.join(dist, 'downloads', name), { throwIfNoEntry: false })) throw new Error('sqlite_legacy_public_duplicate')
+    }
+    stat = fs.lstatSync(archive, { throwIfNoEntry: false })
+  } catch (error) {
+    throw new Error(error.message === 'sqlite_legacy_public_duplicate' ? error.message : 'sqlite_archive_unreadable')
+  }
+  if (!stat) throw new Error('sqlite_archive_missing')
+  if (!stat.isFile() || stat.isSymbolicLink()) throw new Error('sqlite_archive_regular_file_required')
+  if (stat.size !== expected.archive_bytes) throw new Error('sqlite_archive_size_mismatch')
+  const root = path.resolve(import.meta.dirname, '..')
+  const result = await new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, [path.join(root, 'scripts/run-python.mjs'), '-B', '-c', archiveVerificationCode,
+      path.join(root, 'scripts'), archive, JSON.stringify(expected)], { cwd: root, shell: false, stdio: ['ignore', 'pipe', 'ignore'] })
+    let output = '', overflow = false
+    child.stdout.setEncoding('utf8')
+    child.stdout.on('data', chunk => {
+      if (overflow) return
+      output += chunk
+      if (output.length > 16_384) { overflow = true; child.kill(); reject(new Error('sqlite_archive_verifier_output_invalid')) }
+    })
+    child.on('error', () => reject(new Error('sqlite_archive_verifier_unavailable')))
+    child.on('close', code => {
+      if (overflow) return
+      if (code !== 0) return reject(new Error('sqlite_archive_verification_failed'))
+      try { resolve(JSON.parse(output)) } catch { reject(new Error('sqlite_archive_verifier_output_invalid')) }
+    })
+  })
+  if (!result || result.status !== 'passed' || Object.keys(expected).some(key => result[key] !== expected[key])) throw new Error('sqlite_archive_verifier_output_invalid')
+  return { ...expected, status: 'passed' }
+}
+
+async function main() {
 const root = path.resolve(import.meta.dirname, '..')
 const argument = (name, fallback) => {
   const index = process.argv.indexOf(name)
@@ -187,21 +246,15 @@ for (const organization of Array.isArray(organizations) ? organizations : []) {
 }
 
 // Validate the actual public work objects with the project's full JSON Schema.
-// No SQLite dump is loaded into memory; only the downloadable file's header is read.
+// The SQLite ZIP is checked separately in bounded chunks without loading a dump.
 const schemaCode = `import json,sys\nfrom pathlib import Path\nfrom jsonschema import Draft202012Validator\nvalidator=Draft202012Validator(json.loads(Path(sys.argv[2]).read_text()))\nerrors=[]\ncount=0\nfor path in sorted(Path(sys.argv[1]).glob('*.json')):\n for row in json.loads(path.read_text()):\n  count+=1\n  for error in validator.iter_errors(row):\n   if len(errors)<20: errors.append({'work_id':row.get('work_id'),'path':list(error.path),'message':error.message})\nprint(json.dumps({'checked':count,'errors':errors}))\n`
 const schemaRun = spawnSync(process.execPath, [path.join(root, 'scripts/run-python.mjs'), '-c', schemaCode, path.join(api, 'works'), path.join(root, 'config/catalog-v3.schema.json')], { cwd: root, encoding: 'utf8', maxBuffer: 4_000_000 })
 let schema = { status: 'unverified' }
 if (schemaRun.status !== 0) issue('public_schema_validation_unavailable', { message: (schemaRun.stderr || schemaRun.stdout).slice(0, 500) })
 else { try { schema = JSON.parse(schemaRun.stdout); if (schema.errors.length) issue('public_schema_validation_failed', { examples: schema.errors }) } catch { issue('public_schema_validation_invalid_output', {}) } }
-const sqlite = resolveInternal(base + (manifest.downloads?.sqlite || '/downloads/radar.sqlite').replace(/^\//, ''), base)?.file
-if (!sqlite) issue('missing_sqlite_download', {})
-else {
-  const descriptor = fs.openSync(sqlite, 'r')
-  const header = Buffer.alloc(16)
-  fs.readSync(descriptor, header, 0, 16, 0)
-  fs.closeSync(descriptor)
-  if (header.toString() !== 'SQLite format 3\u0000') issue('invalid_sqlite_header', {})
-}
+let sqliteDownload = { status: 'unverified' }
+try { sqliteDownload = await auditSqliteDownload(dist, manifest.downloads) }
+catch (error) { issue('invalid_sqlite_download', { message: error.message }) }
 
 const pagefindDirectory = path.join(dist, 'pagefind')
 const searchFiles = walk(pagefindDirectory)
@@ -217,10 +270,13 @@ if (homeData > 200_000) issue('home_data_budget_exceeded', { actual: homeData, b
 warnings.push({ type: 'runtime_metrics_unverified', message: 'Static audit cannot prove mobile LCP ≤ 2.5 s, CLS < 0.1 or runtime API availability. Browser measurements are a separate required gate.' })
 const report = { status: errors.length ? 'failed' : 'passed_static_gates', generated_at: new Date().toISOString(), dist,
   counts: { html_pages: htmlFiles.length, checked_internal_links: internalLinks, organizations: organizations.length, works: knownWorks.size, source_references: checkedSources, manifestation_references: checkedManifestations, monthly_snapshots: months.length },
-  public_schema: schema, performance: { deployment_bytes: deploymentBytes, deployment_budget: 1_000_000_000, home_data_gzip_bytes: homeData || null, home_data_budget: 200_000, search_gzip_bytes: searchBytes, search_budget: 20_000_000, routes },
+  public_schema: schema, sqlite_download: sqliteDownload, performance: { deployment_bytes: deploymentBytes, deployment_budget: 1_000_000_000, home_data_gzip_bytes: homeData || null, home_data_budget: 200_000, search_gzip_bytes: searchBytes, search_budget: 20_000_000, routes },
   runtime: { lcp: 'unverified', cls: 'unverified', api_availability: 'unverified' }, errors, warnings }
 fs.mkdirSync(path.dirname(reportPath), { recursive: true })
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n')
 console.log(JSON.stringify({ status: report.status, counts: report.counts, error_count: errors.length, errors: errors.slice(0, 12), home_data_gzip_bytes: homeData || null, search_gzip_bytes: searchBytes,
   largest_initial_routes: [...routes].sort((a, b) => b.initial_js_gzip_bytes - a.initial_js_gzip_bytes).slice(0, 4).map(({ scripts, ...row }) => row), report: reportPath }, null, 2))
 if (errors.length) process.exitCode = 1
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main()

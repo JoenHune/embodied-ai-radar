@@ -49,7 +49,7 @@ import { withBase } from 'vitepress'
 - <a :href="withBase('/downloads/people/organization-links.jsonl')" download>带来源的组织角色</a>
 - <a :href="withBase('/downloads/people/influence-evidence.jsonl')" download>引用、采用与复现证据</a>
 - [人物索引与统计](/api/v1/people/index.json)
-- <a :href="withBase('/downloads/radar.sqlite')" download>完整 SQLite</a>：包含 `people_persons`、`people_authorship_reviews`、`people_organization_links`、`people_influence_evidence` 和 `people_api`。
+- <a :href="withBase('/downloads/radar.sqlite.zip')" download>完整 SQLite（ZIP，解压后使用）</a>：无损压缩，包内唯一的 `radar.sqlite` 包含 `people_persons`、`people_authorship_reviews`、`people_organization_links`、`people_influence_evidence` 和 `people_api`。
 
 作者与工作合并修订保留旧 ID 和来源；人物详情必须与索引的数据版本一致，否则停止混用并提示重新读取。
 

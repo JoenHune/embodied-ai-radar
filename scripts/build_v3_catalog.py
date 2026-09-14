@@ -25,6 +25,7 @@ from urllib.parse import urlparse
 
 from radar_common import ROOT, normalize_doi, normalize_title
 from catalog_store import load_catalog, save_catalog, read_table, revision_snapshot, fingerprint, write_if_changed
+from sqlite_download import SQLITE_DOWNLOAD_URL, sqlite_export
 from catalog_rules import publication_verified, eligible_month, research_eligible, attribution_valid, event_eligible, independent_clusters
 from temporal_evidence import evidence_as_of, public_day
 from versioned_text import text_as_of
@@ -43,6 +44,7 @@ RULE_SOURCE_FILES += ("research_status.py", "research_status_views.py", "ingest_
 RULE_CONFIG_FILES += ("research-status.schema.json",)
 RULE_SOURCE_FILES += ("people_radar.py",)
 RULE_SOURCE_FILES += ("equipment_radar.py",)
+RULE_SOURCE_FILES += ("sqlite_download.py",)
 RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "fulltext_reading_reviews.py")
 RULE_SOURCE_FILES += ("editorial_readings.py", "editorial_history.py")
 RULE_SOURCE_FILES += ("pdf_reading_reviews.py", "pdf_coverage_export.py")
@@ -1221,7 +1223,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         "report_text_snapshot_count": len(report_snapshots),
         "text_shards": sorted(text_shards),
         "filter_options": filter_options,
-        "downloads": {"sqlite": "/downloads/radar.sqlite", "migration_report": "/api/v1/migration-report.json"},
+        "downloads": {"sqlite": SQLITE_DOWNLOAD_URL, "migration_report": "/api/v1/migration-report.json"},
     }
     editorial_paths = sorted(p for p in (DATA / "editorial").rglob("*") if p.is_file() and p.suffix in {".json", ".jsonl"} and not p.name.endswith(".attempt.json") and p.name != "status.json")
     manifest["editorial_hash"] = fingerprint({str(p.relative_to(DATA / "editorial")): hashlib.sha256(p.read_bytes()).hexdigest() for p in editorial_paths})
@@ -1270,108 +1272,100 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     manifest['downloads']['fulltext_readings'] = '/downloads/equipment/fulltext-readings.jsonl'
     manifest['downloads']['pdf_readings'] = '/downloads/equipment/pdf-readings.jsonl'
     manifest['downloads']['pdf_source_observations'] = '/downloads/equipment/pdf-source-observations.jsonl'
-    write_json(PUBLIC_API / "catalog-manifest.json", manifest, compact=True)
     write_json(PUBLIC_API / "migration-report.json", migration_report, compact=True)
 
-    DOWNLOADS.mkdir(parents=True, exist_ok=True)
-    sqlite_path = DOWNLOADS / "radar.sqlite"
-    if sqlite_path.exists():
-        sqlite_path.unlink()
-    connection = sqlite3.connect(sqlite_path)
-    connection.executescript("""
-        -- Physical layout only: preserve all tables, values, indexes and views.
-        -- 16 KiB pages reduce overflow/unused space in the long JSON records.
-        PRAGMA page_size=16384;
-        PRAGMA journal_mode=OFF;
-        PRAGMA synchronous=OFF;
-        CREATE TABLE works (work_id TEXT PRIMARY KEY, title TEXT NOT NULL, title_zh TEXT, abstract TEXT, authors_json TEXT NOT NULL, first_public_date TEXT, relevance_status TEXT NOT NULL, primary_direction TEXT, directions_json TEXT NOT NULL, questions_json TEXT NOT NULL, facets_json TEXT NOT NULL, evidence_grade TEXT NOT NULL, strict_peer_reviewed INTEGER NOT NULL, summary_zh TEXT);
-        CREATE TABLE manifestations (manifestation_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, kind TEXT NOT NULL, url TEXT NOT NULL, published_at TEXT, venue TEXT, year INTEGER, status TEXT, peer_reviewed INTEGER NOT NULL, source_record_id TEXT);
-        CREATE TABLE organizations (organization_id TEXT PRIMARY KEY, name TEXT NOT NULL, slug TEXT, tier TEXT NOT NULL, entity_type TEXT, region TEXT, country TEXT, source_health TEXT);
-        CREATE TABLE work_organizations (work_id TEXT NOT NULL, organization_id TEXT NOT NULL, role TEXT, attribution_grade TEXT, confidence REAL, evidence_url TEXT, PRIMARY KEY(work_id, organization_id, evidence_url));
-        CREATE TABLE taxonomy_assignments (work_id TEXT NOT NULL, axis TEXT NOT NULL, code TEXT NOT NULL, is_primary INTEGER NOT NULL, confidence TEXT, classifier_version TEXT);
-        CREATE TABLE evidence_events (event_id TEXT PRIMARY KEY, work_id TEXT, organization_id TEXT, event_type TEXT NOT NULL, title TEXT, url TEXT, published_at TEXT, payload_json TEXT NOT NULL);
-        CREATE TABLE editorial_claims (claim_id TEXT PRIMARY KEY, month TEXT NOT NULL, kind TEXT NOT NULL, text TEXT NOT NULL, supporting_ids_json TEXT NOT NULL, counterevidence_ids_json TEXT NOT NULL, generator TEXT NOT NULL);
-        CREATE TABLE field_provenance (work_id TEXT NOT NULL, field TEXT NOT NULL, source_record_id TEXT NOT NULL, observed_at TEXT);
-        CREATE TABLE work_extra_payloads (work_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
-        CREATE VIEW work_payloads AS SELECT w.work_id, json_set(e.payload_json,
-          '$.work_id',w.work_id,'$.title',w.title,'$.title_zh',w.title_zh,'$.abstract',w.abstract,'$.authors',json(w.authors_json),
-          '$.first_public_date',w.first_public_date,'$.primary_direction',w.primary_direction,'$.directions',json(w.directions_json),
-          '$.questions',json(w.questions_json),'$.facets',json(w.facets_json),'$.evidence_grade',w.evidence_grade,
-          '$.strict_peer_reviewed',json(CASE WHEN w.strict_peer_reviewed THEN 'true' ELSE 'false' END),'$.summary_zh',w.summary_zh
-        ) AS payload_json FROM works w JOIN work_extra_payloads e USING(work_id);
-        CREATE TABLE source_records (source_record_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
-        CREATE TABLE work_aliases (alias TEXT NOT NULL, work_id TEXT NOT NULL, payload_json TEXT NOT NULL);
-        CREATE TABLE work_relations (payload_json TEXT NOT NULL);
-        CREATE TABLE source_reconciliation (source_record_id TEXT NOT NULL, work_id TEXT, payload_json TEXT NOT NULL);
-        CREATE TABLE signal_evidence (record_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, signal_id TEXT NOT NULL, stance TEXT NOT NULL, review_status TEXT NOT NULL, public_at TEXT, payload_json TEXT NOT NULL);
-        CREATE TABLE text_snapshots (snapshot_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, version TEXT, available_at TEXT, payload_json TEXT NOT NULL);
-        CREATE TABLE report_text_snapshots (snapshot_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, canonical_work_id TEXT NOT NULL, available_at TEXT, payload_json TEXT NOT NULL);
-        CREATE TABLE report_coverage (organization_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
-        CREATE TABLE report_coverage_metadata (key TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
-        CREATE TABLE release_recall_gold (gold_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
-    """)
-    org_names_by_work = {work_id: [org_by_id.get(org_id, {}).get("display_name", org_id) for org_id in org_ids] for work_id, org_ids in organizations_by_work.items()}
-    alias_codes = {
-        "vla": {"D1"},
-        "大小脑": {"D2"},
-        "世界模型": {"D3"},
-        "灵巧操作": {"D4"},
-        "跨本体": {"D1", "D8", "D9"},
-        "π0": set(),
-        "技术报告": set(),
-    }
+    with sqlite_export(ROOT, DOWNLOADS, PUBLIC_API / "catalog-manifest.json", manifest) as connection:
+        connection.executescript("""
+            -- Physical layout only: preserve all tables, values, indexes and views.
+            -- 16 KiB pages reduce overflow/unused space in the long JSON records.
+            PRAGMA page_size=16384;
+            PRAGMA journal_mode=OFF;
+            PRAGMA synchronous=OFF;
+            CREATE TABLE works (work_id TEXT PRIMARY KEY, title TEXT NOT NULL, title_zh TEXT, abstract TEXT, authors_json TEXT NOT NULL, first_public_date TEXT, relevance_status TEXT NOT NULL, primary_direction TEXT, directions_json TEXT NOT NULL, questions_json TEXT NOT NULL, facets_json TEXT NOT NULL, evidence_grade TEXT NOT NULL, strict_peer_reviewed INTEGER NOT NULL, summary_zh TEXT);
+            CREATE TABLE manifestations (manifestation_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, kind TEXT NOT NULL, url TEXT NOT NULL, published_at TEXT, venue TEXT, year INTEGER, status TEXT, peer_reviewed INTEGER NOT NULL, source_record_id TEXT);
+            CREATE TABLE organizations (organization_id TEXT PRIMARY KEY, name TEXT NOT NULL, slug TEXT, tier TEXT NOT NULL, entity_type TEXT, region TEXT, country TEXT, source_health TEXT);
+            CREATE TABLE work_organizations (work_id TEXT NOT NULL, organization_id TEXT NOT NULL, role TEXT, attribution_grade TEXT, confidence REAL, evidence_url TEXT, PRIMARY KEY(work_id, organization_id, evidence_url));
+            CREATE TABLE taxonomy_assignments (work_id TEXT NOT NULL, axis TEXT NOT NULL, code TEXT NOT NULL, is_primary INTEGER NOT NULL, confidence TEXT, classifier_version TEXT);
+            CREATE TABLE evidence_events (event_id TEXT PRIMARY KEY, work_id TEXT, organization_id TEXT, event_type TEXT NOT NULL, title TEXT, url TEXT, published_at TEXT, payload_json TEXT NOT NULL);
+            CREATE TABLE editorial_claims (claim_id TEXT PRIMARY KEY, month TEXT NOT NULL, kind TEXT NOT NULL, text TEXT NOT NULL, supporting_ids_json TEXT NOT NULL, counterevidence_ids_json TEXT NOT NULL, generator TEXT NOT NULL);
+            CREATE TABLE field_provenance (work_id TEXT NOT NULL, field TEXT NOT NULL, source_record_id TEXT NOT NULL, observed_at TEXT);
+            CREATE TABLE work_extra_payloads (work_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
+            CREATE VIEW work_payloads AS SELECT w.work_id, json_set(e.payload_json,
+              '$.work_id',w.work_id,'$.title',w.title,'$.title_zh',w.title_zh,'$.abstract',w.abstract,'$.authors',json(w.authors_json),
+              '$.first_public_date',w.first_public_date,'$.primary_direction',w.primary_direction,'$.directions',json(w.directions_json),
+              '$.questions',json(w.questions_json),'$.facets',json(w.facets_json),'$.evidence_grade',w.evidence_grade,
+              '$.strict_peer_reviewed',json(CASE WHEN w.strict_peer_reviewed THEN 'true' ELSE 'false' END),'$.summary_zh',w.summary_zh
+            ) AS payload_json FROM works w JOIN work_extra_payloads e USING(work_id);
+            CREATE TABLE source_records (source_record_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
+            CREATE TABLE work_aliases (alias TEXT NOT NULL, work_id TEXT NOT NULL, payload_json TEXT NOT NULL);
+            CREATE TABLE work_relations (payload_json TEXT NOT NULL);
+            CREATE TABLE source_reconciliation (source_record_id TEXT NOT NULL, work_id TEXT, payload_json TEXT NOT NULL);
+            CREATE TABLE signal_evidence (record_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, signal_id TEXT NOT NULL, stance TEXT NOT NULL, review_status TEXT NOT NULL, public_at TEXT, payload_json TEXT NOT NULL);
+            CREATE TABLE text_snapshots (snapshot_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, version TEXT, available_at TEXT, payload_json TEXT NOT NULL);
+            CREATE TABLE report_text_snapshots (snapshot_id TEXT PRIMARY KEY, work_id TEXT NOT NULL, canonical_work_id TEXT NOT NULL, available_at TEXT, payload_json TEXT NOT NULL);
+            CREATE TABLE report_coverage (organization_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
+            CREATE TABLE report_coverage_metadata (key TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
+            CREATE TABLE release_recall_gold (gold_id TEXT PRIMARY KEY, payload_json TEXT NOT NULL);
+        """)
+        org_names_by_work = {work_id: [org_by_id.get(org_id, {}).get("display_name", org_id) for org_id in org_ids] for work_id, org_ids in organizations_by_work.items()}
+        alias_codes = {
+            "vla": {"D1"},
+            "大小脑": {"D2"},
+            "世界模型": {"D3"},
+            "灵巧操作": {"D4"},
+            "跨本体": {"D1", "D8", "D9"},
+            "π0": set(),
+            "技术报告": set(),
+        }
 
-    def aliases_for_work(row: dict) -> str:
-        values = []
-        directions = set(row.get("directions") or [])
-        kinds = {item["kind"] for item in manifestations_by_work.get(row["work_id"], [])}
-        for key, terms in facets_config.get("search_aliases", {}).items():
-            is_pi = key == "π0" and bool(re.search(r"(?:π|\\pi|\bpi)[_ .-]?0(?:\b|\.)", row["title"], re.I))
-            if directions & alias_codes.get(key, set()) or (key == "技术报告" and "technical_report" in kinds) or is_pi:
-                values.extend([key, *terms])
-        return " ".join(values)
-    def sqlite_json(value):
-        # Compact whitespace only; the full JSON values remain round-trip exact.
-        return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+        def aliases_for_work(row: dict) -> str:
+            values = []
+            directions = set(row.get("directions") or [])
+            kinds = {item["kind"] for item in manifestations_by_work.get(row["work_id"], [])}
+            for key, terms in facets_config.get("search_aliases", {}).items():
+                is_pi = key == "π0" and bool(re.search(r"(?:π|\\pi|\bpi)[_ .-]?0(?:\b|\.)", row["title"], re.I))
+                if directions & alias_codes.get(key, set()) or (key == "技术报告" and "technical_report" in kinds) or is_pi:
+                    values.extend([key, *terms])
+            return " ".join(values)
+        def sqlite_json(value):
+            # Compact whitespace only; the full JSON values remain round-trip exact.
+            return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
 
-    connection.executemany("INSERT INTO works VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [(
-        row["work_id"], row["title"], row.get("title_zh"), row.get("abstract", ""), sqlite_json(row.get("authors") or []), row.get("first_public_date"), row["relevance"]["status"], row.get("primary_direction"), sqlite_json(row.get("directions") or []), sqlite_json(row.get("questions") or []), sqlite_json(row.get("facets") or {}), row.get("evidence_grade", "E0"), int(bool(row.get("strict_peer_reviewed"))), row.get("summary_zh", ""),
-    ) for row in works])
-    connection.executemany("INSERT INTO manifestations VALUES (?,?,?,?,?,?,?,?,?,?)", [(row["manifestation_id"], row["work_id"], row["kind"], row["url"], row.get("published_at"), row.get("venue"), row.get("year"), row.get("status"), int(bool(row.get("peer_reviewed"))), row.get("source_record_id")) for row in manifestations])
-    connection.executemany("INSERT INTO organizations VALUES (?,?,?,?,?,?,?,?)", [(row["organization_id"], row.get("display_name") or row["organization_id"], row.get("slug"), row.get("tier"), row.get("entity_type"), row.get("region"), row.get("country"), row.get("source_health")) for row in organizations])
-    connection.executemany("INSERT OR IGNORE INTO work_organizations VALUES (?,?,?,?,?,?)", [(row.get("work_id"), row.get("organization_id"), row.get("role"), row.get("evidence_grade"), row.get("confidence"), row.get("evidence_url") or "") for row in work_org_links if row.get("work_id") and row.get("organization_id")])
-    connection.executemany("INSERT INTO taxonomy_assignments VALUES (?,?,?,?,?,?)", [(row["work_id"], row["axis"], row["code"], int(row["is_primary"]), row.get("confidence"), row.get("classifier_version")) for row in taxonomy_assignments])
-    connection.executemany("INSERT INTO evidence_events VALUES (?,?,?,?,?,?,?,?)", [(row["event_id"], row.get("work_id"), row.get("organization_id"), row["event_type"], row.get("title"), row.get("url"), row.get("published_at"), sqlite_json(row)) for row in evidence_events])
-    connection.executemany("INSERT INTO editorial_claims VALUES (?,?,?,?,?,?,?)", [(row["claim_id"], row["month"], row["kind"], row["text"], sqlite_json(row["supporting_ids"]), sqlite_json(row["counterevidence_ids"]), row["generator"]) for row in editorial_claims])
-    connection.executemany("INSERT INTO field_provenance VALUES (?,?,?,?)", [(row["work_id"], row["field"], row["source_record_id"], row["observed_at"]) for row in provenance])
-    mapped_fields = {"work_id", "title", "title_zh", "abstract", "authors", "first_public_date", "primary_direction", "directions", "questions", "facets", "evidence_grade", "strict_peer_reviewed", "summary_zh"}
-    connection.executemany("INSERT INTO work_extra_payloads VALUES (?,?)", [(row["work_id"], sqlite_json({key: value for key, value in row.items() if not key.startswith("_") and key not in mapped_fields})) for row in works])
-    connection.executemany("INSERT INTO source_records VALUES (?,?)", [(row["source_record_id"], sqlite_json(row)) for row in source_records])
-    connection.executemany("INSERT INTO work_aliases VALUES (?,?,?)", [(row["alias"], row["work_id"], sqlite_json(row)) for row in alias_rows])
-    connection.executemany("INSERT INTO work_relations VALUES (?)", [(sqlite_json(row),) for row in payload.get("work-relations", [])])
-    connection.executemany("INSERT INTO source_reconciliation VALUES (?,?,?)", [(row["source_record_id"], row.get("work_id"), sqlite_json(row)) for row in payload.get("reconciliation", [])])
-    connection.executemany("INSERT INTO signal_evidence VALUES (?,?,?,?,?,?,?)", [(row["record_id"], row["work_id"], row["signal_id"], row["stance"], row["review_status"], row.get("public_at"), sqlite_json(row)) for row in signal_review["records"]])
-    connection.executemany("INSERT INTO text_snapshots VALUES (?,?,?,?,?)", [(row["snapshot_id"], row["work_id"], row.get("version"), row.get("available_at"), sqlite_json(row)) for row in text_snapshots])
-    report_owners = {row["snapshot_id"]: work_id for work_id, records in report_by_work.items() for row in records}
-    connection.executemany("INSERT INTO report_text_snapshots VALUES (?,?,?,?,?)", [(row["snapshot_id"], row["work_id"], report_owners[row["snapshot_id"]], row.get("available_at"), sqlite_json(row)) for row in report_snapshots])
-    connection.executemany("INSERT INTO report_coverage VALUES (?,?)", [(row["organization_id"], sqlite_json(row)) for row in report_coverage["organizations"]])
-    connection.executemany("INSERT INTO report_coverage_metadata VALUES (?,?)", [(key, sqlite_json(value)) for key, value in report_coverage.items() if key != "organizations"])
-    connection.executemany("INSERT INTO release_recall_gold VALUES (?,?)", [(row["gold_id"], sqlite_json(row)) for row in gold_records])
-    build_people_sqlite(connection, people_bundle)
-    equipment_sqlite(connection, equipment_bundle)
-    coverage_sqlite(connection, hardware_coverage)
-    pdf_coverage_sqlite(connection, pdf_coverage)
-    from sqlite_catalog_fidelity import build_catalog_fidelity
-    from sqlite_editorial_export import build_editorial_archive, read_editorial_artifacts
-    fidelity = build_catalog_fidelity(connection, payload)
-    editorial_archive = build_editorial_archive(connection, read_editorial_artifacts(DATA / "editorial"))
-    write_json(PUBLIC_API / "sqlite-fidelity.json", {"catalog": fidelity, "editorial": editorial_archive}, compact=True)
-    from sqlite_search_export import build_sqlite_search
-    build_sqlite_search(connection, [{"work_id": row["work_id"], "organizations": " ".join(org_names_by_work.get(row["work_id"], [])),
-        "keywords": " ".join([*(row.get("directions") or []), *(row.get("questions") or []), *(value for values in row.get("facets", {}).values() for value in values), aliases_for_work(row), report_quote_text({"report_text": report_views.get(row["work_id"])})])} for row in works])
-    connection.commit()
-    connection.execute("VACUUM")
-    connection.close()
+        connection.executemany("INSERT INTO works VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [(
+            row["work_id"], row["title"], row.get("title_zh"), row.get("abstract", ""), sqlite_json(row.get("authors") or []), row.get("first_public_date"), row["relevance"]["status"], row.get("primary_direction"), sqlite_json(row.get("directions") or []), sqlite_json(row.get("questions") or []), sqlite_json(row.get("facets") or {}), row.get("evidence_grade", "E0"), int(bool(row.get("strict_peer_reviewed"))), row.get("summary_zh", ""),
+        ) for row in works])
+        connection.executemany("INSERT INTO manifestations VALUES (?,?,?,?,?,?,?,?,?,?)", [(row["manifestation_id"], row["work_id"], row["kind"], row["url"], row.get("published_at"), row.get("venue"), row.get("year"), row.get("status"), int(bool(row.get("peer_reviewed"))), row.get("source_record_id")) for row in manifestations])
+        connection.executemany("INSERT INTO organizations VALUES (?,?,?,?,?,?,?,?)", [(row["organization_id"], row.get("display_name") or row["organization_id"], row.get("slug"), row.get("tier"), row.get("entity_type"), row.get("region"), row.get("country"), row.get("source_health")) for row in organizations])
+        connection.executemany("INSERT OR IGNORE INTO work_organizations VALUES (?,?,?,?,?,?)", [(row.get("work_id"), row.get("organization_id"), row.get("role"), row.get("evidence_grade"), row.get("confidence"), row.get("evidence_url") or "") for row in work_org_links if row.get("work_id") and row.get("organization_id")])
+        connection.executemany("INSERT INTO taxonomy_assignments VALUES (?,?,?,?,?,?)", [(row["work_id"], row["axis"], row["code"], int(row["is_primary"]), row.get("confidence"), row.get("classifier_version")) for row in taxonomy_assignments])
+        connection.executemany("INSERT INTO evidence_events VALUES (?,?,?,?,?,?,?,?)", [(row["event_id"], row.get("work_id"), row.get("organization_id"), row["event_type"], row.get("title"), row.get("url"), row.get("published_at"), sqlite_json(row)) for row in evidence_events])
+        connection.executemany("INSERT INTO editorial_claims VALUES (?,?,?,?,?,?,?)", [(row["claim_id"], row["month"], row["kind"], row["text"], sqlite_json(row["supporting_ids"]), sqlite_json(row["counterevidence_ids"]), row["generator"]) for row in editorial_claims])
+        connection.executemany("INSERT INTO field_provenance VALUES (?,?,?,?)", [(row["work_id"], row["field"], row["source_record_id"], row["observed_at"]) for row in provenance])
+        mapped_fields = {"work_id", "title", "title_zh", "abstract", "authors", "first_public_date", "primary_direction", "directions", "questions", "facets", "evidence_grade", "strict_peer_reviewed", "summary_zh"}
+        connection.executemany("INSERT INTO work_extra_payloads VALUES (?,?)", [(row["work_id"], sqlite_json({key: value for key, value in row.items() if not key.startswith("_") and key not in mapped_fields})) for row in works])
+        connection.executemany("INSERT INTO source_records VALUES (?,?)", [(row["source_record_id"], sqlite_json(row)) for row in source_records])
+        connection.executemany("INSERT INTO work_aliases VALUES (?,?,?)", [(row["alias"], row["work_id"], sqlite_json(row)) for row in alias_rows])
+        connection.executemany("INSERT INTO work_relations VALUES (?)", [(sqlite_json(row),) for row in payload.get("work-relations", [])])
+        connection.executemany("INSERT INTO source_reconciliation VALUES (?,?,?)", [(row["source_record_id"], row.get("work_id"), sqlite_json(row)) for row in payload.get("reconciliation", [])])
+        connection.executemany("INSERT INTO signal_evidence VALUES (?,?,?,?,?,?,?)", [(row["record_id"], row["work_id"], row["signal_id"], row["stance"], row["review_status"], row.get("public_at"), sqlite_json(row)) for row in signal_review["records"]])
+        connection.executemany("INSERT INTO text_snapshots VALUES (?,?,?,?,?)", [(row["snapshot_id"], row["work_id"], row.get("version"), row.get("available_at"), sqlite_json(row)) for row in text_snapshots])
+        report_owners = {row["snapshot_id"]: work_id for work_id, records in report_by_work.items() for row in records}
+        connection.executemany("INSERT INTO report_text_snapshots VALUES (?,?,?,?,?)", [(row["snapshot_id"], row["work_id"], report_owners[row["snapshot_id"]], row.get("available_at"), sqlite_json(row)) for row in report_snapshots])
+        connection.executemany("INSERT INTO report_coverage VALUES (?,?)", [(row["organization_id"], sqlite_json(row)) for row in report_coverage["organizations"]])
+        connection.executemany("INSERT INTO report_coverage_metadata VALUES (?,?)", [(key, sqlite_json(value)) for key, value in report_coverage.items() if key != "organizations"])
+        connection.executemany("INSERT INTO release_recall_gold VALUES (?,?)", [(row["gold_id"], sqlite_json(row)) for row in gold_records])
+        build_people_sqlite(connection, people_bundle)
+        equipment_sqlite(connection, equipment_bundle)
+        coverage_sqlite(connection, hardware_coverage)
+        pdf_coverage_sqlite(connection, pdf_coverage)
+        from sqlite_catalog_fidelity import build_catalog_fidelity
+        from sqlite_editorial_export import build_editorial_archive, read_editorial_artifacts
+        fidelity = build_catalog_fidelity(connection, payload)
+        editorial_archive = build_editorial_archive(connection, read_editorial_artifacts(DATA / "editorial"))
+        write_json(PUBLIC_API / "sqlite-fidelity.json", {"catalog": fidelity, "editorial": editorial_archive}, compact=True)
+        from sqlite_search_export import build_sqlite_search
+        build_sqlite_search(connection, [{"work_id": row["work_id"], "organizations": " ".join(org_names_by_work.get(row["work_id"], [])),
+            "keywords": " ".join([*(row.get("directions") or []), *(row.get("questions") or []), *(value for values in row.get("facets", {}).values() for value in values), aliases_for_work(row), report_quote_text({"report_text": report_views.get(row["work_id"])})])} for row in works])
 
     print(json.dumps({"status": "ok", "counts": counts, "migration_report": str(CATALOG / "migration-report.json")}, ensure_ascii=False))
 

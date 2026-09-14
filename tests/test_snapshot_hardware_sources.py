@@ -372,6 +372,73 @@ class HardwareSnapshotTests(unittest.TestCase):
         self.assertEqual(self.read("source-scans.jsonl")[0]["work_id"], "doi:10.1109/lra.2026.3726328")
         self.assertEqual(self.read("source-observations.jsonl")[0]["arxiv_id"], "2608.29080")
 
+    def test_registered_damaged_doi_is_preserved_as_opaque_legacy_work(self):
+        # Real legacy identity, synthetic bytes only; do not repair 0 to 10.
+        legacy = "doi:0.1109/isparo66239.2025.11436888"
+        row = self.seed(work_id=legacy, aid="2512.03736")
+        catalog = self.root / "catalog"
+        catalog.mkdir()
+        jsonl(catalog / "works.jsonl", [{"work_id": legacy, "identifiers": {"arxiv": "2512.03736"}}])
+        self.canonical_ids = hs.load_canonical_map(catalog)
+        before = tree(catalog), tree(self.cache), tree(self.published)
+        self.assertTrue(self.stage()["ready_for_review"])
+        public, scan = self.read("source-observations.jsonl")[0], self.read("source-scans.jsonl")[0]
+        self.assertEqual(public["work_id"], legacy)
+        self.assertEqual(scan["work_id"], legacy)
+        self.assertEqual(public["arxiv_id"], "2512.03736")
+        self.assertEqual(scan["source_url"], "https://arxiv.org/html/2512.03736v1")
+        self.assertEqual(scan["source_observation_hash"], row["raw_sha256"])
+        self.assertEqual(scan["content_hash"], row["text_sha256"])
+        self.assertEqual((tree(catalog), tree(self.cache), tree(self.published)), before)
+        self.publish([row], [scan])
+        with patch.object(hs, "verify_cache", side_effect=AssertionError("unchanged historical cache not reopened")):
+            self.assertTrue(self.stage("reused")["ready_for_review"])
+        self.assertEqual(hs.parse_jsonl((self.root / "reused/source-scans.jsonl").read_bytes())[0], [scan])
+
+    def test_legacy_rule_is_generic_but_not_a_valid_doi_or_unknown_namespace_claim(self):
+        for key in ("doi:legacy-missing-prefix", "doi:1.2/old-imported-key", "doi:10.bad/legacy"):
+            with self.subTest(key=key):
+                self.assertEqual(hs.validate_work(key, {key: "2512.03736"}), "2512.03736")
+                with self.assertRaisesRegex(hs.SnapshotError, "legacy_canonical_arxiv_identity_required"):
+                    hs.validate_work(key, {key: None})
+        for key in ("doi:", "unknown:legacy", "legacy-without-namespace", "arxiv:broken"):
+            with self.subTest(key=key), self.assertRaises(hs.SnapshotError):
+                hs.validate_work(key, {key: "2512.03736"})
+
+    def test_legacy_id_requires_registration_valid_arxiv_and_no_controls_or_spaces(self):
+        key = "doi:0.1109/isparo66239.2025.11436888"
+        for mapping in ({}, {key: None}, {key: "2512.03736v1"}, {key: "prefix2512.03736"}, {key: 2512}, {key: ""}):
+            with self.subTest(mapping=mapping), self.assertRaises(hs.SnapshotError):
+                hs.validate_work(key, mapping)
+        for bad in (key + "\n", key + "\x00", key + "\x1f", key + "\x7f", key + "\x85", key + "\u200b",
+                    key + "\u202e", key + " ", "doi:legacy with-space", "doi:" + "x" * 253):
+            with self.subTest(bad=bad), self.assertRaises(hs.SnapshotError):
+                hs.validate_work(bad, {bad: "2512.03736"})
+
+    def test_legacy_work_keeps_source_url_version_and_scan_identity_binding(self):
+        row = self.seed(work_id="doi:0.1109/isparo66239.2025.11436888", aid="2512.03736")
+        public = hs.project(row, self.canonical_ids)
+        for changes in ({"arxiv_id": "2512.03737"}, {"source_url": "https://arxiv.org/html/2512.03737v1"},
+                        {"effective_url": "https://arxiv.org/html/2512.03737v1"},
+                        {"source_url": "https://arxiv.org/html/2512.03736v2"}, {"version": "v2"},
+                        {"raw_sha256": "not-a-hash"}):
+            with self.subTest(changes=changes), self.assertRaises(hs.SnapshotError):
+                hs.validate_public({**public, **changes}, self.canonical_ids)
+        scan = hs.build_scan(row, hs.verify_cache(self.cache, row), DICTIONARY, STAMP, self.canonical_ids)
+        with self.assertRaisesRegex(hs.SnapshotError, "scan_canonical_source_identity_mismatch"):
+            hs.validate_scan({**scan, "source_url": "https://arxiv.org/html/2512.03737v1"}, self.canonical_ids)
+
+    def test_legacy_work_still_requires_raw_and_body_cache_hashes(self):
+        for index, (key, reason) in enumerate((("cache_ref", "cached_raw_hash_mismatch"),
+                                              ("body_cache_ref", "cached_body_file_hash_mismatch"))):
+            self.rows = []
+            row = self.seed(work_id="doi:0.1109/isparo66239.2025.11436888", aid="2512.03736", suffix=str(index))
+            Path(row[key]).write_bytes(b"TAMPERED FIXTURE")
+            self.assertFalse(self.stage(f"legacy-hash-{index}")["ready_for_review"])
+            pending = hs.parse_jsonl((self.root / f"legacy-hash-{index}/pending-refresh.jsonl").read_bytes())[0]
+            self.assertIn(reason, pending[0]["reasons"])
+            self.assertFalse((self.root / f"legacy-hash-{index}/source-observations.jsonl").exists())
+
     def test_unknown_work_or_wrong_canonical_arxiv_mapping_is_rejected(self):
         row = self.seed(work_id="doi:10.1109/iros60139.2025.11245841", aid="2505.01396")
         for mapping in ({}, {row["work_id"]: "2608.29080"}):

@@ -9,6 +9,7 @@ from equipment_radar import load_equipment_authority, build_equipment_bundle, au
 from hardware_coverage_export import build_coverage, audit_coverage, load_hardware_dictionary
 from import_hardware_source_reviews import audit_addenda_lineage
 from pdf_coverage_export import build_pdf_coverage, audit_pdf_coverage, attach_pdf_coverage, API, SOURCE_DOWNLOAD, READING_DOWNLOAD
+from sqlite_download import local_sqlite_path, verify_archive
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,7 +43,15 @@ def main():
     pdf_coverage = build_pdf_coverage(payload, read_table(ROOT / 'data/hardware-review', 'pdf-source-observations'),
         read_table(ROOT / 'data/hardware-review', 'pdf-readings'), manifest, coverage['summary']['dictionary_hash'])
     attach_pdf_coverage(coverage, pdf_coverage)
-    with closing(sqlite3.connect(f"file:{ROOT / 'docs/public/downloads/radar.sqlite'}?mode=ro", uri=True)) as connection:
+    if manifest.get('downloads', {}).get('sqlite') != '/downloads/radar.sqlite.zip':
+        raise ValueError('sqlite_zip_manifest_download_missing')
+    if any((ROOT / 'docs/public/downloads' / name).exists() or (ROOT / 'docs/public/downloads' / name).is_symlink()
+           for name in ('radar.sqlite', 'radar.sqlite.gz')):
+        raise ValueError('sqlite_legacy_public_duplicate')
+    sqlite_path = local_sqlite_path(ROOT)
+    sqlite_download_audit = verify_archive(ROOT / 'docs/public/downloads/radar.sqlite.zip',
+        manifest.get('downloads', {}).get('sqlite_integrity'), raw_path=sqlite_path)
+    with closing(sqlite3.connect(f"file:{sqlite_path}?mode=ro", uri=True)) as connection:
         audit_equipment(bundle, api / 'equipment', ROOT / 'docs/public/downloads/equipment', connection)
         coverage_audit = audit_coverage(coverage, api / 'equipment', ROOT / 'docs/public/downloads/equipment', connection)
         pdf_audit = audit_pdf_coverage(pdf_coverage, payload, api / 'equipment', ROOT / 'docs/public/downloads/equipment', connection)
@@ -51,7 +60,7 @@ def main():
                       'hardware_coverage_all_works': coverage['summary']['all_works'],
                       'hardware_coverage_included': coverage['summary']['included'],
                       'article_reading': coverage['readings']['counts'], 'hardware_addenda': addenda_audit,
-                      'pdf_reading': pdf_audit}))
+                      'pdf_reading': pdf_audit, 'sqlite_download': sqlite_download_audit}))
 
 
 if __name__ == '__main__':

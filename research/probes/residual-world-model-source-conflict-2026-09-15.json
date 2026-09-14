@@ -1,0 +1,38 @@
+{
+  "schema_version": "1",
+  "work_id": "arxiv:2609.02046",
+  "status": "unresolved_source_content_and_date_conflict",
+  "authority_changed": false,
+  "reading_receipt_imported": false,
+  "monthly_annotation_imported": false,
+  "official_metadata_lookup": {
+    "url": "https://arxiv.org/abs/2609.02046v1",
+    "method": "web_tool_extracted_page",
+    "lookup_date_utc": "2026-09-14",
+    "source_freshness_as_reported": "Crawled: last week; not a newly archived raw HTTP response",
+    "displayed_submission_timestamp_utc": "2026-09-02T03:20:09Z",
+    "abstract_content_comparison": "The retrieved abstract retains the comparatively optimistic rollout/planning description and future release wording found in the catalog. It does not resolve the cached HTML article discrepancy.",
+    "raw_http_hash_available": false
+  },
+  "catalog_metadata": {
+    "text_snapshot_id": "text-snapshot:3422624b3ee4f2df3d4b085d",
+    "source_record_id": "source:version-text:f262973c68d60fc5f755d02c",
+    "available_at_as_recorded": "2026-09-01",
+    "date_precision_as_recorded": "day"
+  },
+  "actually_read_article": {
+    "url": "https://arxiv.org/html/2609.02046v1",
+    "source_observation_id": "hardware-source:be86848f6793b3f9d289d2e61390d24f",
+    "observed_at": "2026-09-14T10:20:38Z",
+    "raw_sha256": "5524ee86c4829d511c5ab1984bd7218ce86011d9ad351529760295982bc1251d",
+    "packet_sha256": "ab12d2a0b399ebe3b04d90a9968e1545e188c353f860bbf30ce50e1d2278ff7c",
+    "read_completed_at": "2026-09-14T20:30:05Z",
+    "reading_scope": "all_119_text_segments_references_and_embedded_appendices; images_and_external_assets_not_inspected"
+  },
+  "unresolved_issues": [
+    "The cached article explicitly limits moving-object prediction, rollout and planning claims more than the metadata abstract.",
+    "Release wording differs; external code/data availability was not checked.",
+    "The displayed official submission timestamp and stored day-level version date differ. The cause and correction lineage have not been established."
+  ],
+  "handling": "Preserve both channels and existing IDs. Do not guess another version, overwrite the old abstract/date, or approve a historical monthly annotation from the matching v1 label alone. Resolve with a separately archived, source-bound metadata/content review."
+}

@@ -351,7 +351,7 @@ watch(filters, scheduleSearch, { deep: true })
         <p v-if="manifest">{{ manifest.counts.works.toLocaleString('zh-CN') }} 项归并记录 · {{ manifest.counts.manifestations.toLocaleString('zh-CN') }} 个公开版本 · 数据截至 {{ manifest.data_through }}</p>
         <p v-if="manifest?.research_status_as_of && manifest.research_status_as_of > manifest.data_through">已登记状态通知另行更新至 {{ manifest.research_status_as_of }}；不把后续状态倒灌到旧月份的研究证据。</p>
         <p v-if="manifest">默认展示 {{ manifest.counts.included.toLocaleString('zh-CN') }} 项已纳入研究；候选、待复核和排除记录可通过相关性筛选查看。</p>
-      </div><a :href="withBase('/downloads/radar.sqlite')" download>下载完整数据库</a>
+      </div><a :href="withBase('/downloads/radar.sqlite.zip')" download>下载完整数据库（ZIP，解压后使用）</a>
     </header>
     <form class="v3-search" @submit.prevent="runSearch()">
       <label class="v3-search-box"><span class="sr-only">搜索标题、摘要、作者、机构、标识符或代码</span><input ref="queryInput" v-model="filters.q" type="search" placeholder="大小脑、world model、π0、作者、DOI……"><button type="submit">搜索</button></label>

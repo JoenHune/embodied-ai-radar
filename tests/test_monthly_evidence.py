@@ -13,6 +13,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import build_v3_catalog as builder
 from catalog_store import fingerprint
+from sqlite_download import local_sqlite_path, verify_archive
 from test_catalog_rules import empty_payload, work
 from trend_signals import assess_signal
 
@@ -123,7 +124,12 @@ class MonthlyEvidenceTest(unittest.TestCase):
             self.assertEqual(coverage['dataset_version'], manifest['dataset_version'])
             self.assertEqual(manifest['equipment']['coverage_api'], '/api/v1/equipment/coverage-summary.json')
             self.assertTrue((root / 'downloads/equipment/hardware-coverage.jsonl.gz').is_file())
-            connection = sqlite3.connect(root / "downloads/radar.sqlite")
+            self.assertEqual(manifest['downloads']['sqlite'], '/downloads/radar.sqlite.zip')
+            self.assertFalse((root / 'downloads/radar.sqlite').exists())
+            self.assertFalse((root / 'downloads/radar.sqlite.gz').exists())
+            verify_archive(root / 'downloads/radar.sqlite.zip', manifest['downloads']['sqlite_integrity'],
+                           raw_path=local_sqlite_path(root))
+            connection = sqlite3.connect(local_sqlite_path(root))
             self.assertEqual(connection.execute("PRAGMA page_size").fetchone()[0], 16384)
             self.assertEqual(connection.execute("PRAGMA integrity_check").fetchone()[0], "ok")
             self.assertEqual(connection.execute('SELECT COUNT(*) FROM hardware_coverage').fetchone()[0], len(payload['works']))

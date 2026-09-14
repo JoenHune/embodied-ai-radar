@@ -149,7 +149,7 @@ G1 为官方实验室论文/项目页或论文直接声明；G2 为论文作者�
 
 ## 下载与复算
 
-- <a :href="withBase('/downloads/radar.sqlite')" download>下载完整 SQLite 数据库</a>；JSONL 仍是可编辑权威层。
+- <a :href="withBase('/downloads/radar.sqlite.zip')" download>下载完整 SQLite 数据库（ZIP）</a>：包内仅有 `radar.sqlite`，先解压再用 SQLite 工具打开；无损压缩不删记录、字段、原文或索引，JSONL 仍是可编辑权威层。API manifest 的 `downloads.sqlite_integrity` 提供压缩前后字节数及 SHA-256，可核对下载和解压结果。
 - [SQLite 逐表还原清单](/api/v1/sqlite-fidelity.json)：每张权威表的恢复视图、记录数与内容摘要。SQLite 内的 `catalog_fidelity_manifest` 列出 `catalog_restore_*` 标准 SQL 视图；读取 `payload_json` 可还原原始 JSONL 记录，包括缺失键与空值、重复关系、日期精度、归属证据和分类版本。日常查询的扁平业务表不代表完整原始记录。
 - SQLite 的 `editorial_artifacts` 单独保存月报、原稿归档、AI 审校、本地化和命题阅读记录；`monthly_editorial` 与 `editorial_narratives` 提供月报及六类叙述章节查询。它们属于生成／审阅层，不与权威库的 `editorial-claims` 或原始中文字段混淆。
 - [API manifest](/api/v1/catalog-manifest.json)：版本、语料截止、计数、窗口及分片信息。
