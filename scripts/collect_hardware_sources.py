@@ -16,6 +16,12 @@ and ``version`` consistency constraints. IDs and explicit versions must be
 backed by the canonical works / text-snapshots tables. A work with no known
 version uses the unversioned official HTML URL; the returned version must be
 identifiable before the body can be classified full_text_available.
+
+An isolated transport timeout cools down only its target (at least one hour).
+The second consecutive network failure opens a persistent global circuit for
+60 seconds, doubling thereafter up to 3840 seconds. Other transport failures
+retain their first-failure global backoff. Retry-After, HTTP 5xx backoff, and
+the immediate batch stop on HTTP 403/429 always take precedence.
 """
 from __future__ import annotations
 
@@ -311,17 +317,21 @@ class OfficialRedirectsOnly(urllib.request.HTTPRedirectHandler):
 def fetch_html(url, timeout=20):
     request = urllib.request.Request(url, headers={"User-Agent": "embodied-ai-hardware-source-audit/1.0 (single request; 3s minimum interval)", "Accept": "text/html"})
     opener = urllib.request.build_opener(OfficialRedirectsOnly())
+    code, effective_url, headers = None, url, {}
     try:
         with opener.open(request, timeout=timeout) as response:
+            code, effective_url, headers = response.status, response.url, dict(response.headers.items())
             raw = response.read(30_000_001)
-            return {"http_status": response.status, "effective_url": response.url,
-                    "headers": dict(response.headers.items()), "raw": raw[:30_000_000],
+            return {"http_status": code, "effective_url": effective_url,
+                    "headers": headers, "raw": raw[:30_000_000],
                     "truncated": len(raw) > 30_000_000}
     except urllib.error.HTTPError as exc:
         return {"http_status": exc.code, "effective_url": exc.geturl(), "headers": dict(exc.headers.items()) if exc.headers else {},
                 "raw": exc.read(1_000_000), "error": f"HTTP {exc.code}: {exc.reason}"}
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
-        return {"http_status": None, "effective_url": url, "headers": {}, "raw": b"", "error": f"{type(exc).__name__}: {exc}"}
+        reason = exc.reason if isinstance(exc, urllib.error.URLError) else exc
+        return {"http_status": code, "effective_url": effective_url, "headers": headers, "raw": b"", "error": f"{type(exc).__name__}: {exc}",
+                "transport_failure_kind": "timeout" if isinstance(reason, TimeoutError) else "connection"}
 
 
 def fetch_html_curl(url, timeout=20):
@@ -331,26 +341,55 @@ def fetch_html_curl(url, timeout=20):
     with tempfile.TemporaryDirectory(prefix='radar-hardware-http-') as directory:
         body, headers_path = Path(directory) / 'body', Path(directory) / 'headers'
         try:
-            result = subprocess.run(['curl', '--silent', '--show-error', '--proto', '=https',
-                '--retry', '0', '--connect-timeout', str(timeout), '--max-time', str(timeout),
-                '--max-filesize', '30000000', '--user-agent', 'embodied-ai-hardware-source-audit/1.0 (3s minimum interval)',
-                '--dump-header', str(headers_path), '--output', str(body), '--write-out', '%{http_code}', url],
-                capture_output=True, text=True, timeout=timeout + 5, check=False)
+            process_timeout = False
+            try:
+                result = subprocess.run(['curl', '--silent', '--show-error', '--proto', '=https',
+                    '--retry', '0', '--connect-timeout', str(timeout), '--max-time', str(timeout),
+                    '--max-filesize', '30000000', '--user-agent', 'embodied-ai-hardware-source-audit/1.0 (3s minimum interval)',
+                    '--dump-header', str(headers_path), '--output', str(body), '--write-out', '%{http_code}', url],
+                    capture_output=True, text=True, timeout=timeout + 5, check=False)
+            except subprocess.TimeoutExpired:
+                # subprocess.run kills/waits for the child. Preserve headers
+                # received before that timeout: a 403/429/5xx or Retry-After
+                # must not disappear into the isolated-timeout fast path.
+                result, process_timeout = None, True
             raw = body.read_bytes() if body.exists() else b''
-            headers = {}
+            headers, header_code = {}, None
             for line in (headers_path.read_text(errors='replace') if headers_path.exists() else '').splitlines():
                 if line.startswith('HTTP/'):
                     headers = {}
+                    parts = line.split()
+                    header_code = int(parts[1]) if len(parts) > 1 and re.fullmatch(r'[1-5]\d\d', parts[1]) else None
                 elif ':' in line:
                     key, value = line.split(':', 1)
                     headers[key.strip()] = value.strip()
-            code = int(result.stdout[-3:]) if result.stdout[-3:].isdigit() and result.stdout[-3:] != '000' else None
+            code = (None if process_timeout else
+                    int(result.stdout[-3:]) if result.stdout[-3:].isdigit() and result.stdout[-3:] != '000' else None)
+            if code is None:
+                code = header_code  # retain a received denial even without curl's write-out
+            returncode = result.returncode if result is not None else None
             return {'http_status': code, 'effective_url': url, 'headers': headers, 'raw': raw[:30_000_000],
-                    'truncated': len(raw) > 30_000_000 or result.returncode == 63,
-                    'transport_returncode': result.returncode,
-                    'error': f'curl_transport_error:{result.returncode}' if result.returncode else None}
-        except (OSError, subprocess.TimeoutExpired) as error:
-            return {'http_status': None, 'effective_url': url, 'headers': {}, 'raw': b'', 'error': type(error).__name__}
+                    'truncated': len(raw) > 30_000_000 or returncode == 63,
+                    'transport_returncode': returncode,
+                    **({'transport_failure_kind': 'timeout'} if process_timeout else {}),
+                    'error': 'TimeoutExpired' if process_timeout else f'curl_transport_error:{returncode}' if returncode else None}
+        except OSError as error:
+            return {'http_status': None, 'effective_url': url, 'headers': {}, 'raw': b'', 'error': type(error).__name__,
+                    'transport_failure_kind': 'connection'}
+
+
+def network_failure_kind(response):
+    """Classify transport failures only; HTTP denial/server errors stay separate."""
+    code = response.get('transport_returncode')
+    if code == 28 or response.get('transport_failure_kind') == 'timeout':
+        return 'timeout'
+    # A size cap (curl 63) is not evidence of lost connectivity. Unknown
+    # transport failures remain conservative, never using the timeout fast path.
+    if code == 63:
+        return None
+    if code not in (None, 0) or response.get('http_status') is None:
+        return 'connection'
+    return None
 
 
 def retry_after_seconds(headers, now):
@@ -446,8 +485,17 @@ class Collector:
         while deadline > self.clock():
             self.sleeper(min(30, deadline - self.clock()))
 
-    def _pace(self, seconds):
-        atomic_write(self.pacing_file, encode({"next_request_at": self.clock() + max(self.interval, seconds)}).encode())
+    def _pacing_state(self):
+        return json.loads(self.pacing_file.read_text()) if self.pacing_file.exists() else {}
+
+    def _pace(self, seconds, *, network_failures=None):
+        # Keep circuit state through reservations and across collector restarts;
+        # legacy pacing files containing only next_request_at remain valid.
+        state = self._pacing_state()
+        state['next_request_at'] = self.clock() + max(self.interval, seconds)
+        if network_failures is not None:
+            state['consecutive_network_failures'] = network_failures
+        atomic_write(self.pacing_file, encode(state).encode())
 
     def collect(self, target, *, retry_failed=False):
         state_path = self.state_path(target)
@@ -469,9 +517,13 @@ class Collector:
             row.update(status="unavailable", error=target["resolution_error"], http_status=None)
         else:
             self._wait()
+            network_failures = self._pacing_state().get('consecutive_network_failures', 0)
+            if type(network_failures) is not int or network_failures < 0:
+                raise ValueError('Invalid persistent network-failure count')
             # Persist a conservative reservation before I/O: process interruption
             # cannot cause the next invocation to immediately retry the request.
-            self._pace(self.timeout + self.interval)
+            # Include the curl subprocess timeout's five-second cleanup margin.
+            self._pace(self.timeout + 5 + self.interval)
             response = self.fetcher(target["source_url"], timeout=self.timeout)
             row.update(observed_at=utc_from_timestamp(self.clock()), effective_url=response["effective_url"], http_status=response["http_status"],
                        transport_returncode=response.get('transport_returncode'),
@@ -487,6 +539,16 @@ class Collector:
                 row["cache_ref"] = str(raw_path)
             code = response["http_status"]
             delay = retry_after_seconds(response.get("headers", {}), self.clock())
+            failure_kind = network_failure_kind(response)
+            if failure_kind:
+                network_failures += 1
+            elif (code is not None and 200 <= code < 500 and code not in {403, 429}
+                  and not response.get('truncated')):
+                # A complete HTTP response, including an ordinary 404, proves
+                # connectivity; HTML identity/availability is a separate check.
+                network_failures = 0
+            if failure_kind and network_failures >= 2:
+                delay = max(delay, 60 * 2 ** min(network_failures - 2, 6))
             if code in {403, 429}:
                 delay = max(delay, 900 if code == 403 else 60 * 2 ** min(row["attempt"] - 1, 6))
                 row.update(status="blocked", error=response.get("error") or f"HTTP {code}", next_retry_at=utc_from_timestamp(self.clock() + delay))
@@ -496,11 +558,15 @@ class Collector:
                 # (partial transfer), 28 (timeout), or 63 (size limit). Keep
                 # those raw bytes privately for diagnostics, never promote
                 # them through assess_html into an available-body record.
+                target_delay = delay
                 if code is None or code >= 500 or response.get("error") or response.get("transport_returncode", 0):
-                    delay = max(delay, 60 * 2 ** min(row["attempt"] - 1, 6))
+                    target_delay = max(target_delay, 60 * 2 ** min(row["attempt"] - 1, 6))
+                    isolated_timeout = failure_kind == 'timeout' and network_failures == 1 and code in {None, 200}
+                    if not isolated_timeout:
+                        delay = max(delay, target_delay)
                 row.update(status="unavailable", error=response.get("error") or
                            (f"transport_error:{response['transport_returncode']}" if response.get("transport_returncode") else f"HTTP {code}"),
-                           next_retry_at=utc_from_timestamp(self.clock() + max(delay, 3600)))
+                           next_retry_at=utc_from_timestamp(self.clock() + max(target_delay, 3600)))
             else:
                 assessment, blocks = assess_html(raw, target, response["effective_url"],
                                                  min_body_characters=self.min_body_characters, min_sections=self.min_sections)
@@ -518,7 +584,7 @@ class Collector:
                     atomic_write(blocks_path, (encode(blocks) + "\n").encode())
                     atomic_write(body_path, body)
                     row.update(blocks_ref=str(blocks_path), body_cache_ref=str(body_path))
-            self._pace(delay)
+            self._pace(delay, network_failures=network_failures)
         row["observation_id"] = "hardware-source:" + digest(encode(row).encode())[:32]
         atomic_write(state_path, (encode(row) + "\n").encode())
         self.export(row)

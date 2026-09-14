@@ -1,14 +1,17 @@
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from collect_hardware_sources import (Collector, arxiv_identity, assess_html, digest,
-                                      fetch_html_curl, load_targets, read_queue, retry_after_seconds)
+                                      fetch_html, fetch_html_curl, load_targets, read_queue,
+                                      retry_after_seconds, utc_timestamp)
 
 
 TARGET = {"work_id": "arxiv:2407.02648", "arxiv_id": "2407.02648", "version": "v1",
@@ -302,6 +305,278 @@ class HardwareSourceTests(unittest.TestCase):
         self.assertIsNone(failed['http_status'])
         self.assertEqual(failed['raw'], b'')
         self.assertEqual(failed['error'], 'OSError')
+
+
+class NetworkSchedulingTests(unittest.TestCase):
+    """Temporary caches and deterministic time only; never perform network I/O."""
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.cache = Path(temporary.name) / 'cache'
+        self.output = Path(temporary.name) / 'observations.jsonl'
+        self.clock = Clock()
+        self.started_at = self.clock.time()
+        self.calls = []
+        self.responses = []
+
+    @staticmethod
+    def response(code=200, *, returncode=0, headers=None, elapsed=0):
+        return {'http_status': code, 'effective_url': TARGET['source_url'],
+                'headers': headers or {}, 'raw': html() if code == 200 else b'',
+                'transport_returncode': returncode,
+                'error': f'curl_transport_error:{returncode}' if returncode else None,
+                'elapsed': elapsed}
+
+    def fetch(self, url, timeout):
+        self.calls.append((url, self.clock.time()))
+        response = self.responses.pop(0)
+        self.clock.now += response.get('elapsed', 0)
+        return response
+
+    def collector(self, **kwargs):
+        return Collector(self.cache, self.output, fetcher=self.fetch,
+                         clock=self.clock.time, sleeper=self.clock.sleep, **kwargs)
+
+    def target(self, index):
+        return {**TARGET, 'work_id': f'fixture:{index}'}
+
+    def pacing(self):
+        return json.loads((self.cache / 'pacing.json').read_text())
+
+    def test_isolated_timeout_continues_queue_after_minimum_interval(self):
+        self.responses = [self.response(None, returncode=28, elapsed=20),
+                          self.response(), self.response()]
+        collector = self.collector()
+        result = collector.run([self.target(i) for i in range(3)])
+        self.assertEqual(result['attempted'], 3)
+        self.assertEqual([at - self.started_at for _, at in self.calls], [0, 23, 26])
+        self.assertEqual(sum(self.clock.waits), 6)
+        row = json.loads(collector.state_path(self.target(0)).read_text())
+        self.assertEqual(row['status'], 'unavailable')
+        self.assertIsNone(row['text_sha256'])
+        self.assertEqual(utc_timestamp(row['next_retry_at']), self.started_at + 20 + 3600)
+        self.assertEqual(collector.collect(self.target(0), retry_failed=True), (row, False))
+        self.assertEqual(len(self.calls), 3)
+
+    def test_timeout_after_http_200_retains_raw_without_available_body(self):
+        self.responses = [self.response(200, returncode=28), self.response()]
+        collector = self.collector()
+        row, _ = collector.collect(self.target(0))
+        self.assertEqual(row['status'], 'unavailable')
+        self.assertFalse(row['transport_complete'])
+        self.assertIsNone(row['text_sha256'])
+        self.assertIsNone(row['blocks_ref'])
+        self.assertEqual(Path(row['cache_ref']).read_bytes(), html())
+        collector.collect(self.target(1))
+        self.assertEqual(self.calls[1][1] - self.calls[0][1], 3)
+
+    def test_consecutive_timeouts_persist_and_open_capped_global_circuit(self):
+        delays = [3, 60, 120, 240, 480, 960, 1920, 3840, 3840]
+        self.responses = [self.response(None, returncode=28) for _ in delays]
+        for index, delay in enumerate(delays):
+            # Every request uses a fresh instance: restarting cannot reset the
+            # circuit or remove the prior request's global deadline.
+            self.collector().collect(self.target(index))
+            state = self.pacing()
+            self.assertEqual(state['consecutive_network_failures'], index + 1)
+            self.assertEqual(state['next_request_at'] - self.clock.time(), delay)
+        self.assertEqual(sum(self.clock.waits), sum(delays[:-1]))
+        self.assertTrue(all(wait <= 30 for wait in self.clock.waits))
+
+    def test_mixed_connection_failures_trip_circuit_and_success_resets_it(self):
+        self.responses = [self.response(None, returncode=28), self.response(None, returncode=7),
+                          self.response(None, returncode=6), self.response(),
+                          self.response(None, returncode=28), self.response()]
+        for index, expected_count in enumerate([1, 2, 3, 0, 1, 0]):
+            self.collector().collect(self.target(index))
+            self.assertEqual(self.pacing()['consecutive_network_failures'], expected_count)
+        self.assertEqual([at - self.started_at for _, at in self.calls], [0, 3, 63, 183, 186, 189])
+
+    def test_first_connection_error_keeps_global_backoff(self):
+        self.responses = [self.response(None, returncode=7), self.response()]
+        collector = self.collector()
+        collector.collect(self.target(0))
+        collector.collect(self.target(1))
+        self.assertEqual(sum(self.clock.waits), 60)
+
+    def test_complete_404_resets_connectivity_counter_without_promoting_body(self):
+        self.responses = [self.response(None, returncode=28), self.response(404),
+                          self.response(None, returncode=28)]
+        collector = self.collector()
+        collector.collect(self.target(0))
+        row, _ = collector.collect(self.target(1))
+        self.assertEqual(row['status'], 'unavailable')
+        self.assertEqual(self.pacing()['consecutive_network_failures'], 0)
+        collector.collect(self.target(2))
+        self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), 3)
+
+    def test_retry_after_stays_global_even_on_success_or_isolated_timeout(self):
+        self.responses = [self.response(None, returncode=28, headers={'Retry-After': '120'}),
+                          self.response(headers={'retry-after': '75'}), self.response()]
+        collector = self.collector()
+        for index in range(3):
+            collector.collect(self.target(index))
+        self.assertEqual([at - self.started_at for _, at in self.calls], [0, 120, 195])
+
+    def test_server_errors_override_isolated_timeout_optimization(self):
+        self.responses = [self.response(500), self.response(),
+                          self.response(503, returncode=28, headers={'Retry-After': '90'}), self.response()]
+        collector = self.collector()
+        for index in range(4):
+            collector.collect(self.target(index))
+        self.assertEqual([at - self.started_at for _, at in self.calls], [0, 60, 63, 153])
+
+    def test_403_and_429_stop_batch_even_with_timeout_and_keep_retry_after(self):
+        for index, (code, header, expected_delay) in enumerate([(403, '1200', 1200), (429, '120', 120)]):
+            with self.subTest(code=code):
+                self.responses = [self.response(code, returncode=28, headers={'Retry-After': header})]
+                collector = self.collector()
+                before_calls = len(self.calls)
+                result = collector.run([self.target(2 * index), self.target(2 * index + 1)])
+                self.assertEqual(result['attempted'], 1)
+                self.assertEqual(len(self.calls), before_calls + 1)
+                self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), expected_delay)
+                row, fresh = collector.collect(self.target(2 * index), retry_failed=True)
+                self.assertFalse(fresh)
+                self.assertEqual(row['status'], 'blocked')
+                self.assertEqual(len(self.calls), before_calls + 1)
+
+    def test_html_access_challenge_still_stops_batch(self):
+        response = self.response()
+        response['raw'] = b'<title>Access Denied</title>'
+        self.responses = [response]
+        result = self.collector().run([self.target(0), self.target(1)])
+        self.assertEqual(result['attempted'], 1)
+        self.assertEqual(result['statuses'], {'blocked': 1})
+        self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), 900)
+
+    def test_denial_without_retry_after_retains_default_floor(self):
+        for index, (code, expected_delay) in enumerate([(403, 900), (429, 60)]):
+            self.responses = [self.response(code)]
+            self.collector().collect(self.target(index))
+            self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), expected_delay)
+
+    def test_long_retry_after_preserves_target_cooldown(self):
+        self.responses = [self.response(None, returncode=28, headers={'Retry-After': '7200'})]
+        collector = self.collector()
+        row, _ = collector.collect(self.target(0))
+        self.assertEqual(utc_timestamp(row['next_retry_at']), self.started_at + 7200)
+        self.assertEqual(collector.collect(self.target(0), retry_failed=True), (row, False))
+        self.assertEqual(len(self.calls), 1)
+
+    def test_legacy_pacing_file_deadline_is_honored(self):
+        self.cache.mkdir()
+        (self.cache / 'pacing.json').write_text(json.dumps({'next_request_at': self.started_at + 45}))
+        self.responses = [self.response(None, returncode=28)]
+        self.collector().collect(self.target(0))
+        self.assertEqual(sum(self.clock.waits), 45)
+        self.assertEqual(self.pacing()['consecutive_network_failures'], 1)
+        self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), 3)
+
+    def test_interruption_preserves_reservation_and_releases_single_collector_lock(self):
+        def interrupted(url, timeout):
+            self.clock.now += 10
+            raise KeyboardInterrupt()
+        collector = Collector(self.cache, self.output, fetcher=interrupted,
+                              clock=self.clock.time, sleeper=self.clock.sleep)
+        with self.assertRaises(KeyboardInterrupt):
+            collector.run([self.target(0)])
+        self.assertEqual(self.pacing()['next_request_at'], self.started_at + 28)
+        self.responses = [self.response()]
+        self.assertEqual(self.collector().run([self.target(1)])['attempted'], 1)
+        self.assertEqual(self.calls[0][1] - self.started_at, 28)
+        self.assertEqual(sum(self.clock.waits), 18)
+
+    def test_kernel_lock_rejects_second_collector_without_fetch(self):
+        import fcntl
+        collector = self.collector()
+        with (self.cache / 'collector.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            with self.assertRaisesRegex(RuntimeError, 'concurrent arXiv collection is prohibited'):
+                collector.run([self.target(0)])
+        self.assertEqual(self.calls, [])
+
+    def test_interrupted_reservation_does_not_reset_prior_network_failures(self):
+        self.responses = [self.response(None, returncode=28)]
+        self.collector().collect(self.target(0))
+        def interrupted(url, timeout):
+            raise KeyboardInterrupt()
+        collector = Collector(self.cache, self.output, fetcher=interrupted,
+                              clock=self.clock.time, sleeper=self.clock.sleep)
+        with self.assertRaises(KeyboardInterrupt):
+            collector.collect(self.target(1))
+        self.assertEqual(self.pacing()['consecutive_network_failures'], 1)
+        self.responses = [self.response(None, returncode=28)]
+        self.collector().collect(self.target(2))
+        self.assertEqual(self.pacing()['consecutive_network_failures'], 2)
+        self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), 60)
+
+    def test_urllib_timeouts_are_structured_not_guessed_from_error_text(self):
+        for exception, expected in [(TimeoutError('timed out'), 'timeout'),
+                                    (urllib.error.URLError(TimeoutError('timed out')), 'timeout'),
+                                    (urllib.error.URLError(OSError('connection refused')), 'connection')]:
+            with self.subTest(exception=exception), patch('collect_hardware_sources.urllib.request.build_opener') as build:
+                build.return_value.open.side_effect = exception
+                response = fetch_html(TARGET['source_url'])
+                self.assertEqual(response['transport_failure_kind'], expected)
+                self.responses = [response]
+                self.collector().collect(self.target(len(self.calls)))
+                self.assertEqual(self.pacing()['consecutive_network_failures'], len(self.calls))
+
+    def test_curl_wrapper_timeout_uses_isolated_timeout_policy(self):
+        with patch('collect_hardware_sources.subprocess.run', side_effect=subprocess.TimeoutExpired(['curl'], 25)):
+            response = fetch_html_curl(TARGET['source_url'])
+        self.assertEqual(response['transport_failure_kind'], 'timeout')
+        self.responses = [response, self.response()]
+        collector = self.collector()
+        collector.collect(self.target(0))
+        collector.collect(self.target(1))
+        self.assertEqual(sum(self.clock.waits), 3)
+
+    def test_curl_process_timeout_preserves_received_denial_and_backoff_headers(self):
+        for index, code in enumerate([403, 429, 503, 200]):
+            with self.subTest(code=code):
+                def timed_out(command, **kwargs):
+                    Path(command[command.index('--dump-header') + 1]).write_text(
+                        f'HTTP/2 {code}\nRetry-After: 1200\n')
+                    Path(command[command.index('--output') + 1]).write_bytes(b'partial response')
+                    raise subprocess.TimeoutExpired(command, 25)
+                with patch('collect_hardware_sources.subprocess.run', side_effect=timed_out):
+                    response = fetch_html_curl(TARGET['source_url'])
+                self.assertEqual(response['http_status'], code)
+                self.assertEqual(response['headers']['Retry-After'], '1200')
+                self.assertEqual(response['raw'], b'partial response')
+                self.responses = [response]
+                result = self.collector().run([self.target(index)], limit=1)
+                self.assertEqual(result['statuses'], {'blocked' if code in {403, 429} else 'unavailable': 1})
+                self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), 1200)
+
+    def test_urllib_read_timeout_preserves_retry_after(self):
+        with patch('collect_hardware_sources.urllib.request.build_opener') as build:
+            opened = build.return_value.open.return_value.__enter__.return_value
+            opened.status, opened.url, opened.headers = 200, TARGET['source_url'], {'Retry-After': '120'}
+            opened.read.side_effect = TimeoutError('body timed out')
+            response = fetch_html(TARGET['source_url'])
+        self.assertEqual(response['http_status'], 200)
+        self.assertEqual(response['headers']['Retry-After'], '120')
+        self.responses = [response, self.response()]
+        collector = self.collector()
+        collector.collect(self.target(0))
+        collector.collect(self.target(1))
+        self.assertEqual(sum(self.clock.waits), 120)
+
+    def test_curl_missing_writeout_does_not_hide_received_429(self):
+        def timed_out(command, **kwargs):
+            Path(command[command.index('--dump-header') + 1]).write_text('HTTP/2 429\nRetry-After: 120\n')
+            return SimpleNamespace(returncode=28, stdout='000', stderr='timed out')
+        with patch('collect_hardware_sources.subprocess.run', side_effect=timed_out):
+            response = fetch_html_curl(TARGET['source_url'])
+        self.responses = [response]
+        result = self.collector().run([self.target(0), self.target(1)])
+        self.assertEqual(result['attempted'], 1)
+        self.assertEqual(result['statuses'], {'blocked': 1})
+        self.assertEqual(self.pacing()['next_request_at'] - self.clock.time(), 120)
 
 
 if __name__ == "__main__":
