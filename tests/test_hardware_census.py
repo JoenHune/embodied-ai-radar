@@ -52,6 +52,18 @@ def scan(obs, dictionary, text="Unitree G1 robot in experiments.", **values):
 
 
 class HardwareMentionTests(unittest.TestCase):
+    def test_new_official_rx75_identity_stays_separate_from_rm75_and_optional_camera(self):
+        dictionary = json.loads((ROOT / 'config/hardware-dictionary.json').read_text())
+        rx = [r for r in dictionary['entries'] if r['dictionary_id'] == 'model:realman-rx75']
+        self.assertEqual(len(rx), 1)
+        self.assertEqual(rx[0]['hardware_ids'], ['hardware:realman-rx75'])
+        observed = {r['dictionary_id'] for r in detect_mentions('The RealMan RX75 robotic arm was used.', dictionary)}
+        self.assertIn('model:realman-rx75', observed)
+        self.assertFalse(any('d405' in did for did in observed))
+        rm = {r['dictionary_id'] for r in detect_mentions('The RealMan RM75 robotic arm was used.', dictionary)}
+        self.assertNotIn('model:realman-rx75', rm)
+        self.assertEqual(detect_mentions('RX75 denotes a sample label.', {'schema_version': '1', 'entries': rx}), [])
+
     def test_boundaries_separators_and_longest_alias_wins(self):
         text = "Unitree-G1 robot; NVIDIA RTX 4090. Universal Robots UR5e arm; humanoid Unitree H1-2."
         matches = detect_mentions(text, dictionary_fixture())

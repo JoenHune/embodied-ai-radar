@@ -78,6 +78,15 @@ test('year-only and unknown dates do not fabricate month placement', () => {
   assert.equal(hardwareMonth({ first_public_date: '2026-01-01', first_public_date_precision: 'year' }), 'unknown')
   assert.equal(hardwareMonth({ first_public_date: '2026-09', first_public_date_precision: 'month' }), '2026-09')
 })
+test('source cards distinguish later review from observation time without claiming a refetch', () => {
+  const view = fs.readFileSync(new URL('../docs/.vitepress/theme/components/HardwareFrequencyRow.vue', import.meta.url), 'utf8')
+  assert.match(view, /复核 \{\{ eventDate\(usage\.reviewed_at\) \}\}/)
+  assert.match(view, /来源记录 \{\{ eventDate\(usage\.observed_at\) \}\}/)
+  assert.doesNotMatch(view, /来源获取 \{\{ eventDate\(usage\.observed_at\) \}\}/)
+  assert.match(view, /usage\.extends_review_id/)
+  assert.match(view, /原记录保留/)
+  assert.doesNotMatch(view, /核验 \{\{ eventDate\(usage\.observed_at\) \}\}/)
+})
 test('frozen audited authority cohort: G1 16 works, PiPER-X one real work, WUJI one simulation-only family', () => {
   // Use tracked authority rather than ignored/generated API so clean CI works.
   const read = name => fs.readFileSync(new URL(`../data/equipment/${name}.jsonl`, import.meta.url), 'utf8').trim().split('\n').map(JSON.parse)

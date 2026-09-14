@@ -61,6 +61,8 @@ class EquipmentAuditEntrypointTests(unittest.TestCase):
             self.assertEqual(result['hardware_coverage_all_works']['metadata_screened_work_count'], 1)
             self.assertEqual(result['hardware_coverage_all_works']['full_text_screened_current_dictionary_work_count'], 0)
             self.assertEqual(result['hardware_coverage_included']['verified_relationship_work_count'], 1)
+            self.assertEqual(result['hardware_addenda']['status'], 'passed')
+            self.assertEqual(result['hardware_addenda']['addendum_review_count'], 0)
             self.assertEqual(hashlib.sha256((downloads / 'radar.sqlite').read_bytes()).hexdigest(), before)
 
     def test_equipment_audit_cannot_pass_when_coverage_api_download_or_sqlite_is_tampered(self):
@@ -88,6 +90,18 @@ class EquipmentAuditEntrypointTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory, patch.object(audit_entry, 'ROOT', Path(directory)):
             with self.assertRaisesRegex(FileNotFoundError, 'hardware_coverage_dictionary_required'):
                 audit_entry.main()
+
+    def test_entrypoint_checks_parent_graph_even_when_four_equipment_tables_are_valid(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            install_fixture(root)
+            review_directory = root / 'data/hardware-review'
+            review_directory.mkdir()
+            (review_directory / 'section-reviews.jsonl').write_text(encode({'review_id': 'forged:addendum',
+                'extends_review_id': 'hardware-section-review:missing-parent'}) + '\n')
+            with patch.object(audit_entry, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
+                with self.assertRaisesRegex(ValueError, 'addendum_parent_not_found'):
+                    audit_entry.main()
 
 
 if __name__ == '__main__':

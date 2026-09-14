@@ -8,9 +8,9 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from catalog_store import encode
+from catalog_store import encode, fingerprint
 from equipment_radar import TABLES
-from import_hardware_source_reviews import import_source_reviews
+from import_hardware_source_reviews import audit_addenda_lineage, import_source_reviews, source_key
 from test_equipment_radar import OBSERVED, fixture, make_work
 
 
@@ -62,6 +62,19 @@ class SourceReviewImportTests(unittest.TestCase):
 
     def run_import(self, *, apply=False):
         return import_source_reviews(self.raw, self.payload, self.directory, self.observations, self.public, apply=apply)
+
+    def start_addendum(self, *, negative_parent=False):
+        original = copy.deepcopy(self.raw['reviews'][0])
+        if negative_parent:
+            self.raw['reviews'][0].update(decision='no_explicit_named_usage_in_reviewed_sections', devices=[], reviewed_sections=['S4'])
+        self.run_import(apply=True)
+        parent = json.loads(self.public.read_text())
+        addon = original
+        addon.update(extends_review_id=parent['review_id'], reviewed_at='2026-09-14T03:00:00Z', reviewed_sections=['A1'])
+        addon['devices'][0].update(source_locator='A1', usage_scope='study' if negative_parent else 'calibration',
+                                   configuration='Newly reviewed calibration configuration')
+        self.raw = {'schema_version': '1', 'reviews': [addon]}
+        return parent
 
     def test_dry_run_is_read_only_and_reuses_existing_exact_model(self):
         before = {p.name: p.read_bytes() for p in self.directory.iterdir()}
@@ -303,6 +316,289 @@ class SourceReviewImportTests(unittest.TestCase):
         self.payload["works"][1]["identifiers"]["arxiv"] = "2608.99999"
         with self.assertRaisesRegex(ValueError, "canonical_source_identity_mismatch"):
             self.run_import()
+
+    def test_legacy_review_id_and_fields_are_unchanged_without_extends(self):
+        expected = 'hardware-section-review:' + fingerprint(source_key(self.raw['reviews'][0], review=True))[:24]
+        self.run_import(apply=True)
+        record = json.loads(self.public.read_text())
+        self.assertEqual(record['review_id'], expected)
+        self.assertNotIn('extends_review_id', record)
+        self.assertNotIn('review_kind', record)
+        self.assertNotIn('addendum_scope', record)
+
+    def test_addendum_is_new_record_new_usage_only_and_dry_run_is_read_only(self):
+        parent = self.start_addendum()
+        paths = [*self.directory.glob('*.jsonl'), self.public, *self.cache.glob('*')]
+        before = {path: path.read_bytes() for path in paths}
+        result = self.run_import()
+        self.assertEqual(result['added']['usage-evidence'], 1)
+        self.assertEqual(result['public_section_review_count'], 2)
+        self.assertFalse(result['applied'])
+        self.assertEqual({path: path.read_bytes() for path in paths}, before)
+        self.run_import(apply=True)
+        records = {row['review_id']: row for row in map(json.loads, self.public.read_text().splitlines())}
+        self.assertEqual(records[parent['review_id']], parent)
+        addon = next(row for rid, row in records.items() if rid != parent['review_id'])
+        self.assertEqual(addon['extends_review_id'], parent['review_id'])
+        self.assertEqual(addon['review_kind'], 'addendum')
+        self.assertEqual(addon['addendum_scope'], 'new_semantic_usage_assertions_only')
+        self.assertEqual(addon['source_observation_id'], parent['source_observation_id'])
+        self.assertEqual(source_key(addon, review=True), source_key(parent, review=True))
+        self.assertNotEqual(addon['review_id'], parent['review_id'])
+        new_uses = [row for row in map(json.loads, (self.directory / 'usage-evidence.jsonl').read_text().splitlines()) if row.get('section_review_id') == addon['review_id']]
+        self.assertEqual(len(new_uses), 1)
+        self.assertEqual(new_uses[0]['extends_review_id'], parent['review_id'])
+        self.assertEqual(new_uses[0]['review_kind'], 'addendum')
+        old_uses = {row['usage_id']: row for row in map(json.loads, before[self.directory / 'usage-evidence.jsonl'].decode().splitlines())}
+        all_uses = {row['usage_id']: row for row in map(json.loads, (self.directory / 'usage-evidence.jsonl').read_text().splitlines())}
+        self.assertTrue(all(all_uses[uid] == row for uid, row in old_uses.items()))
+
+    def test_addendum_apply_replay_is_byte_idempotent(self):
+        parent = self.start_addendum()
+        addon_input = copy.deepcopy(self.raw)
+        self.run_import(apply=True)
+        records = [json.loads(line) for line in self.public.read_text().splitlines()]
+        addon = next(row for row in records if row['review_id'] != parent['review_id'])
+        raw_review = self.raw['reviews'][0]
+        expected = 'hardware-section-review:' + fingerprint(['addendum', parent['review_id'], raw_review['reviewed_at'],
+                    source_key(raw_review, review=True), parent['source_observation_id']])[:24]
+        self.assertEqual(addon['review_id'], expected)
+        paths = [*self.directory.glob('*.jsonl'), self.public]
+        before = {path: path.read_bytes() for path in paths}
+        repeat = self.run_import(apply=True)
+        self.assertEqual(set(repeat['added'].values()), {0})
+        self.assertEqual({path: path.read_bytes() for path in paths}, before)
+        self.assertEqual(self.raw, addon_input)
+
+    def test_addendum_keeps_old_no_explicit_scope_and_decision(self):
+        parent = self.start_addendum(negative_parent=True)
+        self.run_import(apply=True)
+        records = {row['review_id']: row for row in map(json.loads, self.public.read_text().splitlines())}
+        self.assertEqual(records[parent['review_id']], parent)
+        self.assertEqual(parent['decision'], 'no_explicit_named_usage_in_reviewed_sections')
+        self.assertEqual(parent['reviewed_sections'], ['S4'])
+        self.assertEqual(parent['usage_ids'], [])
+        addon = next(row for row in records.values() if row['review_id'] != parent['review_id'])
+        self.assertEqual(addon['reviewed_sections'], ['A1'])
+        self.assertEqual(addon['decision'], 'verified_use')
+        self.assertFalse(addon['whole_paper_hardware_absence_conclusion'])
+
+    def test_addendum_unknown_or_empty_parent_fails_before_writes(self):
+        self.start_addendum()
+        for parent in ('hardware-section-review:missing', '', None):
+            with self.subTest(parent=parent), patch('import_hardware_source_reviews.write_if_changed') as writer:
+                self.raw['reviews'][0]['extends_review_id'] = parent
+                with self.assertRaisesRegex(ValueError, 'extends_review_id|parent_not_found'):
+                    self.run_import(apply=True)
+                writer.assert_not_called()
+
+    def test_addendum_parent_source_tuple_must_match_exactly(self):
+        self.start_addendum()
+        original = copy.deepcopy(self.raw)
+        for field, value in [('work_id', 'arxiv:2608.99999'), ('source_url', 'https://arxiv.org/html/2608.99999v1'),
+                             ('source_version', 'v2'), ('raw_sha256', 'a' * 64), ('text_sha256', 'b' * 64),
+                             ('observed_at', '2026-09-14T01:01:00Z')]:
+            self.raw = copy.deepcopy(original)
+            self.raw['reviews'][0][field] = value
+            with self.subTest(field=field), patch('import_hardware_source_reviews.write_if_changed') as writer:
+                with self.assertRaisesRegex(ValueError, 'addendum_parent_source_mismatch'):
+                    self.run_import(apply=True)
+                writer.assert_not_called()
+
+    def test_addendum_binds_parent_observation_not_a_new_or_fabricated_fetch(self):
+        self.start_addendum()
+        self.raw['reviews'][0]['source_observation_id'] = 'source:fabricated'
+        with self.assertRaisesRegex(ValueError, 'addendum_parent_observation_mismatch'):
+            self.run_import()
+        self.raw['reviews'][0].pop('source_observation_id')
+        source = json.loads(self.observations.read_text())
+        source['observation_id'] = 'source:new-observation-same-text'
+        self.observations.write_text(encode(source) + '\n')
+        with self.assertRaisesRegex(ValueError, 'addendum_parent_observation_mismatch'):
+            self.run_import()
+
+    def test_addendum_time_must_be_strictly_after_parent(self):
+        parent = self.start_addendum()
+        for value in (parent['reviewed_at'], '2026-09-14T01:30:00Z'):
+            with self.subTest(value=value):
+                self.raw['reviews'][0]['reviewed_at'] = value
+                with self.assertRaisesRegex(ValueError, 'addendum_review_not_strictly_later'):
+                    self.run_import()
+
+    def test_addendum_only_allows_new_positive_usage_assertions(self):
+        self.start_addendum()
+        for decision in ('ambiguous', 'no_explicit_named_usage_in_reviewed_sections'):
+            with self.subTest(decision=decision):
+                self.raw['reviews'][0].update(decision=decision, devices=[])
+                with self.assertRaisesRegex(ValueError, 'addendum_new_usage_assertions_required'):
+                    self.run_import()
+
+    def test_addendum_duplicate_semantics_cannot_be_hidden_by_changed_text_or_locator_order(self):
+        self.start_addendum()
+        row = self.raw['reviews'][0]
+        row['reviewed_sections'] = ['A1', 'S4']
+        row['devices'][0].update(usage_scope='study', source_locator='A1; S4',
+                                 statement_zh='改写说明不构成新的使用语义。', configuration='Changed configuration')
+        with patch('import_hardware_source_reviews.write_if_changed') as writer:
+            with self.assertRaisesRegex(ValueError, 'addendum_duplicate_semantic_usage_conflict'):
+                self.run_import(apply=True)
+            writer.assert_not_called()
+
+    def test_addendum_locator_subset_cannot_duplicate_an_existing_use(self):
+        original = copy.deepcopy(self.raw['reviews'][0]['devices'][0])
+        self.start_addendum()
+        row = self.raw['reviews'][0]
+        row['devices'] = [{**original, 'source_locator': 'A1'}]
+        with patch('import_hardware_source_reviews.write_if_changed') as writer:
+            with self.assertRaisesRegex(ValueError, 'addendum_duplicate_semantic_usage_conflict'):
+                self.run_import(apply=True)
+            writer.assert_not_called()
+
+    def test_addendum_new_locator_or_configuration_is_not_a_new_use(self):
+        self.raw['reviews'][0]['devices'][0]['source_locator'] = 'S4'
+        self.start_addendum()
+        row = self.raw['reviews'][0]
+        row['reviewed_sections'] = ['S4', 'A1']
+        for locator in ('S4; A1', 'A1'):
+            row['devices'][0].update(usage_scope='study', source_locator=locator,
+                                    configuration='Different configuration requires an explicit revision model',
+                                    statement_zh='新增定位或不同配置不构成另一条使用语义。')
+            with self.subTest(locator=locator), patch('import_hardware_source_reviews.write_if_changed') as writer:
+                with self.assertRaisesRegex(ValueError, 'addendum_duplicate_semantic_usage_conflict'):
+                    self.run_import(apply=True)
+                writer.assert_not_called()
+
+    def test_legacy_nonaddendum_still_preserves_distinct_locator_evidence(self):
+        original = copy.deepcopy(self.raw['reviews'][0]['devices'][0])
+        self.raw['reviews'][0]['devices'] = [{**original, 'source_locator': 'S4'},
+                                           {**original, 'source_locator': 'A1'}]
+        result = self.run_import(apply=True)
+        self.assertEqual(result['added']['usage-evidence'], 2)
+        records = [json.loads(line) for line in self.public.read_text().splitlines()]
+        self.assertEqual(records[0]['assertion_count'], 2)
+        self.assertNotIn('extends_review_id', records[0])
+
+    def test_addendum_replay_cannot_silently_change_old_assertion_or_add_devices_to_same_id(self):
+        self.start_addendum()
+        self.run_import(apply=True)
+        self.raw['reviews'][0]['devices'][0]['statement_zh'] = '尝试覆盖旧说明。'
+        with self.assertRaisesRegex(ValueError, 'addendum_duplicate_semantic_usage_conflict'):
+            self.run_import(apply=True)
+
+    def test_addendum_can_extend_existing_addendum_but_cycles_fail_closed(self):
+        parent = self.start_addendum()
+        self.run_import(apply=True)
+        records = [json.loads(line) for line in self.public.read_text().splitlines()]
+        first = next(row for row in records if row['review_id'] != parent['review_id'])
+        self.raw['reviews'][0].update(extends_review_id=first['review_id'], reviewed_at='2026-09-14T04:00:00Z')
+        self.raw['reviews'][0]['devices'][0]['usage_scope'] = 'baseline'
+        self.assertEqual(self.run_import(apply=True)['public_section_review_count'], 3)
+        records = [json.loads(line) for line in self.public.read_text().splitlines()]
+        root = next(row for row in records if row['review_id'] == parent['review_id'])
+        root['extends_review_id'] = first['review_id']
+        self.public.write_text(''.join(encode(row) + '\n' for row in records))
+        with patch('import_hardware_source_reviews.write_if_changed') as writer:
+            with self.assertRaisesRegex(ValueError, 'addendum_ancestry_cycle'):
+                self.run_import(apply=True)
+            writer.assert_not_called()
+
+    def test_self_cycle_and_missing_ancestor_in_public_ledger_are_rejected(self):
+        parent = self.start_addendum()
+        for ancestor in (parent['review_id'], 'hardware-section-review:not-present'):
+            row = {**parent, 'extends_review_id': ancestor}
+            self.public.write_text(encode(row) + '\n')
+            with self.subTest(ancestor=ancestor), self.assertRaisesRegex(ValueError, 'cycle|parent_not_found'):
+                self.run_import()
+
+    def public_addendum_fixture(self):
+        self.start_addendum()
+        self.run_import(apply=True)
+        records = [json.loads(line) for line in self.public.read_text().splitlines()]
+        uses = [json.loads(line) for line in (self.directory / 'usage-evidence.jsonl').read_text().splitlines()]
+        observations = [json.loads(line) for line in self.observations.read_text().splitlines()]
+        return records, uses, observations
+
+    def test_public_addendum_audit_is_metadata_only_and_preserves_legacy_reviews(self):
+        records, uses, observations = self.public_addendum_fixture()
+        original = copy.deepcopy((records, uses, observations))
+        with patch('import_hardware_source_reviews.private_file', side_effect=AssertionError('No private reads in public audit')):
+            result = audit_addenda_lineage(records, uses, observations)
+        self.assertEqual((records, uses, observations), original)
+        self.assertEqual(result['addendum_review_count'], 1)
+        self.assertEqual(result['addendum_usage_count'], 1)
+        self.assertFalse(result['private_source_reverified'])
+        self.assertTrue(result['public_source_bindings_checked'])
+        legacy = [row for row in records if 'extends_review_id' not in row]
+        legacy_uses = [row for row in uses if 'extends_review_id' not in row]
+        self.assertEqual(audit_addenda_lineage(legacy, legacy_uses, [])['addendum_review_count'], 0)
+        self.assertFalse(audit_addenda_lineage(records, uses)['public_source_bindings_checked'])
+
+    def test_public_audit_recomputes_id_and_rejects_changed_parent_graph(self):
+        records, uses, observations = self.public_addendum_fixture()
+        for field, value in [('review_id', 'hardware-section-review:forged'),
+                             ('extends_review_id', 'hardware-section-review:unknown'),
+                             ('reviewed_at', '2026-09-14T02:00:00Z'), ('raw_sha256', 'f' * 64),
+                             ('text_sha256', 'f' * 64), ('source_observation_id', 'source:forged')]:
+            changed = copy.deepcopy(records)
+            addon = next(row for row in changed if 'extends_review_id' in row)
+            addon[field] = value
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'addendum_'):
+                audit_addenda_lineage(changed, uses, observations)
+
+    def test_public_audit_binds_raw_and_body_hashes_and_transport_to_actual_public_observation(self):
+        records, uses, observations = self.public_addendum_fixture()
+        for field, value in [('raw_sha256', 'f' * 64), ('text_sha256', 'a' * 64),
+                             ('observation_id', 'source:unknown'), ('status', 'partial_text'),
+                             ('transport_complete', False), ('transport_returncode', 28)]:
+            changed = copy.deepcopy(observations)
+            changed[0][field] = value
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'public_source_observation_mismatch'):
+                audit_addenda_lineage(records, uses, changed)
+
+    def test_public_audit_rejects_changed_usage_parent_proof_and_orphans(self):
+        records, uses, observations = self.public_addendum_fixture()
+        for field, value in [('extends_review_id', 'hardware-section-review:wrong-parent'),
+                             ('section_review_id', 'hardware-section-review:wrong-child'),
+                             ('source_observation_id', 'source:wrong'), ('review_input_hash', 'a' * 64),
+                             ('reviewed_at', '2026-09-14T05:00:00Z'), ('text_sha256', 'a' * 64),
+                             ('source_section_ids', ['S4'])]:
+            changed = copy.deepcopy(uses)
+            addon_use = next(row for row in changed if 'extends_review_id' in row)
+            addon_use[field] = value
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'addendum_'):
+                audit_addenda_lineage(records, changed, observations)
+        changed = copy.deepcopy(uses)
+        orphan = copy.deepcopy(next(row for row in uses if 'extends_review_id' in row))
+        orphan.update(usage_id='usage:orphan', usage_scope='baseline')
+        changed.append(orphan)
+        with self.assertRaisesRegex(ValueError, 'addendum_orphan_usage_proof'):
+            audit_addenda_lineage(records, changed, observations)
+
+    def test_public_audit_rejects_ancestor_usage_reuse_counts_and_semantic_duplicates(self):
+        records, uses, observations = self.public_addendum_fixture()
+        changed = copy.deepcopy(records)
+        parent = next(row for row in changed if 'extends_review_id' not in row)
+        addon = next(row for row in changed if 'extends_review_id' in row)
+        addon['usage_ids'] = parent['usage_ids'][:]
+        with self.assertRaisesRegex(ValueError, 'addendum_usage_reused_by_another_review'):
+            audit_addenda_lineage(changed, uses, observations)
+        changed = copy.deepcopy(records)
+        next(row for row in changed if 'extends_review_id' in row)['assertion_count'] = 100
+        with self.assertRaisesRegex(ValueError, 'assertion_count_invalid'):
+            audit_addenda_lineage(changed, uses, observations)
+        duplicate = copy.deepcopy(next(row for row in uses if 'extends_review_id' in row))
+        duplicate['usage_id'] = 'usage:duplicate-semantic'
+        with self.assertRaisesRegex(ValueError, 'duplicate_semantic_usage_conflict'):
+            audit_addenda_lineage(records, [*uses, duplicate], observations)
+
+    def test_public_audit_detects_same_use_despite_different_locator_or_configuration(self):
+        records, uses, observations = self.public_addendum_fixture()
+        addon = next(row for row in uses if 'extends_review_id' in row)
+        duplicate = {**addon, 'usage_id': 'usage:changed-locator-and-configuration',
+                     'source_locator': 'S4', 'source_section_ids': ['S4'],
+                     'configuration': 'A changed configuration is not a new use'}
+        with self.assertRaisesRegex(ValueError, 'addendum_duplicate_semantic_usage_conflict'):
+            audit_addenda_lineage(records, [*uses, duplicate], observations)
 
 
 if __name__ == "__main__":

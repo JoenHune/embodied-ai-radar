@@ -38,7 +38,8 @@ const configurationText = (value: unknown) => value == null || value === '' ? ''
             <p v-if="usage.validation_context" class="validation-context">实验背景：{{ validationContextLabels[usage.validation_context] || usage.validation_context }}</p>
             <p class="source-statement">{{ usage.statement || '原文说明待补充' }}</p>
             <p v-if="configurationText(usage.configuration)" class="source-configuration">配置 / 条件：{{ configurationText(usage.configuration) }}</p>
-            <p class="source-location">原文定位：{{ usage.source_locator || '未提供定位' }}<span v-if="usage.observed_at"> · 核验 {{ eventDate(usage.observed_at) }}</span></p>
+            <p class="source-location">原文定位：{{ usage.source_locator || '未提供定位' }}<span v-if="usage.reviewed_at"> · 复核 {{ eventDate(usage.reviewed_at) }}</span><span v-else-if="usage.observed_at"> · 记录日期 {{ eventDate(usage.observed_at) }}</span></p>
+            <p v-if="usage.reviewed_at && usage.observed_at" class="source-location">来源记录 {{ eventDate(usage.observed_at) }}<span v-if="usage.extends_review_id"> · 后续增补复核，原记录保留</span></p>
             <a v-if="publicUrl(usage.source_url)" class="source-url" :href="usage.source_url" target="_blank" rel="noopener noreferrer">{{ usage.source_url }} ↗</a>
             <p v-else class="source-location">原文链接暂未提供，不从设备名称补猜。</p>
           </section>

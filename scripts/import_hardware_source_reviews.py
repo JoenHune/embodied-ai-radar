@@ -4,6 +4,10 @@
 Default is dry-run. A review is not a whole-paper reading or a finding that
 hardware was absent. Neither raw HTML, body text nor local cache paths are
 published. Historical observations remain valid after an extractor revision.
+
+An optional extends_review_id appends NEW usage assertions to an existing
+section review of the exact same source observation. It is not a replacement,
+new fetch, wider absence claim, or permission to modify existing usage rows.
 """
 from __future__ import annotations
 
@@ -65,6 +69,178 @@ def jsonl(path):
 def source_key(row, *, review=False):
     return tuple(row.get(key) for key in ("work_id", "source_url", "source_version" if review else "version",
                                           "raw_sha256", "text_sha256", "observed_at"))
+
+
+def review_ledger(records):
+    """Preserve legacy records while validating explicit addendum ancestry."""
+    ledger = {}
+    for row in records:
+        rid = row.get('review_id')
+        if not rid or (rid in ledger and ledger[rid] != row):
+            fail('existing_section_review_conflict')
+        ledger[rid] = row
+    active, complete = set(), set()
+
+    def visit(rid):
+        if rid in active:
+            fail('addendum_ancestry_cycle')
+        if rid in complete:
+            return
+        active.add(rid)
+        row = ledger[rid]
+        if 'extends_review_id' in row:
+            parent_id = required_text(row, 'extends_review_id', limit=250)
+            if parent_id not in ledger:
+                fail('addendum_parent_not_found:' + parent_id)
+            visit(parent_id)
+        active.remove(rid)
+        complete.add(rid)
+
+    for rid in ledger:
+        visit(rid)
+    for row in ledger.values():
+        if 'extends_review_id' not in row:
+            continue
+        parent = ledger[row['extends_review_id']]
+        if source_key(row, review=True) != source_key(parent, review=True):
+            fail('addendum_parent_source_mismatch')
+        if (not row.get('source_observation_id') or
+                row['source_observation_id'] != parent.get('source_observation_id')):
+            fail('addendum_parent_observation_mismatch')
+        if timestamp(row.get('reviewed_at')) <= timestamp(parent.get('reviewed_at')):
+            fail('addendum_review_not_strictly_later')
+        if row.get('review_kind') != 'addendum' or row.get('addendum_scope') != 'new_semantic_usage_assertions_only':
+            fail('explicit_addendum_scope_required')
+        if row.get('decision') != 'verified_use' or not row.get('usage_ids'):
+            fail('addendum_new_usage_assertions_required')
+    return ledger
+
+
+def addendum_parent(review, ledger):
+    if 'extends_review_id' not in review:
+        return None
+    parent_id = required_text(review, 'extends_review_id', limit=250)
+    if parent_id not in ledger:
+        fail('addendum_parent_not_found:' + parent_id)
+    parent = ledger[parent_id]
+    if source_key(review, review=True) != source_key(parent, review=True):
+        fail('addendum_parent_source_mismatch')
+    if timestamp(review.get('reviewed_at')) <= timestamp(parent.get('reviewed_at')):
+        fail('addendum_review_not_strictly_later')
+    if review.get('decision') != 'verified_use' or not review.get('devices'):
+        fail('addendum_new_usage_assertions_required')
+    return parent
+
+
+def addendum_review_id(review, parent_id, source_observation_id):
+    return 'hardware-section-review:' + fingerprint(['addendum', parent_id, review['reviewed_at'],
+                                                     source_key(review, review=True), source_observation_id])[:24]
+
+
+def usage_semantics(entry):
+    # Addenda introduce a new use, not a second citation or a configuration
+    # revision of an existing use. Locator edits (including subsets or new
+    # sections), prose and configuration changes cannot manufacture novelty.
+    # Keep the legacy usage_id formula unchanged below: non-addendum imports
+    # may still preserve their historical per-locator evidence records.
+    return (entry.get('work_id'), entry.get('hardware_id'), entry.get('role'), entry.get('setting'),
+            entry.get('usage_scope', 'study'), entry.get('source_url'))
+
+
+def audit_addenda_lineage(section_reviews, usage_evidence, public_observations=None):
+    """Public metadata only: no private HTML, cache reads, re-reading or writes.
+
+    Legacy records without extends_review_id need no new parent or reading
+    receipt. When supplied, public_observations must bind both source hashes,
+    the exact historical observation ID, version, URL and observation time.
+    """
+    ledger = review_ledger(section_reviews)
+    usage_by_id, usage_owners, semantics = {}, {}, {}
+    for entry in usage_evidence:
+        usage_by_id.setdefault(entry.get('usage_id'), []).append(entry)
+        semantics.setdefault(usage_semantics(entry), []).append(entry)
+    for rid, review in ledger.items():
+        for uid in review.get('usage_ids', []):
+            usage_owners.setdefault(uid, set()).add(rid)
+    addenda = [review for review in ledger.values() if 'extends_review_id' in review]
+    addon_usage_ids = set()
+    constants = {'reviewer_kind': 'AI', 'review_scope': 'sections_only',
+                 'assertion_review_scope': 'hardware_use_assertions_only', 'images_inspected': False,
+                 'supplementary_materials_inspected': False, 'full_text_reviewed': False,
+                 'whole_paper_hardware_absence_conclusion': False, 'review_kind': 'addendum',
+                 'addendum_scope': 'new_semantic_usage_assertions_only'}
+    proof_fields = ('source_observation_id', 'reviewed_at', 'review_input_hash', 'reviewer_kind', 'review_scope',
+                    'assertion_review_scope', 'images_inspected', 'supplementary_materials_inspected',
+                    'full_text_reviewed', 'review_kind', 'addendum_scope', 'extends_review_id')
+    for review in addenda:
+        rid = review['review_id']
+        if rid != addendum_review_id(review, review['extends_review_id'], review['source_observation_id']):
+            fail('addendum_review_id_mismatch')
+        if any((review.get(key) is not value) if isinstance(value, bool) else (review.get(key) != value)
+               for key, value in constants.items()):
+            fail('addendum_public_scope_mismatch')
+        url = urlsplit(required_text(review, 'source_url'))
+        version = required_text(review, 'source_version')
+        if (url.scheme != 'https' or url.hostname not in {'arxiv.org', 'www.arxiv.org'} or url.username or url.password
+                or url.port not in {None, 443} or url.query or url.fragment or not url.path.startswith('/html/')
+                or not re.fullmatch(r'v[1-9]\d*', version) or not url.path.endswith(version)
+                or not str(_hard_identity(review['source_url']) or '').startswith('arxiv:')):
+            fail('addendum_public_official_source_invalid')
+        for key in ('raw_sha256', 'text_sha256', 'review_input_hash'):
+            if not HASH.fullmatch(str(review.get(key, ''))):
+                fail('addendum_public_source_hash_invalid')
+        timestamp(review.get('observed_at'))
+        if timestamp(review['reviewed_at']) < timestamp(review['observed_at']):
+            fail('addendum_review_before_source_observation')
+        selected, section_hashes = review.get('reviewed_sections'), review.get('section_text_sha256')
+        if (not isinstance(selected, list) or not selected or any(not isinstance(sid, str) or not sid for sid in selected)
+                or len(selected) != len(set(selected)) or not isinstance(section_hashes, dict)
+                or set(section_hashes) != set(selected) or any(not HASH.fullmatch(str(value)) for value in section_hashes.values())):
+            fail('addendum_public_section_hash_invalid')
+        ids = review.get('usage_ids')
+        if (not isinstance(ids, list) or not ids or any(not isinstance(uid, str) or not uid for uid in ids)
+                or len(ids) != len(set(ids)) or type(review.get('assertion_count')) is not int
+                or review['assertion_count'] != len(ids)):
+            fail('addendum_public_assertion_count_invalid')
+        if public_observations is not None:
+            from collect_hardware_sources import transport_incomplete
+            sources = [source for source in public_observations
+                       if source_key(source) == source_key(review, review=True)
+                       and source.get('observation_id') == review['source_observation_id']
+                       and source.get('status') == 'full_text_available' and not transport_incomplete(source)]
+            if not sources:
+                fail('addendum_public_source_observation_mismatch')
+        hardware_ids = set()
+        for uid in ids:
+            matches = usage_by_id.get(uid, [])
+            if len(matches) != 1:
+                fail('addendum_usage_missing_or_ambiguous')
+            entry = matches[0]
+            if usage_owners.get(uid) != {rid}:
+                fail('addendum_usage_reused_by_another_review')
+            if (entry.get('section_review_id') != rid or source_key(entry, review=True) != source_key(review, review=True)
+                    or any(entry.get(key) != review.get(key) for key in proof_fields)
+                    or entry.get('review_status') != 'verified'):
+                fail('addendum_usage_parent_proof_mismatch')
+            locator, section_ids = bound_locator(entry.get('source_locator'), review)
+            if locator != entry['source_locator'] or entry.get('source_section_ids') != section_ids:
+                fail('addendum_usage_section_binding_mismatch')
+            if len(semantics[usage_semantics(entry)]) != 1:
+                fail('addendum_duplicate_semantic_usage_conflict')
+            hardware_ids.add(entry['hardware_id'])
+            addon_usage_ids.add(uid)
+        if review.get('hardware_ids') != sorted(hardware_ids):
+            fail('addendum_public_hardware_links_mismatch')
+    # Reject a usage claiming additive provenance with no matching public
+    # addendum, even when its four-table device/use relation is otherwise valid.
+    for entry in usage_evidence:
+        if 'extends_review_id' in entry or entry.get('review_kind') == 'addendum':
+            if entry.get('usage_id') not in addon_usage_ids:
+                fail('addendum_orphan_usage_proof')
+    return {'status': 'passed', 'section_review_count': len(ledger), 'addendum_review_count': len(addenda),
+            'addendum_usage_count': len(addon_usage_ids), 'public_source_bindings_checked': public_observations is not None,
+            'verification_scope': 'public_addendum_lineage_and_usage_proof_consistency_only',
+            'private_source_reverified': False}
 
 
 def private_file(reference, cache_root):
@@ -215,7 +391,7 @@ def resolve_device(assertion, review, devices, owners, proposed):
     return hid
 
 
-def prepare_reviews(raw, payload, existing, observations, cache_root):
+def prepare_reviews(raw, payload, existing, observations, cache_root, *, existing_section_reviews=()):
     if raw.get("schema_version") != "1" or not isinstance(raw.get("reviews"), list):
         fail("unsupported_schema")
     works = {row["work_id"]: row for row in payload["works"]}
@@ -227,6 +403,10 @@ def prepare_reviews(raw, payload, existing, observations, cache_root):
     owners = {}
     for row in existing["usage-evidence"]:
         owners.setdefault(row["hardware_id"], set()).add(row["work_id"])
+    parents = review_ledger(existing_section_reviews)
+    known_usage = {}
+    for row in existing['usage-evidence']:
+        known_usage.setdefault(usage_semantics(row), []).append(row)
     public, seen = [], set()
     for review in sorted(raw["reviews"], key=lambda row: (row.get("work_id", ""), row.get("source_url", ""))):
         if review.get("review_scope") != "hardware_use_assertions_only" or review.get("reviewer_kind", "AI") != "AI":
@@ -239,17 +419,30 @@ def prepare_reviews(raw, payload, existing, observations, cache_root):
             fail("invalid_review_decision")
         if (decision == "verified_use") != bool(assertions):
             fail("decision_assertion_conflict")
+        parent = addendum_parent(review, parents)
         observation, section_hashes = verify_source(review, works, history, cache_root)
         identity = source_key(review, review=True)
-        if identity in seen:
+        if parent is not None:
+            if (observation.get('observation_id') != parent.get('source_observation_id') or
+                    ('source_observation_id' in review and review['source_observation_id'] != observation.get('observation_id'))):
+                fail('addendum_parent_observation_mismatch')
+            review_id = addendum_review_id(review, parent['review_id'], observation['observation_id'])
+            duplicate_key = ('addendum', review_id)
+        else:
+            # No extends field: retain the exact legacy ID and behavior.
+            review_id = "hardware-section-review:" + fingerprint(identity)[:24]
+            duplicate_key = ('base', identity)
+        if duplicate_key in seen:
             fail("duplicate_source_review")
-        seen.add(identity)
-        review_id = "hardware-section-review:" + fingerprint(identity)[:24]
+        seen.add(duplicate_key)
         proof = {"reviewer_kind": "AI", "review_scope": "sections_only", "assertion_review_scope": "hardware_use_assertions_only",
                  "images_inspected": False, "supplementary_materials_inspected": False, "full_text_reviewed": False,
                  "raw_sha256": review["raw_sha256"], "text_sha256": review["text_sha256"],
                  "source_observation_id": required_text(observation, "observation_id"),
                  "reviewed_at": review["reviewed_at"], "review_input_hash": fingerprint(review)}
+        if parent is not None:
+            proof.update(extends_review_id=parent['review_id'], review_kind='addendum',
+                         addendum_scope='new_semantic_usage_assertions_only')
         usage_ids, hardware_ids = [], set()
         for assertion in assertions:
             for field in ("name", "vendor", "role", "setting", "usage_scope", "configuration", "validation_context", "statement_zh"):
@@ -273,6 +466,15 @@ def prepare_reviews(raw, payload, existing, observations, cache_root):
             entry["usage_id"] = "usage:" + fingerprint(key)[:24]
             if entry["usage_id"] in usage_ids:
                 fail("duplicate_usage_assertion")
+            semantic_key = usage_semantics(entry)
+            if parent is not None:
+                for previous in known_usage.get(semantic_key, []):
+                    # Re-applying this exact already-imported addendum is
+                    # idempotent. Any other same-semantic assertion (including
+                    # altered prose/configuration or another timestamp) fails.
+                    if previous.get('section_review_id') != review_id or previous != entry:
+                        fail('addendum_duplicate_semantic_usage_conflict')
+            known_usage.setdefault(semantic_key, []).append(entry)
             proposed["usage-evidence"].append(entry)
             usage_ids.append(entry["usage_id"])
             hardware_ids.add(hid)
@@ -292,20 +494,19 @@ def prepare_reviews(raw, payload, existing, observations, cache_root):
 def import_source_reviews(raw, payload, directory, observation_path, review_path, *, apply=False, cache_root=None):
     """Preflight all four authority tables and the public ledger before writing."""
     existing = load_equipment_authority(directory)
-    proposed, section_reviews = prepare_reviews(raw, payload, existing, jsonl(observation_path),
-                                                cache_root or Path(observation_path).parent)
+    existing_reviews = jsonl(review_path)
+    observations = jsonl(observation_path)
+    proposed, section_reviews = prepare_reviews(raw, payload, existing, observations,
+                                                cache_root or Path(observation_path).parent,
+                                                existing_section_reviews=existing_reviews)
     merged = merge_equipment_reviews(payload, existing, proposed)
     # Preserve every existing public review; a changed assertion requires a
     # deliberate resolution, never a last-row-wins overwrite.
-    ledger = {}
-    for row in [*jsonl(review_path), *section_reviews]:
-        rid = row.get("review_id")
-        if not rid or (rid in ledger and ledger[rid] != row):
-            fail("existing_section_review_conflict")
-        ledger[rid] = row
+    ledger = review_ledger([*existing_reviews, *section_reviews])
     usage_ids = {row["usage_id"] for row in merged["usage-evidence"]}
     if any(not set(row.get("usage_ids", [])) <= usage_ids for row in ledger.values()):
         fail("section_review_usage_link_missing")
+    audit_addenda_lineage(list(ledger.values()), merged['usage-evidence'], observations)
     if apply:
         # Loco tables were fully validated above but are not reserialized, so
         # the original files (including any formatting) remain byte-for-byte.

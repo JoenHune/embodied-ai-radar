@@ -7,6 +7,7 @@ from pathlib import Path
 from catalog_store import load_catalog, read_table
 from equipment_radar import load_equipment_authority, build_equipment_bundle, audit_equipment
 from hardware_coverage_export import build_coverage, audit_coverage, load_hardware_dictionary
+from import_hardware_source_reviews import audit_addenda_lineage
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,9 +27,12 @@ def main():
     payload, _ = load_catalog(ROOT / 'data/catalog')
     authority = load_equipment_authority(ROOT / 'data/equipment')
     bundle = build_equipment_bundle(payload, authority, manifest)
+    public_observations = read_table(ROOT / 'data/hardware-review', 'source-observations')
+    addenda_audit = audit_addenda_lineage(read_table(ROOT / 'data/hardware-review', 'section-reviews'),
+                                        bundle['tables']['usage-evidence'], public_observations)
     coverage = build_coverage(payload, authority, dictionary,
         read_table(ROOT / 'data/hardware-review', 'source-scans'),
-        read_table(ROOT / 'data/hardware-review', 'source-observations'), manifest,
+        public_observations, manifest,
         reading_reviews=read_table(ROOT / 'data/hardware-review', 'fulltext-readings'))
     with closing(sqlite3.connect(f"file:{ROOT / 'docs/public/downloads/radar.sqlite'}?mode=ro", uri=True)) as connection:
         audit_equipment(bundle, api / 'equipment', ROOT / 'docs/public/downloads/equipment', connection)
@@ -37,7 +41,7 @@ def main():
                       'hardware_coverage': coverage_audit,
                       'hardware_coverage_all_works': coverage['summary']['all_works'],
                       'hardware_coverage_included': coverage['summary']['included'],
-                      'article_reading': coverage['readings']['counts']}))
+                      'article_reading': coverage['readings']['counts'], 'hardware_addenda': addenda_audit}))
 
 
 if __name__ == '__main__':
