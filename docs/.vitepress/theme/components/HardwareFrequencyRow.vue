@@ -10,6 +10,44 @@ const scopeLabels: Record<string, string> = { baseline: '仅对照基线', calib
 const validationLabels: Record<string, string> = { closed_loop_real: '真机闭环', replay_only_real: '真机仅回放', simulation_only: '仅仿真', unclear: '验证方式未明确' }
 const validationContextLabels: Record<string, string> = { real_to_sim_trajectory_replay: '真实轨迹采集→仿真回放，不等于策略真机闭环', real_robot_closed_loop: '真机闭环', real_robot_closed_loop_offline_reference: '真机闭环；离线参考', real_robot_closed_loop_with_operator_supervision: '真机闭环；操作员监督', real_robot_trajectory_replay: '真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_trajectory_replay: '仿真与真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_robot_closed_loop: '仿真与真机闭环', simulation_only: '仅仿真' }
 const hasContext = (device: any, contexts: string[]) => device.sources.some((source: any) => source.usages.some((usage: any) => contexts.includes(usage.validation_context)))
+Object.assign(validationContextLabels, {
+  offline_policy_training: '离线策略训练',
+  real_robot_policy_visual_input: '真机策略视觉输入',
+  real_robot_closed_loop_with_manual_initialization: '真机闭环；需要人工初始化',
+  fixed_wrist_mount_not_active_arm_policy: '固定手腕支撑，不代表策略主动控制机械臂',
+  real_robot_object_pose_estimation: '真机物体位姿估计',
+  camera_extrinsic_startup_calibration: '运行开始时的相机外参标定',
+  deployment_workstation_allocation_unspecified: '部署工作站配置；各模块分工未明确',
+  simulation_hand_morphology_comparison: '仿真手型比较，不是真手部署',
+  real_robot_object_tracking_and_reconstruction: '真机物体跟踪与重建',
+  simulation_policy_training: '仿真策略训练',
+  real_deployment_compute_allocation_unspecified: '真实部署计算配置；环节未细分',
+  evaluation_ground_truth_mesh_acquisition: '评测真值网格采集，不是在线感知输入',
+  low_level_reorientation_tactile_input_only: '仅低层转动策略使用触觉，重建不直接融合',
+  real_field_soil_manipulation_with_calibrated_supervisor: '现场土体操作；使用标定接口与传统上层控制',
+  real_tabletop_soil_manipulation_with_interface_calibration: '桌面土体操作；需要接口标定',
+  modified_arm_as_tabletop_excavator_base: '改装机械臂作为桌面挖掘平台基础',
+  tabletop_terrain_height_scanning: '桌面地形高度扫描',
+  offline_soil_policy_training: '离线土体交互策略训练',
+  simulation_throughput_benchmark: '仿真吞吐测试，不是机载推理',
+  onboard_machine_control_interface: '机载机器控制接口',
+  field_terrain_and_machine_pose_sensing: '现场地形与机器位姿感知',
+  real_brachiation_with_manual_command_switches: '真机横杆移动；人工切换指令',
+  manual_discrete_command_input_not_demonstration_capture: '人工离散指令输入，不是动作示范采集',
+  real_granular_terrain_locomotion: '真机颗粒地形运动',
+  offline_teacher_student_policy_training: '离线教师—学生策略训练',
+  real_manipulation_reported_model_identity_pending: '真实操作；如报型号的厂商身份待核',
+  experimental_GPU_allocation_not_fully_separated: '实验GPU配置；模块分配未明确',
+  real_perceptive_control_with_task_specific_policies: '真机感知控制；分别训练任务策略',
+  offline_training_across_alternative_GPUs: '不同GPU条件下的离线训练',
+  real_robot_synchronous_chunk_control: '真机同步动作块控制',
+  real_robot_synchronous_policy_inference: '真机同步策略推理',
+  simulation_world_model_and_policy_evaluation: '仿真世界模型与策略评测',
+  real_robot_recordings_for_offline_world_model_evaluation: '真实机器人轨迹采集，供离线世界模型评测',
+  offline_world_model_training: '离线世界模型训练',
+  world_model_generation_inference_benchmark: '世界模型生成推理测试，不是完整控制闭环',
+})
+const vendorLabels: Record<string, string> = { unknown: '厂商未明确', authors: '作者自建平台' }
 const roleWorkCount = (device: any, role: string) => device.sources.filter((source: any) => source.usages.some((usage: any) => usage.role === role)).length
 const computeRoles = ['training_compute', 'inference_compute', 'control_compute', 'model_fitting_compute', 'experiment_compute']
 const publicUrl = (value: unknown): string | undefined => typeof value === 'string' && /^https?:\/\//i.test(value) ? value : undefined
@@ -20,7 +58,7 @@ const configurationText = (value: unknown) => value == null || value === '' ? ''
 <template>
   <article class="hardware-model" :class="{ 'is-unresolved': device.identity_level !== 'model_specified' }" tabindex="-1">
     <header>
-      <div class="model-identity"><h3>{{ device.name }}</h3><p>{{ categoryLabel || device.category }}<span v-if="device.vendor"> · {{ device.vendor }}</span></p></div>
+      <div class="model-identity"><h3>{{ device.name }}</h3><p>{{ categoryLabel || device.category }}<span v-if="device.vendor"> · {{ vendorLabels[device.vendor] || device.vendor }}</span></p></div>
       <div class="model-frequency"><strong>{{ device.work_count }}</strong><span>项研究使用</span></div>
     </header>
     <p v-if="device.identity_level !== 'model_specified'" class="identity-boundary"><strong>{{ device.identity_level === 'family_only' ? '系列 · 具体版本待明确' : '型号未公开' }}</strong> · 不计入具体型号榜，不根据当前产品名补推代际。</p>

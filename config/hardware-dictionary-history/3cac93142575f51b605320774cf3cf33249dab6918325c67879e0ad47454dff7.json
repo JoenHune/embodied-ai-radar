@@ -1,7 +1,7 @@
 {
   "schema_version": "1",
   "version": "3",
-  "scope_note": "Discovery-only dictionary for all 42,720 canonical works (data/catalog/works, snapshot 2026-09-14), not evidence of use, deployment, training, inference, device counts, or market share. Matches require independent source review. Categories reuse the nine equipment categories. family_only preserves unknown generation/configuration; no capacity, interface, board vendor, EDU tier, real-vs-simulated setting, or component expansion is inferred. ALOHA is a system, not a synonym for its arms. hardware_ids link existing reported identities for discovery and do not merge or rewrite authority records; the RTX 4090 link points to a reported composite workstation. Short or ambiguous aliases require local context_terms, token boundaries, and longest-specific-match precedence. Generic robot/PC/sensor descriptions, bare vendor-only names, motors, simulators, software, datasets, and policy/VLA names are excluded. Version 3 adds source-reviewed named research platforms, scanner variants and CPU models; bare A2 is intentionally not an alias, EinScan Pro 2X without V2 stays family-only, and i7-13700/13700H and RTX3080/3080Ti remain distinct. New dictionary matches are still only discovery candidates. ARX-5 follows the paper's reported spelling; ARX R5/X5 are not treated as aliases.",
+  "scope_note": "Discovery-only dictionary for all 42,720 canonical works (data/catalog/works, snapshot 2026-09-14), not evidence of use, deployment, training, inference, device counts, or market share. Matches require independent source review. Categories reuse the nine equipment categories. family_only preserves unknown generation/configuration; no capacity, interface, board vendor, EDU tier, real-vs-simulated setting, or component expansion is inferred. ALOHA is a system, not a synonym for its arms. hardware_ids link existing reported identities for discovery and do not merge or rewrite authority records; the RTX 4090 link points to a reported composite workstation. Short or ambiguous aliases require local context_terms, token boundaries, and longest-specific-match precedence. Generic robot/PC/sensor descriptions, bare vendor-only names, motors, simulators, software, datasets, and policy/VLA names are excluded. Version 3 adds source-reviewed named research platforms, scanner variants and CPU models; bare A2 is intentionally not an alias, EinScan Pro 2X without V2 stays family-only, and i7-13700/13700H and RTX3080/3080Ti remain distinct. New dictionary matches are still only discovery candidates.",
   "entries": [
     {
       "dictionary_id": "model:action-5-camera-reported",
@@ -5263,29 +5263,6 @@
       ],
       "hardware_ids": [
         "hardware:so-101"
-      ]
-    },
-    {
-      "dictionary_id": "model:arx-5-reported",
-      "name": "ARX-5",
-      "category": "robot_arm",
-      "identity_level": "model_specified",
-      "aliases": [
-        "ARX5",
-        "ARX 5"
-      ],
-      "context_terms": [
-        "arm",
-        "robot",
-        "robotic",
-        "manipulator",
-        "机械臂"
-      ],
-      "source_urls": [
-        "https://arxiv.org/html/2609.09630v1"
-      ],
-      "hardware_ids": [
-        "hardware:arx-5"
       ]
     }
   ]

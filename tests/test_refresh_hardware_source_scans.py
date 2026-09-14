@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from collect_hardware_sources import Collector, PARSER_VERSION, assess_html, digest
-from refresh_hardware_source_scans import scan, trusted_path, read_rows
+from refresh_hardware_source_scans import scan, scan_registered, trusted_path, read_rows, PUBLIC_FIELDS
 
 
 TARGET = {'work_id': 'arxiv:2407.02648', 'arxiv_id': '2407.02648', 'version': 'v1',
@@ -46,6 +46,99 @@ def seed(cache, observations, *, parser=PARSER_VERSION, stamp=STAMP, suffix='', 
 
 
 class RefreshHardwareSourceTests(unittest.TestCase):
+    def test_registered_scan_uses_frozen_ids_and_never_changes_cache_or_sources(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            cache, observations, output = root / 'cache', root / 'observations.jsonl', root / 'public'
+            original = seed(cache, observations)
+            scan(cache, observations, DICTIONARY, output)
+            source_before = (output / 'source-observations.jsonl').read_bytes()
+            seed(cache, observations, stamp='2026-09-14T11:00:00Z', suffix='NEW_UNPUBLISHED')
+            private_before = observations.read_bytes()
+            cache_before = {str(p.relative_to(cache)): p.read_bytes() for p in cache.rglob('*') if p.is_file()}
+            changed = {**DICTIONARY, 'version': '2'}
+            with (patch('refresh_hardware_source_scans.prepare_private_cache', side_effect=AssertionError('No reparse')),
+                  patch('refresh_hardware_source_scans.atomic_write', side_effect=AssertionError('No cache write'))):
+                result = scan_registered(cache, observations, changed, output)
+            self.assertEqual(result['body_scanned'], 1)
+            self.assertEqual(result['network_requests'], 0)
+            self.assertEqual((output / 'source-observations.jsonl').read_bytes(), source_before)
+            self.assertEqual(observations.read_bytes(), private_before)
+            self.assertEqual({str(p.relative_to(cache)): p.read_bytes() for p in cache.rglob('*') if p.is_file()}, cache_before)
+            current = read_rows(output / 'source-scans.jsonl')[-1]
+            self.assertEqual(current['content_hash'], original['text_sha256'])
+            scan_before = (output / 'source-scans.jsonl').read_bytes()
+            scan_registered(cache, observations, changed, output)
+            self.assertEqual((output / 'source-scans.jsonl').read_bytes(), scan_before)
+
+    def test_registered_scan_tolerates_only_an_incomplete_final_private_line(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            cache, observations, output = root / 'cache', root / 'observations.jsonl', root / 'public'
+            seed(cache, observations)
+            scan(cache, observations, DICTIONARY, output)
+            original = observations.read_bytes()
+            observations.write_bytes(original + b'{"work_id": "new')
+            result = scan_registered(cache, observations, DICTIONARY, output)
+            self.assertTrue(result['incomplete_private_tail_ignored'])
+            self.assertEqual(result['body_scanned'], 1)
+            observations.write_bytes(original + b'{"work_id": "new\n')
+            with self.assertRaisesRegex(ValueError, 'log_corrupt'):
+                scan_registered(cache, observations, DICTIONARY, output)
+
+    def test_registered_scan_keeps_historical_parser_and_transport_lineage_but_scans_latest(self):
+        for updates in ({'parser': 'arxiv-html-body-v1'}, {'transport_returncode': 18}):
+            with self.subTest(updates=updates), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                cache, observations, output = root / 'cache', root / 'observations.jsonl', root / 'public'
+                seed(cache, observations, **updates)
+                with patch('refresh_hardware_source_scans.utc_now', return_value='2026-09-14T11:00:00Z'):
+                    scan(cache, observations, DICTIONARY, output)
+                before = (output / 'source-observations.jsonl').read_bytes()
+                with patch('refresh_hardware_source_scans.prepare_private_cache', side_effect=AssertionError('No reparse')):
+                    result = scan_registered(cache, observations, {**DICTIONARY, 'version': '2'}, output)
+                self.assertEqual(result['observations'], 2)
+                self.assertEqual(result['body_scanned'], 1)
+                self.assertEqual((output / 'source-observations.jsonl').read_bytes(), before)
+
+    def test_registered_scan_missing_conflicting_or_mismatched_observation_fails_without_writes(self):
+        for scenario in ('missing', 'conflict', 'mismatch', 'duplicate_public'):
+            with self.subTest(scenario=scenario), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                cache, observations, output = root / 'cache', root / 'observations.jsonl', root / 'public'
+                row = seed(cache, observations)
+                scan(cache, observations, DICTIONARY, output)
+                if scenario == 'missing':
+                    observations.write_text('')
+                elif scenario == 'conflict':
+                    with observations.open('a') as handle:
+                        handle.write(json.dumps({**row, 'text_sha256': 'changed'}) + '\n')
+                else:
+                    rows = read_rows(output / 'source-observations.jsonl')
+                    if scenario == 'mismatch':
+                        rows[0]['work_id'] = 'different-work'
+                    else:
+                        rows += rows
+                    (output / 'source-observations.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
+                before = {p.name: p.read_bytes() for p in output.iterdir()}
+                with self.assertRaises(ValueError):
+                    scan_registered(cache, observations, {**DICTIONARY, 'version': '2'}, output)
+                self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, before)
+
+    def test_registered_scan_refuses_reclassification_or_old_parser_without_doing_it(self):
+        for values, error in (({'transport_complete': False}, 'transport_reclassification'),
+                              ({'parser': 'arxiv-html-body-v1'}, 'parser_refresh')):
+            with self.subTest(values=values), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                cache, observations, output = root / 'cache', root / 'observations.jsonl', root / 'public'
+                row = seed(cache, observations, **values)
+                output.mkdir()
+                public = {key: value for key, value in row.items() if key in PUBLIC_FIELDS}
+                (output / 'source-observations.jsonl').write_text(json.dumps(public)+'\n')
+                with self.assertRaisesRegex(ValueError, error):
+                    scan_registered(cache, observations, DICTIONARY, output)
+                self.assertFalse((output / 'source-scans.jsonl').exists())
+
     def test_private_paths_reject_final_parent_and_broken_symlinks_before_resolve(self):
         with tempfile.TemporaryDirectory() as directory:
             root, cache = Path(directory), Path(directory) / 'cache'

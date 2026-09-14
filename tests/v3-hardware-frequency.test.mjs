@@ -87,6 +87,32 @@ test('source cards distinguish later review from observation time without claimi
   assert.match(view, /原记录保留/)
   assert.doesNotMatch(view, /核验 \{\{ eventDate\(usage\.observed_at\) \}\}/)
 })
+
+test('source-reviewed hardware conditions remain understandable and do not upgrade unknown vendors', () => {
+  const view = fs.readFileSync(new URL('../docs/.vitepress/theme/components/HardwareFrequencyRow.vue', import.meta.url), 'utf8')
+  for (const text of ['固定手腕支撑，不代表策略主动控制机械臂', '评测真值网格采集，不是在线感知输入', '仿真吞吐测试，不是机载推理', '如报型号的厂商身份待核', '厂商未明确']) assert.ok(view.includes(text))
+  assert.match(view, /vendorLabels\[device\.vendor\]/)
+})
+
+test('original-paper hardware assertions retain support-only, ground-truth and unknown-model boundaries', () => {
+  const read = name => fs.readFileSync(new URL(`../data/equipment/${name}.jsonl`, import.meta.url), 'utf8').trim().split('\n').map(JSON.parse)
+  const devices = new Map(read('devices').map(d => [d.hardware_id, d]))
+  const uses = read('usage-evidence')
+  const pending = uses.find(u => u.work_id === 'arxiv:2609.09941' && u.validation_context === 'real_manipulation_reported_model_identity_pending')
+  assert.ok(pending)
+  assert.equal(devices.get(pending.hardware_id).identity_level, 'family_only')
+  assert.equal(devices.get(pending.hardware_id).vendor, 'unknown')
+  assert.notEqual(pending.hardware_id, 'hardware:unitree-g1')
+  const mount = uses.find(u => u.work_id === 'arxiv:2609.10137' && u.hardware_id === 'hardware:franka-research-3')
+  assert.equal(mount.validation_context, 'fixed_wrist_mount_not_active_arm_policy')
+  const scanner = uses.find(u => u.work_id === 'arxiv:2609.08493' && u.hardware_id === 'hardware:einscan-pro-2x-v2')
+  assert.equal(scanner.role, 'data_collection')
+  assert.equal(scanner.validation_context, 'evaluation_ground_truth_mesh_acquisition')
+  const throughput = uses.find(u => u.work_id === 'arxiv:2609.12677' && u.hardware_id === 'hardware:nvidia-rtx-4090')
+  assert.equal(throughput.role, 'experiment_compute')
+  assert.equal(throughput.validation_context, 'simulation_throughput_benchmark')
+  assert.equal(uses.find(u => u.work_id === 'arxiv:2609.09630' && u.hardware_id === 'hardware:nvidia-rtx-3090').role, 'inference_compute')
+})
 test('frozen audited authority cohort: G1 16 works, PiPER-X one real work, WUJI one simulation-only family', () => {
   // Use tracked authority rather than ignored/generated API so clean CI works.
   const read = name => fs.readFileSync(new URL(`../data/equipment/${name}.jsonl`, import.meta.url), 'utf8').trim().split('\n').map(JSON.parse)

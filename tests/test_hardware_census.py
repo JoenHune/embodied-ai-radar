@@ -52,6 +52,35 @@ def scan(obs, dictionary, text="Unitree G1 robot in experiments.", **values):
 
 
 class HardwareMentionTests(unittest.TestCase):
+    def test_persisted_intermediate_dictionary_is_content_addressed(self):
+        history = ROOT / 'config/hardware-dictionary-history'
+        required = history / '3cac93142575f51b605320774cf3cf33249dab6918325c67879e0ad47454dff7.json'
+        self.assertTrue(required.is_file())
+        for path in history.glob('*.json'):
+            dictionary = json.loads(path.read_text())
+            self.assertEqual(dictionary_hash(dictionary), path.stem)
+            self.assertEqual(detect_mentions('', dictionary), [])
+
+    def test_source_reviewed_model_additions_preserve_suffixes_and_ambiguous_aliases(self):
+        dictionary = json.loads((ROOT / 'config/hardware-dictionary.json').read_text())
+        found = lambda text: {row['dictionary_id'] for row in detect_mentions(text, dictionary)}
+        self.assertIn('model:agibot-expedition-a2', found('AgiBot Expedition A2 performs the task.'))
+        self.assertIn('model:mini-pi-plus', found('The Mini Pi plus robot traverses bars.'))
+        self.assertIn('model:menzi-muck-m445', found('Menzi Muck M445 excavator.'))
+        self.assertIn('model:leexcavator', found('The LeExcavator is a tabletop research platform.'))
+        self.assertIn('model:so-101', found('The LeRobot SO-101 arm is modified.'))
+        self.assertIn('model:arx-5-reported', found('A two-arm ARX-5 robot.'))
+        self.assertNotIn('model:arx-5-reported', found('An ARX R5 arm and ARX X5 arm.'))
+        variants = found('EinScan Pro 2X V2; Intel Core i7-13700H CPU; RTX3080Ti GPU.')
+        self.assertTrue({'model:einscan-pro-2x-v2', 'model:intel-core-i7-13700h', 'model:nvidia-geforce-rtx-3080-ti'} <= variants)
+        self.assertFalse({'model:einscan-pro-2x', 'model:intel-core-i7-13700', 'model:nvidia-geforce-rtx-3080'} & variants)
+        plain = found('EinScan Pro 2X scanner; Intel Core i7-13700 CPU; RTX3080 GPU.')
+        self.assertTrue({'model:einscan-pro-2x', 'model:intel-core-i7-13700', 'model:nvidia-geforce-rtx-3080'} <= plain)
+        self.assertNotIn('model:einscan-pro-2x-v2', plain)
+        ambiguous = found('A2 is an appendix. Mini Pi is a label. M445 and SO101 are sample codes.')
+        self.assertFalse({'model:agibot-expedition-a2', 'model:mini-pi-plus', 'model:menzi-muck-m445', 'model:so-101'} & ambiguous)
+        self.assertNotIn('model:intel-core-i7-13700', found('Intel Core i7-13700K CPU.'))
+
     def test_new_official_rx75_identity_stays_separate_from_rm75_and_optional_camera(self):
         dictionary = json.loads((ROOT / 'config/hardware-dictionary.json').read_text())
         rx = [r for r in dictionary['entries'] if r['dictionary_id'] == 'model:realman-rx75']
