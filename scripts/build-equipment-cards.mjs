@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { originalSourceUrl } from '../docs/.vitepress/theme/lib/research-card.mjs'
 import { publicationRecords } from '../docs/.vitepress/theme/lib/work-status.mjs'
+import { hardwareFrequency } from '../docs/.vitepress/theme/lib/hardware-frequency.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const api = path.join(root, 'docs/public/api/v1')
@@ -29,6 +30,8 @@ for (const file of fs.readdirSync(path.join(api, 'works')).filter(name => name.e
 if (rows.length !== ids.size) throw Error('equipment_missing_work_card')
 rows.sort((a, b) => (b.first_public_date || '').localeCompare(a.first_public_date || '') || a.work_id.localeCompare(b.work_id))
 fs.writeFileSync(path.join(api, 'equipment/works.json'), JSON.stringify({ schema_version: '1', dataset_version: manifest.dataset_version, rows }) + '\n')
+const frequencies = hardwareFrequency(read('equipment/index.json').devices, rows)
+fs.writeFileSync(path.join(api, 'equipment/frequency.json'), JSON.stringify({ schema_version: '1', dataset_version: manifest.dataset_version, counting_unit: 'distinct_canonical_work_with_verified_usage', real_sim_overlap: true, scope: 'included_registered_evidence_not_market_share', ...frequencies }) + '\n')
 // Small lazy lookup used by existing research cards; no full corpus download.
 fs.writeFileSync(path.join(api, 'equipment/card-usage.json'), JSON.stringify({ schema_version: '1', dataset_version: manifest.dataset_version, by_work: usage.by_work }) + '\n')
 console.log(JSON.stringify({ status: 'ok', equipment_work_cards: rows.length }))

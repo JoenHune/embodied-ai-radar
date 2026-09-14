@@ -39,7 +39,7 @@
     "v3:site": "node scripts/generate-v3-site.mjs && node scripts/build-visual-catalog.mjs && node scripts/build-equipment-cards.mjs",
     "v3:audit": "node scripts/run-python.mjs scripts/audit_v3.py && node scripts/run-python.mjs scripts/audit_equipment.py",
     "v3:search": "node scripts/build-pagefind-index.mjs",
-    "v3:audit-site": "node scripts/audit_v3_site.mjs && node scripts/audit-visual-catalog.mjs",
+    "v3:audit-site": "node scripts/audit_v3_site.mjs && node scripts/audit-visual-catalog.mjs && node scripts/audit-equipment-frequency.mjs",
     "v3:audit-search": "node scripts/audit-search-runtime.mjs",
     "v3:prepare": "npm run v3:export && npm run v3:site && npm run v3:audit && npm run audit:groups",
     "test:v3": "node scripts/run-python.mjs -m unittest discover -s tests -p 'test_*.py' && node --test tests/v3-*.test.mjs",

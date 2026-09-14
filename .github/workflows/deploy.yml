@@ -35,13 +35,28 @@ jobs:
           cache: npm
       - run: python -m pip install -r requirements-v3.txt
       - run: npm ci
+      - name: Restore verified lossless compression cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/radar-pagefind-gzip
+          key: radar-gzip-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('scripts/optimize_pagefind_gzip.py', 'requirements-v3.txt') }}-${{ hashFiles('data/catalog/manifest.json') }}
+          restore-keys: |
+            radar-gzip-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('scripts/optimize_pagefind_gzip.py', 'requirements-v3.txt') }}-
       - name: Verify process-local SQLite capabilities
         run: node scripts/run-python.mjs -c "import sqlite3; print('SQLite runtime:', sqlite3.sqlite_version)"
       - name: Read verified report week
         id: snapshot
         run: python scripts/run_weekly_v3.py --check-snapshot >> "$GITHUB_OUTPUT"
-      - name: Verify facts and build derived site (no migration, collection or LLM)
-        run: npm test
+      - name: Test catalog rules and website interactions
+        run: npm run test:v3
+      - name: Derive and audit public data (no migration, collection or LLM)
+        run: npm run v3:prepare
+      - name: Type check and build website
+        run: npm run typecheck && npx --no-install vitepress build docs
+      - name: Build and verify full-text index
+        run: npm run v3:search
+      - name: Audit deployed routes, evidence and search
+        run: npm run v3:audit-site && npm run v3:audit-search
       - name: Require tracked facts to remain unchanged
         run: git diff --exit-code -- data/catalog data/editorial data/conferences
       - uses: actions/configure-pages@v5

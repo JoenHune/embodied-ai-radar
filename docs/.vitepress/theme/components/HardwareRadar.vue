@@ -7,55 +7,80 @@ import { AriaComponent, GridComponent, TooltipComponent } from 'echarts/componen
 import { CanvasRenderer } from 'echarts/renderers'
 import ChartFrame from './ChartFrame.vue'
 import ResearchCard from './ResearchCard.vue'
+import HardwareFrequencyRow from './HardwareFrequencyRow.vue'
 import { chartTokens, useEChart } from '../composables/useEChart'
 import { eventDate } from '../lib/dates'
+import { hardwareFrequency, hardwareMonth } from '../lib/hardware-frequency.mjs'
 
 echarts.use([BarChart, AriaComponent, GridComponent, TooltipComponent, CanvasRenderer])
-type Usage = { hardware_id: string; name: string; category: string; role: string; setting: string; source_url: string; source_locator?: string; statement: string; observed_at?: string; configuration?: unknown }
-type Work = { work_id: string; title: string; first_public_date?: string; hardware_usage?: Usage[]; [key: string]: any }
-type Device = { hardware_id: string; slug: string; name: string; vendor?: string; category: string; identity_level?: string; official_url?: string; work_ids?: string[] }
+type Work = { work_id: string; title: string; first_public_date?: string; first_public_date_precision?: string; hardware_usage?: any[]; [key: string]: any }
+type Device = { hardware_id: string; slug: string; name: string; aliases?: string[]; vendor?: string; category: string; identity_level?: string; official_url?: string; work_ids?: string[] }
+type FrequencyDevice = Device & { work_count: number; real_work_count: number; simulation_work_count: number; baseline_work_count: number; calibration_work_count: number; source_count: number; sources: { work_id: string; title: string; first_public_date?: string; first_public_date_precision?: string; original_url?: string; usages: any[] }[] }
 type EquipmentIndex = { schema_version: string; dataset_version: string; source_version?: string; data_through?: string; window?: { complete_months?: string[]; provisional_month?: string }; counts: { devices: number; usage_links: number; works: number; hardware_candidates: number }; categories: { code: string; label: string; devices: number; works: number }[]; devices: Device[] }
 type Filters = { category: string; device: string; setting: string; role: string; month: string }
 const allowedCategories = new Set(['robot_platform', 'robot_arm', 'dexterous_hand', 'gripper', 'compute_platform', 'data_collection', 'tactile_sensor', 'force_sensor', 'vision_sensor'])
-const settingLabels: Record<string, string> = { real: '真实设备', simulation: '仿真环境', dataset: '数据集', unknown: '环境未说明' }
-const roleLabels: Record<string, string> = { real_robot: '真机执行', simulated_robot: '仿真机器人', training_compute: '训练算力', inference_compute: '推理算力', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
-const identityLabels: Record<string, string> = { model_specified: '具体型号已明确', family_only: '仅确认型号系列', unspecified: '型号未公开', unknown: '身份粒度未说明' }
+const settingLabels: Record<string, string> = { real: '真机 / 真实设备', simulation: '仿真环境', dataset: '数据集', unknown: '环境未说明' }
+const roleLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真机器人', training_compute: '训练算力', inference_compute: '推理算力', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
 const initial = (): Filters => ({ category: '', device: '', setting: '', role: '', month: '' })
 const index = ref<EquipmentIndex | null>(null)
 const rows = ref<Work[]>([])
 const filters = ref<Filters>(initial())
+const modelQuery = ref('')
 const shown = ref(12)
+const unresolvedShown = ref(12)
+const researchShown = ref(12)
+const showResearch = ref(false)
+const openSources = ref(new Set<string>())
 const loading = ref(true)
 const error = ref('')
-const list = ref<HTMLElement | null>(null)
+const modelList = ref<HTMLElement | null>(null)
+const unresolvedList = ref<HTMLElement | null>(null)
+const researchList = ref<HTMLElement | null>(null)
+const researchHeading = ref<HTMLElement | null>(null)
 const router = useRouter()
 let controller: AbortController | undefined
 let requestId = 0
 let disposed = false
 let releaseRouteGuard = () => {}
-const publicUrl = (value: unknown): string | undefined => typeof value === 'string' && /^https?:\/\//i.test(value) ? value : undefined
 const categoryLabels = computed<Record<string, string>>(() => Object.fromEntries((index.value?.categories || []).filter(category => allowedCategories.has(category.code)).map(category => [category.code, category.label])))
 const knownCategory = (value: string) => Object.hasOwn(categoryLabels.value, value)
-const devices = computed(() => (index.value?.devices || []).filter(device => knownCategory(device.category)).slice().sort((a, b) => a.name.localeCompare(b.name, 'zh-CN')))
+const devices = computed(() => (index.value?.devices || []).filter(device => knownCategory(device.category)))
 const deviceMap = computed(() => new Map(devices.value.map(device => [device.hardware_id, device])))
-const monthOf = (work: Work) => /^\d{4}-(0[1-9]|1[0-2])/.test(work.first_public_date || '') ? work.first_public_date!.slice(0, 7) : 'unknown'
+const workMap = computed(() => new Map(rows.value.map(work => [work.work_id, work])))
+const monthOf = (work: Work) => hardwareMonth(work)
 const provisionalMonth = computed(() => index.value?.window?.provisional_month || '')
-const months = computed(() => [...new Set([...(index.value?.window?.complete_months || []), provisionalMonth.value, ...usableWorks.value.map(monthOf)].filter(month => /^\d{4}-\d{2}$/.test(month)))].sort().reverse())
-// An indexed device alone is not evidence that a work used it.
-const usages = (work: Work): Usage[] => (work.hardware_usage || []).filter(usage => deviceMap.value.has(usage.hardware_id) && knownCategory(usage.category) && usage.category === deviceMap.value.get(usage.hardware_id)?.category && publicUrl(usage.source_url) && Boolean(usage.statement?.trim()))
-const usableWorks = computed(() => rows.value.filter(work => usages(work).length))
-const incompleteLinks = computed(() => rows.value.reduce((sum, work) => sum + (work.hardware_usage || []).filter(usage => knownCategory(usage.category)).length - usages(work).length, 0))
-const matchUsage = (usage: Usage) => (!filters.value.category || usage.category === filters.value.category) && (!filters.value.device || usage.hardware_id === filters.value.device) && (!filters.value.setting || (settingLabels[usage.setting] ? usage.setting : 'unknown') === filters.value.setting) && (!filters.value.role || usage.role === filters.value.role)
-const filtered = computed(() => usableWorks.value.filter(work => (!filters.value.month || monthOf(work) === filters.value.month) && usages(work).some(matchUsage)).slice().sort((a, b) => (b.first_public_date || '').localeCompare(a.first_public_date || '') || a.title.localeCompare(b.title, 'zh-CN')))
-const visible = computed(() => filtered.value.slice(0, shown.value))
-const currentLinks = computed(() => filtered.value.flatMap(work => usages(work).filter(matchUsage)))
-const currentDeviceIds = computed(() => new Set(currentLinks.value.map(usage => usage.hardware_id)))
-const currentDevices = computed(() => devices.value.filter(device => currentDeviceIds.value.has(device.hardware_id)))
-const selectableDevices = computed(() => devices.value.filter(device => device.work_ids?.length && (!filters.value.category || device.category === filters.value.category)))
-const categorySummary = computed(() => Object.entries(categoryLabels.value).map(([code, label]) => ({ code, label, devices: new Set(currentLinks.value.filter(usage => usage.category === code).map(usage => usage.hardware_id)).size, works: filtered.value.filter(work => usages(work).some(usage => usage.category === code && matchUsage(usage))).length })))
-const totalDevices = computed(() => new Set(usableWorks.value.flatMap(work => usages(work).map(usage => usage.hardware_id))).size)
-const relationCount = (hardwareId: string) => filtered.value.filter(work => usages(work).some(usage => usage.hardware_id === hardwareId && matchUsage(usage))).length
-const configurationText = (value: unknown) => value == null || value === '' ? '' : typeof value === 'string' ? value : JSON.stringify(value)
+const months = computed(() => [...new Set([...(index.value?.window?.complete_months || []), provisionalMonth.value, ...rows.value.filter(work => work.hardware_usage?.length).map(monthOf)].filter(month => /^\d{4}-\d{2}$/.test(month)))].sort().reverse())
+const frequency = computed(() => hardwareFrequency(devices.value, rows.value, filters.value) as { models: FrequencyDevice[]; unresolved: FrequencyDevice[] })
+// Model-name search is a presentation filter, not an extra authority/helper filter.
+const searchKey = (value: string) => value.normalize('NFKC').toLocaleLowerCase().replace(/[\s_:\-/]+/g, '')
+const matchesModel = (device: Device) => {
+  const tokens = modelQuery.value.trim().split(/\s+/).map(searchKey).filter(Boolean)
+  const labels = [device.name, device.vendor || '', device.slug, device.hardware_id, ...(device.aliases || [])].map(searchKey)
+  return tokens.every(token => labels.some(label => label.includes(token)))
+}
+const models = computed(() => frequency.value.models.filter(matchesModel))
+const unresolved = computed(() => frequency.value.unresolved.filter(matchesModel))
+const topModels = computed(() => models.value.slice(0, 12))
+const visibleModels = computed(() => models.value.slice(0, shown.value))
+const visibleUnresolved = computed(() => unresolved.value.slice(0, unresolvedShown.value))
+const matchedWorkCount = computed(() => new Set([...models.value, ...unresolved.value].flatMap(device => device.sources.map(source => source.work_id))).size)
+const selectedDevice = computed(() => deviceMap.value.get(filters.value.device))
+const selectedFrequency = computed(() => [...frequency.value.models, ...frequency.value.unresolved].find(device => device.hardware_id === filters.value.device))
+const selectedWorks = computed(() => (selectedFrequency.value?.sources || []).map(source => workMap.value.get(source.work_id)).filter((work): work is Work => Boolean(work)))
+const visibleWorks = computed(() => selectedWorks.value.slice(0, researchShown.value))
+const selectableDevices = computed(() => devices.value.filter(device => !filters.value.category || device.category === filters.value.category).slice().sort((a, b) => a.name.localeCompare(b.name, 'zh-CN')))
+const chartHeight = computed(() => Math.max(170, topModels.value.length * 30 + 48))
+const rowId = (device: Device) => 'hardware-model-' + device.slug
+const countFromUrl = (value: string | null) => {
+  const amount = Number(value || 12)
+  return Number.isFinite(amount) ? Math.max(12, Math.min(12000, Math.floor(amount / 12) * 12)) : 12
+}
+const revealSearchMatches = () => {
+  if (!modelQuery.value.trim()) return
+  const next = new Set(openSources.value)
+  for (const device of unresolved.value) next.add(device.hardware_id)
+  openSources.value = next
+}
 const readUrl = () => {
   const params = new URLSearchParams(window.location.search)
   const category = params.get('category') || ''
@@ -68,25 +93,63 @@ const readUrl = () => {
     role: Object.hasOwn(roleLabels, params.get('role') || '') ? params.get('role')! : '',
     month: month === 'unknown' || /^\d{4}-(0[1-9]|1[0-2])$/.test(month) ? month : '',
   }
-  const amount = Number(params.get('shown') || 12)
-  shown.value = Number.isFinite(amount) ? Math.max(12, Math.min(12000, Math.floor(amount / 12) * 12)) : 12
+  modelQuery.value = (params.get('model_q') || '').slice(0, 200)
+  shown.value = countFromUrl(params.get('shown'))
+  unresolvedShown.value = countFromUrl(params.get('unresolved_shown'))
+  researchShown.value = countFromUrl(params.get('research_shown'))
+  showResearch.value = params.get('view') === 'research' && Boolean(filters.value.device)
+  openSources.value = new Set(filters.value.device ? [filters.value.device] : [])
+  revealSearchMatches()
 }
-const writeUrl = (reset = true) => {
-  if (reset) shown.value = 12
+const writeUrl = (reset = true, replace = false) => {
+  if (reset) { shown.value = 12; unresolvedShown.value = 12; researchShown.value = 12 }
   const url = new URL(window.location.href)
   for (const [key, value] of Object.entries(filters.value)) value ? url.searchParams.set(key, value) : url.searchParams.delete(key)
-  shown.value > 12 ? url.searchParams.set('shown', String(shown.value)) : url.searchParams.delete('shown')
-  if (url.href !== window.location.href) window.history.pushState(window.history.state, '', url)
+  for (const [key, count] of [['shown', shown.value], ['unresolved_shown', unresolvedShown.value], ['research_shown', researchShown.value]] as const) count > 12 ? url.searchParams.set(key, String(count)) : url.searchParams.delete(key)
+  modelQuery.value.trim() ? url.searchParams.set('model_q', modelQuery.value.trim()) : url.searchParams.delete('model_q')
+  showResearch.value && filters.value.device ? url.searchParams.set('view', 'research') : url.searchParams.delete('view')
+  if (url.href !== window.location.href) window.history[replace ? 'replaceState' : 'pushState'](window.history.state, '', url)
 }
-const changeCategory = () => { if (!selectableDevices.value.some(device => device.hardware_id === filters.value.device)) filters.value.device = ''; writeUrl() }
-const chooseDevice = (id: string) => { filters.value.device = filters.value.device === id ? '' : id; writeUrl() }
-const reset = () => { filters.value = initial(); writeUrl() }
-const more = async () => {
-  const firstNew = visible.value.length
-  shown.value += 12
+const changeFilter = () => { showResearch.value = false; writeUrl(); revealSearchMatches() }
+const searchModels = () => { showResearch.value = false; writeUrl(true, true); revealSearchMatches() }
+const changeCategory = () => { if (!selectableDevices.value.some(device => device.hardware_id === filters.value.device)) filters.value.device = ''; changeFilter() }
+const chooseDevice = async (id: string, papers = false) => {
+  filters.value.device = id
+  modelQuery.value = ''
+  showResearch.value = papers
+  openSources.value = new Set([id])
+  writeUrl()
+  await nextTick()
+  if (disposed) return
+  if (papers) researchHeading.value?.focus()
+  else {
+    const device = deviceMap.value.get(id)
+    if (device) document.getElementById(rowId(device))?.focus()
+  }
+}
+const selectDevice = () => { openSources.value = new Set(filters.value.device ? [filters.value.device] : []); changeFilter() }
+const clearDevice = () => { filters.value.device = ''; showResearch.value = false; openSources.value = new Set(); writeUrl() }
+const reset = () => { filters.value = initial(); modelQuery.value = ''; showResearch.value = false; openSources.value = new Set(); writeUrl() }
+const setSourceOpen = (id: string, open: boolean) => {
+  if (openSources.value.has(id) === open) return
+  const next = new Set(openSources.value)
+  open ? next.add(id) : next.delete(id)
+  openSources.value = next
+}
+const moreModels = async (isUnresolved = false) => {
+  const firstNew = isUnresolved ? visibleUnresolved.value.length : visibleModels.value.length
+  if (isUnresolved) unresolvedShown.value += 12
+  else shown.value += 12
   writeUrl(false)
   await nextTick()
-  list.value?.querySelectorAll<HTMLElement>('.hardware-work')[firstNew]?.focus({ preventScroll: true })
+  ;(isUnresolved ? unresolvedList.value : modelList.value)?.querySelectorAll<HTMLElement>('.hardware-model')[firstNew]?.focus({ preventScroll: true })
+}
+const moreResearch = async () => {
+  const firstNew = visibleWorks.value.length
+  researchShown.value += 12
+  writeUrl(false)
+  await nextTick()
+  researchList.value?.querySelectorAll<HTMLElement>('.hardware-work')[firstNew]?.focus({ preventScroll: true })
 }
 const load = async () => {
   const request = ++requestId
@@ -108,20 +171,20 @@ const load = async () => {
     rows.value = Array.from(new Map<string, Work>(works.rows.map((work: Work) => [work.work_id, work])).values())
     readUrl()
   } catch (cause) {
-    if (!disposed && request === requestId) error.value = cause instanceof Error && cause.message === 'version' ? '硬件索引与研究证据来自不同数据版本，已停止混合展示。请重新读取。' : '硬件与使用证据暂时无法读取，未将读取失败显示为零使用。请重试。'
+    if (!disposed && request === requestId) error.value = cause instanceof Error && cause.message === 'version' ? '设备索引与论文出处来自不同数据版本，已停止混合展示。请重新读取。' : '设备与使用证据暂时无法读取，未将读取失败显示为零使用。请重试。'
   } finally { if (!disposed && request === requestId) loading.value = false }
 }
 const chart = useEChart(() => {
   const tokens = chartTokens()
   return {
-    animation: false, aria: { enabled: true, description: '当前筛选下按设备类别登记的研究使用关系。每类按研究去重，跨类可以重复，不是设备使用率或排名。' },
-    tooltip: { trigger: 'axis', confine: true, backgroundColor: tokens.background, borderColor: tokens.divider, textStyle: { color: tokens.text } },
-    grid: { left: 112, right: 32, top: 14, bottom: 32 },
+    animation: false, aria: { enabled: true, description: '按去重研究数降序排列的前十二个具体型号。一次表示一项有明确使用证据的研究，不是采购量、设备销量或产品质量排名。' },
+    tooltip: { trigger: 'axis', confine: true, renderMode: 'richText', backgroundColor: tokens.background, borderColor: tokens.divider, textStyle: { color: tokens.text } },
+    grid: { left: 170, right: 35, top: 10, bottom: 32 },
     xAxis: { type: 'value', minInterval: 1, axisLabel: { color: tokens.muted }, splitLine: { lineStyle: { color: tokens.divider } } },
-    yAxis: { type: 'category', inverse: true, data: categorySummary.value.map(row => row.label), axisLabel: { color: tokens.text }, axisTick: { show: false }, axisLine: { show: false } },
-    series: [{ name: '有明确使用依据的研究', type: 'bar', barMaxWidth: 24, itemStyle: { color: tokens.palette[0] }, data: categorySummary.value.map(row => row.works) }],
+    yAxis: { type: 'category', inverse: true, data: topModels.value.map(device => device.name), axisLabel: { color: tokens.text, width: 150, overflow: 'truncate', fontSize: 12 }, axisTick: { show: false }, axisLine: { show: false } },
+    series: [{ name: '有使用证据的去重研究', type: 'bar', barMaxWidth: 20, itemStyle: { color: tokens.palette[0] }, label: { show: true, position: 'right', color: tokens.text }, data: topModels.value.map(device => ({ value: device.work_count, hardware_id: device.hardware_id })) }],
   }
-})
+}, chart => chart.on('click', (item: any) => { if (item.data?.hardware_id) void chooseDevice(item.data.hardware_id) }))
 onMounted(() => {
   const pathname = window.location.pathname
   const previous = router.onBeforePageLoad
@@ -136,81 +199,72 @@ onBeforeUnmount(() => { disposed = true; requestId++; controller?.abort(); relea
 
 <template>
   <div class="v3-dashboard hardware-radar">
-    <header class="v3-page-heading"><div><p class="v3-eyebrow">HARDWARE IN RESEARCH</p><h1>硬件与研究</h1><p>哪些研究明确使用了哪些设备，以及它们承担什么工作。</p></div></header>
-    <p v-if="loading" role="status">正在读取设备档案与逐项使用证据…</p>
+    <header class="v3-page-heading"><div><p class="v3-eyebrow">HARDWARE MODEL FREQUENCY</p><h1>研究设备 · 型号频次</h1><p>先看具体型号被多少项研究使用，再展开完整论文出处。</p></div></header>
+    <p v-if="loading" role="status">正在读取型号频次与论文出处…</p>
     <div v-if="error" class="hardware-notice" role="alert"><p>{{ error }}</p><button type="button" @click="load">重新读取</button></div>
     <template v-if="index && !loading && !error">
-      <div class="hardware-context"><span>数据截至 {{ eventDate(index.data_through) }}</span><span>版本 {{ index.dataset_version }}</span><a :href="withBase('/api/v1/equipment/index.json')">公开硬件索引</a><a :href="withBase('/api/v1/equipment/works.json')">使用关系与原文证据</a></div>
-      <aside class="hardware-boundary"><p>仅统计有原文依据的设备—研究使用关系。未登记不代表未使用；没有明确型号时保留原有身份粒度，不从视频外观猜测。未明型号条目不是一个独立已知产品。范围限机器人、机械臂、灵巧手、平行夹爪、算力和采集/感知设备；夹爪不并为灵巧手，不展开电机、模组与电路。</p><p v-if="provisionalMonth"><span class="hardware-provisional">{{ provisionalMonth }} 暂行</span> 与完整月份分开标记，不能将未结束月份直接比较为增长或下降。</p></aside>
-      <dl class="hardware-counts"><div><dt>有使用依据的硬件条目（含未明型号）</dt><dd>{{ totalDevices }}</dd></div><div><dt>有明确使用依据的研究</dt><dd>{{ usableWorks.length }}</dd></div><div><dt>另存的硬件候选</dt><dd>{{ index.counts.hardware_candidates ?? '未提供' }}</dd></div></dl>
-      <p v-if="incompleteLinks" class="hardware-notice" role="status">另有 {{ incompleteLinks }} 条已登记关系缺少匹配的设备身份、类别或可读原文声明，未计入下方已核验使用集合。</p>
-      <div class="hardware-filters" aria-label="硬件研究筛选">
+      <div class="hardware-context"><span>截至 {{ eventDate(index.data_through) }}</span><a :href="withBase('/methods/equipment-loco')">范围与统计口径 ↗</a><span v-if="provisionalMonth" class="hardware-provisional">{{ provisionalMonth }} 暂行</span></div>
+      <p class="hardware-scope">一次 = 一项去重研究；真机与仿真可重叠。只计明确使用，未登记不代表未使用，不作销量或质量排名。</p>
+      <div class="hardware-primary-filters">
+        <label class="hardware-model-search">搜索型号或别名<input v-model="modelQuery" type="search" maxlength="200" placeholder="例如 Unitree G1、PiPER-X、WUJI" @input="searchModels" /></label>
         <label>设备类别<select v-model="filters.category" @change="changeCategory"><option value="">全部类别</option><option v-for="(label, code) in categoryLabels" :key="code" :value="code">{{ label }}</option></select></label>
-        <label>具体设备<select v-model="filters.device" @change="writeUrl()"><option value="">全部设备</option><option v-for="device in selectableDevices" :key="device.hardware_id" :value="device.hardware_id">{{ device.name }}</option></select></label>
-        <label>使用环境<select v-model="filters.setting" @change="writeUrl()"><option value="">全部环境</option><option v-for="(label, code) in settingLabels" :key="code" :value="code">{{ label }}</option></select></label>
-        <label>设备用途<select v-model="filters.role" @change="writeUrl()"><option value="">全部用途</option><option v-for="(label, code) in roleLabels" :key="code" :value="code">{{ label }}</option></select></label>
-        <label>研究首次公开月份<select v-model="filters.month" @change="writeUrl()"><option value="">全部已登记月份</option><option v-for="month in months" :key="month" :value="month">{{ month }}{{ month === provisionalMonth ? ' · 暂行' : '' }}</option><option value="unknown">日期待核验</option></select></label>
-        <button type="button" @click="reset">清除筛选</button>
+        <label>使用环境<select v-model="filters.setting" @change="changeFilter"><option value="">全部环境</option><option v-for="(label, code) in settingLabels" :key="code" :value="code">{{ label }}</option></select></label>
       </div>
-      <p class="hardware-result-count" aria-live="polite">当前筛选：{{ currentDeviceIds.size }} 条硬件记录关联 {{ filtered.length }} 项研究。按研究首次公开日期浏览，不排名。</p>
-      <ChartFrame title="设备类别与已核验研究" description="随筛选更新；每类按研究去重，同一研究可使用多类设备，类别之间不可相加为研究总量。" :height="290" compact>
-        <div :ref="chart.element" role="img" aria-label="各设备类别具有原文使用依据的研究数量" />
-        <template #table><table><thead><tr><th>类别</th><th>硬件条目（含未明型号）</th><th>关联研究数</th></tr></thead><tbody><tr v-for="row in categorySummary" :key="row.code"><th>{{ row.label }}</th><td>{{ row.devices }}</td><td>{{ row.works }}</td></tr></tbody></table></template>
+      <div class="hardware-filter-tools"><details class="hardware-advanced" :open="Boolean(filters.role || filters.month)"><summary>型号、用途与月份筛选</summary><div class="hardware-extra-filters"><label>指定设备<select v-model="filters.device" @change="selectDevice"><option value="">全部设备</option><option v-for="device in selectableDevices" :key="device.hardware_id" :value="device.hardware_id">{{ device.name }}</option></select></label><label>设备用途<select v-model="filters.role" @change="changeFilter"><option value="">全部用途</option><option v-for="(label, code) in roleLabels" :key="code" :value="code">{{ label }}</option></select></label><label>研究首次公开月份<select v-model="filters.month" @change="changeFilter"><option value="">全部已登记月份</option><option v-for="month in months" :key="month" :value="month">{{ month }}{{ month === provisionalMonth ? ' · 暂行' : '' }}</option><option value="unknown">日期待核验</option></select></label></div></details><button class="hardware-clear" type="button" @click="reset">清除筛选</button></div>
+      <p v-if="selectedDevice" class="hardware-selection">{{ selectedDevice.name }} <button type="button" @click="clearDevice">查看全部型号 ×</button></p>
+      <p class="hardware-result-count" aria-live="polite">{{ models.length }} 个具体型号 · {{ unresolved.length }} 条系列 / 未明型号 · {{ matchedWorkCount }} 项关联研究</p>
+      <ChartFrame v-if="topModels.length && !filters.device" title="具体型号使用频次 · 前 12 项" description="按有明确使用证据的去重研究数排序。点击横条查看该型号的完整出处；同次数按名称稳定排列。" :height="chartHeight" compact>
+        <div :ref="chart.element" role="img" aria-label="前十二个具体硬件型号的去重研究使用频次" />
+        <template #table><table><thead><tr><th>具体型号</th><th>使用研究数</th><th>真机 / 真实设备</th><th>仿真</th></tr></thead><tbody><tr v-for="device in models" :key="device.hardware_id"><th><button type="button" @click="chooseDevice(device.hardware_id)">{{ device.name }}</button></th><td>{{ device.work_count }}</td><td>{{ device.category === 'compute_platform' ? '算力用途见出处' : device.real_work_count }}</td><td>{{ device.category === 'compute_platform' ? '算力用途见出处' : device.simulation_work_count }}</td></tr></tbody></table></template>
       </ChartFrame>
-      <details v-if="currentDevices.length" class="hardware-device-list"><summary>当前设备档案 · {{ currentDevices.length }} 条</summary><div class="hardware-device-grid"><article v-for="device in currentDevices" :key="device.hardware_id"><h2>{{ device.name }}</h2><p>{{ device.vendor || '厂商未说明' }} · {{ categoryLabels[device.category] }}</p><p>身份粒度：{{ identityLabels[device.identity_level || 'unknown'] || device.identity_level }} · {{ relationCount(device.hardware_id) }} 项筛选内研究</p><a v-if="publicUrl(device.official_url)" :href="device.official_url" target="_blank" rel="noopener noreferrer">设备官方资料 ↗</a><button type="button" :aria-pressed="filters.device === device.hardware_id" @click="chooseDevice(device.hardware_id)">{{ filters.device === device.hardware_id ? '取消此设备筛选' : '查看关联研究' }}</button></article></div></details>
-      <div ref="list" class="hardware-work-list">
-        <article v-for="work in visible" :key="work.work_id" class="hardware-work" tabindex="-1" :class="{ 'is-provisional': monthOf(work) === provisionalMonth }">
-          <p v-if="monthOf(work) === provisionalMonth" class="hardware-provisional">{{ provisionalMonth }} 暂行样本</p>
-          <ResearchCard :work="work" compact />
-          <section class="hardware-evidence" :aria-label="`${work.title}的硬件使用证据`"><h2>设备如何用于这项研究</h2><article v-for="(usage, i) in usages(work).filter(matchUsage)" :key="`${usage.hardware_id}-${i}`"><div class="hardware-evidence-meta"><strong>{{ deviceMap.get(usage.hardware_id)?.name || usage.name }}</strong><span>{{ roleLabels[usage.role] || '用途未归类' }}</span><span>{{ settingLabels[usage.setting] || settingLabels.unknown }}</span></div><p>{{ usage.statement }}</p><p v-if="configurationText(usage.configuration)" class="hardware-configuration">配置：{{ configurationText(usage.configuration) }}</p><footer><a :href="usage.source_url" target="_blank" rel="noopener noreferrer">核对使用原文 ↗</a><span>原文位置：{{ usage.source_locator || '未提供定位' }}</span><span>核验于 {{ eventDate(usage.observed_at) }}</span></footer></article></section>
-        </article>
-      </div>
-      <p v-if="!filtered.length" class="hardware-empty">当前筛选没有已登记且证据完整的使用关系，不表示这些设备没有用于研究。可放宽筛选查看其他已核验样本。</p>
-      <div v-if="filtered.length" class="hardware-more"><p aria-live="polite">已展示 {{ visible.length }} / {{ filtered.length }} 项</p><button v-if="visible.length < filtered.length" type="button" @click="more">再加载 12 项研究</button><p v-else>已展示当前筛选的全部登记样本。</p></div>
+
+      <section v-if="models.length" class="hardware-model-section" aria-labelledby="hardware-models-heading"><header><h2 id="hardware-models-heading">具体型号完整列表</h2><p>使用频次由高到低；每项可展开全部论文和原文定位。</p></header><div ref="modelList" class="hardware-frequency-list"><HardwareFrequencyRow v-for="device in visibleModels" :id="rowId(device)" :key="device.hardware_id" :device="device" :category-label="categoryLabels[device.category]" :expanded="openSources.has(device.hardware_id)" :provisional-month="provisionalMonth" @papers="chooseDevice($event, true)" @sources="setSourceOpen(device.hardware_id, $event)" /></div><div class="hardware-more"><p aria-live="polite">已显示 {{ visibleModels.length }} / {{ models.length }} 个具体型号</p><button v-if="visibleModels.length < models.length" type="button" @click="moreModels()">再加载 12 个型号</button></div></section>
+
+      <section v-if="unresolved.length" class="hardware-model-section hardware-unresolved-section" aria-labelledby="hardware-unresolved-heading"><header><h2 id="hardware-unresolved-heading">系列与未明型号</h2><p>这些记录有使用出处，但具体版本尚未确认；单列频次，不并入具体型号榜。WUJI等系列名不推定为当前产品代际。</p></header><div ref="unresolvedList" class="hardware-frequency-list"><HardwareFrequencyRow v-for="device in visibleUnresolved" :id="rowId(device)" :key="device.hardware_id" :device="device" :category-label="categoryLabels[device.category]" :expanded="openSources.has(device.hardware_id)" :provisional-month="provisionalMonth" @papers="chooseDevice($event, true)" @sources="setSourceOpen(device.hardware_id, $event)" /></div><div class="hardware-more"><p aria-live="polite">已显示 {{ visibleUnresolved.length }} / {{ unresolved.length }} 条系列与未明型号</p><button v-if="visibleUnresolved.length < unresolved.length" type="button" @click="moreModels(true)">再加载 12 条记录</button></div></section>
+
+      <p v-if="!models.length && !unresolved.length" class="hardware-empty">当前筛选没有匹配的已核验使用记录，不表示设备未用于研究。可尝试别名，或清除其他筛选。</p>
+      <section v-if="showResearch && selectedFrequency" class="hardware-research-section" aria-labelledby="hardware-research-heading"><h2 id="hardware-research-heading" ref="researchHeading" tabindex="-1">{{ selectedFrequency.name }} · 原研究卡片</h2><p class="hardware-scope">这里只展开当前型号关联的研究；该型号的完整使用出处仍保留在上方列表。</p><div ref="researchList" class="hardware-work-list"><article v-for="work in visibleWorks" :key="work.work_id" class="hardware-work" tabindex="-1"><ResearchCard :work="work" compact /></article></div><div class="hardware-more"><p aria-live="polite">已显示 {{ visibleWorks.length }} / {{ selectedWorks.length }} 项研究</p><button v-if="visibleWorks.length < selectedWorks.length" type="button" @click="moreResearch">再加载 12 项研究</button></div></section>
+      <details class="hardware-data-details"><summary>公开数据与核验版本</summary><p><a :href="withBase('/api/v1/equipment/index.json')">设备索引</a> · <a :href="withBase('/api/v1/equipment/works.json')">完整研究与使用证据</a> · <a :href="withBase('/methods/equipment-loco')">方法与样本局限</a></p><p>版本 {{ index.dataset_version }}</p><p>另有 {{ index.counts.hardware_candidates ?? '未提供数量的' }} 条提及候选，未作为实际使用计入。完整月份与暂行月份不混作增长判断。</p></details>
     </template>
   </div>
 </template>
 
 <style scoped>
 .hardware-radar { min-width: 0; }
-.hardware-radar :is(p, h1, h2, h3, dd, a, span) { overflow-wrap: anywhere; }
-.hardware-radar :is(button, select) { min-height: 44px; padding: 8px 12px; color: var(--vp-c-text-1); background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 7px; }
-.hardware-radar button { cursor: pointer; }
-.hardware-radar :is(button, select, a, [tabindex]):focus-visible { outline: 3px solid var(--vp-c-brand-1); outline-offset: 3px; }
-.hardware-context { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--vp-c-text-2); font-size: 13px; }
-.hardware-boundary, .hardware-notice { margin: 20px 0; padding: 12px 18px; border-left: 3px solid var(--vp-c-brand-1); background: var(--vp-c-bg-soft); font-size: 14px; line-height: 1.8; }
-.hardware-boundary p, .hardware-notice p { margin: 4px 0; }
-.hardware-provisional { display: inline-block; padding: 3px 9px; border: 1px dashed var(--vp-c-warning-1); border-radius: 5px; color: var(--vp-c-text-1); background: var(--vp-c-warning-soft); font-size: 12px; }
-.hardware-counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 18px 0; border-block: 1px solid var(--vp-c-divider); }
-.hardware-counts dt { font-size: 13px; color: var(--vp-c-text-2); }
-.hardware-counts dd { margin: 6px 0 0; font-size: 28px; }
-.hardware-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 14px; margin: 24px 0 14px; }
-.hardware-filters label { display: grid; gap: 7px; font-size: 13px; min-width: 0; }
-.hardware-filters select { width: 100%; min-width: 0; }
-.hardware-result-count, .hardware-more, .hardware-empty { color: var(--vp-c-text-2); font-size: 14px; line-height: 1.8; }
-.hardware-device-list { margin: 22px 0; }
-.hardware-device-list summary { cursor: pointer; min-height: 44px; padding: 10px 0; }
-.hardware-device-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.hardware-device-grid article { min-width: 0; border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 15px; }
-.hardware-device-grid h2 { margin: 0 0 8px; border: 0; font-size: 16px; }
-.hardware-device-grid p { color: var(--vp-c-text-2); font-size: 12px; }
-.hardware-device-grid a { display: block; font-size: 13px; margin: 10px 0; }
-.hardware-device-grid button { font-size: 13px; }
-.hardware-device-grid button[aria-pressed="true"] { border-color: var(--vp-c-brand-1); color: var(--vp-c-brand-1); }
-.hardware-work-list { display: grid; gap: 28px; margin-top: 28px; }
-.hardware-work { min-width: 0; border-radius: 14px; }
-.hardware-work.is-provisional { border-left: 3px dashed var(--vp-c-warning-1); padding-left: 14px; }
-.hardware-work > .hardware-provisional { margin: 0 0 10px; }
-.hardware-evidence { padding: 16px 20px; border: 1px solid var(--vp-c-divider); border-top: 0; border-radius: 0 0 12px 12px; background: var(--vp-c-bg-soft); }
-.hardware-evidence h2 { font-size: 14px; margin: 0 0 12px; border: 0; }
-.hardware-evidence > article + article { border-top: 1px solid var(--vp-c-divider); margin-top: 15px; padding-top: 15px; }
-.hardware-evidence-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 13px; align-items: baseline; }
-.hardware-evidence-meta span { color: var(--vp-c-text-2); }
-.hardware-evidence p { font-size: 14px; line-height: 1.75; margin: 10px 0; }
-.hardware-evidence .hardware-configuration { color: var(--vp-c-text-2); font-size: 12px; white-space: pre-wrap; }
-.hardware-evidence footer { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 12px; color: var(--vp-c-text-2); }
-.hardware-more { text-align: center; padding: 20px 0; }
-.hardware-empty { padding: 24px 0; }
-@media (max-width: 850px) { .hardware-filters, .hardware-device-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 550px) { .hardware-filters, .hardware-device-grid { grid-template-columns: 1fr; } .hardware-counts { grid-template-columns: 1fr; gap: 12px; } .hardware-counts > div { display: flex; justify-content: space-between; align-items: center; gap: 15px; } .hardware-counts dd { margin: 0; font-size: 23px; } .hardware-filters select { font-size: 16px; } .hardware-evidence { padding: 16px; } }
+.hardware-radar :is(p, h1, h2, h3, dd, a, span, summary) { overflow-wrap: anywhere; }
+.hardware-radar :is(button, select, input) { color: var(--vp-c-text-1); }
+.hardware-radar :is(select, input) { min-height: 44px; padding: 8px 11px; border: 1px solid var(--vp-c-divider); border-radius: 7px; background: var(--vp-c-bg); width: 100%; min-width: 0; }
+.hardware-radar button, .hardware-radar summary { cursor: pointer; }
+.hardware-radar :is(button, select, input, a, summary, [tabindex]):focus-visible { outline: 3px solid var(--vp-c-brand-1); outline-offset: 3px; }
+.hardware-context { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; color: var(--vp-c-text-2); font-size: 13px; }
+.hardware-scope, .hardware-result-count { color: var(--vp-c-text-2); font-size: 13px; line-height: 1.8; margin: 10px 0 16px; }
+.hardware-provisional { display: inline-block; padding: 2px 7px; border: 1px dashed var(--vp-c-warning-1); border-radius: 4px; font-size: 12px; }
+.hardware-notice { margin: 18px 0; padding: 14px 18px; border-left: 3px solid var(--vp-c-brand-1); background: var(--vp-c-bg-soft); font-size: 14px; line-height: 1.8; }
+.hardware-notice button, .hardware-more button { min-height: 44px; padding: 8px 15px; border: 1px solid var(--vp-c-divider); border-radius: 7px; background: var(--vp-c-bg); }
+.hardware-primary-filters { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(2, minmax(0, 1fr)); gap: 14px; align-items: end; }
+.hardware-primary-filters label, .hardware-extra-filters label { display: grid; gap: 7px; font-size: 12px; min-width: 0; }
+.hardware-filter-tools { display: flex; flex-wrap: wrap; align-items: start; gap: 10px 20px; margin: 8px 0 0; font-size: 12px; }
+.hardware-advanced { flex: 1; min-width: 0; }
+.hardware-advanced summary { padding: 11px 0; min-height: 44px; }
+.hardware-extra-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 4px 0 14px; }
+.hardware-clear { min-height: 44px; color: var(--vp-c-brand-1); }
+.hardware-selection { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-size: 14px; margin: 4px 0; }
+.hardware-selection button { color: var(--vp-c-brand-1); min-height: 44px; font-size: 12px; }
+.hardware-model-section { margin-top: 24px; }
+.hardware-model-section > header { margin-bottom: 14px; }
+.hardware-model-section h2, .hardware-research-section > h2 { font-size: 23px; margin: 0 0 6px; border: 0; line-height: 1.5; }
+.hardware-model-section > header p { margin: 0; font-size: 13px; color: var(--vp-c-text-2); line-height: 1.75; }
+.hardware-frequency-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.hardware-unresolved-section { border-top: 1px solid var(--vp-c-divider); padding-top: 26px; }
+.hardware-more { text-align: center; margin: 14px 0 20px; font-size: 13px; color: var(--vp-c-text-2); }
+.hardware-more p { margin: 10px 0; }
+.hardware-empty { padding: 25px 0; font-size: 14px; line-height: 1.8; color: var(--vp-c-text-2); }
+.hardware-research-section { margin-top: 30px; }
+.hardware-research-section > h2 { scroll-margin-top: 100px; }
+.hardware-work-list { display: grid; gap: 20px; margin-top: 18px; }
+.hardware-work { min-width: 0; border-radius: 12px; }
+.hardware-data-details { margin: 25px 0; padding-top: 12px; border-top: 1px solid var(--vp-c-divider); color: var(--vp-c-text-2); font-size: 12px; line-height: 1.8; }
+.hardware-data-details summary { min-height: 44px; padding: 10px 0; }
+@media (max-width: 800px) { .hardware-primary-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hardware-model-search { grid-column: 1 / -1; } .hardware-frequency-list { grid-template-columns: 1fr; } }
+@media (max-width: 550px) { .hardware-radar :is(input, select) { font-size: 16px; } .hardware-extra-filters { grid-template-columns: 1fr; } .hardware-filter-tools { gap: 5px 12px; } .hardware-model-section h2 { font-size: 21px; } }
 </style>
