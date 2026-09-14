@@ -72,6 +72,19 @@ class SourceReviewImportTests(unittest.TestCase):
         self.assertEqual(before, {p.name: p.read_bytes() for p in self.directory.iterdir()})
         self.assertFalse(self.public.exists())
 
+    def test_general_experiment_compute_does_not_invent_training_or_inference(self):
+        self.raw['reviews'] = [self.review(3, name='Intel Xeon Gold 6348', vendor='Intel',
+                                          category='compute_platform', role='experiment_compute')]
+        self.run_import(apply=True)
+        uses = [json.loads(line) for line in (self.directory / 'usage-evidence.jsonl').read_text().splitlines()]
+        added = [row for row in uses if row['work_id'] == self.raw['reviews'][0]['work_id']]
+        self.assertEqual([row['role'] for row in added], ['experiment_compute'])
+
+    def test_general_experiment_compute_rejects_non_compute_device(self):
+        self.raw['reviews'][0]['devices'][0]['role'] = 'experiment_compute'
+        with self.assertRaisesRegex(ValueError, 'compute_role_category_mismatch'):
+            self.run_import()
+
     def test_import_is_idempotent_and_loco_files_are_byte_preserved(self):
         before = {name: (self.directory / (name + ".jsonl")).read_bytes() for name in ("loco-reviews", "loco-observations")}
         raw_before = copy.deepcopy(self.raw)

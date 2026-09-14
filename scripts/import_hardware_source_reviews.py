@@ -17,7 +17,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from catalog_store import encode, fingerprint, load_catalog, write_if_changed
-from equipment_radar import CATEGORIES, ROLES, SETTINGS, USAGE_SCOPES, TABLES, load_equipment_authority
+from equipment_radar import CATEGORIES, ROLES, COMPUTE_ROLES, SETTINGS, USAGE_SCOPES, TABLES, load_equipment_authority
 from import_equipment_reviews import merge_equipment_reviews
 from people_radar import _hard_identity
 
@@ -256,7 +256,7 @@ def prepare_reviews(raw, payload, existing, observations, cache_root):
                 required_text(assertion, field)
             if assertion["role"] not in USE_ROLES or assertion["setting"] not in SETTINGS or assertion["usage_scope"] not in USAGE_SCOPES:
                 fail("unknown_or_nonusage_role_setting_scope")
-            if assertion["role"] in {"training_compute", "inference_compute", "control_compute", "model_fitting_compute"} and assertion["category"] != "compute_platform":
+            if assertion["role"] in COMPUTE_ROLES and assertion["category"] != "compute_platform":
                 fail("compute_role_category_mismatch")
             locator, section_ids = bound_locator(assertion.get("source_locator"), review)
             hid = resolve_device(assertion, review, devices, owners, proposed["devices"])

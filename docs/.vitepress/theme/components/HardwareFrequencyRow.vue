@@ -4,14 +4,14 @@ import { eventDate } from '../lib/dates'
 
 defineProps<{ device: any; categoryLabel?: string; expanded?: boolean; provisionalMonth?: string }>()
 const emit = defineEmits<{ papers: [hardwareId: string]; sources: [open: boolean] }>()
-const roleLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真机器人', training_compute: '训练算力', inference_compute: '推理算力', control_compute: '控制计算', model_fitting_compute: '模型参数拟合', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
+const roleLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真机器人', training_compute: '训练算力', inference_compute: '推理算力', control_compute: '控制计算', model_fitting_compute: '模型参数拟合', experiment_compute: '实验计算（环节未细分）', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
 const settingLabels: Record<string, string> = { real: '真实设备', simulation: '仿真环境', dataset: '数据集', unknown: '环境未说明' }
 const scopeLabels: Record<string, string> = { baseline: '仅对照基线', calibration: '仅标定 / 校准', replay: '仅轨迹回放', replay_only: '仅轨迹回放' }
 const validationLabels: Record<string, string> = { closed_loop_real: '真机闭环', replay_only_real: '真机仅回放', simulation_only: '仅仿真', unclear: '验证方式未明确' }
-const validationContextLabels: Record<string, string> = { real_robot_closed_loop: '真机闭环', real_robot_closed_loop_offline_reference: '真机闭环；离线参考', real_robot_closed_loop_with_operator_supervision: '真机闭环；操作员监督', real_robot_trajectory_replay: '真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_trajectory_replay: '仿真与真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_robot_closed_loop: '仿真与真机闭环', simulation_only: '仅仿真' }
+const validationContextLabels: Record<string, string> = { real_to_sim_trajectory_replay: '真实轨迹采集→仿真回放，不等于策略真机闭环', real_robot_closed_loop: '真机闭环', real_robot_closed_loop_offline_reference: '真机闭环；离线参考', real_robot_closed_loop_with_operator_supervision: '真机闭环；操作员监督', real_robot_trajectory_replay: '真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_trajectory_replay: '仿真与真机轨迹回放，不等于真机闭环策略验证', simulation_and_real_robot_closed_loop: '仿真与真机闭环', simulation_only: '仅仿真' }
 const hasContext = (device: any, contexts: string[]) => device.sources.some((source: any) => source.usages.some((usage: any) => contexts.includes(usage.validation_context)))
 const roleWorkCount = (device: any, role: string) => device.sources.filter((source: any) => source.usages.some((usage: any) => usage.role === role)).length
-const computeRoles = ['training_compute', 'inference_compute', 'control_compute', 'model_fitting_compute']
+const computeRoles = ['training_compute', 'inference_compute', 'control_compute', 'model_fitting_compute', 'experiment_compute']
 const publicUrl = (value: unknown): string | undefined => typeof value === 'string' && /^https?:\/\//i.test(value) ? value : undefined
 const workUrl = (source: any) => publicUrl(source.original_url) || withBase(`/database/?${new URLSearchParams({ work: source.work_id, relevance: 'all' })}`)
 const configurationText = (value: unknown) => value == null || value === '' ? '' : typeof value === 'string' ? value : JSON.stringify(value)

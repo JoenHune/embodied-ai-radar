@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
+import FulltextReadings from './FulltextReadings.vue'
 
 type Counts = Record<string, number | null>
 type Group = { first_public_month?: string; primary_direction?: string; relevance_status?: string; all_works: Counts; included: Counts }
-type CoverageSummary = { schema_version: string; dataset_version: string; dictionary_hash: string; dictionary_version?: string; data_through: string; all_works: Counts; included: Counts; by_direction: Group[]; by_month: Group[]; by_relevance: Group[]; downloads?: { coverage?: string } }
+type CoverageSummary = { schema_version: string; dataset_version: string; dictionary_hash: string; dictionary_version?: string; data_through: string; all_works: Counts; included: Counts; by_direction: Group[]; by_month: Group[]; by_relevance: Group[]; downloads?: { coverage?: string }; article_reading?: { all_work_count: number; included_work_count: number; receipt_count: number; assurance: string } }
 type Model = { dictionary_id: string; name: string; category: string; identity_level: string; evidence_status: string; usage_inference: string; metadata_work_count: number; body_work_count: number; candidate_work_count: number; included_candidate_work_count: number; metadata_work_ids: string[]; body_work_ids: string[]; work_ids: string[] }
 type ModelIndex = { schema_version: string; dataset_version: string; dictionary_hash: string; models: Model[] }
 type WorkCoverage = { work_id: string; metadata_hits: number; body_source_state: string; body_scan_status: string; body_hits: number; verified_count: number; full_text_scanned: boolean; partial_text_scanned: boolean; relevance: string }
 const props = withDefaults(defineProps<{ compact?: boolean; expectedVersion?: string }>(), { compact: false })
 const summary = ref<CoverageSummary | null>(null)
 const loading = ref(true)
+const showReadings = ref(false)
 const error = ref('')
 const cohort = ref<'all_works' | 'included'>('all_works')
 const dimension = ref<'by_direction' | 'by_month' | 'by_relevance'>('by_direction')
@@ -97,6 +99,7 @@ const loadSummary = async () => {
   workSerial++
   controller = new AbortController()
   loading.value = true
+  showReadings.value = false
   error.value = ''
   summary.value = null
   modelIndex.value = null
@@ -114,6 +117,8 @@ const loadSummary = async () => {
     const value = await response.json()
     if (disposed || request !== serial) return
     if (value.schema_version !== '1' || value.metadata_scope !== 'metadata_only' || !value.dataset_version || !value.dictionary_hash || !validCounts(value.all_works) || !validCounts(value.included) || !['by_direction', 'by_month', 'by_relevance'].every(key => Array.isArray(value[key]) && value[key].every((group: Group) => validCounts(group.all_works) && validCounts(group.included)))) throw new Error('invalid')
+    const reading = value.article_reading
+    if (reading && (reading.assurance !== 'self_attested_AI_reading_not_human_review' || ![reading.all_work_count, reading.included_work_count, reading.receipt_count].every(isCount) || reading.all_work_count > value.all_works.denominator || reading.included_work_count > value.included.denominator || reading.included_work_count > reading.all_work_count || reading.receipt_count < reading.all_work_count)) throw new Error('invalid')
     summary.value = value
     if (!props.compact) void loadModels()
   } catch { if (!disposed && request === serial) error.value = '覆盖数据暂时无法读取，当前进度未知；读取失败不等于零覆盖。' }
@@ -195,8 +200,10 @@ onBeforeUnmount(() => { disposed = true; serial++; workSerial++; controller?.abo
       <p class="coverage-denominators">已核验关系涉及研究：全库 {{ number(summary.all_works.verified_relationship_work_count) }} / {{ number(summary.all_works.denominator) }}；已纳入 {{ number(summary.included.verified_relationship_work_count) }} / {{ number(summary.included.denominator) }}。两个分母不混用。</p>
       <p class="coverage-source-states" aria-live="polite">{{ cohortLabel }}：正文尚未尝试 {{ number(selected?.full_text_not_attempted_work_count) }} · 获取失败 / 受限 / 身份不符 {{ number(selected?.full_text_failed_work_count) }} · 仅部分正文可用 {{ number(selected?.partial_text_available_work_count) }} · 主文待当前字典扫描 {{ number(selected?.full_text_available_pending_scan_work_count) }}</p>
       <p class="coverage-limit">正文文本不包含图片、音视频或补充材料的人工检查；引用、仿真设备与真实使用仍须逐项区分。未核验不是“无硬件”。</p>
+      <p v-if="summary.article_reading" class="coverage-reading-progress">AI已通读可用HTML文字：<strong>{{ number(cohort === 'included' ? summary.article_reading.included_work_count : summary.article_reading.all_work_count) }} / {{ number(selected?.denominator) }} 项研究</strong>。此数来自独立阅读记录，不能用采集数或关键词扫描数替代；不代表图片、视频、外部补充材料均已看完。<a v-if="props.compact" :href="withBase('/hardware/coverage#hardware-coverage-readings')">逐篇发现与限制 →</a></p>
 
       <template v-if="!props.compact">
+        <section v-if="summary.article_reading" class="coverage-section" :aria-labelledby="`${prefix}-readings`"><header><h2 :id="`${prefix}-readings`">原文阅读 · 新增发现与限制</h2><p>方法、实验和附录中的条件单独呈现；自动准备阅读材料不计为已读，AI通读也不等于人工审稿或独立复现。</p></header><button v-if="!showReadings" type="button" class="coverage-more" @click="showReadings = true">展开逐篇原文阅读记录</button><FulltextReadings v-else :expected-version="summary.dataset_version" :dictionary-hash="summary.dictionary_hash" :cohort="cohort" /></section>
         <section class="coverage-section" :aria-labelledby="`${prefix}-groups`"><header><h2 :id="`${prefix}-groups`">分组覆盖记录</h2><p>以下表格使用上方选定的{{ cohortLabel }}分母。按主方向每项只计一次；月份按首次公开时间，日期不明不补猜。</p></header>
           <div class="coverage-toggle" role="group" aria-label="覆盖分组方式"><button type="button" :aria-pressed="dimension === 'by_direction'" @click="dimension = 'by_direction'">研究方向</button><button type="button" :aria-pressed="dimension === 'by_month'" @click="dimension = 'by_month'">首次公开月份</button><button type="button" :aria-pressed="dimension === 'by_relevance'" @click="dimension = 'by_relevance'">相关性状态</button></div>
           <div class="coverage-table-wrap" tabindex="0" aria-label="可横向滚动的分组覆盖表"><table class="coverage-table"><thead><tr><th scope="col">分组</th><th scope="col">研究分母</th><th scope="col">元数据已筛</th><th scope="col">主文文本可用</th><th scope="col">主文当前字典已扫</th><th scope="col">已核验使用研究</th><th scope="col">正文未尝试</th><th scope="col">获取失败</th></tr></thead><tbody><tr v-for="(group, i) in groups" :key="`${dimension}-${i}`"><th scope="row">{{ groupLabel(group) }}</th><td>{{ number(group[cohort].denominator) }}</td><td>{{ number(group[cohort].metadata_screened_work_count) }}</td><td>{{ number(group[cohort].full_text_available_work_count) }}</td><td>{{ number(group[cohort].full_text_screened_current_dictionary_work_count) }}</td><td>{{ number(group[cohort].verified_relationship_work_count) }}</td><td>{{ number(group[cohort].full_text_not_attempted_work_count) }}</td><td>{{ number(group[cohort].full_text_failed_work_count) }}</td></tr></tbody></table></div>
@@ -251,6 +258,8 @@ onBeforeUnmount(() => { disposed = true; serial++; workSerial++; controller?.abo
 .coverage-denominators { margin: 10px 0 6px; font-weight: 550; }
 .coverage-source-states { margin: 6px 0; }
 .coverage-limit { margin: 8px 0 0; }
+.coverage-reading-progress { padding: 12px 14px; border: 1px solid var(--vp-c-brand-1); border-radius: 8px; font-size: 12px; line-height: 1.8; margin-top: 16px; }
+.coverage-reading-progress a { display: inline-block; margin-left: 8px; }
 .coverage-section { margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--vp-c-divider); }
 .coverage-section h2 { border: 0; margin: 0 0 9px; padding: 0; font-size: 22px; }
 .coverage-table-wrap { overflow-x: auto; margin-top: 15px; border: 1px solid var(--vp-c-divider); border-radius: 8px; }

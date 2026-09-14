@@ -65,6 +65,15 @@ test('equal display names are not sufficient evidence to merge device identities
   assert.equal(rows.length, 2)
   assert.deepEqual(rows.map(r => r.work_count), [1, 1])
 })
+test('an experiment server specification never becomes a specific training or inference count', () => {
+  const cpu = { ...device('cpu'), category: 'compute_platform' }
+  const uses = [work('server', [usage('cpu', { category: 'compute_platform', role: 'experiment_compute' })])]
+  assert.equal(hardwareFrequency([cpu], uses).models[0].work_count, 1)
+  for (const role of ['training_compute', 'inference_compute', 'control_compute']) {
+    assert.equal(hardwareFrequency([cpu], uses, { role }).models.length, 0)
+  }
+  assert.equal(hardwareFrequency([device('g1')], [work('invalid', [usage('g1', { role: 'experiment_compute' })])]).models.length, 0)
+})
 test('year-only and unknown dates do not fabricate month placement', () => {
   assert.equal(hardwareMonth({ first_public_date: '2026-01-01', first_public_date_precision: 'year' }), 'unknown')
   assert.equal(hardwareMonth({ first_public_date: '2026-09', first_public_date_precision: 'month' }), '2026-09')

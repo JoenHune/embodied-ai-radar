@@ -14,7 +14,7 @@ const media = useVisualMedia()
 const equipment = useEquipmentEvidence()
 const hardware = computed<any[]>(() => props.work.hardware_usage || equipment.value[props.work.work_id] || [])
 const hardwareNames = computed(() => [...new Set(hardware.value.map(row => row.name))].slice(0, 3))
-const usageLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真使用', training_compute: '训练算力', inference_compute: '推理算力', control_compute: '控制计算', model_fitting_compute: '模型参数拟合', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
+const usageLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真使用', training_compute: '训练算力', inference_compute: '推理算力', control_compute: '控制计算', model_fitting_compute: '模型参数拟合', experiment_compute: '实验计算（环节未细分）', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
 const settingLabels: Record<string, string> = { real: '真实设备', simulation: '仿真环境', dataset: '数据集', unknown: '环境未明确' }
 const asset = computed(() => media.value[props.work.work_id])
 const original = computed(() => originalSourceUrl(props.work))

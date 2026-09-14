@@ -43,7 +43,7 @@ RULE_SOURCE_FILES += ("research_status.py", "research_status_views.py", "ingest_
 RULE_CONFIG_FILES += ("research-status.schema.json",)
 RULE_SOURCE_FILES += ("people_radar.py",)
 RULE_SOURCE_FILES += ("equipment_radar.py",)
-RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py")
+RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "fulltext_reading_reviews.py")
 RULE_CONFIG_FILES += ("hardware-dictionary.json",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/research-card.mjs",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/work-status.mjs",)
@@ -1222,7 +1222,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     supplemental_paths = [DATA / "coverage-gold-releases.jsonl", DATA / "weekly-v3/source-coverage.json", *sorted((DATA / "conferences").glob("*/source-status.json")),
                           *[DATA / "people" / f"{table}.jsonl" for table in PEOPLE_TABLES],
                           *[DATA / "equipment" / f"{table}.jsonl" for table in EQUIPMENT_TABLES],
-                          *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews')]]
+                          *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews', 'fulltext-readings')]]
     manifest["supplemental_hash"] = fingerprint({str(p.relative_to(DATA)): hashlib.sha256(p.read_bytes()).hexdigest() for p in supplemental_paths if p.exists()})
     manifest["dataset_version"] = fingerprint({key: manifest[key] for key in ["catalog_hash", "editorial_hash", "rules_hash", "supplemental_hash", "data_through"]})
     # Person staging is never read here: the four JSONL tables are the only
@@ -1237,11 +1237,14 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     equipment_bundle = build_equipment_bundle(payload, equipment_authority, manifest)
     export_equipment(equipment_bundle, PUBLIC_API / "equipment", DOWNLOADS / "equipment")
     hardware_coverage = build_coverage(payload, equipment_authority, hardware_dictionary,
-        read_table(DATA / 'hardware-review', 'source-scans'), read_table(DATA / 'hardware-review', 'source-observations'), manifest)
+        read_table(DATA / 'hardware-review', 'source-scans'), read_table(DATA / 'hardware-review', 'source-observations'), manifest,
+        reading_reviews=read_table(DATA / 'hardware-review', 'fulltext-readings'))
     export_coverage(hardware_coverage, PUBLIC_API / 'equipment', DOWNLOADS / 'equipment')
     manifest["equipment"] = {"api": "/api/v1/equipment/index.json", "loco_api": "/api/v1/equipment/loco-manip.json", "counts": equipment_bundle['index']['counts'], "authority_hash": equipment_bundle['index']['authority_hash']}
     manifest['equipment']['coverage_api'] = '/api/v1/equipment/coverage-summary.json'
+    manifest['equipment']['readings_api'] = '/api/v1/equipment/coverage-readings.json'
     manifest['downloads']['hardware_coverage'] = '/downloads/equipment/hardware-coverage.jsonl.gz'
+    manifest['downloads']['fulltext_readings'] = '/downloads/equipment/fulltext-readings.jsonl'
     write_json(PUBLIC_API / "catalog-manifest.json", manifest, compact=True)
     write_json(PUBLIC_API / "migration-report.json", migration_report, compact=True)
 

@@ -22,8 +22,8 @@ from test_hardware_census import dictionary_fixture
 
 def install_fixture(root):
     payload, authority, manifest = fixture()
-    manifest.update(equipment={'coverage_api': '/api/v1/equipment/coverage-summary.json'},
-                    downloads={'hardware_coverage': '/downloads/equipment/hardware-coverage.jsonl.gz'})
+    manifest.update(equipment={'coverage_api': '/api/v1/equipment/coverage-summary.json', 'readings_api': '/api/v1/equipment/coverage-readings.json'},
+                    downloads={'hardware_coverage': '/downloads/equipment/hardware-coverage.jsonl.gz', 'fulltext_readings': '/downloads/equipment/fulltext-readings.jsonl'})
     dictionary = dictionary_fixture()
     api, downloads = root / 'docs/public/api/v1', root / 'docs/public/downloads'
     (root / 'config').mkdir(parents=True)

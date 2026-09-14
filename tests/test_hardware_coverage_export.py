@@ -8,14 +8,48 @@ import tempfile
 import unittest
 from contextlib import closing
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from catalog_store import encode
+from catalog_store import encode, fingerprint
+from fulltext_reading_reviews import ASSURANCE, NORMALIZATION, TEXT_SCOPE, public_audit
 from hardware_coverage_export import (audit_coverage, build_coverage, coverage_sqlite, export_coverage,
                                       load_hardware_dictionary, project_work)
 from test_equipment_radar import fixture, make_work
 from test_hardware_census import dictionary_fixture, observation, scan
+
+
+def public_reading_fixture(work, version='v1'):
+    """Synthetic public receipt only; this fixture claims no actual reading."""
+    wid = work['work_id']
+    source_url = 'https://arxiv.org/html/' + work['identifiers']['arxiv'] + version
+    raw_hash = fingerprint(['test-raw', wid, version])
+    text_hash = fingerprint(['test-article', wid, version])
+    locator_hash = fingerprint(['test-section', wid, version])
+    obs = observation(wid, source_url=source_url, effective_url=source_url, version=version,
+                      raw_sha256=raw_hash, text_sha256=fingerprint(['test-body', wid, version]),
+                      transport_verification='legacy_unrecorded')
+    identity = [wid, source_url, version, raw_hash, text_hash, TEXT_SCOPE, NORMALIZATION]
+    record = {'schema_version': '1', 'reading_id': 'fulltext-reading:' + fingerprint(identity)[:24],
+              'work_id': wid, 'source_url': source_url, 'version': version, 'raw_sha256': raw_hash,
+              'observed_at': obs['observed_at'], 'read_completed_at': '2026-09-14T02:00:00Z',
+              'reader_kind': 'AI', 'reading_status': 'completed', 'assurance': ASSURANCE,
+              'human_reviewed': False, 'understanding_verified': False,
+              'verification_scope': 'source_identity_hash_ranges_and_locators_only',
+              'text_scope': TEXT_SCOPE, 'article_normalization': NORMALIZATION,
+              'article_chars': 100, 'article_text_sha256': text_hash, 'read_ranges': [{'start': 0, 'end': 100}],
+              'range_units': 'python_unicode_characters_zero_based_half_open',
+              'checked_table_ids': [], 'checked_table_count': 0, 'checked_table_text_sha256': {}, 'tables_exhaustive': False,
+              'math_source_note_zh': '测试声明：按原文核对数学表达，未作独立推导。',
+              'images_inspected': False, 'supplementary_materials_inspected': False,
+              'supplementary_scope_note': 'external_media_only; embedded_appendix_text_is_within_article_scope',
+              'source_availability_status': obs['status'], 'transport_verification': 'legacy_unrecorded',
+              'publisher_fulltext_or_media_completeness_verified': False,
+              'findings_zh': [{'text_zh': '测试声明：作者报告了研究方法。', 'source_locator': 'S1', 'locator_text_sha256': {'S1': locator_hash}}],
+              'limitations_zh': [{'text_zh': '测试声明：尚未独立核验实验结果。', 'source_locator': 'S1', 'locator_text_sha256': {'S1': locator_hash}}],
+              'declaration_sha256': fingerprint(['synthetic-declaration', wid, version])}
+    return record, obs
 
 
 def coverage_fixture():
@@ -91,10 +125,10 @@ class HardwareCoverageExportTests(unittest.TestCase):
             self.assertEqual(result["work_count"], 5)
             self.assertEqual(result["shards"], 256)
             self.assertEqual(len(list((api / "coverage/works").glob("*.json"))), 256)
-            self.assertEqual({path.name for path in downloads.iterdir()}, {"hardware-coverage.jsonl.gz"})
+            self.assertEqual({path.name for path in downloads.iterdir()}, {"hardware-coverage.jsonl.gz", 'fulltext-readings.jsonl'})
             self.assertEqual(connection.execute("SELECT COUNT(*) FROM hardware_coverage").fetchone()[0], 5)
             self.assertEqual({row[1] for row in connection.execute("PRAGMA table_info(hardware_coverage)")} & {"payload_json", "abstract", "title"}, set())
-            self.assertEqual({row[0] for row in connection.execute("SELECT key FROM coverage_metadata")}, {"summary", "dictionary", "source_observations", "source_scans", "models"})
+            self.assertEqual({row[0] for row in connection.execute("SELECT key FROM coverage_metadata")}, {"summary", "dictionary", "source_observations", "source_scans", "models", 'readings'})
 
     def test_public_exports_omit_body_excerpts_and_local_paths_at_all_depths(self):
         bundle = self.build()
@@ -294,6 +328,81 @@ class HardwareCoverageExportTests(unittest.TestCase):
                 if transport['transport_verification'] == 'legacy_unrecorded':
                     self.assertNotIn('transport_complete', row['source_observations'][0])
                     self.assertNotIn('transport_returncode', result['source_observations'][0])
+
+    def test_141_body_scans_with_empty_receipts_are_zero_declared_AI_reading(self):
+        payload, _, manifest = fixture()
+        payload['works'] = [make_work(index) for index in range(1, 142)]
+        dictionary = dictionary_fixture()
+        observations = [observation(work['work_id'], source_url='https://arxiv.org/html/' + work['identifiers']['arxiv'] + 'v1') for work in payload['works']]
+        scans = [scan(obs, dictionary, text='No model names.') for obs in observations]
+        authority = {key: [] for key in ('devices', 'usage-evidence', 'loco-reviews', 'loco-observations')}
+        bundle = build_coverage(payload, authority, dictionary, scans, observations, manifest)
+        self.assertEqual(bundle['summary']['all_works']['full_text_screened_current_dictionary_work_count'], 141)
+        self.assertEqual(bundle['readings']['records'], [])
+        self.assertEqual(bundle['readings']['counts'], {'all_work_count': 0, 'included_work_count': 0, 'receipt_count': 0})
+        self.assertEqual(bundle['summary']['article_reading']['all_work_count'], 0)
+        self.assertEqual(bundle['readings']['assurance'], ASSURANCE)
+
+    def test_prepared_packet_cannot_be_imported_as_reading_receipt(self):
+        args = coverage_fixture()
+        forged = {'preparation_status': 'prepared_not_read', 'work_id': args[0]['works'][0]['work_id'],
+                  'reading_status': 'completed', 'reader_kind': 'AI'}
+        with self.assertRaisesRegex(ValueError, 'fulltext_reading_review'):
+            build_coverage(*args, reading_reviews=[forged])
+
+    def test_13_source_version_receipts_deduplicate_works_and_export_original_receipts(self):
+        payload, _, manifest = fixture()
+        payload['works'] = [make_work(index, status='included' if index <= 7 else 'excluded') for index in range(1, 13)]
+        authority = {key: [] for key in ('devices', 'usage-evidence', 'loco-reviews', 'loco-observations')}
+        pairs = [public_reading_fixture(work) for work in payload['works']]
+        pairs.append(public_reading_fixture(payload['works'][0], 'v2'))
+        records, observations = [pair[0] for pair in pairs], [pair[1] for pair in pairs]
+        original = copy.deepcopy(records)
+        with patch('fulltext_reading_reviews.private_bytes', side_effect=AssertionError('Public export must not open the source cache')):
+            bundle = build_coverage(payload, authority, dictionary_fixture(), [], observations, manifest, reading_reviews=records)
+        self.assertEqual(records, original)
+        self.assertEqual(bundle['readings']['counts'], {'all_work_count': 12, 'included_work_count': 7, 'receipt_count': 13})
+        self.assertEqual(bundle['summary']['all_works']['full_text_screened_current_dictionary_work_count'], 0)
+        self.assertEqual(bundle['summary']['all_works']['verified_relationship_work_count'], 0)
+        self.assertEqual(bundle['readings']['verification_scope'], 'public_metadata_consistency_only_not_re_reading')
+        for record in bundle['readings']['records']:
+            source_work = next(work for work in payload['works'] if work['work_id'] == record['work_id'])
+            self.assertEqual(record['title'], source_work['title'])
+            self.assertEqual(record['relevance_status'], source_work['relevance']['status'])
+        with tempfile.TemporaryDirectory() as directory, closing(sqlite3.connect(':memory:')) as connection:
+            api, downloads = self.export(bundle, directory, connection)
+            result = audit_coverage(bundle, api, downloads, connection)
+            self.assertEqual(result['article_reading']['receipt_count'], 13)
+            saved = json.loads((api / 'coverage-readings.json').read_text())
+            self.assertEqual(saved, bundle['readings'])
+            receipts = [json.loads(line) for line in (downloads / 'fulltext-readings.jsonl').read_text().splitlines()]
+            self.assertTrue(all('title' not in row and 'relevance_status' not in row for row in receipts))
+            self.assertEqual(public_audit(receipts, payload, observations, manifest['data_through'])['counts']['AI_read_work_count'], 12)
+            self.assertEqual(json.loads(connection.execute("SELECT payload_json FROM coverage_metadata WHERE key='readings'").fetchone()[0]), saved)
+
+    def test_future_dated_receipt_is_not_backdated_into_article_reading_counts(self):
+        payload, authority, manifest = fixture()
+        record, obs = public_reading_fixture(payload['works'][0])
+        record['read_completed_at'] = '2026-09-15T00:00:00Z'
+        bundle = build_coverage(payload, authority, dictionary_fixture(), [], [obs], manifest, reading_reviews=[record])
+        self.assertEqual(bundle['readings']['counts']['receipt_count'], 0)
+        self.assertEqual(bundle['summary']['all_works']['verified_relationship_work_count'], 1)
+
+    def test_reading_api_download_metadata_and_count_tampering_fail_audit(self):
+        for tamper in ('api', 'download_duplicate', 'sqlite', 'count', 'human_claim'):
+            with self.subTest(tamper=tamper), tempfile.TemporaryDirectory() as directory, closing(sqlite3.connect(':memory:')) as connection:
+                payload, authority, manifest = fixture()
+                record, obs = public_reading_fixture(payload['works'][0])
+                bundle = build_coverage(payload, authority, dictionary_fixture(), [], [obs], manifest, reading_reviews=[record])
+                if tamper == 'count': bundle['readings']['counts']['all_work_count'] += 1
+                if tamper == 'human_claim': bundle['readings']['human_reviewed'] = True
+                api, downloads = self.export(bundle, directory, connection)
+                if tamper == 'api': (api / 'coverage-readings.json').write_text('{}')
+                elif tamper == 'download_duplicate':
+                    path = downloads / 'fulltext-readings.jsonl'; path.write_text(path.read_text() * 2)
+                elif tamper == 'sqlite': connection.execute("UPDATE coverage_metadata SET payload_json='{}' WHERE key='readings'")
+                with self.assertRaisesRegex(ValueError, 'hardware_coverage'):
+                    audit_coverage(bundle, api, downloads, connection)
 
 
 if __name__ == "__main__":

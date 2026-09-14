@@ -18,6 +18,11 @@ from pathlib import Path
 
 from catalog_store import encode, fingerprint, write_if_changed
 from hardware_census import FAILED_STATUSES, _counts, build_census, detect_mentions
+from fulltext_reading_reviews import ASSURANCE as READING_ASSURANCE, public_audit
+
+READINGS_API = '/api/v1/equipment/coverage-readings.json'
+READINGS_DOWNLOAD = '/downloads/equipment/fulltext-readings.jsonl'
+READING_CATALOG_FIELDS = {'title', 'relevance_status'}
 
 
 PRIVATE_KEYS = {
@@ -136,7 +141,30 @@ def _models(dictionary, candidates, included, common):
                        "A no-hit dictionary entry does not imply absence or zero use. Existing verified relationships remain separate."]}
 
 
-def build_coverage(payload, authority, dictionary, source_scans, source_observations, manifest):
+def _reading_counts(records, works):
+    ids = [row['reading_id'] for row in records]
+    sources = {(row['work_id'], row['source_url'], row['version'], row['raw_sha256'], row['article_text_sha256']) for row in records}
+    if len(ids) != len(set(ids)) or len(sources) != len(records):
+        raise ValueError('hardware_coverage_duplicate_reading_source_or_receipt')
+    work_ids = {row['work_id'] for row in records}
+    if not work_ids <= works.keys():
+        raise ValueError('hardware_coverage_unknown_reading_work')
+    return {'all_work_count': len(work_ids),
+            'included_work_count': sum(works[wid]['relevance_status'] == 'included' for wid in work_ids),
+            'receipt_count': len(records)}
+
+
+def _reading_summary(readings):
+    return {**readings['counts'], 'assurance': READING_ASSURANCE, 'api': READINGS_API, 'download': READINGS_DOWNLOAD}
+
+
+def _receipt_records(bundle):
+    """Downloads remain validator-compatible receipts, without catalog overlays."""
+    return [{key: value for key, value in row.items() if key not in READING_CATALOG_FIELDS}
+            for row in bundle['readings']['records']]
+
+
+def build_coverage(payload, authority, dictionary, source_scans, source_observations, manifest, reading_reviews=()):
     """Build from caller-supplied inputs and share the site's dataset revision."""
     if not manifest.get("dataset_version") or not manifest.get("data_through"):
         raise ValueError("hardware_coverage_manifest_version_and_date_required")
@@ -152,10 +180,33 @@ def build_coverage(payload, authority, dictionary, source_scans, source_observat
                "public_content_policy": "No paper excerpts, raw body text, or local cache paths; complete census rows are compressed once."}
     included = {row["work_id"] for row in census["rows"] if row["relevance_status"] == "included"}
     models = _models(public_dictionary, census["candidates"], included, _common(summary))
+    public_observations = [_public_observation(row) for row in source_observations or []]
+    # This audits previously imported public declarations only. It never
+    # opens private article caches, re-reads a source, or derives reading from
+    # metadata/body scans, packet preparation, or hardware-use authority.
+    reading_audit = public_audit(list(reading_reviews), payload, public_observations, manifest['data_through'])
+    canonical = {row['work_id']: row for row in payload['works']}
+    reading_records = [{**row, 'title': canonical[row['work_id']].get('title') or '',
+                        'relevance_status': canonical[row['work_id']].get('relevance', {}).get('status', 'unknown')}
+                       for row in sorted(reading_audit['records'], key=lambda row: row['reading_id'])]
+    reading_counts = _reading_counts(reading_records, {row['work_id']: row for row in census['rows']})
+    if (reading_counts['receipt_count'] != reading_audit['counts']['reading_receipt_count'] or
+            reading_counts['all_work_count'] != reading_audit['counts']['AI_read_work_count']):
+        raise ValueError('hardware_coverage_public_reading_count_mismatch')
+    readings = {**_common(summary), 'data_through': manifest['data_through'], 'assurance': READING_ASSURANCE,
+                'verification_scope': reading_audit['verification_scope'], 'private_source_reverified': False,
+                'human_reviewed': False, 'understanding_verified': False,
+                'records': reading_records, 'counts': reading_counts,
+                'download_record_shape': 'validated_receipt_without_catalog_title_or_relevance_status',
+                'limits': ['AI reading receipts are explicit self-attestations, not human review or independently verified understanding.',
+                           'Acquisition, name scanning, AI reading declarations and verified device usage are separate counts.',
+                           'Work counts deduplicate canonical works with at least one visible source-version receipt; they do not certify reading the latest version.',
+                           'Public export checks metadata consistency only, without reopening private sources or claiming to re-read them.']}
+    summary['article_reading'] = _reading_summary(readings)
     # Keep a single reference to the full census rows. Sanitization occurs one
     # row at a time during export, rather than duplicating tens of MB in RAM.
-    return {"summary": summary, "models": models, "rows": census["rows"], "dictionary": public_dictionary,
-            "source_observations": [_public_observation(row) for row in source_observations or []],
+    return {"summary": summary, "models": models, "rows": census["rows"], "dictionary": public_dictionary, 'readings': readings,
+            "source_observations": public_observations,
             "source_scans": [_public_scan(row) for row in source_scans or []]}
 
 
@@ -205,7 +256,7 @@ def export_coverage(bundle, api_equipment_dir, downloads_dir):
     """Publish compact API shards and exactly one compressed full-row copy."""
     _row_index(bundle)
     api, downloads = Path(api_equipment_dir), Path(downloads_dir)
-    for name, key in (("coverage-summary.json", "summary"), ("coverage-model-candidates.json", "models")):
+    for name, key in (("coverage-summary.json", "summary"), ("coverage-model-candidates.json", "models"), ('coverage-readings.json', 'readings')):
         write_if_changed(api / name, encode(_public(bundle[key])) + "\n")
     grouped = defaultdict(dict)
     for row in bundle["rows"]:
@@ -215,10 +266,11 @@ def export_coverage(bundle, api_equipment_dir, downloads_dir):
         write_if_changed(api / "coverage/works" / (shard + ".json"),
                          encode({**_common(bundle["summary"]), "by_work": grouped[shard]}) + "\n")
     _write_gzip_rows(downloads / "hardware-coverage.jsonl.gz", bundle["rows"])
+    write_if_changed(downloads / 'fulltext-readings.jsonl', ''.join(encode(_public(row)) + '\n' for row in _receipt_records(bundle)))
 
 
 def _metadata(bundle):
-    return {key: _public(bundle[key]) for key in ("summary", "dictionary", "source_observations", "source_scans", "models")}
+    return {key: _public(bundle[key]) for key in ("summary", "dictionary", "source_observations", "source_scans", "models", 'readings')}
 
 
 def coverage_sqlite(connection, bundle):
@@ -314,7 +366,7 @@ def audit_coverage(bundle, api, downloads, connection):
         canonical_ids = {row[0] for row in connection.execute("SELECT work_id FROM works")}
         if canonical_ids != set(by_work):
             raise ValueError("hardware_coverage_sqlite_canonical_id_mismatch")
-    for filename, key in (("coverage-summary.json", "summary"), ("coverage-model-candidates.json", "models")):
+    for filename, key in (("coverage-summary.json", "summary"), ("coverage-model-candidates.json", "models"), ('coverage-readings.json', 'readings')):
         if json.loads((api / filename).read_text()) != _public(bundle[key]):
             raise ValueError("hardware_coverage_api_mismatch:" + filename)
     shard_directory = api / "coverage/works"
@@ -352,6 +404,27 @@ def audit_coverage(bundle, api, downloads, connection):
     saved_metadata = {key: json.loads(value) for key, value in connection.execute("SELECT key,payload_json FROM coverage_metadata")}
     if saved_metadata != _metadata(bundle):
         raise ValueError("hardware_coverage_sqlite_metadata_mismatch")
+    readings = bundle['readings']
+    expected_counts = _reading_counts(readings['records'], by_work)
+    if (readings['counts'] != expected_counts or readings.get('assurance') != READING_ASSURANCE
+            or readings.get('private_source_reverified') is not False or readings.get('human_reviewed') is not False
+            or readings.get('understanding_verified') is not False
+            or bundle['summary'].get('article_reading') != _reading_summary(readings)
+            or {key: readings.get(key) for key in _common(bundle['summary'])} != _common(bundle['summary'])
+            or readings.get('data_through') != bundle['summary']['data_through']):
+        raise ValueError('hardware_coverage_reading_summary_or_assurance_mismatch')
+    for record in readings['records']:
+        if (record.get('reader_kind') != 'AI' or record.get('reading_status') != 'completed'
+                or record.get('assurance') != READING_ASSURANCE or record.get('human_reviewed') is not False
+                or record.get('understanding_verified') is not False
+                or record.get('relevance_status') != by_work[record['work_id']]['relevance_status']):
+            raise ValueError('hardware_coverage_reading_receipt_overclaim')
+        source_fields = ('work_id', 'source_url', 'version', 'raw_sha256', 'observed_at')
+        if not any(all(source.get(key) == record.get(key) for key in source_fields) for source in bundle['source_observations']):
+            raise ValueError('hardware_coverage_reading_source_identity_mismatch')
+    downloaded_readings = [json.loads(line) for line in (downloads / 'fulltext-readings.jsonl').read_text().splitlines() if line.strip()]
+    if downloaded_readings != _public(_receipt_records(bundle)):
+        raise ValueError('hardware_coverage_reading_download_mismatch')
     # A malformed generated bundle must not be able to advertise inflated
     # unique model counts or unknown IDs even if files copied it faithfully.
     known_dictionary_ids = {entry["dictionary_id"] for entry in bundle["dictionary"]["entries"]}
@@ -373,4 +446,5 @@ def audit_coverage(bundle, api, downloads, connection):
                 raise ValueError("hardware_coverage_model_included_count_invalid")
     return {"status": "ok", "work_count": len(by_work), "dataset_version": bundle["summary"]["dataset_version"],
             "dictionary_hash": bundle["summary"]["dictionary_hash"], "shards": 256,
+            'article_reading': expected_counts,
             "download_bytes": (downloads / "hardware-coverage.jsonl.gz").stat().st_size}

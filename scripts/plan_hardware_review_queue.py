@@ -7,10 +7,32 @@ import argparse
 import hashlib
 import json
 from collections import defaultdict
+from datetime import date
 from pathlib import Path
 from catalog_store import load_catalog, read_table, write_if_changed, encode, fingerprint
 
 ROOT = Path(__file__).resolve().parents[1]
+FULL_TAIL_POLICY = {
+    'version': '2',
+    'relevance_priority': ['included', 'manual_review', 'candidate', 'excluded_or_unknown'],
+    'date_order': 'stored_first_public_date_descending_missing_or_invalid_last',
+    'tie_breaker': 'work_id_ascending',
+    'scope': 'processing_order_not_quality_ranking',
+}
+
+
+def full_tail_key(work):
+    """Order the backlog only; never infer a missing date from an identifier."""
+    priority = {'included': 0, 'manual_review': 1, 'candidate': 2}.get(
+        work.get('relevance', {}).get('status'), 3)
+    value = work.get('first_public_date')
+    ordinal = None
+    if isinstance(value, str) and len(value) == 10:
+        try:
+            ordinal = date.fromisoformat(value).toordinal()
+        except ValueError:
+            pass
+    return priority, ordinal is None, -(ordinal or 0), work['work_id']
 
 
 def plan(payload, reviewed_ids=(), per_direction=8, controls=12, *, all_arxiv=False):
@@ -57,15 +79,18 @@ def plan(payload, reviewed_ids=(), per_direction=8, controls=12, *, all_arxiv=Fa
         values = [w for (state, _), group in buckets.items() if state == relevance for w in group]
         for work in sorted(values, key=seed)[:controls]:
             take(work, 'relevance_control:' + relevance)
+    prefix_count = len(picked)
     if all_arxiv:
         # The stratified batch is only a useful processing prefix. A prior
         # verified device relationship is not proof of whole-paper coverage,
         # so every arXiv-backed work joins the resumable backlog, including
         # works omitted from that prefix because they had prior usage evidence.
-        for work in sorted(works, key=lambda work: work['work_id']):
+        # Status/date priority applies only after the unchanged stratified
+        # prefix. This is scheduling, not quality scoring or a corpus filter.
+        for work in sorted(works, key=full_tail_key):
             if work.get('identifiers', {}).get('arxiv'):
                 take(work, 'full_arxiv_backlog')
-    return {'schema_version': '1', 'policy_version': '1', 'catalog_work_count': len(works),
+    result = {'schema_version': '1', 'policy_version': '2' if all_arxiv else '1', 'catalog_work_count': len(works),
             'work_set_hash': fingerprint(sorted(w['work_id'] for w in works)),
             'scope': ('full_canonical_arxiv_processing_queue_not_fulltext_coverage' if all_arxiv else
                       'initial_processing_batch_not_full_coverage_or_population_sample'),
@@ -74,6 +99,10 @@ def plan(payload, reviewed_ids=(), per_direction=8, controls=12, *, all_arxiv=Fa
             'non_arxiv_work_count': sum(not w.get('identifiers', {}).get('arxiv') for w in works),
             'note': '正文获取次序，不以热门型号/摘要命中作唯一入口；非arxiv来源仍在全库覆盖账本待处理。',
             'already_had_verified_usage': len(reviewed), 'queue': picked}
+    if all_arxiv:
+        result.update(full_tail_policy=dict(FULL_TAIL_POLICY), stratified_prefix_count=prefix_count,
+                      full_tail_count=len(picked) - prefix_count)
+    return result
 
 
 def main():
@@ -87,7 +116,12 @@ def main():
     verified = {r['work_id'] for r in read_table(ROOT / 'data/equipment', 'usage-evidence') if r.get('review_status') == 'verified'}
     result = plan(payload, verified, args.per_direction, args.controls, all_arxiv=args.all_arxiv)
     write_if_changed(args.output, encode(result) + '\n')
-    print(json.dumps({'queue': len(result['queue']), 'catalog_works': result['catalog_work_count'], 'output': str(args.output)}))
+    print(json.dumps({'queue': len(result['queue']), 'catalog_works': result['catalog_work_count'],
+                      'arxiv_eligible_works': result['arxiv_eligible_work_count'],
+                      'queue_mode': result['queue_mode'], 'policy_version': result['policy_version'],
+                      'stratified_prefix_count': result.get('stratified_prefix_count', len(result['queue'])),
+                      'full_tail_count': result.get('full_tail_count', 0),
+                      'full_tail_policy': result.get('full_tail_policy'), 'output': str(args.output)}))
 
 
 if __name__ == '__main__':
