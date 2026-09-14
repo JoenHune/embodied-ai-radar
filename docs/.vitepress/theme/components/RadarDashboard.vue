@@ -11,6 +11,7 @@ import EvidenceReadingQueue from './EvidenceReadingQueue.vue'
 import ReportTextEvidence from './ReportTextEvidence.vue'
 import ResearchStatusNotice from './ResearchStatusNotice.vue'
 const ReportCoverage = defineAsyncComponent(() => import('./ReportCoverage.vue'))
+const HistoricalEditorial = defineAsyncComponent(() => import('./HistoricalEditorial.vue'))
 const ResearchFeed = defineAsyncComponent(() => import('./ResearchFeed.vue'))
 const DirectionShareOverview = defineAsyncComponent(() => import('./DirectionShareOverview.vue'))
 import { chartTokens, useEChart } from '../composables/useEChart'
@@ -745,6 +746,7 @@ onBeforeUnmount(() => {
         </article>
         <p v-if="!monthlySnapshot.executive_findings.length" class="v3-empty">当前暂行月尚无足够工作形成研究判断。</p>
       </section>
+      <HistoricalEditorial :key="monthlySnapshot.month" :snapshot="monthlySnapshot" />
       <section v-if="monthlySnapshot.historical_findings?.length" class="v3-analysis-section">
         <details :open="monthlySnapshot.editorial_status !== 'llm_complete'"><summary>历史版本的研究判断</summary><p>保留迁移前观点供对照；当前研究判断与证据边界以上方及本版数据为准。</p>
         <article v-for="finding in monthlySnapshot.historical_findings" :key="finding.claim_id" class="v3-note-row">

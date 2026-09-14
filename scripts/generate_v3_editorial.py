@@ -365,7 +365,8 @@ def make_facts(snapshot: dict, cards: list[dict]) -> dict:
     return facts
 
 
-def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int = 8, per_question: int = 4) -> dict:
+def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int = 8, per_question: int = 4,
+                          reading_index: dict | None = None) -> dict:
     month = snapshot["month"]
     cutoff = snapshot.get("evidence_as_of") or month
     if isinstance(cutoff, dict):
@@ -529,6 +530,14 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
             "published_at": event.get("published_at"), "organization_id": event.get("organization_id"), "evidence_grade": work.get("evidence_grade", "E0"),
             "claim_status": event.get("claim_status"), "independent_validation": bool(event.get("independent_validation")),
             "evidence_cluster_id": work.get("evidence_cluster_id") or work["work_id"], "localization_required": False})
+    # A receipt enriches an already selected card. It must never change the
+    # cohort, selection, evidence IDs, grades, numeric facts or signal quotes.
+    if reading_index:
+        from editorial_readings import annotations_for_work
+        for card in cards:
+            annotations = annotations_for_work(works[card["work_id"]], reading_index, cutoff)
+            if annotations:
+                card["reading_annotations"] = annotations
     limitations = ["统计反映已登记公开来源的覆盖，不能视为全部研究工作的普查。",
                    "摘要和公司披露不能替代全文实验核验；同行评审接收也不等于独立复现。",
                    "摘要未提及某项实验或指标，不代表论文全文没有该实验或指标。",
@@ -545,6 +554,9 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
         limitations.append("部分公司报告或项目网页尚无内容与时间绑定的正文档案；报告标注发布日期不证明当前网页全文当时已存在，旧中文摘要不能替代原文。")
     if any(row.get("report_text") for row in cards):
         limitations.append("公司报告只提供有来源和时间证明的必要短摘录；语境说明为AI提取，不是逐字引文，作者自报不等于独立验证。")
+    if any(row.get("reading_annotations") for row in cards):
+        limitations.append("部分证据附有与历史版本匹配的AI原文解读；解读是可追溯的转述，不是逐字引文、人工审校或独立实验验证。未读图像、外部附件及局部缺失仍按各条记录标明。")
+        limitations.append("未附原文解读的证据仍受摘要覆盖限制；不能将已读样本的结论扩展到整个月份或全部语料。")
     if any(is_arxiv_work(works[row["work_id"]]) and row["experimental_text_available"] and not row["source_documents"] for row in cards):
         limitations.append("部分版本文本已有时间边界，但旧来源的日期仍是首次投稿日；这些来源不能生成带错误日期的信号证据草稿。")
     if snapshot.get("status") != "complete":
@@ -573,6 +585,18 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
         if card["experimental_text_available"] and valid_work_localization(localized, works[card["work_id"]]):
             card["translation_context"] = {key: localized[key] for key in ("title_zh", "summary_zh", "keywords_zh") if key in localized}
     return packet
+
+
+def available_reading_references(packet: dict) -> dict:
+    """Record available context, not an assertion that the model used it."""
+    references = {}
+    for card in packet.get("evidence_cards", []):
+        rows = [{key: copy.deepcopy(row[key]) for key in (
+            "reading_id", "work_id", "version", "reading_source_url", "annotation_digest"
+        ) if key in row} for row in card.get("reading_annotations", [])]
+        if rows:
+            references[card["evidence_id"]] = rows
+    return references
 
 
 def response_endpoint(base: str) -> str:
@@ -634,6 +658,8 @@ def request_editorial(packet: dict, model: str, base_url: str, api_key: str | No
     instructions += " 上述experimental_text_available约束同样适用于公司技术报告、项目、Demo和部署。报告存在及其发布日期只是元数据；未附历史正文时不能从旧中文说明推测实验，也不能把刚读取的网页当成历史月份原文。"
     instructions += " 写作范围必须限定为当月已登记、可核验的样本。子主题没有可比历史证据时，不写‘转向’‘开始’‘首次’或由单月样本推断增长；D方向整体数量变化也不能证明其下每个子主题在转向。摘要省略某项实验或结果，只能说‘所提供摘要未披露’，不能说‘论文没有实验’或‘尚未验证’。strict_peer_reviewed为零只表示本库在截止时点对该样本的已核验记录数，不代表该月不存在评审研究。affordance统一译为‘可供性’。所有研究判断、反例和观察清单只能引用experimental_text_available=true的卡片；false卡片仅可用于完全符合missing_version_summary规则的D/Q缺口说明，或organization_changes中全为事件引用的明确元数据说明，不能推断实验。修正引用须重审句子是否真正受新证据支持，不是仅替换ID。"
     instructions += " report_text是独立的公司报告短摘录，不是arXiv摘要或完整正文；available_at仅证明内容最迟已存在，不是精确首发时间。涉及report_text的判断，其title/summary只写定性文字，不写测量数字或中文数词；原始报告名中的版本号可以保留。summary须标明公司自报。公司数值只放numeric_claims中并复制facts的report.*观测；系统随后固定渲染label/value/unit/required_context，模型不得将59与83等数值自行配给条件。报告localizations也仅作定性摘要且须包含公司自报。当前报告摘录不得生成signal_assessments，不能自行升级趋势。"
+    if available_reading_references(packet):
+        instructions += " reading_annotations是与卡片所选历史版本严格匹配的AI原文解读，含方法、结果、局限和定位证据；只用于claims、direction_summaries、question_summaries、organization_changes、counterevidence、watchlist的定性叙述。适用时应优先结合这些发现与局限，而不是只复述摘要。解读文字不是逐字原文或独立验证，不得作为source_spans引用；局部缺失、未读图片/附件和AI自述的边界须保留。继续引用该卡片的evidence_id，不把reading_id当成新论文或新的独立证据簇。解读中的实验数字没有自动进入facts，不得据此增加numeric_claims或无绑定数字。localizations仍只能依据原有title/abstract/report_text与source_ids；signal_assessments仍只能逐字引用原有title/abstract，不能把解读转述充作原文。未附解读的卡片仍仅有摘要或短摘录，不能声称全月研究均已阅读全文。"
     body = {"model": model, "store": False, "max_output_tokens": 32768,
             "input": [{"role": "developer", "content": [{"type": "input_text", "text": instructions}]},
                       {"role": "user", "content": [{"type": "input_text", "text": json.dumps(packet, ensure_ascii=False, separators=(",", ":"))}]}],
@@ -846,6 +872,7 @@ def run_month(packet: dict | None, month: str, output: Path, *, model: str = "gp
     generated_at = generated_at or utc_now()
     packet_digest = editorial_input_digest(packet) if packet is not None else None
     previous_path = output / "monthly" / f"{month}.json"
+    previous = None
     if previous_path.exists():
         previous = json.loads(previous_path.read_text())
         if validated_editorial_overlay(previous, packet, model=model)["usable"]:
@@ -874,6 +901,22 @@ def run_month(packet: dict | None, month: str, output: Path, *, model: str = "gp
             artifact.update(schema_version="3", status="complete", generated_at=generated_at, model=model,
                             input_digest=packet_digest, response_id=raw.get("id"), failure=None,
                             sampling=packet.get("sampling", {}), localization_work_ids=[row["work_id"] for row in editorial["localizations"]])
+            # Preserve the exact request and prior complete artifact before
+            # replacing any published prose. A changed translation cache may
+            # share an input digest, so packets also have an exact digest.
+            from editorial_history import persist_evidence_packet, archive_editorial
+            try:
+                artifact["evidence_packet_ref"] = persist_evidence_packet(output, packet, packet_digest)
+                if previous and previous.get("status") == "complete":
+                    archive_editorial(output, previous)
+            except (OSError, ValueError, TypeError, KeyError):
+                # Retrying the model cannot repair local archive corruption.
+                # Keep the old complete month and abort without echoing paths.
+                raise RuntimeError("editorial_history_persistence_failed") from None
+            reading_references = available_reading_references(packet)
+            if reading_references:
+                artifact["available_reading_references"] = reading_references
+                artifact["reading_context_status"] = "available_AI_paraphrases_not_independent_validation_or_proof_of_model_use"
             existing = {row["work_id"]: row for row in read_jsonl(output / "work-localizations.jsonl")}
             for row in editorial["localizations"]:
                 card = next(card for card in packet["evidence_cards"] if card["evidence_id"] == row["work_id"])
@@ -946,11 +989,17 @@ def main(argv: list[str] | None = None) -> int:
     manifest = fixture["manifest"] if fixture else json.loads((args.api_directory / "catalog-manifest.json").read_text())
     catalog = fixture["catalog"] if fixture else load_catalog(args.catalog_directory)
     catalog["work-localizations"] = read_jsonl(args.output_directory / "work-localizations.jsonl")
+    from editorial_readings import load_reading_index, build_reading_index
+    if fixture:
+        reading_index = (build_reading_index(catalog, fixture.get("fulltext_readings", []), fixture.get("source_observations", []), manifest["data_through"])
+                         if manifest.get("data_through") else {})
+    else:
+        reading_index = load_reading_index(catalog, args.catalog_directory.parent / "hardware-review", manifest["data_through"])
     statuses = []
     for month in select_months(manifest, month=args.month, all_months=args.all_months):
         snapshot_path = args.api_directory / "monthly" / f"{month}.json"
         snapshot = fixture.get("snapshots", {}).get(month) if fixture else json.loads(snapshot_path.read_text()) if snapshot_path.exists() else None
-        packet = build_evidence_packet(snapshot, catalog) if snapshot else None
+        packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index) if snapshot else None
         initial_repair = None
         if args.resume_diagnostic_run:
             prior_packet = json.loads((args.resume_diagnostic_run / "evidence-packet.json").read_text())

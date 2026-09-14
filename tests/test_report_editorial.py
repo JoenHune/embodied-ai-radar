@@ -165,6 +165,10 @@ class ReportEditorialTests(unittest.TestCase):
             equipment.mkdir(parents=True)
             for table in ('devices', 'usage-evidence', 'loco-reviews', 'loco-observations'):
                 (equipment / (table + '.jsonl')).write_text('')
+            hardware_review = root / "data/hardware-review"
+            hardware_review.mkdir()
+            for table in ("fulltext-readings", "source-observations"):
+                (hardware_review / (table + ".jsonl")).write_text("")
             (root / "scripts").mkdir()
             (root / "config").mkdir()
             for name in builder.RULE_SOURCE_FILES:

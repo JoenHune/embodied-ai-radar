@@ -222,6 +222,11 @@ def main() -> None:
     report_versions_by_work = defaultdict(list)
     for version in manifestations:
         report_versions_by_work[version["work_id"]].append(version)
+    from editorial_readings import load_reading_index
+    from editorial_history import load_editorial_history, editorial_history_reference
+    editorial_catalog = {"works": works, "manifestations": manifestations, "evidence-events": events,
+                         "source-records": sources, "text-snapshots": texts, "report-text-snapshots": report_texts}
+    editorial_reading_index = load_reading_index(editorial_catalog, ROOT / "data/hardware-review", manifest["data_through"])
     for month in [*manifest["complete_months"], manifest["provisional_month"]]:
         snapshot_path = API / "monthly" / f"{month}.json"
         require(snapshot_path.exists(), f"Missing monthly API snapshot {month}")
@@ -236,11 +241,30 @@ def main() -> None:
         require(snapshot.get("editorial_status_dependencies") == editorial_status_dependencies(saved_for_status, expected_status, events), f"{month} affected editorial dependency queue differs")
         from editorial_completeness import assess_editorial_completeness
         require(snapshot.get("editorial_completeness") == assess_editorial_completeness(snapshot), f"{month} editorial completeness cannot be recomputed")
+        packet = None
+        if saved_for_status.get("status") == "complete":
+            from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay, available_reading_references
+            packet = build_evidence_packet(snapshot, editorial_catalog, reading_index=editorial_reading_index)
+            check = validated_editorial_overlay(saved_for_status, packet)
+            require((snapshot.get("editorial_status") == "llm_complete") == check["usable"], f"{month} editorial currentness differs from rebuilt evidence")
+            editorial_history_reference(ROOT / "data/editorial", saved_for_status)
+            if not check["usable"]:
+                require(snapshot.get("previous_editorial") == saved_for_status, f"{month} stale complete editorial was hidden or lost")
+                require(snapshot.get("editorial_unavailable_reason") == check["reason"], f"{month} old editorial reason differs")
+            elif saved_for_status.get("evidence_packet_ref"):
+                require(saved_for_status.get("available_reading_references", {}) == available_reading_references(packet), f"{month} reading context provenance differs")
+        history = load_editorial_history(ROOT / "data/editorial", month)
+        if snapshot.get("previous_editorial"):
+            require(snapshot["previous_editorial"] == saved_for_status, f"{month} old editorial changed")
+            history.append({"artifact": saved_for_status,
+                            "reference": editorial_history_reference(ROOT / "data/editorial", saved_for_status)})
+        expected_history = {item["reference"]["artifact_digest"]: item for item in history}
+        require(snapshot.get("editorial_history", []) == [expected_history[key]["reference"] for key in sorted(expected_history)], f"{month} editorial history differs")
+        for key, item in expected_history.items():
+            require(json.loads((API / "editorial-history" / month / f"{key}.json").read_text()) == item["artifact"], f"{month} historical editorial download differs")
         if snapshot.get("editorial_status") == "llm_complete":
-            from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay
+            require(packet is not None, f"{month} current editorial has no saved complete artifact")
             saved = json.loads((ROOT / "data/editorial/monthly" / f"{month}.json").read_text())
-            packet = build_evidence_packet(snapshot, {"works": works, "manifestations": manifestations, "evidence-events": events,
-                "source-records": sources, "text-snapshots": texts, "report-text-snapshots": report_texts})
             require(validated_editorial_overlay(saved, packet)["usable"], "Published monthly editorial is not current or valid")
             require(snapshot.get("editorial") == saved, "Public monthly editorial differs from saved model/review artifact")
             require(snapshot.get("evidence_id_to_work_id") == {card["evidence_id"]: card["work_id"] for card in packet["evidence_cards"] if card["kind"] == "event"}, "Monthly event citations cannot resolve to canonical works")

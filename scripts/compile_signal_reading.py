@@ -124,7 +124,10 @@ def main(argv=None):
         raise ValueError("reading_month_invalid")
     catalog = load_catalog(CATALOG)
     snapshot = json.loads((API / "monthly" / f"{month}.json").read_text())
-    packet = build_evidence_packet(snapshot, catalog)
+    from editorial_readings import load_reading_index
+    manifest = json.loads((API / "catalog-manifest.json").read_text())
+    reading_index = load_reading_index(catalog, CATALOG.parent / "hardware-review", manifest["data_through"])
+    packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index)
     incoming = compile_reading(reading, packet, catalog)
     path = EDITORIAL / "signal-evidence.jsonl"
     rows = merge_reading(read_jsonl(path), incoming, allow_revision=args.revise)

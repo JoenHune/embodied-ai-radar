@@ -44,6 +44,7 @@ RULE_CONFIG_FILES += ("research-status.schema.json",)
 RULE_SOURCE_FILES += ("people_radar.py",)
 RULE_SOURCE_FILES += ("equipment_radar.py",)
 RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "fulltext_reading_reviews.py")
+RULE_SOURCE_FILES += ("editorial_readings.py", "editorial_history.py")
 RULE_SOURCE_FILES += ("pdf_reading_reviews.py", "pdf_coverage_export.py")
 RULE_CONFIG_FILES += ("hardware-dictionary.json",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/research-card.mjs",)
@@ -592,6 +593,9 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     facets_config = read_json(ROOT / "config" / "facets-v3.json", {})
     questions_config = read_json(ROOT / "config" / "research-agenda.json", {"questions": []})
     as_of_text = args.as_of or metadata["data_through"]
+    from editorial_readings import load_reading_index
+    from editorial_history import load_editorial_history, editorial_history_reference
+    editorial_reading_index = load_reading_index(payload, DATA / "hardware-review", as_of_text)
     as_of = date.fromisoformat(as_of_text[:10])
     full_months = complete_months(as_of, 12)
     provisional_month = add_months(full_months[-1], 1)
@@ -875,16 +879,28 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         legacy_editorial = read_json(DATA / "editorial" / "legacy" / f"{month}.json", {})
         snapshot["historical_findings"] = legacy_editorial.get("claims", [])
         snapshot["historical_watchlist"] = legacy_editorial.get("historical_watchlist", [])
+        history = load_editorial_history(DATA / "editorial", month)
         editorial_usable = False
         if saved_editorial.get("status") == "complete":
             from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay
-            editorial_packet = build_evidence_packet(snapshot, payload)
+            saved_history_reference = editorial_history_reference(DATA / "editorial", saved_editorial)
+            editorial_packet = build_evidence_packet(snapshot, payload, reading_index=editorial_reading_index)
             editorial_check = validated_editorial_overlay(saved_editorial, editorial_packet)
             editorial_usable = editorial_check["usable"]
             if not editorial_usable:
                 snapshot["previous_editorial"] = saved_editorial
                 snapshot["editorial_unavailable_reason"] = editorial_check["reason"]
                 snapshot["information_gaps"].append("历史摘要对应的证据包已变化或未通过当前校验；保留旧版供查阅，本版仅发布当前数据。")
+                history.append({"artifact": saved_editorial,
+                                "reference": saved_history_reference})
+        # Export old text without making it current, nor writing authority
+        # archives during a read-only build. Successful regeneration archives
+        # the old artifact permanently before replacing it.
+        unique_history = {item["reference"]["artifact_digest"]: item for item in history}
+        if unique_history:
+            snapshot["editorial_history"] = [unique_history[key]["reference"] for key in sorted(unique_history)]
+            for key, item in unique_history.items():
+                write_json(PUBLIC_API / "editorial-history" / month / f"{key}.json", item["artifact"], compact=True)
         if editorial_usable:
             snapshot["editorial_status"] = "llm_complete"
             snapshot["editorial"] = saved_editorial

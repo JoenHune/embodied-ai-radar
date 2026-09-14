@@ -73,6 +73,10 @@ class MonthlyEvidenceTest(unittest.TestCase):
             equipment.mkdir(parents=True)
             for table in ('devices', 'usage-evidence', 'loco-reviews', 'loco-observations'):
                 (equipment / (table + '.jsonl')).write_text('')
+            hardware_review = data / "hardware-review"
+            hardware_review.mkdir()
+            for table in ("fulltext-readings", "source-observations"):
+                (hardware_review / (table + ".jsonl")).write_text("")
             config = root / "config"
             config.mkdir(parents=True)
             (root / "scripts").mkdir()
