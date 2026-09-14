@@ -12,12 +12,12 @@ test('seven top-level navigation items retain existing entry points and add equi
   assert.equal(nav.length, 7)
   assert.deepEqual(nav.map(item => item.text), ['总览', '趋势', '月度', '人物与组织', '研究库', '动态', '方法'])
   assert.deepEqual(nav.find(item => item.text === '趋势').items.map(item => item.link), ['/trends/', '/trends/loco-manip/'])
-  assert.deepEqual(nav.find(item => item.text === '研究库').items.map(item => item.link), ['/database/', '/hardware/'])
+  assert.deepEqual(nav.find(item => item.text === '研究库').items.map(item => item.link), ['/database/', '/hardware/', '/hardware/coverage'])
   assert.ok(nav.find(item => item.text === '人物与组织').items.some(item => item.link === '/organizations/people/'))
 })
 test('new page routes register their actual asynchronous component and methods document', () => {
   const theme = read('docs/.vitepress/theme/index.ts')
-  for (const [path, name] of [['docs/hardware/index.md', 'HardwareRadar'], ['docs/trends/loco-manip/index.md', 'LocoManipRadar']]) {
+  for (const [path, name] of [['docs/hardware/index.md', 'HardwareRadar'], ['docs/hardware/coverage.md', 'HardwareCoverage'], ['docs/trends/loco-manip/index.md', 'LocoManipRadar']]) {
     assert.match(read(path), new RegExp(`<${name} />`))
     assert.match(theme, new RegExp(`app\\.component\\('${name}', defineAsyncComponent\\(`))
     assert.match(theme, new RegExp(`import\\('\\./components/${name}\\.vue'\\)`))

@@ -18,6 +18,17 @@ from trend_signals import assess_signal
 
 
 class MonthlyEvidenceTest(unittest.TestCase):
+    def test_missing_hardware_dictionary_fails_before_any_public_export(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = argparse.Namespace(as_of='2026-09-14', ingest=False, migrate=False)
+            with patch.multiple(builder, ROOT=root, DATA=root / 'data', CATALOG=root / 'data/catalog',
+                                PUBLIC_API=root / 'api', DOWNLOADS=root / 'downloads'):
+                with self.assertRaisesRegex(FileNotFoundError, 'hardware_coverage_dictionary_required'):
+                    builder.export_catalog({}, {}, args)
+            self.assertFalse((root / 'api').exists())
+            self.assertFalse((root / 'downloads').exists())
+
     def test_monthly_org_projection_keeps_work_id_and_declared_date_precision(self):
         event = {"event_id": "report-event", "work_id": "report:fixture", "organization_id": "org:fixture",
                  "event_type": "technical_report", "title": "A company report", "url": "https://example.test/report",
@@ -70,6 +81,7 @@ class MonthlyEvidenceTest(unittest.TestCase):
                 (root / "scripts" / name).write_text("fixture")
             for name in builder.RULE_CONFIG_FILES:
                 (config / name).write_text("{}")
+            (config / "hardware-dictionary.json").write_text('{"schema_version":"1","version":"fixture-empty","entries":[]}')
             (config / "trend-signals.json").write_text('{"signals": []}')
             (config / "conference-editions.json").write_text('{"editions": []}')
             (config / "taxonomy-v2.json").write_text(json.dumps({"categories": {str(i): {"code": f"D{i}", "label": f"Direction {i}"} for i in range(1, 16)}}))
@@ -101,9 +113,16 @@ class MonthlyEvidenceTest(unittest.TestCase):
             self.assertEqual([event["event_id"] for event in september["evidence_events"]], ["accepted"])
             self.assertTrue((api / "monthly/2025-09.json").exists(), "Empty months in the required window must also exist")
             self.assertEqual(fingerprint(payload), before, "Export must not mutate canonical input")
+            coverage = json.loads((api / 'equipment/coverage-summary.json').read_text())
+            manifest = json.loads((api / 'catalog-manifest.json').read_text())
+            self.assertEqual(coverage['all_works']['denominator'], len(payload['works']))
+            self.assertEqual(coverage['dataset_version'], manifest['dataset_version'])
+            self.assertEqual(manifest['equipment']['coverage_api'], '/api/v1/equipment/coverage-summary.json')
+            self.assertTrue((root / 'downloads/equipment/hardware-coverage.jsonl.gz').is_file())
             connection = sqlite3.connect(root / "downloads/radar.sqlite")
             self.assertEqual(connection.execute("PRAGMA page_size").fetchone()[0], 16384)
             self.assertEqual(connection.execute("PRAGMA integrity_check").fetchone()[0], "ok")
+            self.assertEqual(connection.execute('SELECT COUNT(*) FROM hardware_coverage').fetchone()[0], len(payload['works']))
             restored = json.loads(connection.execute("SELECT payload_json FROM work_payloads WHERE work_id=?", (row["work_id"],)).fetchone()[0])
             self.assertEqual(restored["abstract"], row["abstract"])
             self.assertEqual(restored["authors"], row["authors"])

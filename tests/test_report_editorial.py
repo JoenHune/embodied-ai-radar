@@ -172,6 +172,7 @@ class ReportEditorialTests(unittest.TestCase):
                 (root / "scripts" / name).write_text("fixture")
             for name in builder.RULE_CONFIG_FILES:
                 (root / "config" / name).write_text("{}")
+            (root / "config/hardware-dictionary.json").write_text('{"schema_version":"1","version":"fixture-empty","entries":[]}')
             (root / "config/taxonomy-v2.json").write_text(json.dumps({"categories": {str(i): {"code": f"D{i}", "label": f"Direction {i}"} for i in range(1,16)}}))
             (root / "config/research-agenda.json").write_text(json.dumps({"questions": [{"id": f"Q{i}", "title": f"Question {i}"} for i in range(11)]}))
             (root / "config/conference-editions.json").write_text('{"editions":[]}')

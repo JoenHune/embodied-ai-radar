@@ -7,6 +7,9 @@ import './visual-radar.css'
 export default {
   extends: DefaultTheme,
   enhanceApp({ app, router }) {
+    app.component('HardwareCoverage', defineAsyncComponent(
+      () => import('./components/HardwareCoverage.vue'),
+    ))
     app.component('HardwareRadar', defineAsyncComponent(
       () => import('./components/HardwareRadar.vue'),
     ))

@@ -1,0 +1,5065 @@
+{
+  "schema_version": "1",
+  "version": "1",
+  "scope_note": "Discovery-only dictionary for all 42,720 canonical works (data/catalog/works, snapshot 2026-09-14), not evidence of use, deployment, training, inference, device counts, or market share. Matches require independent source review. Categories reuse the nine equipment categories. family_only preserves unknown generation/configuration; no capacity, interface, board vendor, EDU tier, real-vs-simulated setting, or component expansion is inferred. ALOHA is a system, not a synonym for its arms. hardware_ids link existing reported identities for discovery and do not merge or rewrite authority records; the RTX 4090 link points to a reported composite workstation. Short or ambiguous aliases require local context_terms, token boundaries, and longest-specific-match precedence. Generic robot/PC/sensor descriptions, bare vendor-only names, motors, simulators, software, datasets, and policy/VLA names are excluded.",
+  "entries": [
+    {
+      "dictionary_id": "model:action-5-camera-reported",
+      "name": "Action 5 camera (as reported)",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Action 5 camera (as reported)",
+        "Action 5 RGB camera",
+        "Action 5 camera"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.07859v1"
+      ],
+      "hardware_ids": [
+        "hardware:action-5-rgb-camera-38b27065"
+      ],
+      "context_terms": [
+        "camera",
+        "RGB"
+      ]
+    },
+    {
+      "dictionary_id": "model:agilex-piper-x",
+      "name": "AgileX PiPER-X",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "AgileX PiPER-X",
+        "PiPER-X",
+        "Piper X"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.12081v1"
+      ],
+      "hardware_ids": [
+        "hardware:agilex-piper-x"
+      ]
+    },
+    {
+      "dictionary_id": "model:alma-quadrupedal-manipulator",
+      "name": "ALMA quadrupedal manipulator",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "ALMA quadrupedal manipulator"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.28140v1"
+      ],
+      "hardware_ids": [
+        "hardware:alma-quadrupedal-manipulator-75adea98"
+      ]
+    },
+    {
+      "dictionary_id": "model:changingtek-ctag2f90-d",
+      "name": "ChangingTek CTAG2F90-D",
+      "category": "gripper",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ChangingTek CTAG2F90-D"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2606.22174v1"
+      ],
+      "hardware_ids": [
+        "hardware:changingtek-ctag2f90-d"
+      ]
+    },
+    {
+      "dictionary_id": "model:cm1-6-dof-arm",
+      "name": "CM1 6-DoF arm",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "CM1 6-DoF arm"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.03889v1"
+      ],
+      "hardware_ids": [
+        "hardware:cm1-6-dof-arm"
+      ]
+    },
+    {
+      "dictionary_id": "model:deeprobotics-m20s",
+      "name": "DeepRobotics M20S",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "DeepRobotics M20S"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.03889v1"
+      ],
+      "hardware_ids": [
+        "hardware:deeprobotics-m20s"
+      ]
+    },
+    {
+      "dictionary_id": "model:dexmo-force-feedback-glove",
+      "name": "Dexmo force-feedback glove",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Dexmo force-feedback glove"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.03022v1"
+      ],
+      "hardware_ids": [
+        "hardware:dexmo-force-feedback-glove-2b2e05f6"
+      ]
+    },
+    {
+      "dictionary_id": "model:dma-850-dynamic-mechanical-analyzer",
+      "name": "DMA 850 Dynamic Mechanical Analyzer",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "DMA 850 Dynamic Mechanical Analyzer"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.14930v1"
+      ],
+      "hardware_ids": [
+        "hardware:dma-850-dynamic-mechanical-analyzer"
+      ]
+    },
+    {
+      "dictionary_id": "model:intouch-e-skin",
+      "name": "Intouch e-Skin tactile sensor",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Intouch e-Skin tactile sensor",
+        "e-Skin tactile sensor",
+        "Intouch e-Skin"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.01733v1"
+      ],
+      "hardware_ids": [
+        "hardware:e-skin-tactile-sensor-29d98fe2"
+      ],
+      "context_terms": [
+        "Intouch",
+        "Intouch Robotics"
+      ]
+    },
+    {
+      "dictionary_id": "model:elgato-hd60-x",
+      "name": "Elgato HD60 X",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Elgato HD60 X"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.06643v1"
+      ],
+      "hardware_ids": [
+        "hardware:elgato-hd60-x"
+      ]
+    },
+    {
+      "dictionary_id": "model:fetch",
+      "name": "Fetch mobile manipulator",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Fetch mobile manipulator",
+        "Fetch robot",
+        "Fetch mobile manipulator model",
+        "Fetch"
+      ],
+      "source_urls": [
+        "https://fetchrobotics.github.io/docs/robot_hardware.html",
+        "https://arxiv.org/html/2609.12081v1"
+      ],
+      "hardware_ids": [
+        "hardware:fetch-mobile-manipulator-model"
+      ],
+      "context_terms": [
+        "Fetch Robotics",
+        "robot",
+        "robotic",
+        "mobile",
+        "manipulator",
+        "ManiSkill",
+        "simulation"
+      ]
+    },
+    {
+      "dictionary_id": "model:franka-panda",
+      "name": "Franka Panda",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Franka Panda",
+        "Franka Emika Panda",
+        "Franka-Emika Panda",
+        "Franka-Emika-Panda",
+        "Panda robot",
+        "Panda arm",
+        "Panda"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2011.02398",
+        "https://arxiv.org/html/2603.22263v1"
+      ],
+      "hardware_ids": [
+        "hardware:franka-panda"
+      ],
+      "context_terms": [
+        "Franka",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator"
+      ]
+    },
+    {
+      "dictionary_id": "model:galaxea-r1",
+      "name": "Galaxea R1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Galaxea R1"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2503.05652v1"
+      ],
+      "hardware_ids": [
+        "hardware:galaxea-r1"
+      ]
+    },
+    {
+      "dictionary_id": "model:galaxea-r1-pro",
+      "name": "Galaxea R1 Pro",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Galaxea R1 Pro",
+        "Galaxea R1 Pro model",
+        "R1 Pro"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.16710v1"
+      ],
+      "hardware_ids": [
+        "hardware:galaxea-r1-pro"
+      ]
+    },
+    {
+      "dictionary_id": "model:gelsight-mini",
+      "name": "GelSight Mini",
+      "category": "tactile_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "GelSight Mini"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.07859v1"
+      ],
+      "hardware_ids": [
+        "hardware:gelsight-mini"
+      ]
+    },
+    {
+      "dictionary_id": "model:gopro-hero10",
+      "name": "GoPro HERO10",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "GoPro HERO10",
+        "GoPro Hero 10",
+        "HERO10",
+        "HERO 10"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.06643v1"
+      ],
+      "hardware_ids": [
+        "hardware:gopro-hero10"
+      ],
+      "context_terms": [
+        "GoPro",
+        "camera"
+      ]
+    },
+    {
+      "dictionary_id": "model:hexfellow-trigger-a3",
+      "name": "HexFellow Trigger-A3",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "HexFellow Trigger-A3"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.12081v1"
+      ],
+      "hardware_ids": [
+        "hardware:hexfellow-trigger-a3"
+      ]
+    },
+    {
+      "dictionary_id": "model:htc-vive-tracker-3-0",
+      "name": "HTC VIVE Tracker 3.0",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "HTC VIVE Tracker 3.0",
+        "VIVE Tracker 3.0",
+        "Vive Tracker 3"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.05994v1"
+      ],
+      "hardware_ids": [
+        "hardware:htc-vive-tracker-3-0"
+      ]
+    },
+    {
+      "dictionary_id": "model:htc-vive-ultimate-tracker",
+      "name": "HTC VIVE Ultimate Tracker",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "HTC VIVE Ultimate Tracker",
+        "VIVE Ultimate Tracker"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2606.22174v1"
+      ],
+      "hardware_ids": [
+        "hardware:htc-vive-ultimate-tracker"
+      ]
+    },
+    {
+      "dictionary_id": "model:humanoidexo-wearable-exoskeleton",
+      "name": "HumanoidExo wearable exoskeleton",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "HumanoidExo wearable exoskeleton"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.03022v1"
+      ],
+      "hardware_ids": [
+        "hardware:humanoidexo-wearable-exoskeleton"
+      ]
+    },
+    {
+      "dictionary_id": "model:humi-custom-umi-derived-robot-gripper",
+      "name": "HuMI custom UMI-derived robot gripper",
+      "category": "gripper",
+      "identity_level": "model_specified",
+      "aliases": [
+        "HuMI custom UMI-derived robot gripper"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.06643v1"
+      ],
+      "hardware_ids": [
+        "hardware:humi-custom-umi-derived-robot-gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:humi-umi-style-handheld-grippers",
+      "name": "HuMI UMI-style handheld grippers",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "HuMI UMI-style handheld grippers"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2606.22174v1"
+      ],
+      "hardware_ids": [
+        "hardware:humi-umi-style-handheld-grippers-2e47737b"
+      ]
+    },
+    {
+      "dictionary_id": "model:ihmc-alex",
+      "name": "IHMC Alex",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "IHMC Alex"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.01518v1"
+      ],
+      "hardware_ids": [
+        "hardware:ihmc-alex"
+      ]
+    },
+    {
+      "dictionary_id": "model:intel-realsense-d405",
+      "name": "Intel RealSense D405",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Intel RealSense D405",
+        "RealSense D405",
+        "D405"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2606.22174v1"
+      ],
+      "hardware_ids": [
+        "hardware:intel-realsense-d405"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "sensor",
+        "depth"
+      ]
+    },
+    {
+      "dictionary_id": "model:intel-realsense-d435i",
+      "name": "Intel RealSense D435i",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Intel RealSense D435i",
+        "RealSense D435i",
+        "D435i"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2511.15200v1"
+      ],
+      "hardware_ids": [
+        "hardware:intel-realsense-d435i"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "sensor",
+        "depth"
+      ]
+    },
+    {
+      "dictionary_id": "model:intel-realsense-d455",
+      "name": "Intel RealSense D455",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Intel RealSense D455",
+        "RealSense D455",
+        "D455"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.14930v1"
+      ],
+      "hardware_ids": [
+        "hardware:intel-realsense-d455"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "sensor",
+        "depth"
+      ]
+    },
+    {
+      "dictionary_id": "model:interbotix-widowx-250",
+      "name": "Interbotix WidowX 250 family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Interbotix WidowX 250",
+        "WidowX 250",
+        "WidowX-250",
+        "WX250"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html",
+        "https://arxiv.org/html/2607.10132v1"
+      ],
+      "hardware_ids": [
+        "hardware:interbotix-widowx-250"
+      ],
+      "context_terms": [
+        "WidowX",
+        "Interbotix",
+        "Trossen",
+        "arm",
+        "robot"
+      ]
+    },
+    {
+      "dictionary_id": "model:iphone",
+      "name": "iPhone",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "iPhone"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.07859v1"
+      ],
+      "hardware_ids": [
+        "hardware:iphone-cf8e6cbd"
+      ]
+    },
+    {
+      "dictionary_id": "model:joylo-kinematic-twin-arms",
+      "name": "JoyLo kinematic-twin arms",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "JoyLo kinematic-twin arms"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2503.05652v1"
+      ],
+      "hardware_ids": [
+        "hardware:joylo-kinematic-twin-arms"
+      ]
+    },
+    {
+      "dictionary_id": "model:kinova-gen3",
+      "name": "Kinova Gen3",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Kinova Gen3",
+        "Kinova Gen 3",
+        "Gen3 robot",
+        "Gen3 arm"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.14930v1"
+      ],
+      "hardware_ids": [
+        "hardware:kinova-gen3"
+      ]
+    },
+    {
+      "dictionary_id": "model:livox-mid-360",
+      "name": "Livox MID-360",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Livox MID-360",
+        "MID-360",
+        "Mid360",
+        "MID360"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.03022v1"
+      ],
+      "hardware_ids": [
+        "hardware:livox-mid-360"
+      ],
+      "context_terms": [
+        "Livox",
+        "LiDAR",
+        "lidar",
+        "sensor"
+      ]
+    },
+    {
+      "dictionary_id": "model:manus-gloves",
+      "name": "MANUS gloves",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "MANUS gloves"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2603.12263v1"
+      ],
+      "hardware_ids": [
+        "hardware:manus-gloves-70934cc7"
+      ]
+    },
+    {
+      "dictionary_id": "model:meta-quest-2",
+      "name": "Meta Quest 2",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Meta Quest 2",
+        "Quest 2",
+        "Oculus Quest 2"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.14930v1"
+      ],
+      "hardware_ids": [
+        "hardware:meta-quest-2"
+      ]
+    },
+    {
+      "dictionary_id": "model:nintendo-joy-con",
+      "name": "Nintendo Joy-Con",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Nintendo Joy-Con"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2503.05652v1"
+      ],
+      "hardware_ids": [
+        "hardware:nintendo-joy-con"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-gb200",
+      "name": "NVIDIA GB200",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GB200",
+        "256 × NVIDIA GB200 GPUs",
+        "GB200"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.16710v1"
+      ],
+      "hardware_ids": [
+        "hardware:nvidia-gb200"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "training",
+        "accelerator"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-h100",
+      "name": "NVIDIA H100",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA H100",
+        "8 × NVIDIA H100 GPUs",
+        "H100"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.06375v1"
+      ],
+      "hardware_ids": [
+        "hardware:nvidia-h100"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "training",
+        "accelerator"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-l40s",
+      "name": "NVIDIA L40S",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA L40S",
+        "L40S"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.17027v1"
+      ],
+      "hardware_ids": [
+        "hardware:nvidia-l40s"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "training",
+        "accelerator"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-rtx-4070-ti-workstation",
+      "name": "NVIDIA RTX 4070 Ti workstation",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA RTX 4070 Ti workstation",
+        "RTX 4070 Ti",
+        "RTX4070Ti",
+        "GeForce RTX 4070 Ti"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2604.27224v1"
+      ],
+      "hardware_ids": [
+        "hardware:nvidia-rtx-4070-ti-workstation"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-rtx-5090",
+      "name": "NVIDIA RTX 5090",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA RTX 5090",
+        "RTX 5090",
+        "RTX5090",
+        "GeForce RTX 5090"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.16837v1"
+      ],
+      "hardware_ids": [
+        "hardware:nvidia-rtx-5090"
+      ]
+    },
+    {
+      "dictionary_id": "model:oak-1-wide",
+      "name": "OAK-1-Wide",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "OAK-1-Wide"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.16710v1"
+      ],
+      "hardware_ids": [
+        "hardware:oak-1-wide"
+      ]
+    },
+    {
+      "dictionary_id": "model:oak-d-wide",
+      "name": "OAK-D-Wide",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "OAK-D-Wide"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.16710v1"
+      ],
+      "hardware_ids": [
+        "hardware:oak-d-wide"
+      ]
+    },
+    {
+      "dictionary_id": "model:pico-4-ultra",
+      "name": "PICO 4 Ultra",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "PICO 4 Ultra",
+        "PICO 4U (PICO 4 Ultra)",
+        "PICO4U VR kit"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2511.02832v1"
+      ],
+      "hardware_ids": [
+        "hardware:pico-4-ultra"
+      ]
+    },
+    {
+      "dictionary_id": "model:pico-motion-tracker",
+      "name": "PICO Motion Tracker",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "PICO Motion Tracker"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2511.02832v1"
+      ],
+      "hardware_ids": [
+        "hardware:pico-motion-tracker"
+      ]
+    },
+    {
+      "dictionary_id": "model:psyonic-ability-hand",
+      "name": "PSYONIC Ability Hand",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "PSYONIC Ability Hand"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.01518v1"
+      ],
+      "hardware_ids": [
+        "hardware:psyonic-ability-hand"
+      ]
+    },
+    {
+      "dictionary_id": "model:realsense-camera-family",
+      "name": "RealSense camera family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealSense camera family",
+        "RealSense",
+        "RealSense depth camera",
+        "RealSense camera",
+        "RealSense sensors"
+      ],
+      "source_urls": [
+        "https://www.realsenseai.com/products/",
+        "https://arxiv.org/html/2603.22263v1"
+      ],
+      "hardware_ids": [
+        "hardware:realsense-depth-camera-2acd7cff"
+      ],
+      "context_terms": [
+        "camera",
+        "cameras",
+        "sensor",
+        "sensors",
+        "RGB-D",
+        "depth",
+        "Intel"
+      ]
+    },
+    {
+      "dictionary_id": "model:realsense-t265",
+      "name": "RealSense T265",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "RealSense T265",
+        "Intel RealSense T265",
+        "T265"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2503.05652v1"
+      ],
+      "hardware_ids": [
+        "hardware:realsense-t265"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "sensor",
+        "tracking"
+      ]
+    },
+    {
+      "dictionary_id": "model:robotiq-2f-140",
+      "name": "Robotiq 2F-140",
+      "category": "gripper",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Robotiq 2F-140",
+        "2F-140",
+        "2F140"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2510.14930v1"
+      ],
+      "hardware_ids": [
+        "hardware:robotiq-2f-140"
+      ],
+      "context_terms": [
+        "Robotiq",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:robotiq-2f-85",
+      "name": "Robotiq 2F-85",
+      "category": "gripper",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Robotiq 2F-85",
+        "2F-85",
+        "2F85"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.07859v1"
+      ],
+      "hardware_ids": [
+        "hardware:robotiq-2f-85"
+      ],
+      "context_terms": [
+        "Robotiq",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:robotiq-ft300",
+      "name": "Robotiq FT300",
+      "category": "force_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Robotiq FT300",
+        "Robotiq FT 300",
+        "FT300"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.07859v1"
+      ],
+      "hardware_ids": [
+        "hardware:robotiq-ft300"
+      ],
+      "context_terms": [
+        "Robotiq",
+        "force",
+        "torque"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-4090",
+      "name": "NVIDIA GeForce RTX 4090",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 4090",
+        "GeForce RTX 4090",
+        "NVIDIA RTX 4090",
+        "RTX 4090",
+        "RTX4090",
+        "RTX-4090",
+        "RTX 4090 / Core i9-14900K desktop workstation"
+      ],
+      "source_urls": [
+        "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
+        "https://arxiv.org/html/2511.15200v1"
+      ],
+      "hardware_ids": [
+        "hardware:rtx-4090-core-i9-14900k-desktop-workstation"
+      ]
+    },
+    {
+      "dictionary_id": "model:sharpa-wave",
+      "name": "Sharpa Wave",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Sharpa Wave"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.16710v1"
+      ],
+      "hardware_ids": [
+        "hardware:sharpa-wave"
+      ]
+    },
+    {
+      "dictionary_id": "model:tesollo-dg-5f",
+      "name": "Tesollo DG-5F",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Tesollo DG-5F",
+        "DG-5F",
+        "DG5F"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2603.22263v1"
+      ],
+      "hardware_ids": [
+        "hardware:tesollo-dg-5f"
+      ],
+      "context_terms": [
+        "Tesollo",
+        "hand"
+      ]
+    },
+    {
+      "dictionary_id": "model:tienkung-2-0",
+      "name": "TienKung 2.0",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "TienKung 2.0"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.16837v1"
+      ],
+      "hardware_ids": [
+        "hardware:tienkung-2-0"
+      ]
+    },
+    {
+      "dictionary_id": "model:tienkung-3-0",
+      "name": "TienKung 3.0",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "TienKung 3.0"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.16837v1"
+      ],
+      "hardware_ids": [
+        "hardware:tienkung-3-0"
+      ]
+    },
+    {
+      "dictionary_id": "model:twins-isomorphic-robot",
+      "name": "TWINS Isomorphic Robot",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "TWINS Isomorphic Robot"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.01733v1"
+      ],
+      "hardware_ids": [
+        "hardware:twins-isomorphic-robot"
+      ]
+    },
+    {
+      "dictionary_id": "model:twins-wearable-dual-arm-device",
+      "name": "TWINS Wearable Dual-Arm Device",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "TWINS Wearable Dual-Arm Device"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.01733v1"
+      ],
+      "hardware_ids": [
+        "hardware:twins-wearable-dual-arm-device"
+      ]
+    },
+    {
+      "dictionary_id": "model:umi-handheld-interface-family",
+      "name": "UMI handheld interface family",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "UMI handheld grippers",
+        "Universal Manipulation Interface",
+        "UMI"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2402.10329",
+        "https://arxiv.org/html/2602.06643v1"
+      ],
+      "hardware_ids": [
+        "hardware:umi-handheld-grippers-302a7668"
+      ],
+      "context_terms": [
+        "handheld",
+        "hand-held",
+        "gripper",
+        "grippers",
+        "hardware",
+        "data collection",
+        "demonstration",
+        "interface",
+        "teleoperation"
+      ]
+    },
+    {
+      "dictionary_id": "model:umi-style-gripper",
+      "name": "UMI-style gripper",
+      "category": "gripper",
+      "identity_level": "family_only",
+      "aliases": [
+        "UMI-style gripper"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2604.27224v1"
+      ],
+      "hardware_ids": [
+        "hardware:umi-style-gripper-006656a2"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-d1",
+      "name": "Unitree D1",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree D1",
+        "D1 arm"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2604.27224v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-d1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "robot",
+        "humanoid",
+        "quadruped",
+        "arm",
+        "hand",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-dex1-1",
+      "name": "Unitree Dex1-1",
+      "category": "gripper",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree Dex1-1",
+        "Dex1-1",
+        "Dex 1-1"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2608.17027v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-dex1-1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "robot",
+        "humanoid",
+        "quadruped",
+        "arm",
+        "hand",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-dex3-1",
+      "name": "Unitree Dex3-1",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree Dex3-1",
+        "Unitree Dex31",
+        "Dex3-1",
+        "Dex 3-1"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2511.02832v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-dex3-1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "robot",
+        "humanoid",
+        "quadruped",
+        "arm",
+        "hand",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-dex3-family",
+      "name": "Unitree Dex3 hand family",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Unitree Dex3 hand family",
+        "Unitree Dex3",
+        "Dex3 hand",
+        "Dex3",
+        "Dex-3"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2602.10106v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-dex3-hand-702fbf98"
+      ],
+      "context_terms": [
+        "Unitree",
+        "hand",
+        "dexterous"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-g1",
+      "name": "Unitree G1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree G1",
+        "Unitree G1 model",
+        "Unitree G1 model (42-DoF configuration)",
+        "G1 humanoid",
+        "G1 robot",
+        "G1"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2511.15200v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-g1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "robot",
+        "humanoid",
+        "quadruped",
+        "arm",
+        "hand",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-go2",
+      "name": "Unitree Go2",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree Go2",
+        "Go2",
+        "Go 2"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2604.27224v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-go2"
+      ],
+      "context_terms": [
+        "Unitree",
+        "robot",
+        "humanoid",
+        "quadruped",
+        "arm",
+        "hand",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-h1-2",
+      "name": "Unitree H1-2",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree H1-2",
+        "H1-2",
+        "H1 2"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.01518v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-h1-2"
+      ],
+      "context_terms": [
+        "Unitree",
+        "robot",
+        "humanoid",
+        "quadruped",
+        "arm",
+        "hand",
+        "gripper"
+      ]
+    },
+    {
+      "dictionary_id": "model:unitree-sv1-25",
+      "name": "Unitree SV1-25",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree SV1-25"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2606.22174v1"
+      ],
+      "hardware_ids": [
+        "hardware:unitree-sv1-25"
+      ]
+    },
+    {
+      "dictionary_id": "model:vive-localization-base-stations",
+      "name": "VIVE localization base stations",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "VIVE localization base stations"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.05994v1"
+      ],
+      "hardware_ids": [
+        "hardware:vive-localization-base-stations-6c34df69"
+      ]
+    },
+    {
+      "dictionary_id": "model:interbotix-widowx-family",
+      "name": "Interbotix WidowX arm family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Interbotix WidowX arm family",
+        "WidowX arm",
+        "WidowX robot",
+        "WidowX 6-DoF arm",
+        "WidowX",
+        "Widow-X"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html",
+        "https://arxiv.org/html/2510.14930v1"
+      ],
+      "hardware_ids": [
+        "hardware:widowx-6-dof-arm-9906518f"
+      ],
+      "context_terms": [
+        "Interbotix",
+        "Trossen",
+        "arm",
+        "robot",
+        "manipulator"
+      ]
+    },
+    {
+      "dictionary_id": "model:wuji-hand-family",
+      "name": "WUJI Hand family (generation unspecified)",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "WUJI Hand family (generation unspecified)",
+        "WUJI Hand",
+        "Wuji hand",
+        "WUJI 20-DoF hand",
+        "WUJI 20 DoF hand",
+        "WUJI"
+      ],
+      "source_urls": [
+        "https://wuji.tech/en/hand",
+        "https://wuji.tech/en/hand2",
+        "https://arxiv.org/html/2606.23680v1"
+      ],
+      "hardware_ids": [
+        "hardware:wuji-20-dof-hand-81bcc59f"
+      ],
+      "context_terms": [
+        "hand",
+        "hands",
+        "dexterous",
+        "20-DoF",
+        "20 DoF"
+      ]
+    },
+    {
+      "dictionary_id": "model:xbox-controller",
+      "name": "Xbox controller",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Xbox controller"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.07859v1"
+      ],
+      "hardware_ids": [
+        "hardware:xbox-controller-08fc6a76"
+      ]
+    },
+    {
+      "dictionary_id": "model:zed-2",
+      "name": "ZED 2",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ZED 2",
+        "ZED2"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2503.05652v1"
+      ],
+      "hardware_ids": [
+        "hardware:zed-2"
+      ]
+    },
+    {
+      "dictionary_id": "model:stereolabs-zed-family",
+      "name": "Stereolabs ZED camera family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Stereolabs ZED camera family",
+        "ZED camera",
+        "ZED depth camera",
+        "ZED stereo camera",
+        "ZED"
+      ],
+      "source_urls": [
+        "https://support.stereolabs.com/hc/en-us/articles/24824513333015-Where-can-I-find-a-comparison-table-for-the-ZED-Stereo-Cameras",
+        "https://arxiv.org/html/2608.06375v1"
+      ],
+      "hardware_ids": [
+        "hardware:zed-depth-camera-9dd801aa"
+      ],
+      "context_terms": [
+        "Stereolabs",
+        "camera",
+        "cameras",
+        "stereo",
+        "depth"
+      ]
+    },
+    {
+      "dictionary_id": "model:zed-mini",
+      "name": "ZED Mini",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ZED Mini",
+        "ZED-Mini"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2511.02832v1"
+      ],
+      "hardware_ids": [
+        "hardware:zed-mini"
+      ]
+    },
+    {
+      "dictionary_id": "model:zed-x-mini",
+      "name": "ZED X Mini",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ZED X Mini",
+        "ZED-X-Mini"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.01518v1"
+      ],
+      "hardware_ids": [
+        "hardware:zed-x-mini"
+      ]
+    },
+    {
+      "dictionary_id": "model:nvidia-a100",
+      "name": "NVIDIA A100",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA A100",
+        "A100",
+        "A100 GPU",
+        "A100 GPUs"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://www.nvidia.com/en-us/data-center/a100/",
+        "https://arxiv.org/html/2604.27224v1",
+        "https://arxiv.org/html/2603.12263v1"
+      ],
+      "hardware_ids": [
+        "hardware:nvidia-a100-3169fc86",
+        "hardware:nvidia-a100-6097fb05"
+      ]
+    },
+    {
+      "dictionary_id": "model:flexitac",
+      "name": "FlexiTac tactile sensor",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "FlexiTac tactile sensor",
+        "FlexiTac",
+        "FlexiTac tactile array",
+        "FlexiTac tactile pad"
+      ],
+      "context_terms": [
+        "tactile",
+        "sensor",
+        "sensing",
+        "array",
+        "pad"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2604.27224v1",
+        "https://arxiv.org/html/2510.14930v1",
+        "https://arxiv.org/html/2607.10132v1"
+      ],
+      "hardware_ids": [
+        "hardware:flexitac-tactile-array-e9b03399",
+        "hardware:flexitac-tactile-pad-bb713f0f",
+        "hardware:flexitac-tactile-sensor-1a8d8562"
+      ]
+    },
+    {
+      "dictionary_id": "model:gopro-camera-family",
+      "name": "GoPro camera family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "GoPro camera family",
+        "GoPro camera",
+        "GoPro cameras",
+        "GoPro"
+      ],
+      "context_terms": [
+        "camera",
+        "cameras",
+        "video",
+        "recording",
+        "captured"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2606.22174v1",
+        "https://arxiv.org/html/2604.27224v1"
+      ],
+      "hardware_ids": [
+        "hardware:gopro-camera-352eb11f",
+        "hardware:gopro-camera-35d3fc2c"
+      ]
+    },
+    {
+      "dictionary_id": "model:inspire-hand-family",
+      "name": "Inspire Hand family",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Inspire Hand family",
+        "Inspire Hand",
+        "Inspire-Hand",
+        "Inspire dexterous hand",
+        "Inspire hands"
+      ],
+      "context_terms": [
+        "hand",
+        "hands",
+        "dexterous",
+        "Inspire"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2609.05994v1",
+        "https://arxiv.org/html/2510.03022v1"
+      ],
+      "hardware_ids": [
+        "hardware:inspire-dexterous-hand-b0c7f00f",
+        "hardware:inspire-hand-5c2e60ce"
+      ]
+    },
+    {
+      "dictionary_id": "model:pico-vr-headset-family",
+      "name": "PICO VR headset family",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "PICO VR headset family",
+        "PICO headset",
+        "PICO VR headset",
+        "PICO teleoperation device",
+        "PICO VR"
+      ],
+      "context_terms": [
+        "headset",
+        "VR",
+        "virtual reality",
+        "teleoperation"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2603.12263v1",
+        "https://arxiv.org/html/2609.03889v1",
+        "https://arxiv.org/html/2602.10106v1"
+      ],
+      "hardware_ids": [
+        "hardware:pico-headset-c8f22f23",
+        "hardware:pico-teleoperation-device-6eaceb9c",
+        "hardware:pico-vr-headset-36a276fd"
+      ]
+    },
+    {
+      "dictionary_id": "model:franka-research-3",
+      "name": "Franka Research 3",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Franka Research 3",
+        "Franka FR3",
+        "FR3",
+        "Franka Research3"
+      ],
+      "context_terms": [
+        "Franka",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://franka.de/franka-research-3"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:franka-arm-family",
+      "name": "Franka robot arm family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Franka robot arm family",
+        "Franka robot",
+        "Franka robotic arm",
+        "Franka arm",
+        "Franka Emika robot",
+        "Franka Emika"
+      ],
+      "context_terms": [
+        "arm",
+        "robot",
+        "manipulator",
+        "Franka"
+      ],
+      "source_urls": [
+        "https://franka.de/documents"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur3",
+      "name": "Universal Robots UR3",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR3",
+        "UR3",
+        "UR-3"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/PDF/Shared/service-manual_e-series/e-Series_Service_Manual_en.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur5",
+      "name": "Universal Robots UR5",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR5",
+        "UR5",
+        "UR-5"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/PDF/Shared/service-manual_e-series/e-Series_Service_Manual_en.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur10",
+      "name": "Universal Robots UR10",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR10",
+        "UR10",
+        "UR-10"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/PDF/Shared/service-manual_e-series/e-Series_Service_Manual_en.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur3e",
+      "name": "Universal Robots UR3e",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR3e",
+        "UR3e",
+        "UR-3e"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/HTML/MainLanding/Content/Landingpages/LandingSheets.htm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur5e",
+      "name": "Universal Robots UR5e",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR5e",
+        "UR5e",
+        "UR-5e"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/HTML/MainLanding/Content/Landingpages/LandingSheets.htm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur10e",
+      "name": "Universal Robots UR10e",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR10e",
+        "UR10e",
+        "UR-10e"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/HTML/MainLanding/Content/Landingpages/LandingSheets.htm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur16e",
+      "name": "Universal Robots UR16e",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR16e",
+        "UR16e",
+        "UR-16e"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/HTML/MainLanding/Content/Landingpages/LandingSheets.htm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur20",
+      "name": "Universal Robots UR20",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR20",
+        "UR20",
+        "UR-20"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/HTML/MainLanding/Content/Landingpages/LandingSheets.htm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:universal-robots-ur30",
+      "name": "Universal Robots UR30",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Universal Robots UR30",
+        "UR30",
+        "UR-30"
+      ],
+      "context_terms": [
+        "Universal Robots",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "gripper"
+      ],
+      "source_urls": [
+        "https://www.universal-robots.com/manuals/EN/HTML/MainLanding/Content/Landingpages/LandingSheets.htm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ufactory-xarm-family",
+      "name": "UFACTORY xArm family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "UFACTORY xArm family",
+        "xArm",
+        "x-Arm"
+      ],
+      "context_terms": [
+        "UFACTORY",
+        "arm",
+        "robot",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://docs.supportarticle.ufactory.cc/support_articles/hardware/the-difference-between-ufactory-xarm5-xarm6-and-xarm7.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ufactory-xarm-5",
+      "name": "UFACTORY xArm 5 Lite",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "UFACTORY xArm 5 Lite",
+        "xArm5",
+        "xArm 5",
+        "xArm-5",
+        "xArm 5 Lite",
+        "xArm5 Lite"
+      ],
+      "source_urls": [
+        "https://docs.supportarticle.ufactory.cc/support_articles/hardware/the-difference-between-ufactory-xarm5-xarm6-and-xarm7.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ufactory-xarm-6",
+      "name": "UFACTORY xArm 6",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "UFACTORY xArm 6",
+        "xArm6",
+        "xArm 6",
+        "xArm-6"
+      ],
+      "source_urls": [
+        "https://docs.supportarticle.ufactory.cc/support_articles/hardware/the-difference-between-ufactory-xarm5-xarm6-and-xarm7.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ufactory-xarm-7",
+      "name": "UFACTORY xArm 7",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "UFACTORY xArm 7",
+        "xArm7",
+        "xArm 7",
+        "xArm-7"
+      ],
+      "source_urls": [
+        "https://docs.supportarticle.ufactory.cc/support_articles/hardware/the-difference-between-ufactory-xarm5-xarm6-and-xarm7.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ufactory-lite-6",
+      "name": "UFACTORY Lite 6",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "UFACTORY Lite 6",
+        "Lite6",
+        "Lite 6 robot",
+        "Lite 6 arm"
+      ],
+      "source_urls": [
+        "https://www.ufactory.cc/wp-content/uploads/2023/05/Lite6-User-Manual-V2.0.0.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:interbotix-widowx-250s",
+      "name": "Interbotix WidowX-250 6DOF",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Interbotix WidowX-250 6DOF",
+        "WidowX 250s",
+        "WidowX-250s",
+        "WidowX 250 S",
+        "WX250S",
+        "WidowX-250 6DOF"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:interbotix-widowx-200",
+      "name": "Interbotix WidowX-200",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Interbotix WidowX-200",
+        "WidowX 200",
+        "WX200"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:interbotix-viperx-300",
+      "name": "Interbotix ViperX-300 family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Interbotix ViperX-300",
+        "ViperX 300",
+        "VX300"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:interbotix-viperx-300s",
+      "name": "Interbotix ViperX-300 6DOF",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Interbotix ViperX-300 6DOF",
+        "ViperX 300s",
+        "ViperX-300s",
+        "ViperX 300 S",
+        "VX300S"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:interbotix-pincherx-100",
+      "name": "Interbotix PincherX-100",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Interbotix PincherX-100",
+        "PincherX 100",
+        "PX100"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:aloha-widowx-250s",
+      "name": "ALOHA WidowX-250 6DOF arm",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ALOHA WidowX-250 6DOF arm",
+        "ALOHA WidowX-250s",
+        "ALOHA WidowX-250 6DOF",
+        "AWX250S"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/awx250s.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:interbotix-x-series",
+      "name": "Interbotix X-Series arms",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Interbotix X-Series arms",
+        "Interbotix X-Series",
+        "Interbotix X Series"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xsarms_docs/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kinova-gen3-lite",
+      "name": "Kinova Gen3 lite",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Kinova Gen3 lite",
+        "Gen3 lite",
+        "Gen 3 lite",
+        "Kinova Gen3-Lite"
+      ],
+      "source_urls": [
+        "https://www.kinovarobotics.com/uploads/Kinova_Onepager_Gen3-Lite_2024_EN_2024-07-11-171759_yykn.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kinova-jaco-family",
+      "name": "Kinova Jaco arm family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Kinova Jaco arm family",
+        "Kinova Jaco",
+        "JACO",
+        "Jaco arm"
+      ],
+      "context_terms": [
+        "Kinova",
+        "arm",
+        "robot",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://assistive.kinovarobotics.com/product/jaco-robotic-arm"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kinova-jaco2",
+      "name": "Kinova Jaco2",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Kinova Jaco2",
+        "Jaco2",
+        "Jaco 2",
+        "Jaco v2"
+      ],
+      "source_urls": [
+        "https://github.com/kinovarobotics/kinova-ros"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kinova-mico",
+      "name": "Kinova Mico",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Kinova Mico",
+        "Mico arm",
+        "Kinova Mico robot"
+      ],
+      "source_urls": [
+        "https://github.com/kinovarobotics/kinova-ros"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kuka-lbr-iiwa-family",
+      "name": "KUKA LBR iiwa family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "KUKA LBR iiwa family",
+        "KUKA LBR iiwa",
+        "KUKA iiwa",
+        "LBR iiwa",
+        "iiwa"
+      ],
+      "context_terms": [
+        "KUKA",
+        "LBR",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kuka-lbr-iiwa-7",
+      "name": "KUKA LBR iiwa 7 R800",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "KUKA LBR iiwa 7 R800",
+        "LBR iiwa 7 R800",
+        "iiwa 7",
+        "iiwa7"
+      ],
+      "source_urls": [
+        "https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kuka-lbr-iiwa-14",
+      "name": "KUKA LBR iiwa 14 R820",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "KUKA LBR iiwa 14 R820",
+        "LBR iiwa 14 R820",
+        "iiwa 14",
+        "iiwa14"
+      ],
+      "source_urls": [
+        "https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:rethink-baxter",
+      "name": "Rethink Robotics Baxter",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Rethink Robotics Baxter",
+        "Baxter robot",
+        "Baxter"
+      ],
+      "context_terms": [
+        "Rethink",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator",
+        "bimanual",
+        "dual-arm"
+      ],
+      "source_urls": [
+        "https://github.com/RethinkRobotics/baxter"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:rethink-sawyer",
+      "name": "Rethink Robotics Sawyer",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Rethink Robotics Sawyer",
+        "Sawyer robot",
+        "Sawyer"
+      ],
+      "context_terms": [
+        "Rethink",
+        "robot",
+        "robotic",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://github.com/RethinkRobotics/sawyer_robot"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:barrett-wam-family",
+      "name": "Barrett WAM arm family",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Barrett WAM arm family",
+        "Barrett WAM",
+        "WAM arm"
+      ],
+      "source_urls": [
+        "https://barrett.com/wam"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realman-rm65",
+      "name": "RealMan RM65 series",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealMan RM65 series",
+        "RealMan RM65",
+        "RM65"
+      ],
+      "context_terms": [
+        "RealMan",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://develop.realman-robotics.com/en/robot/ros/getStarted.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realman-rm75",
+      "name": "RealMan RM75 series",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealMan RM75 series",
+        "RealMan RM75",
+        "RM75"
+      ],
+      "context_terms": [
+        "RealMan",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://develop.realman-robotics.com/en/robot/ros/getStarted.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realman-rml63",
+      "name": "RealMan RML63 series",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealMan RML63 series",
+        "RealMan RML63",
+        "RML63"
+      ],
+      "context_terms": [
+        "RealMan",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://develop.realman-robotics.com/en/robot/ros/getStarted.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realman-eco63",
+      "name": "RealMan ECO63 series",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealMan ECO63 series",
+        "RealMan ECO63",
+        "ECO63"
+      ],
+      "context_terms": [
+        "RealMan",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://develop.realman-robotics.com/en/robot/ros/getStarted.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realman-eco65",
+      "name": "RealMan ECO65 series",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealMan ECO65 series",
+        "RealMan ECO65",
+        "ECO65"
+      ],
+      "context_terms": [
+        "RealMan",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://develop.realman-robotics.com/en/robot/ros/getStarted.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realman-gen72",
+      "name": "RealMan GEN72 series",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "RealMan GEN72 series",
+        "RealMan GEN72",
+        "GEN72"
+      ],
+      "context_terms": [
+        "RealMan",
+        "robot",
+        "arm",
+        "manipulator"
+      ],
+      "source_urls": [
+        "https://develop.realman-robotics.com/en/robot/ros/getStarted.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-z1",
+      "name": "Unitree Z1 arm",
+      "category": "robot_arm",
+      "identity_level": "family_only",
+      "aliases": [
+        "Unitree Z1 arm",
+        "Unitree Z1",
+        "Z1 arm",
+        "Z1 manipulator"
+      ],
+      "source_urls": [
+        "https://dev-z1.unitree.com/brief/parameter.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-h1",
+      "name": "Unitree H1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree H1",
+        "H1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "quadruped",
+        "humanoid",
+        "robot",
+        "legged"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/h1/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-go1",
+      "name": "Unitree Go1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree Go1",
+        "Go1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "quadruped",
+        "humanoid",
+        "robot",
+        "legged"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/go1/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-a1",
+      "name": "Unitree A1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree A1",
+        "A1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "quadruped",
+        "humanoid",
+        "robot",
+        "legged"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/A1/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-b1",
+      "name": "Unitree B1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree B1",
+        "B1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "quadruped",
+        "humanoid",
+        "robot",
+        "legged"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/b1/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-b2",
+      "name": "Unitree B2",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree B2",
+        "B2"
+      ],
+      "context_terms": [
+        "Unitree",
+        "quadruped",
+        "humanoid",
+        "robot",
+        "legged"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/b2/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-aliengo",
+      "name": "Unitree Aliengo",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Unitree Aliengo",
+        "Aliengo"
+      ],
+      "context_terms": [
+        "Unitree",
+        "quadruped",
+        "humanoid",
+        "robot",
+        "legged"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/aliengo/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:aloha-system",
+      "name": "ALOHA bimanual system",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "ALOHA bimanual system",
+        "ALOHA",
+        "ALOHA robot",
+        "ALOHA system"
+      ],
+      "context_terms": [
+        "robot",
+        "robotic",
+        "bimanual",
+        "teleoperation",
+        "manipulation"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2304.13705"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:aloha-2-system",
+      "name": "ALOHA 2 bimanual system",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ALOHA 2 bimanual system",
+        "ALOHA 2",
+        "ALOHA2",
+        "ALOHA-2"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2405.02292"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:mobile-aloha-system",
+      "name": "Mobile ALOHA system",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Mobile ALOHA system",
+        "Mobile ALOHA",
+        "Mobile-ALOHA"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2401.02117"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:hello-robot-stretch-family",
+      "name": "Hello Robot Stretch family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Hello Robot Stretch family",
+        "Hello Robot Stretch",
+        "Stretch robot",
+        "Stretch"
+      ],
+      "context_terms": [
+        "Hello Robot",
+        "mobile manipulator",
+        "mobile manipulation",
+        "RE1",
+        "RE2"
+      ],
+      "source_urls": [
+        "https://docs.hello-robot.com/",
+        "https://arxiv.org/abs/2109.10892"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:hello-robot-stretch-re1",
+      "name": "Hello Robot Stretch RE1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Hello Robot Stretch RE1",
+        "Stretch RE1",
+        "Stretch RE-1"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2109.10892"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:hello-robot-stretch-2",
+      "name": "Hello Robot Stretch 2",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Hello Robot Stretch 2",
+        "Stretch 2",
+        "Stretch RE2"
+      ],
+      "source_urls": [
+        "https://github.com/hello-robot"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:hello-robot-stretch-3",
+      "name": "Hello Robot Stretch 3",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Hello Robot Stretch 3",
+        "Stretch 3"
+      ],
+      "source_urls": [
+        "https://github.com/hello-robot"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:pal-tiago-family",
+      "name": "PAL Robotics TIAGo",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "PAL Robotics TIAGo",
+        "TIAGo",
+        "TIAGO robot"
+      ],
+      "context_terms": [
+        "PAL",
+        "robot",
+        "mobile",
+        "manipulator",
+        "platform"
+      ],
+      "source_urls": [
+        "https://pal-robotics.com/wp-content/uploads/2024/04/Datasheet-TIAGo.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:pal-tiago-dual",
+      "name": "PAL Robotics TIAGo++",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "PAL Robotics TIAGo++",
+        "TIAGo++",
+        "TIAGo dual"
+      ],
+      "source_urls": [
+        "https://docs.pal-robotics.com/tiago-dual/index.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:pal-talos",
+      "name": "PAL Robotics TALOS",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "PAL Robotics TALOS",
+        "TALOS humanoid",
+        "TALOS robot",
+        "TALOS"
+      ],
+      "context_terms": [
+        "PAL",
+        "humanoid",
+        "biped",
+        "robot"
+      ],
+      "source_urls": [
+        "https://pal-robotics.com/datasheet/talos/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:anybotics-anymal-family",
+      "name": "ANYbotics ANYmal family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "ANYbotics ANYmal family",
+        "ANYmal",
+        "ANYmal robot"
+      ],
+      "source_urls": [
+        "https://www.anybotics.com/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:anybotics-anymal-c",
+      "name": "ANYbotics ANYmal C",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ANYbotics ANYmal C",
+        "ANYmal C",
+        "ANYmal-C"
+      ],
+      "source_urls": [
+        "https://www.anybotics.com/news/the-next-step-in-robotic-industrial-inspection/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:boston-dynamics-spot",
+      "name": "Boston Dynamics Spot",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Boston Dynamics Spot",
+        "Spot robot",
+        "Spot quadruped",
+        "Spot"
+      ],
+      "context_terms": [
+        "Boston Dynamics",
+        "quadruped",
+        "legged",
+        "mobile robot"
+      ],
+      "source_urls": [
+        "https://support.bostondynamics.com/s/spot"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:boston-dynamics-atlas-family",
+      "name": "Boston Dynamics Atlas family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Boston Dynamics Atlas family",
+        "Boston Dynamics Atlas",
+        "Atlas humanoid",
+        "Atlas robot",
+        "Atlas"
+      ],
+      "context_terms": [
+        "Boston Dynamics",
+        "humanoid",
+        "biped",
+        "hydraulic"
+      ],
+      "source_urls": [
+        "https://bostondynamics.com/blog/electric-new-era-for-atlas/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:agility-digit-family",
+      "name": "Agility Robotics Digit",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Agility Robotics Digit",
+        "Agility Digit",
+        "Digit humanoid",
+        "Digit robot",
+        "Digit"
+      ],
+      "context_terms": [
+        "Agility",
+        "biped",
+        "humanoid",
+        "legged",
+        "locomotion",
+        "walking"
+      ],
+      "source_urls": [
+        "https://www.agilityrobotics.com/content/meet-digit-the-newest-robot-from-agility-robotics"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:agility-cassie",
+      "name": "Agility Robotics Cassie",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Agility Robotics Cassie",
+        "Cassie",
+        "Cassie robot"
+      ],
+      "context_terms": [
+        "Agility",
+        "biped",
+        "robot",
+        "legged",
+        "locomotion",
+        "walking"
+      ],
+      "source_urls": [
+        "https://www.agilityrobotics.com/content/digit-attends-ces-2020"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:mit-mini-cheetah",
+      "name": "MIT Mini Cheetah",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "MIT Mini Cheetah",
+        "Mini Cheetah",
+        "Mini-Cheetah"
+      ],
+      "source_urls": [
+        "https://news.mit.edu/2019/mit-mini-cheetah-first-four-legged-robot-to-backflip-0304"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:clearpath-jackal",
+      "name": "Clearpath Jackal",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath Jackal",
+        "Jackal robot",
+        "Jackal UGV",
+        "Jackal"
+      ],
+      "context_terms": [
+        "Clearpath",
+        "robot",
+        "UGV",
+        "unmanned",
+        "ground",
+        "mobile",
+        "wheeled"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/robots/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:clearpath-husky",
+      "name": "Clearpath Husky",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath Husky",
+        "Husky robot",
+        "Husky UGV",
+        "Husky"
+      ],
+      "context_terms": [
+        "Clearpath",
+        "robot",
+        "UGV",
+        "unmanned",
+        "ground",
+        "mobile",
+        "wheeled"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/robots/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:clearpath-warthog",
+      "name": "Clearpath Warthog",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath Warthog",
+        "Warthog robot",
+        "Warthog UGV",
+        "Warthog"
+      ],
+      "context_terms": [
+        "Clearpath",
+        "robot",
+        "UGV",
+        "unmanned",
+        "ground",
+        "mobile",
+        "wheeled"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/robots/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:clearpath-ridgeback",
+      "name": "Clearpath Ridgeback",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath Ridgeback",
+        "Ridgeback robot",
+        "Ridgeback UGV",
+        "Ridgeback"
+      ],
+      "context_terms": [
+        "Clearpath",
+        "robot",
+        "UGV",
+        "unmanned",
+        "ground",
+        "mobile",
+        "wheeled"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/robots/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:clearpath-dingo",
+      "name": "Clearpath Dingo",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath Dingo",
+        "Dingo robot",
+        "Dingo UGV",
+        "Dingo"
+      ],
+      "context_terms": [
+        "Clearpath",
+        "robot",
+        "UGV",
+        "unmanned",
+        "ground",
+        "mobile",
+        "wheeled"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/robots/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:clearpath-boxer",
+      "name": "Clearpath Boxer",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath Boxer",
+        "Boxer robot",
+        "Boxer UGV",
+        "Boxer"
+      ],
+      "context_terms": [
+        "Clearpath",
+        "robot",
+        "UGV",
+        "unmanned",
+        "ground",
+        "mobile",
+        "wheeled"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/robots/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot-family",
+      "name": "TurtleBot family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "TurtleBot family",
+        "TurtleBot",
+        "TurtleBot robot"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/learning_platforms/turtlebot4/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot3-family",
+      "name": "ROBOTIS TurtleBot3",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "ROBOTIS TurtleBot3",
+        "TurtleBot3",
+        "TurtleBot 3",
+        "TB3"
+      ],
+      "context_terms": [
+        "TurtleBot",
+        "ROBOTIS",
+        "robot",
+        "mobile"
+      ],
+      "source_urls": [
+        "https://emanual.robotis.com/docs/en/platform/turtlebot3/features/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot3-burger",
+      "name": "ROBOTIS TurtleBot3 Burger",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ROBOTIS TurtleBot3 Burger",
+        "TurtleBot3 Burger",
+        "TurtleBot 3 Burger"
+      ],
+      "source_urls": [
+        "https://emanual.robotis.com/docs/en/platform/turtlebot3/export_turtlebot3_model/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot3-waffle",
+      "name": "ROBOTIS TurtleBot3 Waffle",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ROBOTIS TurtleBot3 Waffle",
+        "TurtleBot3 Waffle",
+        "TurtleBot 3 Waffle"
+      ],
+      "source_urls": [
+        "https://emanual.robotis.com/docs/en/platform/turtlebot3/export_turtlebot3_model/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot3-waffle-pi",
+      "name": "ROBOTIS TurtleBot3 Waffle Pi",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ROBOTIS TurtleBot3 Waffle Pi",
+        "TurtleBot3 Waffle Pi",
+        "TurtleBot 3 Waffle Pi"
+      ],
+      "source_urls": [
+        "https://emanual.robotis.com/docs/en/platform/turtlebot3/export_turtlebot3_model/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot4",
+      "name": "Clearpath TurtleBot 4",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Clearpath TurtleBot 4",
+        "TurtleBot4",
+        "TurtleBot 4"
+      ],
+      "source_urls": [
+        "https://docs.clearpathrobotics.com/docs_robots/learning_platforms/turtlebot4/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:bitcraze-crazyflie-family",
+      "name": "Bitcraze Crazyflie family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Bitcraze Crazyflie family",
+        "Crazyflie"
+      ],
+      "source_urls": [
+        "https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:bitcraze-crazyflie-2-0",
+      "name": "Bitcraze Crazyflie 2.0",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Bitcraze Crazyflie 2.0",
+        "Crazyflie 2.0"
+      ],
+      "source_urls": [
+        "https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:bitcraze-crazyflie-2-1",
+      "name": "Bitcraze Crazyflie 2.1",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Bitcraze Crazyflie 2.1",
+        "Crazyflie 2.1"
+      ],
+      "source_urls": [
+        "https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:bitcraze-crazyflie-2-1-brushless",
+      "name": "Bitcraze Crazyflie 2.1 Brushless",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Bitcraze Crazyflie 2.1 Brushless",
+        "Crazyflie 2.1 Brushless"
+      ],
+      "source_urls": [
+        "https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:bluerobotics-bluerov2",
+      "name": "Blue Robotics BlueROV2",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Blue Robotics BlueROV2",
+        "BlueROV2",
+        "BlueROV 2"
+      ],
+      "source_urls": [
+        "https://bluerobotics.com/store/rov/bluerov2/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-h200",
+      "name": "NVIDIA H200",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA H200",
+        "H200"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-b200",
+      "name": "NVIDIA B200",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA B200",
+        "B200"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-gh200",
+      "name": "NVIDIA GH200",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA GH200",
+        "GH200"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-a40",
+      "name": "NVIDIA A40",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA A40",
+        "A40"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-a10",
+      "name": "NVIDIA A10",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA A10",
+        "A10"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-a30",
+      "name": "NVIDIA A30",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA A30",
+        "A30"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-l4",
+      "name": "NVIDIA L4",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA L4",
+        "L4"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-l40",
+      "name": "NVIDIA L40",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA L40",
+        "L40"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-t4",
+      "name": "NVIDIA T4",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA T4",
+        "T4"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "graphics",
+        "training",
+        "inference",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-3090",
+      "name": "NVIDIA GeForce RTX 3090",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 3090",
+        "RTX 3090",
+        "RTX3090",
+        "GeForce RTX 3090"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-3090-ti",
+      "name": "NVIDIA GeForce RTX 3090 Ti",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 3090 Ti",
+        "RTX 3090 Ti",
+        "RTX3090 Ti",
+        "GeForce RTX 3090 Ti"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-3080",
+      "name": "NVIDIA GeForce RTX 3080",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 3080",
+        "RTX 3080",
+        "RTX3080",
+        "GeForce RTX 3080"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-3080-ti",
+      "name": "NVIDIA GeForce RTX 3080 Ti",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 3080 Ti",
+        "RTX 3080 Ti",
+        "RTX3080 Ti",
+        "GeForce RTX 3080 Ti"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-3070",
+      "name": "NVIDIA GeForce RTX 3070",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 3070",
+        "RTX 3070",
+        "RTX3070",
+        "GeForce RTX 3070"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-3060",
+      "name": "NVIDIA GeForce RTX 3060",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 3060",
+        "RTX 3060",
+        "RTX3060",
+        "GeForce RTX 3060"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-4080",
+      "name": "NVIDIA GeForce RTX 4080",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 4080",
+        "RTX 4080",
+        "RTX4080",
+        "GeForce RTX 4080"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-4070",
+      "name": "NVIDIA GeForce RTX 4070",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 4070",
+        "RTX 4070",
+        "RTX4070",
+        "GeForce RTX 4070"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-2080-ti",
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 2080 Ti",
+        "RTX 2080 Ti",
+        "RTX2080 Ti",
+        "GeForce RTX 2080 Ti"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-2080",
+      "name": "NVIDIA GeForce RTX 2080",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 2080",
+        "RTX 2080",
+        "RTX2080",
+        "GeForce RTX 2080"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-2070",
+      "name": "NVIDIA GeForce RTX 2070",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 2070",
+        "RTX 2070",
+        "RTX2070",
+        "GeForce RTX 2070"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-geforce-rtx-2060",
+      "name": "NVIDIA GeForce RTX 2060",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA GeForce RTX 2060",
+        "RTX 2060",
+        "RTX2060",
+        "GeForce RTX 2060"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-rtx-a6000",
+      "name": "NVIDIA RTX A6000",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA RTX A6000",
+        "RTX A6000"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-rtx-a5000",
+      "name": "NVIDIA RTX A5000",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA RTX A5000",
+        "RTX A5000"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-rtx-a4000",
+      "name": "NVIDIA RTX A4000",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA RTX A4000",
+        "RTX A4000"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-rtx-6000-ada",
+      "name": "NVIDIA RTX 6000 Ada",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA RTX 6000 Ada",
+        "RTX 6000 Ada"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-quadro-rtx-6000",
+      "name": "NVIDIA Quadro RTX 6000",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA Quadro RTX 6000",
+        "Quadro RTX 6000"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-titan-rtx",
+      "name": "NVIDIA TITAN RTX",
+      "category": "compute_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "NVIDIA TITAN RTX",
+        "TITAN RTX"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/cuda/gpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-agx-orin",
+      "name": "NVIDIA Jetson AGX Orin",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson AGX Orin",
+        "Jetson AGX Orin",
+        "AGX Orin"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-orin-nx",
+      "name": "NVIDIA Jetson Orin NX",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson Orin NX",
+        "Jetson Orin NX",
+        "Orin NX"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-orin-nano",
+      "name": "NVIDIA Jetson Orin Nano",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson Orin Nano",
+        "Jetson Orin Nano",
+        "Orin Nano"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-agx-xavier",
+      "name": "NVIDIA Jetson AGX Xavier",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson AGX Xavier",
+        "Jetson AGX Xavier",
+        "AGX Xavier"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-xavier-nx",
+      "name": "NVIDIA Jetson Xavier NX",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson Xavier NX",
+        "Jetson Xavier NX",
+        "Xavier NX"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-tx2",
+      "name": "NVIDIA Jetson TX2",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson TX2",
+        "Jetson TX2",
+        "TX2"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-nano",
+      "name": "NVIDIA Jetson Nano",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson Nano",
+        "Jetson Nano",
+        "Nano"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Jetson",
+        "compute",
+        "GPU",
+        "onboard",
+        "on-board",
+        "edge",
+        "embedded",
+        "inference"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-orin-family",
+      "name": "NVIDIA Jetson Orin family",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson Orin family",
+        "Jetson Orin"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-jetson-family",
+      "name": "NVIDIA Jetson family",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA Jetson family",
+        "NVIDIA Jetson",
+        "Jetson module",
+        "Jetson platform",
+        "Jetson"
+      ],
+      "source_urls": [
+        "https://developer.nvidia.com/embedded/jetson-modules"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:google-tpu-v3",
+      "name": "Google Cloud TPU v3",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Google Cloud TPU v3",
+        "TPU v3",
+        "TPUv3",
+        "TPU-v3"
+      ],
+      "source_urls": [
+        "https://cloud.google.com/kubernetes-engine/docs/concepts/plan-tpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:google-tpu-v4",
+      "name": "Google Cloud TPU v4",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Google Cloud TPU v4",
+        "TPU v4",
+        "TPUv4",
+        "TPU-v4"
+      ],
+      "source_urls": [
+        "https://cloud.google.com/kubernetes-engine/docs/concepts/plan-tpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:google-tpu-v5e",
+      "name": "Google Cloud TPU v5e",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Google Cloud TPU v5e",
+        "TPU v5e",
+        "TPUv5e",
+        "TPU-v5e"
+      ],
+      "source_urls": [
+        "https://cloud.google.com/kubernetes-engine/docs/concepts/plan-tpus"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:google-tpu-family",
+      "name": "Google TPU family",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Google TPU family",
+        "Google TPU",
+        "Cloud TPU",
+        "TPU"
+      ],
+      "context_terms": [
+        "Google",
+        "Cloud",
+        "training",
+        "inference",
+        "accelerator",
+        "tensor processing",
+        "TPUs"
+      ],
+      "source_urls": [
+        "https://cloud.google.com/tpu?hl=en"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:wonik-allegro-hand-family",
+      "name": "Wonik Allegro Hand family",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Wonik Allegro Hand family",
+        "Allegro Hand",
+        "Allegro hand",
+        "Allegro"
+      ],
+      "context_terms": [
+        "hand",
+        "hands",
+        "dexterous",
+        "Wonik",
+        "finger"
+      ],
+      "source_urls": [
+        "https://www.allegrohand.com/sub/product/p.php?idx=1"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:wonik-allegro-hand-v4",
+      "name": "Wonik Allegro Hand V4",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Wonik Allegro Hand V4",
+        "Allegro Hand V4",
+        "Allegro V4",
+        "Allegro hand 4.0"
+      ],
+      "source_urls": [
+        "https://www.allegrohand.com/sub/product/p.php?idx=1"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:leap-hand",
+      "name": "LEAP Hand",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "LEAP Hand",
+        "LEAP hand",
+        "LEAP-Hand"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2309.06440"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:shadow-dexterous-hand-family",
+      "name": "Shadow Dexterous Hand family",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Shadow Dexterous Hand family",
+        "Shadow Dexterous Hand",
+        "Shadow Hand",
+        "Shadow robot hand"
+      ],
+      "source_urls": [
+        "https://shadowrobot.com/dexterous-hand-series/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:shadow-dex-ee",
+      "name": "Shadow DEX-EE",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Shadow DEX-EE",
+        "DEX-EE",
+        "DexEE"
+      ],
+      "source_urls": [
+        "https://shadowrobot.com/shadow-hand-overview-the-most-robust-dexterous-robot-hand-on-the-market/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:schunk-svh",
+      "name": "SCHUNK SVH",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "SCHUNK SVH",
+        "Schunk SVH",
+        "SVH hand"
+      ],
+      "source_urls": [
+        "https://schunk.com/de/de/greiftechnik/spezialgreifer/svh/svh-rechte-hand/p/000000000001545592"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:barrett-hand-family",
+      "name": "BarrettHand family",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "BarrettHand family",
+        "BarrettHand",
+        "Barrett hand"
+      ],
+      "source_urls": [
+        "https://barrett.com/video/v/barretthand-grasping-on-a-wam"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:trifinger-family",
+      "name": "TriFinger platform family",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "TriFinger platform family",
+        "TriFinger",
+        "TriFinger robot"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2008.03596",
+        "https://open-dynamic-robot-initiative.github.io/trifinger_docs/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:inspire-rh56dfx",
+      "name": "Inspire RH56DFX hand series",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Inspire RH56DFX hand series",
+        "RH56DFX"
+      ],
+      "source_urls": [
+        "https://www.inspire-robots.com/dexterous%20hands/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:inspire-rh56bfx",
+      "name": "Inspire RH56BFX hand series",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Inspire RH56BFX hand series",
+        "RH56BFX"
+      ],
+      "source_urls": [
+        "https://www.inspire-robots.com/dexterous%20hands/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:inspire-rh56e2",
+      "name": "Inspire RH56E2 hand series",
+      "category": "dexterous_hand",
+      "identity_level": "family_only",
+      "aliases": [
+        "Inspire RH56E2 hand series",
+        "RH56E2"
+      ],
+      "source_urls": [
+        "https://www.inspire-robots.com/dexterous%20hands/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:unitree-dex1-family",
+      "name": "Unitree Dex1 gripper family",
+      "category": "gripper",
+      "identity_level": "family_only",
+      "aliases": [
+        "Unitree Dex1 gripper family",
+        "Unitree Dex1",
+        "Dex1 gripper",
+        "Dex1"
+      ],
+      "context_terms": [
+        "Unitree",
+        "gripper",
+        "hand"
+      ],
+      "source_urls": [
+        "https://www.unitree.com/Dex1-1/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:digit-tactile-sensor",
+      "name": "DIGIT tactile sensor",
+      "category": "tactile_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "DIGIT tactile sensor",
+        "DIGIT sensor",
+        "DIGIT tactile",
+        "DIGIT"
+      ],
+      "context_terms": [
+        "tactile",
+        "visuotactile",
+        "vision-based tactile",
+        "sensor",
+        "sensing",
+        "GelSight",
+        "Meta"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2005.14679"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:gelsight-family",
+      "name": "GelSight tactile sensor family",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "GelSight tactile sensor family",
+        "GelSight",
+        "GelSight sensor"
+      ],
+      "context_terms": [
+        "tactile",
+        "sensor",
+        "sensing",
+        "gel",
+        "contact"
+      ],
+      "source_urls": [
+        "https://www.gelsight.com/products/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:gelslim-family",
+      "name": "GelSlim tactile sensor family",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "GelSlim tactile sensor family",
+        "GelSlim",
+        "GelSlim sensor"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/1803.00628"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:gelslim-3",
+      "name": "GelSlim 3.0",
+      "category": "tactile_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "GelSlim 3.0",
+        "GelSlim3.0",
+        "GelSlim 3",
+        "GelSlim-3.0"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2103.12269"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:gelslim-4",
+      "name": "GelSlim 4.0",
+      "category": "tactile_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "GelSlim 4.0",
+        "GelSlim4.0",
+        "GelSlim 4",
+        "GelSlim-4.0"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2409.19770"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:tactip-family",
+      "name": "TacTip tactile sensor family",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "TacTip tactile sensor family",
+        "TacTip",
+        "TacTip sensor"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2105.14455"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:syntouch-biotac-family",
+      "name": "SynTouch BioTac family",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "SynTouch BioTac family",
+        "BioTac",
+        "BioTac sensor"
+      ],
+      "source_urls": [
+        "https://www.syntouchllc.com/Products/BioTac/_media/BioTac_Brochure.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:xela-uskin-family",
+      "name": "XELA uSkin family",
+      "category": "tactile_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "XELA uSkin family",
+        "uSkin",
+        "uSkin sensor"
+      ],
+      "source_urls": [
+        "https://xelarobotics.com/products/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realsense-d415",
+      "name": "RealSense D415",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "RealSense D415",
+        "Intel RealSense D415",
+        "D415"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "depth",
+        "RGB-D",
+        "sensor"
+      ],
+      "source_urls": [
+        "https://www.realsenseai.com/regulatory-information/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realsense-d435",
+      "name": "RealSense D435",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "RealSense D435",
+        "Intel RealSense D435",
+        "D435"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "depth",
+        "RGB-D",
+        "sensor"
+      ],
+      "source_urls": [
+        "https://www.realsenseai.com/regulatory-information/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:realsense-l515",
+      "name": "RealSense L515",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "RealSense L515",
+        "Intel RealSense L515",
+        "L515"
+      ],
+      "context_terms": [
+        "RealSense",
+        "Intel",
+        "camera",
+        "depth",
+        "RGB-D",
+        "sensor"
+      ],
+      "source_urls": [
+        "https://www.realsenseai.com/regulatory-information/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:stereolabs-zed-2i",
+      "name": "Stereolabs ZED 2i",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Stereolabs ZED 2i",
+        "ZED 2i"
+      ],
+      "source_urls": [
+        "https://support.stereolabs.com/hc/en-us/articles/24824513333015-Where-can-I-find-a-comparison-table-for-the-ZED-Stereo-Cameras"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:stereolabs-zed-x",
+      "name": "Stereolabs ZED X",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Stereolabs ZED X",
+        "ZED X"
+      ],
+      "source_urls": [
+        "https://support.stereolabs.com/hc/en-us/articles/24824513333015-Where-can-I-find-a-comparison-table-for-the-ZED-Stereo-Cameras"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:azure-kinect-dk",
+      "name": "Microsoft Azure Kinect DK",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Microsoft Azure Kinect DK",
+        "Azure Kinect",
+        "Azure Kinect DK"
+      ],
+      "source_urls": [
+        "https://learn.microsoft.com/en-us/previous-versions/azure/kinect-dk/hardware-specification"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:kinect-family",
+      "name": "Microsoft Kinect family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Microsoft Kinect family",
+        "Kinect",
+        "Kinect camera",
+        "Kinect sensor"
+      ],
+      "context_terms": [
+        "Microsoft",
+        "camera",
+        "sensor",
+        "RGB-D",
+        "depth",
+        "motion capture"
+      ],
+      "source_urls": [
+        "https://learn.microsoft.com/en-us/previous-versions/azure/kinect-dk/hardware-specification"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:optitrack-system-family",
+      "name": "OptiTrack motion capture family",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "OptiTrack motion capture family",
+        "OptiTrack",
+        "Optitrack motion capture"
+      ],
+      "context_terms": [
+        "motion capture",
+        "mocap",
+        "tracking",
+        "tracker",
+        "camera",
+        "ground truth",
+        "reference"
+      ],
+      "source_urls": [
+        "https://www.optitrack.com/cameras?cat=cameras-prime-category"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:vicon-system-family",
+      "name": "Vicon motion capture family",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Vicon motion capture family",
+        "Vicon",
+        "VICON motion capture"
+      ],
+      "context_terms": [
+        "motion capture",
+        "mocap",
+        "tracking",
+        "tracker",
+        "camera",
+        "ground truth",
+        "reference"
+      ],
+      "source_urls": [
+        "https://www.vicon.com/hardware/cameras/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:xsens-mocap-family",
+      "name": "Xsens motion capture family",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Xsens motion capture family",
+        "Xsens",
+        "Xsens MVN"
+      ],
+      "context_terms": [
+        "motion capture",
+        "mocap",
+        "sensor",
+        "suit",
+        "inertial",
+        "wearable",
+        "tracker",
+        "hardware"
+      ],
+      "source_urls": [
+        "https://www.xsens.com/get-started/motion-capture"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:xsens-mvn-link",
+      "name": "Xsens MVN Link",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Xsens MVN Link",
+        "MVN Link"
+      ],
+      "source_urls": [
+        "https://www.xsens.com/get-started/motion-capture"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:xsens-awinda",
+      "name": "Xsens Awinda",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Xsens Awinda",
+        "MVN Awinda",
+        "Awinda"
+      ],
+      "source_urls": [
+        "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:apple-vision-pro",
+      "name": "Apple Vision Pro",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Apple Vision Pro",
+        "Vision Pro",
+        "Apple VisionPro"
+      ],
+      "source_urls": [
+        "https://www.apple.com/apple-vision-pro/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:meta-quest-3",
+      "name": "Meta Quest 3",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Meta Quest 3",
+        "Quest 3",
+        "Oculus Quest 3"
+      ],
+      "source_urls": [
+        "https://www.meta.com/pl/en/quest/quest-3/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:meta-quest-pro",
+      "name": "Meta Quest Pro",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Meta Quest Pro",
+        "Quest Pro"
+      ],
+      "source_urls": [
+        "https://www.meta.com/quest/quest-pro/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:htc-vive-pro-2",
+      "name": "HTC VIVE Pro 2",
+      "category": "data_collection",
+      "identity_level": "model_specified",
+      "aliases": [
+        "HTC VIVE Pro 2",
+        "VIVE Pro 2",
+        "Vive Pro2"
+      ],
+      "source_urls": [
+        "https://www.vive.com/us/product/vive-pro2/overview/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:nvidia-v100",
+      "name": "NVIDIA V100",
+      "category": "compute_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "NVIDIA V100",
+        "Tesla V100",
+        "V100"
+      ],
+      "context_terms": [
+        "NVIDIA",
+        "Tesla",
+        "GPU",
+        "GPUs",
+        "CUDA",
+        "training",
+        "accelerator"
+      ],
+      "source_urls": [
+        "https://www.nvidia.com/en-gb/data-center/tesla-v100/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ati-nano17",
+      "name": "ATI Nano17",
+      "category": "force_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ATI Nano17",
+        "Nano17",
+        "Nano 17"
+      ],
+      "source_urls": [
+        "https://www.ati-ia.com/products/ft/ft_models.aspx?id=Nano17"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ati-mini45",
+      "name": "ATI Mini45",
+      "category": "force_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ATI Mini45",
+        "Mini45",
+        "Mini 45"
+      ],
+      "source_urls": [
+        "https://www.ati-ia.com/products/ft/ft_models.aspx?id=Mini45"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ati-force-torque-family",
+      "name": "ATI force/torque sensor family",
+      "category": "force_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "ATI force/torque sensor family",
+        "ATI force/torque sensor",
+        "ATI force torque sensor",
+        "ATI F/T sensor"
+      ],
+      "source_urls": [
+        "https://www.ati-ia.com/Library/documents/ATI_FT_Catalog.pdf"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:livox-avia",
+      "name": "Livox Avia",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Livox Avia",
+        "Avia LiDAR"
+      ],
+      "context_terms": [
+        "LiDAR",
+        "lidar",
+        "sensor",
+        "Hesai",
+        "Livox",
+        "Velodyne"
+      ],
+      "source_urls": [
+        "https://www.livoxtech.com/avia"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:livox-mid-70",
+      "name": "Livox Mid-70",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Livox Mid-70",
+        "Mid-70",
+        "MID70"
+      ],
+      "context_terms": [
+        "LiDAR",
+        "lidar",
+        "sensor",
+        "Hesai",
+        "Livox",
+        "Velodyne"
+      ],
+      "source_urls": [
+        "https://www.livoxtech.com/mid-70"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:velodyne-vlp-16",
+      "name": "Velodyne VLP-16",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Velodyne VLP-16",
+        "VLP-16",
+        "VLP16",
+        "Velodyne Puck"
+      ],
+      "context_terms": [
+        "LiDAR",
+        "lidar",
+        "sensor",
+        "Hesai",
+        "Livox",
+        "Velodyne"
+      ],
+      "source_urls": [
+        "https://ouster.com/products/hardware/vlp-16"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:hesai-xt32",
+      "name": "Hesai XT32",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Hesai XT32",
+        "Pandar XT32",
+        "PandarXT-32",
+        "XT32"
+      ],
+      "context_terms": [
+        "LiDAR",
+        "lidar",
+        "sensor",
+        "Hesai",
+        "Livox",
+        "Velodyne"
+      ],
+      "source_urls": [
+        "https://www.hesaitech.com/product/xt16-32-32m/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:hesai-xt16",
+      "name": "Hesai XT16",
+      "category": "vision_sensor",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Hesai XT16",
+        "Pandar XT16",
+        "PandarXT-16",
+        "XT16"
+      ],
+      "context_terms": [
+        "LiDAR",
+        "lidar",
+        "sensor",
+        "Hesai",
+        "Livox",
+        "Velodyne"
+      ],
+      "source_urls": [
+        "https://www.hesaitech.com/product/xt16-32-32m/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ouster-os0",
+      "name": "Ouster OS0 family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Ouster OS0 family",
+        "Ouster OS0",
+        "OS0",
+        "OS-0"
+      ],
+      "context_terms": [
+        "Ouster",
+        "lidar",
+        "sensor",
+        "point cloud"
+      ],
+      "source_urls": [
+        "https://investors.ouster.com/static-files/fde93c7d-9be6-4bdc-90ae-9faee171f15e"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ouster-os1",
+      "name": "Ouster OS1 family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Ouster OS1 family",
+        "Ouster OS1",
+        "OS1",
+        "OS-1"
+      ],
+      "context_terms": [
+        "Ouster",
+        "lidar",
+        "sensor",
+        "point cloud"
+      ],
+      "source_urls": [
+        "https://investors.ouster.com/static-files/fde93c7d-9be6-4bdc-90ae-9faee171f15e"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ouster-os2",
+      "name": "Ouster OS2 family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Ouster OS2 family",
+        "Ouster OS2",
+        "OS2",
+        "OS-2"
+      ],
+      "context_terms": [
+        "Ouster",
+        "lidar",
+        "sensor",
+        "point cloud"
+      ],
+      "source_urls": [
+        "https://investors.ouster.com/static-files/fde93c7d-9be6-4bdc-90ae-9faee171f15e"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ouster-os-family",
+      "name": "Ouster OS LiDAR family",
+      "category": "vision_sensor",
+      "identity_level": "family_only",
+      "aliases": [
+        "Ouster OS LiDAR family",
+        "Ouster OS series",
+        "Ouster LiDAR"
+      ],
+      "source_urls": [
+        "https://investors.ouster.com/static-files/fde93c7d-9be6-4bdc-90ae-9faee171f15e"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ryze-tello",
+      "name": "Ryze Tello",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Ryze Tello",
+        "DJI Tello",
+        "Tello drone",
+        "Tello"
+      ],
+      "context_terms": [
+        "Ryze",
+        "DJI",
+        "drone",
+        "quadrotor",
+        "UAV",
+        "aerial"
+      ],
+      "source_urls": [
+        "https://www.ryzerobotics.com/tello"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:ryze-tello-edu",
+      "name": "Ryze Tello EDU",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "Ryze Tello EDU",
+        "Tello EDU",
+        "DJI Tello EDU"
+      ],
+      "source_urls": [
+        "https://www.ryzerobotics.com/tello-edu"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:dji-matrice-100",
+      "name": "DJI Matrice 100",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "DJI Matrice 100",
+        "Matrice 100"
+      ],
+      "source_urls": [
+        "https://www.dji.com/support/product/matrice100"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:dji-matrice-300-rtk",
+      "name": "DJI Matrice 300 RTK",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "DJI Matrice 300 RTK",
+        "Matrice 300 RTK"
+      ],
+      "source_urls": [
+        "https://developer.dji.com/mobile-sdk/documentation/introduction/product_introduction.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:dji-mavic-2-family",
+      "name": "DJI Mavic 2 family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "DJI Mavic 2 family",
+        "Mavic 2"
+      ],
+      "source_urls": [
+        "https://www.dji.com/support/product/mavic-2"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:dji-mavic-family",
+      "name": "DJI Mavic family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "DJI Mavic family",
+        "DJI Mavic",
+        "Mavic drone",
+        "Mavic"
+      ],
+      "context_terms": [
+        "DJI",
+        "drone",
+        "UAV",
+        "quadcopter",
+        "aerial"
+      ],
+      "source_urls": [
+        "https://www.dji.com/support/product/mavic-2"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:robel-dclaw",
+      "name": "ROBEL D'Claw",
+      "category": "dexterous_hand",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ROBEL D'Claw",
+        "D'Claw",
+        "DClaw",
+        "D-Claw"
+      ],
+      "context_terms": [
+        "ROBEL",
+        "robot",
+        "finger",
+        "hand",
+        "dexterous"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/1909.11639"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:robel-dkitty",
+      "name": "ROBEL D'Kitty",
+      "category": "robot_platform",
+      "identity_level": "model_specified",
+      "aliases": [
+        "ROBEL D'Kitty",
+        "D'Kitty",
+        "DKitty"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/1909.11639"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:aubo-i5",
+      "name": "AUBO-i5",
+      "category": "robot_arm",
+      "identity_level": "model_specified",
+      "aliases": [
+        "AUBO-i5",
+        "AUBO i5",
+        "AUBO I5"
+      ],
+      "source_urls": [
+        "https://developer.aubo-robotics.cn/en/hardware/user_manual/robot_arm_i_user_manual.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:dobot-x-trainer-system",
+      "name": "DOBOT X-Trainer system",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "DOBOT X-Trainer system",
+        "DOBOT X-Trainer",
+        "Dobot X Trainer"
+      ],
+      "source_urls": [
+        "https://www.dobot-robots.com/insights/news/dobot-x-trainer.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:aldebaran-nao-family",
+      "name": "Aldebaran NAO family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Aldebaran NAO family",
+        "NAO robot",
+        "NAO humanoid",
+        "NAO"
+      ],
+      "context_terms": [
+        "Aldebaran",
+        "SoftBank",
+        "robot",
+        "humanoid",
+        "RoboCup",
+        "biped"
+      ],
+      "source_urls": [
+        "https://doc.aldebaran.com/2-8/home_nao.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:aldebaran-pepper-family",
+      "name": "Aldebaran Pepper family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "Aldebaran Pepper family",
+        "Pepper robot",
+        "Pepper social robot",
+        "Pepper"
+      ],
+      "context_terms": [
+        "Aldebaran",
+        "SoftBank",
+        "social robot",
+        "humanoid"
+      ],
+      "source_urls": [
+        "https://doc.aldebaran.com/2-8/naoqi/motion/almotion.html"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:turtlebot2",
+      "name": "TurtleBot2",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "TurtleBot2",
+        "TurtleBot 2"
+      ],
+      "source_urls": [
+        "https://www.turtlebot.com/about/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:locobot-family",
+      "name": "LoCoBot mobile manipulator family",
+      "category": "robot_platform",
+      "identity_level": "family_only",
+      "aliases": [
+        "LoCoBot mobile manipulator family",
+        "LoCoBot"
+      ],
+      "source_urls": [
+        "https://docs.trossenrobotics.com/interbotix_xslocobots_docs/"
+      ],
+      "hardware_ids": []
+    },
+    {
+      "dictionary_id": "model:xsens-link-family",
+      "name": "Xsens Link suit family",
+      "category": "data_collection",
+      "identity_level": "family_only",
+      "aliases": [
+        "Xsens Link suit family",
+        "Xsens Link"
+      ],
+      "source_urls": [
+        "https://www.xsens.com/get-started/motion-capture"
+      ],
+      "hardware_ids": []
+    }
+  ]
+}

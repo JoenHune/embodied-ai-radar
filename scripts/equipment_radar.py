@@ -21,7 +21,7 @@ from people_radar import _hard_identity, _work_identities
 TABLES = {"devices": "hardware_id", "usage-evidence": "usage_id", "loco-reviews": "review_id", "loco-observations": "claim_id"}
 CATEGORIES = {"robot_platform": "人形与移动机器人", "robot_arm": "机械臂", "dexterous_hand": "灵巧手", "gripper": "夹爪",
               "compute_platform": "算力平台", "data_collection": "数采与遥操作设备", "tactile_sensor": "触觉传感器", "force_sensor": "力与力矩传感器", "vision_sensor": "视觉与空间传感器"}
-ROLES = {"real_robot", "simulated_robot", "training_compute", "inference_compute", "data_collection", "sensing", "dataset_source", "mentioned"}
+ROLES = {"real_robot", "simulated_robot", "training_compute", "inference_compute", "control_compute", "model_fitting_compute", "data_collection", "sensing", "dataset_source", "mentioned"}
 SETTINGS = {"real", "simulation", "dataset", "unknown"}
 USAGE_SCOPES = {"study", "baseline", "calibration"}
 VALIDATIONS = {"closed_loop_real", "replay_only_real", "simulation_only", "unclear"}

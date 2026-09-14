@@ -123,10 +123,10 @@ const manifest = readJson(path.join(api, 'catalog-manifest.json'), {})
 const currentManifest = readJson(path.join(root, 'docs/public/api/v1/catalog-manifest.json'), {})
 const authorityManifest = readJson(path.join(root, 'data/catalog/manifest.json'), {})
 if (!manifest.dataset_version || manifest.dataset_version !== currentManifest.dataset_version || manifest.catalog_hash !== authorityManifest.catalog_hash) issue('mixed_dataset_revisions', { built: manifest.dataset_version, current: currentManifest.dataset_version, built_catalog: manifest.catalog_hash, authority_catalog: authorityManifest.catalog_hash })
-for (const route of ['', 'trends/', 'trends/loco-manip/', 'hardware/', 'monthly/', 'organizations/', 'database/', 'pulse/', 'methods/', 'organizations/collaboration']) {
+for (const route of ['', 'trends/', 'trends/loco-manip/', 'hardware/', 'hardware/coverage', 'monthly/', 'organizations/', 'database/', 'pulse/', 'methods/', 'organizations/collaboration']) {
   if (!resolveInternal(base + route, base)?.file) issue('missing_required_route', { route: base + route })
 }
-for (const required of ['trends.json', 'aliases.json', 'events.json', 'source-health.json', 'source-coverage.json', 'migration-report.json', 'release-recall.json', 'coverage-gold-releases.json', 'work-organization-links.json']) readJson(path.join(api, required))
+for (const required of ['trends.json', 'aliases.json', 'events.json', 'source-health.json', 'source-coverage.json', 'migration-report.json', 'release-recall.json', 'coverage-gold-releases.json', 'work-organization-links.json', 'equipment/coverage-summary.json', 'equipment/coverage-model-candidates.json']) readJson(path.join(api, required))
 for (const edition of readJson(path.join(api, 'conference-editions.json'), {}).editions || []) {
   const changes = readJson(path.join(api, 'conference-changes', `${edition.edition_id}.json`), {})
   if (changes.edition_id !== edition.edition_id || changes.catalog_hash !== manifest.catalog_hash || !Array.isArray(changes.tracks)) issue('conference_change_contract', { edition: edition.edition_id })

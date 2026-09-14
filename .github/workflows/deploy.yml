@@ -58,7 +58,7 @@ jobs:
       - name: Audit deployed routes, evidence and search
         run: npm run v3:audit-site && npm run v3:audit-search
       - name: Require tracked facts to remain unchanged
-        run: git diff --exit-code -- data/catalog data/editorial data/conferences
+        run: git diff --exit-code -- data/catalog data/editorial data/conferences data/equipment data/hardware-review config/hardware-dictionary.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

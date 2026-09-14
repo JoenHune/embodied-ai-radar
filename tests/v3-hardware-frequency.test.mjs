@@ -51,6 +51,15 @@ test('baseline/calibration are separate work counts and preserve their statement
   assert.equal(result.calibration_work_count, 1)
   assert.equal(result.sources[0].usages.length, 2)
 })
+test('control execution and physical-model fitting retain their own compute roles', () => {
+  const devices = [{ ...device('cpu'), category: 'compute_platform' }]
+  const rows = [work('control', [usage('cpu', { category: 'compute_platform', role: 'control_compute', setting: 'real' })]),
+    work('fit', [usage('cpu', { category: 'compute_platform', role: 'model_fitting_compute', setting: 'unknown' })])]
+  assert.equal(hardwareFrequency(devices, rows).models[0].work_count, 2)
+  assert.equal(hardwareFrequency(devices, rows, { role: 'control_compute' }).models[0].work_count, 1)
+  assert.equal(hardwareFrequency(devices, rows, { role: 'model_fitting_compute' }).models[0].work_count, 1)
+  assert.equal(hardwareFrequency(devices, rows, { role: 'inference_compute' }).models.length, 0)
+})
 test('equal display names are not sufficient evidence to merge device identities', () => {
   const rows = hardwareFrequency([device('a', 'Hand'), device('b', 'Hand')], [work('1', [usage('a')]), work('2', [usage('b')])]).models
   assert.equal(rows.length, 2)

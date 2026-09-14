@@ -11,6 +11,7 @@ import HardwareFrequencyRow from './HardwareFrequencyRow.vue'
 import { chartTokens, useEChart } from '../composables/useEChart'
 import { eventDate } from '../lib/dates'
 import { hardwareFrequency, hardwareMonth } from '../lib/hardware-frequency.mjs'
+import HardwareCoverage from './HardwareCoverage.vue'
 
 echarts.use([BarChart, AriaComponent, GridComponent, TooltipComponent, CanvasRenderer])
 type Work = { work_id: string; title: string; first_public_date?: string; first_public_date_precision?: string; hardware_usage?: any[]; [key: string]: any }
@@ -20,7 +21,7 @@ type EquipmentIndex = { schema_version: string; dataset_version: string; source_
 type Filters = { category: string; device: string; setting: string; role: string; month: string }
 const allowedCategories = new Set(['robot_platform', 'robot_arm', 'dexterous_hand', 'gripper', 'compute_platform', 'data_collection', 'tactile_sensor', 'force_sensor', 'vision_sensor'])
 const settingLabels: Record<string, string> = { real: '真机 / 真实设备', simulation: '仿真环境', dataset: '数据集', unknown: '环境未说明' }
-const roleLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真机器人', training_compute: '训练算力', inference_compute: '推理算力', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
+const roleLabels: Record<string, string> = { real_robot: '真机使用', simulated_robot: '仿真机器人', training_compute: '训练算力', inference_compute: '推理算力', control_compute: '控制计算', model_fitting_compute: '模型参数拟合', data_collection: '数据采集', sensing: '感知', dataset_source: '数据来源' }
 const initial = (): Filters => ({ category: '', device: '', setting: '', role: '', month: '' })
 const index = ref<EquipmentIndex | null>(null)
 const rows = ref<Work[]>([])
@@ -200,6 +201,7 @@ onBeforeUnmount(() => { disposed = true; requestId++; controller?.abort(); relea
 <template>
   <div class="v3-dashboard hardware-radar">
     <header class="v3-page-heading"><div><p class="v3-eyebrow">HARDWARE MODEL FREQUENCY</p><h1>研究设备 · 型号频次</h1><p>先看具体型号被多少项研究使用，再展开完整论文出处。</p></div></header>
+    <HardwareCoverage compact :expected-version="index?.dataset_version" />
     <p v-if="loading" role="status">正在读取型号频次与论文出处…</p>
     <div v-if="error" class="hardware-notice" role="alert"><p>{{ error }}</p><button type="button" @click="load">重新读取</button></div>
     <template v-if="index && !loading && !error">

@@ -3,7 +3,7 @@ import { originalSourceUrl, safeOriginalUrl } from './research-card.mjs'
 // A frequency is a distinct canonical work, never mentions, versions, devices
 // purchased, or a sum of real/sim/role counts. Identity merging is upstream.
 const allowedCategories = new Set(['robot_platform', 'robot_arm', 'dexterous_hand', 'gripper', 'compute_platform', 'data_collection', 'tactile_sensor', 'force_sensor', 'vision_sensor'])
-const allowedRoles = new Set(['real_robot', 'simulated_robot', 'training_compute', 'inference_compute', 'data_collection', 'sensing', 'dataset_source'])
+const allowedRoles = new Set(['real_robot', 'simulated_robot', 'training_compute', 'inference_compute', 'control_compute', 'model_fitting_compute', 'data_collection', 'sensing', 'dataset_source'])
 export function hardwareMonth(work) {
   return ['day', 'month'].includes(work?.first_public_date_precision) && /^\d{4}-(0[1-9]|1[0-2])(?:$|-)/.test(work.first_public_date || '') ? work.first_public_date.slice(0, 7) : 'unknown'
 }

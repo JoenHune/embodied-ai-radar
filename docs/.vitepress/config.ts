@@ -12,7 +12,8 @@ export default defineConfig({
     // VitePress 1.x includes every global async component in every page's
     // preload list. Keep only the component actually rendered by this route;
     // other components remain available through their normal dynamic import.
-    const component = page === 'hardware/index.md' ? 'HardwareRadar'
+    const component = page === 'hardware/coverage.md' ? 'HardwareCoverage'
+      : page === 'hardware/index.md' ? 'HardwareRadar'
       : page === 'trends/loco-manip/index.md' ? 'LocoManipRadar'
       : page === 'organizations/people/index.md' ? 'PeopleRadar' : page === 'index.md' || /^(trends|monthly|organizations)\//.test(page)
       ? 'RadarDashboard'
@@ -23,7 +24,7 @@ export default defineConfig({
     for (let index = head.length - 1; index >= 0; index--) {
       const [tag, attrs] = head[index]
       const href = String(attrs?.href || '')
-      const match = href.match(/\/(RadarDashboard|PeopleRadar|HardwareRadar|LocoManipRadar|DatabaseExplorer|PulseFeed|ConferenceRadar|OrganizationCoverage|VPLocalSearchBox)\.[^/]+\.js$/)
+      const match = href.match(/\/(RadarDashboard|PeopleRadar|HardwareRadar|HardwareCoverage|LocoManipRadar|DatabaseExplorer|PulseFeed|ConferenceRadar|OrganizationCoverage|VPLocalSearchBox)\.[^/]+\.js$/)
       const chartDependency = /\/(echarts|ChartFrame|useEChart)\.[^/]+\.js$/.test(href)
       const trendDependency = /\/(DirectionTrendGrid|DirectionTrendChart|monthlySeries)\.[^/]+\.js$/.test(href)
       const overviewDependency = /\/v3-overview\.[^/]+\.js$/.test(href)
@@ -32,7 +33,7 @@ export default defineConfig({
       const mediaDependency = /\/(SourceImage|ResearchCard|useVisualMedia|research-card)\.[^/]+\.js$/.test(href)
       const shareOverviewDependency = /\/DirectionShareOverview\.[^/]+\.js$/.test(href)
       if (tag === 'link' && attrs?.rel === 'modulepreload' && (
-        (match && match[1] !== component)
+        (match && match[1] !== component && !(match[1] === 'HardwareCoverage' && component === 'HardwareRadar'))
         || (chartDependency && !['RadarDashboard', 'PeopleRadar', 'HardwareRadar', 'LocoManipRadar'].includes(component || ''))
         || (trendDependency && component !== 'RadarDashboard')
         || (overviewDependency && component !== 'RadarDashboard')
@@ -78,7 +79,7 @@ export default defineConfig({
       { text: '趋势', activeMatch: '^/trends/', items: [{ text: '趋势总览', link: '/trends/' }, { text: '移动与全身操作', link: '/trends/loco-manip/' }] },
       { text: '月度', link: '/monthly/' },
       { text: '人物与组织', items: [{ text: '人物与代表作', link: '/organizations/people/' }, { text: '公司与研究组', link: '/organizations/' }, { text: '合作关系', link: '/organizations/collaboration' }] },
-      { text: '研究库', activeMatch: '^/(database|hardware)/', items: [{ text: '全文检索', link: '/database/' }, { text: '研究设备', link: '/hardware/' }] },
+      { text: '研究库', activeMatch: '^/(database|hardware)/', items: [{ text: '全文检索', link: '/database/' }, { text: '研究设备', link: '/hardware/' }, { text: '设备全库覆盖', link: '/hardware/coverage' }] },
       { text: '动态', link: '/pulse/' }, { text: '方法', link: '/methods/' },
     ],
     sidebar: {

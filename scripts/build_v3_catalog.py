@@ -43,6 +43,8 @@ RULE_SOURCE_FILES += ("research_status.py", "research_status_views.py", "ingest_
 RULE_CONFIG_FILES += ("research-status.schema.json",)
 RULE_SOURCE_FILES += ("people_radar.py",)
 RULE_SOURCE_FILES += ("equipment_radar.py",)
+RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py")
+RULE_CONFIG_FILES += ("hardware-dictionary.json",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/research-card.mjs",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/work-status.mjs",)
 RULE_CONFIG_FILES += ("people-review.schema.json",)
@@ -581,6 +583,10 @@ def migrate_legacy(args: argparse.Namespace) -> dict:
 def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> None:
     from generate_v3_editorial import valid_work_localization, localization_status
     from signal_evidence import load_signal_evidence, overlay_signal_evidence
+    from hardware_coverage_export import load_hardware_dictionary
+    # Coverage without its configured dictionary is unknown, not a successful
+    # all-catalog zero-hit scan. Fail before producing any partial public files.
+    hardware_dictionary = load_hardware_dictionary(ROOT / 'config/hardware-dictionary.json')
     taxonomy = read_json(ROOT / "config" / "taxonomy-v2.json", {})
     facets_config = read_json(ROOT / "config" / "facets-v3.json", {})
     questions_config = read_json(ROOT / "config" / "research-agenda.json", {"questions": []})
@@ -1212,9 +1218,11 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
                               export_people_files, build_people_sqlite)
     from equipment_radar import (TABLES as EQUIPMENT_TABLES, load_equipment_authority, build_equipment_bundle,
                                  export_equipment, equipment_sqlite)
+    from hardware_coverage_export import build_coverage, export_coverage, coverage_sqlite
     supplemental_paths = [DATA / "coverage-gold-releases.jsonl", DATA / "weekly-v3/source-coverage.json", *sorted((DATA / "conferences").glob("*/source-status.json")),
                           *[DATA / "people" / f"{table}.jsonl" for table in PEOPLE_TABLES],
-                          *[DATA / "equipment" / f"{table}.jsonl" for table in EQUIPMENT_TABLES]]
+                          *[DATA / "equipment" / f"{table}.jsonl" for table in EQUIPMENT_TABLES],
+                          *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews')]]
     manifest["supplemental_hash"] = fingerprint({str(p.relative_to(DATA)): hashlib.sha256(p.read_bytes()).hexdigest() for p in supplemental_paths if p.exists()})
     manifest["dataset_version"] = fingerprint({key: manifest[key] for key in ["catalog_hash", "editorial_hash", "rules_hash", "supplemental_hash", "data_through"]})
     # Person staging is never read here: the four JSONL tables are the only
@@ -1225,9 +1233,15 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     manifest["people"] = {"api": "/api/v1/people/index.json", "schema_version": "1",
                           "authority_hash": people_bundle["index"]["review_hash"], "counts": people_bundle["index"]["counts"]}
     manifest["downloads"]["people"] = people_bundle["index"]["downloads"]
-    equipment_bundle = build_equipment_bundle(payload, load_equipment_authority(DATA / "equipment"), manifest)
+    equipment_authority = load_equipment_authority(DATA / "equipment")
+    equipment_bundle = build_equipment_bundle(payload, equipment_authority, manifest)
     export_equipment(equipment_bundle, PUBLIC_API / "equipment", DOWNLOADS / "equipment")
+    hardware_coverage = build_coverage(payload, equipment_authority, hardware_dictionary,
+        read_table(DATA / 'hardware-review', 'source-scans'), read_table(DATA / 'hardware-review', 'source-observations'), manifest)
+    export_coverage(hardware_coverage, PUBLIC_API / 'equipment', DOWNLOADS / 'equipment')
     manifest["equipment"] = {"api": "/api/v1/equipment/index.json", "loco_api": "/api/v1/equipment/loco-manip.json", "counts": equipment_bundle['index']['counts'], "authority_hash": equipment_bundle['index']['authority_hash']}
+    manifest['equipment']['coverage_api'] = '/api/v1/equipment/coverage-summary.json'
+    manifest['downloads']['hardware_coverage'] = '/downloads/equipment/hardware-coverage.jsonl.gz'
     write_json(PUBLIC_API / "catalog-manifest.json", manifest, compact=True)
     write_json(PUBLIC_API / "migration-report.json", migration_report, compact=True)
 
@@ -1317,6 +1331,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     connection.executemany("INSERT INTO release_recall_gold VALUES (?,?)", [(row["gold_id"], sqlite_json(row)) for row in gold_records])
     build_people_sqlite(connection, people_bundle)
     equipment_sqlite(connection, equipment_bundle)
+    coverage_sqlite(connection, hardware_coverage)
     from sqlite_catalog_fidelity import build_catalog_fidelity
     from sqlite_editorial_export import build_editorial_archive, read_editorial_artifacts
     fidelity = build_catalog_fidelity(connection, payload)
