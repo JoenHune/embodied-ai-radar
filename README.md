@@ -51,6 +51,8 @@ npm test
 
 `npm run v3:export` 只读事实并生成 SQLite、静态 API 和月度数据；`npm run v3:site` 生成页面数据；`npm test` 审计并构建网站与搜索。常规构建不会采集数据、调用 LLM、重迁移或写入新的权威月度 revision。不要手工修改 `docs/public/api/v1/`、SQLite 或搜索索引。
 
+SQLite 构建入口会检查 JSON 特殊键名、超大整数、布尔值还原及 FTS5 能力，而不只比较版本号。优先使用系统库；Linux x86_64 的系统库不满足时，使用依赖文件锁定的 `pysqlite3-binary`，仅作用于本次 Python 进程，不修改系统安装。请通过 `node scripts/run-python.mjs ...` 或 npm 入口执行需要完整数据库还原的工具。下载件仍是标准 SQLite 文件，无自定义 Python SQL 函数；单独执行 `catalog_restore_*` 视图时也应使用支持上述 JSON 能力的较新 SQLite。实现依据见 [SQLite JSON 文档](https://www.sqlite.org/json1.html)与[依赖发布页](https://pypi.org/project/pysqlite3-binary/)。
+
 `npm run v3:migrate` 仅用于初始化尚不存在的权威库。来源发生变化后才运行 `npm run v3:ingest -- --as-of YYYY-MM-DD`；人工和已保存编辑不会因生成网站而丢失。
 
 ### 常用操作边界

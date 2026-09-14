@@ -1,3 +1,6 @@
 jsonschema==4.25.1
 beautifulsoup4==4.13.5
 zopfli==0.4.3
+# Official PyPI release; CPython 3.12 manylinux x86_64 wheel verified.
+# Only the repository launcher may select it after a failed feature probe.
+pysqlite3-binary==0.5.4.post2; sys_platform == "linux" and platform_machine == "x86_64"
