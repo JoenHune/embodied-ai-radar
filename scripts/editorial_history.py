@@ -186,6 +186,10 @@ def _read_at(directory, name, *, optional=False):
     except OSError:
         raise EditorialHistoryError('editorial_history_unsafe_file') from None
     try:
+        def content_metadata(info):
+            return (info.st_dev, info.st_ino, info.st_mode, info.st_uid, info.st_gid,
+                    info.st_size, info.st_mtime_ns)
+
         before = os.fstat(descriptor)
         _require(stat.S_ISREG(before.st_mode) and before.st_size <= MAX_JSON_BYTES,
                  'editorial_history_not_bounded_regular_file')
@@ -196,9 +200,38 @@ def _read_at(directory, name, *, optional=False):
             chunks.append(chunk)
             remaining -= len(chunk)
         after = os.fstat(descriptor)
-        _require((before.st_size, before.st_mtime_ns, before.st_ctime_ns) ==
-                 (after.st_size, after.st_mtime_ns, after.st_ctime_ns), 'editorial_history_file_changed_during_read')
-        return b''.join(chunks)
+        _require(content_metadata(before) == content_metadata(after) and after.st_nlink >= 1,
+                 'editorial_history_file_changed_during_read')
+        raw = b''.join(chunks)
+        if (before.st_ctime_ns, before.st_nlink) != (after.st_ctime_ns, after.st_nlink):
+            # A publisher links its complete temporary inode to the archive,
+            # then unlinks the temporary name. Readers may span that 2->1 link
+            # cleanup: ctime changes although the bytes and mtime do not.
+            # Accept only that narrow shape, followed by ONE same-fd byte
+            # comparison under fully stable metadata. Never reopen a path or
+            # retry content/permission changes until they happen to look stable.
+            _require((before.st_nlink, after.st_nlink) == (2, 1),
+                     'editorial_history_file_changed_during_read')
+            os.lseek(descriptor, 0, os.SEEK_SET)
+            offset = 0
+            while offset < len(raw):
+                chunk = os.read(descriptor, min(len(raw) - offset, 1024 * 1024))
+                _require(bool(chunk) and chunk == raw[offset:offset + len(chunk)],
+                         'editorial_history_file_changed_during_read')
+                offset += len(chunk)
+            verified = os.fstat(descriptor)
+            _require(content_metadata(after) == content_metadata(verified) and
+                     (after.st_ctime_ns, after.st_nlink) == (verified.st_ctime_ns, verified.st_nlink),
+                     'editorial_history_file_changed_during_read')
+            # The removed link must not have been the destination itself.
+            # Inspect its directory entry without following or opening links.
+            try:
+                named = os.stat(name, dir_fd=directory, follow_symlinks=False)
+            except FileNotFoundError:
+                raise EditorialHistoryError('editorial_history_file_changed_during_read') from None
+            _require((named.st_dev, named.st_ino) == (verified.st_dev, verified.st_ino),
+                     'editorial_history_file_changed_during_read')
+        return raw
     except OSError:
         raise EditorialHistoryError('editorial_history_read_failed') from None
     finally:

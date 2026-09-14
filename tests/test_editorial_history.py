@@ -5,6 +5,7 @@ import os
 import socket
 import sys
 import tempfile
+import threading
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -135,6 +136,180 @@ class EditorialHistoryTests(unittest.TestCase):
         self.assertTrue(all(reference == references[0] for reference in references))
         self.assertEqual(len(list(self.output.rglob('*.json'))), 1)
         self.assertFalse(list(self.output.rglob('*.tmp')))
+
+    def test_losing_publisher_reads_while_winner_unlinks_its_temporary_hardlink(self):
+        # Both publishers first observe no destination. The loser then reads
+        # the published inode across the winner's final hardlink cleanup.
+        ready_to_link = threading.Barrier(2)
+        published = threading.Event()
+        read_started = threading.Event()
+        cleanup_done = threading.Event()
+        roles_lock = threading.Lock()
+        local = threading.local()
+        assigned = []
+        observed = {}
+        real_link, real_unlink, real_read = os.link, os.unlink, os.read
+
+        def publish(source, target, **kwargs):
+            with roles_lock:
+                local.winner = not assigned
+                assigned.append(source)
+            local.temporary = source
+            ready_to_link.wait(timeout=5)
+            if local.winner:
+                result = real_link(source, target, **kwargs)
+                published.set()
+                return result
+            self.assertTrue(published.wait(timeout=5))
+            return real_link(source, target, **kwargs)  # FileExistsError.
+
+        def cleanup(name, **kwargs):
+            if getattr(local, 'winner', False) and name == local.temporary:
+                self.assertTrue(read_started.wait(timeout=5))
+                try:
+                    return real_unlink(name, **kwargs)
+                finally:
+                    cleanup_done.set()
+            return real_unlink(name, **kwargs)
+
+        def read(descriptor, size):
+            result = real_read(descriptor, size)
+            if getattr(local, 'winner', None) is False and not read_started.is_set():
+                observed['before'] = os.fstat(descriptor)
+                read_started.set()
+                self.assertTrue(cleanup_done.wait(timeout=5))
+                observed['after'] = os.fstat(descriptor)
+            return result
+
+        with (patch.object(history.os, 'link', side_effect=publish),
+              patch.object(history.os, 'unlink', side_effect=cleanup),
+              patch.object(history.os, 'read', side_effect=read),
+              ThreadPoolExecutor(max_workers=2) as pool):
+            references = list(pool.map(lambda _: self.packet_reference(), range(2)))
+        self.assertEqual(references[0], references[1])
+        self.assertEqual((observed['before'].st_nlink, observed['after'].st_nlink), (2, 1))
+        self.assertEqual(observed['before'].st_mtime_ns, observed['after'].st_mtime_ns)
+        self.assertEqual(json.loads((self.output / references[0]['path']).read_bytes()), self.packet)
+        self.assertFalse(list(self.output.rglob('*.tmp')))
+
+    def _read_fixture_with_interleaving(self, after_read, *, linked=False):
+        path = self.root / 'read-fixture.json'
+        path.write_bytes(b'{"value":"old"}')
+        temporary = self.root / 'publisher-temporary'
+        if linked:
+            os.link(path, temporary)
+        before = path.stat()
+        directory = os.open(self.root, os.O_RDONLY | os.O_DIRECTORY)
+        real_read = os.read
+        descriptors = []
+
+        def read(descriptor, size):
+            result = real_read(descriptor, size)
+            descriptors.append(descriptor)
+            after_read(len(descriptors), path, temporary, before)
+            return result
+
+        try:
+            with patch.object(history.os, 'read', side_effect=read):
+                result = history._read_at(directory, path.name)
+            return result, descriptors
+        finally:
+            os.close(directory)
+
+    def test_unchanged_file_uses_one_read_and_publish_cleanup_uses_one_same_fd_verification(self):
+        def cleanup(call, path, temporary, before):
+            if call == 1:
+                temporary.unlink()
+        raw, descriptors = self._read_fixture_with_interleaving(cleanup, linked=True)
+        self.assertEqual(raw, b'{"value":"old"}')
+        self.assertEqual(len(descriptors), 2)
+        self.assertEqual(descriptors[0], descriptors[1])
+        # Once the temporary name is gone, the ordinary read needs no retry.
+        raw, descriptors = self._read_fixture_with_interleaving(lambda *_: None)
+        self.assertEqual(raw, b'{"value":"old"}')
+        self.assertEqual(len(descriptors), 1)
+
+    def test_actual_same_size_content_change_is_not_retried(self):
+        calls = []
+        def change(call, path, temporary, before):
+            calls.append(call)
+            if call == 1:
+                path.write_bytes(b'{"value":"new"}')
+                # An explicit distinct mtime avoids filesystem-clock timing
+                # assumptions; this is an actual byte mutation, not fake stat.
+                os.utime(path, ns=(before.st_atime_ns, before.st_mtime_ns + 1_000_000))
+        with self.assertRaisesRegex(ValueError, '^editorial_history_file_changed_during_read$'):
+            self._read_fixture_with_interleaving(change)
+        self.assertEqual(calls, [1])
+
+    def test_link_cleanup_cannot_mask_changed_bytes_even_with_restored_mtime(self):
+        calls = []
+        def change_and_cleanup(call, path, temporary, before):
+            calls.append(call)
+            if call == 1:
+                path.write_bytes(b'{"value":"new"}')
+                os.utime(path, ns=(before.st_atime_ns, before.st_mtime_ns))
+                temporary.unlink()
+                self.assertEqual(path.stat().st_mtime_ns, before.st_mtime_ns)
+                self.assertEqual(path.stat().st_nlink, 1)
+        with self.assertRaisesRegex(ValueError, '^editorial_history_file_changed_during_read$'):
+            self._read_fixture_with_interleaving(change_and_cleanup, linked=True)
+        # The metadata-only exception was considered, but byte verification
+        # rejected it; there must not be a third attempt that accepts new data.
+        self.assertEqual(calls, [1, 2])
+
+    def test_second_pass_content_change_fails_instead_of_waiting_for_stability(self):
+        calls = []
+        def change_during_verification(call, path, temporary, before):
+            calls.append(call)
+            if call == 1:
+                temporary.unlink()
+            elif call == 2:
+                path.write_bytes(b'{"value":"new"}')
+                os.utime(path, ns=(before.st_atime_ns, before.st_mtime_ns + 1_000_000))
+        with self.assertRaisesRegex(ValueError, '^editorial_history_file_changed_during_read$'):
+            self._read_fixture_with_interleaving(change_during_verification, linked=True)
+        self.assertEqual(calls, [1, 2])
+
+    def test_destination_unlink_or_replacement_is_not_temporary_link_cleanup(self):
+        for replacement in (False, True):
+            with self.subTest(replacement=replacement):
+                def remove_destination(call, path, temporary, before):
+                    if call == 1:
+                        path.unlink()  # Same 2->1 shape, but the wrong name.
+                        if replacement:
+                            path.write_bytes(b'{"value":"new"}')
+                with self.assertRaisesRegex(ValueError, '^editorial_history_file_changed_during_read$'):
+                    self._read_fixture_with_interleaving(remove_destination, linked=True)
+                (self.root / 'publisher-temporary').unlink()
+
+    def test_ctime_only_change_without_publication_cleanup_is_rejected(self):
+        calls = []
+        def touch_metadata(call, path, temporary, before):
+            calls.append(call)
+            if call == 1:
+                os.chmod(path, 0o600)
+                os.chmod(path, before.st_mode & 0o7777)
+                self.assertEqual(path.stat().st_mtime_ns, before.st_mtime_ns)
+                self.assertNotEqual(path.stat().st_ctime_ns, before.st_ctime_ns)
+        with self.assertRaisesRegex(ValueError, '^editorial_history_file_changed_during_read$'):
+            self._read_fixture_with_interleaving(touch_metadata)
+        self.assertEqual(calls, [1])
+
+    def test_other_link_count_changes_are_not_publication_cleanup(self):
+        for mutation in ('add_link', 'unlink_last_name'):
+            with self.subTest(mutation=mutation):
+                def mutate(call, path, temporary, before):
+                    if call == 1:
+                        if mutation == 'add_link':
+                            os.link(path, temporary)
+                        else:
+                            path.unlink()
+                with self.assertRaisesRegex(ValueError, '^editorial_history_file_changed_during_read$'):
+                    self._read_fixture_with_interleaving(mutate)
+                temporary = self.root / 'publisher-temporary'
+                if temporary.exists():
+                    temporary.unlink()
 
     def test_archive_preserves_all_fields_and_returns_exact_six_field_reference(self):
         artifact = self.bound_artifact()

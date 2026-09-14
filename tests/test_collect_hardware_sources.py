@@ -50,6 +50,18 @@ class Clock:
 
 
 class HardwareSourceTests(unittest.TestCase):
+    def test_planned_inventory_cannot_accidentally_start_acquisition(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "queue.json"
+            for marker in ({"executable": False}, {}, None, {"executable": "true"}):
+                path.write_text(json.dumps({"queue": [TARGET], "source_queue_plan": marker}))
+                with self.assertRaisesRegex(ValueError, "not executable"):
+                    read_queue(path)
+            path.write_text(json.dumps({"queue": [TARGET], "source_queue_plan": {"executable": True}}))
+            self.assertEqual(read_queue(path), [TARGET])
+            path.write_text(json.dumps({"queue": [TARGET]}))
+            self.assertEqual(read_queue(path), [TARGET])
+
     def test_identity_is_strict(self):
         self.assertEqual(arxiv_identity("https://arxiv.org/abs/2407.02648v2"), ("2407.02648", "v2"))
         self.assertEqual(arxiv_identity("hep-th/9901001v1"), ("hep-th/9901001", "v1"))

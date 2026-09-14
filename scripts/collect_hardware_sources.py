@@ -163,6 +163,10 @@ def read_queue(path: Path):
     except json.JSONDecodeError:
         return [json.loads(line) for line in source.splitlines() if line.strip()]
     if isinstance(value, dict):
+        if "source_queue_plan" in value:
+            plan = value["source_queue_plan"]
+            if not isinstance(plan, dict) or plan.get("executable") is not True:
+                raise ValueError("Planned inventory is not executable; use its bounded first-fetch queue")
         for key in ("queue", "works", "items", "work_ids"):
             if key in value:
                 return value[key]
