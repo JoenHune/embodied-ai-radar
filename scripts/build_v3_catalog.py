@@ -47,10 +47,13 @@ RULE_SOURCE_FILES += ("equipment_radar.py",)
 RULE_SOURCE_FILES += ("sqlite_download.py",)
 RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "fulltext_reading_reviews.py")
 RULE_SOURCE_FILES += ("editorial_readings.py", "editorial_history.py")
+RULE_SOURCE_FILES += ("source_content_conflicts.py",)
+RULE_CONFIG_FILES += ("source-content-conflicts.schema.json",)
 RULE_SOURCE_FILES += ("pdf_reading_reviews.py", "pdf_coverage_export.py")
 RULE_CONFIG_FILES += ("hardware-dictionary.json",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/research-card.mjs",)
 RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/work-status.mjs",)
+RULE_SOURCE_FILES += ("../docs/.vitepress/theme/lib/source-conflicts.mjs",)
 RULE_CONFIG_FILES += ("people-review.schema.json",)
 
 
@@ -598,6 +601,8 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     from editorial_readings import load_reading_index
     from editorial_history import load_editorial_history, editorial_history_reference
     editorial_reading_index = load_reading_index(payload, DATA / "hardware-review", as_of_text)
+    from source_content_conflicts import load_source_conflicts, conflicts_for_work
+    source_conflicts = load_source_conflicts(payload, DATA, as_of_text)
     as_of = date.fromisoformat(as_of_text[:10])
     full_months = complete_months(as_of, 12)
     provisional_month = add_months(full_months[-1], 1)
@@ -625,6 +630,9 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     localizations = {row["work_id"]: row for row in read_table(DATA / "editorial", "work-localizations")}
     legacy_notes = {row["work_id"]: row for row in read_table(DATA / "editorial" / "legacy", "work-notes") if row.get("work_id")}
     for work in works:
+        notices = conflicts_for_work(source_conflicts, work["work_id"])
+        if notices:
+            work["source_conflicts"] = notices
         note = legacy_notes.get(work["work_id"])
         if note:
             work["summary_zh"] = work.get("summary_zh") or note.get("contribution_zh", "")
@@ -878,6 +886,11 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
                 if len(set(blocked)) == question["count"]:
                     question["summary"] = "本月相关工作在所选时点均有撤回或撤稿通知，保留登记数量，不用受影响的结果回答该研究问题。"
         saved_editorial = read_json(DATA / "editorial" / "monthly" / f"{month}.json", {})
+        cohort_ids = {row["work_id"] for row in rows}
+        month_conflicts = [notice for notice in source_conflicts if notice["work_id"] in cohort_ids and notice["experimental_use"] == "hold"]
+        if month_conflicts:
+            snapshot["source_conflicts"] = month_conflicts
+            snapshot["information_gaps"].append("存在来源内容待核差异；当前编辑暂停受争议版本的实验引用，发现时间不倒写成论文当时已撤回或撤稿。")
         legacy_editorial = read_json(DATA / "editorial" / "legacy" / f"{month}.json", {})
         snapshot["historical_findings"] = legacy_editorial.get("claims", [])
         snapshot["historical_watchlist"] = legacy_editorial.get("historical_watchlist", [])
@@ -886,7 +899,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         if saved_editorial.get("status") == "complete":
             from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay
             saved_history_reference = editorial_history_reference(DATA / "editorial", saved_editorial)
-            editorial_packet = build_evidence_packet(snapshot, payload, reading_index=editorial_reading_index)
+            editorial_packet = build_evidence_packet(snapshot, payload, reading_index=editorial_reading_index, source_conflicts=source_conflicts)
             editorial_check = validated_editorial_overlay(saved_editorial, editorial_packet)
             editorial_usable = editorial_check["usable"]
             if not editorial_usable:
@@ -1245,6 +1258,8 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
                           *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews', 'fulltext-readings', 'pdf-source-observations', 'pdf-readings')]]
     manifest["supplemental_hash"] = fingerprint({str(p.relative_to(DATA)): hashlib.sha256(p.read_bytes()).hexdigest() for p in supplemental_paths if p.exists()})
     manifest["dataset_version"] = fingerprint({key: manifest[key] for key in ["catalog_hash", "editorial_hash", "rules_hash", "supplemental_hash", "data_through"]})
+    write_json(PUBLIC_API / "source-content-conflicts.json", {"schema_version": "1", "as_of": as_of_text,
+               "dataset_version": manifest["dataset_version"], "conflicts": source_conflicts}, compact=True)
     # Person staging is never read here: the four JSONL tables are the only
     # person authority, alongside (not replacing) canonical work facts.
     people_bundle = build_people_radar(payload, load_people_authority(DATA / "people"), as_of_text,

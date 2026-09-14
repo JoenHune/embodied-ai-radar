@@ -1,5 +1,6 @@
 export const directionShortNames = { D1: '基础模型', D2: '规划与记忆', D3: '世界模型', D4: '灵巧操作', D5: '全身控制', D6: '导航与移动', D7: '人机协作', D8: '策略学习', D9: '数据与人类视频', D10: '仿真与迁移', D11: '空间感知', D12: '评测与安全', D13: '持续学习', D14: '多机器人', D15: '触觉与力觉' }
 import { decodeCardArray } from './work-status.mjs'
+import { sourceConflictState } from './source-conflicts.mjs'
 
 export function safeOriginalUrl(value) {
   if (typeof value !== 'string') return ''
@@ -27,6 +28,7 @@ export function researchOutputLabel(work) {
 }
 export function searchCardFromResult(row) {
   const meta = row.meta
+  const conflicts = sourceConflictState(meta.source_conflicts, { workId: meta.work_id })
   return {
     work_id: meta.work_id, title: meta.title, title_zh: meta.title_zh,
     original_url: meta.original_url, summary: meta.summary || row.excerpt,
@@ -39,6 +41,8 @@ export function searchCardFromResult(row) {
     organizations: meta.organizations ? [{ name: meta.organizations }] : [],
     text_notice: meta.text_status === 'unversioned_catalog_text' ? '摘要版次未核验' : '',
     publication_records: decodeCardArray(meta.publication_records),
+    source_conflicts: conflicts.rows,
+    source_conflicts_unknown: conflicts.unknown,
     research_status: meta.research_status ? { status: meta.research_status, validation_eligible: meta.research_validation_eligible !== 'false', notices: decodeCardArray(meta.research_status_notices) } : null,
   }
 }

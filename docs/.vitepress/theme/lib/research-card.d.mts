@@ -2,5 +2,5 @@ export const directionShortNames: Record<string, string>
 export function safeOriginalUrl(value: unknown): string
 export function originalSourceUrl(work: any, manifestations?: any[]): string
 export function researchOutputLabel(work: any): string
-export function searchCardFromResult(row: any): any
+export function searchCardFromResult(row: any): any & { source_conflicts?: import('./source-conflicts.mjs').SourceConflict[]; source_conflicts_unknown?: boolean }
 export function filterResearchCards(rows: any[], filters?: { direction?: string; kind?: string; organization?: string }): any[]

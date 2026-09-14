@@ -10,6 +10,7 @@ import DirectionTrendGrid from './DirectionTrendGrid.vue'
 import EvidenceReadingQueue from './EvidenceReadingQueue.vue'
 import ReportTextEvidence from './ReportTextEvidence.vue'
 import ResearchStatusNotice from './ResearchStatusNotice.vue'
+import SourceConflictNotice from './SourceConflictNotice.vue'
 const ReportCoverage = defineAsyncComponent(() => import('./ReportCoverage.vue'))
 const HistoricalEditorial = defineAsyncComponent(() => import('./HistoricalEditorial.vue'))
 const ResearchFeed = defineAsyncComponent(() => import('./ResearchFeed.vue'))
@@ -735,6 +736,7 @@ onBeforeUnmount(() => {
         </li></ul>
       </aside>
       <section class="v3-findings">
+        <SourceConflictNotice :value="monthlySnapshot.source_conflicts" monthly />
         <header><h2>本月总判断</h2><span>{{ monthlySnapshot.editorial_status === 'llm_complete' ? 'LLM 证据编辑' : '确定性数据摘要' }} · 保留快照原始视角</span></header>
         <p v-if="monthlySnapshot.editorial_completeness?.overall_status === 'needs_attention'" class="v3-warning">内容完整性待补：总判断 {{ monthlySnapshot.editorial_completeness.executive.count }} 条（目标 5–8 条）。缺失项已在检查中列明；未编辑不能解释为没有研究。<a :href="withBase(`/api/v1/monthly/${monthlySnapshot.month}.json`)">查看逐方向检查</a></p>
         <p v-if="monthlySnapshot.editorial_reviews?.length" class="v3-muted">本版有源绑定内容审校记录；AI 内容审校不等于人工专家批准、同行评审或独立复现。<a :href="withBase(`/api/v1/editorial-reviews/${monthlySnapshot.month}.json`)">查看修改前后、依据与记录者</a></p>

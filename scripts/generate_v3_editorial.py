@@ -366,7 +366,7 @@ def make_facts(snapshot: dict, cards: list[dict]) -> dict:
 
 
 def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int = 8, per_question: int = 4,
-                          reading_index: dict | None = None) -> dict:
+                          reading_index: dict | None = None, source_conflicts: list | None = None) -> dict:
     month = snapshot["month"]
     cutoff = snapshot.get("evidence_as_of") or month
     if isinstance(cutoff, dict):
@@ -395,6 +395,7 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
                              "strict_peer_reviewed": view["strict_peer_reviewed"], "temporal_information_gaps": view["information_gaps"]}
         work = works[identifier]
         work.pop("report_text", None)  # Only the audited snapshot table may provide this derived view.
+        work.pop("source_conflicts", None)  # Only the audited comparison ledger supplies holds.
         if is_arxiv_work(row):
             text_view = text_as_of(row, text_snapshots[identifier], cutoff)
             available = text_view["status"] in {"available", "available_unversioned"}
@@ -428,6 +429,9 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
                             text_date_precision=report_selection["date_precision"], experimental_text_available=True)
         if view.get("validation_eligible") is False:
             work["research_status_blocked"] = True
+        if source_conflicts:
+            from source_content_conflicts import gate_editorial_work
+            works[identifier] = gate_editorial_work(work, source_conflicts)
         versions[identifier] = view["manifestations"]
     text_fields = ["text_status", "text_snapshot_ids", "text_version", "text_available_at", "text_date_precision", "title_is_current_identifier", "experimental_text_available"]
     def source_documents(work, allowed_urls):
@@ -530,6 +534,14 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
             "published_at": event.get("published_at"), "organization_id": event.get("organization_id"), "evidence_grade": work.get("evidence_grade", "E0"),
             "claim_status": event.get("claim_status"), "independent_validation": bool(event.get("independent_validation")),
             "evidence_cluster_id": work.get("evidence_cluster_id") or work["work_id"], "localization_required": False})
+    for card in cards:
+        holds = works[card["work_id"]].get("source_conflicts", [])
+        if holds:
+            # Preserve the chosen work/event and all deterministic facts, but
+            # do not let a disputed abstract or its cached translation seed
+            # another experimental claim. Bibliography/publication stays intact.
+            card.update(source_conflicts=copy.deepcopy(holds), abstract="", summary_zh="", title_zh=None,
+                        title_is_current_identifier=True)
     # A receipt enriches an already selected card. It must never change the
     # cohort, selection, evidence IDs, grades, numeric facts or signal quotes.
     if reading_index:
@@ -546,10 +558,12 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
         limitations.append("严格同行评审计数为零仅表示本库在截止时点尚未核验到该样本的正式评审记录，不表示本月不存在同行评审研究。")
     if len(chosen) < len(monthly):
         limitations.append("叙述证据按方向、问题和独立项目簇抽样；数量统计使用完整月度样本。")
-    if any(not row.get("abstract") for row in cards):
+    if any(not row.get("abstract") and not row.get("source_conflicts") for row in cards):
         limitations.append("部分证据缺少公开摘要，只能根据已附来源和现有说明作有限判断。")
-    if any(not row["experimental_text_available"] for row in cards):
+    if any(not row["experimental_text_available"] and not row.get("source_conflicts") for row in cards):
         limitations.append("部分研究缺少截止时点可用的版本原文；其当前标题只用于识别，不能用后续摘要、作者或中文说明推断历史实验。")
+    if any(row.get("source_conflicts") for row in cards):
+        limitations.append("部分研究的元数据摘要与所读版本正文存在待核差异；保留登记数量和出版信息，当前暂停引用受争议文本作实验结论，不代表论文撤回、撤稿或已证实错误。")
     if any(row["text_status"] == "non_arxiv_unverified_source_text" for row in cards):
         limitations.append("部分公司报告或项目网页尚无内容与时间绑定的正文档案；报告标注发布日期不证明当前网页全文当时已存在，旧中文摘要不能替代原文。")
     if any(row.get("report_text") for row in cards):
@@ -995,11 +1009,18 @@ def main(argv: list[str] | None = None) -> int:
                          if manifest.get("data_through") else {})
     else:
         reading_index = load_reading_index(catalog, args.catalog_directory.parent / "hardware-review", manifest["data_through"])
+    from source_content_conflicts import load_source_conflicts, build_source_conflicts
+    if fixture:
+        conflicts = (build_source_conflicts(fixture.get("source_content_conflicts", []), catalog,
+                    fixture.get("fulltext_readings", []), fixture.get("source_observations", []), manifest["data_through"])
+                    if manifest.get("data_through") else [])
+    else:
+        conflicts = load_source_conflicts(catalog, args.catalog_directory.parent, manifest["data_through"])
     statuses = []
     for month in select_months(manifest, month=args.month, all_months=args.all_months):
         snapshot_path = args.api_directory / "monthly" / f"{month}.json"
         snapshot = fixture.get("snapshots", {}).get(month) if fixture else json.loads(snapshot_path.read_text()) if snapshot_path.exists() else None
-        packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index) if snapshot else None
+        packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index, source_conflicts=conflicts) if snapshot else None
         initial_repair = None
         if args.resume_diagnostic_run:
             prior_packet = json.loads((args.resume_diagnostic_run / "evidence-packet.json").read_text())

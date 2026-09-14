@@ -39,7 +39,10 @@ USE_ROLES = ROLES - {"mentioned", "dataset_source"}
 HASH = re.compile(r"^[0-9a-f]{64}$")
 # Explicitly reviewed product aliases, never fuzzy matching. In particular,
 # neither RTX 4090D nor the old GPU/CPU composite workstation is an alias.
-MODEL_NAME_ALIASES = {"nvidia geforce rtx 4090": "NVIDIA RTX 4090"}
+MODEL_NAME_ALIASES = {"nvidia geforce rtx 4090": "NVIDIA RTX 4090",
+                      # Manufacturer: https://franka.de/products-overview
+                      # This does not identify Panda, FR3 Duo or unnamed arms.
+                      "franka fr3": "Franka Research 3"}
 
 
 def fail(reason):

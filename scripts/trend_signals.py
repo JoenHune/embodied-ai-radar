@@ -29,6 +29,10 @@ def reviewed_signal_evidence(work: dict, signal_id: str, cutoff: str, source_rec
     for record in entries:
         if not isinstance(record, dict) or record.get("signal_id") != signal_id or record.get("work_id") != work.get("work_id"):
             continue
+        if work.get("source_conflicts"):
+            from source_content_conflicts import signal_record_is_held
+            if signal_record_is_held(work, record, sources):
+                continue
         if record.get("review_status") != "verified" or record.get("research_scope") != "in_scope" or record.get("stance") not in {"supports", "contradicts", "neutral"}:
             continue
         if not record.get("record_id") or not isinstance(record.get("statement"), str) or not record["statement"].strip() or not isinstance(record.get("experiment"), dict):

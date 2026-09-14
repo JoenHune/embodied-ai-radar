@@ -228,11 +228,19 @@ def main() -> None:
     editorial_catalog = {"works": works, "manifestations": manifestations, "evidence-events": events,
                          "source-records": sources, "text-snapshots": texts, "report-text-snapshots": report_texts}
     editorial_reading_index = load_reading_index(editorial_catalog, ROOT / "data/hardware-review", manifest["data_through"])
+    from source_content_conflicts import load_source_conflicts, conflicts_for_work
+    source_conflicts = load_source_conflicts(editorial_catalog, ROOT / "data", manifest["data_through"])
+    require(json.loads((API / "source-content-conflicts.json").read_text()) == {
+        "schema_version": "1", "as_of": manifest["data_through"], "dataset_version": manifest["dataset_version"],
+        "conflicts": source_conflicts}, "Source comparison API differs from audited ledger")
     for month in [*manifest["complete_months"], manifest["provisional_month"]]:
         snapshot_path = API / "monthly" / f"{month}.json"
         require(snapshot_path.exists(), f"Missing monthly API snapshot {month}")
         snapshot = json.loads(snapshot_path.read_text())
         cohort = [work for work in works if research_eligible(work) and eligible_month(work, manifest["data_through"]) == month]
+        cohort_ids = {row["work_id"] for row in cohort}
+        require(snapshot.get("source_conflicts", []) == [notice for notice in source_conflicts
+            if notice["work_id"] in cohort_ids and notice["experimental_use"] == "hold"], f"{month} source comparison holds differ")
         require(snapshot.get("research_status") == status_work_views(cohort, snapshot["evidence_as_of"], sources), f"{month} status backdates later notices")
         require(snapshot.get("research_status_current") == status_work_views(cohort, status_as_of, sources), f"{month} omits notices newer than text coverage")
         require(snapshot["retrospective_evidence"].get("research_status") == status_work_views(cohort, manifest["data_through"], sources), f"{month} later status warnings missing")
@@ -245,7 +253,7 @@ def main() -> None:
         packet = None
         if saved_for_status.get("status") == "complete":
             from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay, available_reading_references
-            packet = build_evidence_packet(snapshot, editorial_catalog, reading_index=editorial_reading_index)
+            packet = build_evidence_packet(snapshot, editorial_catalog, reading_index=editorial_reading_index, source_conflicts=source_conflicts)
             check = validated_editorial_overlay(saved_for_status, packet)
             require((snapshot.get("editorial_status") == "llm_complete") == check["usable"], f"{month} editorial currentness differs from rebuilt evidence")
             editorial_history_reference(ROOT / "data/editorial", saved_for_status)
@@ -290,6 +298,7 @@ def main() -> None:
             wid = detail["work_id"]
             require(wid in work_by_id and wid not in checked_work_ids, "Unknown or duplicate public work")
             checked_work_ids.add(wid)
+            require(detail.get("source_conflicts", []) == conflicts_for_work(source_conflicts, wid), f"Work source comparison omitted or changed: {wid}")
             require(hashlib.sha1(wid.encode()).hexdigest()[:2] == path.stem, "Work exported to wrong shard")
             for key in ["title", "abstract", "authors", "first_public_date", "first_public_date_precision", "aliases"]:
                 require(detail.get(key) == work_by_id[wid].get(key), f"Public work changed authority field {wid}:{key}")

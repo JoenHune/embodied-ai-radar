@@ -3,6 +3,7 @@ import path from 'node:path'
 import { visualMediaCatalog } from './lib/visual-media.mjs'
 import { originalSourceUrl } from '../docs/.vitepress/theme/lib/research-card.mjs'
 import { publicationRecords } from '../docs/.vitepress/theme/lib/work-status.mjs'
+import { conflictsForWork, sourceConflictIndex } from '../docs/.vitepress/theme/lib/source-conflicts.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const lines = file => fs.existsSync(file) ? fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(JSON.parse) : []
@@ -11,11 +12,12 @@ const persons = lines(path.join(root, 'data/people/persons.jsonl'))
 const workIds = fs.readdirSync(path.join(root, 'data/catalog/works')).filter(file => file.endsWith('.jsonl'))
   .flatMap(file => lines(path.join(root, 'data/catalog/works', file)).map(work => work.work_id))
 const catalog = visualMediaCatalog(records, persons, workIds)
-fs.mkdirSync(path.join(root, 'docs/public/api/v1'), { recursive: true })
-fs.writeFileSync(path.join(root, 'docs/public/api/v1/visual-media.json'), JSON.stringify(catalog) + '\n')
 const api = path.join(root, 'docs/public/api/v1')
 const read = file => JSON.parse(fs.readFileSync(path.join(api, file), 'utf8'))
 const manifest = read('catalog-manifest.json')
+const sourceConflicts = sourceConflictIndex(read('source-content-conflicts.json'), manifest.dataset_version)
+fs.mkdirSync(api, { recursive: true })
+fs.writeFileSync(path.join(api, 'visual-media.json'), JSON.stringify(catalog) + '\n')
 const people = read('people/index.json').people
 const verifiedPeople = new Map()
 for (const person of people.filter(row => row.identity_status === 'profile_verified')) {
@@ -47,6 +49,7 @@ for (const file of fs.readdirSync(path.join(api, 'works')).filter(file => file.e
       strategic_only: kinds.length > 0 && kinds.every(kind => ['demo', 'deployment', 'hiring', 'personnel_change', 'organization_change', 'funding'].includes(kind)),
       strict_peer_reviewed: Boolean(work.strict_peer_reviewed), evidence_grade: work.evidence_grade,
       research_status: work.research_status || null,
+      source_conflicts: conflictsForWork(sourceConflicts, work.work_id),
       publication_records: publicationRecords(work),
       organizations: (work.organization_attributions || []).filter(row => ['G1', 'G2'].includes(row.evidence_grade)).map(row => ({ organization_id: row.organization_id, name: row.name })),
       people: verifiedPeople.get(work.work_id) || [],

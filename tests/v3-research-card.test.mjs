@@ -54,7 +54,7 @@ test('hardware card links use stable hardware_id and preserve baseline, calibrat
   ]
   const work = { work_id: 'work:hardware-test', title: 'Hardware evidence fixture', directions: [], hardware_usage: hardware }
   const context = { work, compact: false, detailButton: false, asset: null, original: 'https://example.org/paper', report: false, blocked: false, publications: [], notices: [], relevanceLabels: {}, directionShortNames: {}, details: '/database/', hardware, hardwareNames: hardware.map(row => row.name), usageLabels: { real_robot: '真机使用', sensing: '感知' }, settingLabels: { real: '真实设备' }, eventDate: () => '日期未登记', researchOutputLabel: () => '论文', withBase: value => value }
-  const app = Vue.createSSRApp({ render, setup: () => context, components: { SourceImage: { render: () => null } } })
+  const app = Vue.createSSRApp({ render, setup: () => context, components: { SourceImage: { render: () => null }, SourceConflictNotice: { render: () => null } } })
   const html = await renderToString(app)
   assert.match(html, /\/hardware\/\?device=hardware%3Abaseline-platform/)
   assert.doesNotMatch(html, /device=wrong-slug/)

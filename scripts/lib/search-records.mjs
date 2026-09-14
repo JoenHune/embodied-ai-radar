@@ -3,11 +3,13 @@ import { normalizeSearchBoundaries, piModelNames, searchText } from '../../docs/
 import { isArxivWork, prepareSearchWork } from './versioned-search-text.mjs'
 import { originalSourceUrl } from '../../docs/.vitepress/theme/lib/research-card.mjs'
 import { publicationRecords } from '../../docs/.vitepress/theme/lib/work-status.mjs'
+import { compactSourceConflicts } from '../../docs/.vitepress/theme/lib/source-conflicts.mjs'
 
 export const SEARCH_DICTIONARY_VERSION = '3.4.0'
 const CARD_META_KEYS = new Set(['title', 'title_zh', 'work_id', 'date', 'date_precision', 'direction', 'evidence', 'relevance', 'peer_reviewed', 'summary', 'organizations', 'output_types', 'venues', 'shard', 'record_type', 'text_status', 'text_version', 'text_available_at', 'text_cutoff', 'text_version_status', 'text_cutoff_applicability', 'title_role', 'localization_status', 'publication_metadata_scope', 'research_status', 'research_validation_eligible', 'research_status_as_of', 'original_url'])
 CARD_META_KEYS.add('publication_records')
 CARD_META_KEYS.add('research_status_notices')
+CARD_META_KEYS.add('source_conflicts')
 export function compactResultCard(row) {
   // Empty-query browse pages repeat all/status lists. Keep all visible card
   // fields, but don't duplicate full author/version arrays already available
@@ -140,6 +142,7 @@ export function workSearchRecord(work, { manifestations = [], organizationIds = 
   }
   const publicationDetails = publicationRecords(work, manifestations)
   const meta = {
+    ...(work.source_conflicts?.length ? { source_conflicts: JSON.stringify(compactSourceConflicts(work.source_conflicts)) } : {}),
     ...(publicationDetails.length ? { publication_records: JSON.stringify(publicationDetails) } : {}),
     ...(work.research_status?.notices?.length ? { research_status_notices: JSON.stringify(work.research_status.notices.map(({ event_type, public_at, date_precision, summary_zh, source_url }) => ({ event_type, public_at, date_precision, summary_zh, source_url }))) } : {}),
     original_url: originalSourceUrl(work, manifestations),

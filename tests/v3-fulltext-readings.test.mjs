@@ -4,18 +4,20 @@ import fs from 'node:fs'
 import vm from 'node:vm'
 import ts from 'typescript'
 import { parse, compileScript, compileTemplate } from '@vue/compiler-sfc'
+import { sourceConflictIndex, conflictsForWork } from '../docs/.vitepress/theme/lib/source-conflicts.mjs'
 
 const source = fs.readFileSync(new URL('../docs/.vitepress/theme/components/FulltextReadings.vue', import.meta.url), 'utf8')
 const descriptor = parse(source).descriptor
 const entry = (id = 'a', extra = {}) => ({ reading_id: id, work_id: `arxiv:2407.0000${id}`, title: `Paper ${id}`, relevance_status: 'included', source_url: 'https://arxiv.org/html/2407.00001v1', version: 'v1', read_completed_at: '2026-09-14T08:00:00Z', checked_table_count: 2, reader_kind: 'AI', reading_status: 'completed', human_reviewed: false, images_inspected: false, supplementary_materials_inspected: false, text_scope: 'complete_available_article_text', findings_zh: [{ text_zh: '原文新增发现', source_locator: 'S4; A1' }], limitations_zh: [{ text_zh: '仅仿真，不能当真机部署', source_locator: 'S5' }], ...extra })
 const envelope = records => ({ schema_version: '1', dataset_version: 'revision', dictionary_hash: 'dictionary', assurance: 'self_attested_AI_reading_not_human_review', records })
-function harness(value = envelope([entry()])) {
+function harness(value = envelope([entry()]), conflicts = { schema_version: '1', dataset_version: 'revision', as_of: '2026-09-15', conflicts: [] }) {
   const requests = []
   const props = { expectedVersion: 'revision', dictionaryHash: 'dictionary', cohort: 'all_works' }
   const ctx = { URL, URLSearchParams, AbortController, Set, computed: fn => ({ get value() { return fn() } }), ref: value => ({ value }),
     defineProps: () => props, onMounted() {}, onBeforeUnmount() {}, withBase: value => value, eventDate: value => value,
-    fetch: async (...args) => { requests.push(args); if (value instanceof Error) throw value; return { ok: true, json: async () => value } } }
-  vm.runInNewContext(ts.transpile(descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view = {load,readings,error,loading,filtered,visible,shown,versionMismatch,sourceAllowed,sourceParts,locationUrl};', { target: ts.ScriptTarget.ES2022 }), ctx)
+    sourceConflictIndex, conflictsForWork,
+    fetch: async (...args) => { requests.push(args); const response = args[0].includes('source-content-conflicts') ? conflicts : value; if (response instanceof Error) throw response; return { ok: true, json: async () => response } } }
+  vm.runInNewContext(ts.transpile(descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view = {load,readings,error,loading,filtered,visible,shown,versionMismatch,sourceAllowed,sourceParts,locationUrl,conflictUnknown,conflictError,readingConflicts};', { target: ts.ScriptTarget.ES2022 }), ctx)
   return { ...ctx.view, props, requests }
 }
 test('reading view compiles and is only mounted after an explicit expand action', () => {
@@ -26,10 +28,10 @@ test('reading view compiles and is only mounted after an explicit expand action'
   assert.match(parent, /<FulltextReadings v-else/)
   assert.match(parent, /AI已通读可用HTML文字/)
 })
-test('fetches one small readings API and never the full work catalog', async () => {
+test('fetches small reading and conflict APIs, never the full work catalog', async () => {
   const view = harness(); await view.load()
   assert.equal(view.error.value, '')
-  assert.deepEqual(view.requests.map(r => r[0]), ['/api/v1/equipment/coverage-readings.json'])
+  assert.deepEqual(view.requests.map(r => r[0]).sort(), ['/api/v1/equipment/coverage-readings.json', '/api/v1/source-content-conflicts.json'])
   assert.equal(view.visible.value.length, 1)
   assert.equal(view.readings.value[0].human_reviewed, false)
 })
@@ -88,4 +90,42 @@ test('unversioned sources need an exact safe pin rather than a foreign or differ
     assert.ok(view.error.value)
     assert.equal(view.readings.value.length, 0)
   }
+})
+
+const conflict = (extra = {}) => ({ conflict_id: 'source-conflict:fixture', work_id: 'arxiv:2407.00001', version: 'v1',
+  status: 'open', experimental_use: 'hold', summary_zh: '元数据与缓存正文表述待核。', detected_at: '2026-09-15T00:00:00Z',
+  issue_types: ['content_mismatch'], source_urls: ['https://arxiv.org/abs/2407.00001v1', 'https://arxiv.org/html/2407.00001v1'], ...extra })
+const conflictEnvelope = conflicts => ({ schema_version: '1', dataset_version: 'revision', as_of: '2026-09-15', conflicts })
+
+test('independent conflicts map only matching reading work and version without changing receipts or count', async () => {
+  const receipts = envelope([entry('1'), entry('2'), entry('later', { work_id: 'arxiv:2407.00001', version: 'v2', source_url: 'https://arxiv.org/html/2407.00001v2' })])
+  const before = structuredClone(receipts)
+  const view = harness(receipts, conflictEnvelope([conflict()])); await view.load()
+  assert.equal(view.conflictUnknown.value, false)
+  assert.equal(view.readingConflicts(view.readings.value.find(row => row.reading_id === '1')).length, 1)
+  assert.equal(view.readingConflicts(view.readings.value.find(row => row.reading_id === '2')).length, 0)
+  assert.equal(view.readingConflicts(view.readings.value.find(row => row.reading_id === 'later')).length, 0)
+  assert.equal(view.readings.value.length, 3)
+  assert.deepEqual(receipts, before)
+  assert.ok(view.readings.value.every(row => row.source_conflicts === undefined))
+})
+
+test('unavailable or mismatched conflict API is unknown while readable receipts retain their counts', async () => {
+  for (const response of [new Error('offline'), { ...conflictEnvelope([]), dataset_version: 'stale' }, {}, conflictEnvelope([{ ...conflict(), source_urls: ['javascript:alert(1)'] }])]) {
+    const view = harness(envelope([entry()]), response); await view.load()
+    assert.equal(view.error.value, '')
+    assert.equal(view.readings.value.length, 1)
+    assert.equal(view.conflictUnknown.value, true)
+    assert.ok(view.conflictError.value)
+  }
+  const view = harness(); await view.load(); view.props.expectedVersion = 'next'
+  assert.equal(view.conflictUnknown.value, true)
+  assert.match(source, /:unknown="conflictUnknown"/)
+})
+
+test('conflicts without a receipt cannot fabricate a reading or alter the reading population', async () => {
+  const view = harness(envelope([]), conflictEnvelope([conflict()])); await view.load()
+  assert.equal(view.readings.value.length, 0)
+  assert.equal(view.filtered.value.length, 0)
+  assert.equal(view.conflictUnknown.value, false)
 })

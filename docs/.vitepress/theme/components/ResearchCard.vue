@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
 import SourceImage from './SourceImage.vue'
+import SourceConflictNotice from './SourceConflictNotice.vue'
 import { useVisualMedia } from '../composables/useVisualMedia'
 import { useEquipmentEvidence } from '../composables/useEquipmentEvidence'
 import { eventDate } from '../lib/dates'
@@ -31,6 +32,7 @@ const details = computed(() => withBase(`/database/?${new URLSearchParams({ work
     <a v-if="asset && original" class="research-card-image" :href="original" target="_blank" rel="noopener noreferrer" :aria-label="`阅读原文：${work.title}`"><SourceImage :entity-id="work.work_id" :name="work.title" :interactive="false" /><span>{{ asset.contains_generated_visuals ? '含模型生成示意' : report ? '企业报告' : '研究配图' }} ↗</span></a>
     <div class="research-card-copy">
       <div class="research-card-meta"><span :class="{ 'report-label': report }">{{ researchOutputLabel(work) }}</span><time>首次公开 {{ eventDate(work.first_public_date, work.first_public_date_precision) }}</time><span v-if="relevanceLabels[work.relevance_status]">{{ relevanceLabels[work.relevance_status] }}</span><span v-if="work.text_notice">{{ work.text_notice }}</span></div>
+      <SourceConflictNotice :value="work.source_conflicts" :unknown="work.source_conflicts_unknown === true" :work-id="work.work_id" compact />
       <div v-if="notices.length" class="research-card-alert" :class="{ 'status-not-blocking': !blocked }"><p v-for="(notice, i) in notices" :key="i"><strong>{{ notice.label }}</strong><span v-if="notice.date"> · {{ eventDate(notice.date, notice.date_precision) }}</span><span v-if="blocked"> · 结果不作验证</span><br v-if="notice.summary" />{{ notice.summary }} <a v-if="notice.url" :href="notice.url" target="_blank" rel="noopener noreferrer">官方通知 ↗</a></p></div>
       <ul v-if="publications.length" class="research-card-publications" aria-label="会议与期刊收录状态"><li v-for="publication in publications" :key="publication.venue"><a :href="publication.url" target="_blank" rel="noopener noreferrer"><strong>{{ publication.venue }}</strong> · {{ publication.state }} ↗</a></li></ul>
       <h3><a v-if="original" :href="original" target="_blank" rel="noopener noreferrer">{{ work.title_zh || work.title }}</a><span v-else>{{ work.title_zh || work.title }}</span></h3>

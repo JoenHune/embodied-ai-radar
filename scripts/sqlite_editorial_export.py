@@ -18,6 +18,7 @@ PATH_RULES = (
     (r"evidence-packets/[a-f0-9]{64}\.json", "evidence_packet"),
     (r"work-localizations\.jsonl", "localizations"),
     (r"signal-evidence\.jsonl", "signal_evidence"),
+    (r"source-content-conflicts\.jsonl", "source_conflicts"),
 )
 
 

@@ -4,6 +4,8 @@ import { withBase } from 'vitepress'
 import { eventDate } from '../lib/dates'
 import ReportTextEvidence from './ReportTextEvidence.vue'
 import ResearchStatusNotice from './ResearchStatusNotice.vue'
+import SourceConflictNotice from './SourceConflictNotice.vue'
+import { sourceConflictState } from '../lib/source-conflicts.mjs'
 import ResearchCard from './ResearchCard.vue'
 import { searchCardFromResult as researchCard } from '../lib/research-card.mjs'
 import { defaultFilters, filterCatalog, loadResultPage, readSearchUrl, searchOptions, writeSearchUrl, type ResultHandle, type SearchLookup } from '../lib/catalog-search'
@@ -25,6 +27,7 @@ const expandedFilters = ref(false)
 const dialog = ref<HTMLDialogElement | null>(null)
 const queryInput = ref<HTMLInputElement | null>(null)
 const detail = ref<any>(null)
+const detailSourceConflict = computed(() => sourceConflictState(detail.value?.source_conflicts, { workId: detail.value?.work_id }))
 const detailLoading = ref(false)
 const detailError = ref('')
 const versionText = ref<any>(null)
@@ -384,9 +387,10 @@ watch(filters, scheduleSearch, { deep: true })
       <div class="search-detail-content"><button class="v3-detail-close" type="button" aria-label="关闭详情" autofocus @click="closeDetail()">关闭</button><h2 id="work-detail-title">{{ detailHeading }}</h2>
         <p v-if="detailLoading" role="status">正在载入研究与公开版本……</p><div v-else-if="detailError" role="alert"><p>{{ detailError }}</p><button type="button" @click="openWork(currentWork, false)">重试</button></div>
         <template v-else-if="detail">
+          <SourceConflictNotice :value="detail.source_conflicts" :work-id="detail.work_id" />
           <ResearchStatusNotice v-if="detail.research_status" :value="detail.research_status" title="请先核对研究状态" :context="detailResearchStatusContext" />
           <p v-if="detail.research_status?.information_gaps?.length" class="work-status-gap" role="status">研究状态的日期、来源或通知顺序仍有待核验项；缺少确定信息不等于已经撤回，也不等于已经恢复。下方原始内容保留供核对。</p>
-          <p class="v3-eyebrow">{{ detail.primary_direction || '待分类' }} · {{ detail.evidence_grade }} · {{ optionLabel(detail.relevance?.status) }}</p><p v-if="detail.title_zh || detailHeading !== detail.title" class="v3-original-title">入库原题：{{ detail.title }}</p><p v-if="detail.summary_zh"><small v-if="detail.editorial_source === 'legacy_editorial'">历史编辑摘要（未按当前版次重新审核）：</small>{{ detail.summary_zh }}</p><details v-if="detail.abstract" class="work-original-abstract" :open="!detail.summary_zh && !detail.text_versions?.length"><summary>入库原始摘要</summary><p>{{ detail.abstract }}</p><p>这段保留原始入库文本；有版本档案时，请以下方带日期的版本原文为准。</p></details><p v-else-if="!detail.summary_zh">暂无摘要，可通过原文来源了解研究内容。</p>
+          <p class="v3-eyebrow">{{ detail.primary_direction || '待分类' }} · {{ detail.evidence_grade }} · {{ optionLabel(detail.relevance?.status) }}</p><p v-if="detail.title_zh || detailHeading !== detail.title" class="v3-original-title">入库原题：{{ detail.title }}</p><p v-if="detail.summary_zh"><small v-if="detail.editorial_source === 'legacy_editorial'">历史编辑摘要（未按当前版次重新审核）：</small>{{ detail.summary_zh }}</p><details v-if="detail.abstract" class="work-original-abstract" :open="!detail.summary_zh && !detail.text_versions?.length"><summary>入库原始摘要</summary><p>{{ detail.abstract }}</p><p v-if="detailSourceConflict.unknown || detailSourceConflict.rows.length">入库摘要与各版本来源均保留供核对；当前存在待核差异或核验状态未知，不能仅凭相同版本号认定两渠道内容和日期一致。</p><p v-else>这段保留原始入库文本；有版本档案时，请以下方带日期的版本原文为准。</p></details><p v-else-if="!detail.summary_zh">暂无摘要，可通过原文来源了解研究内容。</p>
           <dl><div><dt>首次公开</dt><dd>{{ eventDate(detail.first_public_date, detail.first_public_date_precision) }}</dd></div><div><dt>{{ currentTextMetadata ? '截至日版本作者' : '入库作者记录' }}</dt><dd>{{ (currentTextMetadata?.authors || detail.authors)?.join(' · ') || '待补' }}</dd></div><div><dt>方向</dt><dd>{{ detail.directions?.join(' · ') || '待分类' }}</dd></div><div><dt>问题轴</dt><dd>{{ detail.questions?.join(' · ') || '待归类' }}</dd></div><div><dt>组织</dt><dd>{{ detail.organization_details?.map((org: any) => org.name).join(' · ') || detail.organizations?.join(' · ') || '待归属' }}</dd></div><div><dt>证据</dt><dd>{{ detail.strict_peer_reviewed ? '严格同行评审' : '暂无已核验的同行评审记录' }} · {{ detail.evidence_grade }}</dd></div></dl>
           <details v-if="currentTextMetadata && JSON.stringify(currentTextMetadata.authors) !== JSON.stringify(detail.authors)"><summary>查看保留的入库作者记录</summary><p>{{ detail.authors?.join(' · ') || '未记录' }}</p></details>
           <section v-if="detail.organization_attributions?.length"><h3>研究组归属证据</h3><ul><li v-for="(link, index) in detail.organization_attributions" :key="index"><strong>{{ link.name }}</strong> · {{ link.evidence_grade }} · {{ link.evidence_grade === 'G1' ? '直接来源' : link.evidence_grade === 'G2' ? '按论文日期重建归属' : link.evidence_grade === 'G0' ? '仅母机构，不归入具体组' : '待核验线索' }} <a v-if="link.evidence_url" :href="link.evidence_url" target="_blank" rel="noopener noreferrer">核对归属原文</a><p v-if="link.membership_evidence">{{ link.membership_evidence.author }} · 证据覆盖 {{ eventDate(link.membership_evidence.valid_from) }}—{{ link.membership_evidence.valid_to ? eventDate(link.membership_evidence.valid_to) : '所记录的在组期间' }} <a :href="link.membership_evidence.source_url" target="_blank" rel="noopener noreferrer">成员关系来源</a></p></li></ul></section>

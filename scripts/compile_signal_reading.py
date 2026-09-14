@@ -127,7 +127,9 @@ def main(argv=None):
     from editorial_readings import load_reading_index
     manifest = json.loads((API / "catalog-manifest.json").read_text())
     reading_index = load_reading_index(catalog, CATALOG.parent / "hardware-review", manifest["data_through"])
-    packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index)
+    from source_content_conflicts import load_source_conflicts
+    conflicts = load_source_conflicts(catalog, CATALOG.parent, manifest["data_through"])
+    packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index, source_conflicts=conflicts)
     incoming = compile_reading(reading, packet, catalog)
     path = EDITORIAL / "signal-evidence.jsonl"
     rows = merge_reading(read_jsonl(path), incoming, allow_revision=args.revise)

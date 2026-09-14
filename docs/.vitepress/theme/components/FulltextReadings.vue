@@ -2,6 +2,8 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import { eventDate } from '../lib/dates'
+import SourceConflictNotice from './SourceConflictNotice.vue'
+import { conflictsForWork, sourceConflictIndex } from '../lib/source-conflicts.mjs'
 
 type Judgment = { text_zh: string; source_locator: string }
 type Reading = { reading_id: string; work_id: string; title: string; relevance_status: string; source_url: string; versioned_source_url?: string; version: string; read_completed_at: string; article_normalization?: string; checked_table_count: number; findings_zh: Judgment[]; limitations_zh: Judgment[] }
@@ -11,6 +13,10 @@ const loadedVersion = ref('')
 const loadedDictionary = ref('')
 const loading = ref(true)
 const error = ref('')
+const conflictIndex = ref<ReturnType<typeof sourceConflictIndex>>(new Map())
+const conflictError = ref('')
+const conflictLoading = ref(true)
+const conflictLoadedVersion = ref('')
 const shown = ref(12)
 let controller: AbortController | undefined
 let serial = 0
@@ -31,16 +37,32 @@ const readingSourceAllowed = (row: Reading) => {
 }
 const validJudgments = (value: any) => Array.isArray(value) && value.length > 0 && value.every(row => typeof row.text_zh === 'string' && row.text_zh.trim() && typeof row.source_locator === 'string' && row.source_locator.trim())
 const versionMismatch = computed(() => Boolean(loadedVersion.value && (loadedVersion.value !== props.expectedVersion || loadedDictionary.value !== props.dictionaryHash)))
+const conflictUnknown = computed(() => Boolean(conflictError.value || !conflictLoading.value && conflictLoadedVersion.value !== props.expectedVersion))
+const readingConflicts = (row: Reading) => conflictsForWork(conflictIndex.value, row.work_id, row.version)
 const filtered = computed(() => readings.value.filter(row => props.cohort !== 'included' || row.relevance_status === 'included'))
 const visible = computed(() => filtered.value.slice(0, shown.value))
 const sourceParts = (judgment: Judgment) => judgment.source_locator.split(';').map(part => part.trim()).filter(Boolean)
 const locationUrl = (row: Reading, locator: string) => readingUrl(row) + '#' + encodeURIComponent(locator)
 const workUrl = (id: string) => withBase(`/database/?${new URLSearchParams({ work: id, relevance: 'all' })}`)
 const labels: Record<string, string> = { included: '已纳入', candidate: '候选', manual_review: '分类待复核', excluded: '已排除' }
+const loadConflicts = async (request: number, signal: AbortSignal) => {
+  conflictLoading.value = true; conflictError.value = ''; conflictLoadedVersion.value = ''; conflictIndex.value = new Map()
+  try {
+    const response = await fetch(withBase('/api/v1/source-content-conflicts.json'), { signal, cache: 'no-cache' })
+    if (!response.ok) throw new Error('unavailable')
+    const data = await response.json()
+    if (disposed || request !== serial) return
+    conflictIndex.value = sourceConflictIndex(data, props.expectedVersion)
+    conflictLoadedVersion.value = data.dataset_version
+  } catch {
+    if (!disposed && request === serial) conflictError.value = '来源冲突状态未知；记录不可用或与当前数据版本不一致。'
+  } finally { if (!disposed && request === serial) conflictLoading.value = false }
+}
 const load = async () => {
   const request = ++serial
   controller?.abort(); controller = new AbortController()
   loading.value = true; error.value = ''; readings.value = []; loadedVersion.value = ''; loadedDictionary.value = ''
+  const conflictRequest = loadConflicts(request, controller.signal)
   try {
     const response = await fetch(withBase('/api/v1/equipment/coverage-readings.json'), { signal: controller.signal, cache: 'no-cache' })
     if (!response.ok) throw new Error('unavailable')
@@ -53,7 +75,7 @@ const load = async () => {
     loadedVersion.value = data.dataset_version; loadedDictionary.value = data.dictionary_hash
   } catch (cause) {
     if (!disposed && request === serial) error.value = cause instanceof Error && cause.message === 'version' ? '阅读记录与覆盖统计版本不一致，已停止组合展示，请刷新页面。' : '原文阅读记录暂不可读；这不代表尚无阅读记录。'
-  } finally { if (!disposed && request === serial) loading.value = false }
+  } finally { await conflictRequest; if (!disposed && request === serial) loading.value = false }
 }
 onMounted(() => { void load() })
 onBeforeUnmount(() => { disposed = true; serial++; controller?.abort() })
@@ -62,12 +84,15 @@ onBeforeUnmount(() => { disposed = true; serial++; controller?.abort() })
 <template>
   <section class="fulltext-readings" aria-label="原文阅读发现与限制">
     <p class="reading-boundary">以下是AI对可用HTML文字的通读记录，非人工审稿或独立复现。图片、视频和外部补充材料仍未检查；文字和表格中的矛盾保留为待确认，不替作者补猜。</p>
+    <p v-if="conflictLoading" role="status">正在核对来源冲突状态…</p>
+    <SourceConflictNotice v-else :unknown="conflictUnknown" />
     <p v-if="loading" role="status">正在读取原文发现与限制…</p>
     <div v-else-if="error || versionMismatch" role="alert"><p>{{ versionMismatch ? '阅读记录与覆盖统计版本不一致，当前记录状态未知。' : error }}</p><button type="button" @click="load">重新读取</button></div>
     <template v-else>
       <p class="reading-count" aria-live="polite">当前范围 {{ new Set(filtered.map(row => row.work_id)).size }} 项研究 · {{ filtered.length }} 份版本阅读记录</p>
       <article v-for="row in visible" :key="row.reading_id" class="reading-card">
         <header><h3><a :href="workUrl(row.work_id)">{{ row.title }}</a></h3><p>{{ labels[row.relevance_status] || '相关性状态待确认' }} · {{ row.version }} · {{ row.article_normalization === 'reading-packet-blocks-v1' ? '结构化全文' : '全文文字' }} · AI阅读 {{ eventDate(row.read_completed_at) }} · 已核对 {{ row.checked_table_count }} 个表格结构</p></header>
+        <SourceConflictNotice v-if="!conflictUnknown" :value="readingConflicts(row)" :work-id="row.work_id" :version="row.version" />
         <h4>正文新增发现</h4>
         <ul><li v-for="(claim, i) in row.findings_zh" :key="i">{{ claim.text_zh }} <span class="reading-citations"><a v-for="locator in sourceParts(claim)" :key="locator" :href="locationUrl(row, locator)" target="_blank" rel="noopener noreferrer">{{ locator }} ↗</a></span></li></ul>
         <div class="reading-limitations"><h4>限制与待确认</h4><ul><li v-for="(claim, i) in row.limitations_zh" :key="i">{{ claim.text_zh }} <span class="reading-citations"><a v-for="locator in sourceParts(claim)" :key="locator" :href="locationUrl(row, locator)" target="_blank" rel="noopener noreferrer">{{ locator }} ↗</a></span></li></ul></div>

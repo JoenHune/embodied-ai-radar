@@ -8,6 +8,7 @@ import * as pagefind from 'pagefind'
 import { SEARCH_DICTIONARY_VERSION, workSearchRecord, compactResultCard } from './lib/search-records.mjs'
 import { SEARCH_TEXT_CONTRACT } from '../docs/.vitepress/theme/lib/search-text.mjs'
 import { applySearchStatus } from './lib/search-status.mjs'
+import { applySourceConflicts, sourceConflictIndex } from '../docs/.vitepress/theme/lib/source-conflicts.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const dist = path.resolve(process.env.PAGEFIND_DIST || path.join(root, 'docs/.vitepress/dist'))
@@ -20,6 +21,7 @@ const publicManifest = JSON.parse(fs.readFileSync(path.join(dist, 'api/v1/catalo
 const authorityManifest = JSON.parse(fs.readFileSync(path.join(catalog, 'manifest.json'), 'utf8'))
 if (publicManifest.catalog_hash !== authorityManifest.catalog_hash) throw new Error('Site and search authority revisions differ; rebuild VitePress from the current catalog')
 const dataThrough = publicManifest.data_through
+const sourceConflicts = sourceConflictIndex(JSON.parse(fs.readFileSync(path.join(dist, 'api/v1/source-content-conflicts.json'), 'utf8')), publicManifest.dataset_version)
 if (!dataThrough) throw new Error('The exported catalogue must declare its data_through before search indexing')
 const reportViewPath = path.join(dist,'api/v1/report-text-index.json')
 const reportViews = fs.existsSync(reportViewPath) ? JSON.parse(fs.readFileSync(reportViewPath,'utf8')) : {catalog_hash:publicManifest.catalog_hash,data_through:dataThrough,works:{}}
@@ -107,6 +109,7 @@ try {
   const sources = fs.existsSync(workDir) ? fs.readdirSync(workDir).filter((name) => /^[a-f0-9]{2}\.jsonl$/.test(name)).sort().map((name) => path.join(workDir, name)) : [path.join(catalog, 'works.jsonl')]
   if (!sources.length) throw new Error('No authority work shards found')
   for (const source of sources) await readJsonLines(source, async (work) => {
+    work = applySourceConflicts(work, sourceConflicts)
     if (work.research_status_notices?.length && !statusView) throw new Error('Research-status projection missing during indexing')
     const status = statusById.get(work.work_id)
     if (status) {

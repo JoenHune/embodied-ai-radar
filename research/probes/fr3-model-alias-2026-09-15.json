@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "source_url": "https://franka.de/products-overview",
+  "checked_date_utc": "2026-09-14",
+  "manufacturer_label": "Franka Research 3 (FR3)",
+  "canonical_hardware_id": "hardware:franka-research-3",
+  "aliases_added": ["Franka FR3", "FR3"],
+  "removed_unpublished_duplicate": "hardware:franka-fr3",
+  "affected_work_id": "arxiv:2609.00941",
+  "uses_relinked": 2,
+  "use_roles_preserved": ["real_robot", "simulated_robot"],
+  "original_reported_names_preserved": true,
+  "global_usage_count_before": 425,
+  "global_usage_count_after": 425,
+  "scope": "Correction of this turn's unpublished duplicate only; existing identity and all evidence retained. Not a merge with Panda, FR3 Duo or unqualified Franka arms."
+}
