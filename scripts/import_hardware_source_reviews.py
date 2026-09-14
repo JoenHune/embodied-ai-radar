@@ -5,6 +5,10 @@ Default is dry-run. A review is not a whole-paper reading or a finding that
 hardware was absent. Neither raw HTML, body text nor local cache paths are
 published. Historical observations remain valid after an extractor revision.
 
+Legacy observations with unversioned official URLs retain those exact URLs.
+New imports of them require the cached HTML itself to prove the requested
+version; the declaration or a versioned redirect alone cannot supply it.
+
 An optional extends_review_id appends NEW usage assertions to an existing
 section review of the exact same source observation. It is not a replacement,
 new fetch, wider absence claim, or permission to modify existing usage rows.
@@ -20,7 +24,10 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from bs4 import BeautifulSoup
+
 from catalog_store import encode, fingerprint, load_catalog, write_if_changed
+from collect_hardware_sources import arxiv_identity, page_identity
 from equipment_radar import CATEGORIES, ROLES, COMPUTE_ROLES, SETTINGS, USAGE_SCOPES, TABLES, load_equipment_authority
 from import_equipment_reviews import merge_equipment_reviews
 from people_radar import _hard_identity
@@ -69,6 +76,18 @@ def jsonl(path):
 def source_key(row, *, review=False):
     return tuple(row.get(key) for key in ("work_id", "source_url", "source_version" if review else "version",
                                           "raw_sha256", "text_sha256", "observed_at"))
+
+
+def official_source_identity(source_url, version, *, reason="versioned_official_html_url_required"):
+    """Allow a legacy unversioned URL, never a contradictory version/host."""
+    url = urlsplit(source_url)
+    identity = arxiv_identity(source_url)
+    if (url.scheme != "https" or url.hostname not in {"arxiv.org", "www.arxiv.org"} or
+            url.username or url.password or url.port not in {None, 443} or url.query or url.fragment or
+            not url.path.startswith("/html/") or not re.fullmatch(r"v[1-9]\d*", version) or
+            identity is None or identity[1] not in {None, version}):
+        fail(reason)
+    return identity
 
 
 def review_ledger(records):
@@ -179,13 +198,9 @@ def audit_addenda_lineage(section_reviews, usage_evidence, public_observations=N
         if any((review.get(key) is not value) if isinstance(value, bool) else (review.get(key) != value)
                for key, value in constants.items()):
             fail('addendum_public_scope_mismatch')
-        url = urlsplit(required_text(review, 'source_url'))
         version = required_text(review, 'source_version')
-        if (url.scheme != 'https' or url.hostname not in {'arxiv.org', 'www.arxiv.org'} or url.username or url.password
-                or url.port not in {None, 443} or url.query or url.fragment or not url.path.startswith('/html/')
-                or not re.fullmatch(r'v[1-9]\d*', version) or not url.path.endswith(version)
-                or not str(_hard_identity(review['source_url']) or '').startswith('arxiv:')):
-            fail('addendum_public_official_source_invalid')
+        official_source_identity(required_text(review, 'source_url'), version,
+                                 reason='addendum_public_official_source_invalid')
         for key in ('raw_sha256', 'text_sha256', 'review_input_hash'):
             if not HASH.fullmatch(str(review.get(key, ''))):
                 fail('addendum_public_source_hash_invalid')
@@ -258,12 +273,7 @@ def verify_source(review, works, history, cache_root):
         fail("unknown_canonical_work:" + wid)
     source_url = required_text(review, "source_url")
     version = required_text(review, "source_version")
-    url = urlsplit(source_url)
-    if (url.scheme != "https" or url.hostname not in {"arxiv.org", "www.arxiv.org"} or
-            url.username or url.password or url.query or url.fragment or
-            not url.path.startswith("/html/") or not re.fullmatch(r"v[1-9]\d*", version) or
-            not url.path.endswith(version)):
-        fail("versioned_official_html_url_required")
+    url_identity = official_source_identity(source_url, version)
     canonical_aid = works[wid].get("identifiers", {}).get("arxiv")
     identity = _hard_identity(source_url)
     if not canonical_aid or identity != _hard_identity("https://arxiv.org/abs/" + canonical_aid):
@@ -291,8 +301,19 @@ def verify_source(review, works, history, cache_root):
            p.get("version") and p["version"] != version for p in proofs):
         fail("conflicting_identity_proof")
     raw_path = private_file(observation.get("cache_ref"), cache_root)
-    if hashlib.sha256(raw_path.read_bytes()).hexdigest() != review["raw_sha256"]:
+    raw_bytes = raw_path.read_bytes()
+    if hashlib.sha256(raw_bytes).hexdigest() != review["raw_sha256"]:
         fail("raw_cache_hash_mismatch")
+    if url_identity[1] is None:
+        effective_url = observation.get("effective_url") or source_url
+        if official_source_identity(effective_url, version)[0] != url_identity[0]:
+            fail("raw_page_identity_or_version_mismatch:effective_url_identity_mismatch")
+        # Deliberately pass the observed unversioned URL, not a versioned
+        # redirect, so page_identity must obtain vN from the actual HTML.
+        valid, resolved_version, _, reason = page_identity(
+            BeautifulSoup(raw_bytes, "html.parser"), source_url, url_identity[0], version)
+        if not valid or resolved_version != version:
+            fail("raw_page_identity_or_version_mismatch:" + str(reason))
     blocks = json.loads(private_file(observation.get("blocks_ref"), cache_root).read_text(encoding="utf-8"))
     if not isinstance(blocks, list) or not blocks:
         fail("body_blocks_required")

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1",
+  "work_id": "arxiv:2609.03623",
+  "reviewed_on": "2026-09-15",
+  "review_status": "partial_evidence_requires_publication_identity_review",
+  "canonical_date_changed": false,
+  "strict_peer_review_upgraded": false,
+  "claims": [
+    {
+      "claim": "QLAUN项目在2023年已有学校官方公开报道。",
+      "status": "verified_project_history_not_paper_publication",
+      "source_url": "https://news.lau.edu.lb/2023/engineering-students-recognized-for-innovative-capstone-projects.php",
+      "source_title": "Engineering Students Recognized for Innovative Capstone Projects",
+      "published_at": "2023-06-08",
+      "reported_event_at": "2023-05-31",
+      "evidence_summary": "学校报道在2023年毕业设计评奖中列明QLAUN、Mohamad Said Moudallal和Ralph Sakhat，并说明项目在LAU实验室从零开发。",
+      "limits": "只确立项目早期存在，不证明当前两作者论文全文在2023年已公开，也不将获奖学生追加为论文作者。"
+    },
+    {
+      "claim": "所读论文自述曾于2024年9月ICRA@40作extended abstract展示。",
+      "status": "author_reported_presentation_not_independently_confirmed_acceptance",
+      "source_url": "https://arxiv.org/html/2609.03623v1#id2",
+      "raw_sha256": "1e5bbeb67d2b774a7e1fa3fc4292c8a1dd26625c9a81c5b3adfc52a1d1910637",
+      "claimed_month": "2024-09",
+      "limits": "使用已完整读取的精确HTML版本，不重新下载。未取得列明本作品的官方会议节目单或已发表版本，不能标为ICRA 2026正式论文或严格同行评审。"
+    },
+    {
+      "claim": "IEEE RAS官方公告证实ICRA@40于2024年9月23至26日在鹿特丹举行，并接收extended abstracts等不同类型提交。",
+      "status": "verified_conference_context_only",
+      "source_url": "https://www.ieee-ras.org/icra40-website-is-now-live/",
+      "published_at": "2024-02-26",
+      "conference_from": "2024-09-23",
+      "conference_to": "2024-09-26",
+      "limits": "大会公告不等于对QLAUN单篇的录用确认；期刊展示、extended abstract和独立视频不能混为正式会议论文。"
+    }
+  ],
+  "acquisition_gaps": [
+    {"url": "https://icra40.ieee.org", "result": "robots_txt_blocked", "action": "not_retried_or_bypassed"},
+    {"scope": "official_papercept_or_ieee_xplore_search", "result": "no_exact_work_record_located", "limits": "检索未找到不代表记录不存在。"}
+  ],
+  "decision": "保留库中2026-09-03登记值但不把它解释为项目初次出现；当前论文的更早公开日期待确认。研究叙述需标明既有平台的归档材料线索。",
+  "hardware_limits": "QLAUN为具名自研平台介绍，文中没有定量运动实验；不把SOLO、Kirin、ANYmal和Spot背景引用计为本文使用，也不纳入电机/驱动器等细部。"
+}

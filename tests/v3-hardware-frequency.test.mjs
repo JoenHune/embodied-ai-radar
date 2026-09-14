@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
-import { hardwareFrequency, hardwareMonth } from '../docs/.vitepress/theme/lib/hardware-frequency.mjs'
+import { hardwareFrequency, hardwareMonth, hardwareEvidenceUrl } from '../docs/.vitepress/theme/lib/hardware-frequency.mjs'
 
 const device = (id, name = id, level = 'model_specified') => ({ hardware_id: id, name, category: 'robot_platform', identity_level: level })
 const usage = (id, extra = {}) => ({ hardware_id: id, category: 'robot_platform', review_status: 'verified', source_url: 'https://arxiv.org/html/2609.00001v1', source_locator: '§4', role: 'real_robot', setting: 'real', statement: 'Used this platform in the experiment.', usage_scope: 'study', ...extra })
@@ -77,6 +77,46 @@ test('an experiment server specification never becomes a specific training or in
 test('year-only and unknown dates do not fabricate month placement', () => {
   assert.equal(hardwareMonth({ first_public_date: '2026-01-01', first_public_date_precision: 'year' }), 'unknown')
   assert.equal(hardwareMonth({ first_public_date: '2026-09', first_public_date_precision: 'month' }), '2026-09')
+})
+
+test('hardware source links pin known arXiv versions while preserving the observed record', () => {
+  const row = Object.freeze({ source_url: 'https://arxiv.org/html/2305.01648/', source_version: 'v2' })
+  assert.equal(hardwareEvidenceUrl(row), 'https://arxiv.org/html/2305.01648v2')
+  assert.equal(row.source_url, 'https://arxiv.org/html/2305.01648/')
+  assert.equal(hardwareEvidenceUrl({ source_url: 'https://arxiv.org/html/2305.01648v2', source_version: 'v2' }), 'https://arxiv.org/html/2305.01648v2')
+  assert.equal(hardwareEvidenceUrl({ source_url: 'https://arxiv.org/html/2305.01648v1', source_version: 'v2' }), '')
+  assert.equal(hardwareEvidenceUrl({ source_url: 'https://example.org/project', source_version: 'v2' }), 'https://example.org/project')
+  assert.equal(hardwareEvidenceUrl({ source_url: 'http://127.0.0.1/private', source_version: 'v2' }), '')
+})
+
+test('Tail keeps one canonical frequency per model and pins its observed legacy source', () => {
+  const read = (folder, name) => fs.readFileSync(new URL(`../data/${folder}/${name}.jsonl`, import.meta.url), 'utf8').trim().split('\n').map(JSON.parse)
+  const devices = read('equipment', 'devices')
+  const byDevice = new Map(devices.map(d => [d.hardware_id, d]))
+  const id = 'doi:10.1109/icra57147.2024.10610049'
+  const uses = read('equipment', 'usage-evidence').filter(u => u.work_id === id)
+  assert.equal(uses.length, 8)
+  assert.ok(uses.every(u => u.source_url === 'https://arxiv.org/html/2305.01648' && u.source_version === 'v2'))
+  assert.ok(uses.every(u => hardwareEvidenceUrl(u) === 'https://arxiv.org/html/2305.01648v2'))
+  const rows = [work(id, uses.map(u => ({ ...u, category: byDevice.get(u.hardware_id).category })), { first_public_date: null, first_public_date_precision: 'unknown' })]
+  const models = hardwareFrequency(devices, rows).models
+  assert.equal(models.length, 4)
+  assert.ok(models.every(m => m.work_count === 1 && m.real_work_count === 1 && m.simulation_work_count === 1))
+  assert.equal(hardwareMonth(rows[0]), 'unknown')
+  const reading = read('hardware-review', 'fulltext-readings').find(r => r.work_id === id)
+  assert.equal(reading.versioned_source_url, 'https://arxiv.org/html/2305.01648v2')
+})
+
+test('VLA steering does not invent an exact GPU or arm; GE-PGP separates fitting from query timing', () => {
+  const read = name => fs.readFileSync(new URL(`../data/equipment/${name}.jsonl`, import.meta.url), 'utf8').trim().split('\n').map(JSON.parse)
+  const devices = new Map(read('devices').map(d => [d.hardware_id, d]))
+  const uses = read('usage-evidence')
+  const vla = uses.filter(u => u.work_id === 'arxiv:2606.12299')
+  assert.equal(vla.length, 4)
+  assert.ok(vla.every(u => devices.get(u.hardware_id).identity_level !== 'model_specified'))
+  const cpu = uses.filter(u => u.work_id === 'arxiv:2602.12487' && devices.get(u.hardware_id).category === 'compute_platform')
+  assert.deepEqual(cpu.map(u => u.role).sort(), ['inference_compute', 'model_fitting_compute'])
+  assert.ok(cpu.every(u => devices.get(u.hardware_id).name === 'AMD 5800X'))
 })
 test('source cards distinguish later review from observation time without claiming a refetch', () => {
   const view = fs.readFileSync(new URL('../docs/.vitepress/theme/components/HardwareFrequencyRow.vue', import.meta.url), 'utf8')

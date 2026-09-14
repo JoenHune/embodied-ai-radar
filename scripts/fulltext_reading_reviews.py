@@ -22,6 +22,11 @@ the text. Only a reader's explicit declaration can create a receipt; preparing
 or displaying a packet cannot. Public receipts say
 self_attested_AI_reading_not_human_review, and never modify device authority.
 
+Legacy observations may have an unversioned official source_url. They are
+accepted only with an explicit version proven by the cached HTML identity.
+The observed URL is retained for provenance; versioned_source_url pins reader
+links to that exact version without fabricating another acquisition event.
+
 Readers of the complete structured packet may explicitly declare
 article_normalization "reading-packet-blocks-v1" instead. Its character
 projection is all block texts joined with two newlines, including tables,
@@ -97,9 +102,14 @@ def official_source(value, version=None):
             not parsed.path.startswith('/html/')):
         fail('versioned_official_html_url_required')
     identity = arxiv_identity(value)
-    if not identity or (version is not None and identity[1] != version):
+    if not identity or (version is not None and identity[1] not in {None, version}):
         fail('source_version_or_identity_mismatch')
     return identity
+
+
+def versioned_read_url(source_url, version):
+    aid, url_version = official_source(source_url, version)
+    return source_url if url_version else f'https://arxiv.org/html/{aid}{version}'
 
 
 def private_bytes(reference, cache_root):
@@ -275,10 +285,20 @@ def validate_readings(declarations, payload, observations, cache_root):
             fail('raw_cache_hash_mismatch')
         soup, article, text, locators, ambiguous, table_ids = _material(raw)
         effective_url = observation.get('effective_url') or source_url
-        official_source(effective_url)
-        valid, resolved_version, _, reason = page_identity(soup, effective_url, aid, version)
+        effective_id, _ = official_source(effective_url, version)
+        if effective_id != aid:
+            fail('raw_page_identity_or_version_mismatch:effective_url_identity_mismatch')
+        # A legacy unversioned observation needs the version in the HTML
+        # identity proofs, not just an asserted/redirected effective URL.
+        identity_url = source_url if official_source(source_url)[1] is None else effective_url
+        valid, resolved_version, _, reason = page_identity(soup, identity_url, aid, version)
         if not valid or resolved_version != version:
             fail('raw_page_identity_or_version_mismatch:' + str(reason))
+        pinned_url = versioned_read_url(source_url, version)
+        if ('versioned_source_url' in declaration and
+                declaration['versioned_source_url'] != pinned_url):
+            fail('declared_versioned_source_url_mismatch')
+        url_metadata = {'versioned_source_url': pinned_url} if pinned_url != source_url else {}
         normalization = declaration['article_normalization']
         packet_metadata = {}
         if normalization == PACKET_NORMALIZATION:
@@ -327,7 +347,7 @@ def validate_readings(declarations, payload, observations, cache_root):
         if receipt_id in seen:
             fail('duplicate_reading_declaration')
         seen.add(receipt_id)
-        receipt = {'schema_version': '1', 'reading_id': receipt_id, 'work_id': wid, 'source_url': source_url,
+        receipt = {'schema_version': '1', 'reading_id': receipt_id, 'work_id': wid, 'source_url': source_url, **url_metadata,
                    'version': version, 'raw_sha256': declaration['raw_sha256'], 'observed_at': declaration['observed_at'],
                    'read_completed_at': declaration['read_completed_at'], 'reader_kind': 'AI', 'reading_status': 'completed',
                    'assurance': ASSURANCE, 'human_reviewed': False, 'understanding_verified': False,
@@ -365,7 +385,7 @@ Future-dated receipts remain valid history but are omitted from the as_of view.
                'images_inspected', 'supplementary_materials_inspected', 'supplementary_scope_note',
                'source_availability_status', 'transport_verification', 'publisher_fulltext_or_media_completeness_verified',
                'findings_zh', 'limitations_zh', 'declaration_sha256', 'range_basis',
-               'reading_packet_sha256', 'reading_packet_segment_chars'}
+               'reading_packet_sha256', 'reading_packet_segment_chars', 'versioned_source_url'}
     if not isinstance(records, list):
         fail('public_reading_records_required')
     if re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(as_of)):
@@ -408,6 +428,10 @@ Future-dated receipts remain valid history but are omitted from the as_of view.
         if wid not in works or not isinstance(version, str) or not re.fullmatch(r'v[1-9]\d*', version):
             fail('public_canonical_work_or_version_invalid')
         aid, _ = official_source(row.get('source_url'), version)
+        pinned_url = versioned_read_url(row['source_url'], version)
+        if ((pinned_url != row['source_url'] and row.get('versioned_source_url') != pinned_url) or
+                (pinned_url == row['source_url'] and 'versioned_source_url' in row)):
+            fail('public_versioned_source_url_mismatch')
         if owners.get(aid) != {wid}:
             fail('public_canonical_source_identity_mismatch')
         if timestamp(row.get('read_completed_at')) < timestamp(row.get('observed_at')):

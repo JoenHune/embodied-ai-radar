@@ -16,6 +16,21 @@ function sourceUrl(value) {
   return host === 'localhost' || /^(?:127\.|10\.|192\.168\.|169\.254\.|172\.(?:1[6-9]|2\d|3[01])\.)/i.test(host) || /^\[?::1\]?$/.test(host) || host.endsWith('.local') ? '' : safe
 }
 
+// Keep acquisition provenance unchanged, but link an explicitly reviewed
+// arXiv version instead of the moving latest-version endpoint.
+export function hardwareEvidenceUrl(usage) {
+  const safe = sourceUrl(usage?.source_url)
+  if (!safe) return ''
+  const url = new URL(safe)
+  const identity = url.pathname.match(/^\/html\/(\d{4}\.\d{4,5}|[a-zA-Z.-]+\/\d{7})(v[1-9]\d*)?\/*$/)
+  const version = usage?.source_version
+  if (['arxiv.org', 'www.arxiv.org'].includes(url.hostname) && identity && /^v[1-9]\d*$/.test(version || '')) {
+    if (identity[2] && identity[2] !== version) return ''
+    return `https://arxiv.org/html/${identity[1]}${version}${url.hash}`
+  }
+  return safe
+}
+
 export function hardwareFrequency(devices = [], works = [], filters = {}) {
   const byDevice = new Map(devices.filter(d => d.hardware_id && allowedCategories.has(d.category)).map(d => [d.hardware_id, d]))
   const grouped = new Map()

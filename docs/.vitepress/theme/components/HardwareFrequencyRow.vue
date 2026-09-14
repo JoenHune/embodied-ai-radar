@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 import { eventDate } from '../lib/dates'
+import { hardwareEvidenceUrl } from '../lib/hardware-frequency.mjs'
 
 defineProps<{ device: any; categoryLabel?: string; expanded?: boolean; provisionalMonth?: string }>()
 const emit = defineEmits<{ papers: [hardwareId: string]; sources: [open: boolean] }>()
@@ -65,6 +66,17 @@ Object.assign(validationContextLabels, {
   'real_capture_device_pose_sensing;not_a_claim_of_robot_execution_sensor_installation': '采集器位姿感知；不代表同款设备用于机器人执行',
   'real_gripper_system_multiview_visual_input;individual_capture_execution_unit_counts_not_separately_reported': '夹爪系统多视角输入；采集端与执行端数量未分别说明',
   'real_bench_force_parity_measurement_only;not_closed_loop_policy_sensor;not_sensor_calibration': '仅台架力度对照测量，不是策略反馈或传感器校准',
+  offline_gp_model_fitting_and_precomputation: '离线高斯过程模型拟合与预计算',
+  desktop_dynamics_prediction_median_timing: '桌面平台动力学查询中位耗时，不是飞控闭环延迟',
+  simulation_aerodynamic_surrogate_evaluation: '仿真气动力代理模型评测，不是真机飞行',
+  'real_tabletop_VLA_task_execution_with_language_steering;exact_arm_model_unreported': '语言引导下的真实桌面任务；机械臂型号未明确',
+  'real_robot_visual_observations_for_task_execution;camera_SKU_unreported': '真机任务视觉输入；相机型号未明确',
+  'reported_model_training_compute;GPU_generation_unresolved;not_onboard_robot_compute': '模型训练计算；GPU代际待核，不是机载配置',
+  'simulation_inference_latency_benchmark_only;single_reported_GPU;not_onboard_or_real_robot_control_timing': '单卡仿真推理计时，不是真机闭环或机载延迟',
+  real_arm_assisted_locomotion_stabilization_not_manipulation: '真机臂腿协同抵抗扰动，不含物体操作',
+  simulation_arm_assisted_locomotion_stabilization: '仿真臂腿协同抵抗扰动',
+  real_arm_assisted_agile_turning_not_manipulation: '真机臂腿协同快速转弯，不含物体操作',
+  simulation_arm_assisted_agile_turning: '仿真臂腿协同快速转弯',
   manual_discrete_command_input_not_demonstration_capture: '人工离散指令输入，不是动作示范采集',
   real_granular_terrain_locomotion: '真机颗粒地形运动',
   offline_teacher_student_policy_training: '离线教师—学生策略训练',
@@ -110,7 +122,7 @@ const configurationText = (value: unknown) => value == null || value === '' ? ''
             <p v-if="configurationText(usage.configuration)" class="source-configuration">配置 / 条件：{{ configurationText(usage.configuration) }}</p>
             <p class="source-location">原文定位：{{ usage.source_locator || '未提供定位' }}<span v-if="usage.reviewed_at"> · 复核 {{ eventDate(usage.reviewed_at) }}</span><span v-else-if="usage.observed_at"> · 记录日期 {{ eventDate(usage.observed_at) }}</span></p>
             <p v-if="usage.reviewed_at && usage.observed_at" class="source-location">来源记录 {{ eventDate(usage.observed_at) }}<span v-if="usage.extends_review_id"> · 后续增补复核，原记录保留</span></p>
-            <a v-if="publicUrl(usage.source_url)" class="source-url" :href="usage.source_url" target="_blank" rel="noopener noreferrer">{{ usage.source_url }} ↗</a>
+            <a v-if="hardwareEvidenceUrl(usage)" class="source-url" :href="hardwareEvidenceUrl(usage)" target="_blank" rel="noopener noreferrer">{{ hardwareEvidenceUrl(usage) }} ↗</a>
             <p v-else class="source-location">原文链接暂未提供，不从设备名称补猜。</p>
           </section>
         </li>

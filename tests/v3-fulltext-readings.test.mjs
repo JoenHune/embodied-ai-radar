@@ -61,3 +61,31 @@ test('each clause retains its original section links and limitations are not omi
   assert.match(source, /row\.limitations_zh/)
   assert.match(source, /非人工审稿或独立复现/)
 })
+
+test('legacy observed URL keeps a fixed-version original and section citation', async () => {
+  const row = entry('legacy', { source_url: 'https://arxiv.org/html/2407.00001', versioned_source_url: 'https://arxiv.org/html/2407.00001v1' })
+  const view = harness(envelope([row])); await view.load()
+  assert.equal(view.error.value, '')
+  assert.equal(view.locationUrl(view.readings.value[0], 'S4'), row.versioned_source_url + '#S4')
+  assert.match(source, /:href="readingUrl\(row\)"/)
+})
+
+test('legacy observed URL trailing slash matches the server canonical version pin', async () => {
+  const row = entry('legacy-slash', { source_url: 'https://arxiv.org/html/2407.00001/', versioned_source_url: 'https://arxiv.org/html/2407.00001v1' })
+  const view = harness(envelope([row])); await view.load()
+  assert.equal(view.error.value, '')
+  assert.equal(view.locationUrl(view.readings.value[0], 'S4'), row.versioned_source_url + '#S4')
+})
+
+test('unversioned sources need an exact safe pin rather than a foreign or different paper', async () => {
+  const base = { source_url: 'https://arxiv.org/html/2407.00001' }
+  for (const extra of [base, { ...base, versioned_source_url: 'https://arxiv.org/html/2407.00002v1' },
+    { ...base, versioned_source_url: 'https://arxiv.org/html/2407.00001v2' },
+    { ...base, versioned_source_url: 'https://example.com/2407.00001v1' },
+    { ...base, versioned_source_url: 'https://arxiv.org/html/2407.00001v1?token=secret' },
+    { source_url: 'https://private.example/html/2407.00001', versioned_source_url: 'https://arxiv.org/html/2407.00001v1' }]) {
+    const view = harness(envelope([entry('invalid-pin', extra)])); await view.load()
+    assert.ok(view.error.value)
+    assert.equal(view.readings.value.length, 0)
+  }
+})

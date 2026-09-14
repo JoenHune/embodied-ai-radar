@@ -131,6 +131,55 @@ class FulltextReadingReviewsTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'reading_id_mismatch'):
                     public_audit([changed], self.payload, [self.obs], '2026-09-15')
 
+    def unversioned_source(self):
+        self.obs['source_url'] = self.obs['effective_url'] = self.record['source_url'] = self.url[:-2]
+        self.observations.write_text(json.dumps(self.obs) + '\n')
+
+    def test_unversioned_observation_retains_provenance_and_pins_proven_html_version(self):
+        self.unversioned_source()
+        before = self.observations.read_bytes()
+        row = self.validate()[0]
+        self.assertEqual(row['source_url'], self.url[:-2])
+        self.assertEqual(row['versioned_source_url'], self.url)
+        self.assertEqual(public_audit([row], self.payload, [self.obs], '2026-09-15')['counts']['AI_read_work_count'], 1)
+        import_readings(self.batch, self.payload, self.observations, self.output, apply=True)
+        self.assertEqual(before, self.observations.read_bytes())
+
+    def test_unversioned_packet_receipt_rebuilds_original_not_fabricated_url(self):
+        self.unversioned_source()
+        packet, _ = self.packet_declaration()
+        row = self.validate()[0]
+        self.assertEqual(packet['source']['source_url'], self.url[:-2])
+        self.assertEqual(row['reading_packet_sha256'], packet['packet_sha256'])
+        self.assertEqual(row['versioned_source_url'], self.url)
+
+    def test_unversioned_source_needs_actual_html_version_evidence(self):
+        self.unversioned_source()
+        for identity in (b'2407.02648', b'2407.02648v2'):
+            raw = self.html.replace(b'2407.02648v1', identity)
+            self.raw_path.write_bytes(raw)
+            self.obs['raw_sha256'] = self.record['raw_sha256'] = sha256(raw)
+            with self.assertRaisesRegex(ValueError, 'raw_page_identity_or_version_mismatch'):
+                self.validate()
+
+    def test_legacy_effective_url_alone_does_not_supply_missing_html_version(self):
+        self.unversioned_source()
+        self.obs['effective_url'] = self.url
+        raw = self.html.replace(b'2407.02648v1', b'2407.02648')
+        self.raw_path.write_bytes(raw)
+        self.obs['raw_sha256'] = self.record['raw_sha256'] = sha256(raw)
+        with self.assertRaisesRegex(ValueError, 'raw_page_identity_or_version_mismatch'):
+            self.validate()
+
+    def test_public_pinned_url_cannot_be_missing_changed_version_or_foreign(self):
+        self.unversioned_source()
+        row = self.validate()[0]
+        for url in (None, self.url[:-1] + '2', 'https://example.com/paper', self.url + '?token=private'):
+            bad = copy.deepcopy(row)
+            bad['versioned_source_url'] = url
+            with self.assertRaisesRegex(ValueError, 'public_versioned_source_url_mismatch'):
+                public_audit([bad], self.payload, [self.obs], '2026-09-15')
+
     def test_private_validation_and_idempotent_import_never_write_source(self):
         before = {path: path.read_bytes() for path in (self.raw_path, self.observations)}
         dry = import_readings(self.batch, self.payload, self.observations, self.output)

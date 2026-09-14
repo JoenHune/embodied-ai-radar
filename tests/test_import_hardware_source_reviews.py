@@ -10,7 +10,8 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from catalog_store import encode, fingerprint
 from equipment_radar import TABLES
-from import_hardware_source_reviews import audit_addenda_lineage, import_source_reviews, source_key
+from import_hardware_source_reviews import (audit_addenda_lineage, import_source_reviews, jsonl,
+                                            prepare_reviews, source_key)
 from test_equipment_radar import OBSERVED, fixture, make_work
 
 
@@ -75,6 +76,99 @@ class SourceReviewImportTests(unittest.TestCase):
                                    configuration='Newly reviewed calibration configuration')
         self.raw = {'schema_version': '1', 'reviews': [addon]}
         return parent
+
+    def unversioned_source(self, *, html_identity="2608.00002v1", effective_url=None, extra_meta=""):
+        row = self.raw['reviews'][0]
+        row['source_url'] = 'https://arxiv.org/html/2608.00002'
+        observation = json.loads(self.observations.read_text())
+        observation['source_url'] = row['source_url']
+        observation['effective_url'] = effective_url or row['source_url']
+        html = ('<html><head><meta name="citation_arxiv_id" content="' + html_identity + '">' +
+                extra_meta + '</head><body><article><section id="S4">Source</section></article></body></html>').encode()
+        (self.cache / '2.html').write_bytes(html)
+        row['raw_sha256'] = observation['raw_sha256'] = hashlib.sha256(html).hexdigest()
+        self.observations.write_text(encode(observation) + '\n')
+
+    def test_legacy_unversioned_source_keeps_observed_url_and_source_bytes(self):
+        self.unversioned_source()
+        before = {path: path.read_bytes() for path in self.cache.iterdir()}
+        self.run_import(apply=True)
+        record = json.loads(self.public.read_text())
+        uses = [row for row in jsonl(self.directory / 'usage-evidence.jsonl')
+                if row['work_id'] == self.raw['reviews'][0]['work_id']]
+        self.assertEqual(record['source_url'], 'https://arxiv.org/html/2608.00002')
+        self.assertEqual(record['source_version'], 'v1')
+        self.assertEqual(uses[0]['source_url'], record['source_url'])
+        self.assertEqual(uses[0]['source_version'], 'v1')
+        self.assertEqual(before, {path: path.read_bytes() for path in self.cache.iterdir()})
+        self.assertNotIn('versioned_source_url', record)
+        repeat = self.run_import()
+        self.assertEqual(repeat['added']['usage-evidence'], 0)
+
+    def test_legacy_requires_actual_html_version_not_stored_proof_or_redirect(self):
+        for identity in ('2608.00002', '2608.00002v2', '2608.99999v1'):
+            with self.subTest(identity=identity):
+                self.unversioned_source(html_identity=identity, effective_url='https://arxiv.org/html/2608.00002v1')
+                with patch('import_hardware_source_reviews.write_if_changed') as writer:
+                    with self.assertRaisesRegex(ValueError, 'raw_page_identity_or_version_mismatch'):
+                        self.run_import(apply=True)
+                    writer.assert_not_called()
+        self.unversioned_source(extra_meta='<meta name="citation_arxiv_id" content="2608.00002v2">')
+        with self.assertRaisesRegex(ValueError, 'raw_page_identity_or_version_mismatch'):
+            self.run_import()
+
+    def test_legacy_missing_html_identity_does_not_trust_observation_declaration(self):
+        self.unversioned_source()
+        html = b'<html><article><section id="S4">No page identity</section></article></html>'
+        (self.cache / '2.html').write_bytes(html)
+        row = json.loads(self.observations.read_text())
+        row['raw_sha256'] = self.raw['reviews'][0]['raw_sha256'] = hashlib.sha256(html).hexdigest()
+        self.observations.write_text(encode(row) + '\n')
+        with self.assertRaisesRegex(ValueError, 'raw_page_identity_or_version_mismatch'):
+            self.run_import()
+
+    def test_legacy_rejects_foreign_or_conflicting_effective_source(self):
+        for effective in ('https://example.com/html/2608.00002v1', 'https://arxiv.org/html/2608.00002v2',
+                          'https://arxiv.org/html/2608.99999v1', 'https://arxiv.org:8443/html/2608.00002'):
+            with self.subTest(effective=effective):
+                self.unversioned_source(effective_url=effective)
+                with self.assertRaises(ValueError):
+                    self.run_import()
+        self.raw['reviews'][0]['source_url'] = 'https://example.com/html/2608.00002'
+        with self.assertRaisesRegex(ValueError, 'official_html_url_required'):
+            self.run_import()
+
+    def test_legacy_keeps_doi_canonical_identity(self):
+        self.unversioned_source()
+        old = self.raw['reviews'][0]['work_id']
+        wid = 'doi:10.1109/example.1234'
+        next(row for row in self.payload['works'] if row['work_id'] == old)['work_id'] = wid
+        self.raw['reviews'][0]['work_id'] = wid
+        observation = json.loads(self.observations.read_text())
+        observation['work_id'] = wid
+        self.observations.write_text(encode(observation) + '\n')
+        self.run_import(apply=True)
+        self.assertEqual(json.loads(self.public.read_text())['work_id'], wid)
+
+    def test_legacy_addendum_public_audit_uses_original_observation_without_cache_read(self):
+        self.unversioned_source()
+        records, uses, observations = self.public_addendum_fixture()
+        with patch('import_hardware_source_reviews.private_file', side_effect=AssertionError('No private read')):
+            result = audit_addenda_lineage(records, uses, observations)
+        self.assertEqual(result['addendum_review_count'], 1)
+        self.assertTrue(all(row['source_url'] == 'https://arxiv.org/html/2608.00002' for row in records))
+        changed = copy.deepcopy(observations)
+        changed[0]['source_url'] += 'v1'
+        with self.assertRaisesRegex(ValueError, 'source_observation_mismatch'):
+            audit_addenda_lineage(records, uses, changed)
+
+    def test_versioned_review_and_usage_output_matches_prelegacy_golden(self):
+        proposed, public = prepare_reviews(self.raw, self.payload, self.existing,
+                                           jsonl(self.observations), self.cache)
+        self.assertEqual(fingerprint({'proposed': proposed, 'public': public}),
+                         '25f0c14522f3ec8c66a1a1e329c566ecd9d6ae6d0166670aac018b0bb5964c4d')
+        self.assertEqual(public[0]['review_id'], 'hardware-section-review:85481f8a9e1eeb0220cf5b7c')
+        self.assertEqual(proposed['usage-evidence'][0]['usage_id'], 'usage:63df41b60b32f511194de9d5')
 
     def test_dry_run_is_read_only_and_reuses_existing_exact_model(self):
         before = {p.name: p.read_bytes() for p in self.directory.iterdir()}
