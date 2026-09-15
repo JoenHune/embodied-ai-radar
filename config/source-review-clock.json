@@ -1,14 +1,14 @@
 {
   "schema_version": "1",
-  "source_review_as_of": "2026-09-15T00:32:44Z",
+  "source_review_as_of": "2026-09-15T01:49:10Z",
   "ledger_sha256": {
-    "data/hardware-review/source-observations.jsonl": "d8bbb5536ab7c4a9632a98b453707d875e71caa488bcba0f3fba003bb627511c",
-    "data/hardware-review/source-scans.jsonl": "16488008687a8ab12e47938aed09ad627a0b13585420be093da4e97c756c6478",
-    "data/hardware-review/fulltext-readings.jsonl": "122c0c5d7c4cf7dd982902f42e6224a88a96a4aecf1116bbd3bb1edd7d240ee4",
-    "data/hardware-review/pdf-source-observations.jsonl": "c310f053ad0fa6944829710c5e58e6d4b27a38586a85c5506249144d3673f34d",
-    "data/hardware-review/pdf-readings.jsonl": "7caa309702ddfccb9a674faa93d3d9ae1c0ca9b5633f4f5eabc70b6d11cb1638",
-    "data/hardware-review/section-reviews.jsonl": "8ad54b9d405bf6c38b95b563721a847674dd9e4ff2ffd05a5257001b53a60b82",
+    "data/hardware-review/source-observations.jsonl": "591e97f33fda20d2431ad439f968dc95d79c2fc1bae1057f1dfff69e047358d6",
+    "data/hardware-review/source-scans.jsonl": "a74663334fa41b3775d6c83f9478188369339c271c664f19497087adb8207554",
+    "data/hardware-review/fulltext-readings.jsonl": "97f51e725668e6a477de1fd6bc2e4eb9dd41242f20c9431345e52a54af6bf190",
+    "data/hardware-review/pdf-source-observations.jsonl": "2f791f4739ee9ed0dcbd8f7aeb82e149417a46d668ac6af3f55c26d5f51d4b22",
+    "data/hardware-review/pdf-readings.jsonl": "c64e6bc0cf83cce40823b76d8b8d1518784251cd74586dbbd3c66fe53d4d8b7d",
+    "data/hardware-review/section-reviews.jsonl": "89a0f2665333abba8d875f76fc3c44610d93c6c3db01e4a38e83445d04786bdb",
     "data/editorial/source-content-conflicts.jsonl": "05f63b5e8466f64a0efa0253d139e9a9a8f64c264edcb8a97c5412512e6fe84f",
-    "data/equipment/usage-evidence.jsonl": "26e17da74d9c7ff82e423f5deefecc087f677ca85c24e41c730f6882ac879cae"
+    "data/equipment/usage-evidence.jsonl": "8a05a9e947f97081b2fb25520b6c8dc6c80e667fad8bbdcc6b593933c088d5bc"
   }
 }

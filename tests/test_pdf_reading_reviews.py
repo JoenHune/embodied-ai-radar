@@ -340,6 +340,95 @@ class PdfReadingReviewsTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'version_not_in_catalog_history'):
             self.validate(value)
 
+    def arxiv_v2_dated_fixture(self):
+        from versioned_text import snapshot_from_payload
+        work = self.payload['works'][0]
+        work['identifiers'].update(arxiv='2409.11952', doi=None)
+        work['source_record_ids'] = ['source:test', 'source:version-v2']
+        address = 'https://arxiv.org/abs/2409.11952'
+        self.payload['manifestations'][0].update(url=address, venue=None, kind='preprint', year=None)
+        self.payload['source-records'][0]['url'] = address
+        source = {'source_record_id': 'source:version-v2', 'url': address + 'v2', 'version': 'v2',
+                  'source_type': 'official_arxiv_version_metadata', 'published_at': '2026-09-04', 'date_precision': 'day'}
+        snapshot = snapshot_from_payload(work, source, {'arxiv_id': '2409.11952', 'version': 'v2',
+            'title': work['title'], 'abstract': 'Synthetic version-specific abstract.', 'authors': work['authors'],
+            'submitted_at': '2024-09-14', 'updated_at': '2026-09-04'})
+        source['payload_hash'] = fingerprint(snapshot)
+        source['text_content_digest'] = fingerprint({key: snapshot[key] for key in ('title', 'abstract')})
+        self.payload['source-records'].append(source)
+        self.payload['text-snapshots'] = [snapshot]
+        self.input['sources'][0]['landing']['url'] = address + 'v2'
+        self.input['sources'][0]['pdf']['url'] = 'https://arxiv.org/pdf/2409.11952v2'
+        self.html = self.html.replace(b'https://files.example.org/paper.pdf', b'https://arxiv.org/pdf/2409.11952v2').replace(b'2024/07/15', b'2026/09/04')
+        self.replace_html(self.input, self.html)
+        return snapshot
+
+    def test_arxiv_null_series_year_uses_bound_v2_date_without_mutating_manifestation(self):
+        snapshot = self.arxiv_v2_dated_fixture()
+        before = copy.deepcopy(self.payload)
+        source = self.validate()['sources'][0]
+        self.assertIsNone(source['edition']['year'])
+        self.assertIsNone(self.payload['manifestations'][0]['year'])
+        self.assertEqual(source['version'], 'v2')
+        self.assertEqual(source['edition_label'], 'arXiv v2')
+        proof = source['edition']['arxiv_version_date_provenance']
+        self.assertEqual(proof['year'], 2026)
+        self.assertEqual(proof['text_snapshot_sources'][0]['snapshot_id'], snapshot['snapshot_id'])
+        self.assertEqual(proof['text_snapshot_sources'][0]['available_at'], '2026-09-04')
+        self.assertEqual(source['source_record_id'], 'source:test')
+        result = self.validate(self.with_reading())
+        self.assertEqual(pdf.public_audit(result['readings'], self.payload, result['sources'], self.as_of)['counts']['receipt_count'], 1)
+        self.assertEqual(self.payload, before)
+
+    def test_arxiv_dated_version_rejects_wrong_landing_year_and_unknown_version(self):
+        self.arxiv_v2_dated_fixture()
+        self.replace_html(self.input, self.html.replace(b'2026/09/04', b'2025/09/04'))
+        with self.assertRaisesRegex(ValueError, 'publication_year_mismatch'):
+            self.validate()
+        self.replace_html(self.input, self.html.replace(b'11952v2', b'11952v3'))
+        self.input['sources'][0]['landing']['url'] = 'https://arxiv.org/abs/2409.11952v3'
+        self.input['sources'][0]['pdf']['url'] = 'https://arxiv.org/pdf/2409.11952v3'
+        with self.assertRaisesRegex(ValueError, 'version_not_in_catalog_history'):
+            self.validate()
+
+    def test_arxiv_year_fallback_requires_real_source_bound_publication_date(self):
+        self.arxiv_v2_dated_fixture()
+        original = copy.deepcopy(self.payload)
+        for change in ('undated', 'retrieval_only', 'wrong_work', 'wrong_version', 'bad_source_hash', 'unowned_source', 'date_tampered'):
+            with self.subTest(change=change):
+                self.payload = copy.deepcopy(original)
+                snapshot = self.payload['text-snapshots'][0]
+                if change == 'undated': snapshot.update(available_at=None, date_precision='unknown')
+                elif change == 'retrieval_only': snapshot['basis'] = 'source_bound_metadata:archived_observation_only'
+                elif change == 'wrong_work': snapshot['work_id'] = 'work:other'
+                elif change == 'wrong_version': snapshot['version'] = 'v1'
+                elif change == 'bad_source_hash': self.payload['source-records'][-1]['payload_hash'] = 'f' * 64
+                elif change == 'unowned_source': self.payload['works'][0]['source_record_ids'] = ['source:test']
+                else: snapshot['available_at'] = '2026-09-05'
+                with self.assertRaises(ValueError): self.validate()
+
+    def test_arxiv_version_date_does_not_relax_title_DOI_or_URL_checks(self):
+        self.arxiv_v2_dated_fixture()
+        self.payload['works'][0]['identifiers']['doi'] = '10.1234/test'
+        for before, after, reason in ((b'Test Robotics Paper', b'Other Paper', 'title_mismatch'),
+                                      (b'10.1234/test', b'10.1234/wrong', 'DOI_mismatch')):
+            self.replace_html(self.input, self.html.replace(before, after))
+            with self.assertRaisesRegex(ValueError, reason): self.validate()
+        self.replace_html(self.input, self.html)
+        self.input['sources'][0]['pdf']['url'] = 'https://arxiv.org/pdf/2409.99999v2'
+        with self.assertRaises(ValueError): self.validate()
+
+    def test_non_arxiv_conference_and_journal_years_remain_required(self):
+        for kind in ('conference', 'journal'):
+            with self.subTest(kind=kind):
+                self.payload['manifestations'][0].update(kind=kind, year=None)
+                with self.assertRaisesRegex(ValueError, 'publication_year_mismatch_or_missing'):
+                    self.validate()
+        self.arxiv_v2_dated_fixture()
+        self.payload['manifestations'][0]['kind'] = 'conference'
+        with self.assertRaisesRegex(ValueError, 'publication_year_mismatch_or_missing'):
+            self.validate()
+
     def test_textless_pages_need_explicit_visual_check(self):
         from pypdf import PdfWriter
         writer, stream = PdfWriter(), io.BytesIO()

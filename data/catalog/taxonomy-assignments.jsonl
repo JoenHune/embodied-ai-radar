@@ -1,3 +1,6 @@
+{"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D1","confidence":"ai_fulltext_reviewed","is_primary":false,"review_id":"ai-fulltext-classification:nativemem-v1-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:a76744a664732232cd01fa69"],"work_id":"arxiv:2607.06678"}
+{"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D2","confidence":"ai_fulltext_reviewed","is_primary":true,"review_id":"ai-fulltext-classification:nativemem-v1-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:a76744a664732232cd01fa69"],"work_id":"arxiv:2607.06678"}
+{"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"question","classifier_version":"ai-fulltext-classification-1","code":"Q6","confidence":"ai_fulltext_reviewed","is_primary":false,"review_id":"ai-fulltext-classification:nativemem-v1-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:a76744a664732232cd01fa69"],"work_id":"arxiv:2607.06678"}
 {"axis":"capabilities","classifier_version":"3.0","code":"bimanual_manipulation","confidence":"accepted","is_primary":false,"work_id":"arxiv:2407.03245"}
 {"axis":"capabilities","classifier_version":"3.0","code":"bimanual_manipulation","confidence":"accepted","is_primary":false,"work_id":"arxiv:2407.04152"}
 {"axis":"capabilities","classifier_version":"3.0","code":"bimanual_manipulation","confidence":"accepted","is_primary":false,"work_id":"arxiv:2408.09058"}
@@ -16804,7 +16807,6 @@
 {"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.06403"}
 {"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.06442"}
 {"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.06501"}
-{"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.06678"}
 {"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.07403"}
 {"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.07491"}
 {"axis":"direction","classifier_version":"3.0","code":"D1","confidence":"low_confidence_review","is_primary":true,"work_id":"arxiv:2607.09776"}
@@ -30730,7 +30732,6 @@
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.06323"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.06403"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.06559"}
-{"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.06678"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.07459"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.07491"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2607.08877"}

@@ -11,6 +11,7 @@ from catalog_store import encode, fingerprint, read_table
 from prepare_catalog import blank_from_source, merge_work
 from temporal_evidence import evidence_as_of, public_day
 from radar_common import normalize_doi, extract_arxiv_id
+from fulltext_classification_reviews import locked_fields as fulltext_locked_fields, taxonomy_projection
 
 MANAGED_FIELDS = ("title", "abstract", "authors", "institutions", "first_public_date", "first_public_date_precision", "primary_direction", "directions", "questions", "facets", "relevance", "classification_state")
 
@@ -47,6 +48,7 @@ def _identifier_history(work: dict) -> list[tuple[str, str]]:
 
 
 def finalize_facts(payload: dict, when: str) -> dict:
+    fulltext_locked_fields(payload)  # Never finalize over a drifted active review.
     works = {row["work_id"]: row for row in payload["works"]}
     sources = {row["source_record_id"]: row for row in payload["source-records"]}
     official_urls = {row.get("url") for row in sources.values() if row.get("source_type") in {"official-proceedings", "peer-review", "official_openreview_decision"}}
@@ -175,15 +177,7 @@ def finalize_facts(payload: dict, when: str) -> dict:
         else:
             payload["evidence-events"].append(validation_event)
             known_events[eid] = validation_event
-    payload["taxonomy-assignments"] = [
-        {"work_id": work["work_id"], "axis": axis, "code": code,
-         "is_primary": axis == "direction" and code == work.get("primary_direction"),
-         "classifier_version": work["relevance"]["classifier_version"],
-         "confidence": work.get("classification_state", "unverified")}
-        for work in works.values()
-        for axis, values in [("direction", work.get("directions", [])), ("question", work.get("questions", [])), *work.get("facets", {}).items()]
-        for code in values
-    ]
+    payload["taxonomy-assignments"] = taxonomy_projection(payload)
     add_canonical_publication_events(payload, works, by_work)
     payload["works"] = sorted(works.values(), key=lambda row: row["work_id"])
     for name, keys in {"manifestations": ["manifestation_id"], "source-records": ["source_record_id"], "work-aliases": ["alias", "work_id"], "work-organization-links": ["work_id", "organization_id", "evidence_url"], "field-provenance": ["work_id", "field", "source_record_id"], "evidence-events": ["event_id"]}.items():
@@ -244,6 +238,7 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
     dates, and never overwrite an existing primary identifier. Cross-work
     identifier conflicts require explicit identity review before persistence.
     """
+    protected_classification = fulltext_locked_fields(current)
     current_sources = {row["source_record_id"] for row in current["source-records"]}
     unseen = {row["source_record_id"] for row in incoming["source-records"]} - current_sources
     changed = {row.get("work_id") for row in incoming["reconciliation"] if row["source_record_id"] in unseen and row.get("work_id")}
@@ -299,6 +294,8 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
             if has_source_delta:
                 origin_hashes = target.get("_managed_field_hashes", {})
                 for field in MANAGED_FIELDS:
+                    if field in protected_classification.get(existing, set()):
+                        continue
                     if field not in work:
                         continue
                     if field in {"first_public_date", "first_public_date_precision"} and target.get("first_public_date_source") and target.get("first_public_date") and work.get("first_public_date") and target["first_public_date"] < work["first_public_date"]:
@@ -387,6 +384,7 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
     if "source-health" in incoming:
         current["source-health"] = incoming["source-health"]
     current["works"] = list(works.values())
+    fulltext_locked_fields(current)
     return current
 
 

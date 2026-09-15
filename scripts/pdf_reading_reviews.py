@@ -120,11 +120,40 @@ def _catalog(payload):
         if version and re.fullmatch(r'v[1-9]\d*', version):
             versions.setdefault(row.get('work_id'), {})[version] = row.get('title')
     result.append(versions)
+    result.append(payload.get('text-snapshots', []))
     return result
 
 
+def _arxiv_version_date_provenance(work, arxiv_id, version, catalog):
+    """An undated arXiv series is not the publication year of each version.
+
+    Only a source-bound, explicitly dated version snapshot can supply this
+    check. Retrieval-only dates, other editions, and conflicting years cannot.
+    Keep the original manifestation year unchanged in the edition record.
+    """
+    from versioned_text import validate_snapshot
+    candidates = [row for row in catalog[4] if row.get('work_id') == work['work_id'] and
+                  row.get('version') == version and row.get('available_at') is not None]
+    if not candidates:
+        return None
+    proofs, years = [], set()
+    for row in candidates:
+        identity = arxiv_url(url(row.get('source_url')))
+        if (identity != ('abs', arxiv_id, version) or
+                validate_snapshot(row, work, catalog[2]) or
+                not str(row.get('basis', '')).endswith((':current_metadata_updated_at', ':explicit_v1_published_equals_updated'))):
+            fail('arxiv_version_publication_date_provenance_invalid')
+        years.add(int(row['available_at'][:4]))
+        proofs.append({key: row[key] for key in ('snapshot_id', 'source_record_id', 'source_url',
+                                                'available_at', 'date_precision', 'content_digest')})
+    if len(years) != 1 or len({row['snapshot_id'] for row in proofs}) != len(proofs):
+        fail('arxiv_version_publication_year_ambiguous')
+    return {'basis': 'validated_version_text_snapshot_publication_date', 'year': years.pop(),
+            'text_snapshot_sources': sorted(proofs, key=lambda row: row['snapshot_id'])}
+
+
 def _binding(row, catalog):
-    works, manifestations, records, versions = catalog
+    works, manifestations, records, versions = catalog[:4]
     wid, mid = row.get('work_id'), row.get('manifestation_id')
     if wid not in works or mid not in manifestations or manifestations[mid].get('work_id') != wid:
         fail('unknown_or_mismatched_manifestation')
@@ -154,6 +183,10 @@ def _binding(row, catalog):
         fail('landing_not_linked_to_manifestation')
     edition = {'kind': manifest.get('kind'), 'venue': manifest.get('venue'), 'year': manifest.get('year'),
                'doi': work.get('identifiers', {}).get('doi'), 'arxiv_version': version}
+    if version and edition['kind'] == 'preprint' and edition['year'] is None:
+        provenance = _arxiv_version_date_provenance(work, canonical, version, catalog)
+        if provenance is not None:
+            edition['arxiv_version_date_provenance'] = provenance
     label = f'arXiv {version}' if version else f"{manifest.get('venue')} {manifest.get('year')}"
     return sid, edition, label, version
 
@@ -276,7 +309,8 @@ def _landing_identity(row, catalog):
     if expected_doi and str(expected_doi).casefold() not in {value.rstrip('.,);').casefold() for value in identity['doi_candidates']}:
         fail('landing_DOI_mismatch_or_missing')
     year = identity['publication_year']
-    if type(year) is not int or year != row['edition']['year']:
+    expected_year = row['edition'].get('arxiv_version_date_provenance', {}).get('year', row['edition']['year'])
+    if type(year) is not int or year != expected_year:
         fail('landing_publication_year_mismatch_or_missing')
     if not row['version']:
         venue = text(identity['venue'], 'landing_venue', 300)

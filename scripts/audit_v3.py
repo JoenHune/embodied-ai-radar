@@ -231,6 +231,30 @@ def main() -> None:
     review_clock = resolve_source_review_clock(ROOT, manifest["data_through"])
     require(all(manifest.get(key) == value for key, value in review_clock.items()), "Source review clock manifest mismatch")
     review_as_of = review_clock["source_review_as_of"]
+    from fulltext_classification_reviews import audit_classification_reviews
+    classification_catalog = {
+        **editorial_catalog,
+        "field-provenance": read_jsonl("field-provenance.jsonl"),
+        "taxonomy-assignments": read_jsonl("taxonomy-assignments.jsonl")}
+    classification_audit = audit_classification_reviews(
+        classification_catalog,
+        read_table(ROOT / "data/hardware-review", "fulltext-readings"),
+        read_table(ROOT / "data/hardware-review", "source-observations"),
+        data_through=manifest["data_through"], source_review_as_of=review_as_of,
+        conflicts=read_table(ROOT / "data/editorial", "source-content-conflicts"))
+    require(manifest.get("classification_reviews") == classification_audit,
+            "Fulltext classification review audit cannot be recomputed")
+    classification_history = defaultdict(list)
+    for source in sources:
+        if source.get("source_type") == "ai_fulltext_classification_review":
+            classification_history[source["classification_review"]["work_id"]].append({
+                key: source[key] for key in ("source_record_id", "url", "reviewed_at", "assurance", "classification_review")})
+    for wid, history in classification_history.items():
+        shard = hashlib.sha1(wid.encode()).hexdigest()[:2]
+        detail = next(row for row in json.loads((API / "works" / f"{shard}.json").read_text())
+                      if row["work_id"] == wid)
+        require(detail.get("classification_reviews") == sorted(history, key=lambda row: row["reviewed_at"]),
+                f"{wid} public classification review history differs from authority")
     require(json.loads((API / "source-review-clock.json").read_text()) == {
         "schema_version": "1", "data_through": manifest["data_through"],
         "dataset_version": manifest["dataset_version"], **review_clock}, "Source review clock API mismatch")

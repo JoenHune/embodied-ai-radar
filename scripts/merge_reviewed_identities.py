@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 from catalog_rules import normalized_title
 from catalog_store import fingerprint, read_table
 from prepare_catalog import merge_work
+from fulltext_classification_reviews import active_bindings
 
 
 def checked_release_duplicate(payload: dict, review: dict, target: dict, old_ids: list[str], works: dict) -> bool:
@@ -42,6 +43,7 @@ def checked_release_duplicate(payload: dict, review: dict, target: dict, old_ids
 
 
 def merge_reviewed_identities(payload: dict, data: Path) -> dict:
+    classification_bindings = active_bindings(payload)
     works = {row["work_id"]: row for row in payload["works"]}
     known_reviews = {row.get("review_id") for row in payload.get("work-relations", [])}
     for review in read_table(data, "identity-reviews"):
@@ -51,6 +53,8 @@ def merge_reviewed_identities(payload: dict, data: Path) -> dict:
             continue
         target_id = review["canonical_work_id"]
         old_ids = [wid for wid in review["work_ids"] if wid != target_id]
+        if old_ids and any(wid in classification_bindings for wid in [target_id, *old_ids]):
+            raise ValueError("Fulltext classification review identity merge requires explicit review migration")
         source_urls = review.get("source_urls", [])
         if target_id not in works or not old_ids or any(wid not in works for wid in old_ids):
             raise ValueError("Identity review targets are not current canonical records")

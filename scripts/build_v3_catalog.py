@@ -49,6 +49,7 @@ RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "full
 RULE_SOURCE_FILES += ("editorial_readings.py", "editorial_history.py")
 RULE_SOURCE_FILES += ("source_content_conflicts.py",)
 RULE_SOURCE_FILES += ("source_review_clock.py",)
+RULE_SOURCE_FILES += ("fulltext_classification_reviews.py",)
 RULE_CONFIG_FILES += ("source-content-conflicts.schema.json",)
 RULE_SOURCE_FILES += ("pdf_reading_reviews.py", "pdf_coverage_export.py")
 RULE_CONFIG_FILES += ("hardware-dictionary.json",)
@@ -602,6 +603,12 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     from source_review_clock import resolve_source_review_clock
     review_clock = resolve_source_review_clock(ROOT, as_of_text)
     review_as_of = review_clock["source_review_as_of"]
+    from fulltext_classification_reviews import audit_classification_reviews
+    classification_audit = audit_classification_reviews(
+        payload, read_table(DATA / "hardware-review", "fulltext-readings"),
+        read_table(DATA / "hardware-review", "source-observations"),
+        data_through=as_of_text, source_review_as_of=review_as_of,
+        conflicts=read_table(DATA / "editorial", "source-content-conflicts"))
     from editorial_readings import load_reading_index
     from editorial_history import load_editorial_history, editorial_history_reference
     editorial_reading_index = load_reading_index(payload, DATA / "hardware-review", review_as_of)
@@ -1183,6 +1190,11 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         write_json(PUBLIC_API / "organizations" / f"{org['slug']}.json", org, compact=True)
     shards: dict[str, list[dict]] = defaultdict(list)
     work_events = defaultdict(list)
+    classification_history = defaultdict(list)
+    for source in source_records:
+        if source.get("source_type") == "ai_fulltext_classification_review":
+            classification_history[source["classification_review"]["work_id"]].append({
+                key: source[key] for key in ("source_record_id", "url", "reviewed_at", "assurance", "classification_review")})
     for event in evidence_events:
         if event.get("work_id"):
             work_events[event["work_id"]].append(event)
@@ -1194,6 +1206,9 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         detail["organization_details"] = [{"organization_id": org_id, "name": org_by_id.get(org_id, {}).get("display_name", org_id), "slug": org_by_id.get(org_id, {}).get("slug")} for org_id in detail["organizations"]]
         detail["organization_attributions"] = [{**link, "name": org_by_id.get(link["organization_id"], {}).get("display_name", link["organization_id"])} for link in all_links_by_work[work["work_id"]]]
         detail["evidence_events"] = work_events.get(work["work_id"], [])
+        if work["work_id"] in classification_history:
+            detail["classification_reviews"] = sorted(classification_history[work["work_id"]],
+                                                       key=lambda row: row["reviewed_at"])
         detail["text_versions"] = [{key: row[key] for key in ["snapshot_id", "source_record_id", "version", "title", "authors", "available_at", "date_precision", "source_url"]} for row in text_by_work[work["work_id"]]]
         selected_text = text_as_of(work, text_by_work[work["work_id"]], as_of_text)
         detail["current_text"] = {key: value for key, value in selected_text.items() if key not in {"title", "abstract", "authors"}}
@@ -1234,6 +1249,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         "data_through": as_of_text,
         "catalog_hash": metadata["catalog_hash"],
         "counts": counts,
+        "classification_reviews": classification_audit,
         "complete_months": full_months,
         "provisional_month": provisional_month,
         "available_months": archive_months,
