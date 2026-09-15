@@ -144,6 +144,59 @@ class EquipmentRadarTests(unittest.TestCase):
         self.assertNotIn('arxiv:2608.00002', result['usage']['by_work'])
         self.assertIn('arxiv:2608.00002', [r['work_id'] for r in result['usage']['candidates']])
 
+    def test_paper_local_unknown_names_preserve_clues_without_cross_work_ids(self):
+        payload, authority, manifest = fixture()
+        other = make_work(2)
+        other['abstract'] = 'A Humanoid robot was used.'
+        payload['works'].append(other)
+        for number, level in enumerate(['unspecified', 'family_only'], 1):
+            authority['devices'].append({
+                'hardware_id': f'hardware:unknown-humanoid-{number}', 'slug': f'unknown-humanoid-{number}',
+                'name': 'Humanoid robot', 'vendor': 'unknown', 'category': 'robot_platform',
+                'identity_level': level, 'identity_context_work_id': payload['works'][0]['work_id'],
+                'official_url': 'https://arxiv.org/html/2608.00001v1', 'aliases': [],
+            })
+        before = copy.deepcopy((payload, authority, manifest))
+        result = build_equipment_bundle(payload, authority, manifest)
+        self.assertEqual((payload, authority, manifest), before)
+        self.assertFalse(any(r['hardware_id'].startswith('hardware:unknown-humanoid')
+                             for r in result['usage']['candidates']))
+        clues = result['usage']['unresolved_mentions']
+        self.assertEqual(len(clues), 1, 'Same unbound name must not multiply with local device IDs')
+        self.assertEqual(clues[0]['work_id'], other['work_id'])
+        self.assertEqual(clues[0]['matched_term'], 'Humanoid robot')
+        self.assertNotIn('hardware_id', clues[0])
+        self.assertEqual(result['index']['counts']['unresolved_name_mentions'], 1)
+        self.assertEqual(result['index']['counts']['usage_links'], 1)
+
+    def test_local_and_legacy_family_discovery_stays_with_its_explicit_work(self):
+        for context in [True, False]:
+            with self.subTest(explicit_context=context):
+                payload, authority, manifest = fixture()
+                device = authority['devices'][0]
+                device['identity_level'] = 'family_only'
+                if context:
+                    device['identity_context_work_id'] = payload['works'][0]['work_id']
+                authority['usage-evidence'][0]['review_status'] = 'candidate'
+                payload['works'].append(make_work(2))
+                result = build_equipment_bundle(payload, authority, manifest)
+                self.assertEqual([r['work_id'] for r in result['usage']['candidates']],
+                                 [payload['works'][0]['work_id']])
+                self.assertEqual([r['work_id'] for r in result['usage']['unresolved_mentions']],
+                                 [payload['works'][1]['work_id']])
+                self.assertEqual(result['usage']['by_work'], {})
+
+    def test_model_discovery_keeps_word_boundaries_alias_order_and_case(self):
+        payload, authority, manifest = fixture()
+        for number, wording in enumerate(['G10 G1_extra', 'g1', 'unitree g1'], 2):
+            work = make_work(number)
+            work['abstract'] = wording
+            payload['works'].append(work)
+        result = build_equipment_bundle(payload, authority, manifest)
+        self.assertEqual([(r['work_id'], r['matched_term']) for r in result['usage']['candidates']],
+                         [('arxiv:2608.00003', 'G1'), ('arxiv:2608.00004', 'Unitree G1')])
+        self.assertEqual(result['usage']['unresolved_mentions'], [])
+
     def test_real_and_simulation_roles_cannot_swap_settings(self):
         for role, setting in [('real_robot', 'simulation'), ('simulated_robot', 'real')]:
             payload, authority, _ = fixture()

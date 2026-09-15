@@ -214,20 +214,42 @@ def build_equipment_bundle(payload, authority, manifest):
         by_device[row['hardware_id']].add(row['work_id'])
     # Candidate names are not inferred usage, even when a device has a verified
     # relationship to another paper. Only title/abstract text is searched here.
-    mentions = []
+    mentions, unresolved_mentions = [], {}
+    identity_owners = defaultdict(set)
+    for row in data['usage-evidence']:
+        identity_owners[row['hardware_id']].add(row['work_id'])
+    # Compile once per label rather than thrashing re's small global cache for
+    # every work. A paper-local unnamed/family identity is not a global model.
+    matchers = [(device, [(label, re.compile(r'(?<!\w)' + re.escape(label) + r'(?!\w)', re.I))
+                         for label in [device['name'], *device.get('aliases', [])] if len(label) >= 2])
+                for device in devices.values()]
     for key in sorted(included):
         text = works[key]['title'] + '\n' + (works[key].get('abstract') or '')
-        for device in devices.values():
-            labels = [device['name'], *device.get('aliases', [])]
-            match = next((label for label in labels if len(label) >= 2 and re.search(r'(?<!\w)' + re.escape(label) + r'(?!\w)', text, re.I)), None)
+        for device, patterns in matchers:
+            match = next((label for label, pattern in patterns if pattern.search(text)), None)
             if match and key not in by_device[device['hardware_id']]:
+                context = device.get('identity_context_work_id')
+                other_context = context is not None and context != key
+                unscoped_family = (context is None and device['identity_level'] != 'model_specified'
+                                   and key not in identity_owners[device['hardware_id']])
+                if other_context or unscoped_family:
+                    # Preserve discovery evidence without assigning somebody
+                    # else's uncertain hardware_id to this work. Multiple
+                    # local identities for the same name yield one clue.
+                    unresolved_mentions.setdefault((key, match.casefold()), {
+                        'work_id': key, 'matched_term': match,
+                        'status': 'unresolved_name_not_hardware_identity',
+                        'evidence_scope': 'catalog_title_or_abstract_name_match_only',
+                        'reason': 'paper_local_or_unscoped_uncertain_identity',
+                    })
+                    continue
                 mentions.append({'work_id': key, 'hardware_id': device['hardware_id'], 'matched_term': match, 'status': 'mention_only_not_verified_usage'})
     directory = [{**device, 'work_ids': sorted(by_device[device['hardware_id']])} for device in devices.values()]
     categories = [{'code': code, 'label': label, 'devices': sum(row['category'] == code for row in directory),
                    'works': len({row['work_id'] for row in usage if row['category'] == code})} for code, label in CATEGORIES.items()]
-    index = {**common, **usage_clock, 'counts': {'devices': len(directory), 'usage_links': len(usage), 'works': len(by_work), 'hardware_candidates': len(mentions)},
+    index = {**common, **usage_clock, 'counts': {'devices': len(directory), 'usage_links': len(usage), 'works': len(by_work), 'hardware_candidates': len(mentions), 'unresolved_name_mentions': len(unresolved_mentions)},
              'categories': categories, 'devices': sorted(directory, key=lambda row: row['name'].lower()),
-             'limits': ['仅统计已纳入研究的已核验使用关系；未登记不表示未使用。', '设备型号与用途来自当前核验版本，不代表采购量、市场份额或独立实验复现。', '电机、关节模组、电路及仿真软件不作为硬件设备条目。']}
+             'limits': ['仅统计已纳入研究的已核验使用关系；未登记不表示未使用。', '设备型号与用途来自当前核验版本，不代表采购量、市场份额或独立实验复现。', '电机、关节模组、电路及仿真软件不作为硬件设备条目。', '论文内系列或未命名设备不能跨论文绑定；相关字面提及保存在公开usage接口的unresolved_mentions中，不是已核验用途。']}
     # Scope verification and catalog inclusion are independent decisions. Keep
     # non-included source reviews visible without promoting their works.
     reviews = []
@@ -262,7 +284,8 @@ def build_equipment_bundle(payload, authority, manifest):
     loco = {**common, 'counts': {key: len(value) for key, value in lanes.items()}, 'monthly': monthly,
             'observations': observations, 'reviews': reviews, 'work_ids': lanes,
             'limits': ['主题检索命中不等于已核验loco-manip研究。', '分月图仅计已纳入研究，非included的观察依赖保留候选详情但不计入任何趋势柱。', '分月图按研究首次公开月组织已核验样本，不是全领域增长率。', '轨迹回放、仅仿真、真机闭环分别记录；暂行月不参与完整月趋势判断。']}
-    return {'index': index, 'usage': {**common, **usage_clock, 'by_work': dict(by_work), 'candidates': mentions}, 'loco-manip': loco, 'tables': data}
+    return {'index': index, 'usage': {**common, **usage_clock, 'by_work': dict(by_work), 'candidates': mentions,
+                                     'unresolved_mentions': list(unresolved_mentions.values())}, 'loco-manip': loco, 'tables': data}
 
 
 def export_equipment(bundle, api, downloads):
