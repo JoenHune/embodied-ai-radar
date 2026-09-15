@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import readline from 'node:readline'
 import { gzipSync } from 'node:zlib'
 import { fileURLToPath } from 'node:url'
 import { spawn, spawnSync } from 'node:child_process'
 import { load } from 'cheerio'
+import { readSourceRecordIds } from './lib/source-record-files.mjs'
 
 const archiveVerificationCode = `import json,sys
 sys.path.insert(0,sys.argv[1])
@@ -208,12 +208,9 @@ for (const organization of Array.isArray(organizations) ? organizations : []) {
   if (detail.organization_id !== organization.organization_id || !Array.isArray(detail.work_ids) || !Array.isArray(detail.updates)) issue('organization_detail_contract', { slug: organization.slug })
 }
 
-const sourceIds = new Set()
-const sourceFile = path.join(root, 'data/catalog/source-records.jsonl')
-if (existsFile(sourceFile)) {
-  const lines = readline.createInterface({ input: fs.createReadStream(sourceFile, { encoding: 'utf8' }), crlfDelay: Infinity })
-  for await (const line of lines) if (line.trim()) sourceIds.add(JSON.parse(line).source_record_id)
-} else issue('missing_source_authority', { path: path.relative(root, sourceFile) })
+let sourceIds = new Set()
+try { sourceIds = readSourceRecordIds(path.join(root, 'data/catalog')) }
+catch (error) { issue('invalid_source_authority', { reason: error.message?.startsWith('source_record_store:') ? error.message : 'source_authority_io_failed' }) }
 const knownWorks = new Set()
 let checkedSources = 0
 let checkedManifestations = 0

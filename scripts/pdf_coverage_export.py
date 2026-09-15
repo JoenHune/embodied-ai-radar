@@ -8,8 +8,8 @@ import json
 from pathlib import Path
 
 from catalog_store import encode, write_if_changed
-from pdf_reading_reviews import public_audit
-from source_review_clock import manifest_source_review_clock, utc_cutoff, visible
+from pdf_reading_reviews import visible_public_audit
+from source_review_clock import manifest_source_review_clock
 
 ASSURANCE = 'self_attested_AI_reading_not_human_review'
 API = '/api/v1/equipment/coverage-pdf-readings.json'
@@ -40,22 +40,7 @@ def build_pdf_coverage(payload, source_observations, reading_reviews, manifest, 
     if len(works) != len(payload['works']):
         raise ValueError('pdf_coverage_duplicate_canonical_work')
     clock = manifest_source_review_clock(manifest)
-    # Validate all supplied history before filtering. A future malformed row
-    # must not disappear behind the clock. Do not rewrite a later identity
-    # check as an earlier unchecked source merely to expose it sooner.
-    history = public_audit(list(reading_reviews), payload, list(source_observations), '9999-12-31T23:59:59Z')
-    sources = [row for row in history['sources'] if visible(row['observed_at'], clock['source_review_as_of']) and
-               (row['identity_check']['status'] == 'not_checked' or
-                visible(row['identity_check']['checked_at'], clock['source_review_as_of']))]
-    source_ids = {row['source_observation_id'] for row in sources}
-    readings = [row for row in history['records'] if row['source_observation_id'] in source_ids and
-                visible(row['read_completed_at'], clock['source_review_as_of'])]
-    # The existing PDF ledger validator accepts whole-second timestamps only.
-    # All its validated source/reading times are therefore whole seconds;
-    # flooring this final validator cutoff is equivalent to the exact filter
-    # above. Neither any source timestamp nor the advertised clock is changed.
-    audit_cutoff = utc_cutoff(clock['source_review_as_of']).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
-    audited = public_audit(readings, payload, sources, audit_cutoff)
+    audited = visible_public_audit(list(reading_reviews), payload, list(source_observations), clock['source_review_as_of'])
     def overlay(rows):
         result = []
         for row in rows:

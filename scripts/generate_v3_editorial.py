@@ -272,6 +272,12 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def read_table(catalog: Path, name: str) -> list[dict]:
+    if name == "source-records":
+        try:
+            from source_record_store import read_source_records
+        except ModuleNotFoundError:
+            from scripts.source_record_store import read_source_records
+        return read_source_records(catalog)
     shards = sorted((catalog / name).glob("*.jsonl"))
     return [row for path in shards for row in read_jsonl(path)] if shards else read_jsonl(catalog / f"{name}.jsonl")
 
@@ -615,7 +621,8 @@ def available_reading_references(packet: dict) -> dict:
     references = {}
     for card in packet.get("evidence_cards", []):
         rows = [{key: copy.deepcopy(row[key]) for key in (
-            "reading_id", "work_id", "version", "reading_source_url", "annotation_digest"
+            "reading_id", "work_id", "version", "reading_source_url", "annotation_digest",
+            "source_format", "source_observation_id", "manifestation_id", "pdf_sha256", "page_count", "read_pages"
         ) if key in row} for row in card.get("reading_annotations", [])]
         if rows:
             references[card["evidence_id"]] = rows
@@ -1027,7 +1034,8 @@ def main(argv: list[str] | None = None) -> int:
     review_as_of = clock["source_review_as_of"]
     from editorial_readings import load_reading_index, build_reading_index
     if fixture:
-        reading_index = (build_reading_index(catalog, fixture.get("fulltext_readings", []), fixture.get("source_observations", []), review_as_of)
+        reading_index = (build_reading_index(catalog, fixture.get("fulltext_readings", []), fixture.get("source_observations", []), review_as_of,
+                                           pdf_readings=fixture.get("pdf_readings"), pdf_observations=fixture.get("pdf_source_observations"))
                          if manifest.get("data_through") else {})
     else:
         reading_index = load_reading_index(catalog, args.catalog_directory.parent / "hardware-review", review_as_of)

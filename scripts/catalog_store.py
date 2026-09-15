@@ -7,6 +7,10 @@ import copy
 from collections import defaultdict
 from pathlib import Path
 from datetime import datetime, timezone
+try:
+    from source_record_store import read_source_records, source_record_layout, source_record_paths, validated_rows, write_source_records
+except ModuleNotFoundError:
+    from scripts.source_record_store import read_source_records, source_record_layout, source_record_paths, validated_rows, write_source_records
 
 TABLES = {
     "works": "work_id", "manifestations": "manifestation_id",
@@ -41,6 +45,8 @@ def write_if_changed(path: Path, text: str) -> bool:
 
 
 def read_table(root: Path, table: str) -> list[dict]:
+    if table == "source-records":
+        return read_source_records(root)
     directory = root / table
     paths = sorted(directory.glob("*.jsonl")) if directory.is_dir() else [root / f"{table}.jsonl"]
     result = []
@@ -51,6 +57,9 @@ def read_table(root: Path, table: str) -> list[dict]:
 
 
 def write_table(root: Path, table: str, rows: list[dict]) -> None:
+    if table == "source-records":
+        write_source_records(root, rows, write_if_changed)
+        return
     key = TABLES[table]
     ordered = sorted(rows, key=lambda row: str(row.get(key, "")) if key else encode(row))
     if table in {"works", "text-snapshots"}:
@@ -75,6 +84,10 @@ def write_table(root: Path, table: str, rows: list[dict]) -> None:
 
 
 def save_catalog(root: Path, payload: dict, metadata: dict) -> dict:
+    # Fail before writing ANY table if an explicit migration is in progress or
+    # source records are invalid. Existing legacy layout is not migrated here.
+    source_record_layout(root)
+    validated_rows(payload.get("source-records", []))
     for table in TABLES:
         write_table(root, table, payload.get(table, []))
     hashes = {}
@@ -86,6 +99,15 @@ def save_catalog(root: Path, payload: dict, metadata: dict) -> dict:
         result["ingested_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     write_if_changed(root / "manifest.json", encode(result) + "\n")
     return result
+
+
+def table_output_paths(root: Path, table: str) -> list[Path]:
+    """Exact writes for weekly checkpoint/rollback; never a cleanup glob."""
+    if table == "source-records":
+        return source_record_paths(root, for_write=True)
+    if table in {"works", "text-snapshots"}:
+        return [root / table / f"{number:02x}.jsonl" for number in range(256)]
+    return [root / f"{table}.jsonl"]
 
 
 def load_catalog(root: Path) -> tuple[dict, dict]:

@@ -496,6 +496,25 @@ def public_audit(records, payload, public_observations, as_of):
             'private_source_reverified': False, 'understanding_verified': False}
 
 
+def visible_public_audit(records, payload, public_observations, as_of):
+    """Audit all metadata, then expose only observations/readings at this clock.
+
+    No PDF bytes, extraction or network. Invalid future rows must not be hidden
+    by filtering. This is shared by PDF coverage and editorial annotations.
+    """
+    from source_review_clock import visible, utc_cutoff
+    history = public_audit(records, payload, public_observations, '9999-12-31T23:59:59Z')
+    sources = [row for row in history['sources'] if visible(row['observed_at'], as_of) and
+               (row['identity_check']['status'] == 'not_checked' or visible(row['identity_check']['checked_at'], as_of))]
+    source_ids = {row['source_observation_id'] for row in sources}
+    readings = [row for row in history['records'] if row['source_observation_id'] in source_ids and
+                visible(row['read_completed_at'], as_of)]
+    # Ledger timestamps have whole-second precision. Filter with the exact
+    # caller clock first, then floor only this validator cutoff (not the data).
+    audit_cutoff = utc_cutoff(as_of).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+    return public_audit(readings, payload, sources, audit_cutoff)
+
+
 def validate_declarations(declarations, payload, cache_root, *, as_of=None):
     fields(declarations, {'schema_version', 'sources', 'readings'})
     if declarations['schema_version'] != '1' or not all(isinstance(declarations[key], list) for key in ('sources', 'readings')):

@@ -8,6 +8,7 @@ from catalog_store import load_catalog, read_table
 from equipment_radar import load_equipment_authority, build_equipment_bundle, audit_equipment
 from hardware_coverage_export import build_coverage, audit_coverage, load_hardware_dictionary
 from import_hardware_source_reviews import audit_addenda_lineage
+from import_pdf_hardware_reviews import audit_pdf_hardware_usage
 from pdf_coverage_export import build_pdf_coverage, audit_pdf_coverage, attach_pdf_coverage, API, SOURCE_DOWNLOAD, READING_DOWNLOAD
 from sqlite_download import local_sqlite_path, verify_archive
 
@@ -45,8 +46,12 @@ def main():
         read_table(ROOT / 'data/hardware-review', 'source-scans'),
         public_observations, manifest,
         reading_reviews=read_table(ROOT / 'data/hardware-review', 'fulltext-readings'))
-    pdf_coverage = build_pdf_coverage(payload, read_table(ROOT / 'data/hardware-review', 'pdf-source-observations'),
-        read_table(ROOT / 'data/hardware-review', 'pdf-readings'), manifest, coverage['summary']['dictionary_hash'])
+    public_pdf_sources = read_table(ROOT / 'data/hardware-review', 'pdf-source-observations')
+    public_pdf_readings = read_table(ROOT / 'data/hardware-review', 'pdf-readings')
+    pdf_usage_audit = audit_pdf_hardware_usage(payload, authority, public_pdf_sources, public_pdf_readings,
+                                              review_clock['source_review_as_of'])
+    pdf_coverage = build_pdf_coverage(payload, public_pdf_sources, public_pdf_readings,
+        manifest, coverage['summary']['dictionary_hash'])
     attach_pdf_coverage(coverage, pdf_coverage)
     if manifest.get('downloads', {}).get('sqlite') != '/downloads/radar.sqlite.zip':
         raise ValueError('sqlite_zip_manifest_download_missing')
@@ -65,7 +70,8 @@ def main():
                       'hardware_coverage_all_works': coverage['summary']['all_works'],
                       'hardware_coverage_included': coverage['summary']['included'],
                       'article_reading': coverage['readings']['counts'], 'hardware_addenda': addenda_audit,
-                      'pdf_reading': pdf_audit, 'sqlite_download': sqlite_download_audit}))
+                      'pdf_reading': pdf_audit, 'pdf_hardware_usage': pdf_usage_audit,
+                      'sqlite_download': sqlite_download_audit}))
 
 
 if __name__ == '__main__':

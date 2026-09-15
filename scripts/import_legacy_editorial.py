@@ -35,6 +35,12 @@ def write_json(path: Path, value: Any) -> None:
 
 
 def read_table(directory: Path, name: str) -> list[dict]:
+    if name == "source-records":
+        try:
+            from source_record_store import read_source_records
+        except ModuleNotFoundError:
+            from scripts.source_record_store import read_source_records
+        return read_source_records(directory)
     shards = sorted((directory / name).glob("*.jsonl"))
     paths = shards or [directory / f"{name}.jsonl"]
     rows = []

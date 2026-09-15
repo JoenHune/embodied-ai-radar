@@ -549,10 +549,10 @@ def planned_generated_paths(context: dict) -> list[str]:
     No review additions, config, README, arbitrary new files or manual signal
     reviews are cleanup targets. Unknown outputs are left for diagnosis.
     """
-    from catalog_store import TABLES, read_table
+    from catalog_store import TABLES, read_table, table_output_paths
     paths = {path for path in STAGED_PATHS if path.endswith(".json")}
-    paths.update("data/catalog/" + name + ".jsonl" for name in TABLES if name not in {"works", "text-snapshots"})
-    paths.update(f"data/catalog/{name}/{n:02x}.jsonl" for name in ["works", "text-snapshots"] for n in range(256))
+    paths.update(str(path.relative_to(ROOT)) for name in TABLES
+                 for path in table_output_paths(ROOT / "data/catalog", name))
     paths.update(["data/catalog/manifest.json", "data/catalog/migration-report.json", "data/editorial/status.json", "data/editorial/work-localizations.jsonl"])
     manifest = read_json(ROOT / "docs/public/api/v1/catalog-manifest.json", {})
     months = {value for value in [*manifest.get("available_months", []), *manifest.get("complete_months", []), manifest.get("provisional_month")] if value and re.fullmatch(r"20\d{2}-\d{2}", value)}
