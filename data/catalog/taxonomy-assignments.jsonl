@@ -2,7 +2,9 @@
 {"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D12","confidence":"ai_fulltext_reviewed","is_primary":true,"review_id":"ai-fulltext-classification:revalexo-v2-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:d090f25a03690027730a9fc5"],"work_id":"arxiv:2609.08090"}
 {"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D2","confidence":"ai_fulltext_reviewed","is_primary":true,"review_id":"ai-fulltext-classification:nativemem-v1-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:a76744a664732232cd01fa69"],"work_id":"arxiv:2607.06678"}
 {"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D2","confidence":"ai_fulltext_reviewed","is_primary":true,"review_id":"classification:aq-clash-2026-09-16","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:80d9fc35286211679db86ebe"],"work_id":"arxiv:2512.10360"}
+{"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D4","confidence":"ai_fulltext_reviewed","is_primary":true,"review_id":"classification:as-aristo-2026-09-16","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:725dbee0f4f881f9b2db1535"],"work_id":"arxiv:2605.30508"}
 {"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"direction","classifier_version":"ai-fulltext-classification-1","code":"D9","confidence":"ai_fulltext_reviewed","is_primary":false,"review_id":"ai-fulltext-classification:revalexo-v2-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:d090f25a03690027730a9fc5"],"work_id":"arxiv:2609.08090"}
+{"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"question","classifier_version":"ai-fulltext-classification-1","code":"Q3","confidence":"ai_fulltext_reviewed","is_primary":false,"review_id":"classification:as-aristo-2026-09-16","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:725dbee0f4f881f9b2db1535"],"work_id":"arxiv:2605.30508"}
 {"assurance":"source_bound_AI_classification_not_human_review_or_independent_validation","axis":"question","classifier_version":"ai-fulltext-classification-1","code":"Q6","confidence":"ai_fulltext_reviewed","is_primary":false,"review_id":"ai-fulltext-classification:nativemem-v1-2026-09-15","reviewer_kind":"AI","source_record_ids":["source:fulltext-classification:a76744a664732232cd01fa69"],"work_id":"arxiv:2607.06678"}
 {"axis":"capabilities","classifier_version":"3.0","code":"bimanual_manipulation","confidence":"accepted","is_primary":false,"work_id":"arxiv:2407.03245"}
 {"axis":"capabilities","classifier_version":"3.0","code":"bimanual_manipulation","confidence":"accepted","is_primary":false,"work_id":"arxiv:2407.04152"}
@@ -28766,7 +28768,6 @@
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.29661"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.30326"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.30444"}
-{"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.30508"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.30569"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.30778"}
 {"axis":"direction","classifier_version":"3.0","code":"D4","confidence":"accepted","is_primary":true,"work_id":"arxiv:2605.30780"}
@@ -113615,7 +113616,6 @@
 {"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2605.28412"}
 {"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2605.28812"}
 {"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2605.29572"}
-{"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2605.30508"}
 {"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2605.31352"}
 {"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2605.31434"}
 {"axis":"question","classifier_version":"3.0","code":"Q3","confidence":"accepted","is_primary":false,"work_id":"arxiv:2606.00397"}
