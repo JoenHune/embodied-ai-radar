@@ -3,10 +3,22 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import { eventDate } from '../lib/dates'
 
+const clockLabel = (value: unknown, precision: 'day' | 'second'): string => {
+  const pattern = precision === 'day' ? /^\d{4}-\d{2}-\d{2}$/ : /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?Z$/
+  if (typeof value !== 'string' || !pattern.test(value)) return ''
+  const date = new Date(precision === 'day' ? value + 'T00:00:00Z' : value)
+  const width = precision === 'day' ? 10 : 19
+  if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, width) !== value.slice(0, width)) return ''
+  return eventDate(value, precision)
+}
+
 type Judgment = { text_zh: string; source_pages: number[] }
 type Reading = { reading_id: string; work_id: string; title: string; relevance_status: string; source_url: string; edition_label: string; page_count: number; read_pages: number[]; visual_pages_checked: number[]; read_completed_at: string; checked_table_count: number; findings_zh: Judgment[]; limitations_zh: Judgment[] }
 const props = defineProps<{ expectedVersion: string; dictionaryHash: string; cohort: 'all_works' | 'included' }>()
 const records = ref<Reading[]>([])
+const clockMetadata = ref<{ data_through?: string; source_review_as_of?: string }>({})
+const analysisClock = computed(() => clockLabel(clockMetadata.value.data_through, 'day'))
+const reviewClock = computed(() => clockLabel(clockMetadata.value.source_review_as_of, 'second'))
 const loading = ref(true)
 const error = ref('')
 const loadedVersion = ref('')
@@ -36,6 +48,7 @@ const load = async () => {
   const request = ++serial
   controller?.abort(); controller = new AbortController()
   loading.value = true; error.value = ''; records.value = []; loadedVersion.value = ''; loadedDictionary.value = ''
+  clockMetadata.value = {}
   try {
     const response = await fetch(withBase('/api/v1/equipment/coverage-pdf-readings.json'), { signal: controller.signal, cache: 'no-cache' })
     if (!response.ok) throw new Error('unavailable')
@@ -49,6 +62,7 @@ const load = async () => {
     if (new Set(data.records.map((row: Reading) => row.reading_id)).size !== data.records.length) throw new Error('invalid')
     records.value = [...data.records].sort((a, b) => b.read_completed_at.localeCompare(a.read_completed_at) || a.work_id.localeCompare(b.work_id))
     loadedVersion.value = data.dataset_version; loadedDictionary.value = data.dictionary_hash
+    clockMetadata.value = { data_through: data.data_through, source_review_as_of: data.source_review_as_of }
   } catch (cause) {
     if (!disposed && request === serial) error.value = cause instanceof Error && cause.message === 'version' ? 'PDF阅读记录与覆盖统计版本不一致，已停止混合展示。' : 'PDF阅读记录暂不可读，当前状态未知；不显示为零。'
   } finally { if (!disposed && request === serial) loading.value = false }
@@ -63,6 +77,7 @@ onBeforeUnmount(() => { disposed = true; serial++; controller?.abort() })
     <p v-if="loading" role="status">正在读取PDF原文发现…</p>
     <div v-else-if="error || mismatch" role="alert"><p>{{ mismatch ? 'PDF阅读记录版本已过期，当前状态未知。' : error }}</p><button type="button" @click="load">重新读取</button></div>
     <template v-else>
+      <p v-if="reviewClock" class="pdf-meta">语料分析截至 {{ analysisClock || '日期待核验' }} · 来源/阅读核验记录可见截至 {{ reviewClock }}</p>
       <p class="pdf-count" aria-live="polite">当前范围 {{ new Set(filtered.map(row => row.work_id)).size }} 项研究 · {{ filtered.length }} 份PDF阅读记录</p>
       <article v-for="row in filtered.slice(0, shown)" :key="row.reading_id">
         <h3><a :href="workUrl(row.work_id)">{{ row.title }}</a></h3>

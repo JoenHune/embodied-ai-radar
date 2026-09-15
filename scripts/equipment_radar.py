@@ -184,6 +184,8 @@ def validate_equipment(payload, authority):
 
 def build_equipment_bundle(payload, authority, manifest):
     data = validate_equipment(payload, authority)
+    from source_review_clock import manifest_source_review_clock, usage_visible
+    usage_clock = manifest_source_review_clock(manifest) if 'source_review_as_of' in manifest else {}
     works = {row['work_id']: row for row in payload['works']}
     included = {key for key, row in works.items() if row.get('relevance', {}).get('status') == 'included'}
     months = [*manifest['complete_months'], manifest['provisional_month']]
@@ -194,6 +196,8 @@ def build_equipment_bundle(payload, authority, manifest):
     usage = []
     for row in data['usage-evidence']:
         if row['review_status'] != 'verified' or row['work_id'] not in included:
+            continue
+        if usage_clock and not usage_visible(row, usage_clock['source_review_as_of']):
             continue
         device = devices[row['hardware_id']]
         usage.append({**row, 'name': device['name'], 'category': device['category'], 'device_slug': device['slug'], 'identity_level': device['identity_level']})
@@ -214,7 +218,7 @@ def build_equipment_bundle(payload, authority, manifest):
     directory = [{**device, 'work_ids': sorted(by_device[device['hardware_id']])} for device in devices.values()]
     categories = [{'code': code, 'label': label, 'devices': sum(row['category'] == code for row in directory),
                    'works': len({row['work_id'] for row in usage if row['category'] == code})} for code, label in CATEGORIES.items()]
-    index = {**common, 'counts': {'devices': len(directory), 'usage_links': len(usage), 'works': len(by_work), 'hardware_candidates': len(mentions)},
+    index = {**common, **usage_clock, 'counts': {'devices': len(directory), 'usage_links': len(usage), 'works': len(by_work), 'hardware_candidates': len(mentions)},
              'categories': categories, 'devices': sorted(directory, key=lambda row: row['name'].lower()),
              'limits': ['仅统计已纳入研究的已核验使用关系；未登记不表示未使用。', '设备型号与用途来自当前核验版本，不代表采购量、市场份额或独立实验复现。', '电机、关节模组、电路及仿真软件不作为硬件设备条目。']}
     # Scope verification and catalog inclusion are independent decisions. Keep
@@ -251,7 +255,7 @@ def build_equipment_bundle(payload, authority, manifest):
     loco = {**common, 'counts': {key: len(value) for key, value in lanes.items()}, 'monthly': monthly,
             'observations': observations, 'reviews': reviews, 'work_ids': lanes,
             'limits': ['主题检索命中不等于已核验loco-manip研究。', '分月图仅计已纳入研究，非included的观察依赖保留候选详情但不计入任何趋势柱。', '分月图按研究首次公开月组织已核验样本，不是全领域增长率。', '轨迹回放、仅仿真、真机闭环分别记录；暂行月不参与完整月趋势判断。']}
-    return {'index': index, 'usage': {**common, 'by_work': dict(by_work), 'candidates': mentions}, 'loco-manip': loco, 'tables': data}
+    return {'index': index, 'usage': {**common, **usage_clock, 'by_work': dict(by_work), 'candidates': mentions}, 'loco-manip': loco, 'tables': data}
 
 
 def export_equipment(bundle, api, downloads):

@@ -4,6 +4,7 @@ import fs from 'node:fs'
 import vm from 'node:vm'
 import ts from 'typescript'
 import { parse, compileScript, compileTemplate } from '@vue/compiler-sfc'
+import { eventDate } from '../docs/.vitepress/theme/lib/dates.ts'
 
 const source = fs.readFileSync(new URL('../docs/.vitepress/theme/components/PdfReadings.vue', import.meta.url), 'utf8')
 const descriptor = parse(source).descriptor
@@ -12,9 +13,9 @@ const envelope = records => ({ schema_version: '1', source_format: 'pdf', datase
 function harness(value = envelope([entry()])) {
   const props = { expectedVersion: 'revision', dictionaryHash: 'dictionary', cohort: 'all_works' }
   const requests = []
-  const ctx = { URL, URLSearchParams, AbortController, Set, computed: fn => ({ get value() { return fn() } }), ref: value => ({ value }), defineProps: () => props, onMounted() {}, onBeforeUnmount() {}, withBase: value => value, eventDate: value => value,
+  const ctx = { URL, URLSearchParams, AbortController, Set, computed: fn => ({ get value() { return fn() } }), ref: value => ({ value }), defineProps: () => props, onMounted() {}, onBeforeUnmount() {}, withBase: value => value, eventDate,
     fetch: async (...args) => { requests.push(args); if (value instanceof Error) throw value; return { ok: true, json: async () => value } } }
-  vm.runInNewContext(ts.transpile(descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view={load,records,loading,error,shown,filtered,mismatch,sourceAllowed,pageUrl};', { target: ts.ScriptTarget.ES2022 }), ctx)
+  vm.runInNewContext(ts.transpile(descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view={load,records,loading,error,shown,filtered,mismatch,sourceAllowed,pageUrl,analysisClock,reviewClock,clockMetadata,clockLabel};', { target: ts.ScriptTarget.ES2022 }), ctx)
   return { ...ctx.view, props, requests }
 }
 test('PDF view compiles, loads only on expansion, and retains separate HTML counts', () => {
@@ -36,6 +37,30 @@ test('one on-demand PDF API, correct edition and 1-based page links', async () =
   assert.match(source, /row\.limitations_zh/)
   assert.match(source, /文件页码/)
   assert.match(source, /relevanceLabels\[row\.relevance_status\]/)
+})
+
+test('PDF clock labels preserve separate analysis and review visibility times with legacy safety', async () => {
+  const response = { ...envelope([entry()]), data_through: '2026-09-14', source_review_as_of: '2026-09-14T16:00:00Z' }
+  const before = structuredClone(response), view = harness(response)
+  await view.load()
+  assert.equal(view.analysisClock.value, '2026-09-14')
+  assert.equal(view.reviewClock.value, '2026-09-15 00:00:00（北京时间）')
+  assert.deepEqual(response, before)
+  assert.equal(view.records.value.length, 1)
+  for (const bad of [undefined, null, '/Users/private', '<script>x</script>', '2026-09-14T16:00:00', '2026-02-30T00:00:00Z', '2026-09-14T24:00:00Z', 123]) {
+    view.clockMetadata.value.source_review_as_of = bad
+    assert.equal(view.reviewClock.value, '')
+  }
+  const legacy = harness(); await legacy.load()
+  assert.equal(legacy.reviewClock.value, '')
+  assert.equal(legacy.error.value, '')
+  assert.equal(view.clockLabel('/private/cache', 'day'), '')
+  response.dictionary_hash = 'mismatched'
+  await view.load()
+  assert.ok(view.error.value)
+  assert.equal(view.reviewClock.value, '')
+  assert.equal(view.analysisClock.value, '')
+  assert.match(source, /<p v-if="reviewClock" class="pdf-meta">语料分析截至/)
 })
 test('missing pages, out-of-range citations, fake human review and abstract-only rejected', async () => {
   for (const extra of [{ read_pages: [1] }, { read_pages: [1, 1] }, { visual_pages_checked: [3] }, { findings_zh: [{ text_zh: '越界', source_pages: [0] }] }, { human_reviewed: true }, { text_scope: 'abstract_only' }, { reading_status: 'prepared' }, { supplementary_materials_inspected: true }]) {

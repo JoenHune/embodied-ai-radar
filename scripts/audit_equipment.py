@@ -18,6 +18,11 @@ def main():
     api = ROOT / 'docs/public/api/v1'
     dictionary = load_hardware_dictionary(ROOT / 'config/hardware-dictionary.json')
     manifest = json.loads((api / 'catalog-manifest.json').read_text())
+    from source_review_clock import resolve_source_review_clock
+    review_clock = resolve_source_review_clock(ROOT, manifest['data_through'])
+    if (review_clock['source_review_clock_digest'] is not None or any(key in manifest for key in review_clock)) and any(
+            manifest.get(key) != value for key, value in review_clock.items()):
+        raise ValueError('source_review_clock_manifest_mismatch')
     if manifest.get('equipment', {}).get('coverage_api') != '/api/v1/equipment/coverage-summary.json':
         raise ValueError('hardware_coverage_manifest_api_missing')
     if manifest.get('downloads', {}).get('hardware_coverage') != '/downloads/equipment/hardware-coverage.jsonl.gz':

@@ -5,6 +5,7 @@ import vm from 'node:vm'
 import ts from 'typescript'
 import { parse, compileScript, compileTemplate } from '@vue/compiler-sfc'
 import { sourceConflictIndex, conflictsForWork } from '../docs/.vitepress/theme/lib/source-conflicts.mjs'
+import { eventDate } from '../docs/.vitepress/theme/lib/dates.ts'
 
 const source = fs.readFileSync(new URL('../docs/.vitepress/theme/components/FulltextReadings.vue', import.meta.url), 'utf8')
 const descriptor = parse(source).descriptor
@@ -14,10 +15,10 @@ function harness(value = envelope([entry()]), conflicts = { schema_version: '1',
   const requests = []
   const props = { expectedVersion: 'revision', dictionaryHash: 'dictionary', cohort: 'all_works' }
   const ctx = { URL, URLSearchParams, AbortController, Set, computed: fn => ({ get value() { return fn() } }), ref: value => ({ value }),
-    defineProps: () => props, onMounted() {}, onBeforeUnmount() {}, withBase: value => value, eventDate: value => value,
+    defineProps: () => props, onMounted() {}, onBeforeUnmount() {}, withBase: value => value, eventDate,
     sourceConflictIndex, conflictsForWork,
     fetch: async (...args) => { requests.push(args); const response = args[0].includes('source-content-conflicts') ? conflicts : value; if (response instanceof Error) throw response; return { ok: true, json: async () => response } } }
-  vm.runInNewContext(ts.transpile(descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view = {load,readings,error,loading,filtered,visible,shown,versionMismatch,sourceAllowed,sourceParts,locationUrl,conflictUnknown,conflictError,readingConflicts};', { target: ts.ScriptTarget.ES2022 }), ctx)
+  vm.runInNewContext(ts.transpile(descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view = {load,readings,error,loading,filtered,visible,shown,versionMismatch,sourceAllowed,sourceParts,locationUrl,conflictUnknown,conflictError,readingConflicts,analysisClock,reviewClock,clockMetadata,clockLabel};', { target: ts.ScriptTarget.ES2022 }), ctx)
   return { ...ctx.view, props, requests }
 }
 test('reading view compiles and is only mounted after an explicit expand action', () => {
@@ -34,6 +35,30 @@ test('fetches small reading and conflict APIs, never the full work catalog', asy
   assert.deepEqual(view.requests.map(r => r[0]).sort(), ['/api/v1/equipment/coverage-readings.json', '/api/v1/source-content-conflicts.json'])
   assert.equal(view.visible.value.length, 1)
   assert.equal(view.readings.value[0].human_reviewed, false)
+})
+
+test('HTML reading visibility cutoff is Beijing-local, optional and never replaces analysis date', async () => {
+  const response = { ...envelope([entry()]), data_through: '2026-09-14', source_review_as_of: '2026-09-14T16:00:00.999999Z' }
+  const before = structuredClone(response), view = harness(response)
+  await view.load()
+  assert.equal(view.analysisClock.value, '2026-09-14')
+  assert.equal(view.reviewClock.value, '2026-09-15 00:00:00（北京时间）')
+  assert.deepEqual(response, before)
+  assert.equal(view.readings.value.length, 1)
+  for (const bad of [undefined, null, '/Users/private', '<script>x</script>', '2026-09-14T16:00:00', '2026-02-30T00:00:00Z', '2026-09-14T24:00:00Z', 123]) {
+    view.clockMetadata.value.source_review_as_of = bad
+    assert.equal(view.reviewClock.value, '')
+  }
+  const legacy = harness(); await legacy.load()
+  assert.equal(legacy.reviewClock.value, '')
+  assert.equal(legacy.error.value, '')
+  assert.equal(view.clockLabel('/private/cache', 'day'), '')
+  response.dataset_version = 'stale'
+  await view.load()
+  assert.ok(view.error.value)
+  assert.equal(view.reviewClock.value, '')
+  assert.equal(view.analysisClock.value, '')
+  assert.match(source, /<p v-if="reviewClock" class="reading-boundary">语料分析截至/)
 })
 test('filters cohort and appends records without changing pages or inferring a human review', async () => {
   const view = harness(envelope(Array.from({ length: 25 }, (_, i) => entry(String(i), { relevance_status: i === 0 ? 'excluded' : 'included' }))))

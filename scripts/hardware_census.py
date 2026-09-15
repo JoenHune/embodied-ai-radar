@@ -26,6 +26,7 @@ from pathlib import Path
 
 from catalog_store import encode, fingerprint, load_catalog as _load_catalog, write_if_changed
 from equipment_radar import CATEGORIES, FORBIDDEN, SOFTWARE, load_equipment_authority, validate_equipment
+from source_review_clock import utc_cutoff, visible, usage_visible
 
 
 OBSERVATION_STATUSES = {"full_text_available", "partial_text", "unavailable", "blocked", "identity_mismatch"}
@@ -190,7 +191,7 @@ def _latest_sources(records, resolve, as_of):
             raise ValueError("hardware_census_source_status_invalid")
         if not record.get("source_url") or not record.get("observed_at"):
             raise ValueError("hardware_census_source_provenance_required")
-        if record["observed_at"][:10] > as_of[:10]:
+        if not visible(record["observed_at"], as_of):
             continue
         row = {**record, "work_id": wid}
         all_by_work[wid].append(row)
@@ -200,7 +201,7 @@ def _latest_sources(records, resolve, as_of):
         # precision. A later same-second correction/reparse supersedes the
         # earlier row, matching the collector's refresh rule. Hash sorting
         # can otherwise restore a superseded full-text status over partial.
-        if previous is None or row["observed_at"] >= previous["observed_at"]:
+        if previous is None or utc_cutoff(row["observed_at"]) >= utc_cutoff(previous["observed_at"]):
             latest[key] = row
     by_work = defaultdict(list)
     for (wid, _), row in sorted(latest.items()):
@@ -270,16 +271,17 @@ def build_census(payload, authority, dictionary, source_scans, source_observatio
     works = _check_works(payload)
     if not isinstance(as_of, str) or not re.match(r"^\d{4}-\d{2}-\d{2}(?:$|T)", as_of):
         raise ValueError("hardware_census_as_of_required")
+    cutoff = utc_cutoff(as_of)
     compiled = _compile_dictionary(encode(dictionary))
     dhash = dictionary_hash(dictionary)
     entries = {row["dictionary_id"]: row for row in dictionary["entries"]}
     validated = validate_equipment(payload, authority)
     verified = defaultdict(list)
     for usage in validated["usage-evidence"]:
-        if usage["review_status"] == "verified" and usage["role"] != "mentioned" and usage["observed_at"][:10] <= as_of[:10]:
+        if usage["review_status"] == "verified" and usage["role"] != "mentioned" and usage_visible(usage, cutoff):
             verified[usage["work_id"]].append(usage)
     resolve = _alias_resolver(payload)
-    observations, attempts = _latest_sources(source_observations or [], resolve, as_of)
+    observations, attempts = _latest_sources(source_observations or [], resolve, cutoff)
     scans_by_work = defaultdict(list)
     for scan in source_scans or []:
         wid = resolve(scan.get("work_id"))
@@ -287,7 +289,7 @@ def build_census(payload, authority, dictionary, source_scans, source_observatio
             raise ValueError("hardware_census_scan_scope_or_status_invalid")
         if not all(scan.get(key) for key in ("source_url", "observed_at", "dictionary_hash", "content_hash")):
             raise ValueError("hardware_census_scan_hashes_and_provenance_required")
-        if scan["observed_at"][:10] <= as_of[:10]:
+        if visible(scan["observed_at"], cutoff):
             scans_by_work[wid].append({**scan, "work_id": wid})
 
     rows, candidates = [], []
@@ -328,7 +330,9 @@ def build_census(payload, authority, dictionary, source_scans, source_observatio
                 continue
             # A later explicit scan failure is visible and cannot be replaced
             # silently by an older success for the same source/text/dictionary.
-            scan = max(matching, key=lambda record: (record["observed_at"], fingerprint(record)))
+            # Equal instants (including Z versus .000Z spellings) retain the
+            # append-only ledger's later event, just like source observations.
+            scan = max(enumerate(matching), key=lambda item: (utc_cutoff(item[1]["observed_at"]), item[0]))[1]
             if scan["status"] != "scanned":
                 continue
             mentions = _scan_matches(scan, entries)

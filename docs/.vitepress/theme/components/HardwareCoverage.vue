@@ -3,16 +3,28 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import FulltextReadings from './FulltextReadings.vue'
 import PdfReadings from './PdfReadings.vue'
+import { eventDate } from '../lib/dates'
+
+const clockLabel = (value: unknown, precision: 'day' | 'second'): string => {
+  const pattern = precision === 'day' ? /^\d{4}-\d{2}-\d{2}$/ : /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?Z$/
+  if (typeof value !== 'string' || !pattern.test(value)) return ''
+  const date = new Date(precision === 'day' ? value + 'T00:00:00Z' : value)
+  const width = precision === 'day' ? 10 : 19
+  if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, width) !== value.slice(0, width)) return ''
+  return eventDate(value, precision)
+}
 
 type Counts = Record<string, number | null>
 type Group = { first_public_month?: string; primary_direction?: string; relevance_status?: string; all_works: Counts; included: Counts }
 type PdfCounts = { all_work_count: number; included_work_count: number; receipt_count: number; source_count: number; source_work_count: number; included_source_work_count: number; assurance: string; overlap_policy: string }
-type CoverageSummary = { schema_version: string; dataset_version: string; dictionary_hash: string; dictionary_version?: string; data_through: string; all_works: Counts; included: Counts; by_direction: Group[]; by_month: Group[]; by_relevance: Group[]; downloads?: { coverage?: string }; article_reading?: { all_work_count: number; included_work_count: number; receipt_count: number; assurance: string }; pdf_reading?: PdfCounts }
+type CoverageSummary = { schema_version: string; dataset_version: string; dictionary_hash: string; dictionary_version?: string; data_through: string; source_review_as_of?: string; all_works: Counts; included: Counts; by_direction: Group[]; by_month: Group[]; by_relevance: Group[]; downloads?: { coverage?: string }; article_reading?: { all_work_count: number; included_work_count: number; receipt_count: number; assurance: string }; pdf_reading?: PdfCounts }
 type Model = { dictionary_id: string; name: string; category: string; identity_level: string; evidence_status: string; usage_inference: string; metadata_work_count: number; body_work_count: number; candidate_work_count: number; included_candidate_work_count: number; metadata_work_ids: string[]; body_work_ids: string[]; work_ids: string[] }
 type ModelIndex = { schema_version: string; dataset_version: string; dictionary_hash: string; models: Model[] }
 type WorkCoverage = { work_id: string; metadata_hits: number; body_source_state: string; body_scan_status: string; body_hits: number; verified_count: number; full_text_scanned: boolean; partial_text_scanned: boolean; relevance: string; pdf?: { source_count: number; reading_count: number } }
 const props = withDefaults(defineProps<{ compact?: boolean; expectedVersion?: string }>(), { compact: false })
 const summary = ref<CoverageSummary | null>(null)
+const analysisClock = computed(() => clockLabel(summary.value?.data_through, 'day'))
+const reviewClock = computed(() => clockLabel(summary.value?.source_review_as_of, 'second'))
 const loading = ref(true)
 const showReadings = ref(false)
 const showPdfReadings = ref(false)
@@ -195,7 +207,7 @@ onBeforeUnmount(() => { disposed = true; serial++; workSerial++; controller?.abo
     <p v-if="loading" class="coverage-status" role="status">正在读取全库覆盖状态…</p>
     <div v-else-if="error || revisionMismatch" class="coverage-error" role="alert"><strong>当前进度未知</strong><p>{{ revisionMismatch ? '设备频次与覆盖统计的数据版本不一致，已停止组合展示；请刷新页面重试。' : error }}</p><button type="button" @click="loadSummary">重新读取</button></div>
     <template v-else-if="summary">
-      <div class="coverage-context"><span>截至 {{ summary.data_through }}</span><span>全库 {{ number(summary.all_works.denominator) }} 项 · 已纳入 {{ number(summary.included.denominator) }} 项</span><a :href="withBase('/methods/equipment-loco')">范围与方法 ↗</a></div>
+      <div class="coverage-context"><span>语料分析截至 {{ analysisClock || '日期待核验' }}</span><span v-if="reviewClock">来源/阅读核验记录可见截至 {{ reviewClock }}</span><span>全库 {{ number(summary.all_works.denominator) }} 项 · 已纳入 {{ number(summary.included.denominator) }} 项</span><a :href="withBase('/methods/equipment-loco')">范围与方法 ↗</a></div>
       <div class="coverage-toggle" role="group" aria-label="覆盖统计范围"><button type="button" :aria-pressed="cohort === 'all_works'" @click="cohort = 'all_works'">全库 · 所有相关性状态</button><button type="button" :aria-pressed="cohort === 'included'" @click="cohort = 'included'">仅已纳入研究</button></div>
       <div class="coverage-metrics" aria-live="polite">
         <article><span>{{ cohortLabel }}分母</span><strong>{{ number(selected?.denominator) }}</strong><small>同一研究去重后只计一次</small></article>

@@ -126,10 +126,17 @@ def main(argv=None):
     snapshot = json.loads((API / "monthly" / f"{month}.json").read_text())
     from editorial_readings import load_reading_index
     manifest = json.loads((API / "catalog-manifest.json").read_text())
-    reading_index = load_reading_index(catalog, CATALOG.parent / "hardware-review", manifest["data_through"])
+    from scripts.source_review_clock import resolve_source_review_clock
+    clock = resolve_source_review_clock(CATALOG.parent.parent, manifest["data_through"])
+    if any(manifest.get(key) != clock[key] for key in ("source_review_as_of", "source_review_clock_digest")
+           if key in manifest or clock["source_review_clock_digest"] is not None):
+        raise ValueError("source_review_clock_manifest_mismatch_rebuild_required")
+    review_as_of = clock["source_review_as_of"]
+    reading_index = load_reading_index(catalog, CATALOG.parent / "hardware-review", review_as_of)
     from source_content_conflicts import load_source_conflicts
-    conflicts = load_source_conflicts(catalog, CATALOG.parent, manifest["data_through"])
-    packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index, source_conflicts=conflicts)
+    conflicts = load_source_conflicts(catalog, CATALOG.parent, review_as_of)
+    packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index, source_conflicts=conflicts,
+                                   source_review_as_of=review_as_of)
     incoming = compile_reading(reading, packet, catalog)
     path = EDITORIAL / "signal-evidence.jsonl"
     rows = merge_reading(read_jsonl(path), incoming, allow_revision=args.revise)

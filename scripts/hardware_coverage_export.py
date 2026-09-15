@@ -19,6 +19,7 @@ from pathlib import Path
 from catalog_store import encode, fingerprint, write_if_changed
 from hardware_census import FAILED_STATUSES, _counts, build_census, detect_mentions
 from fulltext_reading_reviews import ASSURANCE as READING_ASSURANCE, public_audit
+from source_review_clock import manifest_source_review_clock
 
 READINGS_API = '/api/v1/equipment/coverage-readings.json'
 READINGS_DOWNLOAD = '/downloads/equipment/fulltext-readings.jsonl'
@@ -78,7 +79,8 @@ def _sql_row(row):
 
 
 def _common(summary):
-    return {key: summary[key] for key in ("schema_version", "dataset_version", "data_through", "dictionary_hash")}
+    return {key: summary[key] for key in ("schema_version", "dataset_version", "data_through", "dictionary_hash",
+                                         "source_review_as_of", "source_review_clock_digest")}
 
 
 def _public_observation(record):
@@ -169,12 +171,18 @@ def build_coverage(payload, authority, dictionary, source_scans, source_observat
     """Build from caller-supplied inputs and share the site's dataset revision."""
     if not manifest.get("dataset_version") or not manifest.get("data_through"):
         raise ValueError("hardware_coverage_manifest_version_and_date_required")
+    clock = manifest_source_review_clock(manifest)
+    # Preserve the legacy summary's date-shaped as_of, while new explicit
+    # review clocks use exact UTC timestamps. Both mean visibility, not that
+    # every source or article has been acquired or read through that time.
+    census_as_of = clock['source_review_as_of'] if 'source_review_as_of' in manifest else manifest['data_through']
     census = build_census(payload, authority, dictionary, source_scans, source_observations,
-                          manifest["data_through"], include_excerpts=False)
+                          census_as_of, include_excerpts=False)
     public_dictionary = _public(dictionary)
     if fingerprint(public_dictionary) != census["summary"]["dictionary_hash"]:
         raise ValueError("hardware_coverage_dictionary_contains_private_content")
-    summary = {**census["summary"], "dataset_version": manifest["dataset_version"], "data_through": manifest["data_through"],
+    summary = {**census["summary"], **clock, "dataset_version": manifest["dataset_version"], "data_through": manifest["data_through"],
+               "source_review_clock_scope": "visibility_cutoff_not_acquisition_or_reading_completeness",
                "downloads": {"coverage": "/downloads/equipment/hardware-coverage.jsonl.gz"},
                "work_shards": 256, "work_shard_algorithm": "sha1(work_id UTF-8)[:2]",
                "work_shard_template": "coverage/works/{shard}.json", "work_projection_fields": list(STATE_FIELDS),
@@ -185,7 +193,7 @@ def build_coverage(payload, authority, dictionary, source_scans, source_observat
     # This audits previously imported public declarations only. It never
     # opens private article caches, re-reads a source, or derives reading from
     # metadata/body scans, packet preparation, or hardware-use authority.
-    reading_audit = public_audit(list(reading_reviews), payload, public_observations, manifest['data_through'])
+    reading_audit = public_audit(list(reading_reviews), payload, public_observations, clock['source_review_as_of'])
     canonical = {row['work_id']: row for row in payload['works']}
     reading_records = [{**row, 'title': canonical[row['work_id']].get('title') or '',
                         'relevance_status': canonical[row['work_id']].get('relevance', {}).get('status', 'unknown')}
@@ -361,6 +369,10 @@ def _audit_summary(bundle, connection):
 def audit_coverage(bundle, api, downloads, connection):
     """Fail closed on any lost/duplicated ID, changed state, or public leak."""
     api, downloads = Path(api), Path(downloads)
+    manifest_source_review_clock(bundle['summary'])
+    common = _common(bundle['summary'])
+    if any({key: bundle[part].get(key) for key in common} != common for part in ('models', 'readings')):
+        raise ValueError('hardware_coverage_review_clock_or_revision_mismatch')
     by_work = _row_index(bundle)
     _audit_summary(bundle, connection)
     if connection.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='works'").fetchone():

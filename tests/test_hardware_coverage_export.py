@@ -388,6 +388,61 @@ class HardwareCoverageExportTests(unittest.TestCase):
         self.assertEqual(bundle['readings']['counts']['receipt_count'], 0)
         self.assertEqual(bundle['summary']['all_works']['verified_relationship_work_count'], 1)
 
+    def test_independent_review_clock_shows_next_day_sources_and_readings_without_new_corpus_date(self):
+        payload, authority, manifest = fixture()
+        record, obs = public_reading_fixture(payload['works'][0])
+        old_obs = copy.deepcopy(obs)
+        obs['observed_at'] = record['observed_at'] = '2026-09-15T00:01:00Z'
+        record['read_completed_at'] = '2026-09-15T00:03:00Z'
+        dictionary = dictionary_fixture()
+        scanned = scan(obs, dictionary, observed_at='2026-09-15T00:02:00Z')
+        original = copy.deepcopy((payload, authority, manifest, record, obs, old_obs, scanned))
+        old = build_coverage(payload, authority, dictionary, [scanned], [old_obs, obs], manifest, reading_reviews=[record])
+        self.assertEqual(old['summary']['as_of'], '2026-09-14')
+        self.assertEqual(old['readings']['counts']['receipt_count'], 0)
+        reviewed_manifest = {**manifest, 'source_review_as_of': '2026-09-15T00:03:00.123456Z',
+                             'source_review_clock_digest': 'a' * 64}
+        bundle = build_coverage(payload, authority, dictionary, [scanned], [old_obs, obs], reviewed_manifest, reading_reviews=[record])
+        self.assertEqual(bundle['summary']['data_through'], '2026-09-14')
+        self.assertEqual(bundle['summary']['as_of'], reviewed_manifest['source_review_as_of'])
+        self.assertEqual(bundle['summary']['all_works']['denominator'], old['summary']['all_works']['denominator'])
+        self.assertEqual(bundle['rows'][0]['first_public_month'], '2026-08')
+        self.assertTrue(bundle['rows'][0]['full_text_screened_current_dictionary'])
+        self.assertEqual(bundle['readings']['counts']['receipt_count'], 1)
+        self.assertEqual(len(bundle['source_observations']), 2)
+        self.assertEqual(bundle['readings']['records'][0]['read_completed_at'], record['read_completed_at'])
+        for part in ('summary', 'models', 'readings'):
+            for field in ('source_review_as_of', 'source_review_clock_digest'):
+                self.assertEqual(bundle[part][field], reviewed_manifest[field])
+        self.assertEqual(original, (payload, authority, manifest, record, obs, old_obs, scanned))
+        with tempfile.TemporaryDirectory() as directory, closing(sqlite3.connect(':memory:')) as connection:
+            api, downloads = self.export(bundle, directory, connection)
+            self.assertEqual(audit_coverage(bundle, api, downloads, connection)['article_reading']['receipt_count'], 1)
+
+    def test_same_day_later_reading_is_hidden_but_future_bad_hash_still_fails(self):
+        payload, authority, manifest = fixture()
+        record, obs = public_reading_fixture(payload['works'][0])
+        record['read_completed_at'] = '2026-09-15T23:00:00Z'
+        manifest.update(source_review_as_of='2026-09-15T00:01:00Z', source_review_clock_digest='a' * 64)
+        bundle = build_coverage(payload, authority, dictionary_fixture(), [], [obs], manifest, reading_reviews=[record])
+        self.assertEqual(bundle['readings']['counts']['receipt_count'], 0)
+        self.assertEqual(len(bundle['source_observations']), 1)
+        record['raw_sha256'] = 'f' * 64
+        with self.assertRaises(ValueError):
+            build_coverage(payload, authority, dictionary_fixture(), [], [obs], manifest, reading_reviews=[record])
+
+    def test_explicit_malformed_clock_does_not_fall_back_and_subviews_cannot_disagree(self):
+        args = coverage_fixture()
+        args[-1]['source_review_as_of'] = '2026-09-15T00:00:00Z'
+        with self.assertRaises(ValueError): build_coverage(*args)
+        args[-1]['source_review_clock_digest'] = 'a' * 64
+        bundle = build_coverage(*args)
+        bundle['models']['source_review_clock_digest'] = 'b' * 64
+        with tempfile.TemporaryDirectory() as directory, closing(sqlite3.connect(':memory:')) as connection:
+            api, downloads = self.export(bundle, directory, connection)
+            with self.assertRaisesRegex(ValueError, 'review_clock_or_revision_mismatch'):
+                audit_coverage(bundle, api, downloads, connection)
+
     def test_reading_api_download_metadata_and_count_tampering_fail_audit(self):
         for tamper in ('api', 'download_duplicate', 'sqlite', 'count', 'human_claim'):
             with self.subTest(tamper=tamper), tempfile.TemporaryDirectory() as directory, closing(sqlite3.connect(':memory:')) as connection:

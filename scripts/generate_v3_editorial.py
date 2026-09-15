@@ -305,6 +305,10 @@ def editorial_input_digest(packet: dict) -> str:
     """Source/fact changes invalidate; applying our translation cache does not."""
     stable = copy.deepcopy(packet)
     stable.pop("required_localization_ids", None)
+    # The exact archived packet retains its visibility watermark. Advancing
+    # that watermark alone does not change prose evidence; changed readings,
+    # holds or facts remain in the logical digest and invalidate affected work.
+    stable.pop("source_review_as_of", None)
     for card in stable.get("evidence_cards", []):
         for field in ("localization_required", "translation_context", "title_zh", "summary_zh"):
             card.pop(field, None)
@@ -366,7 +370,8 @@ def make_facts(snapshot: dict, cards: list[dict]) -> dict:
 
 
 def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int = 8, per_question: int = 4,
-                          reading_index: dict | None = None, source_conflicts: list | None = None) -> dict:
+                          reading_index: dict | None = None, source_conflicts: list | None = None,
+                          source_review_as_of: str | None = None) -> dict:
     month = snapshot["month"]
     cutoff = snapshot.get("evidence_as_of") or month
     if isinstance(cutoff, dict):
@@ -598,6 +603,10 @@ def build_evidence_packet(snapshot: dict, catalog: dict, *, per_direction: int =
         localized = translations.get(card["work_id"])
         if card["experimental_text_available"] and valid_work_localization(localized, works[card["work_id"]]):
             card["translation_context"] = {key: localized[key] for key in ("title_zh", "summary_zh", "keywords_zh") if key in localized}
+    if source_review_as_of is not None:
+        from source_review_clock import utc_cutoff
+        utc_cutoff(source_review_as_of)
+        packet["source_review_as_of"] = source_review_as_of
     return packet
 
 
@@ -1003,24 +1012,38 @@ def main(argv: list[str] | None = None) -> int:
     manifest = fixture["manifest"] if fixture else json.loads((args.api_directory / "catalog-manifest.json").read_text())
     catalog = fixture["catalog"] if fixture else load_catalog(args.catalog_directory)
     catalog["work-localizations"] = read_jsonl(args.output_directory / "work-localizations.jsonl")
+    from source_review_clock import resolve_source_review_clock, manifest_source_review_clock
+    if fixture and not manifest.get("data_through") and not any(
+            key in manifest for key in ("source_review_as_of", "source_review_clock_digest")):
+        # Old synthetic fixtures without a corpus cutoff have no reading or
+        # conflict index. Preserve that absence; never invent a current date.
+        clock = {"source_review_as_of": None, "source_review_clock_digest": None}
+    else:
+        clock = (manifest_source_review_clock(manifest) if fixture else
+                 resolve_source_review_clock(args.catalog_directory.parent.parent, manifest["data_through"]))
+    if not fixture and any(manifest.get(key) != clock[key] for key in
+                           ("source_review_as_of", "source_review_clock_digest") if key in manifest or clock["source_review_clock_digest"] is not None):
+        parser.error("source_review_clock_manifest_mismatch_rebuild_required")
+    review_as_of = clock["source_review_as_of"]
     from editorial_readings import load_reading_index, build_reading_index
     if fixture:
-        reading_index = (build_reading_index(catalog, fixture.get("fulltext_readings", []), fixture.get("source_observations", []), manifest["data_through"])
+        reading_index = (build_reading_index(catalog, fixture.get("fulltext_readings", []), fixture.get("source_observations", []), review_as_of)
                          if manifest.get("data_through") else {})
     else:
-        reading_index = load_reading_index(catalog, args.catalog_directory.parent / "hardware-review", manifest["data_through"])
+        reading_index = load_reading_index(catalog, args.catalog_directory.parent / "hardware-review", review_as_of)
     from source_content_conflicts import load_source_conflicts, build_source_conflicts
     if fixture:
         conflicts = (build_source_conflicts(fixture.get("source_content_conflicts", []), catalog,
-                    fixture.get("fulltext_readings", []), fixture.get("source_observations", []), manifest["data_through"])
+                    fixture.get("fulltext_readings", []), fixture.get("source_observations", []), review_as_of)
                     if manifest.get("data_through") else [])
     else:
-        conflicts = load_source_conflicts(catalog, args.catalog_directory.parent, manifest["data_through"])
+        conflicts = load_source_conflicts(catalog, args.catalog_directory.parent, review_as_of)
     statuses = []
     for month in select_months(manifest, month=args.month, all_months=args.all_months):
         snapshot_path = args.api_directory / "monthly" / f"{month}.json"
         snapshot = fixture.get("snapshots", {}).get(month) if fixture else json.loads(snapshot_path.read_text()) if snapshot_path.exists() else None
-        packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index, source_conflicts=conflicts) if snapshot else None
+        packet = build_evidence_packet(snapshot, catalog, reading_index=reading_index, source_conflicts=conflicts,
+                                       source_review_as_of=review_as_of) if snapshot else None
         initial_repair = None
         if args.resume_diagnostic_run:
             prior_packet = json.loads((args.resume_diagnostic_run / "evidence-packet.json").read_text())

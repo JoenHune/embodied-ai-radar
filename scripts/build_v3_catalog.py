@@ -48,6 +48,7 @@ RULE_SOURCE_FILES += ("sqlite_download.py",)
 RULE_SOURCE_FILES += ("hardware_census.py", "hardware_coverage_export.py", "fulltext_reading_reviews.py")
 RULE_SOURCE_FILES += ("editorial_readings.py", "editorial_history.py")
 RULE_SOURCE_FILES += ("source_content_conflicts.py",)
+RULE_SOURCE_FILES += ("source_review_clock.py",)
 RULE_CONFIG_FILES += ("source-content-conflicts.schema.json",)
 RULE_SOURCE_FILES += ("pdf_reading_reviews.py", "pdf_coverage_export.py")
 RULE_CONFIG_FILES += ("hardware-dictionary.json",)
@@ -598,11 +599,14 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     facets_config = read_json(ROOT / "config" / "facets-v3.json", {})
     questions_config = read_json(ROOT / "config" / "research-agenda.json", {"questions": []})
     as_of_text = args.as_of or metadata["data_through"]
+    from source_review_clock import resolve_source_review_clock
+    review_clock = resolve_source_review_clock(ROOT, as_of_text)
+    review_as_of = review_clock["source_review_as_of"]
     from editorial_readings import load_reading_index
     from editorial_history import load_editorial_history, editorial_history_reference
-    editorial_reading_index = load_reading_index(payload, DATA / "hardware-review", as_of_text)
+    editorial_reading_index = load_reading_index(payload, DATA / "hardware-review", review_as_of)
     from source_content_conflicts import load_source_conflicts, conflicts_for_work
-    source_conflicts = load_source_conflicts(payload, DATA, as_of_text)
+    source_conflicts = load_source_conflicts(payload, DATA, review_as_of)
     as_of = date.fromisoformat(as_of_text[:10])
     full_months = complete_months(as_of, 12)
     provisional_month = add_months(full_months[-1], 1)
@@ -899,7 +903,8 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         if saved_editorial.get("status") == "complete":
             from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay
             saved_history_reference = editorial_history_reference(DATA / "editorial", saved_editorial)
-            editorial_packet = build_evidence_packet(snapshot, payload, reading_index=editorial_reading_index, source_conflicts=source_conflicts)
+            editorial_packet = build_evidence_packet(snapshot, payload, reading_index=editorial_reading_index, source_conflicts=source_conflicts,
+                                                     source_review_as_of=review_as_of)
             editorial_check = validated_editorial_overlay(saved_editorial, editorial_packet)
             editorial_usable = editorial_check["usable"]
             if not editorial_usable:
@@ -1223,6 +1228,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         "relevance": ["included", "candidate", "manual_review", "excluded"],
     }
     manifest = {
+        **review_clock,
         "version": VERSION,
         "generated_at": metadata.get("ingested_at"),
         "data_through": as_of_text,
@@ -1243,6 +1249,9 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
     manifest["research_status_as_of"] = status_as_of
     rule_paths = [ROOT / "scripts" / name for name in RULE_SOURCE_FILES]
     rule_paths.extend(ROOT / "config" / name for name in RULE_CONFIG_FILES)
+    clock_config = ROOT / "config/source-review-clock.json"
+    if clock_config.exists():
+        rule_paths.append(clock_config)
     manifest["rules_hash"] = fingerprint({str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in rule_paths})
     # Source-first gold and conference access states are not canonical works,
     # but their public views must invalidate the shared website/search revision.
@@ -1257,8 +1266,13 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
                           *[DATA / "equipment" / f"{table}.jsonl" for table in EQUIPMENT_TABLES],
                           *[DATA / "hardware-review" / f"{table}.jsonl" for table in ('source-observations', 'source-scans', 'section-reviews', 'fulltext-readings', 'pdf-source-observations', 'pdf-readings')]]
     manifest["supplemental_hash"] = fingerprint({str(p.relative_to(DATA)): hashlib.sha256(p.read_bytes()).hexdigest() for p in supplemental_paths if p.exists()})
-    manifest["dataset_version"] = fingerprint({key: manifest[key] for key in ["catalog_hash", "editorial_hash", "rules_hash", "supplemental_hash", "data_through"]})
-    write_json(PUBLIC_API / "source-content-conflicts.json", {"schema_version": "1", "as_of": as_of_text,
+    manifest["dataset_version"] = fingerprint({key: manifest[key] for key in ["catalog_hash", "editorial_hash", "rules_hash", "supplemental_hash", "data_through",
+                                                                            "source_review_as_of", "source_review_clock_digest"]})
+    write_json(PUBLIC_API / "source-review-clock.json", {"schema_version": "1", "data_through": as_of_text,
+               "dataset_version": manifest["dataset_version"], **review_clock}, compact=True)
+    write_json(PUBLIC_API / "source-content-conflicts.json", {"schema_version": "1", "as_of": review_as_of,
+               "data_through": as_of_text, "source_review_as_of": review_as_of,
+               "source_review_clock_digest": review_clock["source_review_clock_digest"],
                "dataset_version": manifest["dataset_version"], "conflicts": source_conflicts}, compact=True)
     # Person staging is never read here: the four JSONL tables are the only
     # person authority, alongside (not replacing) canonical work facts.

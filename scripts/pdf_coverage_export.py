@@ -9,6 +9,7 @@ from pathlib import Path
 
 from catalog_store import encode, write_if_changed
 from pdf_reading_reviews import public_audit
+from source_review_clock import manifest_source_review_clock, utc_cutoff, visible
 
 ASSURANCE = 'self_attested_AI_reading_not_human_review'
 API = '/api/v1/equipment/coverage-pdf-readings.json'
@@ -38,7 +39,23 @@ def build_pdf_coverage(payload, source_observations, reading_reviews, manifest, 
     works = {row['work_id']: row for row in payload['works']}
     if len(works) != len(payload['works']):
         raise ValueError('pdf_coverage_duplicate_canonical_work')
-    audited = public_audit(list(reading_reviews), payload, list(source_observations), manifest['data_through'])
+    clock = manifest_source_review_clock(manifest)
+    # Validate all supplied history before filtering. A future malformed row
+    # must not disappear behind the clock. Do not rewrite a later identity
+    # check as an earlier unchecked source merely to expose it sooner.
+    history = public_audit(list(reading_reviews), payload, list(source_observations), '9999-12-31T23:59:59Z')
+    sources = [row for row in history['sources'] if visible(row['observed_at'], clock['source_review_as_of']) and
+               (row['identity_check']['status'] == 'not_checked' or
+                visible(row['identity_check']['checked_at'], clock['source_review_as_of']))]
+    source_ids = {row['source_observation_id'] for row in sources}
+    readings = [row for row in history['records'] if row['source_observation_id'] in source_ids and
+                visible(row['read_completed_at'], clock['source_review_as_of'])]
+    # The existing PDF ledger validator accepts whole-second timestamps only.
+    # All its validated source/reading times are therefore whole seconds;
+    # flooring this final validator cutoff is equivalent to the exact filter
+    # above. Neither any source timestamp nor the advertised clock is changed.
+    audit_cutoff = utc_cutoff(clock['source_review_as_of']).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+    audited = public_audit(readings, payload, sources, audit_cutoff)
     def overlay(rows):
         result = []
         for row in rows:
@@ -53,7 +70,7 @@ def build_pdf_coverage(payload, source_observations, reading_reviews, manifest, 
     computed = counts(sources, readings)
     if any(audited['counts'].get(key) != value for key, value in computed.items()):
         raise ValueError('pdf_coverage_audited_counts_mismatch')
-    return {'schema_version': '1', 'source_format': 'pdf', 'dataset_version': manifest['dataset_version'],
+    return {'schema_version': '1', 'source_format': 'pdf', **clock, 'dataset_version': manifest['dataset_version'],
             'data_through': manifest['data_through'], 'dictionary_hash': dictionary_hash,
             'assurance': ASSURANCE, 'private_source_reverified': False, 'human_reviewed': False,
             'understanding_verified': False, 'verification_scope': audited['verification_scope'],
@@ -68,12 +85,16 @@ def build_pdf_coverage(payload, source_observations, reading_reviews, manifest, 
 
 def pdf_summary(bundle):
     return {**bundle['counts'], 'assurance': ASSURANCE, 'api': API,
+            **manifest_source_review_clock(bundle),
             'download': READING_DOWNLOAD, 'source_download': SOURCE_DOWNLOAD,
             'overlap_policy': 'not_additive_with_HTML_work_counts'}
 
 
 def attach_pdf_coverage(html_bundle, pdf_bundle):
     """Keep HTML metrics distinct while exposing PDF state for the same work ID."""
+    if html_bundle['summary'].get('data_through') and (
+            manifest_source_review_clock(html_bundle['summary']) != manifest_source_review_clock(pdf_bundle)):
+        raise ValueError('pdf_coverage_review_clock_mismatch')
     known = {row['work_id'] for row in html_bundle['rows']}
     by_work = {}
     for key, field in (('sources', 'source_count'), ('records', 'reading_count')):

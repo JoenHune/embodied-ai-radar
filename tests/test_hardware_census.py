@@ -314,6 +314,67 @@ class HardwareCensusTests(unittest.TestCase):
         future = {**later, "observed_at": "2026-09-15T01:00:00Z"}
         self.assertEqual(self.census(payload, observations=[future])["rows"][0]["body_source_state"], "not_attempted")
 
+    def test_exact_review_timestamp_filters_sources_scans_and_verified_usage_independently(self):
+        payload, authority, _ = fixture()
+        wid, dictionary = payload['works'][0]['work_id'], dictionary_fixture()
+        obs = observation(wid, observed_at='2026-09-15T00:01:00Z')
+        scanned = scan(obs, dictionary, observed_at='2026-09-15T00:02:00Z')
+        authority['usage-evidence'][0]['observed_at'] = '2026-09-15T00:03:00Z'
+        before = copy.deepcopy((payload, authority, obs, scanned))
+        def row(cutoff):
+            return build_census(payload, authority, dictionary, [scanned], [obs], cutoff)['rows'][0]
+        self.assertEqual(row('2026-09-14')['body_source_state'], 'not_attempted')
+        self.assertEqual(row('2026-09-15T00:00:59.999999Z')['body_source_state'], 'not_attempted')
+        acquired = row('2026-09-15T00:01:30Z')
+        self.assertEqual(acquired['body_source_state'], 'full_text_available')
+        self.assertFalse(acquired['full_text_screened_current_dictionary'])
+        self.assertEqual(acquired['verified_usage_count'], 0)
+        screened = row('2026-09-15T00:02:00Z')
+        self.assertTrue(screened['full_text_screened_current_dictionary'])
+        self.assertEqual(screened['verified_usage_count'], 0)
+        self.assertEqual(row('2026-09-15T00:03:00Z')['verified_usage_count'], 1)
+        self.assertEqual(row('2026-09-15')['verified_usage_count'], 1)
+        self.assertEqual(before, (payload, authority, obs, scanned))
+
+    def test_fractional_second_source_and_failed_scan_ordering_is_chronological(self):
+        payload, authority, _ = fixture()
+        dictionary = dictionary_fixture()
+        obs = observation(payload['works'][0]['work_id'])
+        later = {**obs, 'status': 'partial_text', 'observed_at': '2026-09-14T01:00:00.001Z'}
+        result = build_census(payload, authority, dictionary, [], [obs, later], AS_OF)
+        self.assertEqual(result['rows'][0]['body_source_state'], 'partial_text')
+        scanned = scan(obs, dictionary)
+        failed = {**scanned, 'status': 'failed', 'observed_at': '2026-09-14T01:00:00.001Z'}
+        result = build_census(payload, authority, dictionary, [scanned, failed], [obs], AS_OF)
+        self.assertFalse(result['rows'][0]['full_text_screened_current_dictionary'])
+        self.assertEqual(result['rows'][0]['body_scan_record_count'], 2)
+
+    def test_review_day_end_is_utc_and_invalid_dates_do_not_pass_prefix_check(self):
+        payload, authority, _ = fixture()
+        obs = observation(payload['works'][0]['work_id'], observed_at='2026-09-14T23:59:59.999999Z')
+        result = build_census(payload, authority, dictionary_fixture(), [], [obs], AS_OF)
+        self.assertEqual(result['summary']['as_of'], AS_OF)
+        self.assertEqual(result['rows'][0]['body_source_state'], 'full_text_available')
+        for cutoff in ('2026-02-30', '2026-09-14Tgarbage', '2026-09-14T00:00:00'):
+            with self.subTest(cutoff=cutoff), self.assertRaises(ValueError):
+                build_census(payload, authority, dictionary_fixture(), [], [obs], cutoff)
+
+    def test_equal_instant_different_timestamp_spellings_use_append_order(self):
+        payload, authority, _ = fixture()
+        dictionary = dictionary_fixture()
+        obs = observation(payload['works'][0]['work_id'])
+        corrected = {**obs, 'status': 'partial_text', 'observed_at': '2026-09-14T01:00:00.000Z',
+                     'transport_verification': 'incomplete', 'transport_complete': False}
+        for rows, expected in (([obs, corrected], 'partial_text'), ([corrected, obs], 'full_text_available')):
+            result = build_census(payload, authority, dictionary, [], rows, AS_OF)
+            self.assertEqual(result['rows'][0]['body_source_state'], expected)
+        scanned = scan(obs, dictionary)
+        failed = {**scanned, 'status': 'failed', 'observed_at': '2026-09-14T01:00:00.000Z'}
+        for scans, expected in (([scanned, failed], False), ([failed, scanned], True)):
+            result = build_census(payload, authority, dictionary, scans, [obs], AS_OF)
+            self.assertIs(result['rows'][0]['full_text_screened_current_dictionary'], expected)
+            self.assertEqual(result['rows'][0]['body_scan_record_count'], 2)
+
     def test_same_second_appended_partial_correction_supersedes_old_full_status(self):
         payload, _, _ = fixture()
         wid = payload['works'][0]['work_id']

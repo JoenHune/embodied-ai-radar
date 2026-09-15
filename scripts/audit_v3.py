@@ -227,11 +227,20 @@ def main() -> None:
     from editorial_history import load_editorial_history, editorial_history_reference
     editorial_catalog = {"works": works, "manifestations": manifestations, "evidence-events": events,
                          "source-records": sources, "text-snapshots": texts, "report-text-snapshots": report_texts}
-    editorial_reading_index = load_reading_index(editorial_catalog, ROOT / "data/hardware-review", manifest["data_through"])
+    from source_review_clock import resolve_source_review_clock
+    review_clock = resolve_source_review_clock(ROOT, manifest["data_through"])
+    require(all(manifest.get(key) == value for key, value in review_clock.items()), "Source review clock manifest mismatch")
+    review_as_of = review_clock["source_review_as_of"]
+    require(json.loads((API / "source-review-clock.json").read_text()) == {
+        "schema_version": "1", "data_through": manifest["data_through"],
+        "dataset_version": manifest["dataset_version"], **review_clock}, "Source review clock API mismatch")
+    editorial_reading_index = load_reading_index(editorial_catalog, ROOT / "data/hardware-review", review_as_of)
     from source_content_conflicts import load_source_conflicts, conflicts_for_work
-    source_conflicts = load_source_conflicts(editorial_catalog, ROOT / "data", manifest["data_through"])
+    source_conflicts = load_source_conflicts(editorial_catalog, ROOT / "data", review_as_of)
     require(json.loads((API / "source-content-conflicts.json").read_text()) == {
-        "schema_version": "1", "as_of": manifest["data_through"], "dataset_version": manifest["dataset_version"],
+        "schema_version": "1", "as_of": review_as_of, "data_through": manifest["data_through"],
+        "source_review_as_of": review_as_of, "source_review_clock_digest": review_clock["source_review_clock_digest"],
+        "dataset_version": manifest["dataset_version"],
         "conflicts": source_conflicts}, "Source comparison API differs from audited ledger")
     for month in [*manifest["complete_months"], manifest["provisional_month"]]:
         snapshot_path = API / "monthly" / f"{month}.json"
@@ -253,7 +262,8 @@ def main() -> None:
         packet = None
         if saved_for_status.get("status") == "complete":
             from generate_v3_editorial import build_evidence_packet, validated_editorial_overlay, available_reading_references
-            packet = build_evidence_packet(snapshot, editorial_catalog, reading_index=editorial_reading_index, source_conflicts=source_conflicts)
+            packet = build_evidence_packet(snapshot, editorial_catalog, reading_index=editorial_reading_index, source_conflicts=source_conflicts,
+                                           source_review_as_of=review_as_of)
             check = validated_editorial_overlay(saved_for_status, packet)
             require((snapshot.get("editorial_status") == "llm_complete") == check["usable"], f"{month} editorial currentness differs from rebuilt evidence")
             editorial_history_reference(ROOT / "data/editorial", saved_for_status)

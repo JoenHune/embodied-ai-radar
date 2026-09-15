@@ -5,6 +5,7 @@ import vm from 'node:vm'
 import { createHash, webcrypto } from 'node:crypto'
 import ts from 'typescript'
 import { parse, compileScript, compileTemplate } from '@vue/compiler-sfc'
+import { eventDate } from '../docs/.vitepress/theme/lib/dates.ts'
 
 const component = fs.readFileSync(new URL('../docs/.vitepress/theme/components/HardwareCoverage.vue', import.meta.url), 'utf8')
 const descriptor = parse(component).descriptor
@@ -24,7 +25,7 @@ function harness({ compact = false, routes = {} } = {}) {
   const context = {
     Set, Map, Object, URLSearchParams, AbortController, TextEncoder, Uint8Array, crypto: webcrypto,
     computed: fn => ({ get value() { return fn() } }), ref: value => ({ value }), nextTick: async () => {},
-    onMounted() {}, onBeforeUnmount(fn) { dispose = fn }, withBase: value => '/base' + value,
+    onMounted() {}, onBeforeUnmount(fn) { dispose = fn }, withBase: value => '/base' + value, eventDate,
     defineProps: () => ({ compact }), withDefaults: (values, defaults) => ({ ...defaults, ...values }),
     fetch: async (url, options) => {
       const path = url.replace(/^\/base/, '')
@@ -35,7 +36,7 @@ function harness({ compact = false, routes = {} } = {}) {
       return { ok: value !== undefined, status: value === undefined ? 404 : 200, json: async () => structuredClone(value) }
     },
   }
-  const source = descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view = { props, revisionMismatch, summary, loading, error, cohort, selected, cohortLabel, dimension, groups, groupLabel, modelIndex, modelsLoading, modelsError, modelQuery, modelCategory, onlyMentions, shownModels, filteredModels, visibleModels, openModels, shownWorks, visibleWorkIds, toggleModel, moreWorks, resetModels, number, workInput, workResult, workStatus, workError, queriedId, loadSummary, loadModels, lookupWork, inspectWork, loadTitle, titles, titleErrors, titleLoading, workUrl, downloadHref };'
+  const source = descriptor.scriptSetup.content.replace(/^import .*$/gm, '') + '\nglobalThis.view = { props, revisionMismatch, summary, loading, error, cohort, selected, cohortLabel, dimension, groups, groupLabel, modelIndex, modelsLoading, modelsError, modelQuery, modelCategory, onlyMentions, shownModels, filteredModels, visibleModels, openModels, shownWorks, visibleWorkIds, toggleModel, moreWorks, resetModels, number, workInput, workResult, workStatus, workError, queriedId, loadSummary, loadModels, lookupWork, inspectWork, loadTitle, titles, titleErrors, titleLoading, workUrl, downloadHref, analysisClock, reviewClock, clockLabel };'
   vm.runInNewContext(ts.transpile(source, { target: ts.ScriptTarget.ES2022 }), context)
   return { ...context.view, requests, routes: responseRoutes, dispose: () => dispose() }
 }
@@ -60,6 +61,26 @@ test('compact mode reads summary only and keeps both verified denominators separ
   assert.equal(view.selected.value.verified_relationship_work_count, 29)
   assert.equal(view.summary.value.all_works.denominator, 42720)
   assert.equal(view.selected.value.full_text_screened_current_dictionary_work_count, 0)
+})
+
+test('coverage keeps the analysis date separate from a safe Beijing review visibility cutoff', async () => {
+  const value = { ...summary(), source_review_as_of: '2026-09-14T16:00:00.123456Z' }, before = structuredClone(value)
+  const view = harness({ compact: true, routes: { '/api/v1/equipment/coverage-summary.json': value } })
+  await view.loadSummary()
+  assert.equal(view.analysisClock.value, '2026-09-14')
+  assert.equal(view.reviewClock.value, '2026-09-15 00:00:00（北京时间）')
+  assert.deepEqual(value, before)
+  assert.equal(view.selected.value.denominator, value.all_works.denominator)
+  for (const bad of [undefined, null, '/Users/private', '<script>x</script>', '2026-09-14T16:00:00', '2026-02-30T00:00:00Z', '2026-09-14T24:00:00Z', 123]) {
+    view.summary.value.source_review_as_of = bad
+    assert.equal(view.reviewClock.value, '')
+  }
+  assert.equal(view.clockLabel('2026-02-30', 'day'), '')
+  assert.equal(view.clockLabel('/private/cache', 'day'), '')
+  assert.match(component, /语料分析截至/)
+  assert.match(component, /v-if="reviewClock">来源\/阅读核验记录可见截至/)
+  view.props.expectedVersion = 'wrong'
+  assert.equal(view.revisionMismatch.value, true)
 })
 
 test('full initial load gets only two small coverage APIs, not 42720 work rows', async () => {

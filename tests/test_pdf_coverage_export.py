@@ -111,6 +111,69 @@ class PdfCoverageExportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'missing_from_HTML_census'):
             attach_pdf_coverage({'rows': [], 'summary': {}}, bundle)
 
+    def next_day_material(self):
+        for part in ('landing', 'pdf'):
+            item = self.fixture.input['sources'][0][part]
+            item['observed_at'] = item['observed_at'].replace('2026-09-14', '2026-09-15')
+        self.fixture.input['sources'][0]['identity_check']['checked_at'] = '2026-09-15T01:01:00Z'
+        self.fixture.as_of = '2026-09-15T02:00:00Z'
+        declaration = self.fixture.with_reading()
+        declaration['readings'][0]['read_completed_at'] = '2026-09-15T01:30:00Z'
+        return self.fixture.validate(declaration)
+
+    def test_review_clock_advances_pdf_visibility_not_corpus_date_or_original_timestamps(self):
+        older = copy.deepcopy(self.material)
+        newer = self.next_day_material()
+        self.material = {key: older[key] + newer[key] for key in ('sources', 'readings')}
+        before = copy.deepcopy(self.material)
+        legacy = self.build()
+        self.assertEqual(legacy['counts']['source_count'], 1)
+        self.assertEqual(legacy['counts']['receipt_count'], 1)
+        self.manifest.update(source_review_as_of='2026-09-15T01:30:00.123456Z', source_review_clock_digest='a' * 64)
+        with patch('pdf_reading_reviews.extract_pdf', side_effect=AssertionError('No cache reads in export')):
+            bundle = self.build()
+        self.assertEqual(bundle['data_through'], '2026-09-14')
+        self.assertEqual(bundle['source_review_as_of'], self.manifest['source_review_as_of'])
+        self.assertEqual(bundle['source_review_clock_digest'], self.manifest['source_review_clock_digest'])
+        self.assertEqual(bundle['counts']['source_count'], 2)
+        self.assertEqual(bundle['counts']['receipt_count'], 2)
+        self.assertEqual(bundle['counts']['all_work_count'], 1)
+        self.assertEqual(self.material, before)
+        api, downloads = self.fixture.root / 'clock-api', self.fixture.root / 'clock-downloads'
+        export_pdf_coverage(bundle, api, downloads)
+        with closing(sqlite3.connect(':memory:')) as db:
+            pdf_coverage_sqlite(db, bundle)
+            self.assertEqual(audit_pdf_coverage(bundle, self.fixture.payload, api, downloads, db)['receipt_count'], 2)
+
+    def test_future_pdf_identity_review_and_reading_do_not_leak_before_exact_cutoff(self):
+        self.material = self.next_day_material()
+        for cutoff, source_count, reading_count in (
+                ('2026-09-15T01:00:02.999999Z', 0, 0),
+                ('2026-09-15T01:00:30Z', 0, 0),
+                ('2026-09-15T01:01:00Z', 1, 0),
+                ('2026-09-15T01:29:59.999999Z', 1, 0),
+                ('2026-09-15T01:30:00Z', 1, 1)):
+            with self.subTest(cutoff=cutoff):
+                self.manifest.update(source_review_as_of=cutoff, source_review_clock_digest='a' * 64)
+                bundle = self.build()
+                self.assertEqual(bundle['counts']['source_count'], source_count)
+                self.assertEqual(bundle['counts']['receipt_count'], reading_count)
+
+    def test_future_malformed_pdf_history_is_rejected_before_filtering(self):
+        self.material = self.next_day_material()
+        self.material['sources'][0]['metadata_sha256'] = 'f' * 64
+        with self.assertRaisesRegex(ValueError, 'metadata_hash_mismatch'):
+            self.build()
+
+    def test_pdf_explicit_clock_pair_required_and_html_clock_must_agree(self):
+        self.manifest['source_review_as_of'] = '2026-09-15T00:00:00Z'
+        with self.assertRaises(ValueError): self.build()
+        self.manifest['source_review_clock_digest'] = 'a' * 64
+        bundle = self.build()
+        html = {'summary': {'data_through': '2026-09-14'}, 'rows': [{'work_id': 'work:test'}]}
+        with self.assertRaisesRegex(ValueError, 'review_clock_mismatch'):
+            attach_pdf_coverage(html, bundle)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -5,10 +5,22 @@ import { eventDate } from '../lib/dates'
 import SourceConflictNotice from './SourceConflictNotice.vue'
 import { conflictsForWork, sourceConflictIndex } from '../lib/source-conflicts.mjs'
 
+const clockLabel = (value: unknown, precision: 'day' | 'second'): string => {
+  const pattern = precision === 'day' ? /^\d{4}-\d{2}-\d{2}$/ : /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?Z$/
+  if (typeof value !== 'string' || !pattern.test(value)) return ''
+  const date = new Date(precision === 'day' ? value + 'T00:00:00Z' : value)
+  const width = precision === 'day' ? 10 : 19
+  if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, width) !== value.slice(0, width)) return ''
+  return eventDate(value, precision)
+}
+
 type Judgment = { text_zh: string; source_locator: string }
 type Reading = { reading_id: string; work_id: string; title: string; relevance_status: string; source_url: string; versioned_source_url?: string; version: string; read_completed_at: string; article_normalization?: string; checked_table_count: number; findings_zh: Judgment[]; limitations_zh: Judgment[] }
 const props = defineProps<{ expectedVersion: string; dictionaryHash: string; cohort: 'all_works' | 'included' }>()
 const readings = ref<Reading[]>([])
+const clockMetadata = ref<{ data_through?: string; source_review_as_of?: string }>({})
+const analysisClock = computed(() => clockLabel(clockMetadata.value.data_through, 'day'))
+const reviewClock = computed(() => clockLabel(clockMetadata.value.source_review_as_of, 'second'))
 const loadedVersion = ref('')
 const loadedDictionary = ref('')
 const loading = ref(true)
@@ -62,6 +74,7 @@ const load = async () => {
   const request = ++serial
   controller?.abort(); controller = new AbortController()
   loading.value = true; error.value = ''; readings.value = []; loadedVersion.value = ''; loadedDictionary.value = ''
+  clockMetadata.value = {}
   const conflictRequest = loadConflicts(request, controller.signal)
   try {
     const response = await fetch(withBase('/api/v1/equipment/coverage-readings.json'), { signal: controller.signal, cache: 'no-cache' })
@@ -73,6 +86,7 @@ const load = async () => {
     if (new Set(data.records.map((row: Reading) => row.reading_id)).size !== data.records.length) throw new Error('invalid')
     readings.value = [...data.records].sort((a, b) => b.read_completed_at.localeCompare(a.read_completed_at) || a.work_id.localeCompare(b.work_id))
     loadedVersion.value = data.dataset_version; loadedDictionary.value = data.dictionary_hash
+    clockMetadata.value = { data_through: data.data_through, source_review_as_of: data.source_review_as_of }
   } catch (cause) {
     if (!disposed && request === serial) error.value = cause instanceof Error && cause.message === 'version' ? '阅读记录与覆盖统计版本不一致，已停止组合展示，请刷新页面。' : '原文阅读记录暂不可读；这不代表尚无阅读记录。'
   } finally { await conflictRequest; if (!disposed && request === serial) loading.value = false }
@@ -89,6 +103,7 @@ onBeforeUnmount(() => { disposed = true; serial++; controller?.abort() })
     <p v-if="loading" role="status">正在读取原文发现与限制…</p>
     <div v-else-if="error || versionMismatch" role="alert"><p>{{ versionMismatch ? '阅读记录与覆盖统计版本不一致，当前记录状态未知。' : error }}</p><button type="button" @click="load">重新读取</button></div>
     <template v-else>
+      <p v-if="reviewClock" class="reading-boundary">语料分析截至 {{ analysisClock || '日期待核验' }} · 来源/阅读核验记录可见截至 {{ reviewClock }}</p>
       <p class="reading-count" aria-live="polite">当前范围 {{ new Set(filtered.map(row => row.work_id)).size }} 项研究 · {{ filtered.length }} 份版本阅读记录</p>
       <article v-for="row in visible" :key="row.reading_id" class="reading-card">
         <header><h3><a :href="workUrl(row.work_id)">{{ row.title }}</a></h3><p>{{ labels[row.relevance_status] || '相关性状态待确认' }} · {{ row.version }} · {{ row.article_normalization === 'reading-packet-blocks-v1' ? '结构化全文' : '全文文字' }} · AI阅读 {{ eventDate(row.read_completed_at) }} · 已核对 {{ row.checked_table_count }} 个表格结构</p></header>
