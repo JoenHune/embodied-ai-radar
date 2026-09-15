@@ -40,6 +40,19 @@ test('model lists append without pagination and restore the displayed count from
   v.setUrl('?shown=12'); v.readUrl()
   assert.equal(v.visibleModels.value.length, 12)
 })
+test('inertial-sensor category and model restore from URL with their source list', () => {
+  const v = harness(); seed(v)
+  const imu = { hardware_id: 'h:tm171', slug: 'transducerm-tm171', name: 'TransducerM TM171', category: 'inertial_sensor', identity_level: 'model_specified' }
+  v.index.value.categories.push({ code: 'inertial_sensor', label: '惯性传感器' })
+  v.index.value.devices.push(imu)
+  v.rows.value[0].hardware_usage.push({ hardware_id: imu.hardware_id, category: imu.category, review_status: 'verified', role: 'sensing', setting: 'real', source_url: 'https://arxiv.org/html/2609.00001v1', statement: 'Explicit IMU use.' })
+  v.setUrl('?category=inertial_sensor&device=h%3Atm171'); v.readUrl()
+  assert.equal(v.filters.value.category, 'inertial_sensor')
+  assert.equal(v.visibleModels.value.length, 1)
+  assert.equal(v.visibleModels.value[0].name, 'TransducerM TM171')
+  assert.equal(v.visibleModels.value[0].sources.length, 1)
+  assert.equal(v.openSources.value.has('h:tm171'), true)
+})
 test('WUJI Hand phrase finds a generation-unresolved series and opens its complete source list', () => {
   const v = harness(); seed(v)
   v.modelQuery.value = 'Wuji Hand'; v.searchModels()

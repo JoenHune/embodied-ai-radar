@@ -20,13 +20,16 @@ from people_radar import _hard_identity, _work_identities
 
 TABLES = {"devices": "hardware_id", "usage-evidence": "usage_id", "loco-reviews": "review_id", "loco-observations": "claim_id"}
 CATEGORIES = {"robot_platform": "人形与移动机器人", "robot_arm": "机械臂", "dexterous_hand": "灵巧手", "gripper": "夹爪",
-              "compute_platform": "算力平台", "data_collection": "数采与遥操作设备", "tactile_sensor": "触觉传感器", "force_sensor": "力与力矩传感器", "vision_sensor": "视觉与空间传感器"}
+              "compute_platform": "算力平台", "data_collection": "数采与遥操作设备", "tactile_sensor": "触觉传感器", "force_sensor": "力与力矩传感器", "vision_sensor": "视觉与空间传感器", "inertial_sensor": "惯性传感器"}
 COMPUTE_ROLES = {"training_compute", "inference_compute", "control_compute", "model_fitting_compute", "experiment_compute"}
 ROLES = {"real_robot", "simulated_robot", "data_collection", "sensing", "dataset_source", "mentioned"} | COMPUTE_ROLES
 SETTINGS = {"real", "simulation", "dataset", "unknown"}
 USAGE_SCOPES = {"study", "baseline", "calibration"}
 VALIDATIONS = {"closed_loop_real", "replay_only_real", "simulation_only", "unclear"}
 FORBIDDEN = re.compile(r"\b(motors?|actuators?|servos?|joint[- _]modules?|pcbs?|circuits?|driver[- _]chips?)\b|电机|关节模组|电路|驱动芯片", re.I)
+# The new category covers IMU/AHRS units, not their bare components. Keep the
+# pre-existing category rules unchanged, including compute platform semantics.
+INERTIAL_COMPONENT = re.compile(r"\b(?:chips?|ics?|pcbs?|integrated[- _]circuits?|bare[- _]dies?)\b|芯片|裸片|电路板", re.I)
 SOFTWARE = re.compile(r"^(?:NVIDIA\s+)?(?:Isaac (?:Gym|Sim|Lab)|MuJoCo|Genesis(?: simulator)?|ROS ?2?|PyTorch|PyBullet|SAPIEN|TensorFlow|JAX)(?:\b|$)", re.I)
 LOCO_TERMS = re.compile(r"loco[ -]?manipulat|whole[ -]?body manipulation|mobile manipulation|humanoid manipulation", re.I)
 
@@ -99,6 +102,10 @@ def validate_equipment(payload, authority):
         _url(device.get("official_url"))
         if not isinstance(device.get("aliases", []), list) or any(not isinstance(value, str) or not value.strip() for value in device.get('aliases', [])):
             raise ValueError("equipment_aliases_invalid")
+        if device['category'] == 'inertial_sensor' and any(
+                INERTIAL_COMPONENT.search(label) or FORBIDDEN.search(label)
+                for label in [device['name'], *device.get('aliases', [])]):
+            raise ValueError("equipment_out_of_scope_component")
 
     def source(row):
         matches = aliases.get(row.get("work_id"), set())

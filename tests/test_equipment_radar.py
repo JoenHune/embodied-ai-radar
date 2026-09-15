@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from catalog_store import encode
-from equipment_radar import (TABLES, audit_equipment, build_equipment_bundle,
+from equipment_radar import (CATEGORIES, TABLES, audit_equipment, build_equipment_bundle,
                              equipment_sqlite, export_equipment,
                              load_equipment_authority, validate_equipment)
 
@@ -50,6 +50,47 @@ def fixture():
 
 
 class EquipmentRadarTests(unittest.TestCase):
+    def test_inertial_sensor_unit_retains_evidence_category_and_sql_roundtrip(self):
+        payload, authority, manifest = fixture()
+        device = authority['devices'][0]
+        device.update(hardware_id='hardware:transducerm-tm171', slug='transducerm-tm171',
+                      name='TransducerM TM171', vendor='TransducerM',
+                      category='inertial_sensor', aliases=['TM171 AHRS unit'])
+        authority['usage-evidence'][0].update(hardware_id=device['hardware_id'], role='sensing',
+                                             statement='本文明确使用具名IMU提供运动状态反馈。')
+        before = copy.deepcopy(authority)
+        bundle = build_equipment_bundle(payload, authority, manifest)
+        self.assertEqual(authority, before)
+        category = next(row for row in bundle['index']['categories'] if row['code'] == 'inertial_sensor')
+        self.assertEqual(category, {'code': 'inertial_sensor', 'label': '惯性传感器', 'devices': 1, 'works': 1})
+        self.assertEqual(bundle['usage']['by_work'][payload['works'][0]['work_id']][0]['role'], 'sensing')
+        with tempfile.TemporaryDirectory() as tmp, closing(sqlite3.connect(':memory:')) as connection:
+            api, downloads = Path(tmp) / 'api', Path(tmp) / 'downloads'
+            export_equipment(bundle, api, downloads)
+            equipment_sqlite(connection, bundle)
+            audit_equipment(bundle, api, downloads, connection)
+            saved = json.loads(connection.execute('SELECT payload_json FROM equipment_devices').fetchone()[0])
+            self.assertEqual(saved['category'], 'inertial_sensor')
+            self.assertEqual(saved['name'], 'TransducerM TM171')
+
+    def test_inertial_category_does_not_admit_bare_chips_or_other_excluded_components(self):
+        for name in ['IMU chip', 'AHRS IC', 'IMU integrated circuit', 'bare die', 'MEMS裸片',
+                     '惯性芯片', 'IMU PCB', 'IMU电路板', 'joint module', 'servo motor', 'driver chip']:
+            for field in ['name', 'aliases']:
+                with self.subTest(name=name, field=field):
+                    payload, authority, _ = fixture()
+                    device = authority['devices'][0]
+                    device.update(category='inertial_sensor', name='Packaged IMU', aliases=[])
+                    device[field] = name if field == 'name' else [name]
+                    with self.assertRaisesRegex(ValueError, 'equipment_out_of_scope_component'):
+                        validate_equipment(payload, authority)
+
+    def test_inertial_addition_preserves_all_existing_category_labels(self):
+        self.assertEqual({key: value for key, value in CATEGORIES.items() if key != 'inertial_sensor'}, {
+            'robot_platform': '人形与移动机器人', 'robot_arm': '机械臂', 'dexterous_hand': '灵巧手',
+            'gripper': '夹爪', 'compute_platform': '算力平台', 'data_collection': '数采与遥操作设备',
+            'tactile_sensor': '触觉传感器', 'force_sensor': '力与力矩传感器', 'vision_sensor': '视觉与空间传感器'})
+
     def test_build_is_pure_and_verified_use_requires_explicit_evidence(self):
         payload, authority, manifest = fixture()
         before = copy.deepcopy((payload, authority, manifest))

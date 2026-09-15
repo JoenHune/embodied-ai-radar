@@ -49,6 +49,17 @@ test('coverage Vue script and template compile with compact and full modes', () 
   assert.ok(page.includes('<HardwareCoverage />'))
   assert.ok(page.includes('layout: page'))
 })
+test('coverage labels and filters inertial mentions without upgrading them to verified uses', async () => {
+  assert.match(component, /inertial_sensor:\s*'惯性传感器'/)
+  const imu = { ...model(1), name: 'TransducerM TM171', category: 'inertial_sensor' }
+  const view = harness({ routes: { '/api/v1/equipment/coverage-model-candidates.json': { ...revision, models: [model(), imu] } } })
+  await view.loadSummary(); await view.loadModels()
+  view.modelCategory.value = 'inertial_sensor'
+  assert.equal(view.filteredModels.value.length, 1)
+  assert.equal(view.filteredModels.value[0].name, 'TransducerM TM171')
+  assert.equal(view.filteredModels.value[0].evidence_status, 'unverified_mention')
+  assert.equal(view.filteredModels.value[0].usage_inference, 'none')
+})
 
 test('compact mode reads summary only and keeps both verified denominators separate', async () => {
   const view = harness({ compact: true })

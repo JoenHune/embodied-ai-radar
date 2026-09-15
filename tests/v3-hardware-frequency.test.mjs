@@ -7,6 +7,19 @@ const device = (id, name = id, level = 'model_specified') => ({ hardware_id: id,
 const usage = (id, extra = {}) => ({ hardware_id: id, category: 'robot_platform', review_status: 'verified', source_url: 'https://arxiv.org/html/2609.00001v1', source_locator: '§4', role: 'real_robot', setting: 'real', statement: 'Used this platform in the experiment.', usage_scope: 'study', ...extra })
 const work = (id, usages, extra = {}) => ({ work_id: id, title: id, relevance_status: 'included', first_public_date: '2026-09-01', first_public_date_precision: 'day', hardware_usage: usages, ...extra })
 
+test('inertial units retain distinct-work frequency and evidence under category filtering', () => {
+  const imu = { ...device('tm171', 'TransducerM TM171'), category: 'inertial_sensor' }
+  const proof = usage('tm171', { category: 'inertial_sensor', role: 'sensing', statement: 'Locomotion uses this IMU.' })
+  const rows = [work('a', [proof, proof]), work('b', [proof]), work('candidate', [proof], { relevance_status: 'candidate' })]
+  const result = hardwareFrequency([imu], rows, { category: 'inertial_sensor', role: 'sensing' }).models[0]
+  assert.equal(result.work_count, 2)
+  assert.equal(result.real_work_count, 2)
+  assert.equal(result.sources.length, 2)
+  assert.equal(result.sources[0].usages[0].source_url, proof.source_url)
+  assert.equal(hardwareFrequency([imu], rows, { category: 'vision_sensor' }).models.length, 0)
+  assert.equal(hardwareFrequency([imu], rows, { category: 'force_sensor' }).models.length, 0)
+})
+
 test('frequency counts canonical works once, retaining real/sim overlap and all proofs', () => {
   const a = usage('g1')
   const simulated = usage('g1', { role: 'simulated_robot', setting: 'simulation', source_url: 'https://arxiv.org/html/2609.00001v2' })

@@ -47887,7 +47887,6 @@
 {"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"accepted","is_primary":true,"work_id":"arxiv:2609.09745"}
 {"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"accepted","is_primary":true,"work_id":"arxiv:2609.10024"}
 {"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"accepted","is_primary":true,"work_id":"arxiv:2609.10036"}
-{"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"accepted","is_primary":true,"work_id":"arxiv:2609.12606"}
 {"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2609.03927"}
 {"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2609.05834"}
 {"axis":"direction","classifier_version":"3.1","code":"D2","confidence":"low_confidence_review","is_primary":false,"work_id":"arxiv:2609.06251"}
