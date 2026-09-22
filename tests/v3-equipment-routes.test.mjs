@@ -12,7 +12,7 @@ test('seven top-level navigation items retain existing entry points and add equi
   assert.equal(nav.length, 7)
   assert.deepEqual(nav.map(item => item.text), ['总览', '趋势', '月度', '人物与组织', '研究库', '动态', '方法'])
   assert.deepEqual(nav.find(item => item.text === '趋势').items.map(item => item.link), ['/trends/', '/trends/loco-manip/'])
-  assert.deepEqual(nav.find(item => item.text === '研究库').items.map(item => item.link), ['/database/', '/hardware/', '/hardware/coverage'])
+  assert.deepEqual(nav.find(item => item.text === '研究库').items.map(item => item.link), ['/database/', '/hardware/', '/hardware/coverage', '/hardware/research-progress'])
   assert.ok(nav.find(item => item.text === '人物与组织').items.some(item => item.link === '/organizations/people/'))
 })
 test('new page routes register their actual asynchronous component and methods document', () => {
@@ -22,6 +22,8 @@ test('new page routes register their actual asynchronous component and methods d
     assert.match(theme, new RegExp(`app\\.component\\('${name}', defineAsyncComponent\\(`))
     assert.match(theme, new RegExp(`import\\('\\./components/${name}\\.vue'\\)`))
   }
+  assert.match(read('docs/hardware/research-progress.md'), /import ResearchProgress from '\.\.\/\.vitepress\/theme\/components\/ResearchProgress\.vue'/)
+  assert.match(read('docs/hardware/research-progress.md'), /<ResearchProgress \/>/)
   assert.ok(config.themeConfig.sidebar['/methods/'][0].items.some(item => item.link === '/methods/equipment-loco'))
   const methods = read('docs/methods/equipment-loco.md')
   for (const term of ['未登记', '未明型号', '基线', '标定', '回放', '真机闭环', '候选判断']) assert.ok(methods.includes(term), term)
