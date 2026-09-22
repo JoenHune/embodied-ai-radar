@@ -106,6 +106,47 @@ class TokenFreeTests(unittest.TestCase):
         self.assertEqual(self.run_it()['run']['counts']['extracted_not_read'],1)
         self.assertEqual(json.loads((self.output/'hardware-candidate-frequency.json').read_text())[0]['candidate_work_count'],1)
 
+    def test_published_receipt_survives_cache_cleanup_and_flags_changed_rules(self):
+        self.source['observation_id'] = 'hardware-source:' + 'a' * 32
+        self.write_source()
+        self.run_it()
+        with sqlite3.connect(self.output/'research.sqlite') as db:
+            processing_key = db.execute('SELECT source_key FROM works WHERE work_id=?', (WID,)).fetchone()[0]
+            db.execute('UPDATE works SET reason=NULL WHERE work_id=?', (WID,))
+            db.commit()
+        receipt = {'work_id':WID, 'observation_id':self.source['observation_id'],
+                   'processing_key':processing_key, 'record_sha256':'b'*64,
+                   'commit_sha':'c'*40, 'published_at':'2026-09-22T00:00:00Z',
+                   'process_state':'extracted_not_read'}
+        (self.output/'published-receipts.jsonl').write_text(json.dumps(receipt)+'\n')
+        next((self.output/'cards').glob('*.gz')).unlink()
+        Path(self.source['cache_ref']).unlink()
+        with patch.object(runner,'build_reading_packet',side_effect=AssertionError('Repeated parse')):
+            result = self.run_it()
+            self.assertEqual(result['run']['counts']['published_compacted'],1)
+            self.assertEqual(result['processing_states']['published_compacted'],1)
+            self.assertEqual(result['source_states']['full_text_available'],1)
+            queue = [json.loads(line) for line in (self.output/'source-review-queue.jsonl').read_text().splitlines()]
+            self.assertNotIn(WID, [row['work_id'] for row in queue])
+            with patch.object(runner,'pipeline_hash',return_value='changed-rules'):
+                changed = self.run_it()
+                repeated = self.run_it()
+        self.assertEqual(changed['processing_states']['refresh_needed'],1)
+        self.assertEqual(repeated['run']['counts']['refresh_needed'],1)
+        queue = [json.loads(line) for line in (self.output/'source-review-queue.jsonl').read_text().splitlines()]
+        self.assertEqual(next(row for row in queue if row['work_id'] == WID)['process_state'], 'refresh_needed')
+
+    def test_conflicting_published_receipts_rejected(self):
+        receipt = {'work_id':WID, 'observation_id':'hardware-source:'+'a'*32,
+                   'processing_key':'a'*64, 'record_sha256':'b'*64,
+                   'commit_sha':'c'*40, 'published_at':'2026-09-22T00:00:00Z',
+                   'process_state':'extracted_not_read'}
+        self.output.mkdir()
+        (self.output/'published-receipts.jsonl').write_text(
+            json.dumps(receipt)+'\n'+json.dumps({**receipt,'record_sha256':'d'*64})+'\n')
+        with self.assertRaisesRegex(ValueError,'conflicting_published_receipt'):
+            runner.read_published_receipts(self.output)
+
     def test_search_fulltext_and_chinese_alias(self):
         self.run_it()
         self.assertEqual(self.run_it(query='Unitree G1')['results'][0]['work_id'],WID)

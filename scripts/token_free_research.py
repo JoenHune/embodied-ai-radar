@@ -17,6 +17,7 @@ import sqlite3
 import sys
 from collections import Counter, defaultdict
 from contextlib import closing, contextmanager
+from datetime import datetime
 from pathlib import Path
 
 from collect_hardware_sources import (Collector, arxiv_identity, atomic_write,
@@ -35,6 +36,8 @@ LIMITS = [
     '图片仅保留原始链接/图注，像素、视频与外部补充材料未检查。',
     'HTML缺文及非arXiv来源保留在补缺清单，本脚本不自动抓取PDF或绕过访问限制。',
     '全文和摘录只留本机，不自动发布、改写权威库、生成月度研究结论或提升评审状态。',
+    'source_state=full_text_available 表示历史上取得正文；清理缓存后不保证本机仍可读取正文。',
+    'published_compacted 表示机器提取记录已上线且本机卡片已清理，仍未精读，不是阅读回执。',
 ]
 TERMS = {'世界模型': ['world model', 'world action'], '大小脑': ['dual system', 'fast slow'],
          '灵巧操作': ['dexterous manipulation'], '视觉语言动作': ['vision language action', 'VLA'],
@@ -68,11 +71,62 @@ def read_log(path):
     return rows, partial
 
 
+def read_published_receipts(output):
+    """Index publisher receipts as data, never as processing instructions."""
+    path = output / 'published-receipts.jsonl'
+    if path.is_symlink():
+        raise ValueError('symlink_published_receipts_forbidden')
+    if not path.exists():
+        return {}
+    raw = read_regular(path, maximum=256 * 1024 * 1024)
+    if raw and not raw.endswith(b'\n'):
+        raise ValueError('incomplete_published_receipt_log')
+    receipts = {}
+    required = {'work_id', 'observation_id', 'processing_key', 'record_sha256',
+                'commit_sha', 'published_at', 'process_state'}
+    for line in raw.splitlines():
+        if not line.strip():
+            continue
+        try:
+            value = json.loads(line)
+        except (ValueError, UnicodeDecodeError) as exc:
+            raise ValueError('invalid_published_receipt_json') from exc
+        if not isinstance(value, dict) or not required <= value.keys():
+            raise ValueError('invalid_published_receipt_schema')
+        if (any(not isinstance(value[key], str) or not value[key] for key in required) or
+                not re.fullmatch(r'[0-9a-f]{64}', value['processing_key']) or
+                not re.fullmatch(r'[0-9a-f]{64}', value['record_sha256']) or
+                not re.fullmatch(r'[0-9a-f]{40}|[0-9a-f]{64}', value['commit_sha']) or
+                value['process_state'] != 'extracted_not_read'):
+            raise ValueError('invalid_published_receipt_schema')
+        try:
+            datetime.strptime(value['published_at'], '%Y-%m-%dT%H:%M:%SZ')
+        except ValueError as exc:
+            raise ValueError('invalid_published_receipt_schema') from exc
+        key = (value['work_id'], value['observation_id'])
+        selected = {field: value[field] for field in required}
+        variants = receipts.setdefault(key, {})
+        previous = variants.get(value['processing_key'])
+        if previous is not None and previous != selected:
+            raise ValueError('conflicting_published_receipt')
+        variants[value['processing_key']] = selected
+    return receipts
+
+
+def receipt_key(work_id, source):
+    observation_id = source.get('observation_id') if source else None
+    return (work_id, observation_id) if observation_id else None
+
+
+def prior_receipt_exists(receipts, work_id, source):
+    return receipt_key(work_id, source) in receipts
+
+
 @contextmanager
 def locked(output):
     output.mkdir(parents=True, exist_ok=True, mode=0o700)
     for name in ('runner.lock', 'research.sqlite', 'research.sqlite-wal', 'research.sqlite-shm', 'cards',
-                 'hardware-candidate-sources.jsonl.tmp'):
+                 'hardware-candidate-sources.jsonl.tmp', 'published-receipts.jsonl'):
         if (output / name).is_symlink():
             raise ValueError('symlink_output_forbidden')
     with (output / 'runner.lock').open('a') as stream:
@@ -119,8 +173,9 @@ def pipeline_hash(dictionary):
     return fingerprint([VERSION, dictionary, {f: hashlib.sha256((ROOT / 'scripts' / f).read_bytes()).hexdigest() for f in files}])
 
 
-def sync_catalog(db, works, sources, rules_hash):
+def sync_catalog(db, works, sources, rules_hash, receipts=None):
     """All relevance states remain in the denominator; changed sources invalidate results."""
+    receipts = receipts or {}
     known = {r['work_id']: r for r in db.execute('SELECT rowid AS search_rowid,* FROM works')}
     db.execute('UPDATE works SET active=0')
     for work in works:
@@ -132,6 +187,9 @@ def sync_catalog(db, works, sources, rules_hash):
         if changed:
             state = initial_state(work, source)
             process = 'pending' if state in {'full_text_available', 'partial_text'} else 'source_needed'
+            if process == 'pending' and prior_receipt_exists(receipts, wid, source):
+                process = ('published_compacted' if key in receipts[receipt_key(wid, source)]
+                           else 'refresh_needed')
             inserted = db.execute('INSERT OR REPLACE INTO works VALUES (?,?,?,?,?,NULL,NULL,NULL,1)',
                                   (wid, meta, key, state, process))
             db.execute('DELETE FROM candidates WHERE work_id=?', (wid,))
@@ -189,13 +247,27 @@ def analyse_packet(packet, dictionary):
         'limits': LIMITS}
 
 
-def process_one(db, work, source, cache, output, dictionary):
+def process_one(db, work, source, cache, output, dictionary, receipts=None):
     wid = work['work_id']
+    receipts = receipts or {}
     row = db.execute('SELECT rowid AS search_rowid,* FROM works WHERE work_id=?', (wid,)).fetchone()
+    published = row['source_key'] in receipts.get(receipt_key(wid, source), {})
+    if published:
+        with db:
+            db.execute('UPDATE works SET process_state=?,processed_key=? WHERE work_id=?',
+                       ('published_compacted', row['source_key'], wid))
+        return 'published_compacted'
     if row['processed_key'] == row['source_key'] and row['card_path'] and (output / row['card_path']).is_file():
         return 'reused'  # No repeated model call, parsing, or byte-reverification claim.
     if row['source_state'] not in {'full_text_available', 'partial_text'}:
         return 'source_needed'
+    if row['process_state'] == 'refresh_needed' and prior_receipt_exists(receipts, wid, source):
+        ref = source.get('cache_ref') if source else None
+        reference = Path(ref) if ref else None
+        if reference and not reference.is_absolute():
+            reference = cache / reference
+        if not reference or not reference.is_file():
+            return 'refresh_needed'
     try:
         ref = Path(source['cache_ref'])
         raw = read_regular(trusted_file(ref if ref.is_absolute() else cache / ref, cache / 'objects'), maximum=MAX_RAW_BYTES)
@@ -236,10 +308,12 @@ def export_reports(db, output, run):
         item.update(title=work.get('title'), month=month, relevance=relevance(work),
                     primary_direction=work.get('primary_direction'))
         coverage.append(item)
-        if state != 'extracted_not_read' or row['reason']:
+        if state not in {'extracted_not_read', 'published_compacted'} or row['reason']:
             aid = arxiv_identity(work.get('identifiers', {}).get('arxiv'))
             queue.append({**item, 'official_landing_url': f'https://arxiv.org/abs/{aid[0]}' if aid else None,
-                          'next_step': '等待本机提取' if state == 'pending' else '补全文或核查公开来源；不得将摘要替代正文'})
+                          'next_step': ('等待本机提取' if state == 'pending' else
+                                        '规则变化，需重新取得原文并提取' if state == 'refresh_needed' else
+                                        '补全文或核查公开来源；不得将摘要替代正文')})
     freq = [dict(r) for r in db.execute('''SELECT c.dictionary_id,c.name,
         count(DISTINCT c.work_id) AS candidate_work_count FROM candidates c
         JOIN works w USING(work_id) WHERE w.active=1 AND c.context_only=0
@@ -264,7 +338,7 @@ def export_reports(db, output, run):
     report = ['# 零模型调用的原文处理进度', '', f'全库 {len(rows):,} 项；本次模型调用 0。', '',
               '## 处理状态', '', *[f'- {k}: {v:,}' for k,v in summary['processing_states'].items()], '',
               '## 边界', '', *['- '+v for v in LIMITS], '',
-              'research.sqlite 可全文检索；cards/ 保存全部可提取正文、表格、附录、参考和图注。',
+              '未清理的 research.sqlite 和 cards/ 可供本机全文检索及检查；已发布清理的条目不保证保留原文。',
               'hardware-candidate-frequency.json 按候选提及的 work 数排序，全部出处见 hardware-candidate-sources.jsonl。',
               'monthly-coverage.json 只统计处理覆盖，不将自动提取包装为研究趋势判断。', '']
     atomic_write(output / 'REPORT.md', '\n'.join(report).encode())
@@ -297,6 +371,7 @@ def run(catalog, cache, output, dictionary, *, fetch=False, fetch_limit=200,
             raise ValueError('unknown_work_id')
         rows, partial = read_log(cache / 'observations.jsonl')
         sources = latest_observations(rows)
+        receipts = read_published_receipts(output)
         # Recent included works first; every other record remains queued, not dropped.
         works.sort(key=lambda w: (relevance(w) != 'included',
             -(int(re.sub(r'\D','',w.get('first_public_date') or '')[:8] or 0)), w['work_id']))
@@ -315,11 +390,11 @@ def run(catalog, cache, output, dictionary, *, fetch=False, fetch_limit=200,
                 fetch_result = collector.run(targets, limit=fetch_limit or len(targets))
                 rows, partial = read_log(cache / 'observations.jsonl')
                 sources = latest_observations(rows)
-        sync_catalog(db, works, sources, pipeline_hash(dictionary))
+        sync_catalog(db, works, sources, pipeline_hash(dictionary), receipts)
         counts, processed = Counter(), 0
         try:
             for work in selected:
-                result = process_one(db, work, sources.get(work['work_id']), cache, output, dictionary)
+                result = process_one(db, work, sources.get(work['work_id']), cache, output, dictionary, receipts)
                 counts[result] += 1
                 if result in {'extracted_not_read','extraction_failed'}:
                     processed += 1

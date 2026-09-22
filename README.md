@@ -66,6 +66,14 @@ SQLite 构建入口会检查 JSON 特殊键名、超大整数、布尔值还原�
 | 为单月生成中文编辑 | `node scripts/run-python.mjs scripts/generate_v3_editorial.py --month YYYY-MM --allow-data-only` | 调用已配置模型并写编辑记录；缺配置则数据版 |
 | 只读查看周报流程或内容 | `python3 scripts/run_weekly_v3.py --dry-run` / `--preview-report` | 不采集、不提交、不外部发布 |
 
+### 本机原文研究处理
+
+`token_free_research.py` 有独立的 macOS LaunchAgent，不触发下面的周更发布流程。安装前创建 `.venv` 并安装 `requirements-v3.txt`；随后运行 `.venv/bin/python scripts/install_token_free_launchd.py --install`。不带 `--install` 可预览配置。
+
+后台任务在登录时启动，此后每 15 分钟运行一批，单批最多首抓 25 篇 arXiv HTML、解析 25 篇缓存正文。arXiv 抓取保持单连接、至少 3 秒间隔，遇 403/429 停批；失败项不会自动重试。每批启动前若剩余磁盘空间低于 6 GiB，便跳过抓取并尝试发布积压结果。
+
+正常运行时约每 2 小时，任务尝试将新增结果投影为不含原文及摘录的 `data/token-free-public/records.jsonl`，由 `main` 分支构建独立的[原文采集进度](/hardware/research-progress)页面。线上只显示未经核验的候选提及，不进入权威目录或已核验设备统计。发布器检查 GitHub Pages 部署成功且线上摘要哈希吻合后，才保存本地回执并删除已发布批次的 HTML、正文缓存、卡片及全文索引内容；发布失败则保留原始材料供重试。进度、回执和待补缺清单位于 `.research/token-free-research/`，日志位于 `logs/token-free-research.log`。删除原文后若解析规则变化，旧记录会标为需要重新取得原文，不会伪装为已按新规则重算。
+
 ### 本机每周更新
 
 本机编排接口配置为北京时间每周一 00:00：先检查干净的 `main`，取得排他锁并 fast-forward 更新，再增量采集、归属、入库、中文编辑、导出和测试。通过后按覆盖 ISO 周保存 `data/weekly-v3/YYYY-Www.json`，只提交明确列出的数据和派生页面路径，并推送 `main`。这是流程说明，不表示 LaunchAgent 已经安装。

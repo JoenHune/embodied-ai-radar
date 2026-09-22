@@ -41,7 +41,7 @@
     "v3:search": "node scripts/build-pagefind-index.mjs",
     "v3:audit-site": "node scripts/audit_v3_site.mjs && node scripts/audit-visual-catalog.mjs && node scripts/audit-equipment-frequency.mjs",
     "v3:audit-search": "node scripts/audit-search-runtime.mjs",
-    "v3:prepare": "npm run v3:export && npm run v3:site && npm run v3:audit && npm run audit:groups",
+    "v3:prepare": "npm run v3:export && python3 scripts/export_token_free_public.py && npm run v3:site && npm run v3:audit && npm run audit:groups",
     "test:v3": "node scripts/run-python.mjs -m unittest discover -s tests -p 'test_*.py' && node --test tests/v3-*.test.mjs",
     "typecheck": "vue-tsc --noEmit",
     "docs:dev": "vitepress dev docs",
