@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LABEL = "org.joen.embodied-ai-radar.token-free-research"
-INTERVAL_SECONDS = 15 * 60
+INTERVAL_SECONDS = 5 * 60
 
 
 def main(argv=None) -> int:

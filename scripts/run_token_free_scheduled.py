@@ -13,9 +13,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MIN_FREE_GIB = 6
-FETCH_LIMIT = 25
-PROCESS_LIMIT = 25
-PUBLISH_INTERVAL_SECONDS = 2 * 60 * 60
+FETCH_LIMIT = 8
+PROCESS_LIMIT = 16
+PUBLISH_INTERVAL_SECONDS = 60 * 60
 PUBLISH_STATE = ROOT / ".research/token-free-research/publish-state.json"
 
 
