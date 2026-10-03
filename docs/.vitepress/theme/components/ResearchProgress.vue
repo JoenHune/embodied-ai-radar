@@ -1,168 +1,126 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { withBase } from 'vitepress'
-
-type Candidate = { dictionary_id: string; name: string; category: string; candidate_work_count: number }
-type Summary = {
-  schema_version: string; assurance: string; article_read_complete: boolean; usage_verified: boolean
-  records_sha256: string; total_records: number; candidate_work_count: number; candidate_mention_count: number
-  source_states: Record<string, number>; processing_states: Record<string, number>
-  candidate_frequency: Candidate[]; latest_observed_at: string | null; latest_url: string; download_url: string
+import { emptyFilters, deviceSearch, evidenceMatch, filterRows, matchingMentions, sortRows, trendSeries, growthRanking, type Data, type Work, type Point } from '../lib/hardware-explorer.mjs'
+const data=ref<Data|null>(null), loading=ref(true), error=ref('')
+const filters=ref(emptyFilters()), deviceQuery=ref(''), expanded=ref(false), view=ref('papers'), order=ref('recent'), page=ref(1), granularity=ref('quarter'), metric=ref('share'), focusedPeriod=ref('')
+let controller:AbortController|undefined
+let serial=0
+const fmt=(n:number)=>n.toLocaleString('zh-CN')
+const pct=(n:number|null)=>n==null?'暂无可分析样本':`${(n*100).toFixed(1)}%`
+const map=computed(()=>new Map((data.value?.devices||[]).map(d=>[d.id,d])))
+const invalidRange=computed(()=>Boolean(filters.value.from&&filters.value.to&&filters.value.from>filters.value.to))
+const matched=computed(()=>data.value&&!invalidRange.value?sortRows(filterRows(data.value.rows,filters.value),order.value):[])
+const citationCount=computed(()=>matched.value.filter(w=>w.citation!==null).length)
+const unknownAnalyzed=computed(()=>data.value?.rows.filter(w=>w.process_state==='extracted_not_read'&&!w.month).length||0)
+const pages=computed(()=>Math.max(1,Math.ceil(matched.value.length/12)))
+const visible=computed(()=>matched.value.slice((page.value-1)*12,page.value*12))
+const counts=computed(()=>{
+ const result=new Map<string,number>();if(!data.value||invalidRange.value)return result
+ for(const row of data.value.rows){
+  if(filters.value.from&&(!row.month||row.month<filters.value.from)||filters.value.to&&(!row.month||row.month>filters.value.to))continue
+  for(const id of new Set(row.matches.filter(m=>evidenceMatch(m,filters.value.evidence)).map(m=>m.device_id)))result.set(id,(result.get(id)||0)+1)
+ }return result
+})
+const selectable=computed(()=>(data.value?.devices||[]).filter(d=>(!filters.value.categories.length||filters.value.categories.includes(d.group))&&deviceSearch(d,deviceQuery.value)).sort((a,b)=>(counts.value.get(b.id)||0)-(counts.value.get(a.id)||0)||a.name.localeCompare(b.name,'en')))
+const shownDevices=computed(()=>expanded.value||deviceQuery.value?selectable.value:selectable.value.slice(0,12))
+const deviceRanking=computed(()=>(data.value?.devices||[]).filter(d=>(!filters.value.categories.length||filters.value.categories.includes(d.group))&&(!filters.value.devices.length||filters.value.devices.includes(d.id))&&(counts.value.get(d.id)||0)>0).sort((a,b)=>(counts.value.get(b.id)||0)-(counts.value.get(a.id)||0)||a.name.localeCompare(b.name,'en')).slice(0,5))
+const resultHeading=ref<HTMLElement|null>(null)
+function changePage(n:number){page.value=Math.min(pages.value,Math.max(1,n));void nextTick(()=>resultHeading.value?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}))}
+const selected=computed(()=>filters.value.devices.map(id=>map.value.get(id)).filter(d=>Boolean(d)))
+const extracted=computed(()=>data.value?.rows.filter(w=>w.process_state==='extracted_not_read').length||0)
+const missingSource=computed(()=>data.value?.rows.filter(w=>w.process_state==='source_needed').length||0)
+const unpublic=computed(()=>Math.max(0,(data.value?.arxiv_catalog_total||0)-extracted.value-missingSource.value))
+const width=(n:number)=>`${Math.min(100,n/(data.value?.arxiv_catalog_total||1)*100)}%`
+const points=computed(()=>data.value&&!invalidRange.value?trendSeries(data.value,filters.value,granularity.value):[])
+const growth=computed(()=>data.value&&!invalidRange.value?growthRanking(data.value,filters.value,granularity.value):{periods:[],rows:[],reason:'请选择有效时间范围'})
+const maxY=computed(()=>Math.max(metric.value==='share'?.01:1,...points.value.map(p=>metric.value==='share'?p.share||0:p.count)))
+const x=(i:number)=>90+i*710/Math.max(1,points.value.length-1)
+const y=(p:Point)=>220-(metric.value==='share'?p.share||0:p.count)/maxY.value*164
+const showTick=(i:number)=>i===0||i===points.value.length-1||i%Math.max(1,Math.ceil(points.value.length/5))===0&&points.value.length-1-i>=Math.max(1,Math.ceil(points.value.length/5))
+const mobileTick=(i:number)=>i===0||i===points.value.length-1||i===Math.floor((points.value.length-1)/2)
+const activePoint=computed(()=>points.value.find(p=>p.period===focusedPeriod.value)||points.value.at(-1))
+const path=computed(()=>{
+ let drawing=false;return points.value.map((p,i)=>{
+  if(p.analyzed===0){drawing=false;return ''}
+  const command=drawing?'L':'M';drawing=true;return `${command}${x(i)},${y(p)}`
+ }).join(' ')
+})
+const related=(row:Work)=>matchingMentions(row,filters.value)
+const names=(row:Work)=>[...new Set(related(row).map(m=>map.value.get(m.device_id)?.name||m.device_id))]
+const workLink=(id:string)=>withBase(`/database/?${new URLSearchParams({work:id,relevance:'all'})}`)
+const dateLabel=(row:Work)=>row.date?`${row.date}${row.date_precision==='year'?'（仅年份）':row.date_precision==='month'?'（仅月份）':''}`:'发表日期未知'
+const safeUrl=(s:string|null|undefined)=>{try{const u=new URL(s||'');return u.protocol==='https:'&&!u.username&&!u.password&&s?s:undefined}catch{return undefined}}
+function toggleCategory(id:string){filters.value.categories=filters.value.categories.includes(id)?filters.value.categories.filter(x=>x!==id):[...filters.value.categories,id];filters.value.devices=filters.value.devices.filter(d=>!filters.value.categories.length||filters.value.categories.includes(map.value.get(d)?.group||''));deviceQuery.value='';expanded.value=false}
+function toggleDevice(id:string){filters.value.devices=filters.value.devices.includes(id)?filters.value.devices.filter(x=>x!==id):[...filters.value.devices,id]}
+function reset(){filters.value=emptyFilters();deviceQuery.value='';expanded.value=false;order.value='recent';page.value=1}
+const saveUrl=()=>{
+ if(typeof window==='undefined'||loading.value)return
+ const p=new URLSearchParams();for(const [k,v] of Object.entries({view:view.value,sort:order.value,evidence:filters.value.evidence,from:filters.value.from,to:filters.value.to,q:filters.value.query,categories:filters.value.categories.join(','),devices:filters.value.devices.join(',')}))if(v)p.set(k,v)
+ if(page.value>1)p.set('page',String(page.value));window.history.replaceState(null,'',`${window.location.pathname}?${p}`)
 }
-type Row = {
-  work_id: string; observed_at: string | null; source_url: string | null; source_state: string
-  process_state: string; candidate_names: string[]; candidate_name_count: number
-  article_read_complete: boolean; usage_verified: boolean
+watch([filters,order],()=>{if(loading.value)return;page.value=1;saveUrl()},{deep:true})
+watch([page,view],saveUrl)
+async function load(){
+ const request=++serial;controller?.abort();controller=new AbortController();loading.value=true;error.value=''
+ try{
+  const [a,b]=await Promise.all([fetch(withBase('/api/v1/token-free/summary.json'),{cache:'no-cache',signal:controller.signal}),fetch(withBase('/api/v1/token-free/explorer.json'),{cache:'no-cache',signal:controller.signal})]);if(!a.ok||!b.ok)throw Error('unavailable')
+  const [summary,explorer]=await Promise.all([a.json(),b.json()]);if(request!==serial)return
+  if(summary.assurance!=='machine_extracted_unverified'||summary.usage_verified!==false||explorer.schema_version!=='1'||explorer.records_sha256!==summary.records_sha256||explorer.rows.length!==summary.total_records||!Array.isArray(explorer.devices)||explorer.rows.some((r:Work)=>r.matches.some(m=>m.usage_verified!==false)))throw Error('snapshot')
+  data.value=explorer as Data
+  const p=new URLSearchParams(window.location.search);filters.value={categories:(p.get('categories')||'').split(',').filter(id=>data.value!.categories.some(c=>c.id===id)),devices:(p.get('devices')||'').split(',').filter(id=>map.value.has(id)),evidence:['candidate','all','simulation','background','verified'].includes(p.get('evidence')||'')?p.get('evidence')!:'candidate',from:/^\d{4}-(0[1-9]|1[0-2])$/.test(p.get('from')||'')?p.get('from')!:'',to:/^\d{4}-(0[1-9]|1[0-2])$/.test(p.get('to')||'')?p.get('to')!:'',query:(p.get('q')||'').slice(0,200)}
+  view.value=p.get('view')==='trends'?'trends':'papers';order.value=['recent','oldest','citations'].includes(p.get('sort')||'')?p.get('sort')!:'recent'
+ }catch(cause){if(request===serial&&!(cause instanceof Error&&cause.name==='AbortError')){error.value='这一批数据暂时无法核对，请稍后重新读取。';data.value=null}}
+ finally{if(request===serial){await nextTick();loading.value=false;page.value=Math.min(pages.value,Math.max(1,Number(new URLSearchParams(window.location.search).get('page'))||1))}}
 }
-type Latest = { schema_version: string; records_sha256: string; total_records: number; rows: Row[] }
-
-const summary = ref<Summary | null>(null)
-const latest = ref<Row[]>([])
-const loading = ref(true)
-const error = ref('')
-let controller: AbortController | undefined
-let requestSerial = 0
-
-const number = (value: number) => value.toLocaleString('zh-CN')
-const clock = (value: string | null | undefined) => value ? `${value.replace('T', ' ').slice(0, 16)} UTC` : '尚无来源时间'
-const stateLabels: Record<string, string> = {
-  extracted_not_read: '已提取文字，尚未精读', pending: '等待文字提取', source_needed: '待补充来源',
-  extraction_failed: '提取失败', full_text_available: '已取得正文来源', partial_text: '来源文字不完整',
-  not_fetched: '尚未抓取', external_source_needed: '待补充外部来源', blocked: '来源访问受限',
-}
-const state = (value: string) => stateLabels[value] || value.replaceAll('_', ' ')
-const sourceLink = (value: string | null): string | undefined => {
-  if (!value) return undefined
-  try {
-    const url = new URL(value)
-    return url.protocol === 'https:' && !url.username && !url.password ? value : undefined
-  } catch { return undefined }
-}
-const workLink = (id: string) => withBase(`/database/?${new URLSearchParams({ work: id, relevance: 'all' })}`)
-
-const load = async () => {
-  const request = ++requestSerial
-  controller?.abort()
-  controller = new AbortController()
-  loading.value = true
-  error.value = ''
-  try {
-    const [summaryResponse, latestResponse] = await Promise.all([
-      fetch(withBase('/api/v1/token-free/summary.json'), { cache: 'no-cache', signal: controller.signal }),
-      fetch(withBase('/api/v1/token-free/latest.json'), { cache: 'no-cache', signal: controller.signal }),
-    ])
-    if (!summaryResponse.ok || !latestResponse.ok) throw new Error('unavailable')
-    const [overview, recent] = await Promise.all([summaryResponse.json() as Promise<Summary>, latestResponse.json() as Promise<Latest>])
-    if (request !== requestSerial) return
-    if (overview.schema_version !== '1' || overview.assurance !== 'machine_extracted_unverified' ||
-        overview.article_read_complete !== false || overview.usage_verified !== false ||
-        !/^[0-9a-f]{64}$/.test(overview.records_sha256) || !Number.isSafeInteger(overview.total_records) ||
-        !Number.isSafeInteger(overview.candidate_work_count) || !Number.isSafeInteger(overview.candidate_mention_count) ||
-        !Array.isArray(overview.candidate_frequency) || overview.latest_url !== '/api/v1/token-free/latest.json' ||
-        overview.download_url !== '/downloads/token-free/records.jsonl.gz' ||
-        recent.schema_version !== '1' || recent.records_sha256 !== overview.records_sha256 ||
-        recent.total_records !== overview.total_records || !Array.isArray(recent.rows) ||
-        recent.rows.some(row => row.article_read_complete !== false || row.usage_verified !== false || !Array.isArray(row.candidate_names))) {
-      throw new Error('version')
-    }
-    summary.value = overview
-    latest.value = recent.rows
-  } catch (cause) {
-    if (request !== requestSerial) return
-    if (cause instanceof Error && cause.name === 'AbortError') return
-    error.value = '采集进度暂时无法核对，当前状态未知。请稍后重试。'
-    summary.value = null
-    latest.value = []
-  } finally {
-    if (request === requestSerial) loading.value = false
-  }
-}
-onMounted(() => { void load() })
-onBeforeUnmount(() => { requestSerial++; controller?.abort() })
+onMounted(()=>void load());onBeforeUnmount(()=>{serial++;controller?.abort()})
 </script>
 
 <template>
-  <section class="research-progress" aria-labelledby="research-progress-title">
-    <header class="research-progress-header">
-      <p class="research-progress-eyebrow">ORIGINAL TEXT · COLLECTION</p>
-      <h1 id="research-progress-title">原文采集与候选提及进度</h1>
-      <p>这里定期公开机器提取的来源覆盖和设备名称线索。候选提及可能出现在引用、背景、仿真或否定语境中；它不证明论文实际使用了该设备。</p>
-    </header>
-
-    <p v-if="loading" role="status">正在读取最新进度…</p>
-    <p v-else-if="error" class="research-progress-error" role="alert">{{ error }} <button type="button" @click="load">重新读取</button></p>
-    <template v-else-if="summary">
-      <div class="research-progress-stats" aria-label="公开处理进度">
-        <div><strong>{{ number(summary.total_records) }}</strong><span>已公开处理记录</span></div>
-        <div><strong>{{ number(summary.processing_states.extracted_not_read || 0) }}</strong><span>已提取文字，尚未精读</span></div>
-        <div><strong>{{ number(summary.candidate_work_count) }}</strong><span>出现设备候选提及的研究</span></div>
-      </div>
-      <p class="research-progress-meta">最新来源观察：{{ clock(summary.latest_observed_at) }}。以上是当前公开批次的数量，未公开或待补缺的工作不计为零。</p>
-
-      <section aria-labelledby="progress-states">
-        <h2 id="progress-states">处理状态</h2>
-        <div v-if="summary.total_records" class="research-progress-states">
-          <div v-for="(count, key) in summary.processing_states" :key="key"><span>{{ state(String(key)) }}</span><strong>{{ number(count) }}</strong></div>
-        </div>
-        <p v-else>尚无已公开的处理记录。</p>
-      </section>
-
-      <section v-if="summary.candidate_frequency.length" aria-labelledby="progress-candidates">
-        <h2 id="progress-candidates">设备名称候选</h2>
-        <p>按出现该名称的不同研究数排列。仅统计非背景段落的机器命中，仍可能包含仿真、否定或其他非使用语境；这不是设备使用量或市场份额。</p>
-        <div class="research-progress-table"><table><thead><tr><th scope="col">名称</th><th scope="col">候选研究数</th></tr></thead><tbody>
-          <tr v-for="item in summary.candidate_frequency" :key="`${item.dictionary_id}:${item.name}`"><td>{{ item.name }}</td><td>{{ number(item.candidate_work_count) }}</td></tr>
-        </tbody></table></div>
-      </section>
-
-      <section aria-labelledby="progress-latest">
-        <h2 id="progress-latest">最近公开的来源记录</h2>
-        <p>展示最多 100 条，完整的候选与来源定位可下载。页面不提供论文全文或摘录。</p>
-        <div v-if="latest.length" class="research-progress-list">
-          <article v-for="row in latest" :key="row.work_id">
-            <h3><a :href="workLink(row.work_id)">{{ row.work_id }}</a></h3>
-            <p>{{ state(row.process_state) }} · {{ clock(row.observed_at) }}</p>
-            <p v-if="row.candidate_names.length">设备名称候选：{{ row.candidate_names.join('、') }}{{ row.candidate_name_count > row.candidate_names.length ? ` 等 ${row.candidate_name_count} 种` : '' }}</p>
-            <p v-else>未提取到非背景设备名称候选；不能据此断言论文没有使用设备。</p>
-            <a v-if="sourceLink(row.source_url)" :href="sourceLink(row.source_url)" target="_blank" rel="noopener noreferrer">打开原始来源 ↗</a>
-          </article>
-        </div>
-        <p v-else>尚无可展示的来源记录。</p>
-      </section>
-
-      <footer class="research-progress-footer">
-        <a :href="withBase(summary.download_url)" download>下载完整公开记录（JSONL.GZ）</a>
-        <a :href="withBase('/api/v1/token-free/summary.json')">进度统计 JSON</a>
-        <p>所有记录均为机器提取，未形成完整阅读回执或设备使用核验。数据校验值：<code>{{ summary.records_sha256 }}</code></p>
-      </footer>
-    </template>
+<section class="hardware-explorer" aria-labelledby="hardware-title">
+ <header class="hero"><p class="eyebrow">HARDWARE / RESEARCH</p><h1 id="hardware-title">硬件，与它相关的研究。</h1><p class="intro">从一件设备出发，找到论文，也看见研究中设备提及的变化。</p><span class="assurance">机器提取 · 用途待核验</span></header>
+ <p v-if="loading" role="status" class="feedback">正在整理设备与研究…</p>
+ <div v-else-if="error" role="alert" class="feedback">{{ error }} <button @click="load">重新读取</button></div>
+ <template v-else-if="data">
+  <section class="progress" aria-label="公开来源覆盖进度">
+   <div class="progress-heading"><span>原文来源覆盖</span><strong>{{ fmt(extracted) }} <small>/ {{ fmt(data.arxiv_catalog_total) }} 篇 arXiv 关联研究</small></strong></div>
+   <div class="progress-track" role="img" :aria-label="`已公开提取 ${fmt(extracted)}，需补来源 ${fmt(missingSource)}，未公开处理 ${fmt(unpublic)}`"><i class="done" :style="{width:width(extracted)}"></i><i class="needed" :style="{width:width(missingSource)}"></i></div>
+   <div class="progress-legend"><span><i class="done"></i>已公开提取 {{ fmt(extracted) }}</span><span><i class="needed"></i>需补来源 {{ fmt(missingSource) }}</span><span><i></i>未公开处理 {{ fmt(unpublic) }}</span><small>提取 ≠ 精读或使用核验</small></div>
   </section>
+  <div class="view-tabs" role="tablist" aria-label="研究视图"><button role="tab" :aria-selected="view==='papers'" @click="view='papers'">找论文 <span>↗</span></button><button role="tab" :aria-selected="view==='trends'" @click="view='trends'">看趋势 <span>↗</span></button></div>
+  <section class="browser" aria-label="硬件筛选">
+   <div class="category-row"><button :class="{active:!filters.categories.length}" :aria-pressed="!filters.categories.length" @click="filters.categories=[];filters.devices=[]">全部设备</button><button v-for="c in data.categories" :key="c.id" :class="{active:filters.categories.includes(c.id)}" :aria-pressed="filters.categories.includes(c.id)" @click="toggleCategory(c.id)">{{ c.name }}</button></div>
+   <div class="device-heading"><label for="device-search">选择设备 <small>可多选</small></label><input id="device-search" v-model="deviceQuery" type="search" placeholder="搜索型号或别名，如 RTX、G1…" /></div>
+   <div class="device-list" :class="{expanded:expanded||Boolean(deviceQuery)}"><button v-for="d in shownDevices" :key="d.id" :class="{selected:filters.devices.includes(d.id)}" :aria-pressed="filters.devices.includes(d.id)" @click="toggleDevice(d.id)"><span>{{ d.name }}<small v-if="d.subcategory"> · {{ d.subcategory }}</small><small v-if="d.identity_level==='family_only'"> · 家族级</small></span><em>{{ fmt(counts.get(d.id)||0) }}</em></button></div>
+   <p v-if="!selectable.length" class="empty-device">没有匹配的设备名称或别名。<button @click="deviceQuery=''">清空设备搜索</button></p>
+   <button v-if="selectable.length>12&&!deviceQuery" class="text-button" @click="expanded=!expanded">{{ expanded?'收起设备':`浏览全部 ${selectable.length} 件设备` }} {{ expanded?'−':'＋' }}</button>
+   <div v-if="selected.length" class="selected-list"><button v-for="d in selected" :key="d!.id" @click="toggleDevice(d!.id)">{{ d!.name }} ×</button></div>
+   <div class="scope-row"><label>证据范围<select v-model="filters.evidence"><option value="candidate">非背景候选提及</option><option value="all">全部提及（含背景）</option><option value="simulation">含仿真词的提及</option><option value="background">背景 / 引用提及</option><option value="verified">仅已核验实际使用</option></select></label><label>发表时间<input v-model="filters.from" type="month" aria-label="发表起始月份" /></label><span class="range-dash">—</span><label class="end-month"><span>至</span><input v-model="filters.to" type="month" aria-label="发表结束月份" /></label><button class="reset" @click="reset">重置筛选 ↺</button></div>
+   <p class="scope-note">同类多选取并集，不同筛选取交集。设备数字按唯一论文计算；整机不会自动推断内部部件。</p>
+   <p v-if="invalidRange" role="alert" class="range-error">起始月份不能晚于结束月份。</p>
+  </section>
+  <section v-if="view==='papers'" class="results" aria-labelledby="results-title">
+   <div class="results-heading"><div><h2 id="results-title" ref="resultHeading">相关研究 <small>{{ fmt(matched.length) }} 篇</small></h2><p>设备名称是线索，原文定位是判断的起点。</p></div><div class="result-controls"><input v-model="filters.query" type="search" aria-label="搜索论文" placeholder="论文标题 / ID" /><label>排序<select v-model="order"><option value="recent">发表时间 · 新到旧</option><option value="oldest">发表时间 · 旧到新</option><option value="citations">按已知引用数 · 高到低</option></select></label></div></div>
+   <p class="sort-note">当前结果有引用数 {{ fmt(citationCount) }} / {{ fmt(matched.length) }} 篇（{{ pct(matched.length?citationCount/matched.length:null) }}）。缺失被引数排在最后，真实零值保留。相同数值按发表日期、标题和 ID 稳定排序。引用来源与标注日期见论文详情。</p>
+   <div v-if="!matched.length" class="empty"><span>∅</span><h3>{{ filters.evidence==='verified'?'目前没有已核验实际使用记录':'没有符合这些条件的论文' }}</h3><p>{{ filters.evidence==='verified'?'这批机器提取不能证明设备实际使用。可切回候选提及继续探索。':'试着放宽设备、时间或证据范围。' }}</p><button @click="reset">重置筛选</button></div>
+   <ol v-else class="paper-list"><li v-for="(row,i) in visible" :key="row.id"><span class="paper-number">{{ String((page-1)*12+i+1).padStart(2,'0') }}</span><article><div class="paper-meta"><time>{{ dateLabel(row) }}</time><span>候选提及 · 未核验用途</span><span v-if="related(row).some(m=>m.context_only)">背景 / 引用</span><span v-if="related(row).some(m=>m.simulation)">含仿真词</span><span v-if="related(row).some(m=>m.negation)">含否定词</span></div><h3><a :href="workLink(row.id)">{{ row.title }}</a></h3><p class="device-names">{{ names(row).slice(0,4).join(' · ') }}<span v-if="names(row).length>4"> 等 {{ names(row).length }} 种设备</span></p><div class="paper-foot"><a v-if="safeUrl(row.source_url)" :href="safeUrl(row.source_url)" target="_blank" rel="noopener noreferrer">原文 ↗</a><details><summary>证据与引用</summary><div class="evidence-detail"><p v-if="row.citation"><a :href="safeUrl(row.citation.source_url)" target="_blank" rel="noopener noreferrer">Semantic Scholar：被引 {{ fmt(row.citation.count) }} 次 ↗</a><br />历史引用快照，采集日期未知。论文检索窗口截至 {{ row.citation.snapshot_date }}，不是引用更新时间。</p><p v-else>被引数未收录或身份关联不唯一；不按零处理。</p><div v-for="(m,j) in related(row)" :key="j"><strong>{{ map.get(m.device_id)?.name }}</strong><span>{{ m.context_only?'背景 / 引用':'非背景候选' }}{{ m.simulation?' · 含仿真词':'' }}{{ m.negation?' · 含否定词':'' }}</span><a v-for="(url,k) in m.locators" :key="url" :href="safeUrl(url)" target="_blank" rel="noopener noreferrer">原文定位 {{ k+1 }} ↗</a></div></div></details></div></article><div class="citation-number"><strong>{{ row.citation?fmt(row.citation.count):'—' }}</strong><span>{{ row.citation?'历史引用数':'引用未收录' }}</span></div></li></ol>
+   <nav v-if="matched.length" class="pagination" aria-label="论文分页"><button :disabled="page===1" @click="changePage(page-1)">← 上一页</button><span>{{ page }} / {{ pages }} <small>每页 12 篇</small></span><button :disabled="page===pages" @click="changePage(page+1)">下一页 →</button></nav>
+  </section>
+  <section v-else class="trends" aria-labelledby="trend-title">
+   <div class="results-heading"><div><h2 id="trend-title">设备候选提及趋势</h2><p>当前公开快照中，按论文发表期观察；不代表当时的真实采用率。</p></div><div class="chart-controls"><select v-model="granularity" aria-label="趋势时间粒度"><option value="quarter">按季度</option><option value="month">按月</option></select><div><button :class="{active:metric==='share'}" @click="metric='share'">同期占比</button><button :class="{active:metric==='count'}" @click="metric='count'">出现数量</button></div></div></div>
+   <div v-if="filters.evidence==='verified'||invalidRange||!points.length" class="empty"><h3>{{ filters.evidence==='verified'?'这批数据尚不能给出实际使用趋势':'当前时间范围没有可分析数据' }}</h3><p>候选提及与实际使用需保持区分。</p></div>
+   <template v-else><div class="chart"><svg viewBox="0 0 860 276" role="img" aria-labelledby="trend-chart-label"><title id="trend-chart-label">{{ metric==='share'?'设备候选论文占同期全部已提取论文的比例':'每个发表时期的候选论文数量' }}。下方显示目录覆盖率。</title><g v-for="tick in [0,.5,1]" :key="tick"><line x1="90" x2="800" :y1="220-tick*164" :y2="220-tick*164" class="grid-line"/><text x="78" :y="224-tick*164" text-anchor="end">{{ metric==='share'?pct(tick*maxY):Math.round(tick*maxY) }}</text></g><path :d="path" class="trend-line"/><g v-for="(point,i) in points" :key="point.period" @mouseenter="focusedPeriod=point.period"><circle v-if="point.analyzed" :cx="x(i)" :cy="y(point)" :r="focusedPeriod===point.period?6:4" :class="{'low-coverage':(point.coverage||0)<.5}" tabindex="0" :aria-label="`${point.period}，${point.count} 篇，${pct(point.share)}；目录覆盖 ${pct(point.coverage)}`" @focus="focusedPeriod=point.period"/><rect :x="x(i)-4" y="240" width="8" height="12" class="coverage-base"/><rect :x="x(i)-4" :y="252-(point.coverage||0)*12" width="8" :height="(point.coverage||0)*12" class="coverage-fill"/><text v-if="showTick(i)||mobileTick(i)" :class="{'desktop-tick-only':!mobileTick(i),'mobile-tick-only':!showTick(i)}" :x="x(i)" y="270" :text-anchor="i===0?'start':i===points.length-1?'end':'middle'">{{ point.period }}</text></g></svg></div><p v-if="activePoint" class="chart-readout"><strong>{{ activePoint.period }}</strong><span>{{ fmt(activePoint.count) }} 篇候选 / {{ fmt(activePoint.analyzed) }} 篇已提取 · {{ pct(activePoint.share) }}</span><span>目录覆盖 {{ fmt(activePoint.analyzed) }} / {{ fmt(activePoint.catalog) }} · {{ pct(activePoint.coverage) }}</span></p><p class="chart-note">空心点：目录覆盖不足 50%；断线：没有已提取可分析样本。下方短条为目录覆盖率。论文关键词只影响「找论文」视图。缺可靠发表月份的 {{ fmt(unknownAnalyzed) }} 篇已提取论文不计入时间轴或比例分母；符合设备条件的仍保留在论文结果中。</p></template>
+   <div class="trend-bottom"><section><h3>变化观察</h3><p>{{ growth.periods.join(' → ') || '等待完整时期' }} · 比较归一化提及占比</p><ol v-if="growth.rows.length" class="growth-list"><li v-for="r in growth.rows" :key="r.id"><button @click="filters.devices=[r.id]">{{ map.get(r.id)?.name }}</button><span>{{ r.previous }} → {{ r.count }} 篇</span><strong>{{ r.growth==null?`新增 ${r.count} 篇`:`${r.growth>=0?'+':''}${(r.growth*100).toFixed(1)}%` }}</strong></li></ol><p v-else class="growth-empty">{{ growth.reason }}。覆盖或样本不足时不发布增长排名。</p><template v-if="!growth.rows.length&&deviceRanking.length"><h3 class="fallback-title">当前候选设备榜</h3><ol class="growth-list"><li v-for="d in deviceRanking" :key="d.id"><button @click="filters.devices=[d.id]">{{ d.name }}</button><strong>{{ fmt(counts.get(d.id)||0) }} 篇</strong></li></ol><p>按当前发表时间与证据范围的唯一论文数排列，不是设备实际使用量。</p></template></section><aside><h3>如何读这张图</h3><p>分母始终是同期全部已提取可分析论文，不随所选硬件缩小。每篇论文在同一筛选内只计一次；跨类别可能重叠，类别占比相加可超过 100%。</p><p>变化榜只比较相邻、等长的完整时期：两期目录覆盖均至少 50%，样本各至少 5 篇。基期为零只标「新增」，不计算无限增长。当前未完整时期不参与。</p></aside></div>
+  </section>
+  <footer><details><summary>数据来源与统计口径</summary><p>目录截至 {{ data.data_through||'未记录' }}，收录 {{ fmt(data.catalog_total) }} 篇研究；覆盖分母使用 {{ fmt(data.arxiv_catalog_total) }} 篇 arXiv 关联研究，不代表整个 arXiv。另有 {{ fmt(data.catalog_unknown_month) }} 篇 arXiv 关联目录记录缺可靠月份，未计入图表的时期覆盖分母。当前公开处理 {{ fmt(data.rows.length) }} 篇，进度不是本机实时状态。</p><p>引用可关联 {{ fmt(data.citation_coverage.available) }} / {{ fmt(data.citation_coverage.total) }} 篇，来自既有 Semantic Scholar 出版物快照，论文检索窗口截至 {{ data.citation_coverage.snapshot_dates.join('、')||'暂无' }}。历史引用快照的采集日期未知，窗口截止不是引用更新时间。未新增引用抓取。未关联或冲突值保持缺失。</p><p>论文版本按规范 work ID 去重。型号与家族层级保持词典原义，别名用于搜索，不合并不同型号。候选可能包含背景、引用、仿真或否定；没有完成阅读或设备实际使用核验。</p><a :href="withBase('/downloads/token-free/records.jsonl.gz')">下载公开证据</a> · <a :href="withBase('/api/v1/token-free/explorer.json')">查看数据与快照标识</a> · <a :href="withBase('/hardware/')">已核验设备研究</a></details></footer>
+ </template>
+</section>
 </template>
 
 <style scoped>
-.research-progress { max-width: 1120px; margin: 0 auto 80px; color: var(--vp-c-text-1); }
-.research-progress-header { padding: 34px 0 25px; border-bottom: 1px solid var(--vp-c-divider); }
-.research-progress-eyebrow { margin: 0 0 8px; color: var(--vp-c-brand-1); font-size: 12px; font-weight: 700; letter-spacing: .13em; }
-.research-progress h1 { margin: 0 0 14px; font-size: clamp(28px, 4vw, 42px); line-height: 1.2; }
-.research-progress h2 { margin: 42px 0 10px; font-size: 22px; }
-.research-progress h3 { margin: 0 0 8px; font-size: 16px; }
-.research-progress p { line-height: 1.75; color: var(--vp-c-text-2); }
-.research-progress-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 28px 0 14px; }
-.research-progress-stats div { display: flex; flex-direction: column; padding: 20px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); border-radius: 10px; }
-.research-progress-stats strong { font-size: 27px; line-height: 1.2; }
-.research-progress-stats span, .research-progress-meta { font-size: 13px; }
-.research-progress-states { display: flex; flex-wrap: wrap; gap: 10px; }
-.research-progress-states div { display: flex; gap: 12px; align-items: center; padding: 9px 12px; border: 1px solid var(--vp-c-divider); border-radius: 8px; font-size: 13px; }
-.research-progress-table { overflow-x: auto; }
-.research-progress table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.research-progress th, .research-progress td { padding: 10px 12px; border-bottom: 1px solid var(--vp-c-divider); text-align: left; }
-.research-progress-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.research-progress-list article { padding: 17px; border: 1px solid var(--vp-c-divider); border-radius: 10px; overflow-wrap: anywhere; }
-.research-progress-list article p { margin: 6px 0; font-size: 13px; }
-.research-progress-list article a, .research-progress-footer a { color: var(--vp-c-brand-1); }
-.research-progress-footer { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--vp-c-divider); font-size: 14px; }
-.research-progress-footer p { flex-basis: 100%; font-size: 12px; overflow-wrap: anywhere; }
-.research-progress-error { padding: 16px; border: 1px solid var(--vp-c-danger-1); border-radius: 8px; }
-.research-progress button { padding: 7px 12px; border: 1px solid var(--vp-c-divider); border-radius: 6px; cursor: pointer; }
-@media (max-width: 700px) { .research-progress-stats { grid-template-columns: 1fr; } .research-progress-list { grid-template-columns: 1fr; } }
+/* This dashboard has no document outline; suppress only its theme local nav. */
+:global(.Layout:has(.hardware-explorer) .VPLocalNav){display:none}
+
+.hardware-explorer{max-width:1160px;margin:0 auto 88px;color:var(--vp-c-text-1)}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #427a77;outline-offset:4px}button:disabled{opacity:.35;cursor:default}.hero{padding:52px 0 32px;position:relative}.eyebrow{font-size:11px;font-weight:650;letter-spacing:.2em;color:#427a77;margin:0 0 18px}.hero h1{font-size:clamp(30px,4vw,49px);letter-spacing:-.055em;font-weight:600;line-height:1.2;margin:0 0 18px}.intro{font-size:16px;color:var(--vp-c-text-2);margin:0;max-width:700px;line-height:1.8}.assurance{display:inline-block;margin-top:18px;font-size:11px;color:#527c77;background:#427a770c;border:1px solid #427a7724;border-radius:20px;padding:4px 10px}.progress{border-top:1px solid var(--vp-c-divider);padding:24px 0 25px}.progress-heading{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:12px}.progress-heading strong{font-size:20px;font-weight:550}.progress-heading small{font-size:12px;font-weight:400;color:var(--vp-c-text-2)}.progress-track{display:flex;overflow:hidden;border-radius:2px;height:8px;background:var(--vp-c-bg-soft)}.done{background:#427a77}.needed{background:#bb9962}.progress-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:11px;font-size:11px;color:var(--vp-c-text-2)}.progress-legend span{display:flex;align-items:center;gap:5px}.progress-legend i{height:6px;width:6px;background:var(--vp-c-bg-soft)}.progress-legend .done{background:#427a77}.progress-legend .needed{background:#bb9962}.progress-legend small{margin-left:auto;font-size:11px}.view-tabs{display:flex;gap:34px;border-bottom:1px solid var(--vp-c-divider);margin:16px 0 0}.view-tabs button{font-size:20px;font-weight:500;padding:17px 0;color:var(--vp-c-text-3);border-bottom:2px solid transparent}.view-tabs button[aria-selected=true]{color:var(--vp-c-text-1);border-color:#427a77}.view-tabs span{font-size:14px;margin-left:8px;color:#427a77}.browser{padding:26px 0;border-bottom:1px solid var(--vp-c-divider)}.category-row{display:flex;flex-wrap:wrap;gap:8px}.category-row button{font-size:12px;padding:7px 12px;border:1px solid var(--vp-c-divider);border-radius:20px;color:var(--vp-c-text-2)}.category-row .active{background:#427a77;color:white;border-color:#427a77}.device-heading{display:flex;justify-content:space-between;align-items:center;margin:23px 0 12px;font-size:13px}.device-heading small{font-size:11px;color:var(--vp-c-text-3);margin-left:7px}input,select{border:1px solid var(--vp-c-divider);border-radius:5px;padding:8px 10px;background:var(--vp-c-bg);color:var(--vp-c-text-1);min-width:0;font-size:12px}.device-heading input{width:310px}.device-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--vp-c-divider);border:1px solid var(--vp-c-divider);border-radius:7px;overflow:hidden;max-height:285px;overflow-y:auto}.device-list button{background:var(--vp-c-bg);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:left;font-size:12px;min-height:44px}.device-list button.selected{background:#427a7712;box-shadow:inset 3px 0 #427a77}.device-list button:hover{background:var(--vp-c-bg-soft)}.device-list span{overflow-wrap:anywhere}.device-list small{font-size:10px;color:var(--vp-c-text-3)}.device-list em{font-size:11px;font-style:normal;color:var(--vp-c-text-3);font-variant-numeric:tabular-nums}.text-button{font-size:12px;color:#427a77;margin-top:12px}.selected-list{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.selected-list button{padding:4px 9px;background:#427a770d;border-radius:4px;font-size:11px;color:#427a77}.scope-row{display:flex;align-items:end;flex-wrap:wrap;gap:10px;margin-top:24px}.scope-row label{display:flex;flex-direction:column;gap:6px;font-size:11px;color:var(--vp-c-text-2)}.scope-row select{max-width:230px}.scope-row input{width:153px}.range-dash{margin-bottom:10px;color:var(--vp-c-text-3)}.end-month>span{visibility:hidden}.reset{font-size:11px;margin-left:auto;margin-bottom:8px;color:var(--vp-c-text-2)}.scope-note,.sort-note,.chart-note{font-size:11px;line-height:1.7;color:var(--vp-c-text-3);margin:12px 0 0}.range-error{font-size:12px;color:var(--vp-c-danger-1)}.results,.trends{padding-top:33px}.results-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}.results-heading h2{font-size:23px;font-weight:550;letter-spacing:-.03em;margin:0}.results-heading h2 small{font-size:12px;color:var(--vp-c-text-3);font-weight:400;margin-left:8px}.results-heading p{font-size:12px;color:var(--vp-c-text-2);margin:7px 0 0}.result-controls,.chart-controls{display:flex;gap:9px;align-items:center}.result-controls input{max-width:155px}.result-controls label{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--vp-c-text-3)}.paper-list{list-style:none;padding:0;margin:0}.paper-list>li{display:grid;grid-template-columns:35px minmax(0,1fr) 72px;gap:15px;padding:25px 0;border-bottom:1px solid var(--vp-c-divider);align-items:start}.paper-number{font-size:11px;color:var(--vp-c-text-3);margin-top:5px;font-variant-numeric:tabular-nums}.paper-meta{display:flex;flex-wrap:wrap;gap:13px;font-size:10px;color:var(--vp-c-text-3);margin-bottom:7px}.paper-list h3{font-size:17px;font-weight:500;line-height:1.5;letter-spacing:-.015em;margin:0;overflow-wrap:anywhere}.paper-list h3 a{color:var(--vp-c-text-1)}.paper-list h3 a:hover{color:#427a77}.device-names{font-size:11px;color:#427a77;line-height:1.6;margin:8px 0}.paper-foot{display:flex;align-items:start;gap:18px;font-size:11px;color:var(--vp-c-text-3)}.paper-foot a{color:#427a77}.paper-foot details{min-width:0;flex:1}.paper-foot summary{cursor:pointer;display:inline-block}.evidence-detail{background:var(--vp-c-bg-soft);padding:14px 16px;margin-top:12px;line-height:1.8;overflow-wrap:anywhere}.evidence-detail p{margin:0 0 10px}.evidence-detail>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.evidence-detail strong{font-weight:550}.citation-number{text-align:right;padding-top:14px}.citation-number strong{display:block;font-size:21px;font-weight:450;font-variant-numeric:tabular-nums}.citation-number span{font-size:10px;color:var(--vp-c-text-3)}.pagination{display:flex;justify-content:space-between;align-items:center;padding-top:23px;font-size:12px}.pagination small{margin-left:8px;font-size:10px;color:var(--vp-c-text-3)}.pagination button{padding:7px}.empty{text-align:center;padding:64px 16px;background:var(--vp-c-bg-soft);border-radius:6px;margin-top:18px}.empty>span{font-size:32px;color:#427a77}.empty h3{font-size:17px;font-weight:500;margin:12px 0}.empty p{font-size:12px;color:var(--vp-c-text-2)}.empty button{font-size:12px;color:#427a77;margin-top:12px}.empty-device{font-size:12px;color:var(--vp-c-text-2)}.empty-device button{color:#427a77;margin-left:10px}.chart-controls>div{display:flex;border:1px solid var(--vp-c-divider);border-radius:5px;padding:3px}.chart-controls button{font-size:11px;padding:5px 8px;color:var(--vp-c-text-3)}.chart-controls .active{background:#427a7710;color:#427a77;border-radius:3px}.chart{margin-top:30px;width:100%}.chart svg{display:block;width:100%;height:auto;overflow:visible}.chart .mobile-tick-only{display:none}.chart text{font-family:inherit;font-size:12px;fill:var(--vp-c-text-3)}.grid-line{stroke:var(--vp-c-divider);stroke-dasharray:3 5}.trend-line{fill:none;stroke:#427a77;stroke-width:2}.chart circle{fill:#427a77;stroke:var(--vp-c-bg);stroke-width:2;cursor:pointer}.chart circle.low-coverage{fill:var(--vp-c-bg);stroke:#427a77;stroke-width:1.5}.coverage-base{fill:var(--vp-c-bg-soft)}.coverage-fill{fill:#8bad9f}.chart-readout{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;margin-top:8px;color:var(--vp-c-text-2)}.chart-readout strong{font-weight:500;color:var(--vp-c-text-1)}.trend-bottom{display:grid;grid-template-columns:1fr 1fr;gap:50px;border-top:1px solid var(--vp-c-divider);margin-top:30px;padding-top:25px}.trend-bottom h3{font-size:16px;font-weight:500;margin:0 0 10px}.trend-bottom p{font-size:11px;color:var(--vp-c-text-2);line-height:1.8}.growth-list{list-style:none;padding:0;margin:20px 0}.growth-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--vp-c-divider);font-size:11px}.growth-list button{text-align:left;flex:1;color:#427a77}.growth-list span{color:var(--vp-c-text-3)}.growth-list strong{font-weight:500}.fallback-title{margin-top:24px!important}.growth-empty{padding:18px;background:var(--vp-c-bg-soft);border-radius:4px}footer{border-top:1px solid var(--vp-c-divider);padding-top:20px;margin-top:46px;font-size:11px;color:var(--vp-c-text-3)}footer summary{cursor:pointer}footer p{line-height:1.8;max-width:900px}footer a{color:#427a77}.feedback{padding:40px 0;color:var(--vp-c-text-2)}.feedback button{color:#427a77}
+@media(max-width:760px){.hero{padding-top:32px}.progress-heading{align-items:start;gap:14px}.progress-heading strong{font-size:18px}.progress-heading small{display:block;line-height:1.7}.progress-legend{gap:8px 15px}.progress-legend small{margin-left:0;width:100%}.device-list{grid-template-columns:repeat(2,minmax(0,1fr))}.device-list:not(.expanded) button:nth-child(n+7):not(.selected){display:none}.chart text{font-size:28px}.chart .desktop-tick-only{display:none}.chart .mobile-tick-only{display:block}.device-heading{align-items:start;flex-direction:column;gap:10px}.device-heading input{width:100%;font-size:14px}.scope-row{gap:9px}.scope-row label:first-child{width:100%}.scope-row select{width:100%;max-width:none}.scope-row input{width:137px}.scope-note{font-size:10px}.reset{margin-top:13px;margin-left:0;flex-basis:100%;text-align:left}.results-heading{align-items:start;flex-direction:column;gap:15px}.result-controls{width:100%;flex-wrap:wrap}.result-controls input{flex:1;max-width:none;min-width:120px}.paper-list>li{grid-template-columns:20px minmax(0,1fr) 48px;gap:10px;padding:21px 0}.paper-list h3{font-size:15px}.paper-meta{gap:5px 11px}.citation-number strong{font-size:19px}.citation-number span{font-size:9px}.paper-foot{gap:12px}.pagination small{display:block;text-align:center;margin-left:0;margin-top:4px}.trend-bottom{grid-template-columns:1fr;gap:25px}.chart-readout{gap:6px 12px}.chart-readout span:last-child{flex-basis:100%}.category-row{gap:7px}.category-row button{padding:7px 10px}.view-tabs button{font-size:19px}}
 </style>
