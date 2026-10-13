@@ -1021,7 +1021,7 @@ def main(argv=None) -> int:
         audit = {"schema_version": "1", "week": context["week"], "run_at": now.isoformat(), "requested_source_cutoff": cutoff.isoformat(),
                  "status": "started", "mode": "fallback" if args.fallback else "local", "llm_requested": not args.data_only}
         if resumed_audit:
-            audit['resumed_collection_run_at'] = resumed_audit['run_at']
+            audit['resumed_collection_run_at'] = resumed_audit.get('resumed_collection_run_at') or resumed_audit['run_at']
             audit['resumed_collection_audit_sha256'] = hashlib.sha256(args.resume_collected.read_bytes()).hexdigest()
         audit_path = run_audit_path(context, now)
         write_json(audit_path, audit)

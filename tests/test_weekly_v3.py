@@ -32,7 +32,7 @@ class WeeklyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory); context = weekly.week_context(datetime.now(timezone.utc)); cutoff = date.fromisoformat(context['until'])
             audit = root / 'logs/weekly-v3/runs/failed.json'; audit.parent.mkdir(parents=True)
-            audit.write_text(json.dumps({'status': 'failed', 'mode': 'local', 'week': context['week'], 'run_at': '2026-01-01T00:00:00Z',
+            audit.write_text(json.dumps({'status': 'failed', 'mode': 'local', 'week': context['week'], 'run_at': '2026-01-01T00:00:00Z', 'resumed_collection_run_at': '2025-12-31T22:00:00Z',
                                          'requested_source_cutoff': cutoff.isoformat(), 'source_checks': [{'source': name, 'status': 'failed', 'complete': False} for name in weekly.EXPECTED_SOURCES]}))
             (root / 'data/catalog').mkdir(parents=True)
             (root / 'data/catalog/manifest.json').write_text(json.dumps({'data_through': cutoff.isoformat(), 'catalog_hash': 'b'*64}))
@@ -46,6 +46,8 @@ class WeeklyTests(unittest.TestCase):
             collect.assert_not_called()
             self.assertTrue(any('verify_catalog_checkpoint.py' in part for command in commands for part in command))
             self.assertFalse(any(command[:3] == ['npm', 'run', 'v3:ingest'] for command in commands))
+            new_audit = next(path for path in audit.parent.glob('*.json') if path != audit)
+            self.assertEqual(json.loads(new_audit.read_text())['resumed_collection_run_at'], '2025-12-31T22:00:00Z')
 
     def test_offline_resume_skips_collectors_and_keeps_the_original_cutoff(self):
         with tempfile.TemporaryDirectory() as directory:
