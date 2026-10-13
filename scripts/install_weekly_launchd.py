@@ -63,7 +63,7 @@ def main(argv=None) -> int:
     if configuration_file.resolve().is_relative_to(ROOT): issues.append("runtime credentials must be outside the repository")
     if args.mini_data_only:
         from run_mini_weekly import preflight
-        issues.extend(preflight(ROOT))
+        issues.extend(preflight(ROOT,verify_hardware=True))
         payload=build_mini_plist(ROOT,python,node,npm)
     else:
         payload = build_plist(ROOT, python, node, npm, configuration_file.resolve(), loggerbot=bool(args.loggerbot_env_file))
@@ -75,6 +75,9 @@ def main(argv=None) -> int:
         return 0
     if issues:
         raise SystemExit("Cannot install: " + "; ".join(issues))
+    if args.mini_data_only:
+        from run_mini_weekly import save_host_binding
+        save_host_binding(ROOT)
     target.parent.mkdir(parents=True, exist_ok=True)
     (ROOT / "logs").mkdir(exist_ok=True)
     content = plistlib.dumps(payload, fmt=plistlib.FMT_XML)

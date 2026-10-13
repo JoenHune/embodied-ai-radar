@@ -109,3 +109,13 @@ class RecoveryTests(unittest.TestCase):
         a={'source':'arxiv_research_status','status':'partial','response_observed_from':'2026-10-12T00:00:00Z','response_observed_until':'2026-10-12T01:00:00Z'}
         b={**a,'response_observed_from':'2026-10-13T00:00:00Z','response_observed_until':'2026-10-13T01:00:00Z'}
         self.assertEqual(weekly.content_hash(a),weekly.content_hash(b))
+    def test_registered_mini_uses_same_host_binding_without_background_scan(self):
+        import run_mini_weekly as mini
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);f=root/'.research/weekly-v3/mini-host.json';f.parent.mkdir(parents=True)
+            f.write_text(json.dumps({'hostname':'fixture-mini','model':'Macmini9,1'}))
+            with patch.object(mini.sys,'platform','darwin'),patch.object(mini.socket,'gethostname',return_value='fixture-mini'),patch.object(mini.shutil,'which',return_value='/fixture/bin'),patch.object(mini.subprocess,'check_output',return_value='main') as command:
+                self.assertEqual(mini.preflight(root),[])
+                self.assertEqual(command.call_args.args[0],['git','branch','--show-current'])
+            with patch.object(mini.sys,'platform','darwin'),patch.object(mini.socket,'gethostname',return_value='fixture-book'),patch.object(mini.shutil,'which',return_value='/fixture/bin'),patch.object(mini.subprocess,'check_output',return_value='main'):
+                self.assertIn('mini_host_identity_mismatch',mini.preflight(root))
