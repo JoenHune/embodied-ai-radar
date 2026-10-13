@@ -105,7 +105,7 @@ def resource_reason():
         return 'resource_probe_platform_unsupported'
     try:
         def probe(argv):
-            return subprocess.check_output(argv, text=True, timeout=5)
+            return subprocess.check_output(argv, text=True, timeout=20)
         free = int(re.search(r'free percentage:\s*(\d+)%', probe(['/usr/bin/memory_pressure', '-Q'])).group(1))
         idle = cpu_idle_iostat(probe(['/usr/sbin/iostat','-c','2','-w','1']))
         rows = []
@@ -126,6 +126,7 @@ def resource_reason():
         for _ in range(16):
             owned.update(p for p,parent,*_ in rows if parent in owned)
             logger.update(p for p,parent,*_ in rows if parent in logger)
+        print(json.dumps({'status':'resource_observation','free_percent':free,'cpu_busy_percent':round(100-idle,2),'pipeline_rss_mib':round(sum(rss for pid,_,rss,_,_ in rows if pid in owned)/1024,1)}),flush=True)
         if free<50: return 'logger_memory_reserve'
         if 100-idle>50: return 'cpu_headroom'
         if sum(rss for pid,_,rss,_,_ in rows if pid in owned)/1024>1280: return 'pipeline_memory_budget'

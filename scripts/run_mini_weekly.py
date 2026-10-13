@@ -61,8 +61,8 @@ def main(argv=None):
     os.environ['RADAR_WEEKLY_RESOURCE_GUARD']='1'
     os.environ['V3_PYTHON']=sys.executable
     why=resource_reason()
-    deadline=time.monotonic()+60
-    while why in {'cpu_headroom','logger_busy'} and time.monotonic()<deadline:
+    deadline=time.monotonic()+180
+    while why in {'cpu_headroom','logger_busy','logger_memory_reserve','pipeline_memory_budget'} and time.monotonic()<deadline:
         print(json.dumps({'status':'waiting_resource_pressure','reason':why}),flush=True)
         time.sleep(10)
         why=resource_reason()
