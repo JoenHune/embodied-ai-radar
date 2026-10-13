@@ -120,7 +120,13 @@ def resource_reason():
         if 100-idle>50: return 'cpu_headroom'
         if sum(rss for pid,_,rss,_,_ in rows if pid in owned)/1024>1280: return 'pipeline_memory_budget'
         if sum(cpu for pid,_,_,cpu,_ in rows if pid in logger)>300: return 'logger_busy'
-    except (OSError,ValueError,AttributeError,subprocess.SubprocessError):
+    except (OSError,ValueError,AttributeError,subprocess.SubprocessError) as error:
+        detail={'status':'resource_probe_failed','error_type':type(error).__name__}
+        if isinstance(error,(subprocess.TimeoutExpired,subprocess.CalledProcessError)):
+            detail['command']=error.cmd
+            detail['exit_code']=getattr(error,'returncode',None)
+            detail['timeout_seconds']=getattr(error,'timeout',None)
+        print(json.dumps(detail),flush=True)
         return 'resource_probe_failed'
     return None
 
