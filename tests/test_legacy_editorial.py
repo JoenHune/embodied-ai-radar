@@ -6,15 +6,45 @@ import importlib.util
 import json
 import tempfile
 import unittest
+import sys
+import contextlib
+import io
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
 SPEC = importlib.util.spec_from_file_location("legacy", ROOT / "scripts/import_legacy_editorial.py")
 legacy = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(legacy)
 
 
 class LegacyEditorialTests(unittest.TestCase):
+    def test_fresh_authority_import_without_any_derived_api_manifest(self):
+        root = Path(self.temp.name)
+        data, catalog, api = root / 'data', root / 'catalog', root / 'missing-api'
+        data.mkdir(); catalog.mkdir()
+        for name, value in [('trends', self.trends), ('papers', self.papers), ('directions', self.directions), ('forecasts', self.forecasts)]:
+            (data / (name + '.json')).write_text(json.dumps(value))
+        for name, rows in [('works', self.works), ('work-aliases', self.aliases), ('manifestations', self.versions)]:
+            (catalog / (name + '.jsonl')).write_text(''.join(json.dumps(row) + '\n' for row in rows))
+        (catalog / 'manifest.json').write_text(json.dumps({'data_through': '2026-10-09'}))
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(legacy.main(['--data-directory', str(data), '--catalog-directory', str(catalog),
+                                          '--api-directory', str(api), '--output-directory', str(self.output)]), 0)
+        report = json.loads((self.output / 'reconciliation.json').read_text())
+        self.assertEqual(report['active_complete_months'][0], '2025-10')
+        self.assertEqual(report['active_complete_months'][-1], '2026-09')
+        self.assertEqual(report['provisional_month'], '2026-10')
+        self.assertFalse(api.exists())
+
+    def test_authority_window_ignores_stale_export_and_includes_closed_month(self):
+        root = Path(self.temp.name); catalog, api = root / 'catalog', root / 'api'
+        catalog.mkdir(); api.mkdir()
+        (catalog / 'manifest.json').write_text(json.dumps({'data_through': '2026-09-30'}))
+        (api / 'catalog-manifest.json').write_text(json.dumps({'complete_months': ['2020-01'], 'provisional_month': '2020-02'}))
+        months, provisional = legacy.editorial_window(catalog, api)
+        self.assertEqual(months[-1], '2026-09'); self.assertEqual(provisional, '2026-10')
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix="legacy-editorial-fixture-")
         self.output = Path(self.temp.name) / "output"

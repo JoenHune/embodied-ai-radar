@@ -28,6 +28,25 @@ feishu = module("publish_group_weekly_to_feishu")
 
 
 class WeeklyTests(unittest.TestCase):
+    def test_verified_catalog_resume_invokes_readonly_proof_and_skips_ingestion(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); context = weekly.week_context(datetime.now(timezone.utc)); cutoff = date.fromisoformat(context['until'])
+            audit = root / 'logs/weekly-v3/runs/failed.json'; audit.parent.mkdir(parents=True)
+            audit.write_text(json.dumps({'status': 'failed', 'mode': 'local', 'week': context['week'], 'run_at': '2026-01-01T00:00:00Z',
+                                         'requested_source_cutoff': cutoff.isoformat(), 'source_checks': [{'source': name, 'status': 'failed', 'complete': False} for name in weekly.EXPECTED_SOURCES]}))
+            (root / 'data/catalog').mkdir(parents=True)
+            (root / 'data/catalog/manifest.json').write_text(json.dumps({'data_through': cutoff.isoformat(), 'catalog_hash': 'b'*64}))
+            commands = []
+            def stop_at_editorial(command, **kwargs):
+                commands.append(command)
+                if command[:3] == ['npm', 'run', 'v3:legacy-editorial']: raise RuntimeError('fixture post-ingest stop')
+            with patch.object(weekly, 'ROOT', root), patch.object(weekly, 'git', side_effect=['main', '', str(root/'lock')]), patch.object(weekly, 'owned_resume', return_value=True), patch.object(weekly, 'run', side_effect=stop_at_editorial), patch.object(weekly, 'collect_sources') as collect, contextlib.redirect_stdout(io.StringIO()):
+                with self.assertRaisesRegex(RuntimeError, 'fixture post-ingest'):
+                    weekly.main(['--publish', '--data-only', '--resume-owned', '--resume-collected', str(audit), '--resume-ingested-hash', 'b'*64, '--as-of', cutoff.isoformat()])
+            collect.assert_not_called()
+            self.assertTrue(any('verify_catalog_checkpoint.py' in part for command in commands for part in command))
+            self.assertFalse(any(command[:3] == ['npm', 'run', 'v3:ingest'] for command in commands))
+
     def test_offline_resume_skips_collectors_and_keeps_the_original_cutoff(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

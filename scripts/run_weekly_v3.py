@@ -945,12 +945,15 @@ def main(argv=None) -> int:
     parser.add_argument('--status-baseline',type=Path,help=argparse.SUPPRESS)
     parser.add_argument('--resume-owned',action='store_true',help='Resume only recorded unchanged data from this checkout')
     parser.add_argument('--resume-collected',type=Path,help='Reuse a failed local collection audit without contacting research sources')
+    parser.add_argument('--resume-ingested-hash',help='Validate this exact saved catalog and continue after ingestion')
     args = parser.parse_args(argv)
     if args.publish and args.dry_run:
         parser.error("--publish and --dry-run are mutually exclusive")
     now = datetime.now(timezone.utc)
     context = week_context(now)
     resumed_audit = None
+    if args.resume_ingested_hash and (not args.resume_collected or not re.fullmatch(r'[0-9a-f]{64}', args.resume_ingested_hash)):
+        parser.error('Saved catalog resume requires --resume-collected and its exact SHA256 catalog hash')
     if args.resume_collected:
         if not (args.publish and args.data_only and args.resume_owned):
             parser.error('Offline collection resume requires --publish --data-only --resume-owned')
@@ -1039,7 +1042,13 @@ def main(argv=None) -> int:
                 if status_owned_hashes:
                     status_owned_hashes["data/weekly-v3/source-coverage.json"] = hashlib.sha256((ROOT / "data/weekly-v3/source-coverage.json").read_bytes()).hexdigest()
                 _verify_catalog_unchanged_before_ingest(checkpoint)
-                run(["npm", "run", "v3:ingest", "--", "--ingest-only", "--as-of", effective_cutoff])
+                if args.resume_ingested_hash:
+                    run([sys.executable, str(ROOT / 'scripts/verify_catalog_checkpoint.py'), '--catalog', str(ROOT / 'data/catalog'),
+                         '--expected-hash', args.resume_ingested_hash, '--as-of', effective_cutoff])
+                    audit.update(resumed_ingested_catalog_hash=args.resume_ingested_hash, completed_stage='ingest')
+                    write_json(audit_path, audit)
+                else:
+                    run(["npm", "run", "v3:ingest", "--", "--ingest-only", "--as-of", effective_cutoff])
                 generated_after_ingest = generated_hashes(checkpoint)
                 # Same-week status observations do not call the LLM worker,
                 # regenerate the weekly report, or create research revisions.
@@ -1054,7 +1063,7 @@ def main(argv=None) -> int:
                 if not args.data_only:
                     # Exactly one worker invocation; it owns retries/fallback.
                     run(["npm", "run", "v3:editorial"])
-                run(["npm", "run", "v3:export"])
+                run(["npm", "run", "v3:export", "--", "--persist-derived"])
                 run(["npm", "run", "v3:site"])
                 weekly_digest(context, now, coverage=coverage)
                 run(["npm", "test"])

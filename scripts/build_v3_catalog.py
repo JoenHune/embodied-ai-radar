@@ -1111,7 +1111,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         ],
     }
     migration_report["source_row_reconciliation"] = dict(Counter(row["status"] for row in payload.get("reconciliation", [])))
-    if args.migrate or args.ingest:
+    if args.migrate or args.ingest or getattr(args, 'persist_derived', False):
         write_json(CATALOG / "migration-report.json", migration_report)
     (PUBLIC_API / "monthly").mkdir(parents=True, exist_ok=True)
     (PUBLIC_API / "organizations").mkdir(parents=True, exist_ok=True)
@@ -1120,7 +1120,7 @@ def export_catalog(payload: dict, metadata: dict, args: argparse.Namespace) -> N
         window = [add_months(month, offset) for offset in range(-11, 1)]
         snapshot["trend_ledger"] = [assess_signal(spec, list(dated_basis.values()), window, organizations_by_work, manifestations_by_work, source_records=sources_by_id) for spec in signal_specs] if snapshot["status"] == "complete" else []
         snapshot["retrospective_evidence"]["trend_ledger"] = [assess_signal(spec, list(dated_basis.values()), window, organizations_by_work, manifestations_by_work, evidence_cutoff=as_of_text, source_records=sources_by_id) for spec in signal_specs] if snapshot["status"] == "complete" else []
-        snapshot = revision_snapshot(DATA / "snapshots" / "monthly", month, snapshot, persist=args.migrate or args.ingest)
+        snapshot = revision_snapshot(DATA / "snapshots" / "monthly", month, snapshot, persist=args.migrate or args.ingest or getattr(args, 'persist_derived', False))
         for revision in snapshot["revisions"]:
             archived_path = DATA / "snapshots" / "monthly" / month / f"r{revision['revision']}.json"
             if archived_path.exists():
@@ -1427,6 +1427,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--ingest", action="store_true", help="Ingest source deltas without overwriting curated catalog records")
     parser.add_argument("--ingest-only", action="store_true", help="Save the catalog; defer exports to the separate export stage")
     parser.add_argument("--ingest-preview", action="store_true", help="Validate incoming facts without saving the catalog or exports")
+    parser.add_argument("--persist-derived", action="store_true", help="Persist deferred monthly histories and migration report after ingestion")
     parser.add_argument("--prepare-ingest-dir", type=Path, help=argparse.SUPPRESS)
     parser.add_argument("--ingest-status", action="store_true", help="Import only explicit reviewed research-status notices, preserving all other authority records")
     parser.add_argument("--ingest-people", action="store_true", help="Explicitly import person review staging into the separate four-table JSONL authority")

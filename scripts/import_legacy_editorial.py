@@ -12,6 +12,7 @@ import json
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
+from datetime import date
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -293,6 +294,18 @@ def restore(trends: dict, papers: list[dict], directions: dict, forecasts: dict,
     return report
 
 
+def editorial_window(catalog_directory: Path, api_directory: Path) -> tuple[list[str], str | None]:
+    authority = catalog_directory / 'manifest.json'
+    if authority.exists():
+        from build_v3_catalog import complete_months, add_months
+        metadata = json.loads(authority.read_text())
+        months = complete_months(date.fromisoformat(metadata['data_through'][:10]))
+        return months, add_months(months[-1], 1)
+    # Preserve explicit API-only fixtures and legacy callers without authority.
+    manifest = json.loads((api_directory / 'catalog-manifest.json').read_text())
+    return manifest['complete_months'][-12:], manifest.get('provisional_month')
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-directory", type=Path, default=ROOT / "data")
@@ -301,10 +314,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output-directory", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args(argv)
     values = {name: json.loads((args.data_directory / f"{name}.json").read_text()) for name in ("trends", "papers", "directions", "forecasts")}
-    manifest = json.loads((args.api_directory / "catalog-manifest.json").read_text())
+    months, provisional = editorial_window(args.catalog_directory, args.api_directory)
     resolver = Resolver(read_table(args.catalog_directory, "works"), read_table(args.catalog_directory, "work-aliases"), read_table(args.catalog_directory, "manifestations"))
     report = restore(values["trends"], values["papers"], values["directions"], values["forecasts"], resolver,
-                     manifest["complete_months"][-12:], manifest.get("provisional_month"), args.output_directory)
+                     months, provisional, args.output_directory)
     print(json.dumps({key: report[key] for key in ("status", "source_counts", "restored_counts", "trend_cards_requiring_evidence_review", "review_reasons")}, ensure_ascii=False))
     return 0
 
