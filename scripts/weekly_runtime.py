@@ -75,7 +75,7 @@ def run_process(command, *, cwd, timeout, env=None):
     process = subprocess.Popen(command, cwd=cwd, env=env, start_new_session=True)
     try:
         code = process.wait(timeout=timeout)
-    except BaseException:
+    except BaseException as error:
         try:
             os.killpg(process.pid, signal.SIGTERM)
             process.wait(timeout=5)
@@ -85,6 +85,7 @@ def run_process(command, *, cwd, timeout, env=None):
             except ProcessLookupError:
                 pass
             process.wait()
+        error.returncode = process.returncode
         raise
     if code:
         raise subprocess.CalledProcessError(code, command)

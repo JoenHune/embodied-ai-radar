@@ -117,6 +117,8 @@ Mini 与旧硬件抽取合计资源须保留至少 50% 内存余量，CPU 繁忙
 
 导出已经完整结束时，可追加 `--resume-exported`，先核验 API 覆盖与 SQLite ZIP 完整性再跳过导出。余下单元、数据、类型、构建和搜索检查全部保留，准备阶段执行一次。手动续跑应脱离交互工具会话运行，保留日志及原有界预算。
 
+`scripts/run_weekly_recovery_supervisor.py` 用独立后台进程监督这种续跑：`--audit` 指向保全的失败审计，`--catalog-hash` 和 `--as-of` 指定恢复点，`--record` 指向 `.research/weekly-v3/` 内的状态文件。它记录监督/执行 PID、起止时间、实际退出码，保留90分钟总预算；每个命令仍最多30分钟。编排收到终止信号时清理自己的子进程并保存失败审计，不把未知中断原因写成预算失败。
+
 ### 本地 LLM 配置
 
 可通过环境变量提供 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL`；默认模型为 `gpt-5.6-sol`。LaunchAgent 默认从仓库外的 `~/.config/embodied-ai-radar/runtime.env` 读取这三个配置项，也可用 `--env-file /绝对路径/runtime.env` 指定。该文件不是 shell 脚本，变量值不执行命令，不进入仓库或 plist。

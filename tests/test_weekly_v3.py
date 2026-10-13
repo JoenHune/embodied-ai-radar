@@ -8,6 +8,7 @@ from pathlib import Path
 import tempfile
 import sys
 import unittest
+import subprocess
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -28,6 +29,14 @@ feishu = module("publish_group_weekly_to_feishu")
 
 
 class WeeklyTests(unittest.TestCase):
+    def test_command_failure_logs_actual_exit_code_and_times(self):
+        with patch.object(weekly,'remaining_pipeline_budget',return_value=None), patch.object(weekly.subprocess,'run',side_effect=subprocess.CalledProcessError(7,['fixture'])), contextlib.redirect_stdout(io.StringIO()) as output:
+            with self.assertRaises(subprocess.CalledProcessError):weekly.run(['fixture'])
+        records=[json.loads(line) for line in output.getvalue().splitlines() if line.startswith('{')]
+        self.assertEqual(records[0]['status'],'pipeline_command_started')
+        self.assertEqual(records[-1]['exit_code'],7)
+        self.assertIn('finished_at',records[-1])
+
     def test_prepared_site_retains_all_checks_without_duplicate_preparation(self):
         commands = []
         with patch.object(weekly, 'run', side_effect=lambda command: commands.append(command)):

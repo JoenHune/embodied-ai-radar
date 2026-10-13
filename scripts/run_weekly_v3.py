@@ -16,6 +16,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -65,14 +66,25 @@ def run(command: list[str], env: dict | None = None) -> None:
         env={k:os.environ[k] for k in ('PATH','TMPDIR','TZ','V3_PYTHON') if k in os.environ}
         env.update(PYTHONNOUSERSITE='1',GIT_CONFIG_GLOBAL='/dev/null',GIT_CONFIG_SYSTEM='/dev/null')
     remaining=remaining_pipeline_budget()
-    if remaining is None:
-        subprocess.run(command, cwd=ROOT, env=env, check=True)
-    else:
+    if remaining is not None:
         why=wait_resource_headroom(min(180,remaining))
         remaining=remaining_pipeline_budget()
         if why: raise RuntimeError(why)
         if remaining<=0: raise RuntimeError('WeeklyPipelineBudgetExceeded')
-        run_process(command,cwd=ROOT,env=env,timeout=min(remaining,1800))
+    started, clock = datetime.now(timezone.utc), time.monotonic()
+    print(json.dumps({'status':'pipeline_command_started','command':command,'started_at':started.isoformat()}),flush=True)
+    try:
+        if remaining is None:
+            subprocess.run(command, cwd=ROOT, env=env, check=True)
+        else:
+            run_process(command,cwd=ROOT,env=env,timeout=min(remaining,1800))
+    except BaseException as error:
+        print(json.dumps({'status':'pipeline_command_finished','command':command,'finished_at':datetime.now(timezone.utc).isoformat(),
+                          'elapsed_seconds':round(time.monotonic()-clock,3),'exit_code':getattr(error,'returncode',None),
+                          'error_type':type(error).__name__}),flush=True)
+        raise
+    print(json.dumps({'status':'pipeline_command_finished','command':command,'finished_at':datetime.now(timezone.utc).isoformat(),
+                      'elapsed_seconds':round(time.monotonic()-clock,3),'exit_code':0}),flush=True)
 
 
 def verify_prepared_site():
@@ -1123,4 +1135,8 @@ def main(argv=None) -> int:
 
 
 if __name__ == "__main__":
+    def interrupted(signum, _frame):
+        raise RuntimeError('WeeklyInterruptedSignal:' + str(signum))
+    for signum in (signal.SIGTERM, signal.SIGHUP):
+        signal.signal(signum, interrupted)
     raise SystemExit(main())
