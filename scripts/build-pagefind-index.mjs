@@ -9,6 +9,7 @@ import { SEARCH_DICTIONARY_VERSION, workSearchRecord, compactResultCard } from '
 import { SEARCH_TEXT_CONTRACT } from '../docs/.vitepress/theme/lib/search-text.mjs'
 import { applySearchStatus } from './lib/search-status.mjs'
 import { applySourceConflicts, sourceConflictIndex } from '../docs/.vitepress/theme/lib/source-conflicts.mjs'
+import { compareResearchDates } from '../docs/.vitepress/theme/lib/catalog-research.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const dist = path.resolve(process.env.PAGEFIND_DIST || path.join(root, 'docs/.vitepress/dist'))
@@ -211,7 +212,7 @@ for (const field of identityFields) {
   }
   for (const [shard, rows] of shards) writeJSON(`identity/${field}/${shard}.json`, rows)
 }
-writeJSON('lookup.json', { ids: resultIds, work_ids: searchRows.map((row) => row.meta.work_id), dates: searchRows.map((row) => row.meta.date), identity_shards: identityFields, postings: Object.fromEntries(Object.entries(postings).filter(([name]) => !identityFields.includes(name))) })
+writeJSON('lookup.json', { ids: resultIds, work_ids: searchRows.map((row) => row.meta.work_id), dates: searchRows.map((row) => row.meta.date), date_precisions: searchRows.map((row) => row.meta.date_precision), identity_shards: identityFields, postings: Object.fromEntries(Object.entries(postings).filter(([name]) => !identityFields.includes(name))) })
 const rowShards = new Map()
 for (const row of searchRows) {
   const rows = rowShards.get(row.meta.shard) || []
@@ -220,7 +221,7 @@ for (const row of searchRows) {
 }
 for (const [shard, rows] of rowShards) writeJSON(`results/${shard}.json`, rows)
 for (const status of ['all', ...Object.keys(postings.relevance)]) {
-  const rows = searchRows.filter((row) => status === 'all' || row.meta.relevance === status).sort((a, b) => b.meta.date.localeCompare(a.meta.date) || a.meta.work_id.localeCompare(b.meta.work_id))
+  const rows = searchRows.filter((row) => status === 'all' || row.meta.relevance === status).sort((a, b) => compareResearchDates(a.meta.date, a.meta.date_precision, a.meta.work_id, b.meta.date, b.meta.date_precision, b.meta.work_id))
   for (let start = 0; start < Math.max(rows.length, 1); start += 20) writeJSON(`browse/${status}/${start / 20 + 1}.json`, { rows: rows.slice(start, start + 20).map(compactResultCard), total: rows.length, page: start / 20 + 1 })
 }
 

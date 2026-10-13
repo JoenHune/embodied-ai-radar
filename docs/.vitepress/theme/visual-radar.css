@@ -3,10 +3,10 @@
 .dark { --vp-c-brand-1: #94afff; --vp-c-brand-2: #acc0ff; --vp-c-brand-3: #7798ff; --vp-c-brand-soft: rgba(148, 175, 255, .12); }
 .v3-dashboard, .v3-pulse, .v3-database { padding-top: 28px; }
 .v3-hero { min-height: 0; padding: 6px 0 24px; margin-bottom: 24px; }
-.v3-hero h1, .v3-page-heading h1 { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.2; letter-spacing: -.035em; }
+.v3-hero h1, .v3-page-heading h1 { font-size: 34px; line-height: 1.2; letter-spacing: 0; }
 .v3-page-heading { margin-bottom: 24px; }
 .v3-hero-copy, .v3-page-heading > div > p:not(.v3-eyebrow) { font-size: 16px; line-height: 1.65; max-width: 780px; }
-.v3-eyebrow { letter-spacing: .13em; }
+.v3-eyebrow { letter-spacing: 0; }
 .visual-summary-metrics { display: flex; flex-wrap: wrap; gap: 14px 32px; padding: 14px 0; margin: 0 0 24px; border-top: 1px solid var(--vp-c-divider); border-bottom: 1px solid var(--vp-c-divider); }
 .visual-summary-metrics > div { display: flex; flex-direction: row; gap: 9px; align-items: baseline; padding: 0; border: none; background: transparent; }
 .visual-summary-metrics strong { font-size: 20px; }
@@ -21,6 +21,7 @@
 html:has(.people-detail-dialog[open]) { overflow: hidden; }
 .visual-search-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 20px 0; }
 @media (max-width: 1050px) { .visual-search-results { grid-template-columns: 1fr; } }
+@media (max-width: 959px) { .v3-hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0; } }
 @media (min-width: 768px) and (max-width: 959px) {
   .VPNavBar .VPNavBarMenu .VPNavBarMenuLink,
   .VPNavBar .VPNavBarMenu .VPNavBarMenuGroup > .button { padding-left: 8px; padding-right: 8px; }
@@ -29,5 +30,8 @@ html:has(.people-detail-dialog[open]) { overflow: hidden; }
   .visual-summary-metrics { gap: 10px 20px; }
   .visual-summary-metrics strong { font-size: 18px; }
   .v3-hero h1, .v3-page-heading h1 { font-size: 30px; }
+  .v3-dashboard[data-mode='home'] { padding-top: 20px; }
+  .v3-hero { gap: 16px; margin-bottom: 16px; padding-top: 0; padding-bottom: 18px; }
+  .v3-hero-actions a { padding-inline: 8px; font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { .people-grid article { transition: none !important; } }

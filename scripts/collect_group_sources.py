@@ -202,13 +202,14 @@ def main() -> None:
             "url": url,
             "source_type": source_type,
             "attribution_grade": grade,
-            "last_checked": now,
+            "last_checked": prior.get("last_checked"),
+            "last_processed_at": now,
             "last_success": prior.get("last_success"),
             "consecutive_failures": prior.get("consecutive_failures", 0),
             "content_hash": prior.get("content_hash"),
             "known_links": prior.get("known_links", []),
             "status": prior.get("status", "unverified"),
-            "error": None,
+            "error": prior.get("error"),
             "last_failure_date": prior.get("last_failure_date"),
         }
         try:
@@ -216,8 +217,11 @@ def main() -> None:
             raw_dir.mkdir(parents=True, exist_ok=True)
             raw_path = raw_dir / f"{sid.removeprefix('source:')}-{args.as_of}.html"
             if raw_path.exists():
+                row["fetch_mode"] = "cache"
                 body, content_type = raw_path.read_bytes(), "text/html"
             else:
+                row["fetch_mode"] = "network"
+                row["last_checked"] = datetime.now(timezone.utc).isoformat()
                 body, content_type = fetch(url, args.timeout)
             digest = hashlib.sha256(body).hexdigest()
             text = body.decode("utf-8", errors="replace")
@@ -235,6 +239,8 @@ def main() -> None:
                 parsed_links.extend({**item, "url": canonical_url(item["url"])} for item in adapted["links"])
             row.update({key: adapted.get(key) for key in ["parser_status", "content_state", "empty_verified", "resource_urls", "resource_hashes"]})
             unique = {item["url"]: item for item in parsed_links}
+            if not unique and not row.get("empty_verified"):
+                row.update(parser_status="partial", content_state="no_verified_research_links")
             old_links = set(row["known_links"])
             new_links = list(unique.values()) if args.reemit_known else [item for key, item in unique.items() if key not in old_links]
             if not args.bootstrap:
@@ -278,14 +284,25 @@ def main() -> None:
             raw_path.write_bytes(body)
             row.update(
                 {
-                    "last_success": now,
-                    "consecutive_failures": 0,
                     "content_hash": digest,
                     "known_links": sorted(set(row["known_links"]) | set(unique)),
-                    "status": "partial" if adapted.get("parser_status") == "partial" else "healthy",
-                    "last_failure_date": None,
                 }
             )
+            if row["fetch_mode"] == "network":
+                row.update(
+                    last_success=row["last_checked"],
+                    consecutive_failures=0,
+                    status="partial" if row.get("parser_status") == "partial" else "healthy",
+                    error=None,
+                    last_failure_date=None,
+                )
+            elif row["status"] == "unverified" or (
+                row["status"] == "healthy" and (
+                    not row["last_checked"] or not row["last_success"] or row.get("parser_status") == "partial"
+                )
+            ):
+                # Parsing a cache can expose gaps, but cannot prove network recovery.
+                row["status"] = "partial"
             print(f"group source {index}/{len(sources)} ok: {org['display_name']} {kind} (+{len(new_links)})")
         except Exception as exc:
             already_failed_this_snapshot = str(prior.get("last_checked") or "").startswith(args.as_of)

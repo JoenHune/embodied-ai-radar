@@ -1,26 +1,29 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { withBase } from 'vitepress'
 import { publicationEventDate } from '../lib/dates'
 import ResearchFeed from './ResearchFeed.vue'
+import { createPulseSource, loadPulseSource } from '../lib/pulse-sources.mjs'
 
-const organizations = ref<any[]>([])
+const sources = reactive({ organizations: createPulseSource(), events: createPulseSource() })
+const organizations = computed(() => sources.organizations.rows)
+const publishedEvents = computed(() => sources.events.rows)
+const sourceKinds = ['organizations', 'events'] as const
+const sourceLabels = { organizations: '组织发布记录', events: '证据升级记录' }
+const allSourcesReady = computed(() => sourceKinds.every(kind => sources[kind].loaded && !sources[kind].loading && !sources[kind].error))
+const sourcesLoading = computed(() => sourceKinds.some(kind => sources[kind].loading))
+const controller = new AbortController()
+const loadSource = (kind: typeof sourceKinds[number]) => loadPulseSource(sources[kind], withBase(kind === 'organizations' ? '/api/v1/organization-overview.json' : '/api/v1/evidence-events.json'), kind, { signal: controller.signal })
 const selected = ref('all')
 const page = ref(0)
 const pageSize = 30
-const publishedEvents = ref<any[]>([])
 const eventLabels: Record<string, string> = { paper: '论文', preprint: '预印本', technical_report: '技术报告', model_release: '模型发布', repository: '开源仓库', code: '代码', dataset: '数据集', deployment: '部署', demo: '演示', accepted: '同行评审确认', published: '正式出版', acceptance: '同行评审确认', accepted_peer_reviewed: '同行评审确认', publication: '正式出版', published_proceedings: '正式出版', independent_replication: '独立复现' }
 const strategicTypes = new Set(['demo', 'deployment', 'hiring', 'personnel_change', 'organization_change', 'funding'])
 ;['strategic_partnership', 'deployment_update', 'technology_deployment_update'].forEach(type => strategicTypes.add(type))
 const contextTypes = new Set(['research_explainer', 'code_release'])
 Object.assign(eventLabels, { strategic_partnership: '战略合作', deployment_update: '部署进展（公司披露）', technology_deployment_update: '技术栈与部署观察', research_explainer: '既有研究解读', code_release: '软件版本更新' })
-onMounted(async () => {
-  try { const response = await fetch(withBase('/api/v1/organization-overview.json')); if (response.ok) organizations.value = (await response.json()).rows || [] } catch { /* Individual event sources remain accessible. */ }
-  try {
-    const response = await fetch(withBase('/api/v1/evidence-events.json'))
-    if (response.ok) { const body = await response.json(); publishedEvents.value = Array.isArray(body) ? body : body.events || [] }
-  } catch { /* The registered organization snapshots remain available offline. */ }
-})
+onMounted(() => { sourceKinds.forEach(kind => { void loadSource(kind) }) })
+onBeforeUnmount(() => controller.abort())
 const events = computed(() => {
   const seen = new Set<string>()
   const orgById = new Map(organizations.value.map(org => [org.organization_id, org]))
@@ -40,6 +43,7 @@ const events = computed(() => {
 })
 const shownEvents = computed(() => events.value.slice(page.value * pageSize, (page.value + 1) * pageSize))
 const selectType = (value: string) => { selected.value = value; page.value = 0 }
+watch(() => events.value.length, count => { page.value = Math.min(page.value, Math.max(0, Math.ceil(count / pageSize) - 1)) })
 </script>
 
 <template>
@@ -60,8 +64,12 @@ const selectType = (value: string) => { selected.value = value; page.value = 0 }
     <div class="v3-pulse-filters" aria-label="动态类型筛选">
       <button v-for="item in [['all','全部'],['research','研究发布'],['validation','证据升级'],['preprint','论文/预印本'],['technical_report','技术报告'],['model_release','模型发布'],['repository','开源仓库'],['context','版本更新与解读'],['strategic','战略观察'],['review','待核验记录']]" :key="item[0]" type="button" :aria-pressed="selected === item[0]" @click="selectType(item[0])">{{ item[1] }}</button>
     </div>
-    <div class="v3-pagination"><span role="status">共 {{ events.length }} 项 · 第 {{ page + 1 }} / {{ Math.max(1, Math.ceil(events.length / pageSize)) }} 页</span><button type="button" :disabled="page === 0" @click="page--">上一页</button><button type="button" :disabled="(page + 1) * pageSize >= events.length" @click="page++">下一页</button></div>
-    <section class="v3-pulse-list" aria-live="polite">
+    <div v-for="kind in sourceKinds" :key="kind">
+      <p v-if="sources[kind].loading" role="status">正在读取{{ sourceLabels[kind] }}……</p>
+      <p v-else-if="sources[kind].error" class="v3-error" role="alert">{{ sources[kind].error }} <button type="button" @click="loadSource(kind)">重试{{ sourceLabels[kind] }}</button></p>
+    </div>
+    <div v-if="events.length || allSourcesReady" class="v3-pagination"><span role="status">{{ allSourcesReady ? '共' : '当前已载入' }} {{ events.length }} 项 · 第 {{ page + 1 }} / {{ Math.max(1, Math.ceil(events.length / pageSize)) }} 页</span><button type="button" :disabled="page === 0" @click="page--">上一页</button><button type="button" :disabled="(page + 1) * pageSize >= events.length" @click="page++">下一页</button></div>
+    <section class="v3-pulse-list" aria-live="polite" :aria-busy="sourcesLoading">
       <article v-for="event in shownEvents" :key="event.event_id">
         <time>{{ publicationEventDate(event) }}</time>
         <div>
@@ -73,7 +81,7 @@ const selectType = (value: string) => { selected.value = value; page.value = 0 }
           <a v-if="event.work_id" :href="withBase(`/database/?ids=${encodeURIComponent(event.work_id)}`)" class="v3-pulse-evidence-link">对应研究及全部版本</a>
         </div>
       </article>
-      <p v-if="!events.length" class="v3-empty">当前筛选下没有已核验变化。</p>
+      <p v-if="allSourcesReady && !events.length" class="v3-empty">{{ selected === 'review' ? '当前筛选下没有待核验记录。' : '当前筛选下没有已核验变化。' }}</p>
     </section>
     </details>
   </div>

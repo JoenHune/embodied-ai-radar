@@ -11,6 +11,7 @@ import EvidenceReadingQueue from './EvidenceReadingQueue.vue'
 import ReportTextEvidence from './ReportTextEvidence.vue'
 import ResearchStatusNotice from './ResearchStatusNotice.vue'
 import SourceConflictNotice from './SourceConflictNotice.vue'
+import ResearchBrief from './ResearchBrief.vue'
 const ReportCoverage = defineAsyncComponent(() => import('./ReportCoverage.vue'))
 const HistoricalEditorial = defineAsyncComponent(() => import('./HistoricalEditorial.vue'))
 const ResearchFeed = defineAsyncComponent(() => import('./ResearchFeed.vue'))
@@ -20,7 +21,7 @@ import rawOverview from '../../data/v3-overview.json'
 import { eventDate, eventMonth, publicationEventDate } from '../lib/dates'
 import { completeMonthRange, monthlyValueLabel, splitMonthlySeries } from '../lib/monthlySeries'
 import { heatmapScale } from '../lib/heatmap-scale.mjs'
-import { evidenceIds, evidenceSearchParams } from '../lib/evidence-links.mjs'
+import { cooccurrenceParams, evidenceIds, evidenceSearchParams } from '../lib/evidence-links.mjs'
 import { monthHistoryTarget, monthRequestIsCurrent, resolveMonthFromUrl, type MonthNavigationSource } from '../lib/month-history.mjs'
 
 echarts.use([
@@ -77,6 +78,7 @@ const databaseUrl = (ids: string[] = [], params: Record<string, string> = {}) =>
   const query = evidenceSearchParams(ids, monthlySnapshot.value.evidence_id_to_work_id || {}, params)
   return withBase(`/database/?${query}`)
 }
+const cooccurrenceUrl = (source: string, target: string) => databaseUrl([], cooccurrenceParams(source, target, trends.months))
 const signalIsReviewed = (row: any) => row.assessment_status !== 'retrieval_only' && evidenceIds(row).length > 0
 const displayText = (value: any): string => typeof value === 'string' ? value : value?.text || value?.summary_zh || value?.summary || value?.question || value?.title || value?.label || ''
 const coverageFieldLabels: Record<string, string> = { included_works: '纳入工作', strict_peer_reviewed: '同行评审', technical_reports: '技术报告', classification_pending: '待分类', works_with_abstract: '有摘要工作', candidate_works: '候选工作', excluded_works: '排除工作' }
@@ -340,7 +342,7 @@ const cooccurrence = useEChart(() => {
   }
 }, (chart) => chart.on('click', (params: any) => {
   const [x, y] = params.data || []
-  if (x !== undefined && x !== y) window.location.href = databaseUrl([], { directions: `${trends.directions[x].code},${trends.directions[y].code}` })
+  if (x !== undefined && x !== y) window.location.href = cooccurrenceUrl(trends.directions[x].code, trends.directions[y].code)
 }))
 
 const monthDelta = useEChart(() => {
@@ -584,7 +586,7 @@ onBeforeUnmount(() => {
       <div>
         <p class="v3-eyebrow">EMBODIED AI RESEARCH INTELLIGENCE</p>
         <h1>具身智能研究雷达</h1>
-        <p class="v3-hero-copy">看清研究方向如何变化，沿着图文与人物回到原始证据。</p>
+        <p class="v3-hero-copy">跟踪研究方向、团队进展与关键证据。</p>
       </div>
       <div class="v3-hero-actions">
         <a class="v3-primary-action" :href="withBase('/trends/')">查看研究趋势</a>
@@ -593,12 +595,15 @@ onBeforeUnmount(() => {
     </header>
 
     <nav v-if="mode === 'home'" class="v3-research-shortcuts" aria-label="近期研究与专题入口">
-      <a :href="withBase(`/monthly/?month=${manifest.provisional_month}`)">本月 {{ manifest.provisional_month }} <span>暂行</span></a>
+      <a :href="withBase(`/monthly/?month=${manifest.provisional_month}`)">{{ manifest.provisional_month }} <span>暂行数据</span></a>
+      <a :href="withBase('/pulse/')">研究动态 →</a>
       <a :href="withBase('/hardware/')">研究设备与使用证据 →</a>
       <a :href="withBase('/trends/loco-manip/')">移动与全身操作 →</a>
     </nav>
 
-    <div v-if="overview.editorialStatus.status !== 'llm_complete'" class="v3-status-banner" role="status">
+    <ResearchBrief v-if="mode === 'home'" :overview="overview" />
+
+    <div v-if="mode !== 'home' && overview.editorialStatus.status !== 'llm_complete'" class="v3-status-banner" role="status">
       <template v-if="overview.editorialStatus.status === 'partial'">已生成并通过结构与引用校验的中文月报 {{ overview.editorialStatus.completed_months.length }} / {{ manifest.complete_months.length }} 个月；其余月份仍为数据版。内容校验不等于独立研究验证。</template>
       <template v-else>当前为数据版；统计与公开证据可查，自动中文研究总结尚未全部生成。覆盖缺口见各月说明。</template>
     </div>
@@ -611,7 +616,7 @@ onBeforeUnmount(() => {
       <div><strong>{{ number(manifest.counts.t0_organizations) }}</strong><span>T0 核心研究组</span></div>
     </section>
     <DirectionShareOverview v-if="mode === 'home'" :snapshot="latestComplete" @direction="(code: string) => inspectDirection(code, latestComplete.month)" />
-    <ResearchFeed v-if="mode === 'home'" id="research-feed" title="值得展开看的研究与报告" :month="visualFeedMonth" :direction="visualFeedDirection" :limit="3" @month="(value: string) => visualFeedMonth = value === 'featured' ? '' : value" @direction="(value: string) => visualFeedDirection = value" />
+    <ResearchFeed v-if="mode === 'home'" id="research-feed" title="图文研究精选" :month="visualFeedMonth" :direction="visualFeedDirection" :limit="3" @month="(value: string) => visualFeedMonth = value === 'featured' ? '' : value" @direction="(value: string) => visualFeedDirection = value" />
 
     <div v-if="mode === 'monthly'" class="v3-page-heading">
       <div>
@@ -711,9 +716,9 @@ onBeforeUnmount(() => {
       <ChartFrame title="方向共现矩阵" description="同一工作命中的多方向关系；用于发现融合路线，不表示方向迁移" :height="560">
         <div :ref="cooccurrence.element" class="v3-desktop-chart" role="img" aria-label="D1 到 D15 共现矩阵" />
         <div class="v3-mobile-org-list">
-          <a v-for="row in [...trends.cooccurrence].sort((a: any, b: any) => b.count - a.count)" :key="`${row.source}-${row.target}`" :href="databaseUrl([], { directions: `${row.source},${row.target}` })" class="v3-relation-row"><strong>{{ row.source }} × {{ row.target }}</strong><span>{{ number(row.count) }} 项共同命中</span></a>
+          <a v-for="row in [...trends.cooccurrence].sort((a: any, b: any) => b.count - a.count)" :key="`${row.source}-${row.target}`" :href="cooccurrenceUrl(row.source, row.target)" class="v3-relation-row"><strong>{{ row.source }} × {{ row.target }}</strong><span>{{ number(row.count) }} 项共同命中</span></a>
         </div>
-        <template #table><table><thead><tr><th>方向组合</th><th>共同命中工作</th></tr></thead><tbody><tr v-for="row in trends.cooccurrence" :key="`${row.source}-${row.target}`"><td>{{ row.source }} × {{ row.target }}</td><td><a :href="databaseUrl([], { directions: `${row.source},${row.target}` })">{{ number(row.count) }}</a></td></tr></tbody></table></template>
+        <template #table><table><thead><tr><th>方向组合</th><th>共同命中工作</th></tr></thead><tbody><tr v-for="row in trends.cooccurrence" :key="`${row.source}-${row.target}`"><td>{{ row.source }} × {{ row.target }}</td><td><a :href="cooccurrenceUrl(row.source, row.target)">{{ number(row.count) }}</a></td></tr></tbody></table></template>
       </ChartFrame>
     </template>
 
