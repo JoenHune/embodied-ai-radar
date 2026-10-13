@@ -61,7 +61,7 @@ def git(*args: str) -> str:
 
 def run(command: list[str], env: dict | None = None) -> None:
     print("Running " + " ".join(command), flush=True)
-    if command[:2]==['npm','test']:
+    if command[:2]==['npm','test'] or command[:3]==['npm','run','test:v3']:
         env={k:os.environ[k] for k in ('PATH','TMPDIR','TZ','V3_PYTHON') if k in os.environ}
         env.update(PYTHONNOUSERSITE='1',GIT_CONFIG_GLOBAL='/dev/null',GIT_CONFIG_SYSTEM='/dev/null')
     remaining=remaining_pipeline_budget()
@@ -73,6 +73,15 @@ def run(command: list[str], env: dict | None = None) -> None:
         if why: raise RuntimeError(why)
         if remaining<=0: raise RuntimeError('WeeklyPipelineBudgetExceeded')
         run_process(command,cwd=ROOT,env=env,timeout=min(remaining,1800))
+
+
+def verify_prepared_site():
+    """The npm test checks, without re-exporting the already prepared catalog."""
+    commands = [['npm','run','test:v3'], ['npm','run','v3:audit'], ['npm','run','audit:groups'],
+                ['npm','run','typecheck'], [str(ROOT/'node_modules/.bin/vitepress'),'build','docs'],
+                ['npm','run','v3:search'], ['npm','run','v3:audit-site'], ['npm','run','v3:audit-search']]
+    for command in commands:
+        run(command)
 
 
 def week_context(now: datetime) -> dict:
@@ -946,6 +955,7 @@ def main(argv=None) -> int:
     parser.add_argument('--resume-owned',action='store_true',help='Resume only recorded unchanged data from this checkout')
     parser.add_argument('--resume-collected',type=Path,help='Reuse a failed local collection audit without contacting research sources')
     parser.add_argument('--resume-ingested-hash',help='Validate this exact saved catalog and continue after ingestion')
+    parser.add_argument('--resume-exported',action='store_true',help='Verify the completed API and SQLite export and continue remaining checks')
     args = parser.parse_args(argv)
     if args.publish and args.dry_run:
         parser.error("--publish and --dry-run are mutually exclusive")
@@ -954,6 +964,8 @@ def main(argv=None) -> int:
     resumed_audit = None
     if args.resume_ingested_hash and (not args.resume_collected or not re.fullmatch(r'[0-9a-f]{64}', args.resume_ingested_hash)):
         parser.error('Saved catalog resume requires --resume-collected and its exact SHA256 catalog hash')
+    if args.resume_exported and not args.resume_ingested_hash:
+        parser.error('Export resume requires --resume-ingested-hash and its owned recovery audit')
     if args.resume_collected:
         if not (args.publish and args.data_only and args.resume_owned):
             parser.error('Offline collection resume requires --publish --data-only --resume-owned')
@@ -1043,8 +1055,11 @@ def main(argv=None) -> int:
                     status_owned_hashes["data/weekly-v3/source-coverage.json"] = hashlib.sha256((ROOT / "data/weekly-v3/source-coverage.json").read_bytes()).hexdigest()
                 _verify_catalog_unchanged_before_ingest(checkpoint)
                 if args.resume_ingested_hash:
-                    run([sys.executable, str(ROOT / 'scripts/verify_catalog_checkpoint.py'), '--catalog', str(ROOT / 'data/catalog'),
-                         '--expected-hash', args.resume_ingested_hash, '--as-of', effective_cutoff])
+                    proof = [sys.executable, str(ROOT / 'scripts/verify_catalog_checkpoint.py'), '--catalog', str(ROOT / 'data/catalog'),
+                             '--expected-hash', args.resume_ingested_hash, '--as-of', effective_cutoff]
+                    if args.resume_exported:
+                        proof.extend(['--export-root', str(ROOT)])
+                    run(proof)
                     audit.update(resumed_ingested_catalog_hash=args.resume_ingested_hash, completed_stage='ingest')
                     write_json(audit_path, audit)
                 else:
@@ -1059,14 +1074,19 @@ def main(argv=None) -> int:
                     unchanged = previous.get("research_content_hash") == content_hash({"state": state, "summary_mode": previous.get("summary_mode")})
                     if unchanged and previous.get("coverage_hash") == content_hash(coverage):
                         return _finish_status_audit(checkpoint, generated_after_ingest, status_owned_hashes, context, previous, audit, audit_path, publish=args.publish)
-                run(["npm", "run", "v3:legacy-editorial"])
-                if not args.data_only:
-                    # Exactly one worker invocation; it owns retries/fallback.
-                    run(["npm", "run", "v3:editorial"])
-                run(["npm", "run", "v3:export", "--", "--persist-derived"])
+                if not args.resume_exported:
+                    run(["npm", "run", "v3:legacy-editorial"])
+                    if not args.data_only:
+                        # Exactly one worker invocation; it owns retries/fallback.
+                        run(["npm", "run", "v3:editorial"])
+                    run(["npm", "run", "v3:export", "--", "--persist-derived"])
+                audit.update(completed_stage='export')
+                write_json(audit_path, audit)
+                run([sys.executable, str(ROOT / 'scripts/export_token_free_public.py')])
+                run([sys.executable, str(ROOT / 'scripts/build_hardware_explorer.py')])
                 run(["npm", "run", "v3:site"])
                 weekly_digest(context, now, coverage=coverage)
-                run(["npm", "test"])
+                verify_prepared_site()
                 generated_after_verification = generated_hashes(checkpoint)
                 manifest = read_json(ROOT / "docs/public/api/v1/catalog-manifest.json", {})
                 editorial_completion = published_editorial_completion(manifest, read_json(ROOT / "data/editorial/status.json", {}))

@@ -8,10 +8,26 @@ import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from catalog_store import save_catalog
-from verify_catalog_checkpoint import verify_checkpoint
+from verify_catalog_checkpoint import verify_checkpoint, verify_export
+from sqlite_download import sqlite_export
 
 
 class VerifyCheckpointTest(unittest.TestCase):
+    def test_export_resume_rechecks_coverage_and_actual_sqlite_zip_bytes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); api = root / 'docs/public/api/v1'; api.mkdir(parents=True)
+            coverage = {'status': 'partial', 'available_data_through': '2026-10-09'}
+            (root / 'data/weekly-v3').mkdir(parents=True)
+            (api / 'source-coverage.json').write_text(json.dumps(coverage))
+            (root / 'data/weekly-v3/source-coverage.json').write_text(json.dumps(coverage))
+            manifest = {'catalog_hash': 'b'*64, 'data_through': '2026-10-09', 'counts': {'works': 1}}
+            with sqlite_export(root, root/'docs/public/downloads', api/'catalog-manifest.json', manifest) as connection:
+                connection.execute('CREATE TABLE works (id TEXT)')
+                connection.execute('INSERT INTO works VALUES (?)', ('paper',))
+            self.assertEqual(verify_export(root, 'b'*64, '2026-10-09')['status'], 'export_checkpoint_verified')
+            (root/'docs/public/downloads/radar.sqlite.zip').write_bytes(b'corrupted')
+            with self.assertRaises(ValueError): verify_export(root, 'b'*64, '2026-10-09')
+
     def fixture(self, root):
         return save_catalog(root, {'works': [{'work_id': 'arxiv:2601.00001', 'title': 'Robot paper'}]}, {'data_through': '2026-10-09'})
 

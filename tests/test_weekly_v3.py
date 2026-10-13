@@ -28,6 +28,33 @@ feishu = module("publish_group_weekly_to_feishu")
 
 
 class WeeklyTests(unittest.TestCase):
+    def test_prepared_site_retains_all_checks_without_duplicate_preparation(self):
+        commands = []
+        with patch.object(weekly, 'run', side_effect=lambda command: commands.append(command)):
+            weekly.verify_prepared_site()
+        self.assertEqual([cmd[-1] for cmd in commands if cmd[:2] == ['npm','run']],
+                         ['test:v3','v3:audit','audit:groups','typecheck','v3:search','v3:audit-site','v3:audit-search'])
+        self.assertTrue(any(cmd[-2:] == ['build','docs'] for cmd in commands))
+        self.assertFalse(any('v3:prepare' in cmd or 'v3:export' in cmd for cmd in commands))
+
+    def test_completed_export_resume_skips_collect_ingest_editorial_and_export(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); context = weekly.week_context(datetime.now(timezone.utc)); cutoff = date.fromisoformat(context['until'])
+            audit = root / 'logs/weekly-v3/runs/failed.json'; audit.parent.mkdir(parents=True)
+            audit.write_text(json.dumps({'status': 'failed', 'mode': 'local', 'week': context['week'], 'run_at': '2026-01-01T00:00:00Z',
+                                         'requested_source_cutoff': cutoff.isoformat(), 'source_checks': [{'source': name, 'status': 'failed', 'complete': False} for name in weekly.EXPECTED_SOURCES]}))
+            (root / 'data/catalog').mkdir(parents=True)
+            (root / 'data/catalog/manifest.json').write_text(json.dumps({'data_through': cutoff.isoformat(), 'catalog_hash': 'b'*64}))
+            commands = []
+            with patch.object(weekly, 'ROOT', root), patch.object(weekly, 'git', side_effect=['main', '', str(root/'lock')]), patch.object(weekly, 'owned_resume', return_value=True), patch.object(weekly, 'run', side_effect=lambda command: commands.append(command)), patch.object(weekly, 'collect_sources') as collect, patch.object(weekly, 'weekly_digest'), patch.object(weekly, 'verify_prepared_site', side_effect=RuntimeError('fixture stop before validation')), contextlib.redirect_stdout(io.StringIO()):
+                with self.assertRaisesRegex(RuntimeError, 'fixture stop before validation'):
+                    weekly.main(['--publish','--data-only','--resume-owned','--resume-collected',str(audit),'--resume-ingested-hash','b'*64,'--resume-exported','--as-of',cutoff.isoformat()])
+            collect.assert_not_called()
+            self.assertTrue(any('--export-root' in cmd for cmd in commands))
+            for step in ('v3:ingest','v3:legacy-editorial','v3:export'):
+                self.assertFalse(any(step in cmd for cmd in commands))
+            self.assertTrue(any('v3:site' in cmd for cmd in commands))
+
     def test_verified_catalog_resume_invokes_readonly_proof_and_skips_ingestion(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory); context = weekly.week_context(datetime.now(timezone.utc)); cutoff = date.fromisoformat(context['until'])

@@ -7,6 +7,22 @@ from pathlib import Path
 from catalog_store import TABLES, read_table, table_fingerprint, fingerprint
 
 
+def verify_export(root: Path, expected_hash: str, as_of: str) -> dict:
+    from sqlite_download import SQLITE_DOWNLOAD_URL, verify_archive, local_sqlite_path
+    manifest = json.loads((root / 'docs/public/api/v1/catalog-manifest.json').read_text())
+    if manifest.get('catalog_hash') != expected_hash or manifest.get('data_through') != as_of:
+        raise ValueError('Export checkpoint hash or cutoff mismatch')
+    coverage = json.loads((root / 'docs/public/api/v1/source-coverage.json').read_text())
+    if coverage != json.loads((root / 'data/weekly-v3/source-coverage.json').read_text()):
+        raise ValueError('Export checkpoint source coverage mismatch')
+    downloads = manifest.get('downloads', {})
+    if downloads.get('sqlite') != SQLITE_DOWNLOAD_URL:
+        raise ValueError('Export checkpoint SQLite path mismatch')
+    integrity = verify_archive(root / 'docs/public/downloads/radar.sqlite.zip', downloads['sqlite_integrity'], raw_path=local_sqlite_path(root))
+    return {'status': 'export_checkpoint_verified', 'catalog_hash': expected_hash, 'data_through': as_of,
+            'counts': manifest['counts'], 'sqlite': integrity}
+
+
 def verify_checkpoint(root: Path, expected_hash: str, as_of: str) -> dict:
     path = root / 'manifest.json'
     original = path.read_bytes()
@@ -34,8 +50,11 @@ def main(argv=None):
     parser.add_argument('--catalog', type=Path, required=True)
     parser.add_argument('--expected-hash', required=True)
     parser.add_argument('--as-of', required=True)
+    parser.add_argument('--export-root', type=Path)
     args = parser.parse_args(argv)
     print(json.dumps(verify_checkpoint(args.catalog, args.expected_hash, args.as_of)), flush=True)
+    if args.export_root:
+        print(json.dumps(verify_export(args.export_root, args.expected_hash, args.as_of)), flush=True)
     return 0
 
 
