@@ -16,7 +16,7 @@ import time
 from contextlib import closing
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import quote, unquote, urlunsplit, urlsplit
 
 from collect_hardware_sources import atomic_write, encode
 from prepare_fulltext_reading import latest_observations
@@ -72,15 +72,26 @@ def safe_arxiv_url(value, *, fragment=False):
     if not isinstance(value, str) or len(value) > 512:
         raise ValueError("invalid_arxiv_url")
     parsed = urlsplit(value)
+    normalized_fragment=parsed.fragment
+    if fragment and parsed.fragment:
+        try:
+            decoded=unquote(parsed.fragment,errors='strict')
+        except (UnicodeError,ValueError):
+            raise ValueError('invalid_arxiv_url') from None
+        if not re.fullmatch(r'[A-Za-z0-9_.:\\-]{1,256}',decoded):
+            raise ValueError('invalid_arxiv_url')
+        normalized_fragment=quote(decoded,safe='_.:-')
     if (parsed.scheme != "https" or parsed.hostname not in {"arxiv.org", "www.arxiv.org"}
             or parsed.username or parsed.password or parsed.query or
             (parsed.fragment and not fragment) or
             (parsed.fragment and fragment and
-             not re.fullmatch(r"[A-Za-z0-9_.:-]{1,256}", parsed.fragment)) or
+             not re.fullmatch(r"(?:[A-Za-z0-9_.:-]|%5C){1,256}", normalized_fragment)) or
             not parsed.path.startswith("/html/") or
             not re.fullmatch(r"/html/(?:\d{4}\.\d{4,5}|[A-Za-z][A-Za-z.\-]+/\d{7})(?:v[1-9]\d*)?", parsed.path)):
         raise ValueError("invalid_arxiv_url")
-    return value
+    normalized=urlunsplit((parsed.scheme,parsed.netloc,parsed.path,parsed.query,normalized_fragment))
+    if len(normalized)>512:raise ValueError('invalid_arxiv_url')
+    return normalized
 
 
 def safe_hash(value, *, optional=False):
