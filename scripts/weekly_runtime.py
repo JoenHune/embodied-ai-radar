@@ -141,6 +141,16 @@ def resource_reason():
         return 'resource_probe_failed'
     return None
 
+def wait_resource_headroom(seconds=60):
+    deadline=time.monotonic()+max(0,seconds)
+    why=resource_reason()
+    while why in {'cpu_headroom','logger_busy','logger_memory_reserve','pipeline_memory_budget'} and time.monotonic()<deadline:
+        print(json.dumps({'status':'waiting_resource_pressure','reason':why}),flush=True)
+        time.sleep(min(10,max(0,deadline-time.monotonic())))
+        why=resource_reason()
+    return why
+
+
 def bounded_sources(root, cutoff, now, baseline, *, source_seconds=300, total_seconds=1800):
     """One worker per source, with durable partial progress on interruption."""
     deadline=time.monotonic()+total_seconds
@@ -153,7 +163,8 @@ def bounded_sources(root, cutoff, now, baseline, *, source_seconds=300, total_se
     results=[]
     for source in ('arxiv','arxiv_research_status','publications','official_groups','corl'):
         remaining=deadline-time.monotonic()
-        why=resource_reason()
+        why=wait_resource_headroom(min(60,max(0,remaining)))
+        remaining=deadline-time.monotonic()
         if remaining<=0 or why:
             results.append({'source':source,'status':'failed','complete':False,
                             'error_type':why or 'TotalCollectionBudgetExceeded','source_data_through':None})

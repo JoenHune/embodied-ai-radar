@@ -20,7 +20,7 @@ import subprocess
 import sys
 import tempfile
 import time
-from weekly_runtime import bounded_sources, query_budget, QueryBudgetExpired, run_process, resource_reason, pipeline_budget, remaining_pipeline_budget, COLLECTION_MODE, owned_resume
+from weekly_runtime import bounded_sources, query_budget, QueryBudgetExpired, run_process, resource_reason, pipeline_budget, remaining_pipeline_budget, COLLECTION_MODE, owned_resume, wait_resource_headroom
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -68,7 +68,8 @@ def run(command: list[str], env: dict | None = None) -> None:
     if remaining is None:
         subprocess.run(command, cwd=ROOT, env=env, check=True)
     else:
-        why=resource_reason()
+        why=wait_resource_headroom(min(180,remaining))
+        remaining=remaining_pipeline_budget()
         if why: raise RuntimeError(why)
         if remaining<=0: raise RuntimeError('WeeklyPipelineBudgetExceeded')
         run_process(command,cwd=ROOT,env=env,timeout=min(remaining,1800))
@@ -162,7 +163,7 @@ def collect_arxiv(cutoff: date, now: datetime | None = None, *, bounded: bool = 
             try:
                 while total is None or offset < total:
                     if bounded:
-                        why=resource_reason()
+                        why=wait_resource_headroom(min(20,max(0,query_deadline-time.monotonic())))
                         if why: raise RuntimeError(why)
                         with query_budget(max(.01,query_deadline-time.monotonic())):
                             body=collector.fetch(query['id'],query['query'],month,offset,500)

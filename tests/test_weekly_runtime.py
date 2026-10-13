@@ -40,7 +40,7 @@ class RecoveryTests(unittest.TestCase):
             self.assertFalse(results[0]['complete']);self.assertIsNone(results[0]['source_data_through'])
             self.assertEqual(results[0]['observed_records'],2)
     def test_resource_pause_starts_no_workers_and_marks_every_source_incomplete(self):
-        with tempfile.TemporaryDirectory() as folder,patch.object(runtime,'resource_reason',return_value='logger_memory_reserve'),patch.object(runtime,'run_process') as worker:
+        with tempfile.TemporaryDirectory() as folder,patch.object(runtime,'wait_resource_headroom',return_value='logger_memory_reserve'),patch.object(runtime,'run_process') as worker:
             checks=runtime.bounded_sources(Path(folder),date(2026,10,12),datetime.now(timezone.utc),[])
             worker.assert_not_called();self.assertEqual(len(checks),5)
             self.assertTrue(all(not c['complete'] and c['error_type']=='logger_memory_reserve' for c in checks))
