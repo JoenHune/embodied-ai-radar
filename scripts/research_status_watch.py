@@ -124,7 +124,7 @@ def _date_key(notice):
 
 
 def watch_research_status(works, preprints, *, verified_notices=None, metadata_fetcher=None, status_fetcher=None,
-                          sleeper=time.sleep, observed_at=None, batch_size=200):
+                          sleeper=time.sleep, observed_at=None, batch_size=200, observation_clock=None):
     """Return coverage, candidates, review items, observations and new baselines.
 
     metadata_fetcher(ids) -> metadata row list or Atom XML. status_fetcher(url,
@@ -142,7 +142,7 @@ def watch_research_status(works, preprints, *, verified_notices=None, metadata_f
         stamp = datetime.fromisoformat(observed_at.replace("Z", "+00:00"))
         if stamp.tzinfo is None or stamp.utcoffset().total_seconds() != 0:
             raise ValueError("status_watch_observation_must_be_utc")
-    timestamp = lambda: observed_at or _now()
+    timestamp = lambda: observed_at or (observation_clock() if observation_clock else _now())
     metadata_fetcher, status_fetcher = metadata_fetcher or fetch_latest_metadata, status_fetcher or _fetch_status
     owners, owner_aliases, work_bases, notices = defaultdict(set), defaultdict(set), defaultdict(set), list(verified_notices or [])
     for work in works:
@@ -311,7 +311,7 @@ def watch_research_status(works, preprints, *, verified_notices=None, metadata_f
     missing = sorted(set(requested) - returned)
     metadata_complete = not missing and not unexpected and not duplicate_ids and not any(row["status"] != "complete" for row in batches) and not any(row["error_code"].startswith(("metadata_", "latest_version_", "ambiguous_registered_")) for row in reviews)
     state = "not_run" if not requested else "complete" if metadata_complete and not reviews and not status_failed else "partial" if returned else "failed"
-    return {"schema_version": "1", "checked_at": timestamp(),
+    return {"schema_version": "1", "checked_at": (observed_at or _now()) if observation_clock else timestamp(),
             "coverage": {"status": state, "metadata_complete": metadata_complete, "requested_count": len(requested), "returned_count": len(returned),
                          "missing_count": len(missing), "requested_ids": requested, "returned_ids": sorted(returned), "missing_ids": missing,
                          "unexpected_ids": sorted(unexpected), "duplicate_ids": sorted(duplicate_ids), "metadata_batches": batches,

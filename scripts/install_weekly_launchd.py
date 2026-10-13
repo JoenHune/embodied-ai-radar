@@ -30,6 +30,14 @@ def build_plist(root: Path, python: str, node: str, npm: str, env_file: Path, *,
     }
 
 
+def build_mini_plist(root,python,node,npm):
+    payload=build_plist(root,python,node,npm,Path('/unused'),loggerbot=False)
+    payload['ProgramArguments']=[python,str(root/'scripts/run_mini_weekly.py'),'--run']
+    payload['StartCalendarInterval']={'Weekday':1,'Hour':4,'Minute':0}
+    payload.update(Nice=15,LowPriorityIO=True)
+    return payload
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--install", action="store_true", help="Write and load the LaunchAgent after all preflight checks")
@@ -37,6 +45,7 @@ def main(argv=None) -> int:
     configuration = parser.add_mutually_exclusive_group()
     configuration.add_argument("--env-file", type=Path, default=Path.home() / ".config/embodied-ai-radar/runtime.env")
     configuration.add_argument("--loggerbot-env-file", type=Path, help="Reference an existing external LoggerBot configuration; only model fields are loaded")
+    parser.add_argument('--mini-data-only',action='store_true',help='Use the Mini-only data-only entry at Monday 04:00')
     args = parser.parse_args(argv)
     if args.install and args.dry_run:
         parser.error("--install and --dry-run are mutually exclusive")
@@ -52,10 +61,16 @@ def main(argv=None) -> int:
     if branch != "main": issues.append("the scheduled checkout must be main")
     configuration_file = args.loggerbot_env_file or args.env_file
     if configuration_file.resolve().is_relative_to(ROOT): issues.append("runtime credentials must be outside the repository")
-    payload = build_plist(ROOT, python, node, npm, configuration_file.resolve(), loggerbot=bool(args.loggerbot_env_file))
+    if args.mini_data_only:
+        from run_mini_weekly import preflight
+        issues.extend(preflight(ROOT))
+        payload=build_mini_plist(ROOT,python,node,npm)
+    else:
+        payload = build_plist(ROOT, python, node, npm, configuration_file.resolve(), loggerbot=bool(args.loggerbot_env_file))
+    schedule='Monday 04:00 Asia/Shanghai' if args.mini_data_only else 'Monday 00:00 Asia/Shanghai'
     target = Path.home() / "Library/LaunchAgents" / (LABEL + ".plist")
     if not args.install:
-        print(json.dumps({"mode": "dry_run", "schedule": "Monday 00:00 Asia/Shanghai", "target": str(target), "preflight_issues": issues,
+        print(json.dumps({"mode": "dry_run", "schedule": schedule, "target": str(target), "preflight_issues": issues,
                           "llm_configuration_present": configuration_file.exists(), "note": "No plist was written and no job was loaded. Missing LLM settings use the data-only fallback.", "plist": payload}, ensure_ascii=False, indent=2))
         return 0
     if issues:
@@ -72,7 +87,7 @@ def main(argv=None) -> int:
     target.write_bytes(content)
     subprocess.run(["plutil", "-lint", str(target)], check=True)
     subprocess.run(["launchctl", "bootstrap", domain, str(target)], check=True)
-    print(json.dumps({"status": "installed", "label": LABEL, "schedule": "Monday 00:00 Asia/Shanghai", "target": str(target)}, ensure_ascii=False))
+    print(json.dumps({"status": "installed", "label": LABEL, "schedule": schedule, "target": str(target)}, ensure_ascii=False))
     return 0
 
 

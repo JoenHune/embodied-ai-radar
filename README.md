@@ -92,6 +92,23 @@ python3 scripts/install_weekly_launchd.py --install
 
 更新保留三个不同时间：实际 UTC 运行时间、各来源采集截止时间和上一完整自然周的北京时间覆盖窗口。失败来源保留旧记录及失败状态；不能把“今天运行”写成“今天语料全部补齐”。arXiv 使用最近两月重叠增量，正式发表使用近两年会议索引和近 45 天期刊窗口，并按来源 ID 合并保存。
 
+### Mac mini 常驻数据周更
+
+Mini 入口使用独立、干净的 `main` 检出，保持实际周更时刻为北京时间周一 04:00。它显式运行 data-only，不加载本机模型或飞书凭据；推送后仍由原 Pages 成功部署及 verified 周快照门槛触发原飞书链。旧的 00:00／模型入口保留兼容，不与 Mini 入口同时安装。
+
+```bash
+python3 scripts/run_mini_weekly.py                 # 只读机型、分支、依赖预检
+python3 scripts/install_weekly_launchd.py --mini-data-only --dry-run
+python3 scripts/install_weekly_launchd.py --mini-data-only --install
+python3 scripts/run_mini_weekly.py --run           # 显式有界补更，不是预览
+```
+
+每源最多 300 秒、采集总预算 30 分钟、整条管线 90 分钟；arXiv 查询最多使用 45 秒网络预算，状态请求最多 30 秒。超时终止对应子进程组，保留截止日期和查询范围隔离的检查点。只有实际取回并校验的记录可提升可用日期；缺失、超时和覆盖不足仍显示 partial/failed。状态检查点保留原始观察时间，不用重试时间冒充新抓取。
+
+Mini 与旧硬件抽取合计资源须保留至少 50% 内存余量，CPU 繁忙度不超过 50%，管道 RSS 不超过 1280 MiB；资源不足只在安全边界暂停，不干预 Logger。失败后只允许哈希和基准提交仍匹配的已登记数据变化续跑，其他用户改动会拒绝继续。
+
+先验证 Mini 的真实运行及失败恢复，再移除云端周更 cron；手动 fallback 仍可保留。两端不得同时进行自动采集。日志及私有检查点分别位于 `logs/weekly-v3*` 和 `.research/weekly-v3/`。
+
 ### 本地 LLM 配置
 
 可通过环境变量提供 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL`；默认模型为 `gpt-5.6-sol`。LaunchAgent 默认从仓库外的 `~/.config/embodied-ai-radar/runtime.env` 读取这三个配置项，也可用 `--env-file /绝对路径/runtime.env` 指定。该文件不是 shell 脚本，变量值不执行命令，不进入仓库或 plist。

@@ -19,6 +19,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
+from weekly_runtime import bounded_sources, query_budget, QueryBudgetExpired, run_process, resource_reason, pipeline_budget, remaining_pipeline_budget, COLLECTION_MODE, owned_resume
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -59,7 +61,17 @@ def git(*args: str) -> str:
 
 def run(command: list[str], env: dict | None = None) -> None:
     print("Running " + " ".join(command), flush=True)
-    subprocess.run(command, cwd=ROOT, env=env, check=True)
+    if command[:2]==['npm','test']:
+        env={k:os.environ[k] for k in ('PATH','TMPDIR','TZ','V3_PYTHON') if k in os.environ}
+        env.update(PYTHONNOUSERSITE='1',GIT_CONFIG_GLOBAL='/dev/null',GIT_CONFIG_SYSTEM='/dev/null')
+    remaining=remaining_pipeline_budget()
+    if remaining is None:
+        subprocess.run(command, cwd=ROOT, env=env, check=True)
+    else:
+        why=resource_reason()
+        if why: raise RuntimeError(why)
+        if remaining<=0: raise RuntimeError('WeeklyPipelineBudgetExceeded')
+        run_process(command,cwd=ROOT,env=env,timeout=min(remaining,1800))
 
 
 def week_context(now: datetime) -> dict:
@@ -108,32 +120,67 @@ def _aggregate_check(source: str, checks: list[dict], *, observed_records=0, req
             "coverage_basis": "registered_source_query_scope_not_global_research_completeness"}
 
 
-def collect_arxiv(cutoff: date, now: datetime | None = None) -> dict:
+def collect_arxiv(cutoff: date, now: datetime | None = None, *, bounded: bool = False) -> dict:
     collector = importlib.import_module("collect_arxiv_v2")
     now = now or datetime.now(timezone.utc)
     base = getattr(collector, "_weekly_raw_root", collector.RAW)
     collector._weekly_raw_root = base
-    collector.RAW = base / "weekly" / now.strftime("%Y%m%dT%H%M%S%fZ")
+    scope=hashlib.sha256(json.dumps(collector.REGISTRY.get('arxiv_sources',{}),sort_keys=True).encode()).hexdigest()[:16]
+    collector.RAW = base / "weekly" / (cutoff.isoformat()+'-'+scope if bounded else now.strftime("%Y%m%dT%H%M%S%fZ"))
     collector.RAW.mkdir(parents=True, exist_ok=True)
     collector.REGISTRY["window"]["until"] = cutoff.isoformat()
     incoming, checks = {}, []
+    def progress():
+        if not bounded: return
+        partial = _aggregate_check('arxiv', checks, observed_records=len(incoming))
+        partial.update(source='arxiv',requested_cutoff=cutoff.isoformat(),complete=False,
+                       status='partial' if incoming else 'failed',source_data_through=None,
+                       last_observed_data_through=_last_observed(list(incoming.values()),cutoff))
+        result_path = ROOT/'.research/weekly-v3'/cutoff.isoformat()/'arxiv-result.json'
+        write_json(result_path,partial)
+        if incoming:
+            collector.classify(list(incoming.values()))
+            write_json(collector.OUTPUT,merge_records(read_json(collector.OUTPUT,[]),list(incoming.values()),'arxiv_id'),compact=True)
     for month in collection_months(cutoff):
         for query in collector.REGISTRY["arxiv_sources"]["queries"]:
             # Observe each page's advertised total ourselves: a short/empty
             # feed or a later failed page must not look like a complete query.
             batch, total, offset, error_type = [], None, 0, None
+            identity=hashlib.sha256(json.dumps({'query':query,'month':month,'cutoff':cutoff.isoformat(),'schema':1},sort_keys=True).encode()).hexdigest()
+            checkpoint=collector.RAW/(identity+'.checkpoint.json')
+            saved=read_json(checkpoint,{}) if bounded else {}
+            if saved.get('identity')==identity:
+                batch,total,offset=saved['records'],saved['total'],saved['offset']
+            def persist():
+                if bounded:
+                    write_json(checkpoint,{'identity':identity,'records':batch,'total':total,'offset':offset})
+                    for record in batch:
+                        incoming[record['arxiv_id']]=collector.merge_record(incoming.get(record['arxiv_id'],{}),record,query['id'])
+                    progress()
+            query_deadline=time.monotonic()+45
+            print(json.dumps({'status':'arxiv_query_started','month':month,'query_id':query['id'],'resumed_offset':offset}),flush=True)
             try:
                 while total is None or offset < total:
-                    body = collector.fetch(query["id"], query["query"], month, offset, 500)
+                    if bounded:
+                        why=resource_reason()
+                        if why: raise RuntimeError(why)
+                        with query_budget(max(.01,query_deadline-time.monotonic())):
+                            body=collector.fetch(query['id'],query['query'],month,offset,500)
+                    else:
+                        body = collector.fetch(query["id"], query["query"], month, offset, 500)
                     expected, page = collector.parse_feed(body)
                     if total is not None and expected != total:
-                        error_type = "ResultTotalChangedDuringPagination"
+                        raise RuntimeError("ResultTotalChangedDuringPagination")
                     total = expected
+                    ids=[r['arxiv_id'] for r in page]
+                    if len(set(ids))!=len(ids) or set(ids)&{r['arxiv_id'] for r in batch}:
+                        raise RuntimeError('DuplicateArxivPaginationIdentity')
                     batch.extend(page)
                     if not page:
                         break
                     offset += len(page)
-            except Exception as error:
+                    persist()
+            except (Exception, QueryBudgetExpired) as error:
                 error_type = type(error).__name__
             complete = total is not None and len(batch) >= total and error_type is None
             checks.append({"source_id": "arxiv:" + query["id"] + ":" + month, "query_id": query["id"],
@@ -141,6 +188,8 @@ def collect_arxiv(cutoff: date, now: datetime | None = None) -> dict:
                            "complete": complete, "expected_records": total, "observed_records": len(batch),
                            "last_observed_data_through": _last_observed(batch, cutoff),
                            "error_type": error_type or (None if complete else "IncompletePagination")})
+            persist()
+            print(json.dumps({"status":"arxiv_query_finished","month":month,"query_id":query["id"],"complete":complete,"observed_records":len(batch),"error_type":error_type}),flush=True)
             for record in batch:
                 incoming[record["arxiv_id"]] = collector.merge_record(incoming.get(record["arxiv_id"], {}), record, query["id"])
     collector.classify(list(incoming.values()))
@@ -169,18 +218,40 @@ def _publication_pages(collector, spec: dict, cutoff: date) -> list[dict]:
     return checks
 
 
-def collect_publications(cutoff: date, now: datetime) -> dict:
+def collect_publications(cutoff: date, now: datetime, *, bounded=False) -> dict:
     collector = importlib.import_module("collect_publications")
     collector.REGISTRY["window"] = {"from": (cutoff - timedelta(days=45)).isoformat(), "until": cutoff.isoformat()}
     # DBLP caches are intentionally fresh per run date, so a previous complete
     # yearly page cannot hide newly indexed papers. Crossref uses a 45-day overlap.
     base = getattr(collector, "_weekly_raw_root", collector.RAW)
     collector._weekly_raw_root = base
-    collector.RAW = base / "weekly" / now.strftime("%Y%m%dT%H%M%S%fZ")
+    scope=hashlib.sha256(json.dumps([collector.REGISTRY['conference_sources'],collector.REGISTRY['journal_sources']],sort_keys=True).encode()).hexdigest()[:16]
+    collector.RAW = base / "weekly" / (cutoff.isoformat()+'-'+scope if bounded else now.strftime("%Y%m%dT%H%M%S%fZ"))
     collector.RAW.mkdir(parents=True, exist_ok=True)
     incoming, checks = [], []
+    def progress():
+        if not bounded: return
+        result=_aggregate_check('publications',checks,observed_records=len(incoming))
+        result.update(source='publications',requested_cutoff=cutoff.isoformat(),complete=False,
+                      status='partial' if incoming else 'failed',source_data_through=None,
+                      last_observed_data_through=_last_observed(incoming,cutoff))
+        write_json(ROOT/'.research/weekly-v3'/cutoff.isoformat()/'publications-result.json',result)
+        if incoming:
+            rows=merge_records(read_json(collector.OUTPUT,[]),collector.deduplicate(incoming),'publication_id')
+            full=read_json(ROOT/'config/source-registry.json');full['window']['until']=cutoff.isoformat()
+            prior=collector.REGISTRY;collector.REGISTRY=full
+            collector.apply_classification(rows);collector.REGISTRY=prior
+            write_json(collector.OUTPUT,rows,compact=True)
     for source in collector.REGISTRY["conference_sources"] + collector.REGISTRY["journal_sources"]:
+        identity=hashlib.sha256(json.dumps({'source':source,'cutoff':cutoff.isoformat(),'schema':1},sort_keys=True).encode()).hexdigest()
+        checkpoint=collector.RAW/(identity+'.checkpoint.json')
+        saved=read_json(checkpoint,{}) if bounded else {}
+        if saved.get('identity')==identity and saved.get('check',{}).get('complete'):
+            incoming.extend(saved['rows']);checks.append(saved['check']);progress();continue
+        print(json.dumps({'status':'publication_source_started','source_id':source['venue']}),flush=True)
+        why=resource_reason() if bounded else None
         try:
+            if why:raise RuntimeError(why)
             if "dblp_stream" in source:
                 spec = {**source, "years": [year for year in source["years"] if cutoff.year - 1 <= year <= cutoff.year]}
                 batch = collector.collect_dblp(spec)
@@ -192,9 +263,14 @@ def collect_publications(cutoff: date, now: datetime) -> dict:
             checked = _aggregate_check(source["venue"], pages, observed_records=len(batch), requested_window={"years": spec["years"]} if "dblp_stream" in spec else dict(collector.REGISTRY["window"]))
             checks.append({**checked, "source_id": "publication:" + source["venue"], "source_data_through": cutoff.isoformat() if checked["complete"] else None,
                            "last_observed_data_through": _last_observed(batch, cutoff)})
+            if bounded:
+                write_json(checkpoint,{'identity':identity,'rows':batch,'check':checks[-1]})
         except Exception as error:
             checks.append({"source": source["venue"], "source_id": "publication:" + source["venue"], "status": "failed", "complete": False,
                            "requested_window": {"years": source["years"]} if "dblp_stream" in source else dict(collector.REGISTRY["window"]), "error_type": type(error).__name__})
+        progress()
+        print(json.dumps({'status':'publication_source_finished','source_id':source['venue'],'complete':checks[-1].get('complete'),'pause_reason':why}),flush=True)
+        if why:break
     result = _aggregate_check("publications", checks, observed_records=len(incoming), requested_window={"from": (cutoff - timedelta(days=45)).isoformat(), "until": cutoff.isoformat()})
     if not incoming and not any(row["status"] == "ok" for row in checks):
         return result
@@ -308,7 +384,7 @@ def _stage_status_candidates(candidates: list[dict], works: list[dict]) -> tuple
     return accepted, reviews
 
 
-def collect_research_status(cutoff: date, now: datetime, baseline: list[dict], *, metadata_fetcher=None, status_fetcher=None, sleeper=None) -> dict:
+def collect_research_status(cutoff: date, now: datetime, baseline: list[dict], *, metadata_fetcher=None, status_fetcher=None, sleeper=None, checkpointed=False) -> dict:
     """Persist independent status checks. None of their clocks advances corpus coverage."""
     from catalog_store import read_table
     from research_status_watch import watch_research_status
@@ -319,7 +395,17 @@ def collect_research_status(cutoff: date, now: datetime, baseline: list[dict], *
     kwargs = {"metadata_fetcher": metadata_fetcher, "status_fetcher": status_fetcher}
     if sleeper is not None:
         kwargs["sleeper"] = sleeper
+    response_times=[]
+    if checkpointed:
+        from weekly_status_cache import fetchers
+        from research_status_watch import fetch_latest_metadata,_fetch_status
+        mf,sf,clock,response_times=fetchers(ROOT/'.research/weekly-v3'/cutoff.isoformat()/'status-queries',cutoff.isoformat(),metadata_fetcher or fetch_latest_metadata,status_fetcher or _fetch_status)
+        kwargs.update(metadata_fetcher=mf,status_fetcher=sf,sleeper=lambda _:None,observation_clock=clock)
     result = watch_research_status(works, baseline, **kwargs)
+    if response_times:
+        result['coverage']['response_observed_from']=min(response_times)
+        result['coverage']['response_observed_until']=max(response_times)
+        result['coverage']['cutoff_scoped_checkpoint']=True
     accepted, stage_reviews = _stage_status_candidates(result["notice_candidates"], works)
     result["review_queue"].extend(stage_reviews)
     if stage_reviews:
@@ -350,6 +436,8 @@ def collect_research_status(cutoff: date, now: datetime, baseline: list[dict], *
                "expected_checks": len(checks), "completed_checks": sum(row["complete"] for row in checks),
                "consecutive_failures": failures, "failure_basis": "incomplete_status_coverage_not_necessarily_transport_failure",
                "last_success": last_success, "report_path": f"{folder}/{context['week']}/snapshot.json"}
+    if response_times:
+        summary.update(response_observed_from=min(response_times),response_observed_until=max(response_times),cutoff_scoped_checkpoint=True)
     run_id = now.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     run_folder = f"{folder}/{context['week']}/{run_id}"
     records = {
@@ -376,7 +464,7 @@ def collect_research_status(cutoff: date, now: datetime, baseline: list[dict], *
     return summary
 
 
-def collect_sources(cutoff: date, now: datetime, *, status_metadata_fetcher=None, status_fetcher=None, status_sleeper=None) -> list[dict]:
+def collect_sources(cutoff: date, now: datetime, *, status_metadata_fetcher=None, status_fetcher=None, status_sleeper=None, bounded=False, only_source=None, status_baseline_override=None) -> list[dict]:
     # Capture BEFORE collect_arxiv rewrites preprints; its fresh metadata must
     # never become the comparison baseline for this same status-watch run.
     try:
@@ -385,13 +473,18 @@ def collect_sources(cutoff: date, now: datetime, *, status_metadata_fetcher=None
         baseline_error = None
     except Exception as error:
         status_baseline, baseline_error = [], type(error).__name__
+    if status_baseline_override is not None:
+        status_baseline,baseline_error=status_baseline_override,None
+    if bounded or COLLECTION_MODE.get():
+        return bounded_sources(ROOT,cutoff,now,status_baseline)
     def status_check():
         if baseline_error:
             return {"source": "arxiv_research_status", "status": "failed", "complete": False, "source_data_through": None,
                     "error_type": "PrecollectionBaselineUnavailable", "checked_at": now.isoformat()}
-        return collect_research_status(cutoff, now, status_baseline, metadata_fetcher=status_metadata_fetcher, status_fetcher=status_fetcher, sleeper=status_sleeper)
+        return collect_research_status(cutoff, now, status_baseline, metadata_fetcher=status_metadata_fetcher, status_fetcher=status_fetcher, sleeper=status_sleeper, **({"checkpointed":True} if only_source else {}))
     checks = []
-    for name, callback in [("arxiv", lambda: collect_arxiv(cutoff, now)), ("arxiv_research_status", status_check), ("publications", lambda: collect_publications(cutoff, now))]:
+    for name, callback in [("arxiv", lambda: collect_arxiv(cutoff,now,bounded=True) if only_source else collect_arxiv(cutoff,now)), ("arxiv_research_status", status_check), ("publications", lambda: collect_publications(cutoff,now,bounded=True) if only_source else collect_publications(cutoff,now))]:
+        if only_source and name!=only_source: continue
         try:
             checks.append({"source": name, **callback(), "checked_at": datetime.now(timezone.utc).isoformat()})
         except Exception as error:
@@ -402,12 +495,14 @@ def collect_sources(cutoff: date, now: datetime, *, status_metadata_fetcher=None
         ("official_groups", [sys.executable, "scripts/collect_group_sources.py", "--as-of", now.astimezone(SHANGHAI).date().isoformat()]),
         ("corl", [sys.executable, "scripts/collect_corl_openreview.py", "--edition", "corl-2026"]),
     ]:
+        if only_source and name!=only_source: continue
         try:
             run(command)
             checks.append(read_collector_check(name, now))
         except subprocess.CalledProcessError:
             checks.append({"source": name, "status": "failed", "complete": False, "checked_at": now.isoformat(), "error_type": "CollectorProcessFailed"})
-    run([sys.executable, "scripts/resolve_organizations.py"])
+    if only_source is None or only_source=="official_groups":
+        run([sys.executable, "scripts/resolve_organizations.py"])
     return checks
 
 
@@ -492,7 +587,7 @@ def collection_coverage(checks: list[dict], cutoff: date, prior_data_through: st
             "sources": copy.deepcopy(checks), "scope_note": "完成仅指已登记查询/会议期刊流/官方页面；不代表全互联网覆盖。可用数据截止日不代表所有来源完整或新鲜。"}
 
 
-VOLATILE_FIELDS = {"generated_at", "run_at", "retrieved_at", "observed_at", "checked_at", "last_checked", "last_success", "updated_at",
+VOLATILE_FIELDS = {"response_observed_from", "response_observed_until", "generated_at", "run_at", "retrieved_at", "observed_at", "checked_at", "last_checked", "last_success", "updated_at",
                    "ingested_at", "input_digest", "payload_hash", "catalog_hash", "dataset_version", "editorial_hash", "_managed_field_hashes",
                    "source_health", "last_failure_date", "attempts", "failure", "byte_count", "raw_ref"}
 
@@ -844,6 +939,10 @@ def main(argv=None) -> int:
     configuration = parser.add_mutually_exclusive_group()
     configuration.add_argument("--env-file", type=Path, help="Optional local LLM credentials file outside the repository; never printed")
     configuration.add_argument("--loggerbot-env-file", type=Path, help="Read only CODEX_PROXY model fields from existing external LoggerBot configuration")
+    parser.add_argument('--collect-source',choices=EXPECTED_SOURCES,help=argparse.SUPPRESS)
+    parser.add_argument('--source-result',type=Path,help=argparse.SUPPRESS)
+    parser.add_argument('--status-baseline',type=Path,help=argparse.SUPPRESS)
+    parser.add_argument('--resume-owned',action='store_true',help='Resume only recorded unchanged data from this checkout')
     args = parser.parse_args(argv)
     if args.publish and args.dry_run:
         parser.error("--publish and --dry-run are mutually exclusive")
@@ -855,6 +954,14 @@ def main(argv=None) -> int:
     cutoff = args.as_of or now.astimezone(SHANGHAI).date() - timedelta(days=1)
     if cutoff > now.astimezone(SHANGHAI).date():
         parser.error("source cutoff cannot be in the future")
+    if args.collect_source:
+        if not args.source_result or not args.status_baseline or not args.as_of:
+            parser.error('Internal worker requires result, baseline and explicit cutoff')
+        checks=collect_sources(cutoff,now,only_source=args.collect_source,status_baseline_override=read_json(args.status_baseline,[]))
+        result=checks[0] if checks else {'source':args.collect_source,'status':'failed','complete':False}
+        result.update(source=args.collect_source,requested_cutoff=cutoff.isoformat())
+        write_json(args.source_result,result)
+        return 0
     previous = read_json(snapshot_path(context), {})
     ready = bool(previous.get("verified"))
     if args.check_snapshot:
@@ -867,7 +974,7 @@ def main(argv=None) -> int:
                           "note": "Feature branches are preview-only; publish requires a clean main checkout. No files or network state were changed.",
                           "steps": ["ff-only main update", "incremental arXiv then all-registered-ID status watch; publications/official groups/CoRL", "v3:ingest", "status-only audit commit if research unchanged", "v3:editorial (unless data-only)", "v3:export", "v3:site", "npm test", "ISO-week snapshot", "explicit-path commit", "push main"]}, ensure_ascii=False, indent=2))
         return 0
-    if branch != "main" or changes:
+    if branch != "main" or (changes and not (args.resume_owned and owned_resume(ROOT,STAGED_PATHS))):
         raise SystemExit("Publishing requires a clean main checkout. Run without --publish for a read-only preview.")
     if not args.data_only and (args.loggerbot_env_file or (args.env_file and args.env_file.exists())):
         try:
@@ -881,7 +988,7 @@ def main(argv=None) -> int:
     lock_path = Path(git("rev-parse", "--git-path", "weekly-v3.lock"))
     if not lock_path.is_absolute():
         lock_path = ROOT / lock_path
-    with lock_path.open("a+") as lock:
+    with lock_path.open("a+") as lock, pipeline_budget():
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
@@ -954,6 +1061,10 @@ def main(argv=None) -> int:
                 write_json(audit_path, audit)
                 print(json.dumps({"status": audit["status"], "week": context["week"], "data_through": effective_cutoff, "source_coverage_status": coverage["status"], "revision": snapshot["revision"]}, ensure_ascii=False))
             except Exception as error:
+                try:
+                    owned_resume(ROOT,STAGED_PATHS,save=True)
+                except (OSError,ValueError,subprocess.SubprocessError):
+                    pass
                 # Preserve partially collected data and diagnostics for review;
                 # never roll back a failed run or delete unknown user files.
                 audit.update(status="failed", error_type=type(error).__name__)
