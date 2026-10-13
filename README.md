@@ -107,6 +107,10 @@ python3 scripts/run_mini_weekly.py --run           # 显式有界补更，不是
 
 Mini 与旧硬件抽取合计资源须保留至少 50% 内存余量，CPU 繁忙度不超过 50%，管道 RSS 不超过 1280 MiB；资源不足只在安全边界暂停，不干预 Logger。失败后只允许哈希和基准提交仍匹配的已登记数据变化续跑，其他用户改动会拒绝继续。
 
+入库日志逐阶段记录墙钟时间、CPU 时间和内存峰值。输入准备使用流式读取，独立子进程退出后才加载正式目录；来源集合只构建一次，保留原来的身份、人工审校和不可变来源检查。每条外层命令仍最多 30 分钟，整条管线仍最多 90 分钟。
+
+已有采集失败记录可以离线恢复：先运行 `scripts/resume_arxiv_checkpoints.py --as-of YYYY-MM-DD` 核对查询身份、分页、日期和缓存 Atom 字段；核验后显式加 `--apply` 合并，原输入和恢复记录会备份。然后用 `scripts/run_weekly_v3.py --publish --data-only --resume-owned --resume-collected logs/weekly-v3/runs/原失败记录.json --as-of YYYY-MM-DD` 复用原来源覆盖信息，跳过所有研究来源请求。它只接受当前 ISO 周、相同截止日期和哈希匹配的输入，不把原失败来源改写为完整。`v3:ingest -- --ingest-preview` 可检查入库结果而不保存正式目录或导出。
+
 先验证 Mini 的真实运行及失败恢复，再移除云端周更 cron；手动 fallback 仍可保留。两端不得同时进行自动采集。日志及私有检查点分别位于 `logs/weekly-v3*` 和 `.research/weekly-v3/`。
 
 ### 本地 LLM 配置

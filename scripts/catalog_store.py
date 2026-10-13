@@ -4,6 +4,8 @@ from __future__ import annotations
 import hashlib
 import json
 import copy
+import sqlite3
+import tempfile
 from collections import defaultdict
 from pathlib import Path
 from datetime import datetime, timezone
@@ -34,6 +36,30 @@ def fingerprint(value) -> str:
     return hashlib.sha256(encode(value).encode()).hexdigest()
 
 
+def table_fingerprint(rows, *, disk_sort=False) -> str:
+    """Exactly fingerprint(sorted(rows, key=encode)), without a full JSON copy."""
+    if disk_sort:
+        with tempfile.TemporaryDirectory(prefix='radar-table-hash-') as folder:
+            with sqlite3.connect(str(Path(folder) / 'rows.sqlite')) as connection:
+                connection.execute('PRAGMA temp_store=FILE')
+                connection.execute('CREATE TABLE rows (body BLOB NOT NULL)')
+                connection.executemany('INSERT INTO rows VALUES (?)', ((encode(row).encode(),) for row in rows))
+                digest = hashlib.sha256(b'[')
+                for index, (body,) in enumerate(connection.execute('SELECT body FROM rows ORDER BY body')):
+                    if index:
+                        digest.update(b',')
+                    digest.update(body)
+                digest.update(b']')
+                return digest.hexdigest()
+    digest = hashlib.sha256(b'[')
+    for index, row in enumerate(sorted(rows, key=encode)):
+        if index:
+            digest.update(b',')
+        digest.update(encode(row).encode())
+    digest.update(b']')
+    return digest.hexdigest()
+
+
 def write_if_changed(path: Path, text: str) -> bool:
     if path.exists() and path.read_text() == text:
         return False
@@ -50,9 +76,13 @@ def read_table(root: Path, table: str) -> list[dict]:
     directory = root / table
     paths = sorted(directory.glob("*.jsonl")) if directory.is_dir() else [root / f"{table}.jsonl"]
     result = []
+    keys = {}
+    def shared_keys(pairs):
+        return {keys.setdefault(key, key): value for key, value in pairs}
     for path in paths:
         if path.exists():
-            result.extend(json.loads(line) for line in path.read_text().splitlines() if line.strip())
+            with path.open() as stream:
+                result.extend(json.loads(line, object_pairs_hook=shared_keys) for line in stream if line.strip())
     return result
 
 
@@ -92,7 +122,7 @@ def save_catalog(root: Path, payload: dict, metadata: dict) -> dict:
         write_table(root, table, payload.get(table, []))
     hashes = {}
     for table in TABLES:
-        hashes[table] = fingerprint(sorted(payload.get(table, []), key=encode))
+        hashes[table] = table_fingerprint(payload.get(table, []), disk_sort=True)
     result = {**metadata, "schema_version": "3.1", "table_hashes": hashes,
               "catalog_hash": fingerprint(hashes)}
     if result["catalog_hash"] != metadata.get("catalog_hash") or not metadata.get("ingested_at"):

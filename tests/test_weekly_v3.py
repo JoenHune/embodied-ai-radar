@@ -28,6 +28,27 @@ feishu = module("publish_group_weekly_to_feishu")
 
 
 class WeeklyTests(unittest.TestCase):
+    def test_offline_resume_skips_collectors_and_keeps_the_original_cutoff(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            context = weekly.week_context(datetime.now(timezone.utc))
+            cutoff = date.fromisoformat(context['until'])
+            audit = root / 'logs/weekly-v3/runs/failed.json'
+            audit.parent.mkdir(parents=True)
+            audit.write_text(json.dumps({'status': 'failed', 'mode': 'local', 'week': context['week'],
+                                         'run_at': '2026-01-01T00:00:00Z', 'requested_source_cutoff': cutoff.isoformat(),
+                                         'source_checks': [{'source': name, 'status': 'failed', 'complete': False} for name in weekly.EXPECTED_SOURCES]}))
+            (root / 'data/catalog').mkdir(parents=True)
+            (root / 'data/catalog/manifest.json').write_text(json.dumps({'data_through': cutoff.isoformat()}))
+            def stop_after_ingest(command, **kwargs):
+                if command[:3] == ['npm', 'run', 'v3:ingest']:
+                    self.assertIn('--ingest-only', command)
+                    raise RuntimeError('fixture stop after offline resume')
+            with patch.object(weekly, 'ROOT', root), patch.object(weekly, 'git', side_effect=['main', '', str(root/'lock')]), patch.object(weekly, 'owned_resume', return_value=True), patch.object(weekly, 'run', side_effect=stop_after_ingest), patch.object(weekly, 'collect_sources') as collect, contextlib.redirect_stdout(io.StringIO()):
+                with self.assertRaisesRegex(RuntimeError, 'fixture stop'):
+                    weekly.main(['--publish', '--data-only', '--resume-owned', '--resume-collected', str(audit), '--as-of', cutoff.isoformat()])
+                collect.assert_not_called()
+
     def test_same_week_metadata_only_keeps_revision_and_no_publish_change(self):
         now = datetime(2026, 9, 7, tzinfo=timezone.utc)
         context = weekly.week_context(now)

@@ -16,6 +16,8 @@ import math
 import re
 import shutil
 import sqlite3
+import sys
+import tempfile
 import unicodedata
 from collections import Counter, defaultdict
 from datetime import date, datetime
@@ -24,7 +26,9 @@ from typing import Any, Iterable
 from urllib.parse import urlparse
 
 from radar_common import ROOT, normalize_doi, normalize_title
-from catalog_store import load_catalog, save_catalog, read_table, revision_snapshot, fingerprint, write_if_changed
+from catalog_store import load_catalog, save_catalog, read_table, revision_snapshot, fingerprint, write_if_changed, table_fingerprint, TABLES
+from ingest_runtime import stage, spool_incoming, load_incoming
+from json_array_stream import iter_json_array
 from sqlite_download import SQLITE_DOWNLOAD_URL, sqlite_export
 from catalog_rules import publication_verified, eligible_month, research_eligible, attribution_valid, event_eligible, independent_clusters
 from temporal_evidence import evidence_as_of, public_day
@@ -295,9 +299,9 @@ def migrate_legacy(args: argparse.Namespace) -> dict:
     facets_config = read_json(ROOT / "config" / "facets-v3.json", {})
     questions_config = read_json(ROOT / "config" / "research-agenda.json", {"questions": []})
     organizations_config = read_json(ROOT / "config" / "organizations.json", {"organizations": []})
-    works_v2 = read_json(DATA / "works.json", [])
-    preprints = read_json(DATA / "preprints.json", [])
-    publications = read_json(DATA / "publications.json", [])
+    works_v2 = iter_json_array(DATA / "works.json")
+    preprints = list(iter_json_array(DATA / "preprints.json"))
+    publications = iter_json_array(DATA / "publications.json")
     group_updates = read_json(DATA / "group-updates.json", {"updates": []}).get("updates", [])
     work_org_payload = read_json(DATA / "work-organization-links.json", {"links": []})
     work_org_links = list(work_org_payload.get("links", []))
@@ -1421,12 +1425,37 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--summary-status", choices=["data_only", "llm_complete"], default="data_only")
     parser.add_argument("--migrate", action="store_true", help="One-time migration into the authoritative sharded catalog")
     parser.add_argument("--ingest", action="store_true", help="Ingest source deltas without overwriting curated catalog records")
+    parser.add_argument("--ingest-only", action="store_true", help="Save the catalog; defer exports to the separate export stage")
+    parser.add_argument("--ingest-preview", action="store_true", help="Validate incoming facts without saving the catalog or exports")
+    parser.add_argument("--prepare-ingest-dir", type=Path, help=argparse.SUPPRESS)
     parser.add_argument("--ingest-status", action="store_true", help="Import only explicit reviewed research-status notices, preserving all other authority records")
     parser.add_argument("--ingest-people", action="store_true", help="Explicitly import person review staging into the separate four-table JSONL authority")
-    return parser.parse_args()
+    args = parser.parse_args()
+    if (args.ingest_preview or args.ingest_only) and not args.ingest:
+        parser.error('--ingest-preview and --ingest-only require --ingest')
+    return args
 
 
 def build(args: argparse.Namespace) -> None:
+    if getattr(args, "prepare_ingest_dir", None):
+        from prepare_catalog import reconcile
+        registry = read_json(ROOT / "config/source-registry.json", {})
+        when = args.as_of or registry.get("window", {}).get("until")
+        incoming = stage("reconcile", lambda: reconcile(stage("migrate_legacy", lambda: migrate_legacy(args)), DATA, when))
+        stage("spool_incoming", lambda: spool_incoming(args.prepare_ingest_dir, incoming))
+        return
+    if args.ingest:
+        from weekly_runtime import run_process
+        with tempfile.TemporaryDirectory(prefix="radar-ingest-") as folder:
+            command = [sys.executable, str(Path(__file__).resolve()), "--prepare-ingest-dir", folder]
+            if args.as_of:
+                command.extend(["--as-of", args.as_of])
+            stage("prepare_incoming", lambda: run_process(command, cwd=ROOT, timeout=1800))
+            return _build(args, load_incoming(folder))
+    return _build(args)
+
+
+def _build(args: argparse.Namespace, incoming=None) -> None:
     from prepare_catalog import reconcile
     from catalog_enrichment import finalize_facts, ingest_delta, ingest_conferences
     from ingest_attribution import ingest_attribution_additions
@@ -1444,27 +1473,28 @@ def build(args: argparse.Namespace) -> None:
         payload = finalize_facts(payload, when)
         metadata = save_catalog(CATALOG, payload, {"data_through": when, "input_counts": payload.pop("input_counts", {})})
     else:
-        payload, metadata = load_catalog(CATALOG)
+        payload, metadata = stage("load_catalog", lambda: load_catalog(CATALOG))
         if args.ingest:
-            incoming = reconcile(migrate_legacy(args), DATA, when)
-            payload = ingest_delta(payload, incoming)
-            payload = ingest_conferences(payload, DATA / "conferences")
-            payload = ingest_attribution_additions(payload, DATA)
-            payload = merge_reviewed_identities(payload, DATA)
-            payload = ingest_capability_additions(payload, DATA)
-            payload = finalize_facts(payload, when)
-            payload = ingest_reviewed_releases(payload, DATA)
-            payload = ingest_date_reviews(payload, DATA)
+            input_counts = incoming.get("input_counts", {})
+            payload = stage("ingest_delta", lambda: ingest_delta(payload, incoming))
+            del incoming
+            payload = stage("conferences", lambda: ingest_conferences(payload, DATA / "conferences"))
+            payload = stage("attribution", lambda: ingest_attribution_additions(payload, DATA))
+            payload = stage("reviewed_identities", lambda: merge_reviewed_identities(payload, DATA))
+            payload = stage("capabilities", lambda: ingest_capability_additions(payload, DATA))
+            payload = stage("finalize_facts_first", lambda: finalize_facts(payload, when))
+            payload = stage("reviewed_releases", lambda: ingest_reviewed_releases(payload, DATA, inplace=True))
+            payload = stage("date_reviews", lambda: ingest_date_reviews(payload, DATA))
             # Recompute derived event/flag views after precision corrections;
             # raw source observations and historical IDs remain unchanged.
-            payload = finalize_facts(payload, when)
-            payload = archive_versioned_text(payload, DATA, read_json(DATA / "preprints.json", []))
+            payload = stage("finalize_facts_second", lambda: finalize_facts(payload, when))
+            payload = stage("archive_text", lambda: archive_versioned_text(payload, DATA, iter_json_array(DATA / "preprints.json"), batch_size=256))
             from extract_report_archive import register_report_archive_proofs
             report_additions = read_table(DATA, "report-text-additions")
             payload = register_report_archive_proofs(payload, read_table(DATA, "report-archive-proofs"), report_additions, root=ROOT)
-            payload = register_report_text_additions(payload, report_additions)
-            payload = ingest_research_status_additions(payload, DATA)
-            coverage = build_organization_coverage(payload["works"], payload["organizations"], payload["work-organization-links"], {"registered": payload.get("source-health", []), "records": payload["source-records"]}, when)
+            payload = stage("report_text", lambda: register_report_text_additions(payload, report_additions, inplace=True))
+            payload = stage("research_status", lambda: ingest_research_status_additions(payload, DATA))
+            coverage = stage("organization_coverage", lambda: build_organization_coverage(payload["works"], payload["organizations"], payload["work-organization-links"], {"registered": payload.get("source-health", []), "records": payload["source-records"]}, when))
             payload["organization-candidates"] = coverage["t2_candidates"]
             changes = {change["organization_id"]: change for change in coverage["tier_changes"]}
             for org in payload["organizations"]:
@@ -1472,7 +1502,15 @@ def build(args: argparse.Namespace) -> None:
                     change = changes[org["organization_id"]]
                     org["tier"] = change["to"]
                     org.setdefault("tier_history", []).append({**change, "recorded_at": when})
-            metadata = save_catalog(CATALOG, payload, {**metadata, "data_through": when, "input_counts": incoming.get("input_counts", {})})
+            if getattr(args, "ingest_preview", False):
+                from source_record_store import validated_rows
+                stage("validate_source_records", lambda: validated_rows(payload['source-records']))
+                hashes = stage("catalog_hashes", lambda: {table: table_fingerprint(payload.get(table, []), disk_sort=True) for table in TABLES})
+                print(json.dumps({"status": "ingest_preview_verified", "catalog_hash": fingerprint(hashes),
+                                  "input_counts": input_counts,
+                                  "counts": {key: len(value) for key, value in payload.items() if isinstance(value, list)}}, ensure_ascii=False), flush=True)
+                return
+            metadata = stage("save_catalog", lambda: save_catalog(CATALOG, payload, {**metadata, "data_through": when, "input_counts": input_counts}))
         elif getattr(args, "ingest_status", False):
             payload = ingest_research_status_additions(payload, DATA)
             metadata = save_catalog(CATALOG, payload, {**metadata, "data_through": when})
@@ -1480,7 +1518,8 @@ def build(args: argparse.Namespace) -> None:
         from people_radar import load_people_reviews, load_people_authority, ingest_people_reviews, save_people_authority
         people = ingest_people_reviews(payload, load_people_reviews(DATA / "people/reviews"), load_people_authority(DATA / "people"))
         save_people_authority(DATA / "people", people)
-    export_catalog(payload, metadata, args)
+    if not getattr(args, "ingest_only", False):
+        stage("export_catalog", lambda: export_catalog(payload, metadata, args))
 
 
 if __name__ == "__main__":

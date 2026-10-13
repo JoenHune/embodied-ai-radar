@@ -239,8 +239,19 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
     identifier conflicts require explicit identity review before persistence.
     """
     protected_classification = fulltext_locked_fields(current)
-    current_sources = {row["source_record_id"] for row in current["source-records"]}
-    unseen = {row["source_record_id"] for row in incoming["source-records"]} - current_sources
+    current_source_rows = {row["source_record_id"]: row for row in current["source-records"]}
+    current_sources = set(current_source_rows)
+    incoming_sources = {}
+    for row in incoming["source-records"]:
+        sid = row["source_record_id"]
+        previous = current_source_rows.get(sid)
+        # Owned source fields are immutable here. Retain the incoming hash for
+        # identity proof, and only fields this importer can actually enrich.
+        incoming_sources[sid] = ({key: value for key, value in row.items()
+                                  if key not in previous or key in {"source_record_id", "payload_hash"}}
+                                 if previous is not None else row)
+    incoming_source_ids = set(incoming_sources)
+    unseen = incoming_source_ids - current_sources
     changed = {row.get("work_id") for row in incoming["reconciliation"] if row["source_record_id"] in unseen and row.get("work_id")}
     works = {row["work_id"]: row for row in current["works"]}
     aliases = {a["alias"]: a["work_id"] for a in current["work-aliases"]}
@@ -251,8 +262,6 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
     for row in current["work-aliases"]:
         if row.get("alias", "").startswith(("doi:", "arxiv:")):
             identity_owners[row["alias"]].add(row["work_id"])
-    incoming_sources = {row["source_record_id"]: row for row in incoming["source-records"]}
-    current_source_rows = {row["source_record_id"]: row for row in current["source-records"]}
     mapped_sources = defaultdict(set)
     incoming_public_aliases = defaultdict(list)
     for row in incoming.get("work-aliases", []):
@@ -266,7 +275,7 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
     for work in incoming["works"]:
         previous_id = work["work_id"]
         incoming_history = _identifier_history({**work, "aliases": [*work.get("aliases", []), *incoming_public_aliases[previous_id]]})
-        identity_sources = sorted(set(work.get("source_record_ids", [])) & mapped_sources[previous_id] & set(incoming_sources))
+        identity_sources = sorted(set(work.get("source_record_ids", [])) & mapped_sources[previous_id] & incoming_source_ids)
         matches = {owner for kind, value in incoming_history for owner in identity_owners.get(f"{kind}:{value}", set())}
         matches.update(aliases[alias] for alias in work.get("aliases", []) if alias in aliases)
         existing = previous_id if previous_id in works else next(iter(matches)) if len(matches) == 1 else None
@@ -351,10 +360,10 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
         rows = [row for row in incoming.get(table, []) if row.get("work_id") in changed or row.get("source_record_id") in unseen]
         rows = [{**row, "work_id": remap.get(row["work_id"], row["work_id"])} if row.get("work_id") else row for row in rows]
         current[table] = deduplicate([*current.get(table, []), *rows], None)
-    current["source-records"].extend(row for row in incoming["source-records"] if row["source_record_id"] in unseen)
+    current["source-records"].extend(row for row in incoming_sources.values() if row["source_record_id"] in unseen)
     # Metadata-schema enrichment may fill absent provenance fields on an
     # unchanged source payload; it must not overwrite existing observations.
-    new_sources = {row["source_record_id"]: row for row in incoming["source-records"]}
+    new_sources = incoming_sources
     for source in current["source-records"]:
         for key, value in new_sources.get(source["source_record_id"], {}).items():
             if key not in source:
@@ -382,7 +391,7 @@ def ingest_delta(current: dict, incoming: dict) -> dict:
                 if key not in event and key in incoming_event:
                     event[key] = incoming_event[key]
     if "source-health" in incoming:
-        current["source-health"] = incoming["source-health"]
+        current["source-health"] = list(incoming["source-health"])
     current["works"] = list(works.values())
     fulltext_locked_fields(current)
     return current

@@ -186,9 +186,9 @@ def build_versioned_text(works, source_records, *, raw_payloads=None, preprints=
     return {"snapshots": [snapshots[key] for key in sorted(snapshots)], "issues": issues}
 
 
-def register_versioned_text_additions(payload, additions):
+def register_versioned_text_additions(payload, additions, *, inplace=False):
     """Pure-data archive registration; caller controls persistence/ingestion."""
-    result = copy.deepcopy(payload)
+    result = payload if inplace else copy.deepcopy(payload)
     works = {row["work_id"]: row for row in result["works"]}
     sources = {row["source_record_id"]: row for row in result["source-records"]}
     for row in additions:

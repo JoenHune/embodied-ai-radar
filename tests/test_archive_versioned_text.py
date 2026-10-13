@@ -11,6 +11,18 @@ from versioned_text import text_as_of
 
 
 class ArchiveVersionedTextTest(unittest.TestCase):
+    def test_batched_archive_preserves_sources_snapshots_and_idempotence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            raw = {'arxiv_id': '2605.00001', 'title': 'Robot policy', 'abstract': 'Experiment', 'authors': ['Ada Researcher'],
+                   'pdf_url': 'https://arxiv.org/pdf/2605.00001v1', 'first_submitted': '2026-05-01', 'updated': '2026-05-01'}
+            original = empty_payload()
+            original['works'] = [{**work(), 'source_record_ids': ['raw']}]
+            original['source-records'] = [self.source(raw, 'raw')]
+            expected = archive_versioned_text(copy.deepcopy(original), Path(directory), [raw])
+            actual = archive_versioned_text(copy.deepcopy(original), Path(directory), iter([raw]), batch_size=1)
+            self.assertEqual(actual, expected)
+            self.assertEqual(archive_versioned_text(actual, Path(directory), iter([raw]), batch_size=1), expected)
+
     def source(self, raw, sid):
         return {"source_record_id": sid, "source_type": "preprints", "url": "https://arxiv.org/abs/2605.00001", "published_at": "2026-05-01", "payload_hash": fingerprint(raw), "raw_ref": "data/preprints.json#/0"}
 

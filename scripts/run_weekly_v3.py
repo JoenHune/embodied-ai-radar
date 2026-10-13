@@ -944,17 +944,33 @@ def main(argv=None) -> int:
     parser.add_argument('--source-result',type=Path,help=argparse.SUPPRESS)
     parser.add_argument('--status-baseline',type=Path,help=argparse.SUPPRESS)
     parser.add_argument('--resume-owned',action='store_true',help='Resume only recorded unchanged data from this checkout')
+    parser.add_argument('--resume-collected',type=Path,help='Reuse a failed local collection audit without contacting research sources')
     args = parser.parse_args(argv)
     if args.publish and args.dry_run:
         parser.error("--publish and --dry-run are mutually exclusive")
     now = datetime.now(timezone.utc)
     context = week_context(now)
+    resumed_audit = None
+    if args.resume_collected:
+        if not (args.publish and args.data_only and args.resume_owned):
+            parser.error('Offline collection resume requires --publish --data-only --resume-owned')
+        path = args.resume_collected.resolve()
+        if not path.is_relative_to((ROOT / 'logs/weekly-v3/runs').resolve()) or args.resume_collected.is_symlink():
+            parser.error('Offline resume audit must be a local regular run audit')
+        resumed_audit = read_json(path, {})
+        if (resumed_audit.get('status') != 'failed' or resumed_audit.get('mode') != 'local'
+                or resumed_audit.get('week') != context['week']
+                or not isinstance(resumed_audit.get('source_checks'), list)
+                or {row.get('source') for row in resumed_audit['source_checks']} != set(EXPECTED_SOURCES)):
+            parser.error('Offline resume audit has a conflicting run identity or source scope')
     if args.preview_report:
         print(weekly_digest(context, now, write=False))
         return 0
     cutoff = args.as_of or now.astimezone(SHANGHAI).date() - timedelta(days=1)
     if cutoff > now.astimezone(SHANGHAI).date():
         parser.error("source cutoff cannot be in the future")
+    if resumed_audit and resumed_audit.get('requested_source_cutoff') != cutoff.isoformat():
+        parser.error('Offline resume audit cutoff does not match --as-of')
     if args.collect_source:
         if not args.source_result or not args.status_baseline or not args.as_of:
             parser.error('Internal worker requires result, baseline and explicit cutoff')
@@ -1001,12 +1017,15 @@ def main(argv=None) -> int:
             return 0
         audit = {"schema_version": "1", "week": context["week"], "run_at": now.isoformat(), "requested_source_cutoff": cutoff.isoformat(),
                  "status": "started", "mode": "fallback" if args.fallback else "local", "llm_requested": not args.data_only}
+        if resumed_audit:
+            audit['resumed_collection_run_at'] = resumed_audit['run_at']
+            audit['resumed_collection_audit_sha256'] = hashlib.sha256(args.resume_collected.read_bytes()).hexdigest()
         audit_path = run_audit_path(context, now)
         write_json(audit_path, audit)
         with tempfile.TemporaryDirectory(prefix="radar-weekly-generated-") as directory:
             checkpoint = checkpoint_generated(planned_generated_paths(context), Path(directory))
             try:
-                source_checks = collect_sources(cutoff, now)
+                source_checks = copy.deepcopy(resumed_audit['source_checks']) if resumed_audit else collect_sources(cutoff, now)
                 status_owned_hashes = {path: value for check in source_checks for path, value in check.get("_status_audit_hashes", {}).items()}
                 metadata = read_json(ROOT / "data/catalog/manifest.json", {})
                 prior_cutoff = metadata.get("data_through") or read_json(ROOT / "config/source-registry.json")["window"]["until"]
@@ -1020,7 +1039,7 @@ def main(argv=None) -> int:
                 if status_owned_hashes:
                     status_owned_hashes["data/weekly-v3/source-coverage.json"] = hashlib.sha256((ROOT / "data/weekly-v3/source-coverage.json").read_bytes()).hexdigest()
                 _verify_catalog_unchanged_before_ingest(checkpoint)
-                run(["npm", "run", "v3:ingest", "--", "--as-of", effective_cutoff])
+                run(["npm", "run", "v3:ingest", "--", "--ingest-only", "--as-of", effective_cutoff])
                 generated_after_ingest = generated_hashes(checkpoint)
                 # Same-week status observations do not call the LLM worker,
                 # regenerate the weekly report, or create research revisions.

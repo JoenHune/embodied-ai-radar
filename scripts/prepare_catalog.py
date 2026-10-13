@@ -11,6 +11,7 @@ from pathlib import Path
 
 from catalog_rules import normalized_title, attribution_valid, publication_verified
 from catalog_store import fingerprint
+from json_array_stream import iter_json_array
 from radar_common import normalize_doi, extract_arxiv_id, classify_research, TAXONOMY
 
 # These report changes to an existing project or organization, not a new work.
@@ -203,18 +204,19 @@ def reconcile(payload: dict, data: Path, when: str) -> dict:
     manifestation_keys = {(item["work_id"], item.get("url")) for item in payload["manifestations"]}
     for file_name, field in source_tables:
         path = data / f"{file_name}.json"
-        content = json.loads(path.read_text()) if path.exists() else []
-        rows = content.get(field, []) if field else content
-        input_counts[file_name] = len(rows)
+        rows = (json.loads(path.read_text()).get(field, []) if path.exists() else []) if field else iter_json_array(path)
+        input_counts[file_name] = 0
         for number, row in enumerate(rows):
+            input_counts[file_name] += 1
             url = row.get("arxiv_url") if file_name in {"preprints", "papers"} else None
             url = url or row.get("official_url") or row.get("url") or next((v.get("url") for v in row.get("versions", []) if v.get("url")), "")
             arxiv = extract_arxiv_id(row.get("arxiv_id") or row.get("arxiv_url") or (row.get("id") if file_name == "papers" else None))
             doi = normalize_doi(row.get("doi"))
-            source_id = f"source:{file_name}:{fingerprint(row)[:24]}"
+            payload_hash = fingerprint(row)
+            source_id = f"source:{file_name}:{payload_hash[:24]}"
             source_records.append({"source_record_id": source_id, "source_type": file_name,
                                    "url": url, "source_id": row.get("publication_id") or row.get("program_id") or row.get("preprint_id") or row.get("update_id") or row.get("work_id") or str(number),
-                                   "payload_hash": fingerprint(row), "title": row.get("title"),
+                                   "payload_hash": payload_hash, "title": row.get("title"),
                                    "published_at": row.get("first_submitted") or row.get("publication_date") or row.get("published_at") or row.get("first_public_date"),
                                    "date_precision": row.get("date_precision") or row.get("first_public_date_precision") or "unknown",
                                    "retrieved_at": row.get("fetched_at") or row.get("first_seen_at") or None,

@@ -32,12 +32,14 @@ def digest(value):
     return hashlib.sha256(canonical(value).encode("utf-8")).hexdigest()
 
 
-def strict_json(raw):
+def strict_json(raw, *, key_cache=None):
     def pairs(items):
         out = {}
         for key, value in items:
             if key in out:
                 fail("duplicate_json_key")
+            if key_cache is not None:
+                key = key_cache.setdefault(key, key)
             out[key] = value
         return out
 
@@ -132,7 +134,7 @@ def source_record_paths(root, *, for_write=False):
     return [root / LEGACY] if layout == "legacy" or for_write else []
 
 
-def parse_lines(raw, *, expected_shard=None, strict_lines=False):
+def parse_lines(raw, *, expected_shard=None, strict_lines=False, key_cache=None):
     """Return records with their original bytes; never silently deduplicate."""
     entries = []
     for line in raw.splitlines(keepends=True):
@@ -142,7 +144,7 @@ def parse_lines(raw, *, expected_shard=None, strict_lines=False):
             continue
         if strict_lines and not line.endswith(b"\n"):
             fail("unterminated_legacy_line_requires_review")
-        row = strict_json(line.decode("utf-8"))
+        row = strict_json(line.decode("utf-8"), key_cache=key_cache)
         if not isinstance(row, dict):
             fail("source_record_object_required")
         name = shard_name(row.get(ID))
@@ -169,13 +171,14 @@ def read_source_records(root):
     paths = source_record_paths(root)
     rows = []
     signatures = {}
+    keys = {}
     fields = ("st_dev", "st_ino", "st_size", "st_mtime_ns", "st_ctime_ns", "st_mode")
     def signature(path):
         current = path.lstat()
         return tuple(getattr(current, field) for field in fields)
     for path in paths:
         signatures[path] = signature(path)
-        rows.extend(row for row, _ in parse_lines(read_bytes(path),
+        rows.extend(row for row, _ in parse_lines(read_bytes(path), key_cache=keys,
                     expected_shard=path.name if path.parent == Path(root) / TABLE else None))
     # Recheck the file set after reading; a partial/mixed layout is never valid.
     if paths != source_record_paths(root):

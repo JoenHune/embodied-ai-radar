@@ -298,7 +298,7 @@ def audit_report_text(snapshots, works, manifestations, sources):
             "canonical_work_ids": resolved, "errors": errors}
 
 
-def register_report_text_additions(payload, additions):
+def register_report_text_additions(payload, additions, *, inplace=False):
     """Append only, all-or-nothing. The caller registers verified sources first.
 
     No work, manifestation, source, evidence event, or classification is changed.
@@ -318,7 +318,7 @@ def register_report_text_additions(payload, additions):
     report = audit_report_text(rows, payload.get("works", []), payload.get("manifestations", []), payload.get("source-records", []))
     if report["errors"]:
         raise ValueError("report_text_validation_failed:" + json.dumps(report["errors"], ensure_ascii=False))
-    out = copy.deepcopy(payload)
+    out = payload if inplace else copy.deepcopy(payload)
     out["report-text-snapshots"] = sorted(rows, key=lambda row: row["snapshot_id"])
     return out
 

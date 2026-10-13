@@ -160,13 +160,13 @@ def _validate(incoming):
     return row
 
 
-def ingest_reviewed_releases(payload: dict, data: Path | list[dict]) -> dict:
+def ingest_reviewed_releases(payload: dict, data: Path | list[dict], *, inplace: bool = False) -> dict:
     """Apply a complete reviewed batch additively; input and old fields survive."""
     incoming = read_table(data, "release-additions") if isinstance(data, Path) else data
     prepared = [_validate(row) for row in incoming]
     if len({r["review_id"] for r in prepared}) != len(prepared):
         raise ValueError("Duplicate reviewed release IDs")
-    out = copy.deepcopy(payload)
+    out = payload if inplace else copy.deepcopy(payload)
     for name in ["works", "manifestations", "source-records", "work-aliases", "work-organization-links", "field-provenance", "evidence-events", "work-relations", "reconciliation", "taxonomy-assignments"]:
         out.setdefault(name, [])
     # Build each append-only table's fingerprint index once, not once per field

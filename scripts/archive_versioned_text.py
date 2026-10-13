@@ -3,15 +3,42 @@ from __future__ import annotations
 
 from collections import defaultdict
 from pathlib import Path
+import json
+import sqlite3
+import tempfile
 
 from catalog_store import fingerprint, read_table
-from versioned_text import build_versioned_text, register_versioned_text_additions, validate_snapshot
+from versioned_text import build_versioned_text, register_versioned_text_additions, validate_snapshot, digest
 
 
-def archive_versioned_text(payload: dict, data: Path, preprints: list[dict]) -> dict:
+def _snapshot_batches(views, sources, preprints, additions, batch_size):
+    by_work = defaultdict(list)
+    for row in additions:
+        by_work[row['work_id']].append(row)
+    with tempfile.TemporaryDirectory(prefix='radar-version-text-') as folder:
+        with sqlite3.connect(str(Path(folder) / 'payloads.sqlite')) as connection:
+            connection.execute('CREATE TABLE payloads (hash TEXT PRIMARY KEY, body TEXT NOT NULL)')
+            connection.executemany('INSERT OR REPLACE INTO payloads VALUES (?,?)',
+                                   ((digest(row), json.dumps(row, ensure_ascii=False)) for row in preprints))
+            for start in range(0, len(views), batch_size):
+                batch = views[start:start + batch_size]
+                hashes = {sources[sid].get('payload_hash') for work in batch for sid in work['source_record_ids'] if sid in sources}
+                raw = []
+                for key in hashes:
+                    found = connection.execute('SELECT body FROM payloads WHERE hash=?', (key,)).fetchone()
+                    if found:
+                        raw.append(json.loads(found[0]))
+                known = [row for work in batch for row in by_work[work['work_id']]]
+                bundle = build_versioned_text(batch, sources, preprints=raw, additions=known)
+                yield from bundle['snapshots']
+
+
+def archive_versioned_text(payload: dict, data: Path, preprints, *, batch_size=None) -> dict:
+    if batch_size is not None and (type(batch_size) is not int or batch_size <= 0):
+        raise ValueError('Archive batch size must be a positive integer')
     additions = read_table(data, "versioned-text-additions")
     if additions:
-        payload = register_versioned_text_additions(payload, additions)
+        payload = register_versioned_text_additions(payload, additions, inplace=True)
     works = {row["work_id"]: row for row in payload["works"]}
     sources = {row["source_record_id"]: row for row in payload["source-records"]}
     existing = {row["snapshot_id"]: row for row in payload.get("text-snapshots", [])}
@@ -19,8 +46,11 @@ def archive_versioned_text(payload: dict, data: Path, preprints: list[dict]) -> 
     # legacy links remain valid provenance but cannot restore an old abstract.
     selected_ids = {sid for sid, row in sources.items() if row.get("source_type") in {"preprints", "official_arxiv_version_metadata"}}
     views = [{**row, "source_record_ids": [sid for sid in row.get("source_record_ids", []) if sid in selected_ids]} for row in works.values()]
-    bundle = build_versioned_text(views, sources, raw_payloads={"data/preprints.json": preprints}, preprints=preprints, additions=[*existing.values(), *additions])
-    for snapshot in bundle["snapshots"]:
+    if batch_size:
+        snapshots = _snapshot_batches(views, sources, preprints, [*existing.values(), *additions], batch_size)
+    else:
+        snapshots = build_versioned_text(views, sources, raw_payloads={"data/preprints.json": preprints}, preprints=preprints, additions=[*existing.values(), *additions])["snapshots"]
+    for snapshot in snapshots:
         origin = sources[snapshot["source_record_id"]]
         if origin.get("source_type") == "official_arxiv_version_metadata":
             archived = snapshot
