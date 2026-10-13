@@ -119,3 +119,8 @@ class RecoveryTests(unittest.TestCase):
                 self.assertEqual(command.call_args.args[0],['git','branch','--show-current'])
             with patch.object(mini.sys,'platform','darwin'),patch.object(mini.socket,'gethostname',return_value='fixture-book'),patch.object(mini.shutil,'which',return_value='/fixture/bin'),patch.object(mini.subprocess,'check_output',return_value='main'):
                 self.assertIn('mini_host_identity_mismatch',mini.preflight(root))
+    def test_iostat_uses_current_sample_and_rejects_missing_cpu(self):
+        text='disk0 cpu load average\nKB/t tps MB/s us sy id 1m 5m 15m\n1 2 3 10 10 80 1 2 3\n1 2 3 40 20 40 1 2 3\n'
+        self.assertEqual(runtime.cpu_idle_iostat(text),40)
+        with self.assertRaises(ValueError):runtime.cpu_idle_iostat('disk0\n1 2 3\n')
+        with self.assertRaises(ValueError):runtime.cpu_idle_iostat(text.replace('40 1 2 3','140 1 2 3'))

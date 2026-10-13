@@ -2,6 +2,7 @@
 from __future__ import annotations
 import contextlib
 import hashlib
+import math
 import json
 import os
 import re
@@ -88,6 +89,15 @@ def run_process(command, *, cwd, timeout, env=None):
     if code:
         raise subprocess.CalledProcessError(code, command)
 
+def cpu_idle_iostat(text):
+    if not re.search(r'\bus\s+sy\s+id\b',text):raise ValueError('iostat_cpu_header_missing')
+    rows=[line.split() for line in text.splitlines() if re.match(r'^\s*\d',line)]
+    if len(rows)<2 or len(rows[-1])<6:raise ValueError('iostat_current_cpu_sample_missing')
+    idle=float(rows[-1][-4])
+    if not math.isfinite(idle) or not 0<=idle<=100:raise ValueError('iostat_cpu_idle_invalid')
+    return idle
+
+
 def resource_reason():
     if os.environ.get('RADAR_WEEKLY_RESOURCE_GUARD') != '1':
         return None
@@ -97,7 +107,7 @@ def resource_reason():
         def probe(argv):
             return subprocess.check_output(argv, text=True, timeout=5)
         free = int(re.search(r'free percentage:\s*(\d+)%', probe(['/usr/bin/memory_pressure', '-Q'])).group(1))
-        idle = float(re.search(r'([\d.]+)% idle', probe(['/usr/bin/top','-l','1','-n','0'])).group(1))
+        idle = cpu_idle_iostat(probe(['/usr/sbin/iostat','-c','2','-w','1']))
         rows = []
         for line in probe(['/bin/ps','-axo','pid,ppid,rss,%cpu,command']).splitlines()[1:]:
             parts = line.split(None,4)
