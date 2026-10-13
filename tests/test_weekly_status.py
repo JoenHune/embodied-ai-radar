@@ -426,7 +426,11 @@ class WeeklyStatusTests(unittest.TestCase):
                 self.assertEqual(json.loads(source_path.read_text())["retrieved_at"], new_time)
                 self.assertEqual(json.loads(manifest_path.read_text())["health_digest"], hashlib.sha256(health_path.read_bytes()).hexdigest())
                 self.assertEqual(json.loads(org_path.read_text())["source_health"], "stale" if stale else "healthy")
-                self.assertEqual(any(command == ["npm", "test"] for command in commands), stale, "Coverage changes must not use the early status-only path")
+                for step in ('test:v3','v3:audit','audit:groups','typecheck','v3:search','v3:audit-site','v3:audit-search'):
+                    self.assertEqual(['npm','run',step] in commands, stale,
+                                     'Coverage changes must run the full verification path: ' + step)
+                self.assertEqual(any(command[-2:] == ['build','docs'] for command in commands), stale,
+                                 'Coverage changes must include the actual site build')
                 if stale:
                     self.assertEqual(json.loads(snapshot.read_text())["collection_coverage"]["status"], "partial")
 

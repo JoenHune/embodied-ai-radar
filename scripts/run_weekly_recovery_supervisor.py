@@ -50,7 +50,10 @@ def main(argv=None):
     parser.add_argument('--catalog-hash',required=True)
     parser.add_argument('--as-of',required=True)
     parser.add_argument('--record',type=Path,required=True)
+    parser.add_argument('--budget-seconds',type=int,default=5400)
     args=parser.parse_args(argv)
+    if not 0 < args.budget_seconds <= 5400:
+        parser.error('Recovery budget must remain within the original 90 minutes')
     issues=preflight(ROOT)
     if issues:raise SystemExit('Mini recovery preflight: '+','.join(issues))
     if not owned_resume(ROOT,STAGED_PATHS):raise SystemExit('Recovery ownership changed')
@@ -61,7 +64,7 @@ def main(argv=None):
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         command=[sys.executable,'-u',str(ROOT/'scripts/run_weekly_v3.py'),'--publish','--data-only','--resume-owned',
                  '--resume-collected',str(args.audit),'--resume-ingested-hash',args.catalog_hash,'--resume-exported','--as-of',args.as_of]
-        return run_supervised(command,ROOT,args.record)
+        return run_supervised(command,ROOT,args.record,seconds=args.budget_seconds)
 
 
 if __name__=='__main__':raise SystemExit(main())
