@@ -8,7 +8,8 @@ import SourceConflictNotice from './SourceConflictNotice.vue'
 import { sourceConflictState } from '../lib/source-conflicts.mjs'
 import ResearchCard from './ResearchCard.vue'
 import { searchCardFromResult as researchCard } from '../lib/research-card.mjs'
-import { defaultFilters, filterCatalog, loadResultPage, readSearchUrl, searchOptions, writeSearchUrl, type ResultHandle, type SearchLookup } from '../lib/catalog-search'
+import { defaultFilters, filterCatalog, loadResultPage, readSearchUrl, searchOptions, writeSearchUrl, type CatalogSearchFilters, type ResultHandle, type SearchLookup } from '../lib/catalog-search'
+import { activeSearchFilters, clearedSearchFilter, createSearchRestorer, orderSearchPositions, readSearchSort, writeSearchSort, type SearchFilterChip, type SearchSort } from '../lib/catalog-research.mjs'
 
 type SearchRow = { id: string; url: string; excerpt: string; meta: Record<string, string> }
 const manifest = ref<any>(null)
@@ -23,6 +24,7 @@ const error = ref('')
 const engineReady = ref(false)
 const engineFilters = ref<Record<string, Record<string, number>>>({})
 const filters = reactive(defaultFilters())
+const sort = ref<SearchSort>('auto')
 const expandedFilters = ref(false)
 const dialog = ref<HTMLDialogElement | null>(null)
 const queryInput = ref<HTMLInputElement | null>(null)
@@ -84,10 +86,15 @@ let detailSerial = 0
 let restoring = false
 let debounceTimer: number | undefined
 let destroyed = false
+let retryPage = 1
 const shardCache = new Map<string, Promise<any[]>>()
 let aliasCache: Promise<Record<string, string>> | undefined
 const pageCount = computed(() => Math.max(1, Math.ceil(total.value / pageSize)))
-const activeFilterCount = computed(() => Object.entries(filters).filter(([key, value]) => key !== 'q' && value && !(key === 'relevance' && value === 'included')).length)
+const activeFilters = computed(() => activeSearchFilters(filters, manifest.value?.filter_options))
+const activeFilterCount = computed(() => activeFilters.value.filter(chip => chip.key !== 'q').length)
+const exactEvidenceCount = computed(() => new Set(filters.ids.split(',').map(value => value.trim()).filter(Boolean)).size)
+const hasTextQuery = computed(() => Boolean(searchOptions(filters, [], []).query))
+const sortLabel = computed(() => sort.value === 'auto' && hasTextQuery.value ? '相关性' : sort.value === 'oldest' ? '首次公开：最早优先' : '首次公开：最新优先')
 const options = (name: string) => Object.keys(engineFilters.value[name] || {}).sort((a, b) => name === 'year' ? b.localeCompare(a) : a.localeCompare(b))
 const optionLabel = (value: string) => ({ unknown: '待核验', included: '已纳入', candidate: '候选', manual_review: '待复核', excluded: '已排除', accepted: '已接收', published: '正式出版', preprint: '预印本', main: '主会', workshop: 'Workshop' }[value] || value)
 const resultResearchStatusLabel = (value: string) => ({ withdrawn: '已撤回', retracted: '已撤稿', corrected: '已更正', expression_of_concern: '关注声明', active: '有状态通知' }[value] || '研究状态通知')
@@ -99,7 +106,7 @@ const facetFields = [
 
 const syncUrl = () => {
   if (restoring || destroyed) return
-  const target = writeSearchUrl(new URL(window.location.href), filters, page.value, currentWork.value)
+  const target = writeSearchSort(writeSearchUrl(new URL(window.location.href), filters, page.value, currentWork.value), sort.value)
   if (target.href !== window.location.href) window.history.pushState({ radarSearch: true }, '', target)
 }
 
@@ -120,11 +127,11 @@ const resultFor = async (workId: string) => {
   if (!result) throw new Error('Search result missing from catalogue')
   return { ...result, plain_excerpt: result.excerpt }
 }
-const loadIdentities = async (lookup: SearchLookup, selected: Record<string, string | { any: string[] }>) => {
+const loadIdentities = async (lookup: SearchLookup, selected: CatalogSearchFilters) => {
   for (const field of lookup.identity_shards || []) {
     const filter = selected[field]
     if (!filter) continue
-    const values = typeof filter === 'string' ? [filter] : filter.any
+    const values = typeof filter === 'string' ? [filter] : 'all' in filter ? filter.all : filter.any
     await Promise.all(values.map(async (value) => {
       const digest = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(value))
       const shard = new Uint8Array(digest)[0].toString(16).padStart(2, '0')
@@ -176,9 +183,13 @@ const runSearch = async (targetPage = 1, updateUrl = true) => {
   loading.value = true
   error.value = ''
   rows.value = []
+  retryPage = targetPage
+  page.value = targetPage
+  pageInput.value = targetPage
+  if (updateUrl) syncUrl()
   try {
     const search = searchOptions(filters, manifest.value.available_months || [], options('publication'), searchLanguage)
-    directBrowse = !search.empty && !search.query && (!filters.relevance || filters.relevance === 'all' || filters.relevance in (engineFilters.value.relevance || {})) && Object.keys(search.filters).every((name) => ['record_type', 'relevance'].includes(name))
+    directBrowse = sort.value !== 'oldest' && !search.empty && !search.query && (!filters.relevance || filters.relevance === 'all' || filters.relevance in (engineFilters.value.relevance || {})) && Object.keys(search.filters).every((name) => ['record_type', 'relevance'].includes(name))
     if (!directBrowse) {
       if (search.empty) handles.value = []
       else {
@@ -190,9 +201,9 @@ const runSearch = async (targetPage = 1, updateUrl = true) => {
           const engine = await getEngine()
           const response = await engine.search(search.query)
           positions = response.results.map((row: ResultHandle) => lookupPositions.get(row.id)).filter((position: number | undefined): position is number => position !== undefined && allowed.has(position))
-        } else positions = [...allowed].sort((a, b) => lookup.dates[b].localeCompare(lookup.dates[a]) || lookup.work_ids[a].localeCompare(lookup.work_ids[b]))
+        } else positions = [...allowed]
         if (serial !== searchSerial || destroyed) return
-        handles.value = positions.map((position) => ({ id: lookup.ids[position], data: () => resultFor(lookup.work_ids[position]) }))
+        handles.value = orderSearchPositions(positions, lookup, sort.value, Boolean(search.query)).map((position) => ({ id: lookup.ids[position], data: () => resultFor(lookup.work_ids[position]) }))
       }
     }
     if (serial !== searchSerial || destroyed) return
@@ -211,14 +222,16 @@ const goToPage = async (target: number) => {
   const serial = ++searchSerial
   loading.value = true
   error.value = ''
+  retryPage = target
   try {
     await displayPage(target, serial)
+    if (serial !== searchSerial || destroyed) return
     syncUrl()
     await nextTick()
     resultsSection.value?.focus({ preventScroll: true })
     resultsSection.value?.scrollIntoView({ block: 'start', behavior: 'instant' })
-  } catch { error.value = '这一页载入失败，请重试；其他结果仍可浏览。' }
-  finally { if (serial === searchSerial) loading.value = false }
+  } catch { if (serial === searchSerial && !destroyed) error.value = `第 ${target} 页载入失败，请重试；当前结果仍可浏览。` }
+  finally { if (serial === searchSerial && !destroyed) loading.value = false }
 }
 
 const scheduleSearch = () => {
@@ -295,23 +308,39 @@ const closeDetail = (updateUrl = true) => {
   }
 }
 
-const restoreLocation = async () => {
-  restoring = true
-  if (debounceTimer) window.clearTimeout(debounceTimer)
-  const state = readSearchUrl(new URLSearchParams(window.location.search))
+const readLocationState = () => {
+  const params = new URLSearchParams(window.location.search)
+  const state = readSearchUrl(params)
   Object.assign(filters, state.filters)
-  await nextTick()
-  if (state.work) await openWork(state.work, false)
-  else closeDetail(false)
-  await runSearch(state.page, false)
-  restoring = false
+  sort.value = readSearchSort(params)
+  expandedFilters.value = activeFilterCount.value > 0
+  return state
 }
-const reset = async () => {
+const locationRestorer = createSearchRestorer({
+  invalidateSearch: () => {
+    searchSerial++
+    detailSerial++
+    versionSerial++
+    if (debounceTimer) window.clearTimeout(debounceTimer)
+  },
+  readState: readLocationState,
+  flush: nextTick,
+  setRestoring: value => { restoring = value },
+  restoreWork: work => work ? openWork(work, false) : closeDetail(false),
+  search: target => runSearch(target, false),
+})
+const restoreLocation = locationRestorer.restore
+const reset = async (keepQuery = false) => {
   restoring = true
-  Object.assign(filters, defaultFilters())
+  Object.assign(filters, defaultFilters(), keepQuery ? { q: filters.q } : {})
   await nextTick()
   restoring = false
   await runSearch()
+}
+const clearFilter = async (chip: SearchFilterChip) => {
+  Object.assign(filters, clearedSearchFilter(filters, chip))
+  await nextTick()
+  queryInput.value?.focus({ preventScroll: true })
 }
 const initialize = async () => {
   loading.value = true
@@ -332,12 +361,13 @@ const initialize = async () => {
   } catch { error.value = '数据库尚未载入，请重试。完整数据库仍可通过上方链接下载。'; loading.value = false }
 }
 onMounted(() => {
-  expandedFilters.value = activeFilterCount.value > 0
+  readLocationState()
   window.addEventListener('popstate', restoreLocation)
   initialize()
 })
 onBeforeUnmount(() => {
   destroyed = true
+  locationRestorer.cancel()
   searchSerial += 1
   detailSerial += 1
   window.removeEventListener('popstate', restoreLocation)
@@ -345,6 +375,7 @@ onBeforeUnmount(() => {
   dialog.value?.close()
 })
 watch(filters, scheduleSearch, { deep: true })
+watch(sort, scheduleSearch)
 </script>
 
 <template>
@@ -358,7 +389,9 @@ watch(filters, scheduleSearch, { deep: true })
     </header>
     <form class="v3-search" @submit.prevent="runSearch()">
       <label class="v3-search-box"><span class="sr-only">搜索标题、摘要、作者、机构、标识符或代码</span><input ref="queryInput" v-model="filters.q" type="search" placeholder="大小脑、world model、π0、作者、DOI……"><button type="submit">搜索</button></label>
-      <p class="search-help">支持中英文关键词、作者与完整 DOI / 来源链接；留空可浏览研究库。</p>
+      <ul v-if="activeFilters.length" class="search-active-filters" aria-label="已选检索条件">
+        <li v-for="chip in activeFilters" :key="`${chip.key}:${chip.value || ''}`"><span>{{ chip.label }}</span><button type="button" :aria-label="`移除${chip.label}`" :title="`移除${chip.label}`" @click="clearFilter(chip)"><span aria-hidden="true">×</span></button></li>
+      </ul>
       <details class="search-filter-drawer" :open="expandedFilters" @toggle="expandedFilters = ($event.target as HTMLDetailsElement).open">
         <summary>筛选研究 <span v-if="activeFilterCount">· {{ activeFilterCount }} 项已启用</span></summary>
         <div v-if="manifest" class="v3-filter-grid">
@@ -372,15 +405,19 @@ watch(filters, scheduleSearch, { deep: true })
           <label>证据等级<select v-model="filters.evidence"><option value="">全部等级</option><option v-for="item in manifest.filter_options.evidence" :key="item" :value="item">{{ item }}</option></select></label>
           <label>纳排状态<select v-model="filters.relevance"><option value="all">全库（含候选与待复核）</option><option v-for="item in manifest.filter_options.relevance" :key="item" :value="item">{{ optionLabel(item) }}</option></select></label>
         </div>
-        <div class="v3-filter-switches"><label><input v-model="filters.peerReviewed" type="checkbox"> 严格同行评审</label><label><input v-model="filters.realRobot" type="checkbox"> 真机证据</label><label><input v-model="filters.openAssets" type="checkbox"> 开放模型 / 数据 / 代码</label><button type="button" @click="reset">清除筛选</button></div>
+        <div class="v3-filter-switches"><label><input v-model="filters.peerReviewed" type="checkbox"> 严格同行评审</label><label><input v-model="filters.realRobot" type="checkbox"> 真机证据</label><label><input v-model="filters.openAssets" type="checkbox"> 开放模型 / 数据 / 代码</label><button type="button" @click="reset(true)">清除筛选</button></div>
       </details>
-      <p v-if="filters.ids" class="exact-evidence-note">当前限定 {{ filters.ids.split(',').length }} 项证据。<button type="button" @click="filters.ids = ''">解除证据集合限制</button></p>
+      <p v-if="filters.ids" class="exact-evidence-note">当前限定 {{ exactEvidenceCount }} 项证据。<button type="button" @click="filters.ids = ''">解除证据集合限制</button></p>
       <p v-if="filters.from && filters.to && filters.from > filters.to" role="alert">起始月份不能晚于结束月份。</p>
     </form>
-    <div class="v3-result-status" aria-live="polite"><span v-if="loading">正在检索……</span><span v-else-if="error" role="alert">{{ error }}</span><span v-else>找到 {{ total.toLocaleString('zh-CN') }} 项<span v-if="total"> · 正在显示 {{ (page - 1) * pageSize + 1 }}–{{ Math.min(page * pageSize, total) }} 项</span></span><button v-if="error" type="button" @click="engineReady ? runSearch(page) : initialize()">重试</button></div>
+    <div class="search-result-toolbar">
+      <div class="v3-result-status" aria-live="polite"><span v-if="loading">正在检索……</span><span v-else-if="error" role="alert">{{ error }}</span><span v-else>找到 {{ total.toLocaleString('zh-CN') }} 项<span v-if="total"> · 正在显示 {{ (page - 1) * pageSize + 1 }}–{{ Math.min(page * pageSize, total) }} 项</span></span><button v-if="error" type="button" @click="engineReady ? runSearch(retryPage) : initialize()">重试</button></div>
+      <label class="search-sort">排序<select v-model="sort"><option value="auto">{{ hasTextQuery ? '默认：相关性' : '默认：最新优先' }}</option><option value="newest">首次公开：最新优先</option><option value="oldest">首次公开：最早优先</option></select></label>
+    </div>
+    <p v-if="!loading && !error && total" class="search-order-note">{{ sortLabel }}<template v-if="sort !== 'auto' || !hasTextQuery"> · 年 / 月精度记录按已知时段排序，日期未知置后</template></p>
     <section ref="resultsSection" class="visual-search-results" aria-label="研究工作搜索结果" :aria-busy="loading" tabindex="-1">
       <ResearchCard v-for="row in rows" :key="row.id" :work="researchCard(row)" compact detail-button @details="openWork" />
-      <p v-if="!loading && !error && !rows.length" class="v3-empty">没有符合条件的记录。可切换到“全库”，或放宽月份、组织与证据筛选。</p>
+      <div v-if="!loading && !error && !rows.length" class="search-empty-state"><h2>没有符合条件的研究</h2><p>{{ filters.from && filters.to && filters.from > filters.to ? '起始月份晚于结束月份。' : '当前关键词与筛选条件没有交集。' }}</p><div class="search-empty-actions"><button v-if="filters.relevance !== 'all'" type="button" @click="filters.relevance = 'all'">包含候选与待复核记录</button><button v-if="activeFilterCount" type="button" @click="reset(true)">保留关键词，清除筛选</button><button v-if="filters.q" type="button" @click="filters.q = ''">清除关键词</button><button v-if="!activeFilters.length" type="button" @click="runSearch()">重新读取</button></div></div>
     </section>
     <nav v-if="pageCount > 1" class="v3-pagination" aria-label="结果分页"><button type="button" :disabled="page === 1 || loading" @click="goToPage(page - 1)">上一页</button><span>第 {{ page }} / {{ pageCount }} 页</span><button type="button" :disabled="page === pageCount || loading" @click="goToPage(page + 1)">下一页</button><form @submit.prevent="goToPage(Number(pageInput))"><label><span class="sr-only">跳转页码</span><input v-model.number="pageInput" type="number" min="1" :max="pageCount" aria-label="跳转页码"></label><button type="submit" :disabled="loading">跳转</button></form></nav>
     <dialog ref="dialog" class="v3-work-detail search-work-dialog" aria-labelledby="work-detail-title" @cancel.prevent="closeDetail()" @click="($event.target === dialog) && closeDetail()">
@@ -434,8 +471,23 @@ watch(filters, scheduleSearch, { deep: true })
 </template>
 
 <style scoped>
+.search-active-filters { display: flex; flex-wrap: wrap; gap: 7px; padding: 12px 0 0; margin: 0; list-style: none; }
+.search-active-filters li { display: flex; align-items: center; gap: 5px; min-width: 0; max-width: 100%; padding-left: 10px; border: 1px solid var(--vp-c-divider); border-radius: 6px; font-size: 12px; background: var(--vp-c-bg-soft); }
+.search-active-filters li > span { min-width: 0; overflow-wrap: anywhere; line-height: 1.5; padding: 6px 0; }
+.search-active-filters button { display: grid; place-items: center; flex: 0 0 40px; width: 40px; min-height: 40px; color: var(--vp-c-text-2); font-size: 20px; cursor: pointer; }
+.search-active-filters button:hover { color: var(--vp-c-brand-1); background: var(--vp-c-brand-soft); }
+.search-result-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; margin-top: 16px; }
+.search-result-toolbar .v3-result-status { margin: 0; min-width: 0; }
+.search-sort { display: flex; align-items: center; gap: 10px; flex: none; font-size: 13px; color: var(--vp-c-text-2); }
+.search-sort select { min-height: 44px; max-width: 100%; padding: 7px 10px; border: 1px solid var(--vp-c-divider); border-radius: 6px; background: var(--vp-c-bg); color: var(--vp-c-text-1); }
+.search-order-note { margin: 4px 0 16px; color: var(--vp-c-text-2); font-size: 12px; line-height: 1.6; }
+.search-empty-state { padding: 28px 0 36px; border-block: 1px solid var(--vp-c-divider); }
+.search-empty-state h2 { font-size: 19px; margin: 0 0 8px; }
+.search-empty-state p { font-size: 14px; color: var(--vp-c-text-2); }
+.search-empty-actions { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.search-empty-actions button { min-height: 44px; padding: 7px 12px; border: 1px solid var(--vp-c-divider); border-radius: 6px; color: var(--vp-c-brand-1); background: var(--vp-c-bg); }
+.visual-search-results { scroll-margin-top: 100px; }
 .search-filter-drawer summary { cursor: pointer; padding: 14px 0; font-weight: 600; }
-.search-help { margin: 8px 0 0; font-size: 12px; color: var(--vp-c-text-2); }
 .search-filter-drawer .v3-filter-grid { margin-top: 0; }
 .exact-evidence-note { font-size: 13px; }
 .exact-evidence-note button { color: var(--vp-c-brand-1); text-decoration: underline; margin-left: 8px; }
@@ -484,6 +536,10 @@ watch(filters, scheduleSearch, { deep: true })
 .search-research-status { border: 1px solid var(--vp-c-warning-1); border-radius: 4px; padding: 3px 6px; background: var(--vp-c-bg-soft); }
 .search-research-status.blocked { border-color: var(--vp-c-danger-1); color: var(--vp-c-danger-1); font-weight: 600; }
 @media (max-width: 767px) {
+  .search-result-toolbar { align-items: stretch; flex-direction: column; }
+  .search-sort { justify-content: space-between; }
+  .search-sort select { flex: 1; min-width: 0; font-size: 16px; }
+  .search-active-filters button { flex-basis: 44px; width: 44px; min-height: 44px; }
   .search-filter-drawer summary { min-height: 48px; }
   .v3-search:has(.search-filter-drawer[open]) { position: static; }
   .v3-search-box input { min-width: 0; }

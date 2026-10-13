@@ -70,6 +70,8 @@ SQLite 构建入口会检查 JSON 特殊键名、超大整数、布尔值还原�
 
 `token_free_research.py` 有独立的 macOS LaunchAgent，不触发下面的周更发布流程。安装前创建 `.venv` 并安装 `requirements-v3.txt`；随后运行 `.venv/bin/python scripts/install_token_free_launchd.py --install`。不带 `--install` 可预览配置。
 
+瞬时失败可用 `python3 scripts/recover_token_free_sources.py --summary` 只读盘点，默认不联网或写入；显式 `--apply` 才会在原请求身份、持久退避、互斥锁和运行目录资源检查约束下补抓。未配备资源保护的运行目录会拒绝实际执行，不会绕过访问限制。详见[来源恢复说明](research/source-recovery-2026-10-13.md)。
+
 后台任务在登录时启动，此后每 5 分钟运行一批，单批最多首抓 8 篇 arXiv HTML、解析 16 篇缓存正文。最大平均抓取量约 96 篇/小时，略低于旧配置的 100 篇/小时；arXiv 抓取保持单连接、至少 3 秒间隔，遇 403/429 停批，失败项不会自动重试。每批启动前若剩余磁盘空间低于 6 GiB，便跳过抓取并尝试发布积压结果。
 
 正常运行时约每小时，任务尝试将新增结果投影为不含原文及摘录的 `data/token-free-public/records.jsonl`，由 `main` 分支构建独立的[原文采集进度](/hardware/research-progress)页面。线上只显示未经核验的候选提及，不进入权威目录或已核验设备统计。发布器检查 GitHub Pages 部署成功且线上摘要哈希吻合后，才保存本地回执并删除已发布批次的 HTML、正文缓存、卡片及全文索引内容；发布失败则保留原始材料供重试。进度、回执和待补缺清单位于 `.research/token-free-research/`，日志位于 `logs/token-free-research.log`。删除原文后若解析规则变化，旧记录会标为需要重新取得原文，不会伪装为已按新规则重算。

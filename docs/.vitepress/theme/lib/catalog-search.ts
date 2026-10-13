@@ -1,12 +1,12 @@
 import { piModelQuery, searchText } from './search-text.mjs'
 
 export type CatalogFilters = {
-  q: string; from: string; to: string; direction: string; question: string; organization: string;
+  q: string; from: string; to: string; direction: string; directionMatch: 'any' | 'all'; question: string; organization: string;
   outputType: string; evidence: string; relevance: string; venue: string; year: string; track: string;
   acceptance: string; publicationStatus: string; ids: string; peerReviewed: boolean; realRobot: boolean; openAssets: boolean;
 }
-export const defaultFilters = (): CatalogFilters => ({ q: '', from: '', to: '', direction: '', question: '', organization: '', outputType: '', evidence: '', relevance: 'included', venue: '', year: '', track: '', acceptance: '', publicationStatus: '', ids: '', peerReviewed: false, realRobot: false, openAssets: false })
-const keys: Record<keyof CatalogFilters, string> = { q: 'q', from: 'from', to: 'to', direction: 'directions', question: 'questions', organization: 'organizations', outputType: 'output_types', evidence: 'evidence', relevance: 'relevance', venue: 'venue', year: 'year', track: 'track', acceptance: 'acceptance', publicationStatus: 'publication_status', ids: 'ids', peerReviewed: 'peer_reviewed', realRobot: 'real_robot', openAssets: 'open_assets' }
+export const defaultFilters = (): CatalogFilters => ({ q: '', from: '', to: '', direction: '', directionMatch: 'any', question: '', organization: '', outputType: '', evidence: '', relevance: 'included', venue: '', year: '', track: '', acceptance: '', publicationStatus: '', ids: '', peerReviewed: false, realRobot: false, openAssets: false })
+const keys: Record<keyof CatalogFilters, string> = { q: 'q', from: 'from', to: 'to', direction: 'directions', directionMatch: 'direction_match', question: 'questions', organization: 'organizations', outputType: 'output_types', evidence: 'evidence', relevance: 'relevance', venue: 'venue', year: 'year', track: 'track', acceptance: 'acceptance', publicationStatus: 'publication_status', ids: 'ids', peerReviewed: 'peer_reviewed', realRobot: 'real_robot', openAssets: 'open_assets' }
 const booleans = new Set(['peerReviewed', 'realRobot', 'openAssets'])
 export const splitValues = (value: string): string[] => [...new Set(value.split(',').map((item) => item.trim()).filter(Boolean))]
 
@@ -16,6 +16,7 @@ export function readSearchUrl(params: URLSearchParams) {
     const value = params.get(param)
     if (value !== null) (filters as Record<string, string | boolean>)[key] = booleans.has(key) ? value === 'true' : value
   }
+  filters.directionMatch = filters.directionMatch === 'all' && splitValues(filters.direction).length ? 'all' : 'any'
   // Evidence drilldowns must not silently drop candidate/manual-review records.
   if (filters.ids && !params.has('relevance')) filters.relevance = 'all'
   const page = Math.max(1, Number.parseInt(params.get('page') || '1', 10) || 1)
@@ -25,7 +26,9 @@ export function readSearchUrl(params: URLSearchParams) {
 export function writeSearchUrl(url: URL, filters: CatalogFilters, page: number, work: string): URL {
   const result = new URL(url)
   for (const [key, param] of Object.entries(keys)) {
-    const value = filters[key as keyof CatalogFilters]
+    const value = key === 'directionMatch'
+      ? filters.directionMatch === 'all' && splitValues(filters.direction).length ? 'all' : ''
+      : filters[key as keyof CatalogFilters]
     if (value && !(key === 'relevance' && value === 'included' && !filters.ids)) result.searchParams.set(param, String(value))
     else result.searchParams.delete(param)
   }
@@ -34,10 +37,16 @@ export function writeSearchUrl(url: URL, filters: CatalogFilters, page: number, 
   return result
 }
 
+export type CatalogSearchFilters = Record<string, string | { any: string[] } | { all: string[] }>
+
 export function searchOptions(filters: CatalogFilters, months: string[], publicationValues: string[], language = 'zh') {
-  const selected: Record<string, string | { any: string[] }> = { record_type: 'work' }
+  const selected: CatalogSearchFilters = { record_type: 'work' }
   if (filters.relevance && filters.relevance !== 'all') selected.relevance = filters.relevance
-  for (const [field, name] of [['direction', 'direction'], ['question', 'question'], ['organization', 'organization'], ['outputType', 'output_type'], ['evidence', 'evidence'], ['ids', 'work_id']] as const) {
+  if (filters.direction) {
+    const values = splitValues(filters.direction)
+    selected.direction = filters.directionMatch === 'all' ? { all: values } : { any: values }
+  }
+  for (const [field, name] of [['question', 'question'], ['organization', 'organization'], ['outputType', 'output_type'], ['evidence', 'evidence'], ['ids', 'work_id']] as const) {
     if (filters[field]) selected[name] = { any: splitValues(filters[field]) }
   }
   for (const [field, name] of [['peerReviewed', 'peer_reviewed'], ['realRobot', 'real_robot'], ['openAssets', 'open_assets']] as const) if (filters[field]) selected[name] = 'true'
@@ -80,12 +89,18 @@ export function searchOptions(filters: CatalogFilters, months: string[], publica
 }
 
 export type SearchLookup = { ids: string[]; work_ids: string[]; dates: string[]; identity_shards?: string[]; postings: Record<string, Record<string, number[]>> }
-export function filterCatalog(lookup: SearchLookup, filters: Record<string, string | { any: string[] }>): Set<number> {
+export function filterCatalog(lookup: SearchLookup, filters: CatalogSearchFilters): Set<number> {
   let allowed: Set<number> | undefined
   for (const [name, value] of Object.entries(filters)) {
     if (name === 'record_type') continue
-    const values = typeof value === 'string' ? [value] : value.any
-    const matching = new Set(values.flatMap((item) => lookup.postings[name]?.[item] || []))
+    const requireAll = typeof value !== 'string' && 'all' in value
+    const values = typeof value === 'string' ? [value] : 'all' in value ? value.all : value.any
+    const postings = values.map((item) => lookup.postings[name]?.[item] || [])
+    let matching = new Set(requireAll ? postings[0] || [] : postings.flat())
+    if (requireAll) for (const posting of postings.slice(1)) {
+      const present = new Set(posting)
+      matching = new Set([...matching].filter((index) => present.has(index)))
+    }
     allowed = allowed ? new Set([...allowed].filter((index) => matching.has(index))) : matching
   }
   return allowed || new Set(lookup.work_ids.map((_, index) => index))

@@ -10,6 +10,12 @@ export function evidenceWorkIds(ids, eventToWork = {}) {
   return [...new Set(ids.map((id) => eventToWork[id] || id))]
 }
 
+export function cooccurrenceParams(source, target, months) {
+  const window = [...months].sort()
+  if (!window.length) throw new Error('Cooccurrence requires an analysis month window')
+  return { directions: `${source},${target}`, direction_match: 'all', from: window[0], to: window.at(-1) }
+}
+
 export function evidenceSearchParams(ids, eventToWork = {}, params = {}) {
   const query = new URLSearchParams(params)
   if (ids.length) {

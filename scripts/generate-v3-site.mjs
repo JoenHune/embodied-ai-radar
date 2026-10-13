@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { editorialCoverage, dashboardSnapshot } from './lib/editorial-coverage.mjs'
+import { researchBrief } from './lib/research-brief.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const api = path.join(root, 'docs', 'public', 'api', 'v1')
@@ -24,6 +25,7 @@ const editorialStatus = {
 
 const overview = {
   manifest,
+  researchBrief: researchBrief({ manifest, organizations, coverage: fs.existsSync(path.join(api, 'source-coverage.json')) ? read('source-coverage.json') : null }),
   trends,
   latestComplete: dashboardSnapshot(latestComplete),
   provisional: dashboardSnapshot(provisional),
