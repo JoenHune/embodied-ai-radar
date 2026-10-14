@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "deliveries": [
+    {
+      "week": "2026-W41",
+      "status": "queued",
+      "delivery_stage": "pending",
+      "retry_reason": "missing_credentials",
+      "missing_configuration": [
+        "FEISHU_APP_ID",
+        "FEISHU_APP_SECRET",
+        "FEISHU_FOLDER_TOKEN",
+        "FEISHU_INDEX_DOC_TOKEN"
+      ],
+      "updated_at": "2026-10-14T01:18:45.752094+00:00",
+      "title": "具身智能关键研究组周报 · 2026-W41"
+    }
+  ]
+}
