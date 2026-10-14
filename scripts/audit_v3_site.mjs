@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { spawn, spawnSync } from 'node:child_process'
 import { load } from 'cheerio'
 import { readSourceRecordIds } from './lib/source-record-files.mjs'
+import { SEARCH_INDEX_BUDGET_BYTES } from './search-budget.mjs'
 
 const archiveVerificationCode = `import json,sys
 sys.path.insert(0,sys.argv[1])
@@ -259,7 +260,8 @@ const searchBytes = searchFiles.filter((file) => !file.endsWith('radar-metrics.j
 const searchMetrics = readJson(path.join(pagefindDirectory, 'radar-metrics.json'), {})
 if (!existsFile(path.join(pagefindDirectory, 'pagefind.js')) || searchMetrics.indexed_works !== knownWorks.size) issue('search_build_incomplete', { indexed: searchMetrics.indexed_works, expected: knownWorks.size })
 if (searchMetrics.dataset_version !== manifest.dataset_version || searchMetrics.catalog_hash !== manifest.catalog_hash) issue('search_dataset_revision_mismatch', { search: searchMetrics.dataset_version, site: manifest.dataset_version })
-if (searchBytes > 20_000_000) issue('search_index_budget_exceeded', { actual: searchBytes, budget: 20_000_000 })
+if (searchMetrics.index_budget_bytes !== SEARCH_INDEX_BUDGET_BYTES || searchMetrics.index_budget_pass !== (searchBytes <= SEARCH_INDEX_BUDGET_BYTES)) issue('search_budget_policy_mismatch', { actual: searchBytes, budget: SEARCH_INDEX_BUDGET_BYTES })
+if (searchBytes > SEARCH_INDEX_BUDGET_BYTES) issue('search_index_budget_exceeded', { actual: searchBytes, budget: SEARCH_INDEX_BUDGET_BYTES })
 const home = routes.find((row) => row.route === base)
 const homeData = home?.scripts.filter((row) => /v3-overview[^/]*\.js$/.test(row.path)).reduce((sum, row) => sum + row.gzip_bytes, 0) || 0
 if (!homeData) warnings.push({ type: 'home_payload_not_separately_identified', message: 'Inspect emitted app modules; do not assume an unmeasured data payload is zero.' })
@@ -267,7 +269,7 @@ if (homeData > 200_000) issue('home_data_budget_exceeded', { actual: homeData, b
 warnings.push({ type: 'runtime_metrics_unverified', message: 'Static audit cannot prove mobile LCP ≤ 2.5 s, CLS < 0.1 or runtime API availability. Browser measurements are a separate required gate.' })
 const report = { status: errors.length ? 'failed' : 'passed_static_gates', generated_at: new Date().toISOString(), dist,
   counts: { html_pages: htmlFiles.length, checked_internal_links: internalLinks, organizations: organizations.length, works: knownWorks.size, source_references: checkedSources, manifestation_references: checkedManifestations, monthly_snapshots: months.length },
-  public_schema: schema, sqlite_download: sqliteDownload, performance: { deployment_bytes: deploymentBytes, deployment_budget: 1_000_000_000, home_data_gzip_bytes: homeData || null, home_data_budget: 200_000, search_gzip_bytes: searchBytes, search_budget: 20_000_000, routes },
+  public_schema: schema, sqlite_download: sqliteDownload, performance: { deployment_bytes: deploymentBytes, deployment_budget: 1_000_000_000, home_data_gzip_bytes: homeData || null, home_data_budget: 200_000, search_gzip_bytes: searchBytes, search_budget: SEARCH_INDEX_BUDGET_BYTES, routes },
   runtime: { lcp: 'unverified', cls: 'unverified', api_availability: 'unverified' }, errors, warnings }
 fs.mkdirSync(path.dirname(reportPath), { recursive: true })
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n')

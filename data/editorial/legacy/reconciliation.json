@@ -3,7 +3,6 @@
   "status": "reconciled",
   "label": "历史研究编辑；新增自动摘要待生成",
   "active_complete_months": [
-    "2025-09",
     "2025-10",
     "2025-11",
     "2025-12",
@@ -14,9 +13,10 @@
     "2026-05",
     "2026-06",
     "2026-07",
-    "2026-08"
+    "2026-08",
+    "2026-09"
   ],
-  "provisional_month": "2026-09",
+  "provisional_month": "2026-10",
   "source_counts": {
     "trend_cards": 46,
     "paper_editorial_notes": 121,
@@ -25,7 +25,7 @@
   },
   "restored_counts": {
     "trend_cards": 46,
-    "active_window_trend_cards": 40,
+    "active_window_trend_cards": 37,
     "paper_editorial_notes": 121,
     "direction_context": 5,
     "forecasts": 8
@@ -161,8 +161,8 @@
       "canonical_evidence_count": 3,
       "unresolved_legacy_ids": [],
       "evidence_review_required": true,
-      "in_active_window": true,
-      "disposition": "restored_active_month",
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
       "output_path": "data/editorial/legacy/2025-09.json"
     },
     {
@@ -178,8 +178,8 @@
       "canonical_evidence_count": 3,
       "unresolved_legacy_ids": [],
       "evidence_review_required": true,
-      "in_active_window": true,
-      "disposition": "restored_active_month",
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
       "output_path": "data/editorial/legacy/2025-09.json"
     },
     {
@@ -195,8 +195,8 @@
       "canonical_evidence_count": 1,
       "unresolved_legacy_ids": [],
       "evidence_review_required": false,
-      "in_active_window": true,
-      "disposition": "restored_active_month",
+      "in_active_window": false,
+      "disposition": "restored_archive_outside_default_window",
       "output_path": "data/editorial/legacy/2025-09.json"
     },
     {
@@ -844,7 +844,8 @@
     "2026-06",
     "2026-07",
     "2026-08",
-    "2026-09"
+    "2026-09",
+    "2026-10"
   ],
   "scientific_judgments_reaudited": false,
   "context_assessment": {

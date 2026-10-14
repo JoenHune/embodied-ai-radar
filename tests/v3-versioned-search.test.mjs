@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto'
 import * as pagefind from 'pagefind'
 import { availabilityUpper, localizationStatus, prepareSearchWork, sourceTextDigest, textAsOf, textHash, validTextSnapshot } from '../scripts/lib/versioned-search-text.mjs'
 import { workSearchRecord } from '../scripts/lib/search-records.mjs'
+import { configuredBuildSource } from '../scripts/build-pagefind-policy.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const authorityWork = (id) => {
@@ -243,8 +244,8 @@ test('large older abstracts are not duplicated into the index and the hard budge
   assert.ok(record.content.length < 10_000)
   assert.ok(gzipSync(record.content).length < 5_000)
   assert.ok(!record.content.includes('olduniquetoken'))
-  const build = fs.readFileSync(path.join(root, 'scripts/build-pagefind-index.mjs'), 'utf8')
-  assert.match(build, /index_budget_bytes = 20_000_000/)
+  const build = configuredBuildSource(fs.readFileSync(path.join(root, 'scripts/build-pagefind-index.mjs'), 'utf8'), 'file:///fixture/helper.mjs', '/fixture/helper.mjs')
+  assert.match(build, /index_budget_bytes = 21_000_000/)
   assert.match(build, /if \(!metrics\.index_budget_pass\) throw/)
 })
 

@@ -1,0 +1,278 @@
+{
+  "version": "3.2",
+  "week": "2026-W41",
+  "coverage": {
+    "week": "2026-W41",
+    "from": "2026-10-05",
+    "until": "2026-10-11",
+    "from_utc": "2026-10-04T16:00:00+00:00",
+    "until_exclusive_utc": "2026-10-11T16:00:00+00:00"
+  },
+  "run_at": "2026-10-14T00:37:58.733003+00:00",
+  "requested_source_cutoff": "2026-10-12",
+  "data_through": "2026-10-09",
+  "source_checks": [
+    {
+      "source": "arxiv",
+      "status": "partial",
+      "complete": false,
+      "requested_window": null,
+      "checks": [
+        {
+          "source_id": "arxiv:cs_ro:2026-09",
+          "query_id": "cs_ro",
+          "requested_window": {
+            "from": "2026-09-01",
+            "until": "2026-09-30",
+            "basis": "arxiv_submittedDate_UTC"
+          },
+          "status": "failed",
+          "complete": false,
+          "expected_records": null,
+          "observed_records": 0,
+          "last_observed_data_through": null,
+          "error_type": "QueryBudgetExpired"
+        },
+        {
+          "source_id": "arxiv:robot_crosslist:2026-09",
+          "query_id": "robot_crosslist",
+          "requested_window": {
+            "from": "2026-09-01",
+            "until": "2026-09-30",
+            "basis": "arxiv_submittedDate_UTC"
+          },
+          "status": "failed",
+          "complete": false,
+          "expected_records": null,
+          "observed_records": 0,
+          "last_observed_data_through": null,
+          "error_type": "QueryBudgetExpired"
+        },
+        {
+          "source_id": "arxiv:embodied_crosslist:2026-09",
+          "query_id": "embodied_crosslist",
+          "requested_window": {
+            "from": "2026-09-01",
+            "until": "2026-09-30",
+            "basis": "arxiv_submittedDate_UTC"
+          },
+          "status": "failed",
+          "complete": false,
+          "expected_records": null,
+          "observed_records": 0,
+          "last_observed_data_through": null,
+          "error_type": "QueryBudgetExpired"
+        },
+        {
+          "source_id": "arxiv:cs_ro:2026-10",
+          "query_id": "cs_ro",
+          "requested_window": {
+            "from": "2026-10-01",
+            "until": "2026-10-12",
+            "basis": "arxiv_submittedDate_UTC"
+          },
+          "status": "partial",
+          "complete": false,
+          "expected_records": 761,
+          "observed_records": 500,
+          "last_observed_data_through": "2026-10-07",
+          "error_type": "RuntimeError"
+        }
+      ],
+      "observed_records": 710,
+      "completed_checks": 0,
+      "expected_checks": 4,
+      "coverage_basis": "registered_source_query_scope_not_global_research_completeness",
+      "requested_cutoff": "2026-10-12",
+      "source_data_through": null,
+      "last_observed_data_through": "2026-10-09",
+      "error_type": "SourceBudgetExceeded"
+    },
+    {
+      "source": "arxiv_research_status",
+      "status": "failed",
+      "complete": false,
+      "source_data_through": null,
+      "error_type": "SourceBudgetExceeded",
+      "consecutive_failures": 1
+    },
+    {
+      "source": "publications",
+      "status": "failed",
+      "complete": false,
+      "error_type": "cpu_headroom",
+      "source_data_through": null
+    },
+    {
+      "source": "official_groups",
+      "status": "failed",
+      "complete": false,
+      "error_type": "cpu_headroom",
+      "source_data_through": null
+    },
+    {
+      "source": "corl",
+      "status": "failed",
+      "complete": false,
+      "error_type": "cpu_headroom",
+      "source_data_through": null
+    }
+  ],
+  "collection_coverage": {
+    "schema_version": "1",
+    "requested_source_cutoff": "2026-10-12",
+    "available_data_through": "2026-10-09",
+    "registered_scope_complete": false,
+    "primary_corpora_complete": false,
+    "complete_through": null,
+    "primary_corpora_complete_through": null,
+    "status": "partial",
+    "incomplete_sources": [
+      "arxiv",
+      "publications",
+      "arxiv_research_status",
+      "official_groups",
+      "corl"
+    ],
+    "sources": [
+      {
+        "source": "arxiv",
+        "status": "partial",
+        "complete": false,
+        "requested_window": null,
+        "checks": [
+          {
+            "source_id": "arxiv:cs_ro:2026-09",
+            "query_id": "cs_ro",
+            "requested_window": {
+              "from": "2026-09-01",
+              "until": "2026-09-30",
+              "basis": "arxiv_submittedDate_UTC"
+            },
+            "status": "failed",
+            "complete": false,
+            "expected_records": null,
+            "observed_records": 0,
+            "last_observed_data_through": null,
+            "error_type": "QueryBudgetExpired"
+          },
+          {
+            "source_id": "arxiv:robot_crosslist:2026-09",
+            "query_id": "robot_crosslist",
+            "requested_window": {
+              "from": "2026-09-01",
+              "until": "2026-09-30",
+              "basis": "arxiv_submittedDate_UTC"
+            },
+            "status": "failed",
+            "complete": false,
+            "expected_records": null,
+            "observed_records": 0,
+            "last_observed_data_through": null,
+            "error_type": "QueryBudgetExpired"
+          },
+          {
+            "source_id": "arxiv:embodied_crosslist:2026-09",
+            "query_id": "embodied_crosslist",
+            "requested_window": {
+              "from": "2026-09-01",
+              "until": "2026-09-30",
+              "basis": "arxiv_submittedDate_UTC"
+            },
+            "status": "failed",
+            "complete": false,
+            "expected_records": null,
+            "observed_records": 0,
+            "last_observed_data_through": null,
+            "error_type": "QueryBudgetExpired"
+          },
+          {
+            "source_id": "arxiv:cs_ro:2026-10",
+            "query_id": "cs_ro",
+            "requested_window": {
+              "from": "2026-10-01",
+              "until": "2026-10-12",
+              "basis": "arxiv_submittedDate_UTC"
+            },
+            "status": "partial",
+            "complete": false,
+            "expected_records": 761,
+            "observed_records": 500,
+            "last_observed_data_through": "2026-10-07",
+            "error_type": "RuntimeError"
+          }
+        ],
+        "observed_records": 710,
+        "completed_checks": 0,
+        "expected_checks": 4,
+        "coverage_basis": "registered_source_query_scope_not_global_research_completeness",
+        "requested_cutoff": "2026-10-12",
+        "source_data_through": null,
+        "last_observed_data_through": "2026-10-09",
+        "error_type": "SourceBudgetExceeded"
+      },
+      {
+        "source": "arxiv_research_status",
+        "status": "failed",
+        "complete": false,
+        "source_data_through": null,
+        "error_type": "SourceBudgetExceeded",
+        "consecutive_failures": 1
+      },
+      {
+        "source": "publications",
+        "status": "failed",
+        "complete": false,
+        "error_type": "cpu_headroom",
+        "source_data_through": null
+      },
+      {
+        "source": "official_groups",
+        "status": "failed",
+        "complete": false,
+        "error_type": "cpu_headroom",
+        "source_data_through": null
+      },
+      {
+        "source": "corl",
+        "status": "failed",
+        "complete": false,
+        "error_type": "cpu_headroom",
+        "source_data_through": null
+      }
+    ],
+    "scope_note": "完成仅指已登记查询/会议期刊流/官方页面；不代表全互联网覆盖。可用数据截止日不代表所有来源完整或新鲜。"
+  },
+  "verified": true,
+  "summary_mode": "llm_partial",
+  "research_content_hash": "1552b4e979fa46e45afd250e36ab360e15f3940e12adc4ed678f68f428859d73",
+  "coverage_hash": "841fac3d5d79ae602e885a14c2c2aae8149b11b9e71ba2dedab13bfd00fde1e0",
+  "revision": 1,
+  "revision_basis": "research_content_not_run_metadata",
+  "research_changed": true,
+  "catalog_hash": "84e1cf4f87d471d7fb630dd7563ea8adf290728fc428c48f49f44036263eecbf",
+  "editorial_completion": {
+    "summary_mode": "llm_partial",
+    "basis": "final_public_monthly_editorial_status",
+    "current_month_statuses": {
+      "2025-10": "legacy_editorial",
+      "2025-11": "llm_complete",
+      "2025-12": "legacy_editorial",
+      "2026-01": "legacy_editorial",
+      "2026-02": "llm_complete",
+      "2026-03": "legacy_editorial",
+      "2026-04": "legacy_editorial",
+      "2026-05": "legacy_editorial",
+      "2026-06": "legacy_editorial",
+      "2026-07": "legacy_editorial",
+      "2026-08": "legacy_editorial",
+      "2026-09": "data_only",
+      "2026-10": "data_only"
+    },
+    "current_completed_months": [
+      "2025-11",
+      "2026-02"
+    ],
+    "historical_retained_months": []
+  }
+}

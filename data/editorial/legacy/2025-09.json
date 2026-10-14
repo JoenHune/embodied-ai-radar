@@ -3,7 +3,7 @@
   "month": "2025-09",
   "status": "legacy_editorial",
   "label": "历史研究编辑；新增自动摘要待生成",
-  "in_active_window": true,
+  "in_active_window": false,
   "claims": [
     {
       "claim_id": "claim:legacy:2025-09:b448ec393472",

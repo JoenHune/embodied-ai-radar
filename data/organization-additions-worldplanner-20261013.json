@@ -1,0 +1,60 @@
+{
+  "organizations": [
+    {
+      "organization_id": "org:nyu-machines-in-motion",
+      "display_name": "NYU Machines in Motion Laboratory",
+      "short_name": "NYU Machines in Motion",
+      "slug": "nyu-machines-in-motion",
+      "entity_type": "laboratory",
+      "tracking_unit": true,
+      "tracking_category": "academic",
+      "tier": "T2",
+      "region": "North America",
+      "country": "United States",
+      "status": "active",
+      "active_from": null,
+      "active_to": null,
+      "official_urls": {
+        "home": "https://www.machinesinmotion.org/",
+        "identity_source": "https://robotics.engineering.nyu.edu/group/machines-in-motion/",
+        "leader_profile": "https://engineering.nyu.edu/faculty/ludovic-righetti",
+        "people": "https://www.machinesinmotion.org/people/",
+        "publications": "https://www.machinesinmotion.org/publications/"
+      },
+      "leaders": [
+        {
+          "name": "Ludovic Righetti",
+          "role": "Principal Investigator",
+          "source_url": "https://engineering.nyu.edu/news/efficient-object-manipulation-planning-monte-carlo-tree-search",
+          "valid_from": "2023-03-19",
+          "valid_to": null
+        }
+      ],
+      "parent_relations": [
+        {
+          "parent_id": "org:new-york-university",
+          "relation": "part_of",
+          "evidence_url": "https://robotics.engineering.nyu.edu/group/machines-in-motion/",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "aliases": [
+        "Machines in Motion Laboratory"
+      ],
+      "disclosure_level": "high",
+      "source_health": "unverified",
+      "last_checked": "2026-10-13T10:31:17Z",
+      "last_changed": null,
+      "startup_frontier": false,
+      "pi_lineage_id": "pi:ludovic-righetti",
+      "declared_direction_codes": [],
+      "question_codes": [],
+      "representative_updates": [],
+      "summary_zh": "NYU 的具名机器人实验室，研究机器人运动规划、控制、移动与操作。与 NYU GRAIL 是独立节点。",
+      "information_gaps": [
+        "实验室成立日期未知。此次核验发生在数据截止日之后，不回填截止日的来源健康状态；不主动提升 T0/T1。"
+      ]
+    }
+  ]
+}
