@@ -387,6 +387,53 @@ def source_id(row):
     return 'pdf-source:' + fingerprint([row[key] for key in keys])[:24]
 
 
+def _provenance_still_bound(stored, current):
+    """A later snapshot of the same version year may join the proof list.
+
+    The receipt keeps the proofs that justified it. Re-audit requires those
+    proofs, unchanged, inside the current agreeing set. It does not require
+    the historical list to be exhaustive.
+    """
+    if stored is None and current is None:
+        return True
+    if (not isinstance(stored, dict) or not isinstance(current, dict) or set(stored) != set(current)
+            or stored.get('basis') != current.get('basis') or stored.get('year') != current.get('year')):
+        return False
+    previous, latest = stored.get('text_snapshot_sources'), current.get('text_snapshot_sources')
+    if not isinstance(previous, list) or not previous or not isinstance(latest, list):
+        return False
+    by_id = {}
+    for proof in latest:
+        if not isinstance(proof, dict) or not proof.get('snapshot_id') or proof['snapshot_id'] in by_id:
+            return False
+        by_id[proof['snapshot_id']] = proof
+    return all(isinstance(proof, dict) and by_id.get(proof.get('snapshot_id')) == proof for proof in previous)
+
+
+def _historical_edition_matches(row, expected):
+    """Agreeing catalog enrichment is not a different edition.
+
+    Weekly ingestion archives another source row for an unchanged arXiv
+    version and can fill a DOI that the landing page did not have when the
+    PDF was read. Manifestation source, label, version, kind, venue and year
+    stay exact. A conflicting DOI or a proof that no longer validates fails.
+    """
+    bound_source, edition, label, version = expected
+    stored = row.get('edition')
+    if ((row.get('source_record_id'), row.get('edition_label'), row.get('version')) != (bound_source, label, version)
+            or not isinstance(stored, dict) or not isinstance(edition, dict)):
+        return False
+    if set(stored) - {'arxiv_version_date_provenance'} != set(edition) - {'arxiv_version_date_provenance'}:
+        return False
+    for key in ('kind', 'venue', 'year', 'arxiv_version'):
+        if stored.get(key) != edition.get(key):
+            return False
+    stored_doi, current_doi = stored.get('doi'), edition.get('doi')
+    if stored_doi != current_doi and not (stored_doi is None and current_doi not in (None, '')):
+        return False
+    return _provenance_still_bound(stored.get('arxiv_version_date_provenance'), edition.get('arxiv_version_date_provenance'))
+
+
 def _source(row, catalog, latest):
     fields(row, SOURCE_KEYS)
     if PRIVATE.search(encode(row)):
@@ -394,8 +441,7 @@ def _source(row, catalog, latest):
     if (row['schema_version'] != '1' or row['source_format'] != 'pdf' or row['status'] != 'pdf_available'
             or row['license_status'] != 'unknown'):
         fail('invalid_source_schema_or_license_overclaim')
-    expected = _binding(row, catalog)
-    if (row['source_record_id'], row['edition'], row['edition_label'], row['version']) != expected:
+    if not _historical_edition_matches(row, _binding(row, catalog)):
         fail('edition_or_source_record_mismatch')
     digest(row['landing_sha256'])
     digest(row['pdf_sha256'])
