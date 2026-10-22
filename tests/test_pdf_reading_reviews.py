@@ -380,6 +380,59 @@ class PdfReadingReviewsTests(unittest.TestCase):
         self.assertEqual(pdf.public_audit(result['readings'], self.payload, result['sources'], self.as_of)['counts']['receipt_count'], 1)
         self.assertEqual(self.payload, before)
 
+    def add_version_snapshot(self, snapshot, *, available_at=None, source_record_id='source:version-later'):
+        from versioned_text import digest
+        clone = copy.deepcopy(snapshot)
+        clone['source_record_id'] = source_record_id
+        if available_at:
+            clone['available_at'] = available_at
+        clone.pop('snapshot_id', None)
+        clone['snapshot_id'] = 'text-snapshot:' + digest(clone)[:24]
+        source = copy.deepcopy(next(row for row in self.payload['source-records'] if row['source_record_id'] == snapshot['source_record_id']))
+        source.update(source_record_id=clone['source_record_id'], url=clone['source_url'], version=clone['version'],
+                      published_at=clone['available_at'], date_precision=clone['date_precision'], payload_hash=digest(clone),
+                      text_content_digest=digest({key: clone[key] for key in ('title', 'abstract')}))
+        self.payload['source-records'].append(source)
+        self.payload['works'][0]['source_record_ids'].append(source['source_record_id'])
+        self.payload['text-snapshots'].append(clone)
+        return clone
+
+    def test_later_agreeing_arxiv_snapshot_keeps_frozen_edition(self):
+        snapshot = self.arxiv_v2_dated_fixture()
+        result = self.validate()
+        self.add_version_snapshot(snapshot)
+        audit = pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        self.assertEqual(audit['counts']['source_count'], 1)
+        self.payload['works'][0]['identifiers']['doi'] = '10.5555/later'
+        self.assertEqual(pdf.public_audit([], self.payload, result['sources'], self.as_of)['counts']['source_count'], 1)
+
+    def test_conflicting_version_year_or_dropped_proof_still_fails(self):
+        snapshot = self.arxiv_v2_dated_fixture()
+        result = self.validate()
+        self.add_version_snapshot(snapshot, available_at='2027-01-15')
+        with self.assertRaisesRegex(ValueError, 'arxiv_version_publication_year_ambiguous'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        self.payload['text-snapshots'].pop()
+        self.add_version_snapshot(snapshot, source_record_id='source:version-kept')
+        self.payload['text-snapshots'] = [row for row in self.payload['text-snapshots'] if row['snapshot_id'] != snapshot['snapshot_id']]
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+
+    def test_changed_doi_source_or_venue_still_fails(self):
+        result = self.validate()
+        self.payload['works'][0]['identifiers']['doi'] = '10.1234/other'
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        self.payload['works'][0]['identifiers']['doi'] = '10.1234/test'
+        self.payload['source-records'].append({**self.payload['source-records'][0], 'source_record_id': 'source:replacement'})
+        self.payload['manifestations'][0]['source_record_id'] = 'source:replacement'
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        self.payload['manifestations'][0]['source_record_id'] = 'source:test'
+        self.payload['manifestations'][0]['venue'] = 'Other'
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+
     def test_arxiv_dated_version_rejects_wrong_landing_year_and_unknown_version(self):
         self.arxiv_v2_dated_fixture()
         self.replace_html(self.input, self.html.replace(b'2026/09/04', b'2025/09/04'))
