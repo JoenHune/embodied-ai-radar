@@ -380,12 +380,14 @@ class PdfReadingReviewsTests(unittest.TestCase):
         self.assertEqual(pdf.public_audit(result['readings'], self.payload, result['sources'], self.as_of)['counts']['receipt_count'], 1)
         self.assertEqual(self.payload, before)
 
-    def add_version_snapshot(self, snapshot, *, available_at=None, source_record_id='source:version-later'):
+    def add_version_snapshot(self, snapshot, *, available_at=None, date_precision=None, source_record_id='source:version-later'):
         from versioned_text import digest
         clone = copy.deepcopy(snapshot)
         clone['source_record_id'] = source_record_id
         if available_at:
             clone['available_at'] = available_at
+        if date_precision:
+            clone['date_precision'] = date_precision
         clone.pop('snapshot_id', None)
         clone['snapshot_id'] = 'text-snapshot:' + digest(clone)[:24]
         source = copy.deepcopy(next(row for row in self.payload['source-records'] if row['source_record_id'] == snapshot['source_record_id']))
@@ -405,6 +407,40 @@ class PdfReadingReviewsTests(unittest.TestCase):
         self.assertEqual(audit['counts']['source_count'], 1)
         self.payload['works'][0]['identifiers']['doi'] = '10.5555/later'
         self.assertEqual(pdf.public_audit([], self.payload, result['sources'], self.as_of)['counts']['source_count'], 1)
+
+    def test_refreshed_arxiv_source_id_keeps_agreeing_receipt(self):
+        """Payload-hash rotation is the gap left by an extra agreeing snapshot.
+
+        The cited day-precision proof stays. Ingest also stores the same
+        version year at second precision and points the manifestation at
+        ``source:preprints:{new hash}`` for the same abs URL.
+        """
+        snapshot = self.arxiv_v2_dated_fixture()
+        result = self.validate()
+        self.add_version_snapshot(snapshot, available_at='2026-09-04T04:51:57Z', date_precision='second')
+        work = self.payload['works'][0]
+        previous = self.payload['source-records'][0]
+        previous['source_type'] = 'preprints'
+        refreshed_id = 'source:preprints:second-precision'
+        self.payload['source-records'].append({**previous, 'source_record_id': refreshed_id})
+        work['source_record_ids'] = [*work.get('source_record_ids', []), refreshed_id]
+        self.payload['manifestations'][0]['source_record_id'] = refreshed_id
+        self.payload['works'][0]['identifiers']['doi'] = '10.5555/later'
+        audit = pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        self.assertEqual(audit['counts']['source_count'], 1)
+        self.assertEqual(result['sources'][0]['source_record_id'], 'source:test')
+
+        self.payload['source-records'][-1]['url'] = 'https://arxiv.org/abs/9999.99999'
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        self.payload['source-records'][-1]['url'] = previous['url']
+        work['source_record_ids'] = [sid for sid in work['source_record_ids'] if sid != 'source:test']
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
+        work['source_record_ids'].append('source:test')
+        self.payload['source-records'][-1]['source_type'] = 'official-proceedings'
+        with self.assertRaisesRegex(ValueError, 'edition_or_source_record_mismatch'):
+            pdf.public_audit([], self.payload, result['sources'], self.as_of)
 
     def test_conflicting_version_year_or_dropped_proof_still_fails(self):
         snapshot = self.arxiv_v2_dated_fixture()

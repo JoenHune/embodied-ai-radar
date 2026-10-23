@@ -410,18 +410,50 @@ def _provenance_still_bound(stored, current):
     return all(isinstance(proof, dict) and by_id.get(proof.get('snapshot_id')) == proof for proof in previous)
 
 
-def _historical_edition_matches(row, expected):
+def _arxiv_abs_id(value):
+    identity = arxiv_url(value)
+    return identity[1] if identity and identity[0] == 'abs' else None
+
+
+def _refreshed_arxiv_source(row, bound_source, catalog):
+    """A new preprint hash may own the same abs URL.
+
+    ``source:preprints:{payload hash}`` changes when Atom metadata is stored
+    at second precision or the PDF link gains a version suffix. Ingest then
+    points the stable manifestation at that new row. The receipt keeps the
+    source id from when the PDF was read. Both ids must still be owned arXiv
+    metadata for that manifestation's abs id. A different paper, an unowned
+    id, or a non-arXiv source does not inherit the receipt.
+    """
+    works, manifestations, records = catalog[0], catalog[1], catalog[2]
+    work, manifest = works.get(row.get('work_id')), manifestations.get(row.get('manifestation_id'))
+    previous, current = records.get(row.get('source_record_id')), records.get(bound_source)
+    if not work or not manifest or not previous or not current:
+        return False
+    owned = set(work.get('source_record_ids') or [])
+    if row.get('source_record_id') not in owned or bound_source not in owned:
+        return False
+    paper = _arxiv_abs_id(manifest.get('url'))
+    allowed = {'preprints', 'papers', 'arXiv Atom API'}
+    return bool(paper and _arxiv_abs_id(previous.get('url')) == paper and _arxiv_abs_id(current.get('url')) == paper
+                and previous.get('source_type') in allowed and current.get('source_type') in allowed)
+
+
+def _historical_edition_matches(row, expected, catalog):
     """Agreeing catalog enrichment is not a different edition.
 
-    Weekly ingestion archives another source row for an unchanged arXiv
-    version and can fill a DOI that the landing page did not have when the
-    PDF was read. Manifestation source, label, version, kind, venue and year
-    stay exact. A conflicting DOI or a proof that no longer validates fails.
+    Weekly ingestion can archive another snapshot of the same version year,
+    fill a DOI that the landing page did not have when the PDF was read, and
+    retarget the manifestation at a new source id for that same arXiv abs URL.
+    Label, version, kind, venue and year stay exact. A conflicting DOI, a
+    different landing, or a proof that no longer validates fails.
     """
     bound_source, edition, label, version = expected
     stored = row.get('edition')
-    if ((row.get('source_record_id'), row.get('edition_label'), row.get('version')) != (bound_source, label, version)
+    if ((row.get('edition_label'), row.get('version')) != (label, version)
             or not isinstance(stored, dict) or not isinstance(edition, dict)):
+        return False
+    if row.get('source_record_id') != bound_source and not _refreshed_arxiv_source(row, bound_source, catalog):
         return False
     if set(stored) - {'arxiv_version_date_provenance'} != set(edition) - {'arxiv_version_date_provenance'}:
         return False
@@ -441,7 +473,7 @@ def _source(row, catalog, latest):
     if (row['schema_version'] != '1' or row['source_format'] != 'pdf' or row['status'] != 'pdf_available'
             or row['license_status'] != 'unknown'):
         fail('invalid_source_schema_or_license_overclaim')
-    if not _historical_edition_matches(row, _binding(row, catalog)):
+    if not _historical_edition_matches(row, _binding(row, catalog), catalog):
         fail('edition_or_source_record_mismatch')
     digest(row['landing_sha256'])
     digest(row['pdf_sha256'])
