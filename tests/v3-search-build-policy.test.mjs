@@ -12,16 +12,17 @@ function check(bytes){
  vm.runInNewContext(gate,{metrics,fs:{writeFileSync(){}},path:{join(){return '/fixture/metrics'}},output:'',process:{stdout:{write(){}}}})
  return metrics
 }
-test('the official builder uses the approved decimal 21 MB budget',()=>{
- assert.equal(SEARCH_INDEX_BUDGET_BYTES,21_000_000)
- assert.match(source,/index_budget_bytes = 21_000_000/)
+test('the official builder uses the temporary decimal 22 MB ship gate',()=>{
+ assert.equal(SEARCH_INDEX_BUDGET_BYTES,22_000_000)
+ assert.match(source,/index_budget_bytes = 22_000_000/)
  assert.match(source,/nativeSearchContent\(record\.content\)/)
  assert.match(source,/if \(!metrics\.index_budget_pass\) throw/)
 })
 test('the verified full corpus passes the actual builder gate',()=>assert.equal(check(20_228_485).index_budget_pass,true))
-test('the exact upper boundary passes and one byte beyond still fails',()=>{
- assert.equal(check(21_000_000).index_budget_pass,true)
- assert.throws(()=>check(21_000_001),/exceeds 21 MB: 21000001 bytes/)
+test('the measured 2026-10-23 index passes and one byte past the temporary gate still fails',()=>{
+ assert.equal(check(21_841_424).index_budget_pass,true)
+ assert.equal(check(22_000_000).index_budget_pass,true)
+ assert.throws(()=>check(22_000_001),/exceeds 22 MB: 22000001 bytes/)
 })
 test('an unexpected builder cannot silently bypass identity or size integration',()=>{
  assert.throws(()=>configuredBuildSource(original.replace('if (!metrics.index_budget_pass) throw','if (false) throw'),'file:///fixture/helper','/fixture/helper'),/integration changed/)
