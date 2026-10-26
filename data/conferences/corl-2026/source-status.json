@@ -5,14 +5,14 @@
   "expected_count": null,
   "fetched_count": 0,
   "complete": false,
-  "checked_at": "2026-09-05T11:28:07Z",
+  "checked_at": "2026-10-26T03:46:14Z",
   "status": "access_blocked",
-  "reason": "Official accepted-venue API returned HTTP 403 ChallengeRequiredError. Public conference group metadata was verified; acceptance-list completeness is not yet verified.",
+  "reason": "Official API returned HTTP 403.",
   "records_retained": 0,
   "snapshot_preserved": false,
   "last_successful_at": null,
   "last_successful_count": null,
-  "consecutive_failures": 1,
-  "stale_warning": false,
-  "failed_endpoint": "https://api2.openreview.net/notes?content.venueid=robot-learning.org%2FCoRL%2F2026%2FConference&limit=1&offset=0"
+  "consecutive_failures": 2,
+  "stale_warning": true,
+  "failed_endpoint": "https://api2.openreview.net/notes?content.venueid=robot-learning.org%2FCoRL%2F2026%2FConference&limit=1000&offset=0"
 }
