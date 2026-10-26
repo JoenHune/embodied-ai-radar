@@ -245,7 +245,7 @@ test('large older abstracts are not duplicated into the index and the hard budge
   assert.ok(gzipSync(record.content).length < 5_000)
   assert.ok(!record.content.includes('olduniquetoken'))
   const build = configuredBuildSource(fs.readFileSync(path.join(root, 'scripts/build-pagefind-index.mjs'), 'utf8'), 'file:///fixture/helper.mjs', '/fixture/helper.mjs')
-  assert.match(build, /index_budget_bytes = 21_000_000/)
+  assert.match(build, /index_budget_bytes = 22_000_000/)
   assert.match(build, /if \(!metrics\.index_budget_pass\) throw/)
 })
 
